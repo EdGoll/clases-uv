@@ -1,0 +1,112 @@
+﻿3           Karl Albrecht                           84      Germany         Donaueschingen
+11          Liliane Bettencourt                     81      France          Paris
+13          Ingvar Kamprad                          77      Sweden          Lausanne
+14          Theo Albrecht                           81      Germany         Foehr
+21          Bernard Arnault                         55      France          Paris
+30          Silvio Berlusconi                       67      Italy           North of Milan
+32          Birgit Rausing & family                 80      Sweden          Switzerland
+33          Amancio Ortega                          68      Spain           La Coruna
+36          Gerald Cavendish Grosvenor              52      United Kingdom  Chester
+37          Stefan Persson                          56      Sweden          Stockholm
+40          Susanne Klatten                         42      Germany         Bad Homburg
+41          Michael Otto & family                   60      Germany         Hamburg
+45          Hans Rausing                            77      Sweden          Wadhurst
+50          Rudolf August Oetker & family           87      Germany         Bielefeld
+51          Ernesto Bertarelli                      38      Switzerland     Geneva
+55          Leonardo Del Vecchio                    68      Italy           Milan
+57          August von Finck                        73      Germany         Thurgau
+59          Stefan Quandt                           38      Germany         Bad Homburg
+60          Serge Dassault & family                 79      France          Paris
+64          Maria-Elisabeth & Georg Schaeffler      56      Germany         Hamburgo
+68          Curt Engelhorn                          77      Germany         Bermuda
+70          Friedrich Flick Jr                      77      Germany         Vienna
+73          Alain & Gerard Wertheimer               45      France          Paris
+76          Hasso Plattner                          60      Germany         Heidelberg
+78          Adolf Merckle                           69      Germany         Manheim
+79          Johanna Quandt                          76      Germany         Bad Homburg
+80          Antonia Johnson                         60      Sweden          Stockholm
+82          Maersk Mc-Kinney Moller                 90      Denmark         Copenhagen
+84          Philip Green                            52      United Kingdom  Monaco
+91          Francois Pinault                        67      France          Paris
+94          Karl-Heinz Kipp                         80      Germany         Arosa
+95          Charlene de Carvalho-Heineken           49      Netherlands     London
+100         Erivan Haub & family                    71      Germany         Muelheim an der Ruhr
+101         Luciano Benetton & family               68      Italy           Treviso
+102         Walter Haefner                          93      Switzerland     Zurich
+103         Reinhold Würth                          68      Germany         Kuenzelsau
+104         Spiro Latsis & family                   57      Greece          Geneva
+111         Reinhard Mohn & family                  82      Germany         Guetersloh
+116         David Sainsbury & family                63      United Kingdom  London
+128         Robert Bosch Jr & family                76      Germany         Stuttgart
+129         Jean-Claude Decaux & family             66      France          Paris
+136         Michele Ferrero                         77      Italy           Brussels
+140         Bernard Ecclestone & family             73      United Kingdom  London
+143         Jorgen Clausen & family                 55      Denmark         Nordborg
+153         Klaus Tschira                           63      Germany         Heidelberg
+159         Anton Schlecker                         59      Germany         Ehingen
+160         Antonio Champalimaud                    85      Portugal        Lisbon
+161         David & Frederick Barclay               90      United Kingdom  Cardiff
+162         Heidi Horten                            63      Austria         Vienna
+163         Rafael del Pino & family                83      Spain           Madrid
+164         Sergio Mantegazza                       76      Switzerland     Lugano
+170         Stefan Schörghuber                      42      Germany         Munich
+171         Gérard Louis-Dreyfus & family           71      France          New York
+172         Thomas Schmidheiny                      58      Switzerland     Jona
+176         Michael Herz                            58      Germany         Leipzig
+186         Otto Beisheim                           80      Germany         Zoug
+187         Otto Happel                             56      Germany         Luzerne
+188         Rainer & Michael Schmidt-Ruthenbeck     28      Germany         Duisburg
+189         Karl Wlaschek                           86      Austria         Vienna
+198         Stephan Schmidheiny                     56      Switzerland     Zurich
+199         Willi & Isolde Liebherr & family        66      Switzerland     Bulle
+205         Kjeld Kirk Kristiansen                  56      Denmark         Billund
+216         Charles Gerald John Cadogan             66      United Kingdom  London
+217         John Dorrance III                       60      Ireland         Dublin
+218         Juan & Carlos March                     45      Spain           Madrid
+231         Clive Calder                            57      United Kingdom  New York
+247         Michael Hilti & family                  57      Liechtenstein   Schaan
+248         Richard Branson                         53      United Kingdom  London
+249         Giorgio Armani                          69      Italy           Milan
+262         Nicolas Hayek                           75      Switzerland     Biel
+263         Jean-Louis Dumas & family               65      France          Paris
+264         Philippe Foriel-Destezet                68      France          London
+265         Achille Maramotti                       77      Italy           Reggio Emilia
+277         Umberto Agnelli & family                69      Italy           Turin
+278         Martin Bouygues & family                52      France          Paris
+279         Augusto & Giorgio Perfetti              60      Italy           Verona
+280         Ennio Doris                             63      Italy           Tombolo
+293         Bruno Schroder & family                 71      United Kingdom  London
+294         John Fredriksen                         59      Norway          Oslo
+310         Kenneth Morrison                        72      United Kingdom  Bradford
+311         John de Mol                             48      Netherlands     Groninga
+312         Arne Wilhelmsen & family                74      Norway          Oslo
+313         Stein Erik Hagen                        47      Norway          Oslo
+314         Emilio Botin                            69      Spain           Santander
+342         Esther Koplowitz                        53      Spain           Barcelona
+356         Joseph Lewis                            67      United Kingdom  Lyford Cay
+357         John A Fentener van Vlissingen          65      Netherlands     Atlanta
+358         Isak Andic                              49      Spain           Barcelona
+359         Rosalia Mera                            60      Spain           La Coruna
+377         Adrian Swire & family                   73      United Kingdom  Cambridge
+378         Miuccia Prada & family                  54      Italy           Rome
+406         John Caudwell                           51      United Kingdom  Stoke-on-Trent
+407         Didier Primat                           59      France          Paris
+408         Dietrich Mateschitz                     59      Austria         Fuschl am See
+409         Alicia Koplowitz                        51      Spain           Madrid
+410         Fredrik Lundberg                        52      Sweden          Stockholm
+437         Francesco Gaetano Caltagirone & family  60      Italy           Napoles
+438         Steno Marcegaglia & family              73      Italy           Mantova
+439         Joop van den Ende                       62      Netherlands     Delft
+440         Gustaf Douglas                          66      Sweden          Stockholm
+472         Jonathan Harmsworth                     36      United Kingdom  London
+473         Terence (Terry) Matthews                60      United Kingdom  Ottawa
+474         Pierre Bellon & family                  74      France          Paris
+475         Albert Frere                            78      Belgium         Charleroi
+476         Belmiro de Azevedo                      65      Portugal        Oporto
+514         Anthony O'Reilly                        67      Ireland         Dublin
+552         Joanne (JK) Rowling                     38      United Kingdom  Edinburgh
+553         John Hargreaves & family                60      United Kingdom  Lancashire County
+554         Emilio Gnutti                           57      Italy           Brescia
+555         Stefano Pessina                         62      Italy           Monte Carlo
+556         Olav Thon                               80      Norway          Oslo
+557         Liselott Persson                        67      Sweden          Ginebra

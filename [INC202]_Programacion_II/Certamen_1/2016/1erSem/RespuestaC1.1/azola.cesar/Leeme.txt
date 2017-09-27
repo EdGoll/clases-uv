@@ -1,0 +1,13 @@
+El dataset es sobre una investigacion social a nivel mundial sobre 
+Acceso a Educacion
+Sanidad del agua
+Derechos personales etc
+todos medidos en porcentaje con un estandar predefinido
+
+las preguntas son:
+
+1- ¿Porcentaje de acceso a educacion superior en chile?
+2- ¿Cual es el pais con mayor y menor acceso a los conocimientos basicos?
+3- ¿Los 10 paices con mas derechos personales?
+4- ¿Promedio a nivel mundial de la sanidad del agua?
+5- ¿Pais con menor tolerancia e inclusion entre (Chile-Peru-Argentina-Bolivia)? 

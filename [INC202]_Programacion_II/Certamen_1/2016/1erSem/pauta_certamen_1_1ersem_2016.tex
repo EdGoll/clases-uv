@@ -1,0 +1,312 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,blue,draw,inner sep=.5pt] (char) {#1};}}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in             
+\headheight = 0.0 in            
+\headsep = 0.0 in
+            
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+\begin{center}
+    {\Large Pauta Certamen 1, Programaci\'on II} \\
+    \emph{\small Prof. Rodrigo Olivares} \\
+    \emph{\small Ayud. Juan Carlos Tapia} \\
+    \emph{\scriptsize Abril 14, 2016}
+\end{center}
+\vspace*{-35pt}
+\begin{center}
+    \rule{1\textwidth}{.3pt}
+\end{center}
+\vspace*{-42pt}
+\begin{center}
+    \rule{1\textwidth}{2pt}
+\end{center}
+
+\vspace*{-15pt}
+{\small \textbf{Instrucciones}:}
+\vspace*{-15pt}
+
+{\scriptsize
+\begin{itemize}
+    \item[-] El puntaje m\'aximo del certamen es 100\%, siendo el 60\% el m\'inimo requerido para aprobar.
+    \item[-] Responda cada pregunta en la hoja indicada, agregando su nombre. Si no responde alguna pregunta, debe entregar la hoja con su nombre e indicar que \textbf{no responde}.
+    \item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado con nota \textbf{1,0}.
+\end{itemize}
+}
+\vspace*{10pt}
+
+\vspace*{-30pt}
+
+\begin{enumerate}
+ {\scriptsize
+    \item \emph{30pts.} De las siguentes afirmaciones, encierre en un c\'irculo la o las alternativas correctas.
+   
+    \begin{multicols}{2}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[i.] El paradigma de la orientaci\'on a objeto se basa en:
+        \item[\circled{(a)}] El uso de objetos y su intercacci\'on.
+        \item[\circled{(b)}] El uso de clases como categorizaci\'on de instancias.
+        \item[(c)] El uso de un enfoque imperativo.
+        \item[\circled{(d)}] El uso de un enfoque reusable.
+        \item[\circled{(e)}] Principios como herencia y abstracci\'on.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[ii.] En cuanto a la programaci\'on orientada a objeto:
+        \item[(a)] Se apoya en el paradigma estructural.
+        \item[\circled{(b)}] Divide el programa en peque\~nas unidades de c\'odigo.
+        \item[\circled{(c)}] Proporciona herramientas para modelar el mundo real.
+        \item[(d)] Es una herramienta del lenguaje JAVA.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[iii.] Una clase es: 
+        \item[(a)] Un arreglo de objetos.
+        \item[(b)] Una absorci\'on del mundo real.
+        \item[(c)] Una herramienta de programaci\'on.
+        \item[(d)] Un punto a memoria.
+        \item[\circled{(e)}] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[iv.] Respecto a una clase:
+        \item[(a)] Se declaran utilizando la palabra resevada clase.
+        \item[\circled{(b)}] Debe tener el mismo nombre que el archivo.
+        \item[(c)] Son declaradas est\'aticas con static.
+        \item[(d)] Todas deben incluir el m\'etodo main.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[v.] Respecto a una clase:
+        \item[\circled{(a)}] Puede o no tener atributos.
+        \item[\circled{(b)}] Puede o no tener m\'etodos.
+        \item[\circled{(c)}] Puede o no tener constructor.
+        \item[(d)] Puede o no tener un nombre.
+        \item[(e)] Puede o no tener un tipo.
+    \end{enumerate}
+    
+    \begin{enumerate}[label=(\alph*)]
+        \item[vi.] Un objeto es: 
+        \item[(a)] Un tipo de dato de la clase.
+        \item[\circled{(b)}] La instancia de una clase.
+        \item[\circled{(c)}] Una abstracci\'on del mundo real.        
+        \item[(d)] Un sub-conjunto de atributos y m\'etodos de la clase.
+        \item[(e)] Siempre est\'atico.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[vii.] El principio de ocultamiento: 
+        \item[\circled{(a)}] Es una t\'ecnica que protege el estado de una entidad.
+        \item[\circled{(b)}] Es indispensable en el paradigma de orientaci\'on a objeto.
+        \item[\circled{(c)}] En Java, se logra utilizando los modificadores de acceso.
+        \item[(d)] Es encapsular el conocmineto de una entidad.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[viii.] Respecto a la herencia, las clases:
+        \item[(a)] Heredan s\'olo los m\'etodos privados.
+        \item[\circled{(b)}] Heredan el compotamiento completo de la clase padre.
+        \item[(c)] Heredan s\'olo el comportamiento que se desea utilizar.
+        \item[(d)] En Java, se implementan con la palabra implements.
+        \item[\circled{(e)}] En Java, se implementan con la palabra extends.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[ix.] El polimorfismo: 
+        \item[\circled{(a)}] El mismo nombre implementa distintas funcionalidades.
+        \item[(b)] Una funcionalidad implementada con distintos nombres.
+        \item[(c)] Es una caracter\'istica de JAVA.
+        \item[\circled{(d)}] Es una caracter\'istica de POO.
+        \item[\circled{(e)}] Un ejemplo es el s\'imbolo \%.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[x.] El met\'odo \emph{main}:
+        \item[(a)] Puede no ser void.
+        \item[\circled{(b)}] Debe ser static.
+        \item[(c)] Puede no llevar argumentos de entrada.
+        \item[(d)] Debe retornar un valor.
+        \item[\circled{(e)}] Debe incluirse en un programa.
+    \end{enumerate}
+
+\end{multicols}
+}
+\newpage
+{\scriptsize
+\item \emph{70pts.} Como la asignatura Programaci\'on 2 tiene demasiados alumnos, el profesor dividi\'o el curso en 2 grupos (A y B) equitativos, para tomar evaluaciones (cantidades semejantes en ambos grupos). En la asignatura se realizar\'an 3 evaluaciones. En la primera evaluaci\'on ingresan primero los del grupo A y luego del B. En la segunda evaluaci\'on es a la inversa. Para la tercera evaluaci\'on, el profesor decidi\'o que para ser justo, los integrantes de los grupos ser\'an reodenados de forma aleatoria, por lo cual le ha solicitado a Ud que desarrolle un programa que, seleccione rand\'omicamente y sin repetici\'on, los alumnos que formaran parte del grupo A y B y luego mu\'estre los dos grupos en la salida est\'andar.
+}
+\begin{itemize}
+    \item[] {\scriptsize Considere:}
+    \begin{itemize}
+        \item {\scriptsize La lista total de los alumnos es un valor aleatorio mayor a 40 y menor a 100.}
+        \item {\scriptsize La lista contiene alumnos (agregue la propiedad ``id" de tipo entero que almacenar\'a su identificar aleatorio, no repetible en entre los alumnos de la lista).}
+        \item {\scriptsize Desarrolle el programa bajo el paradigma de orientación a objeto.}
+    \end{itemize}
+\end{itemize}
+
+    \begin{table}[!ht]
+       {\scriptsize
+        \begin{center}
+             \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}\hline
+                \multicolumn{4}{|c|}{\textbf{\textquestiondown C\'omo ser\'e evaluado en la pregunta 2?} } \\ \hline
+                \multicolumn{1}{|c|}{\textbf{T\'opico}} & 
+                \multicolumn{1}{c|}{\textbf{Logrado}} & 
+                \multicolumn{1}{c|}{\textbf{Medianamente logrado}} & 
+                \multicolumn{1}{c|}{\textbf{No logrado}} \\ \hline
+                Construir entidades & 
+                \emph{15pts} Crea la clase at\'omica con sus atributos/m\'etodos. & 
+                \emph{  7pts} Crea la clase at\'omica sin los atributos o m\'etodos. & 
+                \emph{  0pts} No crea la clase at\'omica. \\ \hline
+                Construir clase Lista y sus m\'etodos & 
+                \emph{25pts} Define e implementa correctamente la clase Lista, sus atributos y m\'etodos: & 
+                \emph{ 10pts}  Define algunos atributos o algunos m\'etodos, pero no todos los necesarios para el problema. & 
+                \emph{  0pts} No define ni los atributos ni m\'etodos \\ 
+                &  Atributos: listas, tama\~no, l\'imites, etc. & & \\ 
+                & M\'etodos: llenar, generar id sin repetir, mostrar, etc.  & & \\ \hline
+                Construir clase principal & 
+                \emph{15pts} Define la clase con el m\'etodo principal. & 
+                \emph{  10pts} Define el m\'etodo principal en la misma clase. & 
+                \emph{  0pts} No define el m\'etodo principal. \\ \hline
+                Paradigma Orientaci\'on a Objetos  & 
+                \emph{15pts} Resuelve el problema utilizando el POO. & 
+                \emph{  8pts} Utiliza parte del POO para resolver el problema. & 
+                \emph{  0pts} No utiliza el POO para dar soluci\'on al problema.\\ \hline
+                Total m\'aximo puntaje pregunta 2 & 
+                \emph{70pts} & 
+                \emph{35pts} & 
+                \emph{  0pts} \\ \hline
+            \end{tabular}
+        \end{center}}
+     \end{table}
+
+\textbf{Clase at\'omica - Alumno}
+\begin{verbatim}
+public class Alumno {
+    
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("AlumnoID: %d", id);
+    }
+}
+\end{verbatim}
+
+\newpage
+
+\textbf{Clase Lista - ListaAlumno}
+
+\begin{verbatim}
+import java.util.ArrayList;
+import java.util.Random;
+
+public class ListaAlumno {
+
+    private ArrayList<Alumno> listaAlumnos = new ArrayList<>();
+    private ArrayList<Alumno> listaAlumnosGrupoA = new ArrayList<>();
+    private ArrayList<Alumno> listaAlumnosGrupoB = new ArrayList<>();
+    private Random rnd;
+    private int tamanio, MIN_LISTA = 40, MAX_LISTA = 75, MAX_ID = 100;
+
+    public ListaAlumno() {
+        rnd = new Random();
+        tamanio = rnd.nextInt(MAX_LISTA - MIN_LISTA) + MIN_LISTA + 1;
+    }
+    public void llenarLista() {
+        Alumno a;
+        for (int i = 0; i < tamanio; i++) {
+            a = new Alumno();
+            a.setId(generarIDSinRepeticion());
+            listaAlumnos.add(a);
+        }
+    }
+    public void dividirListas() {
+        Alumno a;
+        for (int i = 0; i < tamanio; i++) {
+            a = listaAlumnos.remove(rnd.nextInt(listaAlumnos.size()));
+            if (rnd.nextBoolean()) {
+                listaAlumnosGrupoA.add(a);
+            } else {
+                listaAlumnosGrupoB.add(a);
+            }
+        }
+    }
+    private int generarIDSinRepeticion() {
+        int id;
+        do {
+            id = generarID();
+        } while (id < 0);
+        return id;
+    }
+    private int generarID() {
+        int id = rnd.nextInt(MAX_ID) + 1;
+        for (Alumno alumno : listaAlumnos) {
+            if (alumno.getId() == id) {
+                id = -1;
+                break;
+            }
+        }
+        return id;
+    }
+    
+    public void mostrarLista() {
+        System.out.println("Curso:");
+        for (Alumno a : listaAlumnos) {
+            System.out.println(a);
+        }
+    }
+    public void mostrarGrupos() {
+        System.out.println("Grupo A:");
+        for (Alumno a : listaAlumnosGrupoA) {
+            System.out.println(a);
+        }
+        System.out.println("Grupo B:");
+        for (Alumno a : listaAlumnosGrupoB) {
+            System.out.println(a);
+        }
+    }
+}
+\end{verbatim}
+\textbf{Clase Principal - OrdenarListaAlumno}
+
+\begin{verbatim}
+public class OrdenListaAlumno {
+
+    public static void main(String[] args) {
+        ListaAlumno la = new ListaAlumno();
+        la.llenarLista();
+        la.mostrarLista();
+        la.dividirListas();
+        la.mostrarGrupos();
+    }
+}
+\end{verbatim}
+\end{enumerate}
+\end{document} 

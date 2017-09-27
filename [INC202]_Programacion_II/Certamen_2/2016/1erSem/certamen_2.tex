@@ -1,0 +1,252 @@
+\documentclass[10pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\usepackage{ulem}
+
+\usepackage{algorithm,algorithmic}
+
+\renewcommand{\algorithmicrequire}{\textbf{entrada:}}
+\renewcommand{\algorithmicensure}{\textbf{salida:}}
+\renewcommand{\algorithmicend}{\textbf{fin}}
+\renewcommand{\algorithmicif}{\textbf{si}}
+\renewcommand{\algorithmicthen}{\textbf{entonces}}
+\renewcommand{\algorithmicelse}{\textbf{si no}}
+\renewcommand{\algorithmicelsif}{\algorithmicelse,\ \algorithmicif}
+\renewcommand{\algorithmicendif}{\algorithmicend\ \algorithmicif}
+\renewcommand{\algorithmicfor}{\textbf{Para}}
+\renewcommand{\algorithmicforall}{\textbf{Para Todo}}
+\renewcommand{\algorithmicdo}{\textbf{Repetir}}
+\renewcommand{\algorithmicendfor}{\algorithmicend\ \algorithmicfor}
+\renewcommand{\algorithmicwhile}{\textbf{Mientras}}
+\renewcommand{\algorithmicendwhile}{\algorithmicend\ \algorithmicwhile}
+\renewcommand{\algorithmicloop}{\textbf{Repetir}}
+\renewcommand{\algorithmicendloop}{\algorithmicend\ \algorithmicloop}
+\renewcommand{\algorithmicrepeat}{\textbf{Repetir}}
+\renewcommand{\algorithmicuntil}{\textbf{Hasta que}}
+\renewcommand{\algorithmicprint}{\textbf{Escribir}} 
+\renewcommand{\algorithmicreturn}{\textbf{retornar}} 
+\renewcommand{\algorithmictrue}{\textbf{Verdadero}} 
+\renewcommand{\algorithmicfalse}{\textbf{Falso}}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in             
+\headheight = 0.0 in            
+\headsep = 0.0 in
+            
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+    \begin{center}
+		{\Large Certamen 2, Programaci\'on II} \\
+		\emph{\small Prof. Rodrigo Olivares} \\
+		\emph{\small Ayud. Juan Carlos Tapia} \\
+		\emph{\scriptsize Mayo 26, 2016} 
+	\end{center}
+
+	\vspace*{-35pt}
+	\begin{center}
+		\rule{1\textwidth}{.3pt}
+	\end{center}
+	\vspace*{-42pt}
+	\begin{center}
+		\rule{1\textwidth}{2pt}
+	\end{center}
+
+	\vspace*{-15pt}
+
+	{\small \textbf{Instrucciones}:}
+
+	\vspace*{-15pt}
+
+	{\scriptsize
+	\begin{itemize}
+		\item[-] El puntaje m\'aximo del certamen es 100\%, siendo el 60\% el m\'inimo requerido para aprobar.
+		\item[-] Responda cada pregunta en la hoja indicada, agregando su nombre. Si no responde alguna pregunta, debe entregar la hoja con su nombre e indicar que \textbf{no responde}.
+		\item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado con nota \textbf{1,0}.
+	\end{itemize}
+	
+	\vspace*{-20pt}
+
+	\begin{enumerate}
+
+		\item \emph{30pts.} De las siguentes afirmaciones, encierre en un c\'irculo la o las alternativas correctas.
+		
+		\begin{multicols}{2}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[i.] \textbf{Un constructor}:
+				\item Siempre existe.
+				\item Puede no ser incluirlo por el desarrollador.
+				\item Al ser private s\'olo instancia objetos dentro de la clase.
+				\item Al ser protected, no puede ser sobrecargado.
+				\item Debe siempre tener el mismo nombre de la clase.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[ii.] \textbf{La clase Vector}:
+				\item Es un List.
+				\item Es un ArrayList.
+				\item Es synchronized.
+				\item Es no synchronized.
+				\item Es un nodo.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[iii.] \textbf{Paso de par\'ametros}:
+				\item Puede ser por valor.
+				\item Puede ser por omisi\'on.
+				\item Puede ser por referencia.
+				\item Puede ser por convensi\'on.
+				\item Puede ser por default.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[iv.] \textbf{La instancia this}:
+				\item Invoca al constructor de una clase padre.
+				\item Invoca al garbage collection.
+				\item Referencia al construtor de la clase.
+				\item Referencia a los atributos de la clase.
+				\item Referencia a los m\'etodo de la clase.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[v.] \textbf{Una clase abstracta}:
+				\item Pose\'e s\'olo m\'etodos abstractos.
+				\item \xout{Alguno de sus m\'etodos son abstractos.}
+				\item Instancia objetos abstractos.
+				\item Permite extender una interfaz.
+				\item Permite implementar una clase padre.
+			\end{enumerate}
+
+            \begin{enumerate}[label=(\alph*)]
+				\item[vi.] \textbf{Respecto a las interfaces interfaz}:
+				\item Su constructor es creado en compilaci\'on.
+				\item Sus m\'etodos definidos deben ser public.
+				\item Sus m\'etodos son abstract.
+				\item Se implementa.
+				\item Se extiende.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[vii.] \textbf{Un TDA Bean}.
+				\item S\'olo tiene atributos.
+				\item S\'olo tiene m\'etodos.
+				\item No debe incluir l\'ogica.
+				\item El constructor debe ser siempre incluido.
+				\item Es posible agregar m\'todos como equals() y toString().
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[viii.] \textbf{Sobre la herencia}:
+				\item En java se realiza con la palabra reservada extends.
+				\item En java se realiza con la palabra reservada impelements.
+				\item Todas las clases heredan de la clase Object.
+				\item La clase padre hereda el comportamiento de la clase hija.
+				\item La clase hija hereda el comportamiento de la clase padre.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[ix.] \textbf{En relaci\'on a la manipulaci\'on de archivos}.
+				\item Se lee un archivo con la instancia FileWriter.
+				\item Se lee un archivo con la instancia FileReader.
+				\item Se leen s\'olo archivos con delimitar y de largo fijo.
+				\item StringTokenizer se usa para archivos con delimitador.
+				\item Se requiere de la clase Scanner para la lectura.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[x.] \textbf{En relaci\'on a la manipulaci\'on de archivos}.
+				\item Se escribe un archivo con la instancia FileWriter.
+				\item Se escribe un archivo con la instancia FileReader.
+				\item No es factible agregar contenido a un archivo existente.
+				\item Es necesario utilizar la clase InputStreamReader.
+				\item FileWriter("f.txt", false) agrega el contenido al final.
+			\end{enumerate}
+		
+		\end{multicols}
+		
+		\newpage
+
+		\item \emph{70pts.} Como Ingeniero Civil en Inform\'atica, la escuela le ha pedido que desarrolle un sistema que permita:
+
+        \begin{enumerate}
+            \item Cargar las notas de los alumnos de dos asignaturas. Para ello, debe leer 3 dataset: 
+            \begin{itemize}
+                \item[-] \emph{alumnos.csv}: Identificar, Apellido Paterno, Apellido Materno, Nombre(s).
+                \item[-] \emph{asignatura1.csv}: Identificar del alumno, Nota Quiz 1, Nota Quiz 2, Nota Quiz 3, Nota Tarea 1, Nota Tarea 2, Nota Certamen 1, Nota Certamen 2 y Nota Certamen 3
+                \item[-] \emph{asignatura2.csv}: Identificar del alumno, Nota Quiz 1, Nota Quiz 2, Nota Quiz 3, Nota Tarea 1, Nota Tarea 2, Nota Certamen 1, Nota Certamen 2 y Nota Certamen 3
+            \end{itemize}
+            \item Calcular el promedio de cada alumno, por asignatura, de la siguiente forma:
+            \begin{multicols}{3}
+                $$PQ = \frac{\displaystyle\sum_{i=1}^{3}NQ_{i}}{3}$$
+                $$PT = \frac{\displaystyle\sum_{i=1}^{2}NT_{i}}{2}$$
+                $$PC = \frac{\displaystyle\sum_{i=1}^{3}NC_{i}}{3}$$
+            \end{multicols}
+            Para calcular el promedio final:
+                \floatname{algorithm}{Pseudo-c\'odigo}
+                \begin{algorithm}[!ht]
+                	    \caption{Promedio\_Asignatura}
+                    \begin{algorithmic}%[1]
+                        \IF{$PC \geqslant 4.0$} 
+                            \RETURN $PC * 0.7 + NQ * 0.15 + NT * 0.15$
+                        \ELSIF{$PC \geqslant 3.5$}
+                            \RETURN $PC * 0.8 + NQ * 0.10 + NT * 0.10$
+                        \ELSIF{$PC \geqslant 3.0$}
+                            \RETURN $PC * 0.9 + NQ * 0.05 + NT * 0.05$
+                        \ELSE
+                            \RETURN $PC$
+                        \ENDIF
+                    \end{algorithmic}
+                \end{algorithm}	
+            \item Por \'ultimo, almacene en un cuarto archivo, denominado \emph{consolidado.csv} -delimitado por caracter- la siguiente informaci\'on: Id del alumno, Nota Final Asignatura 1, Nota Final Asignatura 2.
+        \end{enumerate}
+	\end{enumerate}}
+	\begin{table}[!ht]
+       {\scriptsize
+        \begin{center}
+             \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}\hline
+                \multicolumn{4}{|c|}{\textbf{\textquestiondown C\'omo ser\'e evaluado en la pregunta 2?} } \\ \hline
+                \multicolumn{1}{|c|}{\textbf{T\'opico}} & 
+                \multicolumn{1}{c|}{\textbf{Logrado}} & 
+                \multicolumn{1}{c|}{\textbf{Medianamente logrado}} & 
+                \multicolumn{1}{c|}{\textbf{No logrado}} \\ \hline
+                Manipulaci\'on de archivo. & 
+                \emph{25pts} Lee correctamente los archivos, los mapea a entidad y escribe en el archivo. & 
+                \emph{13pts} Realiza dos de las tres acciones del punto anterior. & 
+                \emph{ 0pts} No realiza la acciones del punto anterior. \\ \hline
+                TDA Lista. & 
+                \emph{15pts} Crea la clase TDA Lista e implementa todos los m\'etodos. & 
+                \emph{ 7pts} Crea la clase TDA Lista e implementa algunos m\'etodos. & 
+                \emph{ 0pts} No crea la clase TDA Lista. \\ \hline
+                TDA Bean / Entidad & 
+                \emph{10pts} Crea la clase entidad para alumno y asignatura. & 
+                \emph{5pts} Crea la clase entidad para alumno o la asignatura (no ambas). & 
+                \emph{0pts} No crea las clases entidad. \\ \hline                
+                Clase principal y m\'etodo main. &
+                \emph{5pts} Crea la clase principal en un archivo independiente con el m\'etodo main. & 
+                \emph{ 3pts} Crea el m\'etodo main en la misma clase. & 
+                \emph{ 0pts} No crea el m\'etodo main. \\ \hline
+                Paradigma Orientaci\'on a Objetos  & 
+                \emph{15pts} Resuelve el problema utilizando el POO. & 
+                \emph{ 7pts} Utiliza parte del POO para resolver el problema. & 
+                \emph{ 0pts} No utiliza el POO para dar soluci\'on al problema.\\ \hline
+                Total m\'aximo puntaje pregunta 2 & 
+                \emph{70pts} & 
+                \emph{35pts} & 
+                \emph{ 0pts} \\ \hline
+            \end{tabular}
+        \end{center}}
+     \end{table}
+\end{document} 

@@ -1,0 +1,305 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+	\usetheme{CambridgeUS}
+	\setbeamercovered{transparent}
+}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{algorithm,algorithmic}
+\usepackage{colortbl}
+\usepackage{graphicx}
+
+\title[\textbf{Programaci\'on 2}]{\textbf{Programaci\'on 2}}
+
+\subtitle{Lenguaje Java - Conceptos claves (\emph{2da parte})}
+
+\author[Eduardo Godoy]
+{
+	Profesor: Eduardo Godoy \\
+	\vspace{0.5mm}
+	\texttt{\normalsize eduardo.gl@gmail.coml} \\ 
+	Material elaborado por Rodrigo Olivares \\
+	\texttt{\normalsize rodrigo.olivares@uv.cl} 
+}
+
+\institute[Universidad de Valpara\'iso]
+%\date{$2^{do}$ Semestre de 2016} 
+
+%\subject{Programaci\'on 2}
+%
+%\AtBeginSection
+%{
+%	\begin{frame}<beamer>
+%	\frametitle{Contenido}
+%	\tableofcontents[currentsection,currentsubsection]
+%	\end{frame}
+%}
+%
+%\AtBeginSubsection
+%{
+%	\begin{frame}<beamer>
+%	\frametitle{Contenido}
+%	\tableofcontents[currentsection,currentsubsection]
+%	\end{frame}
+%}
+%
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Contenido}
+		\tableofcontents%[pausesections]
+	\end{frame}
+
+
+    \section{Clase String}
+ 		   \subsection{Definici\'on}
+		  \begin{frame}
+			\frametitle{Clase String}
+			\framesubtitle{Definici\'on}
+  			\begin{block}{}
+ 				\begin{itemize}
+ 					\item En Java la clase  String permite instanciar objetos que representan  cadenas de caracteres  NO modificables. Entonces los objetos creados a partir de la clase String, son objetos Inmutables.
+\item   Todos los objetos que representen cadenas de caracteres en Java son instancias de la Clase String.
+\item La clase String se puede representan como un arreglo de car\'actereres y ser tratada como tal mediante m\'etodos implementado en ella.
+				 \end{itemize}
+			\end{block}
+\begin{block}{}
+Objeto inmutable:
+Su valor inicial persiste durante toda la ejecuci\'ion  del programa y su estado no puede ser cambiado.
+\end{block}
+		\end{frame}
+		\subsection{Principales M\'etodos}
+
+		  \begin{frame}
+			\frametitle{Clase String}
+			\framesubtitle{Principales M\'etodos}
+			\begin{block}{}
+\begin{table}[]
+\centering
+\caption{M\'etodos.}
+\label{my-label}
+\tiny
+\begin{tabular}{ll}
+length()   :                     & Devuelve la longitud de la cadena                                                                   \\
+indexOf(caracter):             & Devuelve la posici\'on de la primera aparici\'on de car\'acter                                            \\
+lastIndexOf(caracter):         & Devuelve la posici\'on de la \'ultima aparici\'on de car\'acter                                             \\
+charAt(n) :                      & Devuelve el car\'acter que est\'a en la posici\'on n                                                      \\
+substring(n1,n2) :               & Devuelve la subcadena  entre las posiciones n1 y n2-1                                    \\
+toUpperCase()     :              & Devuelve la cadena convertida a may\'usculas                                                          \\
+toLowerCase()     :              & Devuelve la cadena convertida a min\'usculas                                                          \\
+equals(cad)      :             & Compara dos cadenas y devuelve true si son iguales                                                  \\
+equals(cad)                   & Compara dos cadenas y devuelve true si son iguales                                                  \\
+equalsIgnoreCase(cad)         & Igual que equals pero sin considerar may\'usculas y min\'usculas                                        \\
+compareTo(OtroString)           & Devuelve 0, mayor a 0, menor a 0 \\
+compareToIgnoreCase(OtroString) & Compara  sin considerar may\'usculas y min\'usculas.                             \\
+valueOf(N)                      & Convierte el valor  a String.                       
+\end{tabular}
+\end{table}
+			\end{block}
+		\end{frame}
+
+
+
+    \section{Paso de par\'ametros}
+    
+		\subsection{Referencia / Valor}
+
+        \begin{frame}
+			\frametitle{Paso de par\'ametros}
+			\framesubtitle{Referencia / Valor}
+
+			\begin{block}{}
+			    {\scriptsize
+                    \begin{itemize}
+                        \item[-] \textbf{Valor}: \emph{el m\'etodo recibe una copia del valor del argumento; el m\'etodo trabaja sobre esa copia que podr\'a modificar su valor, sin que esto tenga incidencia al valor efectivo del argumento.}
+                        \item[-] \textbf{Referencia}: \emph{el m\'etodo recibe la referencia del argumento; el m\'etodo trabaja directamente, por lo cual podr\'a modificar el valor efectivo del argumento.}
+                    \end{itemize}
+			    }
+			\end{block}
+		\end{frame}
+
+    \section{Autoreferencia}
+    
+        \subsection{Palabra reservada this}
+
+        \begin{frame}
+			\frametitle{Autoreferencia}
+			\framesubtitle{Palabra reservada this}
+
+			\begin{block}{}
+			    {\scriptsize
+                    \begin{itemize}
+                        \item[-] Para hacer una referencia a la instancia actual de una clase usamos la palabra reservada \textcolor{blue}{this}.
+                        \item[-] Utilizaremos la palabra reservada \textcolor{blue}{this} para referirnos al \textbf{objeto actual} o a las v\textbf{ariables de instancia de este objeto}. 
+                        \item[-] \textbf{No} utilizaremos la palabra reservada \textcolor{blue}{this} en los m\'etodos y atributos declarados como \textcolor{blue}{static}.
+                    \end{itemize}
+			    }
+			\end{block}	
+			
+			\begin{block}{}
+			    {\scriptsize
+                    \begin{itemize}
+                        \item[] \emph{Se puede omitir la palabra reservada \textcolor{blue}{this} para las variables de instancia, esto depende de la existencia o no de variables con el mismo nombre en el \'ambito local.}
+                    \end{itemize}
+			    }
+			\end{block}
+		\end{frame}
+
+        \begin{frame}
+			\frametitle{Autoreferencia}
+			\framesubtitle{Palabra reservada this}
+
+			\begin{block}{}
+				{\scriptsize
+				\textcolor{blue}{public class} \textbf{\emph{Prueba}} \{ \\
+				\hspace{1cm} \\
+				\hspace{1cm} \textcolor{blue}{private int} \textcolor{green}{test} = 10; \ \\
+				\hspace{1cm} \\
+				\hspace{1cm} \textcolor{blue}{public void} \textbf{printTest}() \{ \\
+				\hspace{2cm} \textcolor{blue}{int} test = 20;\\
+				\hspace{2cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''test''} + test);\\
+                \hspace{2cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''test''} + \textcolor{blue}{this}.\textcolor{green}{test});\\
+				\hspace{1cm} \} \\
+				\hspace{1cm} \\
+				\hspace{1cm} \textcolor{blue}{public static void} \textbf{main}(String[ ] args) \{ \\
+				\hspace{2cm} Prueba p = \textcolor{blue}{new} Prueba(); \\
+				\hspace{2cm} p.\emph{printTest}();\\
+				\hspace{1cm} \} \\
+				\}}
+			\end{block}
+		\end{frame}		
+
+    \section{Atrubutos y m\'etodos miembros}
+    
+        \subsection{De Objeto}
+
+        \begin{frame}
+			\frametitle{Atrubutos y m\'etodos miembros}
+			\framesubtitle{De Objeto}
+
+			\begin{block}{Atributos}
+			    {\scriptsize
+                    Cada objeto, instancia de una clase, tiene su propia copia de los atributos miembro y clase pueden ser de tipos primitivos (\textbf{boolean}, \textbf{int}, \textbf{long}, \textbf{double}, ...) o referencias a objetos de otra clase.
+			    }
+			\end{block}
+
+			\begin{block}{M\'etodos}
+			    {\scriptsize
+                    Los m\'etodos son subrutinas definidas dentro de una clase. Se aplican siempre a un objeto de la clase por medio del operador punto (.) y pueden incluir argumentos expl\'icitos que van entre par\'entesis, a continuaci\'en del nombre del m\'etodo.
+			    }
+			\end{block}	
+		\end{frame}
+		
+        \subsection{De Clase}
+
+        \begin{frame}
+			\frametitle{Atrubutos y m\'etodos miembros}
+			\framesubtitle{De Clase}
+
+			\begin{block}{Atributos}
+			    {\scriptsize
+                    Una clase puede tener atributos propios de la clase y no de cada objeto. A estos atributos se les llama \textbf{atributos de clase} o atributos \emph{static}. Los atributos \emph{static} se suelen utilizar para definir constantes comunes para todos los objetos de la clase (por ejemplo \textbf{PI} en la clase \emph{Circulo}) o atributos que s\'olo tienen sentido para toda la clase (por ejemplo, un contador de objetos creados como \emph{numCirculos} en la clase \emph{Circulo}).
+			    }
+			\end{block}
+
+			\begin{block}{}
+			    {\scriptsize
+			        \begin{itemize}
+			            \item[-] Los atributos de clase se crean anteponiendo la palabra \textcolor{blue}{\textbf{static}} a su declaraci\'on. 
+                        \item[-] Para llamarlas se suele utilizar el nombre de la clase (no es imprescindible), pues as\'i, su sentido queda m\'as claro. Por ejemplo, \emph{Circulo}.\textcolor{green}{\emph{numCirculos}} es un atributo de clase que cuenta el n\'umero de C\'irculos creados.
+			        \end{itemize}
+			    }
+			\end{block}
+			
+		\end{frame}		
+		
+        \begin{frame}
+			\frametitle{Atrubutos y m\'etodos miembros}
+			\framesubtitle{De Clase}
+
+			\begin{block}{M\'etodos}
+			    {\scriptsize
+                    \begin{itemize}
+			            \item[-] Existen m\'etodos que \textbf{no} act\'uan sobre objetos concretos a trav\'es del operador punto. A estos m\'etodos se les llama \textbf{m\'etodos de clase} o \textbf{static}.
+                        \item[-] Un ejemplo t\'ipico de m\'etodos \emph{static} son los m\'etodos matem\'eticos de la clase \textbf{java.lang.Math} (\emph{sin}(), \emph{cos}(), \emph{exp}(), \emph{pow}(), etc.).
+                    \end{itemize}
+			    }
+			\end{block}
+
+			\begin{block}{}
+			    {\scriptsize
+			        \begin{itemize}
+			            \item[-] Los m\'etodos crean anteponiendo la palabra \textcolor{blue}{\textbf{static}} a su declaraci\'on. 
+			            \item[-]Para llamarlos se suele utilizar el nombre de la clase, en vez del nombre de un objeto de la clase (por ejemplo,
+\textbf{Math}.\emph{sin}(ang), para calcular el \emph{seno} de un \'angulo).
+                    \end{itemize}
+			    }
+			\end{block}
+			
+		\end{frame}	
+		
+    \section{Packages}
+    
+        \subsection{Conceptos}
+
+        \begin{frame}
+			\frametitle{Packages}
+			\framesubtitle{Conceptos}
+
+			\begin{block}{}
+			    {\scriptsize
+                    \textbf{Un package es una agrupaci\'on de clases}.
+			    }
+			\end{block}
+
+			\begin{block}{}
+			    {\scriptsize
+                    Para que una clase pase a formar parte de un \textbf{package} llamado \emph{packageName}, se debe agregar en ella, la sentencia:
+                    \begin{itemize}
+			            \item[-] \textcolor{blue}{\textbf{package}} packageName;
+			        \end{itemize}
+			    }
+			\end{block}
+			
+			\begin{block}{}
+			    {\scriptsize
+                    Los nombres de los \emph{packages} se suelen escribir con \textbf{min\'usculas}, para distinguirlos de las clases, que empiezan por \textbf{may\'uscula}. El nombre de un package puede constar de varios nombres unidos por puntos (los propios packages de Java siguen esta norma, como por ejemplo \emph{java.awt.event}).
+			    }
+			\end{block}
+			
+			\begin{block}{}
+			    {\scriptsize
+                    Todas las clases que forman parte de un \textbf{package} deben estar en el mismo directorio.
+			    }
+			\end{block}
+	
+		\end{frame}			
+		
+		\begin{frame}
+			\frametitle{Preguntas}
+
+			\hspace{4cm}\huge{Preguntas ?}
+		
+		\end{frame}
+	\end{document}
+
+\usetheme{default}
+\usetheme{JuanLesPins}
+\usetheme{Goettingen}
+\usetheme{Szeged}
+\usetheme{Warsaw}
+
+\usecolortheme{crane}
+
+\usefonttheme{serif}
+\usefonttheme{structuresmallcapsserif}

@@ -1,0 +1,652 @@
+\graphicspath{{./pics/}}
+ 
+\section{Herencia}
+\subsection{Herencia}
+\begin{frame}{Herencia}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin{itemize}
+\uncover<1->
+\item {Herencia}
+{\footnotesize{\begin {itemize}
+\item {Acceso a una clase derivada}
+\item {Construcción de objetos derivados}
+\item {Sobreescritura y sobrecarga de metodos }
+\item {Polimorfismo}
+\item {Super clase object}
+\item {Miembros protected}
+\item {Clases y metodos de finalización}
+\item {Clases abstractas}
+\item {Clases Interfaces}
+\end {itemize}}}
+\end{itemize}}}}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Herencia}
+\ITZ{	
+\uncover<1->{\ITT{1}{Definiciones}{
+\uncover<1->{
+La herencia es uno de los conceptos fundamentales de la POO, esta al origen de la reutilización. \\ La herencia permite definir una nueva clase llamada  {\textbf{derivada}} a partir de una clase existente llamada clase {\textbf{base}}. \\Esta nueva clase hereda automáticamente las funcionalidades de la clase base (métodos y atributos), los que podrá modificar o completar libremente. \\ Es posible crear muchas clases derivadas a partir de una clase base. }}}}% Esto permite desarrollar nuevas herramientas basandose en un cierto }
+\end{frame}
+
+
+\subsection{Herencia}
+\begin{frame}{Herencia}
+\ITZ{	
+\uncover<1->{\ITT{1}{Nociones iniciales}{
+\uncover<1->{
+Tenemos una clase base Punto:
+{\tiny{\lstinputlisting{./codigosEx/PuntoT0Herencia.java}}}
+Definir una clase derivada de la clase Punto que se llame : {\textbf{PuntoColor}}. Para esto, en java usaremos la palabra clave {\textbf{extends}}. Esta clase debe manipular puntos coloreados en un plano.\\ Dentro de la clase {\textbf{PuntoColor}} cree un método llamado {\textbf{color}} encargado de definir el color del punto. \\ Cree un metodo que muestre el color del punto. \\ 
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Herencia}
+\ITZ{	
+\uncover<1->{\ITT{1}{Nociones iniciales}{
+\uncover<1->{
+Tenemos una clase derivada de la Punto llamada PuntoColor:
+{\tiny{\lstinputlisting{./codigosEx/PuntoTHerencia.java}}}
+Al usar extends Punto se le especifica al compilador que la clase PuntoColor es una clase derivada de la clase Punto.
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Herencia}
+\ITZ{	
+\uncover<1->{\ITT{1}{Nociones iniciales}{
+\uncover<1->{
+Un objeto del tipo PuntoColor puede acceder a : \begin{itemize} \item{A los métodos públicos de PuntoColor} \item{A los métodos públicos de Punto} \end{itemize}
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Acceso de una clase derivada}
+\ITZ{	
+\uncover<1->{\ITT{1}{a la clase base}{
+\uncover<1->{
+Si bien una clase derivada hereda los miembros (atributos y métodos) de una clase base, el acceso que tenga a estos dependerá de si estos son privados o públicos.
+\begin{itemize}
+\item {{\textbf{Una clase derivada no accede a los miembros privados}}: Un método de la clase derivada no puede acceder a miembros privados de su clase base. }
+\item {{\textbf{Una clase derivada accede a los miembros públicos}}: tal como si hubiesen sido declarados en la clase la misma clase derivada. (Ejemplo precedente).}
+\end{itemize}
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Acceso de una clase derivada}
+\ITZ{	
+\uncover<1->{\ITT{1}{a la clase base}{
+\uncover<1->{
+\begin {itemize}
+\item {Las clases de base pueden llamarse también superclases. De la misma manera que las clases derivadas puedes llamarse subclases.}
+\item {Si trabajamos con múltiples clases (cada una en archivos fuentes separados), se debe compilar primero la superclase y luego las subclases.}
+\item {El acceso a las clases no publicas será restringido si no pertenecen al mismo paquete. Una clase sin la palabra clave {\textit{public}} será accesible solo por las clases del mismo paquete.
+}\end{itemize}}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Acceso de una clase derivada}
+\ITZ{	
+\uncover<1->{\ITT{1}{a los miembros de la clase base}{
+\uncover<1->{
+En resumen: 
+\begin{itemize}
+\item {Los miembros públicos de la superclase quedan como miembros públicos para la subclase. Por esa razón, en el ejemplo precedente, pudimos aplicar el método inicializar a un objeto de tipo PuntoColor.}
+\end{itemize}
+Modifique el método mostrar de la clase PuntoColor para que ademas muestre el valor de x e y usando : {\textit{System.out.println("punto de coordenadas : "+x+" " + y);}}. \\ Que ocurre?
+}}}}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Acceso de una clase derivada}
+\ITZ{	
+\uncover<1->{\ITT{1}{a los miembros de la clase base}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Erencia.java}}}
+Si usamos {\textit{this.mostrar()}}, lo que hace es aplicar el metodo mostrar al objeto (de tipo PuntoColor) que llamo al metodo {\textit{mostrarC}}.\\
+Cree un nuevo metodo inicializar que se atribuya las coordenadas y el color a un punto.
+{\tiny{\lstinputlisting{./codigosEx/Erencia2.java}}}}}}}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Construcción e inicialización}
+\ITZ{	
+\uncover<1->{\ITT{1}{de objetos derivados}{
+\uncover<1->{
+{\textbf{Llamar a constructores : }} La creación de un objeto usando {\textit{new}} llama al constructor (que tiene el mismo nombre de la clase). Si la clase no dispone de un constructor usara un pseudo-construtor por defecto.\\
+{\tiny{\lstinputlisting{./codigosEx/Erencia2Const.java}}}
+Si necesita inicializar ciertos campos de la superclase sera necesario disponer de las funciones de alteración (set) o recurrir al constructor de la superclase.}}}}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Construcción e inicialización}
+\ITZ{	
+\uncover<1->{\ITT{1}{de objetos derivados}{
+\uncover<1->{
+El constructor de PuntoColor podrá : 
+\begin{itemize}
+\item{Inicializar el campo color, accesible dado que es miembro de PuntoColor;}
+\item {Llamar al constructor de Punto para inicializar los campos x e y}.
+\end{itemize}
+{\textbf{Regla:}} Si un constructor de una subclase llama a un constructor de una superclase, debe ser la primera instrucción del constructor y debe usar la palabra clave {\textbf{super}}. Solo es posible llamar al constructor de la superclase inmediatamente superior usando {\textbf{super}}.}}}}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Construcción e inicialización}
+\ITZ{	
+\uncover<1->{\ITT{1}{de objetos derivados}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Erencia2Const2.java}}}
+Reemplace los metodos inicializar de la clase Punto y PuntoColor por constructores.}}}
+\uncover<2->{\ITT{1}{}{
+\uncover<2->{
+Para inicializar la parte heredada de una superclase que no tiene constructor se podrá llamar al constructor por defecto usando {\textit{super ();}}}}}}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Construcción e inicialización}
+\ITZ{	
+\uncover<1->{\ITT{1}{Que pasa si una de las clases no tiene constructor?}{
+\uncover<1->{
+\begin{itemize}
+\item{La clase base no tiene constructor : en estos casos se llama al constructor por defecto de la clase base usando{\textit{super ();}}. Asi la parte heredada de la superclase sera inicializada.
+{\tiny{\lstinputlisting{./codigosEx/Erencia3.java}}}}
+\end{itemize}}}}}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Construcción e inicialización}
+\ITZ{	
+\uncover<1->{\ITT{1}{Que pasa si una de las clases no tiene constructor?}{
+\uncover<1->{
+\begin{itemize}
+\item {La clase de derivada no tiene constructor :  en estos casos la clase base debe : \begin{enumerate} \item{tener un constructor publico sin argumentos o } \item { no tener constructor} 
+\end{enumerate}
+{\tiny{\lstinputlisting{./codigosEx/Erencia4.java}}}}
+\end{itemize}}}}}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Ejercicio de constructores y herencia}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/PuntoHerenciaConstr.java}}}
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Ejercicio : Constructores y Herencia}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Cree una superclase Fruta con : tipoFruta (string) y precio (float). Cree el constructor de dicha clase y un método mostrar que muestre los 2 atributos. \\
+Cree una subclase Manzana con : rebanada (int), tipoFruta (string) y precio (float). Cree el constructor de dicha clase y un metodo mostrar que despliegue los valores.}}}}\end{frame}
+
+
+\subsection{Herencia}
+\begin{frame}{Ejercicio : Constructores, Herencia y Encapsulamiento}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/HerenciaFruta.java}}}
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Ejercicio : Constructores y Herencia}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/HerenciaFrutaPrivate.java}}}
+}}}}\end{frame}
+
+
+\subsection{Herencia}
+\begin{frame}{Ejercicio : Constructores, Herencia y Encapsulamiento}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Cree una superclase Persona con : rut (string) y nombre (string). Cree el constructor de dicha clase .\\
+Cree una subclase Estudiante con : rol (string), rut (string) y nombre (string). Cree el constructor de dicha clase. \\ Cree un metodo principal que llame a las clases y muestre en pantalla sus atributos.}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Ejercicio de constructores y herencia}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/EstuHerencia/Persona.java}}}
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Ejercicio de constructores y herencia}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/EstuHerencia/Estudiante.java}}}
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Inicalización de un objeto derivado}
+\ITZ{	
+\uncover<1->{\ITT{1}{Recordatorio : Creación de un objeto}{
+\uncover<1->{
+\begin{itemize}
+\item{asignación de memoria.}
+\item{inicialización por defecto de los campos.}
+\item{inicialización explicita de los campos.}
+%\item{ejecución de las instrucciones de un constructor.}
+\end{itemize}}}}}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Inicialización de un objeto derivado}
+\ITZ{	
+\uncover<1->{\ITT{1}{Creación de un objeto derivado}{
+\uncover<1->{
+\begin{itemize}
+\item{asignación de memoria, considerando los campos heredados y los propios.}
+\item{inicialización por defecto de los campos, considerando los campos heredados y los propios}
+\item{inicialización explicita de los campos, considerando los campos heredados y los propios por lo que se ejecuta los bloques de inicialización de la clase base.}
+%\item{ejecución de las instrucciones del constructor de la clase base.}
+\item{inicialización explicita de los campos de la clase derivada.}
+%\item{ejecución de las instrucciones de un constructor de la clase derivada.}
+\end{itemize}}}}}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Derivaciones sucesivas}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\begin{itemize}
+\item{De una clase base pueden derivar varias clases diferentes.}
+\item{La noción de clase de base y clase derivada es relativa dado que la clase derivada puede a la vez servir de clase base para otras clases.}
+\end{itemize}}}}}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Herencia}
+\GFXH{5cm}{JerarquiaVehiculoV3.pdf}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Polimorfismo}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+El polimorfismo sugiere múltiples formas. El polimorfismo es un concepto muy importante dentro de POO. En java es la habilidad de una variable por referencia de cambiar su comportamiento en función de que instancia de objeto posee. Esto permite tratar de la misma manera, como objetos de la súperclase, a múltiples objetos de la subclase, seleccionando en cada caso los métodos apropiados. El polimorfismo se puede establecer mediante la sobrecarga, sobre-escritura y la ligadura dinámica.}}}}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Sobreescritura y sobrecarga de miembros}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{\begin{itemize}
+\item{Una clase derivada podrá sobrecargar un método de la clase base. Estos nuevos métodos serán usados solo por la clase derivada y sus descendientes.}
+\item {Una clase derivada podrá sobreescribir (redefinir) un método de la clase base. En este caso, no solo serán métodos con el mismo nombre como en la sobrecarga sino también con los mismo argumentos de entrada (cantidad y tipo) y el mismo tipo de valor de retorno.}
+\end{itemize}
+La sobrecarga permite acumular métodos con el mismo nombre la Sobreescritura permite sustituir un método con otro.
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Sobreescritura de métodos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Un objeto de una clase derivada puede acceder a todos los miembros públicos de la clase de base.
+{\tiny{\lstinputlisting{./codigosEx/PuntoEx.java}}}
+Si llamamos p.mostrar() o pc.mostrar().
+Obtendremos las coordenadas del punto $p$ o del punto $pc$ respectivamente. Pero no obtendremos el color del punto color. Por esto, hemos creado anteriormente dos métodos con distinto nombre.}}}}
+\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Sobreescritura de métodos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+En java es posible sobreescribir en la clase derivada un método de la clase base con los mismos argumentos de entrada y el mismo tipo de retorno. Dentro de la clase derivada se llamará al nuevo método {\textit{sobrescrito}} que esta dentro de ella ocultando de alguna manera el método de la clase base.
+{\tiny{\lstinputlisting{./codigosEx/PuntoEx2.java}}} 
+
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Sobreescritura de métodos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+El código anterior provoca una llamada recursiva al método mostrar de la clase PuntoColor y no llama al método mostrar de la clase Punto. Para eso es necesario especificar que se quiere llamar al método mostrar de la clase base. 
+{\tiny{\lstinputlisting{./codigosEx/PuntoEx3.java}}}
+
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Sobrecarga y Sobreescritura de métodos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Puede usarse sobrecarga de métodos de la clase base en la clase derivada.
+{\tiny{\lstinputlisting{./codigosEx/PuntoEx0.java}}} 
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Restricciones en la Sobreescritura} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\begin{itemize}
+\item {debe tener los mismo argumentos (tipo y cantidad) de entrada y el mismo tipo de retorno}
+{\tiny{\lstinputlisting{./codigosEx/PuntoEx01.java}}} 
+\item {no debe disminuir los derecho de acceso del método} {\tiny{\lstinputlisting{./codigosEx/PuntoEx02.java}}} 
+\item { puede aumentar los permisos de acceso.}
+{\tiny{\lstinputlisting{./codigosEx/PuntoEx03.java}}}
+\end{itemize}
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Restricciones en la Sobreescritura} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Un método de clase (static) no puede ser sobrescrito en una clase derivada dado que el tipo de objeto que llama al método permite elegir entre el método de la clase base y el método de la clase derivada. \\
+Recuerde que un método de clase puede ser llamado sin un objeto, por lo cual, la elección del método no es posible. 
+}}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Duplicación de campos} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Una clase derivada puede definir un campo con el mismo nombre que un campo de la clase base.
+{\tiny{\lstinputlisting{./codigosEx/Main.java}}}
+}}}}\end{frame}
+
+\subsection{Polimorfismo}
+\begin{frame}{Polimorfismo} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Permite manipular los objetos sin conocer su tipo. \\Por ejemplo, se puede crear un arreglo de objetos unos de tipo Punto y otros PuntoColor y llamar al método mostrar para cada objeto del arreglo. Cada objeto actuará en función de su tipo. Esto es inducido por la herencia. \\Un objeto PuntoColor es también un Punto por lo cual puede ser tratado como un Punto (esta relación no es reciproca).
+}}}}\end{frame}
+
+
+\subsection{Polimorfismo}
+\begin{frame}{Polimorfismo} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainPoli.java}}}}}}}\end{frame}
+
+\subsection{Polimorfismo}
+\begin{frame}{Polimorfismo} 
+Punto p;
+\GFXH{5cm}{puntoP.pdf}
+p=new PuntoColor(4,6,2);
+\end{frame}
+
+\subsection{Polimorfismo}
+\begin{frame}{Polimorfismo} 
+\GFXH{5cm}{puntoP1.pdf}
+\end{frame}
+
+\subsection{Polimorfismo}
+\begin{frame}{Polimorfismo} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Java permite asignar a una variable objeto no solo la referencia del tipo correspondiente sino también la referencia a un objeto de un tipo derivado. Encontramos así, una compatibilidad por asignación entre un tipo clase derivada y un tipo de clase base.\\
+Si ejecutamos : \\
+ {\textbf{Punto p = new Punto(3,5);\\
+p.mostrar();\\
+p=new PuntoColor(4,5,2);\\
+p.mostrar();}}\\
+La variable p es del tipo Punto mientras que el objeto referenciado por p es del tipo PuntoColor. La variable p llamara a mostrar de la clase PuntoColor.}}}}\end{frame}
+
+\subsection{Polimorfismo}
+\begin{frame}{Resumen : Polimorfismo} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\begin{itemize}
+\item{compatibilidad: existe una conversion implicita de una referencia a un objeto de una clase derivada a una referencia de un objeto de una clase base (ascendente).}
+\item {ligado dinámico de métodos}
+\end{itemize}
+El polimorfismo permite obtener un comportamiento adecuado de cada tipo de objeto, sin la necesidad de conocer su tipo.
+}}}}\end{frame}
+
+\subsection{Polimorfismo}
+\begin{frame}{Ejercicio : Polimorfismo} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Haga un arreglo que contenga 2 objetos del tipo Punto y dos objetos del tipo PuntoColor.
+Muestre los valores en pantalla.
+}}}}\end{frame}
+
+\subsection{Polimorfismo}
+\begin{frame}{Ejercicio : Polimorfismo}  
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainPolimorf.java}}}
+}}}}\end{frame}
+
+\subsection{Polimorfismo}
+\begin{frame}{Conversion explicita} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Los objetos derivados son compatibles con los objetos de clases ascendentes, pero no ocurre lo mismo inversamente.
+{\tiny{\lstinputlisting{./codigosEx/test1.java}}}
+}}}}\end{frame}
+
+%\subsection{Polimorfismo}
+%\begin{frame}{La palabra super} 
+%\ITZ{	
+%\uncover<1->{\ITT{1}{}{
+%\uncover<1->{
+%{\tiny{\lstinputlisting{./codigosEx/Super.java}}}
+%Super llama al metodo de la clase ascendente. Sin embargo a.f() llama al metodo f de B como lo prevée el prolimorfismo. 
+%}}}}\end{frame}
+
+\subsection{Super clase Object}
+\begin{frame}{La super clase Object} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+De la clase Object derivan todas las clases simples. Por ejemplo, la clase Punto :
+ {\textbf{class Punto }} es lo mismo que decir :  {\textbf{ class Punto extends Object }}.
+Una variable de tipo Object puede ser usada para referenciar un objeto de cualquier tipo :
+ {\tiny{\lstinputlisting{./codigosEx/Obj.java}}}
+ Esto es conveniente si necesitamos trasmitir a un método una referencia sin conocer su tipo. Evidentemente, cualquier se quiera aplicar un método particular de un objeto referenciado por una variable de tipo Object será necesario hacer una conversión explícita.
+}}}}\end{frame}
+
+\subsection{Super clase Object}
+\begin{frame}{La super clase Object} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Si la clase Punto tiene un método desplazar.
+ {\tiny{\lstinputlisting{./codigosEx/Obj2.java}}}
+ Si bien, el objeto referenciado por $o$ es de un tipo que contiene un método $f$, es necesario que dicho método exista en la clase Object.
+ }}}}\end{frame}
+
+\subsection{Super clase Object}
+\begin{frame}{Metodos de la clase Object} 
+\ITZ{	
+\uncover<1->{\ITT{1}{toString}{
+\uncover<1->{
+Este método de la clase Object entrega una cadena de caracteres con :
+\begin{itemize}
+\item {el nombre de la clase}
+\item{la dirección del objeto en hexadecimal precedido de $@$}
+\end{itemize}
+ {\tiny{\lstinputlisting{./codigosEx/ClaseToString.java}}}
+ }}}}\end{frame}
+ 
+ 
+\subsection{Super clase Object}
+\begin{frame}{Metodos de la clase Object} 
+\ITZ{	
+\uncover<1->{\ITT{1}{toString}{
+\uncover<1->{
+\begin{itemize}
+\item {El nombre de la clase: nombre de la clase del objeto que llama a toString.}
+\item {Puede ser llamada automaticamente en el caso de necesitar una conversion implicita a cadena de caracteres. }
+\end{itemize}
+ }}}}\end{frame}
+
+\subsection{Super clase Object}
+\begin{frame}{Metodos de la clase Object} 
+\ITZ{	
+\uncover<1->{\ITT{1}{equals}{
+\uncover<1->{
+Este metodo compara las direcciones de dos objetos.\\
+ {\textit{Object o1= new Punto(1,3);}}\\
+ {\textit{Object o1= new Punto(1,3);}}\\
+ {\textit{o1.equals(o2);}}\\
+ 
+ Será false.
+ 
+ }}}}\end{frame}
+
+
+\subsection{Herencia}
+\begin{frame}{Miembros protegidos} 
+\ITZ{	
+\uncover<1->{\ITT{1}{protected}{
+\uncover<1->{
+Tipo de acceso protected actua en :
+\begin{itemize}
+\item{empaquetamiento de clases}\item{clases derivadas}
+\end{itemize}
+Un miembro protegido es accesible a las clases del mismo paquete así que a las clases derivadas (que pueden pertenecer o no al mismo paquete).\\
+Considere :\\ 
+class A $\{$\\
+protected int n;\} 
+ }}}}\end{frame}
+ 
+ \subsection{Herencia}
+\begin{frame}{Herencia}
+\GFXH{5cm}{ABCD.pdf} 
+\begin{itemize}
+\item{$B$ accede a $n$ de $A$}
+\item{$D$ accede a $n$ de $B$ o de $A$}
+\item{$C$ no accede a $n$ de $B$ (excepto si $B$ y $C$ están en el mismo paquete) }
+\end{itemize}
+\end{frame} 
+
+\subsection{Herencia}
+\begin{frame}{Clases y metodos finales} 
+\ITZ{	
+\uncover<1->{\ITT{1}{final}{
+\uncover<1->{
+Si se aplica la palabra clave final a variables locales o campos de una clase, esta prohibe la modificación de su valor. Esta palabra puede también aplicarse a una clase o método pero con una significación totalmente diferente.
+\begin{itemize}
+\item{Un método declarado final no puede ser sobreescrito en una clase derivada.}
+\item {Una clase declarada final no puede puede ser derivada.}
+\end{itemize} 
+ }}}}\end{frame}
+\subsection{Herencia}
+\begin{frame}{Interfaces}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Un interface es una colección de declaraciones de métodos (sin definirlos)  y también puede incluir constantes.
+Una interface define las cabeceras de un cierto numero de métodos. \begin {itemize} \item {Una clase podrá implementar diversas interfaces} \item{la noción de interface se superpone a la derivación} \item{las interfaces puedes derivarse} \item {es posible usar variables de tipo interface} \end{itemize} 
+ }}}}\end{frame}
+ 
+ \subsection{Herencia}
+\begin{frame}{Definir una interface}
+\ITZ{	
+\uncover<1->{\ITT{1}{interfaces}{
+\uncover<1->{
+Una interface puede tener los mismo permisos que una clase.  Por esencia las interfaces son publicas y sus métodos son abstractos. 
+{\tiny{\lstinputlisting{./codigosEx/Interfez.java}}}
+}}}}\end{frame}
+ 
+ \subsection{Herencia}
+\begin{frame}{Implementar una interface}
+\ITZ{	
+\uncover<1->{\ITT{1}{interfaces}{
+\uncover<1->{
+Al definir una clase se puede precisar que implementa una interface dada usando la palabra clave $implements$. Una clase puede implementar diferentes interfaces.
+{\tiny{\lstinputlisting{./codigosEx/Interfez2.java}}}
+Realizar una programa que tenga una interface Afichar con un metodo mostrar. Dos clases Entero y Flotante implementando esta interface. Crear un arreglo heterogéneo de referencias de tipo Afichar que se llenaran con instancias de objetos Flotante y Entero.
+}}}}\end{frame}
+ 
+\subsection{Herencia}
+\begin{frame}{Ejercicio}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Tabla2.java}}}
+ }}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Clases abstractas }
+\ITZ{	
+\uncover<1->{\ITT{1}{Clases abstractas}{
+\uncover<1->{
+Una clase abstracta es una clase que no permite instanciar objetos. Una clase abstracta permite definir en una clase base las funcionalidades comunes a todas las clases derivadas, si consideramos que una clase abstracta no implementa ningún método y ningún campo eso será una interface. \\Una clase abstracta puede servir solo como clase base, se usa como interface de las clases que harán conversión hacia arriba (Podemos describir el upcasting como la acción de declarar una variable de una clase base (abstracta en la mayoría de los casos), pero instanciando una implementación de la misma (comportamiento polifórmico).  }}}}\end{frame}
+ 
+ 
+ 
+ \subsection{Herencia}
+\begin{frame}{Clases abstractas }
+\ITZ{	
+\uncover<1->{\ITT{1}{Clases abstractas}{
+\uncover<1->{
+En una clase abstracta se pueden encontrar métodos y campos que heredan todas las clases derivadas. \\
+$abstract$  $class$  $A$\\
+Será posible declarar : 
+$A$ $a; $, pero no sera posible $a=new$ $A();$
+Sin embargo se puede derivar A e instanciar un objeto de la clase derivada.\\
+$class$  $B$ $extends$ $A$\\
+$A$ $a$ $=$ $new$ $B();$
+ }}}}\end{frame}
+ 
+
+
+\subsection{Herencia}
+\begin{frame}{Métodos abstractos }
+\ITZ{	
+\uncover<1->{\ITT{1}{Métodos abstract}{
+\uncover<1->{No se realiza la definición del método sino que solo que entrega la lista de argumentos de entrada y el tipo de valor de salida. Ejemplo : $ public $ $abstract$ $void$ $g$ $(int$ $n);$ }}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Reglas de abstract}
+\ITZ{	
+\uncover<1->{\ITT{1}{abstract}{
+\uncover<1->{
+\begin{enumerate}
+\item {Cuando una clase tiene uno o varios métodos abstractos, la clase es abstracta aunque no sea indicado explícitamente en su declaración.} \item{Un método abstracto debe obligatoriamente ser declarado publico, dado que se espera que sea sobrescrito en una clase derivada} \item{En la cabecera de la declaración de un método abstracto los nombres de los argumentos deben figurar} \item{Una clase derivada de una clase abstracta no esta obligada a sobreescribir todos los métodos abstractos (puede no sobreescribirlos)} \item{Una clase derivada de una clase abstracta puede ser definida abstracta} \end{enumerate} }}}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Interes de abstract}
+\ITZ{	
+\uncover<1->{\ITT{1}{abstract}{
+\uncover<1->{
+Las clases abstractas facilitan la concepción OO dado que en una clase abstracta se pueden poner todas las funcionalidades que se desea disponer para todas las clases descendientes. Esto puede ser a través de : \begin{itemize} \item{implementando completamente los métodos y campos cuando son comunes a todos los descendientes} \item{como interface de métodos abstractos}
+\end{itemize} }}}}\end{frame}
+\subsection{Herencia}
+\begin{frame}{Ejercicio}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Declare una clase abstracta Afichar con un metodo abstracto mostrar. Dos clases Entero y Flotante derivan de esta clase. El metodo main usa un arreglo heterogéneo de objetos de tipo Afichar que completa instanciando objetos de tipo Entero y Flotante.}
+ }}}\end{frame}
+
+\subsection{Herencia}
+\begin{frame}{Ejercicio}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Tabla.java}}}
+ }}}}\end{frame}
+
+
+\subsection{Herencia}
+\begin{frame}{Clase abstract e interfaces}
+\ITZ{	
+\uncover<1->{\ITT{1}{Resumen}{
+\uncover<1->{\begin{itemize} 
+\item {Clase Abstracta : \begin{itemize} \item{Contiene tanto métodos ejecutables como métodos abstractos} \item{Una clase puede extender solo una clase}\item{Puede tener variables de instancia, constructores y cualquier tipo de visibilidad (public, private, protected)} \end{itemize}}
+
+\item{Interface: \begin{itemize} \item{No contiene código de implementación}\item{Una clase puede implementar $n$ numero de interfaces} \item {No puede tener variables de instancia, constructores y solo puede tener métodos publicos o package}\end{itemize}}
+\end{itemize}}}}}\end{frame}

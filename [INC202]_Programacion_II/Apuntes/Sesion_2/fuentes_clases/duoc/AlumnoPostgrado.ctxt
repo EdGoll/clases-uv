@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=double\ calcularPromedio()
+comment1.target=String\ getInformacion()
+comment1.text=\npublic\ void\ setNota2(double\ nota){\nif\ (nota\ <\ 4.0){\nnota\ \=\ 4.0;\n}\nsuper.setNota2(nota);\n}\n\n
+numComments=2

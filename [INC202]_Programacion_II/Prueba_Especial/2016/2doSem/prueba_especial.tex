@@ -1,0 +1,165 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\renewcommand{\tablename}{Tabla} 
+\renewcommand{\figurename}{Figura} 
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,blue,draw,inner sep=1pt] (char) {#1};}}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in             
+\headheight = 0.0 in            
+\headsep = 0.0 in
+            
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+\begin{center}
+    {\Large Prueba Especial, Programaci\'on II} \\
+    \emph{\small Prof. Rodrigo Olivares} \\
+    \emph{\scriptsize Enero 17, 2016}
+\end{center}
+\vspace*{-35pt}
+\begin{center}
+    \rule{1\textwidth}{.3pt}
+\end{center}
+\vspace*{-42pt}
+\begin{center}
+    \rule{1\textwidth}{2pt}
+\end{center}
+
+\vspace*{-15pt}
+\textbf{Instrucciones}:
+\vspace*{-15pt}
+
+\begin{itemize}
+    \item[-] El puntaje m\'aximo de la prueba especial es 100\%, siendo el 60\% el m\'inimo requerido para aprobar.
+	\item[-] Responda cada pregunta en el lugar indicado. No se aceptar\'an recorrecciones de pruebas respondidas con l\'apiz grafito.
+	\item[-] El tiempo m\'aximo de la evaluaci\'on es de 90 minutos.
+    \item[-] La prueba especial es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado con nota \textbf{1,0}.
+\end{itemize}
+\vspace*{-20pt}
+
+\begin{enumerate}
+
+    \item \emph{30pts.} De las siguentes afirmaciones, encierre en un c\'irculo la o las alternativas correctas (\emph{3pts c/u}).    
+
+	{\footnotesize
+    
+    \begin{multicols}{2}
+
+	\begin{enumerate}[label=(\alph*)]
+        \item[i.] La orientaci\'on a objeto es: 
+        \item[(a)] Un paradigma de programaci\'on procedural.
+        \item[(b)] Un paradigma de programaci\'on estucturado.
+        \item[(c)] Una herramienta de programaci\'on.
+        \item[(d)] Un lenguaje de programaci\'on.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[ii.] El principio de ocultamiento: 
+        \item[(a)] Es una t\'ecnica que protege el estado de una entidad.
+        \item[(b)] Es \'util en enfoques procedurales.
+        \item[(c)] En Java, se logra con los modificadores de acceso.
+        \item[(d)] Es encapsular el conocimiento de una entidad.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[iii.] Una interface:
+        \item[(a)] Tiene al menos un m\'etodo impementado.
+        \item[(b)] Tiene todos sus m\'etodos abstractos.
+        \item[(c)] Es factible de ser implementada.
+        \item[(d)] Es factible de ser extendida.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[vi.] La herencia m\'ultiple:
+        \item[(a)] Permite heredar diverso compartimiento.
+        \item[(b)] Apoya el principio ocultamiento.
+        \item[(c)] Apoya el principio de encapsulamiento.
+        \item[(d)] En Java se desarrolla implementado clases abstractas.
+        \item[(e)] En Java se desarrolla implementado interfaces.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[v.] Un thread: 
+		\item[(a)] Es un flujo de un proceso en memoria.        
+        \item[(b)] Es un proceso que se ejecuta en memoria.
+        \item[(c)] Puede ser creado como clase en Java.
+        \item[(d)] Puede ser instanciado como atributo.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[vi.] Para una hebra o hilo se debe:
+        \item[(a)] Iniciar con el m\'etodo run.
+        \item[(b)] Iniciar con el m\'etodo start.
+        \item[(c)] Sobreescribir el m\'etodo run.
+        \item[(d)] Sobreescribir el m\'etodo start.
+        \item[(e)] Dormir (sleep) la hebra.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[vii.] En el ciclo de vida de una hebra, el estado: 
+        \item[(a)] New crea la hebra.
+        \item[(b)] Runnable ejecuta siempre la hebra.
+        \item[(c)] Blocked se ejecuta, sin importar estados internos.
+        \item[(d)] Dead es invocado generalmente por el m\'etodo sleep.
+        \item[(e)] Yield, verifica el desempe\~no del estado Runnable.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[viii.] Los bloqueos de recursos compartidos se consiguen:
+        \item[(a)] Package, bloqueando los accesos a las clases internas.
+        \item[(b)] Clase, bloqueando m\'etodos y atributos de la clase.
+        \item[(c)] Atributo, declar\'andolos como static.
+        \item[(d)] Objeto, declarando los m\'etodos como synchronized.
+        \item[(e)] Ninguna de las anteriores
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[ix.] Referente a JFrame:
+        \item[(a)] Habitualmente se usa para crear la ventana principal.
+        \item[(b)] getPaneContent() obtiene el panel principal.
+        \item[(c)] setAdd() permite agregar componentes al panel.
+        \item[(d)] setSize() permite dimensionar la ventana.
+        \item[(e)] Ninguna de las anteriores
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[x.] Para realizar acciones desde un bot\'on Se requiere:
+        \item[(a)] Crear una clase que implemente un ActionEvent.
+        \item[(b)] Crear una clase que implemente un ActionListener.
+        \item[(c)] Re-escribir el m\'etodo actionEvent(ActionPerformed).
+        \item[(d)] Re-escribir el m\'etodo actionPerformed(ActionEvent).
+        \item[(e)] Agregar la instancia de la clase oyente, al bot\'on.
+    \end{enumerate}
+
+	\end{multicols}
+}
+    \item \emph{70pts.} La empresa de autobus ha quedado muy satisfecha con el trabajo realizado, por lo que ha solicitado mejorar la aplicaci\'on. La mejora consiste en utilizar interfaz gr\'afica de usuario para visualizar los procesos concurrentes. Para ellos se solicita lo siguiente:
+    
+    \begin{enumerate}[label=(\alph*)]
+		\item Construir interfaz gr\'afica de usuario. 
+        \begin{enumerate}
+		\item El bot\'on ``Detener'' permiten pausar el proceso en cuesti\'on, cambiando su etiqueta a ``Procesar''. 
+		\item El bot\'on ``Procesar'' permite levantar el proceso en cuesti\'on, cambiando su etiqueta a ``Detener''.
+		\end{enumerate}
+		Utilice los m\'etodos \emph{suspend()} y \emph{resume()} para pausar y reiniciar las hebras, respectivamente.
+	\end{enumerate}
+
+	\end{enumerate}
+\end{document} 

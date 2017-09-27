@@ -1,0 +1,324 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+	\usetheme{CambridgeUS}
+	\setbeamercovered{transparent}
+}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{algorithm,algorithmic}
+\usepackage{soul}
+
+\title[\textbf{Programaci\'on 2}]{\textbf{Programaci\'on 2}}
+
+\subtitle{Descripci\'on del curso}
+
+\author[Eduardo Godoy]
+{
+	Profesor: Eduardo Godoy \\ 
+	%Material elaborado por: Rodrigo Olivares \\
+	%\vspace{0.5mm}
+	%Mg. en Ingenier\'ia Inform\'atica \\
+	\vspace{0.5mm}
+	\texttt{\small eduardo.gl@gmail.com}
+}
+
+\institute[Universidad de Valpara\'iso]
+
+%\date{$2^{do}$ Semestre de 2016} 
+
+\subject{Descripci\'on del curso}
+
+%\AtBeginSection
+%{
+%	\begin{frame}<beamer>
+%	\frametitle{Contenido}
+%	\tableofcontents[currentsection,currentsubsection]
+%	\end{frame}
+%}
+%
+%\AtBeginSubsection
+%{
+%	\begin{frame}<beamer>
+%	\frametitle{Contenido}
+%	\tableofcontents[currentsection,currentsubsection]
+%	\end{frame}
+%}
+%
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Contenido}
+		\tableofcontents%[pausesections]
+	\end{frame}
+
+	\section{Antecedentes de la asignatura}
+
+		\subsection{Descripci\'on}
+
+		\begin{frame}
+			\frametitle{Antecedentes de la asignatura}
+			\framesubtitle{Descripci\'on}
+
+			\begin{itemize}
+				\item Nombre: \textbf{Programaci\'on 2}
+				\item Horario: 
+				\begin{itemize}
+					\item \textbf{Lunes: 18:00 - 19:30 hrs.}
+					\item \textbf{Lunes: 19:45 - 21:15 hrs.}
+					\item \textbf{Miercoles: 18:00 - 19:30 hrs.}
+				\end{itemize}
+				\item Ayudant\'ia: pendiente
+			\end{itemize}
+		\end{frame}
+
+		\subsection{Unidades tem\'aticas}
+
+		\begin{frame}
+			\frametitle{Antecedentes de la asignatura}
+			\framesubtitle{Unidades tem\'aticas}
+
+			\begin{itemize}
+				\item Unidad I: \textbf{Programaci\'on Orientado a Objeto}
+				\begin{itemize}
+					\item Paradigmas de programaci\'on.
+					\item Lenguajes de programaci\'on.
+					\item Paradigma Orientado a Objeto.
+					\item Modelamiento Orientado a Objeto.
+					\item Principales caracter\'isticas:
+\begin{itemize}
+						\item {Abstracc\'ion}.
+						\item {Encapsulamiento}.
+						\item {Ocultamiento}.
+						\item{ Herencia}.
+						\item {Polimofismo}.
+\end{itemize}
+				\end{itemize}
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Antecedentes de la asignatura}
+			\framesubtitle{Unidades tem\'aticas}
+
+			\begin{itemize}
+				\item Unidad II: \textbf{Lenguaje de programaci\'on JAVA}
+				\begin{itemize}
+					\item Ambiente  de desarrollo.
+					\item Fundamentos de JAVA (sintaxis,variables, tipos de datos, expresiones y operadores)
+					\item Arreglos, condicionales y bucles (ciclos)
+					\item Encapsulamiento (clases, m\'etodos y objetos)
+					\item Herencia y polimorfismo
+					\item Manejo de excepciones
+					\item Interfaces gr\'aficas 
+					\item Entradas y salidas de datos.
+					\item Manejo de Memoria en Java.
+				\end{itemize}
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Antecedentes de la asignatura}
+			\framesubtitle{Unidades tem\'aticas}
+
+			\begin{itemize}
+				\item Unidad III: \textbf{Patrones de dise\~no}
+				\begin{itemize}
+					\item Principios
+					\item Descripci\'on 
+					\item Clasificaci\'on
+					\item Framewok
+					\item Aplicaci\'on
+				\end{itemize}
+			\end{itemize}
+		\end{frame}
+
+	\section{Sistema de evaluaci\'on}
+
+		\subsection{Evaluaciones}
+
+		\begin{frame}
+			\frametitle{Sistema de evaluaci\'on}
+			\framesubtitle{Evaluaciones}
+
+			\begin{itemize}
+				\item Escala de evaluaci\'on: seg\'un lo dicta el reglamento de la Escuela.
+				\item Cert\'amenes: \textbf{2} .
+				\begin{itemize}
+					\item Son evaluadas en horario de clases.
+					\item Toda inasistencia debe ser justificada.
+				\end{itemize}
+				\item Controles: \textbf{3}. 
+				\begin{itemize}
+					\item Ser\'an evaluados en horario de clases o ayudant\'ia.
+					\item Toda inasistencia debe ser justificada. De no ser as\'i se calificar\'a con nota \textbf{1,0}.
+				\end{itemize}
+				\item Proyecto: \textbf{3} Modo incremental.
+				\begin{itemize}
+				    \item Ser\'an evaluados por el ayudante.
+					\item Informe t\'ecnico 
+					\item C\'odigo fuente.
+					\item Reprotes de estados de avance. (se seleccionar\'a un integrante al azar, el cual deberá exponer el estado del proyecto al curso).
+				\end{itemize}
+			\end{itemize}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Sistema de evaluaci\'on}
+			\framesubtitle{Evaluaciones}
+
+			\begin{itemize}
+				\item \textbf{Certamen recuperativo}: Considera todo el contenido de la asignatura y se evalur\'a al final de la misma. Es obligatoria a quien justifique una inasistencia a un certamen.
+				\item \textbf{Prueba especial}: Obligatoria para quienes tengan \textbf{promedio de certamenes} entre \color{red}{3.5} \color{black}{y} \color{violet}{3.9}.
+				\item En caso de rendir la prueba especial:
+				\begin{itemize}
+    				\item Si la nota de la prueba especial $\geq$ \textbf{4,0}, entonces la nota final es \textbf{4,0}
+	    			\item Si la nota de la prueba especial $<$ \textbf{4,0}, entonces se mantiene la nota final.
+				\end{itemize}
+			\end{itemize}
+		\end{frame}
+
+		\subsection{M\'etodo de evaluaci\'on}
+
+		\begin{frame}
+			\frametitle{Sistema de evaluaci\'on}
+			\framesubtitle{M\'etodo de evaluaci\'on}
+
+			\begin{block}{}
+				\begin{center}
+					\begin{itemize}
+						%\textbf{\color{cyan}{Notas de certamen}} & \textbf{\color{cyan}{Notas de controles}} & \textbf{\color{cyan}{Notas de tareas}} \\ & & \\
+  							%$NC = \frac{\left(\displaystyle\sum_{i=1}^{3}{C_{i}}\right)}{3}$ &
+							%$NQ = \frac{\left(\displaystyle\sum_{i=1}^{5}{Q_{i}}\right)}{5}$ &
+  							%$NT = \frac{\left(\displaystyle\sum_{i=1}^{3}{T_{i}}\right)}{3}$ \\
+  							\item$NC ={\left(\displaystyle(C1 * 0.4) +(C2 * 0.6)\right)}$ \\
+							\item$NQ = \frac{\left(\displaystyle\sum_{i=1}^{3}{Q_{i}}\right)}{3}$ \\
+  							\item$NT = (\displaystyle\frac{\left(\displaystyle\sum_{i=1}^{3}{T_{i}}\right)}{3})*0.6 +   (\displaystyle\frac{\left(\displaystyle\sum_{i=1}^{3}{INT_{i}}\right)}{3})*0.4$
+					\end{itemize}
+				\end{center}	
+donde:
+				\begin{itemize}
+
+					\item[] $C_{i}$ es el certamen en proceso.
+					\item[] $Q_{i}$ es el control en proceso.
+					\item[] $T_{i}$ es la tarea en proceso.
+					\item[] $INT_{i}$ es la interrogaci\'on de avance de tarea.
+				\end{itemize}
+				%\begin{center}
+				%	\begin{tabular}{c}
+				%		\textbf{\color{red}{Notas de certamen}} \\
+  				%			$NF = NC * 0.75 + NQ * 0.15 + NT * 0.10$\\
+				%	\end{tabular}
+				%\end{center}	
+			\end{block}
+		\end{frame}
+
+\subsection{M\'etodo de evaluaci\'on}
+
+\begin{frame}
+			\frametitle{Sistema de evaluaci\'on}
+			\framesubtitle{M\'etodo de evaluaci\'on}
+	\begin{block}{}
+		\begin{center}
+					\begin{tabular}{c}
+						\textbf{\color{red}{Notas de certamen}} \\
+  							$NF = NC * 0.70 + NQ * 0.15 + NT * 0.15$\\
+					\end{tabular}
+		\end{center}	
+	\end{block}
+\end{frame}
+
+		\subsection{Cronograma de evaluaci\'on}
+
+		\begin{frame}
+			\frametitle{Sistema de evaluaci\'on}
+			\framesubtitle{Cronograma de evaluaci\'on}
+
+			\textbf{Fechas de las evaluaciones}
+
+			\begin{itemize}
+				\item Certamen 1: \textbf{Miercoles 13 de Septiembre}
+				\item Certamen 2: \textbf{Miercoles 22 de Noviembre}
+				%\item Certamen 3: \textbf{Jueves 29 de Junio}
+				\item Controles: \textbf{Durante el semestre.}
+				\item Tarea 1: \textbf{Miercoles 6 de Septiembre}
+				\item Tarea 2: \textbf{Miercoles 11 de Octubre}
+				\item Tarea 3: \textbf{Miercoles 15 de Noviembre}
+				\item Certamen recuperativo: \textbf{Por definir}
+				\item Prueba Especial: \textbf{Entre el 11 y 15 de Diciembre}
+			\end{itemize}
+		\end{frame}
+
+	\section{Consideraciones}
+
+		\subsection{Software}
+
+		\begin{frame}
+			\frametitle{Consideraciones}
+			\framesubtitle{Ambiente de Desarrollo.}
+
+			\textbf{Entornos de desarrollo integrados (IDE):}
+			
+			\begin{itemize}
+				\item Eclipse  \url{http://www.eclipse.org}
+				\item NetBeans \url{http://www.netbeans.org}
+				\item IntelliJ IDEA  \url{http://www.jetbrains.com/idea/download/}
+				\item SublimeText   \url{http://www.sublimetext.com/3}
+				\item Notepad++  \url{http://notepad-plus-plus.org/}
+			\end{itemize}
+
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Consideraciones}
+			\framesubtitle{Ambiente de Desarrollo}
+
+			\textbf{Kit para Desarrollo en Java:}
+			
+			\begin{itemize}
+				\item Java Development Kit (jdk), disponible en \url{http://developers.redhat.com/products/openjdk/download/}.
+			\end{itemize}
+		\end{frame}
+
+	\section{Bibliograf\'ia}
+
+		\begin{frame}
+			\frametitle{Bibliograf\'ia}
+
+			\begin{thebibliography}{10} 
+				\beamertemplatebookbibitems 
+				\bibitem{java611}[Programaci\'on en Java 6] Luis Joyanes Aguilar. \newblock \emph{Editorial McGraw-Hill}, 2011
+				\bibitem{poo2007}[Programaci\'on orientada a objetos con Java] Barnes, David \& Kolling, Michael. \newblock \emph{2nd. Edition, Prentice-Hall}, 2007
+				\bibitem{poo2007}[Fundamentos de Java] Schildt Herbert. \newblock \emph{2nd. Edition, McGraw-Hill}, 2007.
+
+\bibitem{poo2006}[SCJP Sun Certified Programmer for Java 6 Study Guide]\\ Kathy Sierra . \newblock \emph{ McGraw-Hill}, 2006.
+			\end{thebibliography} 
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Preguntas}
+
+			\hspace{4cm}\huge{Preguntas ?}
+		
+		\end{frame}
+	\end{document}
+
+\usetheme{default}
+\usetheme{JuanLesPins}
+\usetheme{Goettingen}
+\usetheme{Szeged}
+\usetheme{Warsaw}
+
+\usecolortheme{crane}
+
+\usefonttheme{serif}
+\usefonttheme{structuresmallcapsserif}

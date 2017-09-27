@@ -1,0 +1,20 @@
+Desarrolle un programa que permita realizar las siguientes acciones 
+1:Muestre La Base de datos completa
+2:Busque en la base de datos una persona especifica por parametros identificativos:
+	1:ID
+	2:NOMBRE
+	3:APELLIDO
+	4:FECHA NACIMIENTO 
+	5:RUT
+	6:TELEFONO
+3:Cuente las personas que tengan los siguientes parametros en comun y luego muestrelos por pantalla
+	1:Estado Civil
+	2:Hijos
+	3:Zona
+	4:Facultad
+	5:Cargo
+	6:Salario
+4:Elimine una persona en especifico 
+5:Agrege una persona al data set
+6:Guarde el archivo modificado con extencion .csv con el nombre "New_Data_Set.scv"	
+

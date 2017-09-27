@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="1" name="nosync.Test" tests="1" time="0.079">
+  <properties>
+    <property name="libs.jaxws20.classpath" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\activation.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\FastInfoset.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\http.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\api\jaxb-api.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\jaxb-impl.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\jaxb-xjc.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\api\jaxws-api.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\jaxws-rt.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\jaxws-tools.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\api\jsr173_api.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\api\jsr181-api.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\jsr250-api.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\api\saaj-api.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\saaj-impl.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\sjsxp.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\stax-ex.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\streambuffer.jar"></property>
+    <property name="default.javac.source" value="1.6"></property>
+    <property name="file.encoding.pkg" value="sun.io"></property>
+    <property name="javac.source" value="1.6"></property>
+    <property name="Env-TMP" value="C:\DOCUME~1\CINCOM~1.CIN\CONFIG~1\Temp"></property>
+    <property name="env-tmpdir" value="C:\DOCUME~1\CINCOM~1\CONFIG~1\Temp"></property>
+    <property name="netbeans.system_http_proxy" value="172.30.13.11:3128"></property>
+    <property name="java.home" value="C:\Archivos de programa\Java\jdk1.6.0_05\jre"></property>
+    <property name="test.src.dir" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes"></property>
+    <property name="javadoc.version" value="false"></property>
+    <property name="Env-USERNAME" value="cincomardesweb3"></property>
+    <property name="env-userdomain" value="CINCOMAR"></property>
+    <property name="libs.CopyLibs.classpath" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\ant\extra\org-netbeans-modules-java-j2seproject-copylibstask.jar"></property>
+    <property name="java.endorsed.dirs" value="C:\Archivos de programa\Java\jdk1.6.0_05\jre\lib\endorsed"></property>
+    <property name="src.dir" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes"></property>
+    <property name="Env-COMPUTERNAME" value="CICAAREAWEB3"></property>
+    <property name="env-homedrive" value="C:"></property>
+    <property name="ant.file.fuentes" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes\build.xml"></property>
+    <property name="netbeans.hash.code" value="unique=NBBLUEJ2052985944"></property>
+    <property name="build.sysclasspath" value="ignore"></property>
+    <property name="bluej.config.libraries" value=""></property>
+    <property name="have.sources" value="true"></property>
+    <property name="ant.file.fuentes-impl" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes\nbproject\build-impl.xml"></property>
+    <property name="sun.os.patch.level" value="Service Pack 3"></property>
+    <property name="java.vendor.url" value="http://java.sun.com/"></property>
+    <property name="java.version" value="1.6.0_05"></property>
+    <property name="Env-SystemDrive" value="C:"></property>
+    <property name="Env-ComSpec" value="C:\WINDOWS\system32\cmd.exe"></property>
+    <property name="Env-CLIENTNAME" value="Console"></property>
+    <property name="javac.debug" value="true"></property>
+    <property name="org.openide.major.version" value="IDE/1"></property>
+    <property name="run.classpath" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\junit-3.8.1.jar:Z:\2008-2\SCJP1.4\Sesion 9\fuentes"></property>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"></property>
+    <property name="netbeans.autoupdate.variant" value=""></property>
+    <property name="libs.absolutelayout.javadoc" value=""></property>
+    <property name="netbeans.buildnumber" value="200705032221"></property>
+    <property name="env-processor_architecture" value="x86"></property>
+    <property name="manifest.file" value="manifest.mf"></property>
+    <property name="user.name" value="cincomardesweb3"></property>
+    <property name="env-temp" value="C:\DOCUME~1\CINCOM~1.CIN\CONFIG~1\Temp"></property>
+    <property name="Env-PROCESSOR_REVISION" value="0207"></property>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"></property>
+    <property name="sun.jnu.encoding" value="Cp1252"></property>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"></property>
+    <property name="env-display" value=":0.0"></property>
+    <property name="env-logonserver" value="\\DCCINCOMAR"></property>
+    <property name="env-hummpath" value="C:\Archivos de programa\Hummingbird\Connectivity\10.00\Accessories\;C:\Archivos de programa\Hummingbird\Connectivity\10.00\NFS Maestro\;"></property>
+    <property name="jdk.home" value="C:\Archivos de programa\Java\jdk1.6.0_05"></property>
+    <property name="env-vsedeflogdir" value="C:\Documents and Settings\All Users\Datos de programa\McAfee\DesktopProtection"></property>
+    <property name="env-ifl_home" value="C:\h\IFL"></property>
+    <property name="sun.awt.keepWorkingSetOnMinimize" value="true"></property>
+    <property name="netbeans.autoupdate.version" value="1.21"></property>
+    <property name="org.openide.TopManager" value="org.netbeans.core.NonGui"></property>
+    <property name="netbeans.dirs" value="C:\Archivos de programa\netbeans-bluej-5.5.1\nbbluej5.5;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7"></property>
+    <property name="java.specification.name" value="Java Platform API Specification"></property>
+    <property name="javadoc.author" value="false"></property>
+    <property name="user.timezone" value=""></property>
+    <property name="netbeans.system_http_non_proxy_hosts" value="172.18.50.208; 172.18.3.84;&lt;local&gt;"></property>
+    <property name="libs.junit.javadoc" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\docs\junit-3.8.1-api.zip"></property>
+    <property name="org.openide.specification.version" value="6.2"></property>
+    <property name="path.separator" value=";"></property>
+    <property name="Env-LOGONSERVER" value="\\DCCINCOMAR"></property>
+    <property name="libs.absolutelayout.classpath" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\AbsoluteLayout.jar"></property>
+    <property name="Env-Path" value="C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32;C:\Archivos de programa\Hummingbird\Connectivity\10.00\Accessories\;C:\Archivos de programa\Hummingbird\Connectivity\10.00\NFS Maestro\;;C:\Archivos de programa\CollabNet Subversion;c:\Archivos de programa\TortoiseSVN\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin\client;C:\ARCHIV~1\COEMES~1\bin;C:\Archivos de programa\Hummingbird\Connectivity\10.00\Accessories\;C:\Archivos de programa\Hummingbird\Connectivity\10.00\NFS Maestro\;;C:\Archivos de programa\CollabNet Subversion;c:\Archivos de programa\TortoiseSVN\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin\client;C:\ARCHIV~1\COEMES~1\bin;C:\Archivos de programa\Hummingbird\Connectivity\10.00\Accessories\;C:\Archivos de programa\Hummingbird\Connectivity\10.00\NFS Maestro\;;C:\Archivos de programa\CollabNet Subversion;c:\Archivos de programa\TortoiseSVN\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin\client;C:\ARCHIV~1\COEMES~1\bin;C:\Archivos de programa\CollabNet Subversion"></property>
+    <property name="netbeans.accept_license_class" value="org.netbeans.bluej.license.AcceptLicense"></property>
+    <property name="file.encoding" value="Cp1252"></property>
+    <property name="dist.javadoc.dir" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes/doc"></property>
+    <property name="Env-SHELL" value="C:\ARCHIV~1\RATIONAL\RATION~1\NUTCROOT\mksnt\sh.exe"></property>
+    <property name="env-programfiles" value="C:\Archivos de programa"></property>
+    <property name="https.nonProxyHosts" value="172.18.50.208*| 172.18.3.84*|&lt;local&gt;*|localhost|127.0.0.1|cicaareaweb3|cicaareaweb3.cincomar.armada.cl"></property>
+    <property name="Env-DISPLAY" value=":0.0"></property>
+    <property name="libs.junit.src" value=""></property>
+    <property name="env-systemroot" value="C:\WINDOWS"></property>
+    <property name="ant.file" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes\build.xml"></property>
+    <property name="env-cmp_home" value="C:\ARCHIV~1\COEMES~1"></property>
+    <property name="netbeans.autoupdate.language" value="es"></property>
+    <property name="Env-windir" value="C:\WINDOWS"></property>
+    <property name="java.io.tmpdir" value="C:\DOCUME~1\CINCOM~1.CIN\CONFIG~1\Temp\"></property>
+    <property name="env-processor_identifier" value="x86 Family 15 Model 2 Stepping 7, GenuineIntel"></property>
+    <property name="build.test.results.dir" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes/test/results"></property>
+    <property name="user.language" value="es"></property>
+    <property name="Env-=::" value="::\"></property>
+    <property name="libs.jaxws20.src" value=""></property>
+    <property name="line.separator" value="
+"></property>
+    <property name="apple.laf.useScreenMenuBar" value="true"></property>
+    <property name="libs.absolutelayout.src" value=""></property>
+    <property name="javac.compilerargs" value=""></property>
+    <property name="netbeans.osenv.nullsep" value="true"></property>
+    <property name="env-tmp" value="C:\DOCUME~1\CINCOM~1.CIN\CONFIG~1\Temp"></property>
+    <property name="Env-SystemRoot" value="C:\WINDOWS"></property>
+    <property name="jar.compress" value="false"></property>
+    <property name="Env-FP_NO_HOST_CHECK" value="NO"></property>
+    <property name="java.vm.info" value="mixed mode"></property>
+    <property name="env-os" value="Windows_NT"></property>
+    <property name="javadoc.private" value="false"></property>
+    <property name="sun.desktop" value="windows"></property>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"></property>
+    <property name="build.test.classes.dir" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes"></property>
+    <property name="env-systemdrive" value="C:"></property>
+    <property name="netbeans.dynamic.classpath" value="C:\Archivos de programa\netbeans-bluej-5.5.1\platform6\core\core.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\platform6\core\org-openide-filesystems.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\platform6\core\locale\core_ja.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\platform6\core\locale\core_pt_BR.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\platform6\core\locale\core_zh_CN.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\platform6\core\locale\org-openide-filesystems_ja.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\platform6\core\locale\org-openide-filesystems_pt_BR.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\platform6\core\locale\org-openide-filesystems_zh_CN.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\nbbluej5.5\core\org-netbeans-bluej-upgrader.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\nbbluej5.5\core\locale\core_nbbluej.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\nbbluej5.5\core\locale\core_nbbluej_ja.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\nbbluej5.5\core\locale\core_nbbluej_pt_BR.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\nbbluej5.5\core\locale\core_nbbluej_zh_CN.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\nbbluej5.5\core\locale\org-netbeans-bluej-upgrader_ja.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\nbbluej5.5\core\locale\org-netbeans-bluej-upgrader_pt_BR.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\nbbluej5.5\core\locale\org-netbeans-bluej-upgrader_zh_CN.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\core\org-netbeans-modules-utilities-cli.jar"></property>
+    <property name="platform.active" value="default_platform"></property>
+    <property name="Env-CommonProgramFiles" value="C:\Archivos de programa\Archivos comunes"></property>
+    <property name="env-appdata" value="C:\Documents and Settings\cincomardesweb3.CINCOMAR\Datos de programa"></property>
+    <property name="http.nonProxyHosts" value="172.18.50.208*| 172.18.3.84*|&lt;local&gt;*|localhost|127.0.0.1|cicaareaweb3|cicaareaweb3.cincomar.armada.cl"></property>
+    <property name="javac.includes" value="nosync/Test.java"></property>
+    <property name="Env-JAVA2_HOME" value="c:\ARCHIV~1\Java\J2RE14~1.1_0"></property>
+    <property name="Env-PROCESSOR_LEVEL" value="15"></property>
+    <property name="Env-IFL_HOME" value="C:\h\IFL"></property>
+    <property name="netbeans.autoupdate.country" value="CL"></property>
+    <property name="javadoc.encoding" value=""></property>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"></property>
+    <property name="dist.jar" value="dist/fuentes.jar"></property>
+    <property name="meta.inf.dir" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes/META-INF"></property>
+    <property name="ant.version" value="Apache Ant version 1.6.5 compiled on June 2 2005"></property>
+    <property name="netbeans.home" value="C:\Archivos de programa\netbeans-bluej-5.5.1\platform6"></property>
+    <property name="no.javadoc.preview" value="true"></property>
+    <property name="javadoc.nonavbar" value="false"></property>
+    <property name="user.properties.file" value="C:\Documents and Settings\cincomardesweb3.CINCOMAR\.netbeans\5.5bluej\build.properties"></property>
+    <property name="netbeans.importclass" value="org.netbeans.bluej.upgrade.AutoUpgrade"></property>
+    <property name="env-allusersprofile" value="C:\Documents and Settings\All Users"></property>
+    <property name="https.proxyPort" value="3128"></property>
+    <property name="env-windir" value="C:\WINDOWS"></property>
+    <property name="Env-APPDATA" value="C:\Documents and Settings\cincomardesweb3.CINCOMAR\Datos de programa"></property>
+    <property name="Env-DEFLOGDIR" value="C:\Documents and Settings\All Users\Datos de programa\McAfee\DesktopProtection"></property>
+    <property name="build.generated.dir" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes/generated"></property>
+    <property name="netbeans.home+have.tests" value="true"></property>
+    <property name="Env-CMP_HOME" value="C:\ARCHIV~1\COEMES~1"></property>
+    <property name="env-clientname" value="Console"></property>
+    <property name="os.name" value="Windows XP"></property>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="run.test.classpath" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\junit-3.8.1.jar:Z:\2008-2\SCJP1.4\Sesion 9\fuentes"></property>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"></property>
+    <property name="libs.CopyLibs.src" value=""></property>
+    <property name="env-number_of_processors" value="1"></property>
+    <property name="org.openide.version" value="deprecated"></property>
+    <property name="Env-ICSF_HOME" value="C:\h"></property>
+    <property name="libs.junit.classpath" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\junit-3.8.1.jar"></property>
+    <property name="java.library.path" value="C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin;.;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32;C:\Archivos de programa\Hummingbird\Connectivity\10.00\Accessories\;C:\Archivos de programa\Hummingbird\Connectivity\10.00\NFS Maestro\;;C:\Archivos de programa\CollabNet Subversion;c:\Archivos de programa\TortoiseSVN\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin\client;C:\ARCHIV~1\COEMES~1\bin;C:\Archivos de programa\Hummingbird\Connectivity\10.00\Accessories\;C:\Archivos de programa\Hummingbird\Connectivity\10.00\NFS Maestro\;;C:\Archivos de programa\CollabNet Subversion;c:\Archivos de programa\TortoiseSVN\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin\client;C:\ARCHIV~1\COEMES~1\bin;C:\Archivos de programa\Hummingbird\Connectivity\10.00\Accessories\;C:\Archivos de programa\Hummingbird\Connectivity\10.00\NFS Maestro\;;C:\Archivos de programa\CollabNet Subversion;c:\Archivos de programa\TortoiseSVN\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin\client;C:\ARCHIV~1\COEMES~1\bin;C:\Archivos de programa\CollabNet Subversion"></property>
+    <property name="env-homepath" value="\Documents and Settings\cincomardesweb3.CINCOMAR"></property>
+    <property name="env-pathext" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH"></property>
+    <property name="env-processor_revision" value="0207"></property>
+    <property name="ant.java.version" value="1.5"></property>
+    <property name="javadoc.noindex" value="false"></property>
+    <property name="java.class.version" value="50.0"></property>
+    <property name="basedir" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes"></property>
+    <property name="sun.awt.exception.handler" value="org.netbeans.core.NbErrorManager$AWTHandler"></property>
+    <property name="javac.test.classpath" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\junit-3.8.1.jar"></property>
+    <property name="Env-USERDOMAIN" value="CINCOMAR"></property>
+    <property name="no.set.rowheight" value="true"></property>
+    <property name="ant.home" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\ant"></property>
+    <property name="javadoc.splitindex" value="true"></property>
+    <property name="Env-TEMP" value="C:\DOCUME~1\CINCOM~1.CIN\CONFIG~1\Temp"></property>
+    <property name="javadoc.preview" value="true"></property>
+    <property name="libs.CopyLibs.javadoc" value=""></property>
+    <property name="libs.jaxws20.javadoc" value=""></property>
+    <property name="env-sessionname" value="Console"></property>
+    <property name="env-=::" value="::\"></property>
+    <property name="Env-VSEDEFLOGDIR" value="C:\Documents and Settings\All Users\Datos de programa\McAfee\DesktopProtection"></property>
+    <property name="Env-PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH"></property>
+    <property name="env-shell" value="C:\ARCHIV~1\RATIONAL\RATION~1\NUTCROOT\mksnt\sh.exe"></property>
+    <property name="sun.boot.library.path" value="C:\Archivos de programa\Java\jdk1.6.0_05\jre\bin"></property>
+    <property name="build.dir" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes"></property>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"></property>
+    <property name="user.variant" value=""></property>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"></property>
+    <property name="libs.jaxb20.classpath" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\activation.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\api\jaxb-api.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\jaxb-impl.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\jaxb-xjc.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\jaxws21\api\jsr173_api.jar"></property>
+    <property name="Env-SESSIONNAME" value="Console"></property>
+    <property name="javadoc.windowtitle" value="fuentes"></property>
+    <property name="http.proxyPort" value="3128"></property>
+    <property name="env-computername" value="CICAAREAWEB3"></property>
+    <property name="https.proxyHost" value="172.30.13.11"></property>
+    <property name="netbeans.osenv" value="C:\DOCUME~1\CINCOM~1.CIN\CONFIG~1\Temp\nbenv2"></property>
+    <property name="run.jvmargs" value=""></property>
+    <property name="build.compiler.emacs" value="true"></property>
+    <property name="ant.project.name" value="fuentes"></property>
+    <property name="libs.swing-layout.classpath" value="C:\Archivos de programa\netbeans-bluej-5.5.1\platform6\modules\ext\swing-layout-1.0.jar"></property>
+    <property name="env-commonprogramfiles" value="C:\Archivos de programa\Archivos comunes"></property>
+    <property name="java.vm.specification.version" value="1.0"></property>
+    <property name="Env-TMPDIR" value="C:\DOCUME~1\CINCOM~1\CONFIG~1\Temp"></property>
+    <property name="work.dir" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes"></property>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"></property>
+    <property name="javadoc.use" value="true"></property>
+    <property name="sun.cpu.isalist" value=""></property>
+    <property name="Env-CLASSPATH" value="C:\Program Files\Sybase\Jaguar CTS 3.5\html\classes;C:\Program Files\Sybase\Jaguar CTS 3.5\java\classes;C:\Archivos de programa\Sybase\Shared\Sun\jdk118\lib\classes.zip;C:\Archivos de programa\Sybase\Shared\PowerBuilder\classes.zip;.;C:\Archivos de programa\Sybase\Shared\Sun\jdk118\lib\classes.zip;C:\ARCHIV~1\COEMES~1\data\classes.jar;C:\ARCHIV~1\COEMES~1\data\jh.jar"></property>
+    <property name="java.ext.dirs" value="C:\Archivos de programa\Java\jdk1.6.0_05\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"></property>
+    <property name="os.version" value="5.1"></property>
+    <property name="user.home" value="C:\Documents and Settings\cincomardesweb3.CINCOMAR"></property>
+    <property name="env-java2_home" value="c:\ARCHIV~1\Java\J2RE14~1.1_0"></property>
+    <property name="org.xml.sax.driver" value="com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser"></property>
+    <property name="javax.xml.parsers.DocumentBuilderFactory" value="org.netbeans.core.startup.DOMFactoryImpl"></property>
+    <property name="Env-ALLUSERSPROFILE" value="C:\Documents and Settings\All Users"></property>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."></property>
+    <property name="env-comspec" value="C:\WINDOWS\system32\cmd.exe"></property>
+    <property name="Env-PROCESSOR_IDENTIFIER" value="x86 Family 15 Model 2 Stepping 7, GenuineIntel"></property>
+    <property name="env-deflogdir" value="C:\Documents and Settings\All Users\Datos de programa\McAfee\DesktopProtection"></property>
+    <property name="user.dir" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes"></property>
+    <property name="org.openide.TopManager.GUI" value="true"></property>
+    <property name="libs.jaxb20.javadoc" value=""></property>
+    <property name="env-username" value="cincomardesweb3"></property>
+    <property name="application.args" value=""></property>
+    <property name="Env-NUMBER_OF_PROCESSORS" value="1"></property>
+    <property name="Env-HOMEPATH" value="\Documents and Settings\cincomardesweb3.CINCOMAR"></property>
+    <property name="env-path" value="C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32;C:\Archivos de programa\Hummingbird\Connectivity\10.00\Accessories\;C:\Archivos de programa\Hummingbird\Connectivity\10.00\NFS Maestro\;;C:\Archivos de programa\CollabNet Subversion;c:\Archivos de programa\TortoiseSVN\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin\client;C:\ARCHIV~1\COEMES~1\bin;C:\Archivos de programa\Hummingbird\Connectivity\10.00\Accessories\;C:\Archivos de programa\Hummingbird\Connectivity\10.00\NFS Maestro\;;C:\Archivos de programa\CollabNet Subversion;c:\Archivos de programa\TortoiseSVN\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin\client;C:\ARCHIV~1\COEMES~1\bin;C:\Archivos de programa\Hummingbird\Connectivity\10.00\Accessories\;C:\Archivos de programa\Hummingbird\Connectivity\10.00\NFS Maestro\;;C:\Archivos de programa\CollabNet Subversion;c:\Archivos de programa\TortoiseSVN\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin;C:\ARCHIV~1\Java\J2RE14~1.1_0\bin\client;C:\ARCHIV~1\COEMES~1\bin;C:\Archivos de programa\CollabNet Subversion"></property>
+    <property name="sun.cpu.endian" value="little"></property>
+    <property name="libs.jaxb20.src" value=""></property>
+    <property name="Env-HOMEDRIVE" value="C:"></property>
+    <property name="java.vm.version" value="10.0-b19"></property>
+    <property name="env-icsf_home" value="C:\h"></property>
+    <property name="java.class.path" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\junit-3.8.1.jar;Z:\2008-2\SCJP1.4\Sesion 9\fuentes;C:\Program Files\Sybase\Jaguar CTS 3.5\html\classes;C:\ARCHIV~1\COEMES~1\data\classes.jar;C:\ARCHIV~1\COEMES~1\data\jh.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\ant\lib\ant-launcher.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\ant\lib\ant.jar;C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\ant\lib\ant-junit.jar"></property>
+    <property name="javax.xml.parsers.SAXParserFactory" value="org.netbeans.core.startup.SAXFactoryImpl"></property>
+    <property name="env-rootdir" value="C:\ARCHIV~1\RATIONAL\RATION~1\NUTCROOT"></property>
+    <property name="os.arch" value="x86"></property>
+    <property name="javac.deprecation" value="false"></property>
+    <property name="http.proxyHost" value="172.30.13.11"></property>
+    <property name="build.classes.excludes" value="**/*.java,**/*.form"></property>
+    <property name="dist.dir" value="dist"></property>
+    <property name="Env-OS" value="Windows_NT"></property>
+    <property name="debug.classpath" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\junit-3.8.1.jar:Z:\2008-2\SCJP1.4\Sesion 9\fuentes"></property>
+    <property name="netbeans.user" value="C:\Documents and Settings\cincomardesweb3.CINCOMAR\.netbeans\5.5bluej"></property>
+    <property name="Env-ProgramFiles" value="C:\Archivos de programa"></property>
+    <property name="sun.java.launcher" value="SUN_STANDARD"></property>
+    <property name="env-fp_no_host_check" value="NO"></property>
+    <property name="Env-USERDNSDOMAIN" value="CINCOMAR.ARMADA.CL"></property>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="file.separator" value="\"></property>
+    <property name="env-processor_level" value="15"></property>
+    <property name="java.runtime.version" value="1.6.0_05-b13"></property>
+    <property name="sun.boot.class.path" value="C:\Archivos de programa\Java\jdk1.6.0_05\jre\lib\resources.jar;C:\Archivos de programa\Java\jdk1.6.0_05\jre\lib\rt.jar;C:\Archivos de programa\Java\jdk1.6.0_05\jre\lib\sunrsasign.jar;C:\Archivos de programa\Java\jdk1.6.0_05\jre\lib\jsse.jar;C:\Archivos de programa\Java\jdk1.6.0_05\jre\lib\jce.jar;C:\Archivos de programa\Java\jdk1.6.0_05\jre\lib\charsets.jar;C:\Archivos de programa\Java\jdk1.6.0_05\jre\classes"></property>
+    <property name="debug.test.classpath" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\junit-3.8.1.jar:Z:\2008-2\SCJP1.4\Sesion 9\fuentes"></property>
+    <property name="env-userprofile" value="C:\Documents and Settings\cincomardesweb3.CINCOMAR"></property>
+    <property name="Env-HummPATH" value="C:\Archivos de programa\Hummingbird\Connectivity\10.00\Accessories\;C:\Archivos de programa\Hummingbird\Connectivity\10.00\NFS Maestro\;"></property>
+    <property name="env-userdnsdomain" value="CINCOMAR.ARMADA.CL"></property>
+    <property name="have.tests" value="true"></property>
+    <property name="test.includes" value="nosync/Test.java"></property>
+    <property name="Env-ROOTDIR" value="C:\ARCHIV~1\RATIONAL\RATION~1\NUTCROOT"></property>
+    <property name="user.country" value="CL"></property>
+    <property name="javadoc.notree" value="false"></property>
+    <property name="Env-USERPROFILE" value="C:\Documents and Settings\cincomardesweb3.CINCOMAR"></property>
+    <property name="Env-PROCESSOR_ARCHITECTURE" value="x86"></property>
+    <property name="javadoc.additionalparam" value=""></property>
+    <property name="javac.classpath" value="C:\Archivos de programa\netbeans-bluej-5.5.1\ide7\modules\ext\junit-3.8.1.jar"></property>
+    <property name="default.javac.target" value="1.6"></property>
+    <property name="build.classes.dir" value="Z:\2008-2\SCJP1.4\Sesion 9\fuentes"></property>
+    <property name="libs.swing-layout.src" value=""></property>
+    <property name="libs.swing-layout.javadoc" value="C:\Archivos de programa\netbeans-bluej-5.5.1\platform6\docs\swing-layout-1.0-doc.zip"></property>
+    <property name="java.vendor" value="Sun Microsystems Inc."></property>
+    <property name="javac.target" value="1.6"></property>
+    <property name="java.specification.version" value="1.6"></property>
+    <property name="env-classpath" value="C:\Program Files\Sybase\Jaguar CTS 3.5\html\classes;C:\Program Files\Sybase\Jaguar CTS 3.5\java\classes;C:\Archivos de programa\Sybase\Shared\Sun\jdk118\lib\classes.zip;C:\Archivos de programa\Sybase\Shared\PowerBuilder\classes.zip;.;C:\Archivos de programa\Sybase\Shared\Sun\jdk118\lib\classes.zip;C:\ARCHIV~1\COEMES~1\data\classes.jar;C:\ARCHIV~1\COEMES~1\data\jh.jar"></property>
+    <property name="sun.arch.data.model" value="32"></property>
+  </properties>
+  <testcase classname="junit.framework.TestSuite$1" name="warning" time="0.016">
+    <failure message="No tests found in nosync.Test" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: No tests found in nosync.Test
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

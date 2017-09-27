@@ -1,0 +1,99 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{epstopdf}
+\usepackage{color, xcolor}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{listings}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{gray},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=none,                       % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Java,                 % the language of the code
+  otherkeywords={else},           % if you want to add more keywords to the set
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{gray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{orange},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in			 
+\headheight = 0.0 in			
+\headsep = 0.0 in
+			
+\parskip = 0.2in				% vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+
+\begin{center}
+	{\Large Pauta Control 1}\\
+	Programaci\'on 2 \\
+	\emph{\small Prof. Rodrigo Olivares}
+\end{center}
+
+\begin{enumerate}
+    \item[ ] Utilizando los conceptos del Paradigma de Orientaci\'on a Objetos, construya una aplicaci\'on en Java que gestione las operaciones elementales de una calculadora: \emph{suma}, \emph{resta}, \emph{multiplicaci\'on}, \emph{divisi\'on} y \emph{m\'odulo}; las operaciones de trasnformaci\'on de sistema num\'erico: decimal, octal y binario; y al menos 3 funciones matem\'aticas (\emph{sin}, \emph{cos}, \emph{tag}, \emph{abs}, \emph{pow}, \emph{sqrt}, etc). La clase desarrollada, debe contener:
+    \begin{enumerate}
+	    \item Un atributo double para almacenar el valor resultante.
+	    \item Los m\'etodos para cada operaci\'on.
+	    \item El m\'etodo \emph{toString}() para retornar la operaci\'on realizada y el valor resultante. 
+	    \item El m\'etodo principal.
+	\end{enumerate} 
+	\item[] Utilice los m\'etodos miembros de la clase Integer.
+	\begin{itemize}
+	    \item toBinaryString(int i): retorna un String Binario.
+	    \item toOctalString(int i): retorna un String Octal.
+	    \item toHexString(int i): retorna un String Hexadecimal.
+	\end{itemize}
+	\item[] Utilice el m\'etodo miembro de la clase Double.
+	\begin{itemize}
+	    \item intValue(): retorna el valor entero de un double.
+	\end{itemize}
+\end{enumerate}
+\textbf{Calificaci\'on}
+\begin{itemize}
+\item Declaraci\'on de la clase = 2
+\item Atributo resultado = 3
+\item Constructor = 5
+\item M\'etodo suma = 7
+\item M\'etodo resta = 7
+\item M\'etodo multiplicaci\'on = 7
+\item M\'etodo divisi\'on = 7
+\item M\'etodo m\'odulo = 7
+\item M\'etodo sin = 7
+\item M\'etodo cos = 7
+\item M\'etodo tan = 7
+\item M\'etodo binario = 7
+\item M\'etodo octal = 7
+\item M\'etodo hexadecimal = 7
+\item M\'etodo toString = 5
+\item M\'etodo main = 8
+\end{itemize}
+\newpage
+\lstinputlisting[caption={}]{Calculadora.java}
+\end{document} 

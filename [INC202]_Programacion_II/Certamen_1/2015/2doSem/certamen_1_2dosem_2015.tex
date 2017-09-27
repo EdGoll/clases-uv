@@ -1,0 +1,164 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in             
+\headheight = 0.0 in            
+\headsep = 0.0 in
+            
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+\begin{center}
+    {\Large Certamen 1, Programaci\'on II} \\
+    \emph{\small Prof. Rodrigo Olivares} \\
+    \emph{\small Ayud. Juan Carlos Tapia} \\
+    \emph{\scriptsize Septiembre 22, 2015}
+\end{center}
+\vspace*{-35pt}
+\begin{center}
+    \rule{1\textwidth}{.3pt}
+\end{center}
+\vspace*{-42pt}
+\begin{center}
+    \rule{1\textwidth}{2pt}
+\end{center}
+
+\vspace*{-15pt}
+{\small \textbf{Instrucciones}:}
+\vspace*{-15pt}
+
+{\scriptsize
+\begin{itemize}
+    \item[-] El puntaje m\'aximo del certamen es 100\%, siendo el 60\% el m\'inimo requerido para aprobar.
+    \item[-] Responda cada pregunta en la hoja indicada, agregando su nombre. Si no responde alguna pregunta, debe entregar la hoja con su nombre e indicar que \textbf{no responde}.
+    \item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado con nota \textbf{1,0}.
+\end{itemize}
+\vspace*{10pt}
+
+\vspace*{-30pt}
+
+\begin{enumerate}
+
+    \item \emph{30pts.} De las siguentes afirmaciones, encierre en un c\'irculo la o las alternativas correctas.
+    \begin{multicols}{2}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[i.] Algunos enfoques de la orientaci\'on a objeto son:
+        \item El enfoque reusabable.
+        \item El enfoque abstracto.
+        \item El enfoque imperativo.
+        \item El enfoque procedural.
+        \item Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[ii.] En cuanto a la programaci\'on orientada a objeto:
+        \item Se apoya en el paradigma estructural.
+        \item Divide el programa en peque\~nas unidades de c\'odigo.
+        \item Proporciona herramientas para modelar el mundo real.
+        \item Es una herramienta del lenguaje JAVA.
+        \item Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[iii.] Una clase es: 
+        \item Un arreglo de objetos.
+        \item Una abstracci\'on del mundo real.
+        \item Una herramienta de programaci\'on.
+        \item Un punto a memoria.
+        \item Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[iv.] Respecto a una clase:
+        \item Se declaran utilizando la palabra resevada clase.
+        \item Debe tener el mismo nombre que el archivo.
+        \item Son declaradas est\'aticas con static.
+        \item Todas deben incluir el m\'etodo main.
+        \item Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[v.] Respecto a una clase:
+        \item Puede o no tener atributos.
+        \item Puede o no tener m\'etodos.
+        \item Puede o no tener constructor.
+        \item Puede o no tener un nombre.
+        \item Puede o no tener un tipo.
+    \end{enumerate}
+    
+    \begin{enumerate}[label=(\alph*)]
+        \item[vi.] Un objeto es: 
+        \item Un tipo de dato de la clase.
+        \item La instancia de una clase.
+        \item Una abstracci\'on del mundo real.        
+        \item Un sub-conjunto de atributos y m\'etodos de la clase.
+        \item Siempre est\'atico.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[vii.] El principio de ocultamiento: 
+        \item Es una t\'ecnica que protege el estado de una entidad.
+        \item Es indispensable en el paradigma de orientaci\'on a objeto.
+        \item En Java, se logra utilizando los modificadores de acceso.
+        \item Es encapsular el conocmineto de una entidad.
+        \item Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[viii.] Respecto a la herencia, las clases:
+        \item Heredan s\'olo los m\'etodos privados.
+        \item Heredan el compotamiento completo de la clase padre.
+        \item Heredan s\'olo el comportamiento que se desea utilizar.
+        \item En Java, se implementan con la palabra implements.
+        \item En Java, se implementan con la palabra extends.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[ix.] El polimorfismo: 
+        \item El mismo nombre implemenao distintas funcionalidades.
+        \item Una funcionalidad implementada con distintos nombres.
+        \item Es una caracter\'istica de JAVA.
+        \item Es una caracter\'istica de POO.
+        \item Un ejemplo es el s\'imbolo \%.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[x.] El met\'odo \emph{main}:
+        \item Puede no ser void.
+        \item Debe ser static.
+        \item Puede no llevar argumentos de entrada.
+        \item Debe retornar un valor.
+        \item Debe incluirse en un programa.
+    \end{enumerate}
+
+\end{multicols}
+
+\newpage
+
+\item \emph{30pts.} Desarrolle una clase Calculadora que permita gestionar las operaciones elementales: suma, resta, multiplicaci\'on, divisi\'on y m\'odulo. Recuerde utilizar los principios de orientaci\'on a objetos.
+
+\newpage
+
+\item \emph{40pts.} Un pal\'indrome es una palabra, n\'umero o frase que puede ser le\'ia de igual forma hacia adelante y hacia atr\'as, por ejemplo:
+		\begin{itemize}
+			\item[] ``anita lava la tina".
+			\item[] ``1234567890987654321".
+			\item[] ``la ruta nos aporto otro paso natural".
+		\end{itemize}
+Desarrolle una clase (en JAVA) que posea los m\'etodos necesarios para determinar si una palabra es o no un pal\'indrome.
+\end{enumerate}
+}
+\end{document} 

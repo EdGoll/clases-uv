@@ -1,0 +1,25 @@
+1,Hong Kong,China,Asia,25600000
+2,Singapur,Singapur,Asia,22500000
+3,Bangkok,Tailandia,Asia,17500000
+4,Londres,Inglaterra,Europa,16800000
+5,Paris,Francia,Europa,15200000
+6,Macao,China,Asia,14300000
+7,Nueva York,USA,America,11900000
+8,Shenzhen,China,Asia,11700000
+9,Kuala Lumpur,Malasia,Asia,11200000
+10,Antalya,Turquia,Europa y Asia,11100000
+11,Estambul,Turquia,Europa y Asia,10500000
+12,Duabi,EAU,Asia,10500000
+13,Seúl,Corea,Asia,8600000
+14,Roma,Italia,Europa,8600000
+15,Phuket,Tailandia,Asia,8000000
+16,Cantón,China,Asia,7600000
+17,La Meca,Arabia Saudita,Asia,7500000
+18,Pattaya,Tailandia,Asia,7000000
+19,Taipéi,China,Asia,6700000
+20,Miami,USA,America,6300000
+21,Praga,Republica Checa,Europa,6200000
+22,Shanghái,China,Asia,6100000
+23,Las Vega,USA,America,6000000
+24,Milán,Italia,Europa,5900000
+25,Barcelona,España,Europa,5500000

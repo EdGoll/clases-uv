@@ -1,0 +1,1 @@
+18383339-1;Jorge;Rodriguez Antiquera;alumno;18;calle;numero;comuna

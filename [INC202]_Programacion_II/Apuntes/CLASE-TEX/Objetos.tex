@@ -1,0 +1,328 @@
+\graphicspath{{./pics/}}
+
+\section{Objetos}
+\subsection{Objetos}
+\begin{frame}{Plan de la sección Objetos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin{itemize}
+\uncover<1->
+\item {Objetos}
+{\footnotesize{\begin {itemize}
+\item {Crear nuevos Objetos}
+\item {Llamar a Metodos}
+\item {Biblioteca de clase Java}
+\item {Ejercicio de Objetos}
+\end {itemize}}}
+\end{itemize}}}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Crear objetos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{Para crear instancias de clases se debe usar el operador {\textit{new}} seguido de parentesis. Crea una nueva instancia de la clase y se le asigna memoria. Para esto se llama al metodo constructor de la clase.
+\begin {itemize}
+\item {String str = new String()}
+\item {Random r = new Random ()}
+\item {Auto a = new Auto()}
+\end {itemize}
+}}}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Acceso a las variables de instancia y de clase}
+\ITZ{	
+\uncover<1->{\ITT{1}{Rappel!}{
+\uncover<1->
+{Las variables de instancia y de clase se comportan de la misma forma que las locales pero para acceder a ellas se debe usar un punto. Así al lado izquierdo de la notación queda el objeto y al lado derecho la variable. 
+\begin {itemize}
+\item {myVar.val;}
+\item {a.marca;}
+\end {itemize}
+}}}
+\uncover<2->{\ITT{2}{Rappel 2!}{
+\uncover<2->
+{Para cambiar el valor a una variable : 
+\begin {itemize}
+\item {myVar.val = 80;}
+\item {a.marca = "Ford";}
+\end {itemize}
+}}}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Ejercicios Iniciales}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+
+\begin {itemize}
+ \item {Escriba una programa que nos muestre la fecha de hoy. Para eso use la clase Date del paquete java.util (\textit{import java.util.Date;})}
+\item {Escriba un programa que declare 3 notas y calcule el promedio de estas.}
+\item {Escriba una programa que calcule el area de un rectángulo, declarando 2 variables enteras largo y ancho. Si uno de los dos lados es inferior o igual a 0 el programa deberá mostrar un mensaje de "error".}
+\item {Escriba una programa que compare dos enteros a y b y señale si a es menor, mayor o igual a b}
+\end {itemize}
+}}}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Ejercicio resueltos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\lstinputlisting{./codigosEx/Fecha.java}
+}}}}
+\end{frame}
+\subsection{Objetos}
+\begin{frame}{Ejercicios resueltos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\lstinputlisting{./codigosEx/Notas2.java}
+}}}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Ejercicios resueltos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/Notas.java}}
+}}}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Ejercicios resueltos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/Area.java}}
+}}}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Ejercicios resueltos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/Comparar.java}}
+}}}}
+\end{frame}
+
+
+\subsection{Objetos}
+\begin{frame}{Llamar a Metodos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->
+{Para llamar a metodos en los objetos es similar al acceso de variables, tambien usa el punto. El objeto que llama al metodo esta en el lado izquierdo y el metodo con sus argumentos al lado derecho} 
+\begin {itemize}
+\item {myObj.method(arg1,arg2);}
+\item {a.mostrarAtr();}
+\end {itemize}
+}}
+\uncover<2->{\ITT{2}{}{
+\uncover<2->{\footnotesize{
+{Algunos métodos de la clase String: 
+\begin {itemize}
+\item {length() : nos da el largo de la cadena}
+\item {charAt(?) : el carácter que esta en la posición "?"}
+\item {substring(??,??) : el substring entre la posición ?? y ??}
+\item {indexOf('?') : el indice del caracter '?' o del inicio de la cadena "?????"}
+\item {toUpperCase() : la cadena en mayúscula}
+\end {itemize}
+}}}}}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Ejercicio resuelto String}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/TestString.java}}
+}}}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Ejercicio resuelto de String}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/TestString2.java}}
+}}}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Referencias a objetos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Que pasa con pt2 después de cambiar las variables de instancia de pt1?}
+\tiny{\lstinputlisting{./codigosEx/TestReferencias.java}}
+}}} \end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Referencias a objetos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Cuando se asigna el valor pt1 a pt2, se crea una referencia de pt2 al mismo objeto al cual se refiere pt1. Si cambia el objeto al que se refiere pt2 tambien modificará el objeto al que apunta pt1, ya que ambos se refieren al mismo objeto. Es decir, se crea un objeto punto que referencia a 2 variables (pt1 y pt2).
+}}}}
+\uncover<1->{\begin{center}\emph{Referencias a objetos} \end{center}}
+\uncover<1->{\GFXH{3cm}{referencias.pdf}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Referencias a objetos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{\footnotesize{
+Que pasa con pt2 y b después de cambiar las variables pt1 y a?}
+\tiny{\lstinputlisting{./codigosEx/TestReferencias1.java}}
+{\tiny{Rappel: Solo los tipos primitivos y String se manejan por valor, es decir, al realizar str2=str1 o b=a se genera una referencia a un mismo objeto pero esta referencia se rompe y se generan 2 objetos al cambiar el valor de alguna de las variables (str2="otro punto") o crear una nueva variable (str2=new String().}
+}}}}} \end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Referencias a objetos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Que pasa con pt2 después de cambiar las variables de instancia de pt1?}
+\tiny{\lstinputlisting{./codigosEx/TestReferencias2.java}}
+}}} \end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Conversión de objetos y tipos primitivos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Para cambiar un valor de un tipo a otro se usa el mecanismo de conversión llamado "forzar". El resultado es una nueva referencia o valor por lo cual no afecta al objeto o valor original.
+Las reglas de conversion dicen relación con los tipos de datos de java. java posee tipo primitivos (int, float, boolean) y tipos objeto (String, Point, Window), por lo cual hay 3 formas de conversion:
+\begin {itemize}
+\item {Forzar entre tipos primitivos : de int a float a boolean.}
+\item{Forzar entre tipos de objeto : de una instancia de una clase a una instancia de otro clase.}
+\item {Convertir tipos primitivos a objetos y después extraer el valor de dichos objetos.}
+\end{itemize}
+}}}} \end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Forzar tipos primitivos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\begin {itemize}
+\item {Los valores booleanos no pueden forzarse a otro tipo.}
+\item {Si forzamos a un tipo mas grande que el valor original puede tratarse de manera automática dado que no perderá información. \\ Ejemplo:  int i = 5;\\
+double d = i;}
+\item {Para convertir de un valor de tipo grande a uno pequeño se debe usar el forzado explicito : 
+\begin{itemize}
+\item{ (tipo de dato) valor}
+\item { (int) x}
+\item { (int) (x/y)}
+ \end{itemize}
+ } 
+{\footnotesize{Rappel : la precedencia del forzado es mas alta que la aritmética}}
+ \end{itemize}
+}}}} \end{frame}
+
+
+\subsection{Objetos}
+\begin{frame}{Forzar Objetos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\begin {itemize}
+\item{Al forzar un objeto el tipo de dato no cambia, sólo cambia la manera en que el compilador va a tratar a dicho objeto.}
+\item {Solo se puede forzar instancia de una clase a otra si estas están relacionadas por la herencia. Se puede forzar un objeto solo a cierta distancia de la sub o super clase de la clase a la que pertenece, no a cualquier clase.}
+\item {Se pueden usar instancias de la subclase en cualquier superclase (un objeto de la subclase es también un objeto de la superclase por lo cual puede ser tratado como instancia de la superclase).}
+\item {Forzar un objeto a una superclase de ese objeto (se perderá la información proporcionada por la subclase) se debe usar un forzado explícito : 
+\begin{itemize}
+\item {(nombre clase) objeto}
+\item {a1=(Moto) a;}
+\end{itemize}}
+\end{itemize}
+}}}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Forzar Objetos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Habitualmente los métodos son declarados para ser genéricos, posiblemente devolviendo o aceptando un tipo Object. Si se necesita acceder a un parámetro por un tipo especifico puede forzarse.
+\tiny{\lstinputlisting{./codigosEx/TestConvertir.java}}
+}}}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Forzar Objetos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Para verificar si una referencia a un objeto es una instancia de cierta clase o de su padre se usa el operador : {\textbf{instanceof}}. Este operador tiene un objeto a la izquierda y el nombre de una clase a derecha. La expresion regresa {\textbf{true}} o {\textbf{false}} dependiendo si el objeto es una instancia de la clase nombrada o de alguna de sus subclases.
+\tiny{\lstinputlisting{./codigosEx/TestConvertir2.java}}
+}}}}
+\end{frame}
+
+
+\subsection{Objetos}
+\begin{frame}{Forzar tipos primitivos a Objetos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+No es posible forzar de tipos de datos primitivos a objetos ni vice versa. Sin embargo el paquete java.lang incluye varias clases especiales que corresponden a tipos de datos primitivos. \\ {\textbf{Integer}} para {\textbf{ints}}, {\textbf{Float}} para {\textbf{floats}}, {\textbf{Boolean}} para {\textbf{boolenos}}, etc.\\
+Para utilizar los métodos de estas clases puede crear objetos equivalentes a todos los tipos de datos primitivos mediante el uso de {\textbf{new}}.\\
+{\textit{Integer intObjeto = new Integer(23);}}\\
+Esto crea una instancia de la clase {\textbf{Integer}} con el valor 23, este valor puede ser tratado como objeto.
+}}}}
+\end {frame}
+
+\subsection{Objetos}
+\begin{frame}{Forzar Objetos a tipo de dato primitivos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Existen metodos para regresar los valores a tipos primitivos. Por ejemplo : {\textbf{intValues()}}, que extrae un tipo primitivo int de un objeto Integer.\\
+{\textit{int elEntero =  intObjeto.intValues();}}
+}}}}
+\end {frame}
+
+\subsection{Objetos}
+\begin{frame}{Ejemplo resumen : conversión de tipo de datos (objeto y tipos primitivos)}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/TestConvertir3.java}}
+}}}}
+\end{frame}
+
+\subsection{Objetos}
+\begin{frame}{Comparar Objetos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+La mayoría de los operadores funciona solo en tipos primitivos no en objetos excepto los operadores de igualdad {\textbf{==}} y {\textbf{!=}}. \\
+Estos operadores prueban si los dos operandos se refieren al mismo objeto, es decir, los operadores de igualdad no evaluarán si los valores de dos objetos son iguales sino mas bien, si referencian al mismo objeto.
+\tiny{\lstinputlisting{./codigosEx/TestIgual.java}}
+}}}}
+\end{frame}
+
+
+\subsection{Objetos}
+\begin{frame}{}
+\ITZ{	
+\uncover<1->{\ITT{1}{Determinar la clase de un objeto}{
+\uncover<1->{{\footnotesize{
+{\textit{String nombre = obj.getClass().getName();}}\\
+El método {\textit{getClass()}} da como resultado un objeto {\textit{Class}} que posee un método llamado {\textit{getName()}} que regresa la cadena de caracteres con el nombre de la clase.}}}}}
+\uncover<2->{\ITT{2}{Algunos paquetes de Java}{
+\uncover<2->{\footnotesize{
+Cada biblioteca de java ofrece un conjunto de clases disponible.
+{\begin{itemize}
+\item {{\textit{java.lang :}} clases que se aplican al lenguaje mismo entre ellas la clase {\textit{Object, System,String}}. También contiene las clases especiales para tipos primitivos  {\textit {Integer, Float, Character}}, etc.}
+\item {{\textit{java.util :}} clases utilitarias como {\textit{Date}} y clases de colección de datos como {\textit{Vector}}.} 
+\item {{\textit{java.io: }} clases de entrada y salida, para escribir y leer flujos de datos y manejar archivos.} 
+\item {{\textit{java.net : }} clases para soporte de red, clases como {\textit{URL}}.}
+\item {{\textit{java.awt : }} clases para trabajar con una interfaz gráfica de usuario y procesar imagenes, incluye las clases {\textit{Window,Menu, Button,Font, Image,}} entre otras.}
+\end{itemize}}}}}}}
+\end{frame}

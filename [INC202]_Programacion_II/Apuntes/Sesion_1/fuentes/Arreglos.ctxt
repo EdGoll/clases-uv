@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=arreglo
+comment0.target=void\ procesarArreglo(int[])
+comment1.target=void\ arregloAnonimo()
+comment2.target=String[]\ multiArreglo()
+comment3.target=String[]\ arregloDeArreglos()
+comment4.target=String[]\ autoAsignacion()
+comment5.target=Object[]\ inicializacionEnLinea()
+comment6.target=String[]\ DosDimEnLinea()
+comment7.target=String[]\ inicializacionArregloAnonimo()
+numComments=8

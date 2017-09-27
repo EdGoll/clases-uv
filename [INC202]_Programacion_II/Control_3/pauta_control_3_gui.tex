@@ -1,0 +1,84 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{epstopdf}
+\usepackage{color, xcolor}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{listings}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{gray},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=none,                       % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Java,                 % the language of the code
+  otherkeywords={else},           % if you want to add more keywords to the set
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{gray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{orange},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in			 
+\headheight = 0.0 in			
+\headsep = 0.0 in
+			
+\parskip = 0.2in				% vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+
+\begin{center}
+	{\Large Pauta Control 3}\\
+	Programaci\'on 2 \\
+	\emph{\small Prof. Rodrigo Olivares} \\
+	\emph{\scriptsize \date{junio de 2017}} \\
+    \emph{\scriptsize duraci\'on: 60 minutos}
+\end{center}
+
+\begin{enumerate}
+    \item (\emph{100 pts}) La clase \texttt{NumberTrans} posee el m\'etodo p\'ublico est\'atico \texttt{toRoman(int)} que permite transformar un valor num\'erico (sistema decimal) a un n\'umero romano. Construya una interfaz gr\'afica en Java que le solicite al usuario ingresar un valor num\'erico y muestre la transformaci\'on a romano. Para ello se pide utilizar:
+    \begin{itemize}
+        \item[\emph{7 pts.}] al menos una forma de disposici\'on de componentes.
+        \item[\emph{7 pts.}] un componente para el ingreso del valor num\'erico.
+        \item[\emph{7 pts.}] un componente para la salida.
+        \item[\emph{7 pts.}] un bot\'on para la transformaci\'on.
+        \item[\emph{7 pts.}] un bot\'on para limpiar el componente de entrada de texto y el de salida.
+    \end{itemize}
+    \item[] Por otra parte:
+    \begin{itemize}
+        \item[\emph{15 pts.}] el sistema debe validar que se ingrese un valor num\'erico al componente de texto. Si se ingresa algo diferente (o no se ingresa nada),  el sistema debe informar (con un componente de salida) que ha ocurrido un error. 
+    \end{itemize}
+    \item[] Ud. debe:
+    \begin{itemize}
+        \item[\emph{15 pts.}] desarrollar la clase \texttt{VistaTrans}, extediendo de la clase \texttt{JFrame}, utlizando sus m\'etodos para la inclusi\'on de los componentes.
+        \item[\emph{15 pts.}] desarrolle la clase interna \texttt{OyenteBoton} que permita discriminar el bot\'on y realice las invocaciones a los m\'etodos solicitados. 
+        \item[\emph{20 pts.}] desarrollar la aplicaci\'on bajo el paradigma de la orientaci\'on a objetos.
+    \end{itemize}
+\end{enumerate}
+\newpage
+\lstinputlisting[caption={}]{VistaTrans.java}
+\end{document} 

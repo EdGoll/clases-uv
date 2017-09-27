@@ -1,0 +1,485 @@
+\graphicspath{{./pics/}}
+
+
+\section{Clases, Objetos y Metodos}
+\subsection{Clases, Objetos y Metodos}
+\begin{frame}{Clases, Objetos y Metodos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin{itemize}
+\uncover<1->
+\item {Clases y objetos}
+{\footnotesize{\begin {itemize}
+\item {Definir Clases}
+\item {Constructores}
+\item {Definición de objetos}
+\end {itemize}}}
+\item {Métodos}
+{\footnotesize{\begin {itemize}
+\item {Reglas de escritura de métodos}
+\item {Atributos y metodos de clase}
+\item {Sobrecarga de métodos }
+\item {Intercambio de información con métodos}
+\item {Recursividad}
+\end {itemize}}}
+\item {Aplicaciones Java}
+{\footnotesize{\begin {itemize}
+\item {Multiples Clases}
+\item {Encapsulamiento}
+\item {Paquetes}
+\item {Ejercicio Clases, Objetos y Metodos}
+\end {itemize}}}
+\end{itemize}}}}
+\end{frame}
+
+\subsection{Clases y objetos}
+\begin{frame}{Recordatorio : Definir Clases}
+\ITZ{	 
+\uncover<1->{\ITT{1}{Definición de Clases}{
+\uncover<1->
+{La definición general de clases que hemos usado : 
+\lstinputlisting{./codigosEx/Auto.java}
+}}}}
+\end{frame}
+
+\subsection{Clases y objetos}
+\begin{frame}{Recordatorio : Definir Clases}
+\ITZ{	 
+\uncover<1->{\ITT{1}{Variables de instancia}{
+\uncover<1->
+\tiny{{\lstinputlisting{./codigosEx/Autov2.java}}
+La variable privada no será accesible fuera de la clase}}}
+\uncover<2->{\ITT{1}{Variables de clase}{
+\uncover<2->
+\tiny{{\lstinputlisting{./codigosEx/Autov2C.java}}
+Las variables de clase son globales para todas las instancias de clase. Para definir una variable de clase se usa la palabra clave {\textbf{static}}}}}}
+\end{frame}
+
+\subsection{Clases y objetos}
+\begin{frame}{Recordatorio : Definir Clases}
+\ITZ{	 
+\uncover<1->{\ITT{1}{Variables}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/VaIns.java}}}}}}}
+\uncover<1->{\begin{center}\emph{Variables de Instancia} \end{center}}
+\uncover<1->{\GFXH{3cm}{referenciasI.pdf}}
+\end{frame}
+
+\subsection{Clases y objetos}
+\begin{frame}{Recordatorio : Definir Clases}
+\ITZ{	 
+\uncover<1->{\ITT{1}{Variables}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/VaClas.java}}}}}}}
+\uncover<1->{\begin{center}\emph{Variables de Clase}}
+\uncover<1->{\GFXH{3cm}{referenciasC.pdf}} \end{center}
+\end{frame}
+
+\subsection{Clases y objetos}
+\begin{frame}{Recordatorio : Definir Clases}
+\ITZ{	 
+\uncover<1->{\ITT{1}{Constantes}{
+\uncover<1->
+\tiny{{\lstinputlisting{./codigosEx/Const.java}}
+Las constantes son útiles para definir valores comunes a todos los métodos de un objeto.}}}}
+\end{frame}
+
+\subsection{Clases y objetos}
+\begin{frame}{Recordatorio :  Clases, objetos y métodos}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->
+{Cual es la diferencia entre : 
+\begin{itemize}
+\item {Auto a ;}
+\item {int a;}
+\end {itemize}
+La primera no reserva un espacio en memoria para un objeto del tipo Auto sino que una referencia a un objeto del tipo Auto. El lugar de la memoria sera asignado al realizar {\textit{new Auto();}}. Esto ultimo crea un lugar de para el objeto de tipo Auto y entrega como resultado su referencia. Por ende,  {\textit{a=new Auto();}} crea un objeto del tipo Auto y pone su referencia en a.}}}}
+\end{frame}
+
+\subsection{Métodos}
+\begin{frame}{Recordatorio : Definir Métodos}
+\ITZ{	 
+\uncover<1->{\ITT{1}{Métodos}{
+\uncover<1->
+Si el método es publico será accesible de cualquier programa. Si el método no retorna valor se debe usar {\textbf{void}}. 
+{\tiny{\lstinputlisting{./codigosEx/Autovm.java}}}
+De la misma manera que tenemos variables de clase y de instancia existen métodos de clase y de instancia. \\Para definir métodos de clase se debe usar la palabra {\textbf{static}} (al igual que en las variables de clase, los métodos de clase están disponibles para cualquier instancia de la clase).}}}
+\end{frame}
+
+\subsection{Clases, objetos y métodos}
+\begin{frame}{Recordatorio :  Clases, objetos y métodos}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{Supongamos que tenemos una clase Punto con dos instancias {\textit{Punto a,b;}}.\\
+ Le asignamos los valores (3,5) al punto 1 y (2,0) al punto 2 ({\textit{pt1.x=3;pt1.y=5;}}).}}}
+\uncover<1->{\begin{center}\emph{Referencias a objetos} \end{center}}
+\uncover<1->{\GFXH{3cm}{referencias2.pdf}}}
+\end{frame}
+
+\subsection{Clases, objetos y métodos}
+\begin{frame}{Recordatorio :  Clases, objetos y métodos}
+Que pasa si hacemos : {\textit{pt1=pt2;}}?. \\
+%\begin{center}\emph{Referencias a objetos} \end{center}
+\GFXH{3cm}{referencias3.pdf}
+Lo que ocurre es que copia en pt1 la referencia al contenido de pt2, así pt1 y pt2 referencian al mismo objeto y no a dos objetos que tienen el mismo valor. En este caso Java con el recolector de basura libera el espacio en memoria del otro objeto.
+\end{frame}
+
+\subsection{Clases, objetos y métodos}
+\begin{frame}{Paso de argumentos a los métodos}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\footnotesize{Cuando llama a un método con parámetros de objetos, las variables que pasa al cuerpo del método lo hacen por {\textit{referencias}}, lo que significa que las instrucciones aplicadas a esos objetos dentro del método afectara los objetos originales también (esto incluye arreglos). Recuerde que los tipos de dato primitivos son pasados por {\textit{valor}}, por lo cual, si fueron modificados al interior de un método, esta modificación no se mantiene de  un método a otro.}}
+\tiny{\lstinputlisting{./codigosEx/PasoRef.java}}}}}}
+\end{frame}
+
+\subsection{Clases, objetos y métodos}
+\begin{frame}{Recordatorio: Intercambio de información entre los métodos}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\begin{itemize}
+\item {Por valor : el método recibe una copia del valor del argumento; el método trabaja sobre esa copia que podrá modificar sin que esto tenga incidencia al valor efectivo del argumento.}
+\item {Por referencia : el método recibe la referencia del argumento con la cual trabaja directamente, por lo cual, el método podrá modificar el valor efectivo del argumento.}
+\end{itemize}}}}}\end{frame}
+
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Autoreferencia : La palabra clave this}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Para hacer una referencia a la instancia actual de una clase usamos la palabra clave this. Así, la palabra clave {\textit{this}} se usa para referirse al objeto actual o a las variables de instancia de este objeto. No se usa this en los metodos declarados como {\textit{static}}.
+{\tiny{\lstinputlisting{./codigosEx/this.java}}}
+Se puede omitir la palabra clave this para las variables de instancia, esto depende de la existencia o no de variables con el mismo nombre en el ámbito local.
+}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Nombre de variables y la palabra clave this}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Java busca la definición de las variables primero en el ámbito actual, después en el exterior hasta la definición del método actual. Si esa variable no es local, entonces java busca una definición de ella como instancia de la clase actual y por ultimo de una super clase. En estos casos se usa por ejemplo :   {\textit{this.test }} para referirse a la variable de instancia y solo {\textit{test}} para referirse a la variable local.
+\tiny{\lstinputlisting{./codigosEx/ehis2.java}}}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Sobrecarga : Métodos con el mismo nombre y argumentos diferentes}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+En java se pueden crear métodos con el mismo nombre pero con definiciones diferentes. No hay necesidad de métodos completamente diferentes que realizan en esencia lo mismo, simplemente se comportaran distinto en base a la entrada.\\ Al llamar a un método, si hay múltiples declaraciones de este, java hará coincidir su nombre, numero y tipo de argumentos (no considera el tipo de dato de retorno)para seleccionar que definición de método utilizar. \\
+Si se quiere realizar múltiples declaraciones de  métodos en la clase, lo único que se debe hacer es crear definiciones distintas  todas con el mismo nombre, pero con diferentes listas de parámetros (es necesario que cada lista de parámetros sea única). En la sobrecarga de métodos java no diferencia una variable definida como {\textit{int a}} o {\textit{final int a}}.}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Sobrecarga}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/Rectangulo0.java}}
+\tiny{\lstinputlisting{./codigosEx/Rectangulo1.java}}
+}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Sobrecarga}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/Rectangulo2.java}}
+\tiny{\lstinputlisting{./codigosEx/Rectangulo3.java}}
+}}}}
+\end{frame}
+
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Sobrecarga}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/Rectangulo4.java}}
+\tiny{\lstinputlisting{./codigosEx/Rectangulo5.java}}
+}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Programa con varias Clases}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\begin{itemize}
+\item{Un archivo fuente por clase:  para ejecutar un programa compuesto de varias clases en archivos separados es necesario compilar todas las clases y luego ejecutar la clase que tenga el método {\textit{main}} (que probablemente llamaremos  {\textit{public class Main())}}. Las clases deben estar en la misma carpeta o darle la ruta para que pueda acceder a ellas.}
+\item {Un archivo fuente para todas las clases : para esto solo, una clase que será la que contenga el método {\textit{main}} debe ser {\textit{public}}. La maquina virtual accede a la clase publica y por ende, al método {\textit{main}}. Las otras clases pueden estar dentro de la clase {\textit{public}} o fuera de ella ya sea al inicio o al final del archivo.}
+\end{itemize}
+}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Constructor}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+El constructor asigna memoria para el objeto y automatiza el proceso de inicialización de este. Un constructor será un método que \begin{itemize} \item{tiene el mismo nombre de que la clase}, \item{puede tener argumentos} \item{no tiene un valor de retorno(return).} \end{itemize}
+{\tiny{\lstinputlisting{./codigosEx/Punto.java}}}
+Cuando la clase tiene un constructor debemos crear los objetos llamando al constructor. En este caso: {\textit{Punto a = Punto (1,2);}}}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Constructor - ejercicio}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Crear una clase Punto. Crear 3 constructores \begin{itemize}  \item {uno que no reciba argumentos y que inicialice {\textit{x}} e {\textit{y}} en 0} \item{uno que defina {\textit{x=y=abs}} y reciba como argumento (int abs)} \item{uno que reciba (int abs, int ord)}\end{itemize}
+}}}
+\uncover<2->{\ITT{1}{}{
+\uncover<2->{
+Cree un método para mostrar en pantalla y tres métodos para desplazar para desplazar el punto \begin {itemize} \item{ el primero recibe 2 enteros }\item{ el segundo recibe 1 enteros }\item{ el tercero recibe 1 short } \end{itemize} Pruebe que pasa si llama al método desplazar con una variable declarada como byte. 
+\\Use esta clase Punto en el ejercicio anterior de construcción del rectángulo.
+}}}}\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Constructor - ejercicio}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/PuntoT0.java}
+}}}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Constructor - ejercicio}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/PuntoT1.java}}}
+}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Constructor - ejercicio}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/PuntoT2.java}}}
+}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Reglas de los Constructores}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\begin{itemize}
+\item {Los constructores no retornan ningún valor. Por lo cual, no debe figurar nada antes del nombre del constructor {\textit{public void Punto()}}}.
+\item {Podemos declarar una clase sin constructor. En este caso, para instanciar los objetos se usa : {\textit{Punto a = Punto ();}}, como si existiera un constructor por defecto sin argumentos. Desde que la clase posee al menos un constructor este constructor {\textit{por defecto}} no podrá ser utilizado.}
+%En el caso que el constructor no tenga argumentos no podemos distinguirlo del constructor por defecto {\textit{Punto a = Punto ();}}, es decir, con esta instrucción podemos entender que Punto no tiene constructor o que tiene un constructor sin argumentos. }
+\item {Un constructor no puede ser llamado directamente desde otro método. \\ Por ejemplo : {\textit{Punto a = Punto (2,3);}}\\
+{\textit{a.Punto (4,6);}} }
+%\item {Un constructor puede ser llamado por otro constructor de la misma clase, para esto se usa la palabra {\textit{super}}}
+\end{itemize}
+}}}}\end{frame}
+
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Construcción e inicialización de un objeto}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+La creación de un objeto conlleva : \begin{itemize}
+\item {Inicialización por defecto de todos los campos del objeto (null).}.
+\item {Inicialización explícita al declarar los campos de un objeto.}
+\item {Ejecución de las instrucciones del constructor.}
+\end{itemize}
+{\tiny{\lstinputlisting{./codigosEx/EjClass.java}}}
+Si ejecutamos la instrucción : {\textit{A a = new A();}} que ocurre?\\
+{\footnotesize{Si los campos del objeto son constantes, es decir, definidos con la palabra clave {\textit{final}}, estos deberán ser inicializados a mas tardar por el constructor y evidentemente no podan ser modificados posteriormente.}}
+{\footnotesize{A diferencia de los objetos las variables locales no son inicializadas de manera implicita. Toda variable local debe ser inicializada antes de ser usada.}}
+}}}}\end{frame}
+
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Llamar a un constructor dentro de otro constructor}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+No se puede llamar directamente a un constructor ({\textit{a.Point(2,3)}}). Pero si se puede llamar a un constructor al interior de otro constructor de la misma clase. Para esto se usara la palabra clave {\textit{this}}. 
+{\tiny{\lstinputlisting{./codigosEx/Constructor.java}}}
+}}}}\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Recursividad}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+En Java es posible usar la recursividad ya sea en los metodos de instancia o en los metodos de clase ({\textit{static}})..
+\begin{itemize}
+\item {Directa : un método tiene, en su definición, una llamada a si mismo.}
+\item {Cruzada : el llamado de un método lleva el llamado de otro método que llama al método inicial.}
+\end{itemize}
+Cree un programa recursivo que calcule el factorial de un numero.
+}}}}\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Recursividad- ejercicio}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/CalcularFac.java}}}
+}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Recursividad- ejercicio}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/CalcularFac2.java}}}
+}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Atributos private}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+La  encapsulación consiste en el ocultar los datos miembros de una clase, de modo que solo será posible modificarlos mediante métodos definidos dentro de la misma clase. De esta forma, los detalles de implementación permanecen "ocultos" a las personas que usan las clases. \\La encapsulación es una de las principales ventajas que proporciona la programación orientada a objetos. \\
+Java implementa la encapsulación de datos usando la palabra clave : {\textit{private}}. 
+\\El uso de la encapsulación de datos no es obligatoria pero es recomendada.
+}}}}
+\end{frame}
+
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Atributos private}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{Cree una clase Punto con {\textit{private int x,int y;}} y con un método mostrar el punto. \\Cree una clase circulo con : {\tiny{\lstinputlisting{./codigosEx/CercleConst.java}}} Cree ademas un método mostrar los parámetros del circulo y otro que desplace los valores del punto central del circulo.}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Atributos private - ejercicio}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/PuntoTest.java}}}
+}}}}
+\end{frame}
+\subsection{Aplicaciones Java}
+\begin{frame}{Atributos private - ejercicio}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Cercle.java}}}
+}}}}
+\end{frame}
+\subsection{Aplicaciones Java}
+\begin{frame}{Atributos private - ejercicio}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainCerclePuntoTest.java}}}
+}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Atributos private}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Dado que los atributos de la clase Punto son privados, estos no son accesibles por la clase circulo. Para evitar esto crearemos la misma clase circulo que tiene un objeto miembro del tipo Punto y a la vez definiremos métodos de acceso {\textit{getX}} y  {\textit{getY}}  de alteración  {\textit{setX}} y  {\textit{setY}}.
+{\tiny{\lstinputlisting{./codigosEx/setget.java}}}
+Cree los métodos \textit{set} y \textit{get} para corregir el ejemplo precedente.}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Uso set y get- ejercicio}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/PuntoTest2.java}}}
+}}}}
+\end{frame}
+\subsection{Aplicaciones Java}
+\begin{frame}{Uso set y get- - ejercicio}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Cercle2.java}}}
+}}}}
+\end{frame}
+\subsection{Aplicaciones Java}
+\begin{frame}{Uso set y get- - ejercicio}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainCerclePuntoTest2.java}}}
+}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Paquetes}
+\ITZ{	 
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+
+La noción de paquete corresponde a un reagrupamiento logico bajo un identificador común de un conjunto de clases. Los paquetes Java agrupan las clases en librerías (bibliotecas). Los paquetes Java se utilizan de forma similar a como se utilizan las librerías en C++, sólo que en Java se agrupan clases y/o interfaces. \\
+
+Los paquetes se caracterizan por un nombre que puede ser un simple identificador {\textit{MisClases}} único o una continuación de identificadores separados por puntos {\textit{Utilitarios.Matematica}}. 
+Los paquetes proporcionan una forma de ocultar clases, evitando que otros programas o paquetes accedan a clases que son de uso exclusivo de una aplicación determinada.\\
+ }}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Paquetes}
+\ITZ{	 
+\uncover<1->{\ITT{1}{Paquetes}{
+\uncover<1->{
+
+Los paquetes se declaran utilizando la palabra reservada \textit{package} seguida del nombre del paquete. Esta sentencia debe estar al comienzo del archivo fuente. Concretamente debe ser la primera sentencia ejecutable del código Java, excluyendo, los comentarios y espacios en blanco.
+Por ejemplo: \\
+\textit{ package figuras;}\\
+\textit{ public class Circulo \{ }\\ 
+\textit{  . . \}.} 
+}}}}
+\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Paquetes}
+\ITZ{	 
+\uncover<1->{\ITT{1}{Paquetes}{
+\uncover<1->{
+Para incluir nuevas clases en el paquete se debe colocar la misma sentencia al comienzo de los archivos que contengan la declaración de las clases. Cada uno de los archivos que contengan clases pertenecientes a un mismo paquete, deben incluir la misma sentencia  \textit{package}, y solamente puede haber una sentencia \textit{package} por fichero. La sentencia \textit{package} colocada el comienzo de un fichero fuente afectará a todas las clases que se declaren en ese fichero.}}}}
+\end{frame}
+
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Paquetes}
+\ITZ{	 
+\uncover<1->{\ITT{1}{Uso de una clase de un paquete}{
+\uncover<1->{
+
+Cuando un programa usa una clase el compilador la busca en el paquete por defecto. Para usar una clase que pertenezca a otro paquete se debe : 
+\begin{itemize}
+\item {usar el nombre del paquete y de la clase: \\{\textit{MisClases.Punto p = new MisClases.Punto(2,3);}}}
+\item {usar la instrucción {\textit{ import}} para importar una clase : {\textit{import MisClases.Punto}} o \textit{import MisClases.*}} para importar el paquete completo. Luego se podrá usar el nombre de la clase sin especificar el nombre del paquete.}
+\end{itemize}
+}}}\end{frame}
+
+\subsection{Aplicaciones Java}
+\begin{frame}{Paquetes}
+\ITZ{	 
+\uncover<1->{\ITT{1}{Acceso a la clases y paquetes}{
+\uncover<1->{
+Cada clase dispone de derecho de acceso, este es definido por la palabra clave {\textit{public}}.
+\begin{itemize}
+\item {con la palabra clave {\textit{public}} la clase es accesible por todas las otras clases (usando import).}
+\item {sin la palabra clave {\textit{public}} la clase será accesible solo por la clases del mismo paquete.}
+\end{itemize}
+Mientras se trabaje con el paquete por defecto, la ausencia de la palabra {\textit{public}} no tiene importancia, pero al definir un paquete la clases no definidas como publicas solo serán accesibles por la clases que pertenecen al paquete. 
+}}}}\end{frame}
+
+
+
+%\item {Un constructor puede ser llamado por otro constructor de la misma clase, para esto se usa la palabra {\textit{super}}}

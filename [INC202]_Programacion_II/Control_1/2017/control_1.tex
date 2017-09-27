@@ -1,0 +1,107 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage[spanish]{babel}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+
+\parskip = 0.2in				% vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+
+\begin{center}
+	{\Large Tarea 1}\\
+	 Programaci\'on 2 (INC-202)\\
+	\emph{\small Prof. Eduardo Godoy Llanca} \\
+	\emph{\scriptsize \small{\today}}
+\end{center}
+
+\begin{enumerate}
+		\item {\large Programa de Inventario de Productos}\\
+		\item[] Sistema que permita administrar el inventario del negocio “la esquina” en donde le
+		permita a su dueña llevar el control de sus productos.  Para esto el sistema debe cubrir las siguientes
+		necesidades
+\begin{itemize}
+	\item	Venta de productos.
+	\item	Recarga de stock, para ir reponiendo los productos vendidos
+	\item	Crear nuevos productos, almacenando el nombre del producto, la cantidad, el precio, un ID numérico y la
+	categoría.
+	\item	Buscar productos por precio, ID o nombre.
+	\item	Rápido resumen del inventario actual, incluyendo las cantidades de los distintos productos ordenados
+	 por categoría.
+	\item	Avisar a su dueña cuando
+	\item	Los clientes pueden hacer el pago de los productos mediante efectivo, tarjeta de crédito o debido.
+\end{itemize}
+
+
+		\item {\large Sistema de Reservas de un Hotel}\\
+		\parskip = 0.2in
+		\item[] Un sistema de reservas para un hotel que provea de las siguientes funcionalidades:
+\begin{itemize}
+	\item Llevar un registro de los usuarios con (nombre, rut o pasaporte, teléfono, país y correo electrónico)
+\item Pedir los requisitos del usuario actual (preferencia de habitaciones, y fechas de reserva)
+\item	El hotel tiene varios tipos de habitaciones y precios/día –básica 50 mil, ejecutivo 80 mil y lujo 120 mil. Se debe permitir actualizar los precios producto de ofertas o atenciones a pasajeros preferentes.
+\item	Asignar una habitación al usuario.
+\item	Se debe permitir registrar el ingreso (check in/check out) de cada pasajero en el hotel.
+
+\end{itemize}
+
+\end{enumerate}
+
+\begin{table}[!ht]
+	 {\scriptsize
+		\begin{center}
+				 \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}\hline
+						\multicolumn{4}{|c|}{\textbf{\textquestiondown C\'omo ser\'e evaluado en la pregunta 2?} } \\ \hline
+						\multicolumn{1}{|c|}{\textbf{T\'opico}} &
+						\multicolumn{1}{c|}{\textbf{Logrado}} &
+						\multicolumn{1}{c|}{\textbf{Medianamente logrado}} &
+						\multicolumn{1}{c|}{\textbf{No logrado}} \\ \hline
+						Construir entidades &
+						\emph{15pts} Crea la clase at\'omica Alumno con sus atributos/m\'etodos. &
+						\emph{  8pts} Crea la clase at\'omica Alumno sin el atributo o sin todos los m\'etodos necesarios para el problema.. &
+						\emph{  0pts} No crea la clase at\'omica Alumno. \\
+						&  Atributo: identificaci\'on del alumno. & & \\
+						& M\'etodos: para fijar y obtener el atributo id, para mostrar su informaci\'on, para comparar con otra instancia Alumno.  & & \\ \hline
+						Construir clase Lista y sus m\'etodos &
+						\emph{25pts} Define e implementa correctamente la clase Lista, sus atributos y m\'etodos: &
+						\emph{10pts} Define algunos atributos o algunos m\'etodos, pero no todos los necesarios para el problema. &
+						\emph{  0pts} No define ni los atributos ni m\'etodos. \\
+						& Atributos: listas, tama\~no, l\'imites, etc. & & \\
+						& M\'etodos: llenar, generar identificador sin repetir, mostrar, etc.  & & \\ \hline
+						Construir clase principal &
+						\emph{10pts} Define la clase con el m\'etodo principal. &
+						\emph{  5pts} Define el m\'etodo principal en la misma clase. &
+						\emph{  0pts} No define el m\'etodo principal. \\ \hline
+						Paradigma Orientaci\'on a Objetos  &
+						\emph{20pts} Resuelve el problema utilizando el POO. &
+						\emph{  7pts} Utiliza parte del POO para resolver el problema. &
+						\emph{  0pts} No utiliza el POO para dar soluci\'on al problema.\\ \hline
+						Total m\'aximo puntaje pregunta 2 &
+						\emph{70pts} &
+						\emph{30pts} &
+						\emph{  0pts} \\ \hline
+				\end{tabular}
+		\end{center}}
+ \end{table}
+
+\begin{itemize}
+\item[] Formato de respuestas:
+\begin{itemize}
+\item Formato de respuestas: En cada archivo .java generado debe agregar al inicio y como comentario el nombre, apellido y rut del estudiante.\item  Enviar archivos .java resultantes  a \textbf{eduardo.gl@gmail.com} con asunto Control Programaci\'on 2 Nombre Apellido desde correo institucional.
+\end{itemize}
+%\item[] Duraci\'on: 90 minutos.
+\end{itemize}
+\end{document}

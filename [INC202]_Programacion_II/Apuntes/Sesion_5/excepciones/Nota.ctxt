@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=nuevoValor
+comment0.target=void\ setValor(double)
+comment1.target=double\ getValor()
+numComments=2

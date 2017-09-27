@@ -1,0 +1,262 @@
+\documentclass[10pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in             
+\headheight = 0.0 in            
+\headsep = 0.0 in
+            
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+    \begin{center}
+		{\Large Certamen 3, Programaci\'on II} \\
+		\emph{\small Prof. Rodrigo Olivares} \\
+		\emph{\small Ayud. Juan Carlos Tapia} \\
+		\emph{\scriptsize Noviembre 30, 2015} 
+	\end{center}
+
+	\vspace*{-35pt}
+	\begin{center}
+		\rule{1\textwidth}{.3pt}
+	\end{center}
+	\vspace*{-42pt}
+	\begin{center}
+		\rule{1\textwidth}{2pt}
+	\end{center}
+
+	\vspace*{-15pt}
+
+	{\small \textbf{Instrucciones}:}
+
+	\vspace*{-15pt}
+
+	{\scriptsize
+	\begin{itemize}
+		\item[-] El puntaje m\'aximo del certamen es 100\%, siendo el 60\% el m\'inimo requerido para aprobar.
+		\item[-] Responda cada pregunta en la hoja indicada, agregando su nombre. Si no responde alguna pregunta, debe entregar la hoja con su nombre e indicar que \textbf{no responde}.
+		\item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado con nota \textbf{1,0}.
+	\end{itemize}
+	
+	\vspace*{-20pt}
+
+	\begin{enumerate}
+
+		\item \emph{20pts.} De las siguentes afirmaciones, eval\'ue con verdadero ($\mathcal{V}$) o falso ($\mathcal{F}$) las siguientes afirmaciones (\emph{1pt c/u}). \textbf{Se descontar\'a una respuesta correcta por cada respuesta incorrecta}.
+		
+		\begin{enumerate}
+            \item \_\_V\_\_ Un thread es un flujo de proceso que se ejecuta en memoria.
+            \item \_\_V\_\_ Un thread puede ser instanciado como objeto.
+            \item \_\_F\_\_ Para crear un thread se debe extender de una sub-clase Thread.
+            \item \_\_F\_\_ Para iniciar un thread se utiliza el m\'etodo \emph{run}. 
+            \item \_\_F\_\_ Para iniciar un thread se debe sobre-escribir el m\'etodo \emph{start}.
+            \item \_\_F\_\_ En el ciclo de vida de una hebra, el estado \emph{New} es el encargado de crear e instanciar una thread.
+            \item \_\_V\_\_ En el ciclo de vida de una hebra, el estado \emph{Dead} es invocado generalmente por el m\'etodo \emph{stop}.
+            \item \_\_V\_\_ Un recurso compartido puede ser una clase.
+            \item \_\_V\_\_ Un recurso compartido siempre debe estar sincronizado.
+            \item \_\_F\_\_ La API \emph{Swing} sustituye a API AWT.
+            \item \_\_F\_\_ AWT incopora los \emph{JComponents} de \emph{Swing}.
+            \item \_\_F\_\_ \emph{JPane} es habitualmente utilizada para crear la ventana principal.
+            \item \_\_V\_\_ Para crear la ventana (usando \emph{Swing}) se de extender la clase \emph{JFrame}.
+            \item \_\_F\_\_ El m\'etodo \emph{getPaneContent} de la clase \emph{JFrame} obtiene el panel principal.
+            \item \_\_V\_\_ El m\'etodo \emph{add} de la clase \emph{JFrame} permite agregar componentes al panel.
+            \item \_\_F\_\_ Para agregar funcionalidad a un JButton se debe crear y agregar una clase que implemente un ActionEvent
+            \item \_\_F\_\_ Para agregar funcionalidad a una JList se debe sobreescribir el m\'etodo actionList(ActionPerformed)
+            \item \_\_V\_\_ El componente JFileChooser es un componente di\'alogo de selecci\'on de archivos.
+            \item \_\_V\_\_ Algunos de componentes que permiten ingresar texto son: JPasswordField, JTextField y JTextArea.
+            \item \_\_V\_\_ Algunos de componentes que permiten manipular eventos/acciones son: JList, JButton y JTextField.
+        \end{enumerate}
+
+		\newpage
+
+		\item \emph{40pts.} Simular el proceso de giro y dep\'osito de dinero de una cuenta corriente. La idea es controlar el ingreso y egreso de dinero, de tal manera que no sea factible girar dinero si la cuenta est\'a en valor cero 0 negativo y adem\'as no sea factible mantener m\'as de \$100.000 (cien mil pesos) en la cuenta. Cada transaci\'on debe esperar un n\'umero aletorio de segundos (entre 1 y 5) y el monto a depositar o girar tambi\'en deber\'a ser aleatorio entre \$1.000 (mil) y \$10.000 (diez mill). Considere como \textbf{regi\'on cr\'itica} la clase que gestiona la cuenta corriente (el saldo), por lo cual debe utilizar \textbf{bloqueos/sincronizaci\'on de thread}.
+
+\begin{verbatim}
+public class CuentaCorriente {
+
+    private final int MAX_AHORRO = 100000;
+    private int saldo = 0;
+
+    public synchronized void depositar(int dinero) {
+        try {
+            while (saldo >= MAX_AHORRO) {
+                wait();
+            }
+            saldo += dinero;
+            System.out.println("Deposito: " + dinero + " Saldo: " + getSaldo());
+            notifyAll();
+        } catch (InterruptedException ex) {
+        }
+    }
+
+    public synchronized void girar(int dinero) {
+        try {
+            while (saldo <= 0) {
+                wait();
+            }
+            saldo -= dinero;
+            System.out.println("Giro: " + dinero + " Saldo: " + getSaldo());
+            notifyAll();
+        } catch (InterruptedException ex) {
+        }
+    }
+
+    private int getSaldo() {
+        return saldo;
+    }
+}
+
+public class ThreadCuentaCorrienteDepositar extends Thread {
+
+    private final CuentaCorriente cuentaCorriente;
+
+    public ThreadCuentaCorrienteDepositar(CuentaCorriente cuentaCorriente1) {
+        this.cuentaCorriente = cuentaCorriente1;
+    }
+    
+    @Override
+    public void run() {
+        while (true) {
+            try {
+                ThreadCuentaCorrienteDepositar.sleep((long) (1 + (int)(Math.random() * 5)) * 1000);
+                cuentaCorriente.depositar((int)(10000 * Math.random()));
+            } catch (InterruptedException ex) {
+            }
+        }
+    }
+}
+
+public class ThreadCuentaCorrienteGirar extends Thread {
+
+    private final CuentaCorriente cuentaCorriente;
+
+    public ThreadCuentaCorrienteGirar(CuentaCorriente cuentaCorriente1) {
+        this.cuentaCorriente = cuentaCorriente1;
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            try {
+                ThreadCuentaCorrienteGirar.sleep((long) (1 + (int) (Math.random() * 5)) * 1000);
+                cuentaCorriente.girar((int) (10000 * Math.random()));
+            } catch (InterruptedException ex) {
+            }
+        }
+    }
+}
+
+public class Principal {
+
+    public static void main(String[] args) {
+
+        CuentaCorriente cc = new CuentaCorriente();
+
+        ThreadCuentaCorrienteDepositar tccd = new ThreadCuentaCorrienteDepositar(cc);
+        ThreadCuentaCorrienteGirar tccg = new ThreadCuentaCorrienteGirar(cc);
+
+        tccd.start();
+        tccg.start();
+
+        try {
+            tccd.join();
+            tccg.join();
+        } catch (InterruptedException ex) {
+        }
+    }
+}
+\end{verbatim}
+
+		\newpage
+
+		\item \emph{40pts.} Construya una aplicaci\'on Java con interfaz gr\'afica que pemita realizar transformaciones de sistemas n\'umeros (binario, octal y hexadecimal) de un valor entero ingresado en un campo de texto y muestre el resultado en otro campo de texto no editable. Para la transformaci\'on utilice los m\'etodos: \emph{toBinaryString}(), \emph{toOctalString}() y \emph{toHexString}() de la clase \emph{Integer}, para transformar a binario, ocatl y hexadecimal, respectivamente.
+
+\begin{verbatim}
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+public class Translate extends JFrame {
+
+    JTextField num, result;
+    JButton toBin, toOct, toHex;
+    private static final String BIN_TEXT = "Binario";
+    private static final String OCT_TEXT = "Octal";
+    private static final String HEX_TEXT = "Hexadecimal";
+
+    public Translate() {
+        num = new JTextField(50);
+        result = new JTextField(50);
+        toBin = new JButton(BIN_TEXT);
+        toOct = new JButton(OCT_TEXT);
+        toHex = new JButton(HEX_TEXT);
+
+        result.setEnabled(false);
+
+        toBin.addActionListener(new TranslateActionListener());
+        toOct.addActionListener(new TranslateActionListener());
+        toHex.addActionListener(new TranslateActionListener());
+
+        setLayout(new FlowLayout(FlowLayout.CENTER, 10, 20));
+        add(num);
+        add(toBin);
+        add(toOct);
+        add(toHex);
+        add(result);
+
+        setSize(600, 150);
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+
+    public static void main(String[] args) {
+        Translate t = new Translate();
+    }
+
+    class TranslateActionListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            String n = null;
+            try {
+                if (BIN_TEXT.equals(ae.getActionCommand())) {
+                    n = Integer.toBinaryString(Integer.valueOf(num.getText()).intValue());
+                } else {
+                    if (OCT_TEXT.equals(ae.getActionCommand())) {
+                        n = Integer.toOctalString(Integer.valueOf(num.getText()).intValue());
+                    } else {
+                        if (HEX_TEXT.equals(ae.getActionCommand())) {
+                            n = Integer.toHexString(Integer.valueOf(num.getText()).intValue()).toUpperCase();
+                        }
+                    }
+                }
+                result.setText(n);
+            } catch (NumberFormatException nfe) {
+                num.setText("");
+                result.setText("");
+                JOptionPane.showMessageDialog(null, "El valor ingresado no es un número entero.\n 
+                    Intentelo nuevamente.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+}
+\end{verbatim}
+
+	\end{enumerate}}
+\end{document} 

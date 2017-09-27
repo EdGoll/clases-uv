@@ -1,0 +1,249 @@
+\documentclass[10pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\usepackage{listings}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{gray},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=none,                       % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Java,                 % the language of the code
+  otherkeywords={else},           % if you want to add more keywords to the set
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,blue,draw,inner sep=.5pt] (char) {#1};}}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in             
+\headheight = 0.0 in            
+\headsep = 0.0 in
+            
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+    \begin{center}
+		{\Large Pauta Certamen 2, Programaci\'on II} \\
+		\emph{\small Prof. Rodrigo Olivares} \\
+		%\emph{\small Ayud. Juan Carlos Tapia} \\
+		\emph{\scriptsize Mayo 26, 2016} 
+	\end{center}
+
+	\vspace*{-35pt}
+	\begin{center}
+		\rule{1\textwidth}{.3pt}
+	\end{center}
+	\vspace*{-42pt}
+	\begin{center}
+		\rule{1\textwidth}{2pt}
+	\end{center}
+
+	\vspace*{-15pt}
+
+	{\small \textbf{Instrucciones}:}
+
+	\vspace*{-15pt}
+
+	{\scriptsize
+	\begin{itemize}
+		\item[-] El puntaje m\'aximo del certamen es 100\%, siendo el 60\% el m\'inimo requerido para aprobar.
+		%\item[-] Responda cada pregunta en la hoja indicada, agregando su nombre. Si no responde alguna pregunta, debe entregar la hoja con su nombre e indicar que \textbf{no responde}.
+		\item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado con nota \textbf{1,0}.
+	\end{itemize}
+	
+	\vspace*{-20pt}
+
+	\begin{enumerate}
+
+		\item \emph{30pts.} De las siguentes afirmaciones, encierre en un c\'irculo la o las alternativas correctas.
+		
+		\begin{multicols}{2}
+
+			\begin{enumerate}[label=(\alph*)]
+                \item[i.] \textbf{La clase \texttt{ArrayList}}:
+                \item[\circled{(a)}] Es un \texttt{List}.
+				 \item[(b)] Es un \texttt{Vector}.
+				 \item[(c)] Es \texttt{synchronized}.
+				 \item[(d)] Pertenece al \texttt{java.lang}.
+				 \item[(e)] Es un nodo.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+                \item[ii.] \textbf{La instancia \texttt{this}}:
+                \item[(a)] Invoca al constructor de una clase padre.
+    			 \item[(b)] Invoca a la instancia de la clase hija.
+				 \item[(c)] Referencia al construtor de la clase.
+				 \item[\circled{(d)}] Referencia a los atributos de la clase.
+				 \item[\circled{(e)}] Referencia a los m\'etodo de la clase.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				 \item[iii.] \textbf{Una clase \texttt{abstract}}:
+				 \item[\circled{(a)}] Posee m\'etodos abstractos.
+				 \item[\circled{(b)}] Puede contener m\'etodos no abstractos.
+				 \item[(c)] Instancia objetos abstractos.
+				 \item[(d)] Posee un constructor abstracto.
+				 \item[\circled{(e)}] En Java, se define con la palabra reservada \texttt{abstract}.
+			\end{enumerate}
+
+            \begin{enumerate}[label=(\alph*)]
+				 \item[iv.] \textbf{Respecto a las interfaces}:
+				 \item[(a)] Su constructor es creado en compilaci\'on.
+				 \item[(b)] Sus m\'etodos pueden ser \texttt{protected}.
+				 \item[\circled{(c)}] Sus m\'etodos son abstract.
+				 \item[\circled{(d)}] Se implementa.
+				 \item[(e)] Se extiende.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[v.] \textbf{Un TDA Bean}.
+				\item[(a)] S\'olo tiene atributos.
+				\item[(b)] S\'olo tiene m\'etodos.
+				\item[\circled{(c)}] No debe incluir l\'ogica.
+				\item[(d)] El constructor debe ser siempre incluido.
+				\item[\circled{(e)}] Es posible agregar m\'etodos como \texttt{equals}() y \texttt{toString}().
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[vi.] \textbf{Sobre la herencia}:
+				\item[\circled{(a)}] En java se realiza con la palabra reservada \texttt{extends}.
+				\item[\circled{(b)}] En java se realiza con la palabra reservada \texttt{implements}.
+				\item[\circled{(c)}] Todas las clases heredan de la clase \texttt{Object}.
+				\item[(d)] La clase padre hereda el comportamiento de la clase hija.
+				\item[\circled{(e)}] La clase hija hereda el comportamiento de la clase padre.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+                \item[vii.] \textbf{Sobre las interfaces}:
+				 \item[\circled{(a)}] Proveen un medio de comunicaci\'on entre componentes.
+				 \item[\circled{(b)}] Sus m\'etodos no est\'an implementados.
+                \item[(c)] Instancia objetos sin comportamiento.
+				 \item[\circled{(d)}] Permite simular la herencia m\'ultiple.
+				 \item[(e)] En Java, se definen con la palabra reservada \texttt{interfaz}.
+            \end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[viii.] \textbf{En relaci\'on a la manipulaci\'on de archivos}.
+				\item[(a)] Se lee un archivo con la instancia \texttt{FileWriter}.
+				\item[\circled{(b)}] Se lee un archivo con la instancia \texttt{FileReader}.
+				\item[(c)] Se leen s\'olo archivos con delimitar y de largo fijo.
+				\item[\circled{(d)}] \texttt{StringTokenizer} se usa para archivos con delimitador.
+				\item[(e)] Se requiere de la clase \texttt{Scanner} para la lectura.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[ix.] \textbf{En relaci\'on a la manipulaci\'on de archivos}.
+				\item[\circled{(a)}] Se escribe un archivo con la instancia \texttt{FileWriter}.
+				\item[(b)] Se escribe un archivo con la instancia \texttt{FileReader}.
+				\item[(c)] No es factible agregar contenido a un archivo existente.
+				\item[(d)] Es necesario utilizar la clase \texttt{InputStreamReader}.
+				\item[(e)] \texttt{FileReader}(``f.txt'', \texttt{false)} agrega contenido al final.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[x.] \textbf{Excepci\'on/es a considerar al manipular archivos}.
+				\item[(a)] \texttt{IOExceptionFile} 
+				\item[(b)] \texttt{IOExceptionArchive} 
+				\item[\circled{(c)}] \texttt{IOException}
+				\item[(d)] \texttt{ExceptionIO}
+				\item[(e)] \texttt{ExceptionEx}
+			\end{enumerate}
+		\end{multicols}
+		
+		\newpage
+
+		\item \emph{70pts.} Utilice los dataset publicados en el aula virtual y luego responda las siguientes preguntas:
+		
+		\begin{enumerate}
+		    \item Listar todas las pel\'iculas de g\'enero Adventure.
+		    \item Listar todas las pel\'iculas de g\'enero Thriller y Crime (al mismo tiempo).
+           \item Listar todas las pel\'iculas de un a\~no espec\'ifico, ingresado por el usuario (entrada est\'andar).
+           \item Listar todas las pel\'iculas de Rating superior o igual a un valor ingresado por el usuario.
+           \item Listar todas las pel\'iculas de Rating superior o igual a un valor ingresado por el usuario y su g\'enero sea s\'olo Comedy.
+		\end{enumerate}
+	\end{enumerate}
+
+   
+    \begin{enumerate}
+        \item[ ] \textbf{Importante:}
+		\item[-] Cada listado debe ser desarrollado en m\'etodos independientes.
+		\item[-] Cada resultado obtenido en los listados debe ser almacenado en un archivo de resultados. \textbf{NO SE DEBE SOBRE ESCRIBIR EL ARCHIVO}.
+    \end{enumerate}
+}
+	\begin{table}[!ht]
+       {\scriptsize
+        \begin{center}
+             \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}\hline
+                \multicolumn{4}{|c|}{\textbf{\textquestiondown C\'omo ser\'e evaluado en la pregunta 3?} } \\ \hline
+                \multicolumn{1}{|c|}{\textbf{T\'opico}} & 
+                \multicolumn{1}{c|}{\textbf{Logrado}} & 
+                \multicolumn{1}{c|}{\textbf{Medianamente logrado}} & 
+                \multicolumn{1}{c|}{\textbf{No logrado}} \\ \hline
+                Manipulaci\'on de archivo. & 
+                \emph{20pts} Lee correctamente los archivos, los mapea a entidad y escribe en el archivo. & 
+                \emph{10pts} Realiza dos de las tres acciones del punto anterior. & 
+                \emph{ 0pts} No realiza la acciones del punto anterior. \\ \hline
+                TDA Lista. & 
+                \emph{20pts} Crea la clase TDA Lista e implementa todos los m\'etodos de manera independiente. & 
+                \emph{10pts} Crea la clase TDA Lista e implementa algunos m\'etodos. & 
+                \emph{ 0pts} No crea la clase TDA Lista. \\ \hline
+                TDA Bean / Entidad & 
+                \emph{10pts} Crea la clase entidad para Movie y Rating. Para la clase Movie, separa en una Lista de \texttt{String} el o los g\'eneros de la pel\'icula. & 
+                \emph{5pts} Crea la clase entidad para Movie o la Rating (no ambas). & 
+                \emph{0pts} No crea las clases entidad. \\ \hline                
+                Clase principal y m\'etodo main. &
+                \emph{5pts} Crea la clase principal en un archivo independiente con el m\'etodo main. & 
+                \emph{3pts} Crea el m\'etodo main en la misma clase. & 
+                \emph{0pts} No crea el m\'etodo main. \\ \hline
+                Paradigma Orientaci\'on a Objetos  & 
+                \emph{15pts} Resuelve el problema utilizando el POO. & 
+                \emph{7pts} Utiliza parte del POO para resolver el problema. & 
+                \emph{0pts} No utiliza el POO para dar soluci\'on al problema.\\ \hline
+                Total m\'aximo puntaje pregunta 2 & 
+                \emph{70pts} & 
+                \emph{35pts} & 
+                \emph{0pts} \\ \hline
+            \end{tabular}
+        \end{center}}
+     \end{table}
+     \newpage
+    \lstinputlisting[caption={}]{codes/Movie.java}
+    \lstinputlisting[caption={}]{codes/Rating.java}
+    \lstinputlisting[caption={}]{codes/Lista.java}
+        \lstinputlisting[caption={}]{codes/Main.java}
+\end{document} 

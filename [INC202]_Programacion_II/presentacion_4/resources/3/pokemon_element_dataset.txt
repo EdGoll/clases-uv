@@ -1,0 +1,18 @@
+Acero (Steel)#Ac
+Agua (Water)#Ag
+Bicho (Bug)#Bi
+Dragón (Dragon)#Dr
+Eléctrico (Electric)#El
+Fantasma (Fantasma)#Fa
+Fuego (Fire)#Fu
+Hielo (Ice)#Hi
+Lucha (Fighting)#Lu 
+Normal (Normal)#No
+Planta (Grass)#Pl
+Psíquico (Psychic)#Ps
+Roca (Rock)#Ro
+Siniestro (Dark)#Si
+Tierra (Ground)#Ti
+Veneno (Poison)#Ve
+Volador (Flyting)#Vo
+

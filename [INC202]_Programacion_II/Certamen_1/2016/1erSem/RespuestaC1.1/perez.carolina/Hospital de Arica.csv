@@ -1,0 +1,96 @@
+edad;causa;1;2;3;4;5;6;7;8;9;10
+LACTANTES;ATENCIONES DE URGENCIA;54;4;9;8;12;7;14;26;21;27
+LACTANTES;SISTEMA RESPIRATORIO;23;0;0;1;3;0;5;5;7;6
+LACTANTES;IRA Alta (J00-J06);9;0;0;1;1;0;4;4;5;4
+LACTANTES;Influenza (J09-J11);1;0;0;0;0;0;0;0;1;1
+LACTANTES;Neumonia (J12-J18);0;0;0;0;0;0;0;0;0;0
+LACTANTES;Bronquitis/bronquiolitis aguda (J20-J21);1;0;0;0;0;0;0;1;0;0
+LACTANTES;Crisis obstructiva bronquial (J40-J46);7;0;0;0;1;0;0;0;0;0
+LACTANTES;Otra causa respiratoria (J22, J30-J39, J47, J60-J98);5;0;0;0;1;0;1;0;1;1
+LACTANTES;SISTEMA CIRCULATORIO;0;0;0;0;0;0;0;0;0;0
+LACTANTES;Infarto agudo miocardio;0;0;0;0;0;0;0;0;0;0
+LACTANTES;Accidente vascular encefálico;0;0;0;0;0;0;0;0;0;0
+LACTANTES;Crisis hipertensiva;0;0;0;0;0;0;0;0;0;0
+LACTANTES;Arritmia grave;0;0;0;0;0;0;0;0;0;0
+LACTANTES;HOSPITALIZACIONES;1;1;1;1;2;0;1;1;1;4
+LACTANTES; - CAUSAS SISTEMA RESPIRATORIO;0;0;0;0;0;0;0;1;0;0
+LACTANTES; - CAUSAS SISTEMA CIRCULATORIO;0;0;0;0;0;0;0;0;0;0
+LACTANTES; - TRAUMATISMOS Y ENVENENAMIENTOS;0;0;0;0;0;0;0;0;0;0
+LACTANTES; - LAS DEMAS CAUSAS;1;1;1;1;2;0;1;0;1;4
+LACTANTES;CIRUGIAS DE URGENCIA;0;0;0;0;0;0;0;0;0;0
+1a4anios;ATENCIONES DE URGENCIA;347;360;383;326;313;316;311;288;305;274
+1a4anios;SISTEMA RESPIRATORIO;118;130;127;93;95;108;97;103;95;85
+1a4anios;IRA Alta (J00-J06);51;59;65;50;37;39;43;36;40;36
+1a4anios;Influenza (J09-J11);9;8;4;1;2;1;3;1;3;1
+1a4anios;Neumonia (J12-J18);3;1;1;7;0;0;0;0;0;0
+1a4anios;Bronquitis/bronquiolitis aguda (J20-J21);16;12;14;6;4;16;11;8;14;12
+1a4anios;Crisis obstructiva bronquial (J40-J46);22;22;19;19;30;20;19;40;19;16
+1a4anios;Otra causa respiratoria (J22, J30-J39, J47, J60-J98);20;28;24;17;22;32;21;18;19;20
+1a4anios;SISTEMA CIRCULATORIO;0;1;0;0;0;1;1;0;0;0
+1a4anios;Infarto agudo miocardio;0;0;0;0;0;0;0;0;0;0
+1a4anios;Accidente vascular encefalico;0;0;0;0;0;0;0;0;0;0
+1a4anios;Crisis hipertensiva;0;0;0;0;0;1;0;0;0;0
+1a4anios;Arritmia grave;0;0;0;0;0;0;0;0;0;0
+1a4anios; HOSPITALIZACIONES;4;4;9;11;8;4;6;3;5;6
+1a4anios; - CAUSAS SISTEMA RESPIRATORIO;1;2;1;4;0;0;0;0;2;1
+1a4anios; - CAUSAS SISTEMA CIRCULATORIO;0;0;0;0;0;0;0;0;0;0
+1a4anios; - TRAUMATISMOS Y ENVENENAMIENTOS;1;0;1;0;2;1;0;2;1;1
+1a4anios; - LAS DEMAS CAUSAS;2;2;7;7;6;3;6;1;2;4
+1a4anios;CIRUGIAS DE URGENCIA;0;0;0;0;0;0;0;0;0;0
+5a14anios;ATENCIONES DE URGENCIA;278;281;262;263;260;250;243;233;217;231
+5a14anios; SISTEMA RESPIRATORIO;59;45;39;46;40;36;42;32;26;26
+5a14anios;IRA Alta (J00-J06);36;34;24;35;29;21;30;14;17;9
+5a14anios;Influenza (J09-J11);4;1;0;3;0;1;0;4;1;2
+5a14anios;Neumonia (J12-J18);1;1;0;0;1;2;0;0;0;0
+5a14anios;Bronquitis/bronquiolitis aguda (J20-J21);8;1;4;4;1;5;2;3;0;5
+5a14anios;Crisis obstructiva bronquial (J40-J46);7;2;3;0;3;3;5;5;2;5
+5a14anios;Otra causa respiratoria (J22, J30-J39, J47, J60-J98);3;6;8;4;6;4;5;6;6;5
+5a14anios; SISTEMA CIRCULATORIO;3;0;0;0;0;0;0;0;0;3
+5a14anios;Infarto agudo miocardio;0;0;0;0;0;0;0;0;0;0
+5a14anios;Accidente vascular encefalico;0;0;0;0;0;0;0;0;0;0
+5a14anios;Crisis hipertensiva;1;0;0;0;0;0;0;0;0;0
+5a14anios;Arritmia grave;0;0;0;0;0;0;0;0;0;0
+5a14anios;HOSPITALIZACIONES;12;15;13;9;8;17;5;7;8;10
+5a14anios; - CAUSAS SISTEMA RESPIRATORIO;0;0;2;4;0;1;0;0;0;1
+5a14anios; - CAUSAS SISTEMA CIRCULATORIO;1;0;0;0;0;0;0;0;0;0
+5a14anios; - TRAUMATISMOS Y ENVENENAMIENTOS;5;6;4;1;3;5;3;0;3;3
+5a14anios; - LAS DEMAS CAUSAS;7;9;7;4;5;11;2;7;5;6
+5a14anios;CIRUGIAS DE URGENCIA;0;0;0;0;0;0;0;0;0;0
+15a64anios; ATENCIONES DE URGENCIA;923;977;955;945;974;913;901;902;905;943
+15a64anios;SISTEMA RESPIRATORIO;62;63;71;56;55;43;55;62;53;63
+15a64anios;IRA Alta (J00-J06);32;28;28;29;23;15;32;41;19;30
+15a64anios;Influenza (J09-J11);4;8;7;5;7;4;4;5;4;2
+15a64anios;Neumonia (J12-J18);11;4;6;3;9;1;0;0;2;4
+15a64anios;Bronquitis/bronquiolitis aguda (J20-J21);9;8;15;8;11;9;6;5;7;11
+15a64anios;Crisis obstructiva bronquial (J40-J46);9;10;13;9;11;10;8;7;12;8
+15a64anios;Otra causa respiratoria (J22, J30-J39, J47, J60-J98);3;5;5;2;1;4;5;4;9;8
+15a64anios;SISTEMA CIRCULATORIO;18;17;19;19;13;12;26;19;20;21
+15a64anios;Infarto agudo miocardio;0;0;0;0;0;1;0;0;2;1
+15a64anios;Accidente vascular encefálico;0;0;1;0;2;0;2;2;1;2
+15a64anios;Crisis hipertensiva;12;10;9;8;3;6;12;5;10;9
+15a64anios;Arritmia grave;0;0;1;0;0;1;0;0;0;2
+15a64anios;HOSPITALIZACIONES;99;76;92;90;80;75;90;90;87;117
+15a64anios; - CAUSAS SISTEMA RESPIRATORIO;5;3;6;1;2;3;2;3;1;6
+15a64anios; - CAUSAS SISTEMA CIRCULATORIO;5;5;4;6;3;3;4;4;4;7
+15a64anios; - TRAUMATISMOS Y ENVENENAMIENTOS;29;16;22;19;23;21;16;22;17;30
+15a64anios; - LAS DEMAS CAUSAS;60;52;60;64;52;48;68;61;65;74
+15a64anios;CIRUGIAS DE URGENCIA;0;0;0;0;0;0;0;0;0;0
+65omas; ATENCIONES DE URGENCIA;282;283;277;304;319;274;270;269;265;234
+65omas; SISTEMA RESPIRATORIO;37;25;36;23;28;17;23;12;20;14
+65omas;IRA Alta (J00-J06);7;3;5;3;2;1;4;0;5;3
+65omas;Influenza (J09-J11);2;2;1;0;1;0;0;0;0;0
+65omas;Neumonia (J12-J18);4;5;0;2;5;4;1;1;2;1
+65omas;Bronquitis/bronquiolitis aguda (J20-J21);13;3;8;4;7;3;5;4;3;2
+65omas;Crisis obstructiva bronquial (J40-J46);7;9;11;6;9;5;6;7;6;6
+65omas;Otra causa respiratoria (J22, J30-J39, J47, J60-J98);4;3;6;4;4;4;7;0;4;2
+65omas; SISTEMA CIRCULATORIO;18;25;18;19;28;24;25;22;17;18
+65omas;Infarto agudo miocardio;0;0;0;0;0;1;0;0;0;0
+65omas;Accidente vascular encefálico;0;0;0;0;0;0;0;0;0;0
+65omas;Crisis hipertensiva;2;7;3;3;8;10;8;6;9;6
+65omas;Arritmia grave;2;8;2;1;4;1;1;0;1;2
+65omas;HOSPITALIZACIONES;48;54;47;61;57;56;41;50;54;45
+65omas; - CAUSAS SISTEMA RESPIRATORIO;6;5;9;4;7;5;4;0;5;5
+65omas; - CAUSAS SISTEMA CIRCULATORIO;7;7;8;7;9;10;4;8;4;6
+65omas; - TRAUMATISMOS Y ENVENENAMIENTOS;0;0;0;0;0;0;0;0;0;0
+65omas; - LAS DEMAS CAUSAS;35;42;30;50;41;41;33;42;45;34
+65omas;CIRUGIAS DE URGENCIA;0;0;0;0;0;0;0;0;0;0

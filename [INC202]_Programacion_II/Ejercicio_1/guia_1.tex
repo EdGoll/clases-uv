@@ -1,0 +1,140 @@
+\documentclass{article}
+
+\usepackage{colortbl}
+\usepackage{amsmath}
+
+\begin{document}
+
+	\centerline{\sc \large Gu\'ia 1 de ejercicios: Programaci\'on 2}
+	\centerline{\sc \normalsize Escuela de Ingenier\'ia Civil Inform\'atica}
+	\centerline{\sc \normalsize  Universidad de Valpara\'iso}
+
+	\vspace{1pc}
+
+	\begin{enumerate}
+		\item Desarrolle una clase \textbf{MedicionPersona} que posea:
+		\begin{enumerate}
+			\item Caracter\'isticas: \emph{nombre(s)}, \emph{apellidos}, \emph{edad}, \emph{RUT}, \emph{sexo} (H hombre, M mujer), \emph{peso} y \emph{altura}. Considerar el tipo de dato id\'oneo para cada uno de los atributos y definir el valor por omisi\'on acorde a cada tipo.
+			\item Comportamiento: \textbf{comprobarSexo()}, \textbf{esMayorDeEdad()}, \textbf{calcularIMC()} y \textbf{toString()} para mostrar los atributos del objeto. 
+			\begin{enumerate}
+				\item \emph{comprobarSexo}(): determina si la persona es \emph{hombre} o \emph{mujer}.
+				\item \emph{esMayorDeEdad}(): determina si la persona es o no mayor de edad.
+				\item \emph{calcularIMC}(): c\'alculo del \'indice de masa corporal ($\frac{peso}{altura^{2}}$). IMC ideal: $20 \leq IMC \leq 24,9$.
+				\item \emph{toString}(): retorna toda la informaci\'on de medici\'on.
+			\end{enumerate}
+			\item[] Crear una clase externa que realice lo siguiente:
+			\begin{enumerate}
+				\item Instanciar 3 objetos con datos ingresados manualmente.
+				\item Para cada objeto, se debe comprobar si la persona est\'a eb est\'a en su peso ideal, tiene sobrepeso o esta\'a por debajo de su peso ideal (con un mensaje en la salida est\'andar).
+				\item Indicar para cada objeto si la persona es mayor de edad.
+				\item Por \'ultimo, para cada objeto, se debe mostrar la informaci\'on de la medici\'on.
+			\end{enumerate}
+		\end{enumerate}
+		\item Desarrolle una clase \textbf{Password} que posea:
+		\begin{enumerate}
+			\item Caracter\'isticas: \emph{longitud} y \emph{contrasenia}. Por omisi\'on, la longitud ser\'a de 8 (puede ser modificada).
+			\item Comportamiento: \textbf{esFuerte()}.
+			\begin{enumerate}
+				\item \emph{generarPassword}(): genera la contrase\~na del objeto, con la longitud que tenga.
+				\item \emph{esFuerte}(): entrega un booleano si es fuerte o no (para ser fuerte, debe tener m\'as de 2 may\'usculas, m\'as de 1 min\'uscula y m\'as de 5 n\'umeros). Utilice el m\'etodo \emph{isUpperCase(char)} de clase Character para determinar si la letra es may\'uscula.
+			\end{enumerate}
+			\item[] Crear una clase externa que realice lo siguiente:
+			\begin{enumerate}
+				\item Instanciar 3 objetos con datos ingresados manualmente.
+				\item Para cada objeto, se debe agregar una contrase\~na y verificar si es o no fuerte.
+			\end{enumerate}
+		\end{enumerate}
+		\item Desarrolle una clase que permita saber si una palabra, frase u oraci\'on es o no pal\'indrome. Para ser pal\'indrome, la palabra, frase u oraci\'on debe ser le\'ia tanto de izquierda a derecha como de derecha a izquierda (no se concideran los espacios en blanco, tildes, may\'usuclas/min\'usculas, etc). Ejemplos:
+		\begin{enumerate}
+			\item[-] ANITA LAVA LA TINA 
+			\item[-] LA RUTA NOS APORTO OTRO PASO NATURAL
+			\item[-] LUZ AZUL 
+			\item[-] ALA
+		\end{enumerate}
+%		\item Dado el siguiente programa:
+%		\begin{verbatim}
+%		class A {
+%
+%		  int[] x = {1, 2}, y;
+%
+%		  public void f(int z[]) {
+%		    z[1] += 2;
+%		  }
+%
+%		  public void g() {
+%		    A a = new A();
+%		    a.x[0]++;
+%		  }
+%
+%		  public static void main(String args[]) {
+%		    A b = new A();
+%		    b.y = b.x;
+%		    b.f(b.y);
+%		    b.g();
+%		    System.out.println(b.x[0] + " " + b.x[1]);          (1)
+%		    System.out.println(b.y[0] + " " + b.y[1]);          (2)
+%		  }
+%		}
+%		\end{verbatim}
+%		\begin{enumerate}
+%			\item \textquestiondown Cu\'al es la salida de la l\'inea (1)?
+%			\item \textquestiondown Cu\'al es la salida de la l\'inea (2)?
+%		\end{enumerate}
+		\item Desarrolle la clase \textbf{FechaHora} que posea:
+		\begin{enumerate}
+			\item Caracter\'isticas: \emph{anio, mes, dia, horas, minutos y segundos}.
+			\item Comportamiento: \textbf{verificarFechaCorrecta()}, \textbf{verificarHoraCorrecta()}, \textbf{toString()}. 
+			\begin{enumerate}
+				\item \emph{verificarFechaCorrecta}(): entrega un booleano. Veririca si la fecha ingresada es correcta, por ejemplo \emph{30/2/2015} es falso.
+				\item \emph{verificarHoraCorrecta}(): entrega un booleano. Veririca si la hora ingresada es correcta, por ejemplo \emph{25:75:84} es falso.
+				\item \emph{toString}(): entrega una cadena de texto con la fecha y hora ingresada. Debe definir el formato de salida.
+			\end{enumerate}
+			\item[] Crear una clase externa que realice lo siguiente:
+			\begin{enumerate}
+				\item Instanciar un objeto de la clase FechaHora, con datos ingresados manualmente.
+				\item Para el objeto, se debe verificar la correctitud de la fecha y la hora.
+				\item Mostrar la feha y hora. El formato lo define el desarrollador.
+			\end{enumerate}
+		\end{enumerate}
+		\item Desarrolle las clases Tri\'angulo, Rect\'angulo y C\'irculo que posea:
+		\begin{enumerate}
+			\item Caracter\'isticas: depende de la figura geom\'etrica. Determine el tipo de dato correcto para cada atributo.
+			\item Comportamiento: \textbf{getPerimetro()}, \textbf{getArea()}, \textbf{getTipo()}. 
+			\begin{enumerate}
+				\item \emph{getPerimetro}(): calcular el per\'imetro para el tri\'angulo, rect\'angulo y c\'irculo.
+				\item \emph{getArea}(): calcular el \'area para el tri\'angulo, rect\'angulo y c\'irculo.
+				\item \emph{getTipo}(): entrega una cadena de texto que indica el tipo de la figura geom\'etrica, por ejemplo: Tri\'angulo: \emph{Equilatero, Is\'oceles o Escaleno}.
+			\end{enumerate}
+			\item[] Crear una clase externa que realice lo siguiente:
+			\begin{enumerate}
+				\item Instanciar 3 objetos con datos ingresados manualmente.
+				\item Para cada objeto, se debe calcular el per\'imetro y \'area.
+				\item Indicar tipo de la figura geom\'etrica.
+			\end{enumerate}
+		\end{enumerate}
+%		\item Desarrolle una clase que permita gestionar la comunicaci\'on entre el alfabeto y el c\'odigo morse.
+%		\begin{center}
+%			\begin{tabular}{|c|c|c|c|c|c|} \hline
+%			\multicolumn{1}{|>{\columncolor[rgb]{0.8, 0.8, 0.8}}c|}{\textbf{Signo}} &
+%			\multicolumn{1}{|>{\columncolor[rgb]{0.8, 0.8, 0.8}}c|}{\textbf{C\'odigo}} &
+%			\multicolumn{1}{|>{\columncolor[rgb]{0.8, 0.8, 0.8}}c|}{\textbf{Signo}} &
+%			\multicolumn{1}{|>{\columncolor[rgb]{0.8, 0.8, 0.8}}c|}{\textbf{C\'odigo}} &
+%			\multicolumn{1}{|>{\columncolor[rgb]{0.8, 0.8, 0.8}}c|}{\textbf{Signo}} &
+%			\multicolumn{1}{|>{\columncolor[rgb]{0.8, 0.8, 0.8}}c|}{\textbf{C\'odigo}} \\ \hline
+%			A & \textperiodcentered-    & N & -\textperiodcentered & 0 & - - - - -   \\ \hline
+%			B & -\textperiodcentered\textperiodcentered\textperiodcentered & O & - - -   & 1 & \textperiodcentered- - - -   \\ \hline
+%			C & -\textperiodcentered-\textperiodcentered & P & \textperiodcentered- -\textperiodcentered & 2 & \textperiodcentered\textperiodcentered- - -   \\ \hline
+%			D & -\textperiodcentered\textperiodcentered   & Q & - -\textperiodcentered- & 3 & \textperiodcentered\textperiodcentered\textperiodcentered- -   \\ \hline
+%			E & \textperiodcentered 	    & R & \textperiodcentered-\textperiodcentered   & 4 &	\textperiodcentered\textperiodcentered\textperiodcentered\textperiodcentered-   \\ \hline
+%			F & \textperiodcentered\textperiodcentered-\textperiodcentered & S & \textperiodcentered\textperiodcentered\textperiodcentered   & 5 & \textperiodcentered\textperiodcentered\textperiodcentered\textperiodcentered\textperiodcentered   \\ \hline
+%			G & - -\textperiodcentered   & T & - 	  & 6 & -\textperiodcentered\textperiodcentered\textperiodcentered\textperiodcentered   \\ \hline
+%			H & \textperiodcentered\textperiodcentered\textperiodcentered\textperiodcentered & U & \textperiodcentered\textperiodcentered-   & 7 & - -\textperiodcentered\textperiodcentered\textperiodcentered   \\ \hline
+%			I & \textperiodcentered\textperiodcentered     & V & \textperiodcentered\textperiodcentered\textperiodcentered- & 8 &	- - -\textperiodcentered\textperiodcentered   \\ \hline
+%			J & \textperiodcentered- - - & W & \textperiodcentered- -   & 9 &	- - - -\textperiodcentered   \\ \hline
+%			K & -\textperiodcentered-   & X & -\textperiodcentered\textperiodcentered- & . &	\textperiodcentered-\textperiodcentered-\textperiodcentered- \\ \hline
+%			L & \textperiodcentered-\textperiodcentered\textperiodcentered & Y & -\textperiodcentered- - & , &	- -\textperiodcentered\textperiodcentered - - \\ \hline
+%			M & - -     & Z & - -\textperiodcentered\textperiodcentered & ? & \textperiodcentered- -\textperiodcentered\textperiodcentered   \\ \hline
+%		\end{tabular}
+%	\end{center}
+	\end{enumerate}
+\end{document}

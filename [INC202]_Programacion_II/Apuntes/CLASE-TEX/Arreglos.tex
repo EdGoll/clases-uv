@@ -1,0 +1,480 @@
+\section{Arreglos, condiciones y ciclos}
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Plan Arreglos, condiciones y ciclos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin{itemize}
+\uncover<1->
+\item {Arreglos}
+{\footnotesize{\begin {itemize}
+\item {Declarar variables de arreglo}
+\item {Crear objetos de arreglo}
+\item {Acceder a los elementos de un arreglo}
+\item {Cambiar elementos de un arreglo}
+\end{itemize}}}
+\item {Arreglos multidimensionales}
+\item{Condicionales}
+{\footnotesize{\begin {itemize}
+\item{if}
+\item{switch}
+\end{itemize}}}
+\item {Ciclos}
+{\footnotesize{\begin {itemize}
+\item{for}
+\item{while y do}
+\end{itemize}}}
+{\item Ejercicio de Arreglos, condicionales y ciclos}
+\end{itemize}}}}
+\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Arreglos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->
+{Los arreglos son una forma de almacenar una lista de elementos, cada espacio del arreglo guarda un elemento individual. Los arreglos pueden tener cualquier tipo de valor (tipos primitivos u objetos) pero no puede almacenar distintos tipos en un mismo arreglo.\\
+Para crear un arreglo : 
+\begin{itemize}
+\item {Declarar una variable para guardar el arreglo.}
+\item {Crear un nuevo objeto de arreglo y asígnelo a la variable de arreglo.}
+\item {Guardar los valores en el arreglo.}
+\end {itemize}}}}}
+\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Arreglos}
+\ITZ{	
+\uncover<1->{\ITT{1}{Declarar variables de arreglo}{
+\uncover<1->
+{Las variables de arreglo indican el tipo de objeto que el arreglo contendrá y el nombre del arreglo. Los corchetes vacíos pueden ponerse después del tipo de dato o después del nombre del arreglo indistintamente.
+\begin{itemize}
+\item {String palabras[];}
+\item {Point hist[];}
+\item {int temps[];}
+\item {float [] promedio;}
+\item {String [] palabras;}
+\item {Point [] hist;}
+\end {itemize}}}}}
+\end{frame}
+
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Arreglos}
+\ITZ{	
+\uncover<1->{\ITT{1}{Crear objetos de arreglo}{
+\uncover<1->{
+\begin{itemize}
+\item {Usar new :   {\textit{String [] nombre = new String[10]; }}\\ Esta linea crea un arreglo de Strings con 10 espacios. Siempre que se crea un arreglo con new se debe indicar de que tamaño será (numero de espacios o casillas). \\
+El arreglo se inicializará con : 
+\begin {itemize}
+\item { 0 para arreglos numéricos}
+\item {false para booleanos}
+\item { $'/0'$  para arreglos de caracter}
+\item {null para objetos}
+\end{itemize}
+}
+\item {Inicializar de manera directa el contenido del arreglo : poniendo entre llaves los elementos del arreglo : \\
+ {\textit{String [] nombres =  \{"pedro", "rodrigo","carlo","andres"\} }}\\
+Cada elemento dentro de las llaves debe ser del mismo tipo y coincidir con el tipo de variable que contiene el arreglo.}
+\end {itemize}}}}}
+\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Arreglos}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acceso a los elementos del arreglo}{
+\uncover<1->{
+Para acceder a un elemento del arreglo se usan los subindices:\\
+ {\textit{String [] arr = new String [10]; }}\\
+ {\textit{arr [9] = "test"; }}\\
+ {\textit{int len = arr.length; }} \\
+ La ultima linea de código permite ver la longitud del arreglo, este atributo esta disponible para todos los objetos arreglo sin importar el tipo.\\
+En java no puede asignar un valor a una casilla del arreglo fuera de las fronteras de este. Los subindices se inician en 0. }}}}
+\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Arreglos}
+\ITZ{	
+\uncover<1->{\ITT{1}{Cambiar elementos del arreglo}{
+\uncover<1->{
+Para asignar elementos a una casilla del arreglo :\\
+ {\textit{ arr [1]=10; }}\\
+ {\textit{promedio [9] = 9.7; }}\\
+ {\textit{texto [4] = "test"; }} \\
+ {\textit{cadenas [10] = cadenas[1]; }} \\
+Al igual que con los objetos, un arreglo de objetos en java consiste en un arreglo de referencias a dichos objetos. Cuando asigna un valor a una casilla en un arreglo, crea un referencia a ese objeto. Cuando desplaza valores dentro de un arreglo solo se reasigna la referencia, {\textbf{no }} se copia el valor de una casilla a otra. En cambio los arreglos de tipos primitivos {\textbf{si}} copian los valores de una casilla a otra.
+}}}}\end{frame}
+
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Arreglos}
+\ITZ{	
+\uncover<1->{\ITT{1}{Arreglos Multidimensionales}{
+\uncover<1->{
+Java no soporta los arreglos multidimensionales. Sin embargo, se pueden declarar un arreglo de arreglos y acceder a el de la siguiente manera : \\
+ {\textit{ int coods [][]= new int [12][12]; }}\\
+ {\textit{ coords [0][0]=2;}}\\
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Condicionales} 
+\ITZ{	
+\uncover<1->{\ITT{1}{if}{
+\uncover<1->{
+El condicional  {\textbf{ if }} permite ejecutar partes del código basandose en una simple prueba. Contiene la palabra clave {\textbf{ if }} seguida de una prueba booleana y de un enunciado a ejecutar si la prueba es verdadera. Una palabra opcional {\textbf{ else}} ofrece el enunciado a ejecutarse si la prueba es falsa.
+\tiny{\lstinputlisting{./codigosEx/estado.java}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Operador condicional}
+\ITZ{	
+\uncover<1->{\ITT{1}{?}{
+\uncover<1->{
+El operador condicional  {\textbf{ ? }} es un operador ternario solo tiene tres términos.  \\
+Es útil para condicionales cortos o sencillos.\\
+ {\textit{ test ? trueResult : falseResult; }}\\
+ {\textit{ int smaller = $x<y$ ? x:y;}}\\
+ }}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Condicional switch}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Para evitar {\textbf{if}} muy largos se usa el {\textbf{switch o case}} que permite agrupar pruebas y acciones en un solo enunciado.
+\tiny{\lstinputlisting{./codigosEx/switch.java}}
+{\footnotesize{Si no existen coincidencias en ninguno de los casos y el {\textit{default}} no existe el {\textit{switch}} se completa sin hacer nada.}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Condicional switch}
+\ITZ{	
+\uncover<1->{\ITT{1}{Limitaciones y break}{
+\uncover<1->{
+Una limitación del condicional {\textbf{switch}} es que las pruebas y los valores solo pueden ser de tipos primitivos específicamente {\textbf{int}}. \\ No puede usar tipos primitivos mas grandes ({\textbf{long,float}}), cadenas u objetos, tampoco puede probar otra relación que la igualdad.\\
+Si se encuentra una coincidencia se ejecuta el enunciado de esta y todos los inferiores hasta encontrar un {\textbf{break}} o hasta el final del {\textbf{switch}}. Si solo se quiere ejecutar el enunciado de la prueba se debe poner un {\textbf{break}} después de cada linea.
+\tiny{\lstinputlisting{./codigosEx/switch2.java}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ciclos for}
+\ITZ{	
+\uncover<1->{\ITT{1}{for}{
+\uncover<1->{
+El ciclo {\textbf{for}} repite una declaración o bloque de enunciados un numero de veces hasta que una condición se cumple. \\
+ {\textit{ for (inicialización; test; incremento)\{\\
+ enunciados \}}}\\
+ \begin{itemize}
+ \item {inicialización : inicializa el principio del ciclo (int i = 0). Las variables que se declaran en esta parte del ciclo son locales al ciclo.}
+ \item {test :  prueba que ocurre después de cada vuelta del ciclo, esta debe ser una expresión booleana o una función que regresa un valor booleano (i $<$10). Si la prueba es verdadera el ciclo se ejecuta sino detiene su ejecución. }
+ \item {incremento :  expresión o llamada a función, por lo general se usa para cambiar el valor del indice del ciclo.} 
+ \end{itemize} 
+}}}}\end{frame}
+
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicio} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+ \begin{itemize}
+ \item {Escriba un programa que construya un arreglo de tamaño 10 y lo llene con números enteros entre 0 y 100 generados aleatoreamente.} \item {Recorra el arreglo y sume su contenido. Imprima cada valor y la suma total en pantalla. Para generar números aleatorios use el metodo random de la clase Math que esta en el paquete java.lang.Math}
+ \end{itemize} 
+}}}}\end{frame}
+
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicio resuelto} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/EjArregloSum.java}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejemplo discutido en clases} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/EjemploCaracter.java}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicios} 
+\ITZ{	
+\uncover<1->{\ITT{1}{Mostrar las notas de un alumno}{\footnotesize{\begin {itemize}
+\uncover<1->{
+\item {Cree una clase "estudiante", declare un arreglo de notas de tipo int y una constante con la cantidad de notas totales del estudiante ( {\textit{ static final int NB\_NOTAS = 10; 
+}})}
+\item {Cree un método "mostrar" que imprima en pantalla las notas de un alumno.}
+\item {Cree un método "llenar" que llene el arreglo con notas aleatorias entre 0 y 10.}
+\item {Cree un método "promedio" que calcule el promedio de notas del alumno.}
+\item {En el método principal : Cree un objeto del tipo "estudiante", cree el arreglo declarado como atributo de la clase y (usando el objeto recién creado) llame a los métodos llenar, mostrar y promedio.}
+\end{itemize}
+}}}}}\end{frame}
+
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicio resuelto} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/Estudiante0.java}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicio resuelto continuación} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/Estudiante1.java}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Lectura argumentos} 
+\ITZ{	
+\uncover<1->{\ITT{1}{Usando arreglos}{
+\uncover<1->{
+Como podemos leer una lista de argumentos ingresados al momento de ejecutar el código? }
+\footnotesize{\lstinputlisting{./codigosEx/LecturaArgumentos.java}}
+}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Lectura argumentos} 
+\ITZ{	
+\uncover<1->{\ITT{1}{Usando arreglos}{\begin{itemize}
+\uncover<1->{
+\item {Desarrolle un programa que lea un conjunto de notas ingresadas como argumentos al ejecutar el programa. Use el método parseInt de la clase Integer para pasar de carácter a enteros y parseFloat de la clase Float para flotantes.}
+\item {Cree un método que ingrese las notas a un arreglo.}
+\item {Cree un método que calcule el promedio de notas y lo imprima en pantalla.}
+\end{itemize}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicio resuelto} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/AdjuntarNotas.java}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Lectura de datos} 
+\ITZ{	
+\uncover<1->{\ITT{1}{Usando la clase Scanner}{
+\uncover<1->{Como podemos leer datos desde el teclado?}
+\tiny{\lstinputlisting{./codigosEx/LecturaScanner.java}}
+}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Lectura de datos} 
+\ITZ{	
+\uncover<1->{\ITT{1}{Usando la clase Scanner}{
+\uncover<1->{Para leer datos float, long, short, double, String, debemos usar : . \begin{itemize}
+\item {nextFloat()}
+\item {nextShort()}
+\item {nextDouble()}
+\item {next() y nextLine()}}
+\end{itemize}
+}}}\end{frame}
+
+
+%La clase Scanner permite crear objetos capaces de leer información desde una fuente de datos que puede ser un archivo, una cadena de caracteres, el teclado, etc. Los objetos de esta clase, serán los que utilizaremos para pedir los datos que se requieran para dar solución a un problema.
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicios } 
+\ITZ{	
+\uncover<1->{\ITT{1}{Trabajar con arreglos y metodos}{\begin {itemize}
+\uncover<1->{
+\item {Cree una clase "EjArreglos"}
+\item {Construya 4 arreglos de tamaño N=10 y uno de tamaño definido por el usuario.}
+\item {Elija si va a trabajar con metodos static o creara objetos.}
+\item {Metodos para llenar cada arreglo: 
+
+\begin {enumerate}
+\item {Arr1 : con elementos enteros en orden creciente entre $[$0, n$[$. }
+\item {Arr2 : con elementos enteros en orden creciente a partir de 5.}
+\item {Arr3 : con elementos enteros en orden decreciente de $[$n,1$]$.}
+\item {Arr4 : con elementos enteros generados aleatoriamente entre $[$0,10$]$.}
+\item {Arr5 : con elementos enteros ingresados por el usuario como argumentos o por teclado.}
+\end{enumerate}}
+\end{itemize}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicios continuación} 
+\ITZ{	
+\uncover<1->{\ITT{1}{Trabajar con arreglos y metodos}{\footnotesize{\begin {itemize}
+\uncover<1->{
+\item {Métodos a aplicar a cada arreglo : 
+\begin {enumerate}
+\item {crear método "mostrar" que imprima en pantalla los elementos del arreglo en pantalla.}
+\item {crear método "mostrarMayorMenor" que el numero de elementos mayor que 4 o menor que 2.}
+\item {crear método "mostrarNueve" que calcule e imprima en pantalla el numero de elementos de valor 9 del arreglo. }
+\item {crear método "mostrarSuma" que calcule e imprima la suma de todos los elementos del arreglo.}
+\item {crear método "mostrarMayor" que imprima el mayor valor del arreglo.}
+\item {crear método "mostrarPromedio" que calcule e que imprima el promedio de los elementos del arreglo.}
+\item {Genere un método llamado "operaciones" que llame a los 6 métodos auxiliares creados. entregando el arreglo como parametro.}
+\end{enumerate}}
+\end{itemize}
+}}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicio resuelto} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/EjArreglos0.java}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicio resuelto continuación} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/EjArreglos1.java}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicio resuelto continuación} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/EjArreglos2.java}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicio resuelto continuación} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/EjArreglos3.java}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicio resuelto continuación} 
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\tiny{\lstinputlisting{./codigosEx/EjArreglos4.java}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ciclos}
+\ITZ{	
+\uncover<1->{\ITT{1}{While y do}{
+\uncover<1->{
+El ciclo {\textbf{while y do}} permiten ejecutar un bloque de código de manera repetida hasta encontrar una condición especifica.
+\begin {itemize}
+\item  {Se ejecuta el bloque de código hasta que la condición sea verdadera. Si la condición es falsa el ciclo nunca se ejecutara.{\tiny{\lstinputlisting{./codigosEx/while.java}}}
+} 
+\item{ Este ciclo prueba la condición después de haberse ejecutado una vez. {\tiny{\lstinputlisting{./codigosEx/dowhile.java}}}
+
+}
+ \end{itemize} 
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ciclos}
+\ITZ{	
+\uncover<1->{\ITT{1}{Como salir de los ciclos?}{
+\uncover<1->{
+Todos los ciclos se terminan cuando la condición se cumple, si desea salir de manera anticipada  y detener por completo el ciclo actual debe usar \textbf{break}.
+{\tiny{\lstinputlisting{./codigosEx/break1.java}}}
+Inserte este código dentro de una clase y pruebe el resutado.
+{\tiny{\lstinputlisting{./codigosEx/break.java}}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ciclos}
+\ITZ{	
+\uncover<1->{\ITT{1}{Como salir de los ciclos?}{
+\uncover<1->{
+Todos los ciclos se terminan cuando la condición se cumple, si desea salir de manera anticipada  e iniciar la siguiente iteración (reiniciar el ciclo) debe usar \textbf{continue}. Para los ciclos \textbf{ while} y  \textbf{do} significa que la ejecución del bloque se inicia de nuevo. Para el ciclo  \textbf{for} el incremento se evalúa y después el bloque se ejecuta. 
+{\tiny{\lstinputlisting{./codigosEx/continue1.java}}}
+Inserte este código dentro de una clase y pruebe el resultado.
+{\tiny{\lstinputlisting{./codigosEx/continue.java}}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ciclos}
+\ITZ{	
+\uncover<1->{\ITT{1}{Como salir de los ciclos?}{
+\uncover<1->{
+Se pueden usar etiquetas para salir de ciclos aninadados o salir de más de un ciclo al mismo tiempo.
+{\tiny{\lstinputlisting{./codigosEx/breaketiqueta.java}}}
+}}}}\end{frame}
+
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicios lectura, condicionales y ciclos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\begin {itemize}
+\item{ Escriba un programa que calcule la raíz cuadrada de valores ingresados por el usuario. Pregunte al usuario cuantos valores ingresará. Solo debe considerar valores positivos.}
+\item {Escriba un programa de facturación con descuento. El usuario debe ingresar el precio sin impuestos, y el programa calculará los impuestos (fijo a 19\%) y hará el descuento si corresponde. 
+\begin {itemize}
+\item {0\% si el monto es inferior a 1000}
+\item {1\% si el monto es superior o igual a 1000 e inferior a 3000}
+\item {3\% si el monto es superior o igual a 3000 e inferior a 5000}
+\item {5\% si el monto es superior o igual a 5000}
+\end{itemize}}
+\item {Escriba un programa que calcule el área de un rectángulo.  El usuario debe ingresar los valores de x1,x2,y1,y2.}
+\item {Escriba un programa que identifique si un caracter es vocal o consonante. Cree 20 caracteres a partir de números aleatorios. Imprima en pantalla el caracter y su tipo.}
+\end{itemize}
+
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicios lectura, condicionales y ciclos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Raices.java}}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicios lectura, condicionales y ciclos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Factura.java}}}
+}}}}\end{frame}
+
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicios lectura, condicionales y ciclos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Rectangulo.java}}}
+}}}}\end{frame}
+
+\subsection{Arreglos, condicionales y ciclos}
+\begin{frame}{Ejercicios lectura, condicionales y ciclos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Consonante.java}}}
+}}}}\end{frame}
+
+
+%\subsection{Recapitulativo Fechas}
+%\begin{frame}{Próximas notas y clases recuperativas: }
+%\ITZ{	
+%\uncover<1->{\ITT{1}{}{
+%\uncover<1->{ 
+%\begin{itemize}
+%\item {martes 24 abril a las 15h30 - 18h30 : Segundo trabajo en clases con nota.}
+%\item {martes 8 mayo a las 15h30 - 18h30 1er Certamen.}
+%\end{itemize}}}}
+%\uncover<2->{\ITT{2}{}{
+%\uncover<2->{ 
+%Total de clases a recuperar (nuevo calculo que incluye la semana de recuperativas y la semana mechona): 10 clases.\\
+%Se ha recuperado 1 clase en el mes de marzo.\\
+%Se recuperaran 4 clases en la fecha de ejercicio y certamen (24 de abril y 8 de mayo).\\
+%Quedan por recuperar : 5 clases (que serán fijados entre los días de ejercicio y certamen).}}}
+%}
+%\end{frame}
+
+%98747251 matias

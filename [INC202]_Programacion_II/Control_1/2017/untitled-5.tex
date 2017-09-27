@@ -1,0 +1,133 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Boadilla}     % or try Boadilla, Darmstadt, Madrid, Warsaw, default, ...
+  \usecolortheme{default} % or try Boadilla, albatross, beaver, crane, default, ...
+  \usefonttheme{default}  % or try Boadilla, serif, structurebold, default, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\title[Software Colaborativo lantonistas]{Um modelo de software colaborativo com suporte à troca de
+informações entre equipes médicas plantonistas}
+%\author[CDTec] {Cristian Pereira, André Einhardt, Mateus Nascimento}
+\author[CDTec] {Vinícius Tocantins Marques, Cristiano André da Costa, Jorge Luis Victoria Barbosa, Rodrigo da Rosa Righi}
+
+\institute[]{Apresentado por:André Einhardt, Mateus Nascimento}
+\date{Setembro 2015}
+
+
+\begin{document}
+
+\begin{frame}
+    \begin{center}
+  \titlepage 
+      \begin{figure}[h]
+  \includegraphics[width=2.3cm,height=2.3cm] {img/uv_logo_alta_rgb.jpg}
+  
+%\includegraphics[width=3.5cm,height=2.1cm,scale=1] {img/lups_logo_letras.png}
+      \end{figure}
+  \end{center}
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{Sumário}
+  \begin{frame}{Sumário}
+    \begin{itemize}
+      \item Introdução e Proposta do Artigo
+      \item Motivações e Objetivos
+      \item Trabalhos Relacionados     
+      \item Contribuição do Trabalho
+      \item Considerações Finais
+    \end{itemize}
+  \vskip 5cm
+\end{frame}
+
+\section{Corpo Apresentação}
+% ================== ÁREAS SENDO ALTERADAS POR CRISTIAN PEREIRA ==================
+\begin{frame}{Introdução e Proposta do Artigo}
+Modelo colaborativo denominado Doctor Collab
+\begin{itemize}
+    \item Facilita a rotina de profissionais da area da saúde durante a troca de equipe, permitindo a visualização de dados dos prontuários
+    \item Produz uma rede de colaboração cruzando dados de fontes heterogêneas em prol do sucesso do atendimento médico
+    \item Utiliza Gerenciamento de tarefas, Redes Bayesianas e ciência da situação
+    \item Acesso a partir de dispositivos móveis
+\end{itemize}
+\vskip 3cm
+\end{frame}
+
+\begin{frame}{Motivações e Objetivos}
+    \begin{block}{Objetivos}
+      \begin{itemize}
+        \item Propor um modelo colaborativo baseado em nuvel computacional móvel, auxiliando na troca de informações de médicos plantonistas.
+        \item Ajudar na tomada de decisão de médicos plantonistas.
+    \end{itemize}
+  \end{block}
+  \vskip 1cm
+  \begin{block}{Trabalhos Relacionados}
+    \begin{itemize}
+        \item Empregar inferência através da utilização de Redes Bayesuanas (dá suporte à colaboração entre as equipes).
+        \item Arquitetura baseada em núvem computacional acessada a partir de dispositivos móveis.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+
+\begin{frame}{Trabalhos Relacionados}
+    \begin{block}{Objetivos}
+      \begin{itemize}
+        \item Propor um modelo colaborativo baseado em nuvel computacional móvel, auxiliando na troca de informações de médicos plantonistas.
+        \item Ajudar na tomada de decisão de médicos plantonistas.
+    \end{itemize}
+  \end{block}
+  \vskip 1cm
+  \begin{block}{Trabalhos Relacionados}
+    \begin{itemize}
+        \item Empregar inferência através da utilização de Redes Bayesuanas (dá suporte à colaboração entre as equipes).
+        \item Arquitetura baseada em núvem computacional acessada a partir de dispositivos móveis.
+    \end{itemize}
+  \end{block}
+\end{frame}
+\begin{frame}{Contribuição do Trabalho}
+No modelo proposto algumas premissas foram definidas:
+\begin{block}{Premissas}
+  \begin{enumerate}[I]
+    \item Processamento em nuvem computacional; 
+    \item Suporte a colaboração na camada de aplicação; 
+    \item Organização das informações em base ontológica; 
+    \item Elasticidade, escalabilidade e disponibilidade fornecidas pela arquitetura em nuvem.
+  \end{enumerate}
+\end{block}
+\begin{itemize}
+    \item Diversas equipes com acesso a dados dos pacientes (base de dados em nuvem).
+    \item Contribuição de forma colaborativa para evolução do quadro médico do paciente.
+    \item Padrões pré-estabelecidos e gerenciamento de tarefas (objetivando a conciência situacional)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Considerações Finais}
+    Visão geral do Doctor Collab
+  \begin{figure}
+   %\includegraphics[width=9cm,height=7.5cm] {img/VisaoModeloDoctorCollab.png}
+  \end{figure}
+\end{frame}
+
+
+% =================================== FIM MATEUS =================================
+\end{document}
+
+              

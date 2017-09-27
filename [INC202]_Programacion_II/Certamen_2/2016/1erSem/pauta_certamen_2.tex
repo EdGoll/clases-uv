@@ -1,0 +1,557 @@
+\documentclass[10pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\usepackage{ulem}
+\usepackage{tikz}
+\usepackage{algorithm,algorithmic}
+
+\renewcommand{\algorithmicrequire}{\textbf{entrada:}}
+\renewcommand{\algorithmicensure}{\textbf{salida:}}
+\renewcommand{\algorithmicend}{\textbf{fin}}
+\renewcommand{\algorithmicif}{\textbf{si}}
+\renewcommand{\algorithmicthen}{\textbf{entonces}}
+\renewcommand{\algorithmicelse}{\textbf{si no}}
+\renewcommand{\algorithmicelsif}{\algorithmicelse,\ \algorithmicif}
+\renewcommand{\algorithmicendif}{\algorithmicend\ \algorithmicif}
+\renewcommand{\algorithmicfor}{\textbf{Para}}
+\renewcommand{\algorithmicforall}{\textbf{Para Todo}}
+\renewcommand{\algorithmicdo}{\textbf{Repetir}}
+\renewcommand{\algorithmicendfor}{\algorithmicend\ \algorithmicfor}
+\renewcommand{\algorithmicwhile}{\textbf{Mientras}}
+\renewcommand{\algorithmicendwhile}{\algorithmicend\ \algorithmicwhile}
+\renewcommand{\algorithmicloop}{\textbf{Repetir}}
+\renewcommand{\algorithmicendloop}{\algorithmicend\ \algorithmicloop}
+\renewcommand{\algorithmicrepeat}{\textbf{Repetir}}
+\renewcommand{\algorithmicuntil}{\textbf{Hasta que}}
+\renewcommand{\algorithmicprint}{\textbf{Escribir}} 
+\renewcommand{\algorithmicreturn}{\textbf{retornar}} 
+\renewcommand{\algorithmictrue}{\textbf{Verdadero}} 
+\renewcommand{\algorithmicfalse}{\textbf{Falso}}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,blue,draw,inner sep=.5pt] (char) {#1};}}
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in             
+\headheight = 0.0 in            
+\headsep = 0.0 in
+            
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+    \begin{center}
+		{\Large Pauta Certamen 2, Programaci\'on II} \\
+		\emph{\small Prof. Rodrigo Olivares} \\
+		\emph{\small Ayud. Juan Carlos Tapia} \\
+		\emph{\scriptsize Mayo 26, 2016} 
+	\end{center}
+
+	\vspace*{-35pt}
+	\begin{center}
+		\rule{1\textwidth}{.3pt}
+	\end{center}
+	\vspace*{-42pt}
+	\begin{center}
+		\rule{1\textwidth}{2pt}
+	\end{center}
+
+	\vspace*{-15pt}
+
+	{\small \textbf{Instrucciones}:}
+
+	\vspace*{-15pt}
+
+	{\scriptsize
+	\begin{itemize}
+		\item[-] El puntaje m\'aximo del certamen es 100\%, siendo el 60\% el m\'inimo requerido para aprobar.
+		\item[-] Responda cada pregunta en la hoja indicada, agregando su nombre. Si no responde alguna pregunta, debe entregar la hoja con su nombre e indicar que \textbf{no responde}.
+		\item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado con nota \textbf{1,0}.
+	\end{itemize}
+	
+	\vspace*{-20pt}
+
+	\begin{enumerate}
+
+		\item \emph{30pts.} De las siguentes afirmaciones, encierre en un c\'irculo la o las alternativas correctas.
+		
+		\begin{multicols}{2}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[i.] \textbf{Un constructor}:
+				\item[\circled{(a)}] Siempre existe.
+				\item[\circled{(b)}] Puede no ser incluirlo por el desarrollador.
+				\item[\circled{(c)}] Al ser private s\'olo instancia objetos dentro de la clase.
+				\item[(b)] Al ser protected, no puede ser sobrecargado.
+				\item[\circled{(e)}] Debe siempre tener el mismo nombre de la clase.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[ii.] \textbf{La clase Vector}:
+				\item[\circled{(a)}] Es un List.
+				\item[(b)] Es un ArrayList.
+				\item[\circled{(c)}] Es synchronized.
+				\item[(d)] Es no synchronized.
+				\item[(e)] Es un nodo.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[iii.] \textbf{Paso de par\'ametros}:
+				\item[\circled{(a)}] Puede ser por valor.
+				\item[(b)] Puede ser por omisi\'on.
+				\item[\circled{(c)}] Puede ser por referencia.
+				\item[(b)] Puede ser por convensi\'on.
+				\item[(c)] Puede ser por default.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[iv.] \textbf{La instancia this}:
+				\item[(a)] Invoca al constructor de una clase padre.
+				\item[(b)] Invoca al garbage collection.
+				\item[(c)] Referencia al construtor de la clase.
+				\item[(d)] Referencia a los atributos de la clase.
+				\item[(e)] Referencia a los m\'etodo de la clase.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[v.] \textbf{Una clase abstracta}:
+				\item[(a)] Pose\'e s\'olo m\'etodos abstractos.
+				\item[\circled{\xout{(b)}}] \xout{Alguno de sus m\'etodos son abstractos.}
+				\item[(c)] Instancia objetos abstractos.
+				\item[(d)] Permite extender una interfaz.
+				\item[(e)] Permite implementar una clase padre.
+			\end{enumerate}
+
+            \begin{enumerate}[label=(\alph*)]
+				\item[vi.] \textbf{Respecto a las interfaces}:
+				\item[(a)] Su constructor es creado en compilaci\'on.
+				\item[\circled{(b)}] Sus m\'etodos definidos deben ser public.
+				\item[\circled{(c)}] Sus m\'etodos son abstract.
+				\item[\circled{(d)}] Se implementa.
+				\item[(e)] Se extiende.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[vii.] \textbf{Un TDA Bean}.
+				\item[(a)] S\'olo tiene atributos.
+				\item[(b)] S\'olo tiene m\'etodos.
+				\item[\circled{(c)}] No debe incluir l\'ogica.
+				\item[(d)] El constructor debe ser siempre incluido.
+				\item[\circled{(e)}] Es posible agregar m\'etodos como equals() y toString().
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[viii.] \textbf{Sobre la herencia}:
+				\item[\circled{(a)}] En java se realiza con la palabra reservada extends.
+				\item[\circled{(b)}] En java se realiza con la palabra reservada impelements.
+				\item[\circled{(c)}] Todas las clases heredan de la clase Object.
+				\item[(d)] La clase padre hereda el comportamiento de la clase hija.
+				\item[\circled{(e)}] La clase hija hereda el comportamiento de la clase padre.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[ix.] \textbf{En relaci\'on a la manipulaci\'on de archivos}.
+				\item[(a)] Se lee un archivo con la instancia FileWriter.
+				\item[\circled{(b)}] Se lee un archivo con la instancia FileReader.
+				\item[(c)] Se leen s\'olo archivos con delimitar y de largo fijo.
+				\item[\circled{(d)}] StringTokenizer se usa para archivos con delimitador.
+				\item[(e)] Se requiere de la clase Scanner para la lectura.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[x.] \textbf{En relaci\'on a la manipulaci\'on de archivos}.
+				\item[\circled{(a)}] Se escribe en un archivo con la instancia FileWriter.
+				\item[(b)] Se escribe en un archivo con la instancia FileReader.
+				\item[(c)] No es factible agregar contenido a un archivo existente.
+				\item[(d)] Es necesario utilizar la clase InputStreamReader.
+				\item[(e)] FileWriter("f.txt", false) agrega el contenido al final.
+			\end{enumerate}
+		
+		\end{multicols}
+		
+		\newpage
+
+		\item \emph{70pts.} Como Ingeniero Civil en Inform\'atica, la escuela le ha pedido que desarrolle un sistema que permita:
+
+        \begin{enumerate}
+            \item Cargar las notas de los alumnos de dos asignaturas. Para ello, debe leer 3 dataset: 
+            \begin{itemize}
+                \item[-] \emph{alumnos.csv}: Identificar, Apellido Paterno, Apellido Materno, Nombre(s).
+                \item[-] \emph{asignatura1.csv}: Identificar del alumno, Nota Quiz 1, Nota Quiz 2, Nota Quiz 3, Nota Tarea 1, Nota Tarea 2, Nota Certamen 1, Nota Certamen 2 y Nota Certamen 3
+                \item[-] \emph{asignatura2.csv}: Identificar del alumno, Nota Quiz 1, Nota Quiz 2, Nota Quiz 3, Nota Tarea 1, Nota Tarea 2, Nota Certamen 1, Nota Certamen 2 y Nota Certamen 3
+            \end{itemize}
+            \item Calcular el promedio de cada alumno, por asignatura, de la siguiente forma:
+            \begin{multicols}{3}
+                $$PQ = \frac{\displaystyle\sum_{i=1}^{3}NQ_{i}}{3}$$
+                $$PT = \frac{\displaystyle\sum_{i=1}^{2}NT_{i}}{2}$$
+                $$PC = \frac{\displaystyle\sum_{i=1}^{3}NC_{i}}{3}$$
+            \end{multicols}
+            Para calcular el promedio final:
+                \floatname{algorithm}{Pseudo-c\'odigo}
+                \begin{algorithm}[!ht]
+                	    \caption{Promedio\_Asignatura}
+                    \begin{algorithmic}%[1]
+                        \IF{$PC \geqslant 4.0$} 
+                            \RETURN $PC * 0.7 + NQ * 0.15 + NT * 0.15$
+                        \ELSIF{$PC \geqslant 3.5$}
+                            \RETURN $PC * 0.8 + NQ * 0.10 + NT * 0.10$
+                        \ELSIF{$PC \geqslant 3.0$}
+                            \RETURN $PC * 0.9 + NQ * 0.05 + NT * 0.05$
+                        \ELSE
+                            \RETURN $PC$
+                        \ENDIF
+                    \end{algorithmic}
+                \end{algorithm}	
+            \item Por \'ultimo, almacene en un cuarto archivo, denominado \emph{consolidado.csv} -delimitado por caracter- la siguiente informaci\'on: Id del alumno, Nota Final Asignatura 1, Nota Final Asignatura 2.
+        \end{enumerate}
+	\end{enumerate}}
+	\begin{table}[!ht]
+       {\scriptsize
+        \begin{center}
+             \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}\hline
+                \multicolumn{4}{|c|}{\textbf{\textquestiondown C\'omo ser\'e evaluado en la pregunta 2?} } \\ \hline
+                \multicolumn{1}{|c|}{\textbf{T\'opico}} & 
+                \multicolumn{1}{c|}{\textbf{Logrado}} & 
+                \multicolumn{1}{c|}{\textbf{Medianamente logrado}} & 
+                \multicolumn{1}{c|}{\textbf{No logrado}} \\ \hline
+                Manipulaci\'on de archivo. & 
+                \emph{25pts} Lee correctamente los archivos, los mapea a entidad y escribe en el archivo. & 
+                \emph{13pts} Realiza dos de las tres acciones del punto anterior. & 
+                \emph{ 0pts} No realiza la acciones del punto anterior. \\ \hline
+                TDA Lista. & 
+                \emph{15pts} Crea la clase TDA Lista e implementa todos los m\'etodos. & 
+                \emph{7pts} Crea la clase TDA Lista e implementa algunos m\'etodos. & 
+                \emph{0pts} No crea la clase TDA Lista. \\ \hline
+                TDA Bean / Entidad & 
+                \emph{10pts} Crea la clase entidad para alumno y asignatura. & 
+                \emph{5pts} Crea la clase entidad para alumno o la asignatura (no ambas). & 
+                \emph{0pts} No crea las clases entidad. \\ \hline                
+                Clase principal y m\'etodo main. &
+                \emph{5pts} Crea la clase principal en un archivo independiente con el m\'etodo main. & 
+                \emph{3pts} Crea el m\'etodo main en la misma clase. & 
+                \emph{0pts} No crea el m\'etodo main. \\ \hline
+                Paradigma Orientaci\'on a Objetos  & 
+                \emph{15pts} Resuelve el problema utilizando el POO. & 
+                \emph{7pts} Utiliza parte del POO para resolver el problema. & 
+                \emph{0pts} No utiliza el POO para dar soluci\'on al problema.\\ \hline
+                Total m\'aximo puntaje pregunta 2 & 
+                \emph{70pts} & 
+                \emph{35pts} & 
+                \emph{0pts} \\ \hline
+            \end{tabular}
+        \end{center}}
+     \end{table}
+     \newpage
+\begin{verbatim}
+public class Principal {
+
+    public static void main(String[] args) {
+        ListaAlumnoNotaImp lan = new ListaAlumnoNotaImp();
+        lan.calcularPromedios();
+    }
+}
+
+public class Alumno {
+
+    private int id;
+    private String apellidoPaterno;
+    private String apellidoMaterno;
+    private String nombres;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getApellidoPaterno() {
+        return apellidoPaterno;
+    }
+
+    public void setApellidoPaterno(String apellidoPaterno) {
+        this.apellidoPaterno = apellidoPaterno;
+    }
+
+    public String getApellidoMaterno() {
+        return apellidoMaterno;
+    }
+
+    public void setApellidoMaterno(String apellidoMaterno) {
+        this.apellidoMaterno = apellidoMaterno;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+}
+
+public class NotaAlumno {
+
+    private int idAlumno;
+    private float notaQuiz1;
+    private float notaQuiz2;
+    private float notaQuiz3;
+    private float notaTarea1;
+    private float notaTarea2;
+    private float notaCertamen1;
+    private float notaCertamen2;
+    private float notaCertamen3;
+
+    public int getIdAlumno() {
+        return idAlumno;
+    }
+
+    public void setIdAlumno(int idAlumno) {
+        this.idAlumno = idAlumno;
+    }
+
+    public float getNotaQuiz1() {
+        return notaQuiz1;
+    }
+
+    public void setNotaQuiz1(float notaQuiz1) {
+        this.notaQuiz1 = notaQuiz1;
+    }
+
+    public float getNotaQuiz2() {
+        return notaQuiz2;
+    }
+
+    public void setNotaQuiz2(float notaQuiz2) {
+        this.notaQuiz2 = notaQuiz2;
+    }
+
+    public float getNotaQuiz3() {
+        return notaQuiz3;
+    }
+
+    public void setNotaQuiz3(float notaQuiz3) {
+        this.notaQuiz3 = notaQuiz3;
+    }
+
+    public float getNotaTarea1() {
+        return notaTarea1;
+    }
+
+    public void setNotaTarea1(float notaTarea1) {
+        this.notaTarea1 = notaTarea1;
+    }
+
+    public float getNotaTarea2() {
+        return notaTarea2;
+    }
+
+    public void setNotaTarea2(float notaTarea2) {
+        this.notaTarea2 = notaTarea2;
+    }
+
+    public float getNotaCertamen1() {
+        return notaCertamen1;
+    }
+
+    public void setNotaCertamen1(float notaCertamen1) {
+        this.notaCertamen1 = notaCertamen1;
+    }
+
+    public float getNotaCertamen2() {
+        return notaCertamen2;
+    }
+
+    public void setNotaCertamen2(float notaCertamen2) {
+        this.notaCertamen2 = notaCertamen2;
+    }
+
+    public float getNotaCertamen3() {
+        return notaCertamen3;
+    }
+
+    public void setNotaCertamen3(float notaCertamen3) {
+        this.notaCertamen3 = notaCertamen3;
+    }
+
+    public float getPromedioQuiz() {
+        return (notaQuiz1 + notaQuiz2 + notaQuiz3) / 3;
+    }
+
+    public float getPromediTarea() {
+        return (notaTarea1 + notaTarea2) / 2;
+    }
+
+    public float getPromedioCertamen() {
+        return (notaCertamen1 + notaCertamen2 + notaCertamen3) / 3;
+    }
+
+    public float getPromedioFinal() {
+        if (getPromedioCertamen() >= 4) {
+            return (getPromedioCertamen() * 0.7f + 
+                   getPromedioQuiz() * 0.15f + 
+                   getPromediTarea() * 0.15f);
+        } else if (getPromedioCertamen() >= 3.5) {
+            return (getPromedioCertamen() * 0.8f + 
+                   getPromedioQuiz() * 0.1f + 
+                   getPromediTarea() * 0.1f);
+        } else if (getPromedioCertamen() >= 3) {
+            return (getPromedioCertamen() * 0.9f + 
+                   getPromedioQuiz() * 0.05f + 
+                   getPromediTarea() * 0.05f);
+        } else {
+            return getPromedioCertamen();
+        }
+    }
+}
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class ListaAlumnoNotaImp {
+
+    private List<NotaAlumno> notasAlumnosAsignatura1 = null;
+    private List<NotaAlumno> notasAlumnosAsignatura2 = null;
+    private List<Alumno> alumnos = null; 
+    private FuenteDeDatos fd = null;
+    private List<String> lineas = null;
+    private StringTokenizer stringTokenizer = null;
+    private NotaAlumno notaAlumno = null;
+    private Alumno alumno = null;
+
+    public ListaAlumnoNotaImp() {
+        notasAlumnosAsignatura1 = new ArrayList<NotaAlumno>();
+        notasAlumnosAsignatura2 = new ArrayList<NotaAlumno>();
+        alumnos = new ArrayList<Alumno>();
+        fd = new FuenteDeDatos();
+        cargarAlumnos();
+        cargarNotasAlumnos("asignatura1.csv", notasAlumnosAsignatura1);
+        cargarNotasAlumnos("asignatura2.csv", notasAlumnosAsignatura2);
+    }
+
+    private void cargarAlumnos() {
+        lineas = fd.leerArchivo("alumnos.csv");
+        for (String linea : lineas) {
+            stringTokenizer = new StringTokenizer(linea, ";");
+            if (stringTokenizer.hasMoreElements()) {
+                alumno = new Alumno();
+                alumno.setId(Integer.parseInt(stringTokenizer.nextToken()));
+                alumno.setApellidoPaterno(stringTokenizer.nextToken());
+                alumno.setApellidoMaterno(stringTokenizer.nextToken());
+                alumno.setNombres(stringTokenizer.nextToken());
+                alumnos.add(alumno);
+            }
+        }
+    }
+
+    private void cargarNotasAlumnos(String nombreArchivo, List<NotaAlumno> lista) {
+        lineas = fd.leerArchivo(nombreArchivo);
+        for (String linea : lineas) {
+            stringTokenizer = new StringTokenizer(linea, ";");
+            if (stringTokenizer.hasMoreElements()) {
+                notaAlumno = new NotaAlumno();
+                notaAlumno.setIdAlumno(Integer.parseInt(stringTokenizer.nextToken()));
+                notaAlumno.setNotaQuiz1(Float.parseFloat(stringTokenizer.nextToken().replace(",", ".")));
+                notaAlumno.setNotaQuiz2(Float.parseFloat(stringTokenizer.nextToken().replace(",", ".")));
+                notaAlumno.setNotaQuiz3(Float.parseFloat(stringTokenizer.nextToken().replace(",", ".")));
+                notaAlumno.setNotaTarea1(Float.parseFloat(stringTokenizer.nextToken().replace(",", ".")));
+                notaAlumno.setNotaTarea2(Float.parseFloat(stringTokenizer.nextToken().replace(",", ".")));
+                notaAlumno.setNotaCertamen1(Float.parseFloat(stringTokenizer.nextToken().replace(",", ".")));
+                notaAlumno.setNotaCertamen2(Float.parseFloat(stringTokenizer.nextToken().replace(",", ".")));
+                notaAlumno.setNotaCertamen3(Float.parseFloat(stringTokenizer.nextToken().replace(",", ".")));
+                lista.add(notaAlumno);
+            }
+        }
+    }
+
+    public void calcularPromedios() {
+        lineas = new ArrayList<String>();
+        String linea;
+        for (Alumno alumnoAux : alumnos) {
+            linea = alumnoAux.getId() + ";";
+            for (NotaAlumno notaAlumnoAux : notasAlumnosAsignatura1) {
+                if (notaAlumnoAux.getIdAlumno() == alumnoAux.getId()) {
+                    linea += String.format("%f", notaAlumnoAux.getPromedioFinal()) + ";";
+                    break;
+                }
+            }
+            for (NotaAlumno notaAlumnoAux : notasAlumnosAsignatura2) {
+                if (notaAlumnoAux.getIdAlumno() == alumnoAux.getId()) {
+                    linea += String.format("%f", notaAlumnoAux.getPromedioFinal());
+                    break;
+                }
+            }
+            lineas.add(linea);
+        }
+        fd.escribirArchivo("consolidado.csv", lineas);
+    }
+}
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+public class FuenteDeDatos {
+
+    public List<String> leerArchivo(String nombreArchivo) {
+        File archivo;
+        FileReader fileReader = null;
+        List<String> lineas = null;
+        BufferedReader bufferedReader;
+
+        try {
+            archivo = new File(nombreArchivo);
+            lineas = new ArrayList<String>();
+            String linea;
+            fileReader = new FileReader(archivo);
+            bufferedReader = new BufferedReader(fileReader);
+            while ((linea = bufferedReader.readLine()) != null) {
+                lineas.add(linea);
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        } finally {
+            try {
+                if (fileReader != null) {
+                    fileReader.close();
+                }
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+        }
+        return lineas;
+    }
+
+    public void escribirArchivo(String nombreArchivo, List<String> lineas) {
+        FileWriter archivo;
+        PrintWriter printWriter = null;
+        try {
+            archivo = new FileWriter(nombreArchivo);
+            printWriter = new PrintWriter(archivo);
+            for (String linea : lineas) {
+                printWriter.println(linea);
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        } finally {
+            printWriter.close();
+        }
+    }
+}
+\end{verbatim}
+\end{document} 

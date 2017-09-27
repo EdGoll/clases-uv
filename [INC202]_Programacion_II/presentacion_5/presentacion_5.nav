@@ -1,0 +1,103 @@
+\beamer@endinputifotherversion {3.36pt}
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\sectionentry {1}{Threads}{3}{Threads}{0}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\slideentry {1}{0}{1}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{4}{Introducci\'on}}\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\slideentry {1}{1}{1}{4/4}{Introducci\'on}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\slideentry {1}{1}{2}{5/5}{Introducci\'on}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\slideentry {1}{1}{3}{6/6}{Introducci\'on}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {1}{1}{4}{7/8}{Introducci\'on}{0}}
+\headcommand {\beamer@framepages {7}{8}}
+\headcommand {\slideentry {1}{1}{5}{9/10}{Introducci\'on}{0}}
+\headcommand {\beamer@framepages {9}{10}}
+\headcommand {\slideentry {1}{1}{6}{11/11}{Introducci\'on}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {1}{1}{7}{12/12}{Introducci\'on}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{13}{Creaci\'on de threads}}\headcommand {\beamer@subsectionpages {4}{12}}
+\headcommand {\slideentry {1}{2}{1}{13/13}{Creaci\'on de threads}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {1}{2}{2}{14/17}{Creaci\'on de threads}{0}}
+\headcommand {\beamer@framepages {14}{17}}
+\headcommand {\slideentry {1}{2}{3}{18/18}{Creaci\'on de threads}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {1}{2}{4}{19/19}{Creaci\'on de threads}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {1}{2}{5}{20/22}{Creaci\'on de threads}{0}}
+\headcommand {\beamer@framepages {20}{22}}
+\headcommand {\slideentry {1}{2}{6}{23/23}{Creaci\'on de threads}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {1}{2}{7}{24/24}{Creaci\'on de threads}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {1}{2}{8}{25/28}{Creaci\'on de threads}{0}}
+\headcommand {\beamer@framepages {25}{28}}
+\headcommand {\slideentry {1}{2}{9}{29/29}{Creaci\'on de threads}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{30}{Ciclo de vida de un thread}}\headcommand {\beamer@subsectionpages {13}{29}}
+\headcommand {\slideentry {1}{3}{1}{30/30}{Ciclo de vida de un thread}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\slideentry {1}{3}{2}{31/31}{Ciclo de vida de un thread}{0}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\slideentry {1}{3}{3}{32/36}{Ciclo de vida de un thread}{0}}
+\headcommand {\beamer@framepages {32}{36}}
+\headcommand {\beamer@subsectionentry {0}{1}{4}{37}{Sincronizaci\'on}}\headcommand {\beamer@subsectionpages {30}{36}}
+\headcommand {\slideentry {1}{4}{1}{37/37}{Sincronizaci\'on}{0}}
+\headcommand {\beamer@framepages {37}{37}}
+\headcommand {\slideentry {1}{4}{2}{38/39}{Sincronizaci\'on}{0}}
+\headcommand {\beamer@framepages {38}{39}}
+\headcommand {\slideentry {1}{4}{3}{40/41}{Sincronizaci\'on}{0}}
+\headcommand {\beamer@framepages {40}{41}}
+\headcommand {\slideentry {1}{4}{4}{42/42}{Sincronizaci\'on}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\slideentry {1}{4}{5}{43/44}{Sincronizaci\'on}{0}}
+\headcommand {\beamer@framepages {43}{44}}
+\headcommand {\slideentry {1}{4}{6}{45/45}{Sincronizaci\'on}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\slideentry {1}{4}{7}{46/46}{Sincronizaci\'on}{0}}
+\headcommand {\beamer@framepages {46}{46}}
+\headcommand {\beamer@subsectionentry {0}{1}{5}{47}{Prioridades}}\headcommand {\beamer@subsectionpages {37}{46}}
+\headcommand {\slideentry {1}{5}{1}{47/47}{Prioridades}{0}}
+\headcommand {\beamer@framepages {47}{47}}
+\headcommand {\slideentry {1}{5}{2}{48/49}{Prioridades}{0}}
+\headcommand {\beamer@framepages {48}{49}}
+\headcommand {\slideentry {1}{5}{3}{50/50}{Prioridades}{0}}
+\headcommand {\beamer@framepages {50}{50}}
+\headcommand {\slideentry {1}{5}{4}{51/51}{Prioridades}{0}}
+\headcommand {\beamer@framepages {51}{51}}
+\headcommand {\beamer@subsectionentry {0}{1}{6}{52}{Grupos de threads}}\headcommand {\beamer@subsectionpages {47}{51}}
+\headcommand {\slideentry {1}{6}{1}{52/52}{Grupos de threads}{0}}
+\headcommand {\beamer@framepages {52}{52}}
+\headcommand {\slideentry {1}{6}{2}{53/53}{Grupos de threads}{0}}
+\headcommand {\beamer@framepages {53}{53}}
+\headcommand {\slideentry {1}{6}{3}{54/54}{Grupos de threads}{0}}
+\headcommand {\beamer@framepages {54}{54}}
+\headcommand {\slideentry {1}{6}{4}{55/55}{Grupos de threads}{0}}
+\headcommand {\beamer@framepages {55}{55}}
+\headcommand {\slideentry {1}{6}{5}{56/56}{Grupos de threads}{0}}
+\headcommand {\beamer@framepages {56}{56}}
+\headcommand {\slideentry {1}{6}{6}{57/60}{Grupos de threads}{0}}
+\headcommand {\beamer@framepages {57}{60}}
+\headcommand {\slideentry {1}{6}{7}{61/63}{Grupos de threads}{0}}
+\headcommand {\beamer@framepages {61}{63}}
+\headcommand {\slideentry {1}{6}{8}{64/64}{Grupos de threads}{0}}
+\headcommand {\beamer@framepages {64}{64}}
+\headcommand {\slideentry {1}{6}{9}{65/65}{Grupos de threads}{0}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\slideentry {1}{6}{10}{66/66}{Grupos de threads}{0}}
+\headcommand {\beamer@framepages {66}{66}}
+\headcommand {\slideentry {1}{6}{11}{67/67}{Grupos de threads}{0}}
+\headcommand {\beamer@framepages {67}{67}}
+\headcommand {\beamer@partpages {1}{67}}
+\headcommand {\beamer@subsectionpages {52}{67}}
+\headcommand {\beamer@sectionpages {3}{67}}
+\headcommand {\beamer@documentpages {67}}
+\headcommand {\def \inserttotalframenumber {44}}

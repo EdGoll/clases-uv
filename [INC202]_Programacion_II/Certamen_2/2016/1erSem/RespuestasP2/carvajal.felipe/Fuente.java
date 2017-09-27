@@ -1,0 +1,51 @@
+package certamen2;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+public class Fuente{
+
+    public void leerArchivo(String nombreArchivo) {
+        File archivo = null;
+        FileReader fileReader = null;
+
+        try {
+            archivo = new File(nombreArchivo);
+            String linea;
+            fileReader = new FileReader(archivo);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            while ((linea = bufferedReader.readLine()) != null) {
+               Certamen2.Setalu(linea);
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        } finally {
+            try {
+                if (fileReader != null) {
+                    fileReader.close();
+                }
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+        }
+
+    }
+
+    public void escribirArchivo(String nombreArchivo, List<String> lineas) {
+        FileWriter archivo = null;
+        PrintWriter printWriter = null;
+        try {
+            archivo = new FileWriter(nombreArchivo, true);
+            printWriter = new PrintWriter(archivo);
+            for (String linea : lineas) {
+                printWriter.println(linea);
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        } finally {
+            printWriter.close();
+        }
+    }
+}

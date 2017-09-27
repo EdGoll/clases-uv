@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=cuenta
+comment0.target=ClienteCuenta(Cuenta)
+comment1.target=void\ run()
+comment2.target=void\ pruebaDeposito()
+numComments=3

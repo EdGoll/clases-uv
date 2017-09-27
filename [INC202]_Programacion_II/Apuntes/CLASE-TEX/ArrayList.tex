@@ -1,0 +1,74 @@
+\graphicspath{{./pics/}}
+ 
+\section{ArrayList}
+\subsection{ArrayList}
+\begin{frame}{ArrayList}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin{itemize}
+\uncover<1->
+\item {Generalidades}
+\item {Operaciones usuales}
+\item {Ejercicios}
+\end{itemize}}}}
+\end{frame}
+
+\subsection{ArrayList}
+\begin{frame}{Generalidades de ArrayList}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+La clase ArrayList ofrece funcionalidades de acceso rápido comparables a las de un arreglo de objetos. Esta clase es mas flexible que los arreglos de objeto, su tamaño (numero de elementos) puede variar durante la ejecución. \\
+Para que el acceso directo a los elementos de un rango dado sea posible es necesario que los objetos (o mas bien sus referencias) estén contiguos en la memoria (como para los arreglos).\\ Para usar ArrayList se debe importar el paquete :  \emph{java.util}. 
+}}}}
+\end{frame}
+
+
+
+\subsection{ArrayList}
+\begin{frame}{Operadores usuales de ArrayList}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+\begin{itemize}
+\item {Construcción : Un vector dinamico puede ser construido vacío o a partir de un conjunto de datos. \begin {itemize} \item{\emph{ArrayList v1 = new ArrayList ();}} \item{\emph{ArrayList v2 = new ArrayList(c);}} \end{itemize}}
+\item{Agregar un elemento : \begin {itemize} \item {Agregar un elemento al final del vector usando \emph{ add(elem);}} \item{Agregar un elemento en una posición $i$ dada \emph{add(i,elem);}} \end{itemize}}
+\item {Suprimir un elemento: \begin {itemize} \item {Suprimir un elemento en la posición $i$ \emph{remove(i);}} \item {Suprimir un rango consecutivo de elementos \emph{removeRange(n,p)}} \item {suprimir todo \emph {removeAll()}}\end{itemize}
+El método remove retorna el objeto o rango de objetos eliminados (tipo \emph{Object}). Si no elimina el objeto (por que no lo encuentra) retorna \emph{false}.
+}
+\end {itemize}}}}}
+\end{frame}
+
+\subsection{ArrayList}
+\begin{frame}{Operadores usuales de ArrayList}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acceso o modificación de los elementos}{
+\uncover<1->{
+\begin {itemize}
+\item {Acceder a los elementos usando get(i). Para acceder a todos los elementos del vector se puede usar : \\
+\emph{public static void mostrar (ArrayList v) \{ \\
+for (int i =0; i$<$v.size(); i++) \\
+System.out.println(v.get(i));\}}}
+\item {Modificar los elementos usando set(i). Para modificar todos los elementos de un vector se puede usar : \\
+\emph{public static void modificar (ArrayList v) \{ \\
+for (int i =0; i$<$v.size(); i++) \\
+if (condicion) set (i,null);\}}}
+\end{itemize}
+}}}}
+\end{frame}
+
+\subsection{ArrayList}
+\begin{frame}{Ejercicios}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Escriba un programa que cree un vector dinamico que contenga 10 objetos de tipo entero. \\ Luego elimine los objetos de la posición 3 y 5. \\Verifique el tamaño del vector al inicio y al final usando el metodo \emph{size()}. \\Modifique los valores de la posición 2 y 6 \\ Imprima los valores iniciales y finales.
+}}}}\end{frame}
+
+\subsection{ArrayList}
+\begin{frame}{Ejercicios}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/ArrayL.java}}}
+}}}}\end{frame}
+

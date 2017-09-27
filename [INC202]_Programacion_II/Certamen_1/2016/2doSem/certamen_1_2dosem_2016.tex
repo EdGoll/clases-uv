@@ -1,0 +1,254 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,blue,draw,inner sep=.5pt] (char) {#1};}}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in             
+\headheight = 0.0 in            
+\headsep = 0.0 in
+            
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+\begin{center}
+    {\Large Certamen 1, Programaci\'on II} \\
+    \emph{\small Prof. Rodrigo Olivares} \\
+    \emph{\scriptsize Noviembre 8, 2016}
+\end{center}
+\vspace*{-35pt}
+\begin{center}
+    \rule{1\textwidth}{.3pt}
+\end{center}
+\vspace*{-42pt}
+\begin{center}
+    \rule{1\textwidth}{2pt}
+\end{center}
+
+\vspace*{-15pt}
+{\small \textbf{Instrucciones}:}
+\vspace*{-15pt}
+
+{\scriptsize
+\begin{itemize}
+    \item[-] El puntaje m\'aximo del certamen es 100\%, siendo el 60\% el m\'inimo requerido para aprobar.
+    \item[-] Responda:
+        \begin{itemize}
+            \item[-] Primera parte: \textbf{30 min}. Responda en la hoja indidcada.
+            \item[-] Segunda parte: 12.00 hrs del d\'ia siguiente. Adjunte el c\'odigo fuente en el enlace dispuesto en el aula virtual. 
+        \end{itemize}
+    \item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado con nota \textbf{1,0}.
+\end{itemize}
+}
+\vspace*{10pt}
+
+\vspace*{-30pt}
+
+\begin{enumerate}
+    {\scriptsize
+    
+    \item \emph{30pts.} De las siguentes afirmaciones, encierre en un c\'irculo la o las alternativas correctas.
+
+    \begin{multicols}{2}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[i.] Algunos enfoques de la orientaci\'on a objeto son:
+        \item[(a)] El enfoque reusable.
+        \item[(b)] El enfoque abstracto.
+        \item[(c)] El enfoque imperativo.
+        \item[(d)] El enfoque procedural.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[ii.] En cuanto a la programaci\'on orientada a objeto (POO):
+        \item[(a)] Se apoya en el paradigma estructural.
+        \item[(b)] Se base en la interacci\'on de funciones.
+        \item[(c)] Proporciona herramientas para modelar el mundo real.
+        \item[(d)] Es una propiedad de los lenguajes orientados a objetos.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[iii.] Una clase es: 
+        \item[(a)] Una colecci\'on de objetos.
+        \item[(b)] Una herencia del mundo real.
+        \item[(c)] Una categorizaci\'on de objetos.
+        \item[(d)] Un puntero a memoria.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[iv.] Respecto a una clase:
+        \item[(a)] Se declaran utilizando la palabra resevada class.
+        \item[(b)] Debe tener el mismo nombre que el archivo.
+        \item[(c)] Se declaran static los atributos de miembros del objeto.
+        \item[(d)] Todas deben incluir el m\'etodo main.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[v.] Respecto a una clase:
+        \item[(a)] Puede o no tener atributos.
+        \item[(b)] Puede o no tener m\'etodos.
+        \item[(c)] Puede o no tener constructor.
+        \item[(d)] Puede o no tener un nombre.
+        \item[(e)] Puede o no tener un tipo.
+    \end{enumerate}
+    
+    \begin{enumerate}[label=(\alph*)]
+        \item[vi.] Un objeto es: 
+        \item[(a)] Una categorizaci\'on de la clase.
+        \item[(b)] La instancia de una clase.
+        \item[(c)] Una abstracci\'on del mundo real.        
+        \item[(d)] Un m\'etodo de interaci\'on entre clases. 
+        \item[(e)] Siempre est\'atico.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[vii.] El principio de abstracci\'on: 
+        \item[(a)] Es una t\'ecnica que protege el estado de una entidad.
+        \item[(b)] Es parte del paradigma de orientaci\'on a objeto.
+        \item[(c)] En Java, se logra utilizando los modificadores de acceso.
+        \item[(d)] Es absorber el conocmineto de una entidad.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[viii.] Respecto los constructores:
+        \item[(a)] Son declarados private
+        \item[(b)] Deben ser m\'etodos de tipo void.
+        \item[(c)] Deben ser normbrados igual que las clases.
+        \item[(d)] El compilador siempre crea el constructor vac\'io.
+        \item[(e)] Se utiliza para instanciar objetos.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[ix.] El polimorfismo: 
+        \item[(a)] Una funcionalidad implementada con distintos nombres.
+        \item[(b)] El mismo nombre implementa distintas funcionalidades.
+        \item[(c)] Es una caracter\'istica de Java.
+        \item[(d)] Es una caracter\'istica de POO.
+        \item[(e)] Un ejemplo es el s\'imbolo $\rightarrow$.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[x.] El met\'odo \emph{main}:
+        \item[(a)] Debe ser void.
+        \item[(b)] Debe ser static.
+        \item[(c)] Debe incluir argumentos de entrada.
+        \item[(d)] Debe retornar un valor.
+        \item[(e)] Debe incluirse en un programa.
+    \end{enumerate}
+
+\end{multicols}
+
+\newpage
+
+\item \emph{70pts.} Uno de sus pasatiempos favoritos es ser DT de un equipo de f\'utbol. Como Ingeniero Civil en Inform\'atica, UD decide simlular el resultado de una liga deportiva que posee \textbf{16 equipos}.
+
+\begin{itemize}
+    \item[-] Restricciones y supuestos
+    \begin{itemize}
+        \item[-] Cada jugador posee:
+        \begin{itemize}
+             \item[$\rightarrow$] n\'umero identificador \'unico por equipo, 
+             \item[$\rightarrow$] habilidad para recuperar balones \textbf{BR} (representado por un n\'umero aleatorio entre 1 y 100).
+             \item[$\rightarrow$] habilidad para entregar el bal\'on \textbf{BG} (representado por un n\'umero aleatorio entre 1 y 100).
+             \item[$\rightarrow$] capacidad goleadora \textbf{GC} (representado por un n\'umero aleatorio entre 1 y 100), siempre y cuando el jugador no sea \emph{portero}, en cuyo caso su capacidad goleadora es 0.
+             \item[$\rightarrow$] tipo: portero, defensa, lateral, centro campista y delantero.
+             \item[$\rightarrow$] nivel de juego individual, calculado de la siguiente forma: $BR \times 20\% + BG \times 35\% + GC \times 45\%$ (se aproxima al entero m\'as cercano)
+        \end{itemize} 
+        \item[-] Cada equipo:
+        \begin{itemize}
+            \item[$\rightarrow$] posee un nombre \'unico (representado por un n\'umero aleatorio).
+            \item[$\rightarrow$] posee un listado de 11 jugadores, divididos en: 1 portero, 3 defensas, 2 laterales, 2 centro campistas, y 3 delanteros.
+            \item[$\rightarrow$] puede calcular su nivel de juego colectivo, sumando el nivel de juego individual de cada jugador. 
+        \end{itemize} 
+        \item[-] Cada encuentro (partido) se disputa s\'olo entre \textbf{dos equipos}, seleccionados al azar \textbf{de los equipos que no han jugado}.
+        \item[-] En un encuentro, gana el equipo con mayor nivel de juego colectivo (siempre debe existir un ganador).
+        \item[-] Si hay empate (misma nivel de juego colectivo), el ganador se decide por sorteo.
+        \item[-] El equipo ganador pasa a la siguiente fase y el perdedor no juega m\'as.
+        \item[-] La liga cuenta con: octavos de final, cuartos de final, semifinal y final.
+        \item[-] Completada una fase de la liga, el nivel de juego colectivo del equipo cambia, ya sea por cansancio de los jugadores, lesionados o recambios (se generan nuevos valores aleatorios para las habilidades de cada jugador).
+    \end{itemize} 
+\end{itemize} 
+    Dise\~ne e implemente un programa en Java que simule la liga de f\'utbol y determine cu\'al es el equipo ganador. Al momento de ser ejecutado, programa debe desplegar la informaci\'on la liga, como en el siguiente ejemplo:
+    \begin{table}[H]
+        \begin{center}
+            {\scriptsize
+            \begin{tabular}{l}
+                \textbf{Octavos de final} \\
+                Equipo 2 (nivel de juego 90) v/s Equpo 16 (nivel de juego 95), Resultado: Ganador Equipo 16 \\
+                Equipo 7 (nivel de juego 81) v/s Equpo 12 (nivel de juego 55), Resultado: Ganador Equipo 7 \\
+                Equipo 6 (nivel de juego 57) v/s Equpo 1 (nivel de juego 57), Resultado: Empate. Ganador por sorteo: Equipo 1 \\
+                Equipo 4 (nivel de juego 9) v/s Equpo 8 (nivel de juego 75), Resultado: Ganador Equipo 8 \\
+                Equipo 13 (nivel de juego 59) v/s Equpo 3 (nivel de juego 27), Resultado: Ganador Equipo 13 \\
+                Equipo 9 (nivel de juego 48) v/s Equpo 5 (nivel de juego 48), Resultado: Empate. Ganador por sorteo: Equipo 9 \\
+                Equipo 15 (nivel de juego 76) v/s Equpo 14 (nivel de juego 67), Resultado: Ganador Equipo 15 \\ 
+                Equipo 11 (nivel de juego 49) v/s Equpo 10 (nivel de juego 54), Resultado: Ganador Equipo 10 \\  \\
+                \textbf{Cuartos de final} \\
+                Equipo 16 (nivel de juego 76) v/s Equpo 10  (nivel de juego 59), Resultado: Ganador Equipo 16 \\
+                Equipo 1 (nivel de juego 55) v/s Equpo 7 (nivel de juego 77), Resultado: Ganador Equipo 7 \\
+                Equipo 13 (nivel de juego 58) v/s Equpo 9 (nivel de juego 58), Resultado: Empate. Ganador por sorteo: Equipo 13 \\
+                Equipo 8 (nivel de juego 20) v/s Equpo 15 (nivel de juego 65), Resultado: Ganador Equipo 15 \\ \\
+                \textbf{Semifinal} \\
+                Equipo 16 (nivel de juego 55) v/s Equpo 13  (nivel de juego 71), Resultado: Ganador Equipo 13 \\
+                Equipo 15 (nivel de juego 61) v/s Equpo 7 (nivel de juego 73), Resultado: Ganador Equipo 7 \\ \\
+                \textbf{Final} \\
+                Equipo 7 (nivel de juego 54) v/s Equpo 13  (nivel de juego 37), Resultado: Ganador Equipo 7 \\
+            \end{tabular}}
+        \end{center}
+    \end{table}
+}
+\end{enumerate}
+
+    \begin{table}[H]
+       {\scriptsize
+        \begin{center}
+             \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}\hline
+                \multicolumn{4}{|c|}{\textbf{\textquestiondown C\'omo ser\'e evaluado en la pregunta 2?} } \\ \hline
+                \multicolumn{1}{|c|}{\textbf{T\'opico}} & 
+                \multicolumn{1}{c|}{\textbf{Logrado}} & 
+                \multicolumn{1}{c|}{\textbf{Medianamente logrado}} & 
+                \multicolumn{1}{c|}{\textbf{No logrado}} 
+                \\ \hline
+                Construcci\'on de clases. &
+                \emph{30pts} Construye correctamente las clases: Jugador, Equipo, Encuentro, Liga, con sus atributos y m\'etodos. & 
+                \emph{15pts} Construye 2 \'o menos clases con sus atributos y m\'etodos o construye las clases pero de manera incorrecta. & 
+                \emph{ 0pts} No construye las clases. 
+                \\ \hline
+                Definici\'on de comportamiento. &
+                \emph{20pts} Construye Los m\'etodos correctamente: generaci\'on de n\'umeros rand\'omicos, validando duplicidad; calcular nivel de juego individual; calcular nivel de juego colectivo; m\'etodo para determinar el ganador del partido; m\'etodo para desplegar informaci\'on de partido; & 
+                \emph{10pts} Construye a lo sumo 3 m\'etodos correctos o construye todos los m\'etodos, pero de manera incorrecta. & 
+                \emph{ 0pts} No construye las m\'etodos.
+                \\ \hline
+                Construir clase principal & 
+                \emph{5pts} Define la clase con el m\'etodo principal. & 
+                \emph{  2pts} Define el m\'etodo principal en la misma clase. & 
+                \emph{  0pts} No define el m\'etodo principal. \\ \hline
+                Paradigma Orientaci\'on a Objetos  & 
+                \emph{15pts} Resuelve el problema utilizando el POO. & 
+                \emph{  8pts} Utiliza parte del POO para resolver el problema. & 
+                \emph{  0pts} No utiliza el POO para dar soluci\'on al problema.\\ \hline
+                Total m\'aximo puntaje pregunta 2 & 
+                \emph{70pts} & 
+                \emph{35pts} & 
+                \emph{  0pts} \\ \hline
+            \end{tabular}
+        \end{center}}
+     \end{table}
+     
+\end{document} 

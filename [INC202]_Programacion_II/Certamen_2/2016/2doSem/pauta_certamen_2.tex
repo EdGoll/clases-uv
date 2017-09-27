@@ -1,0 +1,291 @@
+\documentclass[10pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\usepackage{ulem}
+\usepackage{tikz}
+\usepackage{float}
+
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,blue,draw,inner sep=.5pt] (char) {#1};}}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in             
+\headheight = 0.0 in            
+\headsep = 0.0 in
+            
+\usepackage{listings}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{gray},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=none,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Java,                 % the language of the code
+  otherkeywords={else},           % if you want to add more keywords to the set
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}            
+            
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+    \begin{center}
+		{\Large Certamen 2, Programaci\'on II} \\
+		\texttt{\small Prof. Rodrigo Olivares} \\
+		\texttt{\scriptsize Diciembre 01, 2016} 
+	\end{center}
+
+	\vspace*{-35pt}
+	\begin{center}
+		\rule{1\textwidth}{.3pt}
+	\end{center}
+	\vspace*{-42pt}
+	\begin{center}
+		\rule{1\textwidth}{2pt}
+	\end{center}
+
+	\vspace*{-15pt}
+
+	{\small \textbf{Instrucciones}:}
+
+	\vspace*{-15pt}
+
+	{\scriptsize
+	\begin{itemize}
+		\item[-] El puntaje m\'aximo del certamen es 100\%, siendo el 60\% el m\'inimo requerido para aprobar.
+		\item[-] Responda la primera y segunda parte de certamen, en hoja indicada, agregando su nombre.
+		\item[-] Responda la tercera parte de certamen, seg\'un se indica en el aula virtual.
+		\item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado con nota \textbf{1,0}.
+	\end{itemize}
+	
+	\vspace*{-20pt}
+
+	\begin{enumerate}
+
+		\item \emph{30pts.} De las siguentes afirmaciones, encierre en un c\'irculo la o las alternativas correctas.
+		
+		\begin{multicols}{2}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[i.] \textbf{Una clase abstracta}:
+				\item[(a)] Posee m\'etodos abstractos implementados.
+				\item[(b)] Posee atributos abstractos definidos.
+				\item[(c)] Instancia objetos abstractos.
+				\item[(d)] Permite extender una interfaz.
+				\item[(e)] Permite implementar una clase padre.
+			\end{enumerate}
+
+            \begin{enumerate}[label=(\alph*)]
+				\item[ii.] \textbf{Respecto a las interfaces}:
+				\item[(a)] Su constructor es creado en compilaci\'on.
+				\item[(b)] Sus m\'etodos definidos deben ser void.
+				\item[\circled{(c)}] Sus m\'etodos siempre deben abstract.
+				\item[(d)] Sus m\'etodos implementados son abstract.
+				\item[(e)] Se extiende.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[iii.] \textbf{Sobre la herencia}:
+				\item[\circled{(a)}] En java se realiza con la palabra reservada extends.
+				\item[\circled{(b)}] En java se realiza con la palabra reservada implements.
+				\item[\circled{(c)}] Todas las clases heredan de la clase Object.
+				\item[(d)] La clase padre hereda el comportamiento de la clase hija.
+				\item[\circled{(e)}] La clase hija hereda el comportamiento de la clase padre.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+                \item[iv.] \textbf{Sobre la herencia m\'ultiple}:
+				\item[\circled{(a)}] Permite heredar diverso compartimiento.
+                \item[(b)] Apoya el principio ocultamiento.
+                \item[(c)] Apoya el principio de encapsulamiento.
+                \item[(d)] En Java se desarrolla implementado clases abstractas.
+                \item[\circled{(e)}] En Java se desarrolla implementado interfaces.
+			\end{enumerate}
+
+            \begin{enumerate}[label=(\alph*)]
+				\item[v.] \textbf{Un TDA Bean}:
+				\item[(a)] S\'olo tiene atributos.
+				\item[(b)] S\'olo tiene m\'etodos.
+				\item[\circled{(c)}] No debe incluir l\'ogica.
+				\item[(d)] El constructor debe ser siempre incluido.
+				\item[\circled{(e)}] Es posible agregar m\'etodos como equals() y toString().
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[vi.] \textbf{Un TDA Lista}:
+				\item[\circled{(a)}] Se describe como una colecci\'on de nodos de objetos.
+				\item[\circled{(b)}] Tiene un taman\~no variable.
+				\item[(c)] Se almacena de forma contigua en memoria.
+				\item[\circled{(d)}] La inserci\'on de elementos es al final de la lista.
+				\item[(e)] La eliminaci\'on de elementos es al final de la lista.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[vii.] \textbf{La clase Vector}:
+				\item[\circled{(a)}] Es un List.
+				\item[(b)] Es un ArrayList.
+				\item[\circled{(c)}] Es synchronized.
+				\item[(d)] Es no synchronized.
+				\item[(e)] Es un nodo.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[viii.] \textbf{La clase ArrayList}:
+				\item[\circled{(a)}] Es un List.
+				\item[(b)] Es un Vector.
+				\item[(c)] Es synchronized.
+				\item[\circled{(d)}] Es no synchronized.
+				\item[(e)] Es un nodo.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[ix.] \textbf{En relaci\'on a la manipulaci\'on de archivos}.
+				\item[(a)] Se lee un archivo con la instancia FileWriter.
+				\item[\circled{(b)}] Se lee un archivo con la instancia FileReader.
+				\item[(c)] Se lee un archivo con la instancia Scanner.
+				\item[(d)] Se leen s\'olo archivos con delimitar.
+				\item[\circled{(e)}] StringTokenizer se usa para archivos con delimitador.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[x.] \textbf{En relaci\'on a la manipulaci\'on de archivos}.
+				\item[\circled{(a)}] Se escribe un archivo con la instancia FileWriter.
+				\item[(b)] Se escribe un archivo con la instancia FileReader.
+				\item[(c)] Se escribe un archivo con la instancia StreamReader.
+				\item[(d)] No es factible agregar contenido a un archivo existente.
+				\item[(e)] FileWriter(``f.txt", false) agrega el contenido al final.
+			\end{enumerate}
+			
+		\end{multicols}
+		
+		\newpage
+
+		\item \emph{10pts.} De acuerdo a las siguientes clases/interfaces, describa la salida.
+		
+		\lstinputlisting[caption={}]{certamen/ClaseHijaMayor.java}
+		\lstinputlisting[caption={}]{certamen/ClaseAbuelo.java}
+		\lstinputlisting[caption={}]{certamen/ClaseHijaMenor.java}
+		\lstinputlisting[caption={}]{certamen/ClasePadre.java}
+		\lstinputlisting[caption={}]{certamen/ClaseMadre.java}
+
+        \begin{table}[H]
+            \begin{center}
+                \begin{tabular}{|l|}\hline 
+                    Salida \\\hline 
+                    \\
+                    \texttt{Saludando desde ClaseHermanoMayor} \\
+                    \texttt{Saludando desde ClaseHijaMenor} \\
+                    \\
+                    \hline 
+                \end{tabular}
+            \end{center}
+        \end{table}
+
+        
+
+        \newpage
+
+        \item \emph{60pts.} Como Ingeniero Civil en Inform\'atica, se le ha solicitado desarrollar un sistema de registro de personas pertenecientes a la Escuela. Para eso, usted debe:
+        \begin{enumerate}
+            \item Pedir al usuario:
+            \begin{enumerate}
+                \item Los datos personales (DNI, Nombre, Apellidos, Edad, Direcci\'on, etc.)
+                \begin{itemize}
+                    \item[-] Para la direcci\'on, debe considerar que puede tener direcci\'on laboral y personal.
+                    \item[-] La direcci\'on contempla: Calle, N\'umero, Comuna. 
+                    \item[-] El sistema debe desplegar el listado de regiones (ordenadas por orden geogr\'afico), Luego de ingresar una regi\'on, el sistema debe desplegar las provincias pertenecientes a la regi\'on seleccionada. Al ingresar una provincia, el sistema debe desplegar las comunas.
+                \end{itemize}
+                \item Tipo de persona (Acad\'emico, Alumno, Funcionario).
+                \begin{itemize}
+                    \item[-] Si es Acad\'emico, se debe registrar su horario de atenci\'on.
+                    \item[-] Si es Alumno, se debe registrar las asignaturas que se encuentra cursando en el semestre (pueden ser m\'as de una).
+                    \item[-] Si es Funcionario, se debe registrar su horario laboral.
+                \end{itemize}
+            \end{enumerate}
+            \item La informaci\'on solicitada, debe ser registrada en un archivo de texto plano, que deber\'a crearse, si no existe y agregar informaci\'on al final si ya fue creado.
+            \item Si la persona ya existe en el archivo, se debe eliminar su registro e ingresar nuevamente su informaci\'on (No deben existir dos registros con el mismo DNI).
+        \end{enumerate}
+        \begin{itemize}
+            \item[$\rightarrow$] \textbf{Recomendaci\'on}: Utilice la clase FuenteDatos para la manipulaci\'on de los archivos.
+            \item[$\rightarrow$] \textbf{Restricci\'on}: Utilice los archivos Region.csv, Provincia.csv y Comuna.csv que se encuentran en el aula virtual. El formato de los archivos es el siguiente:
+            \begin{itemize}
+                \item[-] \textbf{Region.csv}: IdRegion;NombreRegion;NumeroRomano;OrdenGeograficoRegion
+                \item[-] \textbf{Provincia.csv}: IdProvincia;NombreProvincia;IdRegion
+                \item[-] \textbf{Comuna.csv}: IdComuna;NombreComuna;IdProvincia
+            \end{itemize}
+            \item[$\rightarrow$] \textbf{Formato de entrega}: Debe subir los archivos fuente \textbf{*.java} en un comprimido \textbf{.zip} al aula virtual, con el siguiente formato:
+            \begin{itemize}
+                \item[-] \emph{ApellidoPaternoNombreC2.zip}
+            \end{itemize}
+            \item[$\rightarrow$] \textbf{Fecha de entrega}: Viernes 02 de Diciembre, hasta las 12:00 hrs.
+        \end{itemize}
+	\end{enumerate}}
+	\begin{table}[!ht]
+       {\scriptsize
+        \begin{center}
+             \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}\hline
+                \multicolumn{4}{|c|}{\textbf{\textquestiondown C\'omo ser\'e evaluado en la pregunta 3?} } \\ \hline
+                \multicolumn{1}{|c|}{\textbf{T\'opico}} & 
+                \multicolumn{1}{c|}{\textbf{Logrado}} & 
+                \multicolumn{1}{c|}{\textbf{Medianamente logrado}} & 
+                \multicolumn{1}{c|}{\textbf{No logrado}} \\ \hline
+                Manipulaci\'on de archivo. & 
+                \emph{10\%} Lee correctamente los archivos, los mapea a entidad y escribe en el archivo de salida. & 
+                \emph{5\%} Realiza dos de las tres acciones del punto anterior. & 
+                \emph{0\%} No realiza la acciones del punto anterior. \\ \hline
+                TDA Lista. & 
+                \emph{40\%} Crea la clase TDA Registro e implementa todos los m\'etodos. & 
+                \emph{20\%} Crea la clase TDA Registro e implementa algunos m\'etodos. & 
+                \emph{0\%} No crea la clase TDA Registro. \\ \hline
+                TDA Bean / Entidad & 
+                \emph{20\%} Crea correctamente las clase entidades: Regi\'on, Provincia, Comuna, Direcci\'on, Persona, Acad\'emico, Alumno, Funcionario. & 
+                \emph{10\%} La cantidad de clases entidad correctamente es igual o inferior a 4. & 
+                \emph{0\%} No crea las clases entidad. \\ \hline                
+                Clase principal y m\'etodo main. &
+                \emph{10\%} Crea la clase principal en un archivo independiente con el m\'etodo main. & 
+                \emph{5\%} Crea el m\'etodo main en la misma clase. & 
+                \emph{0\%} No crea el m\'etodo main. \\ \hline
+                Paradigma Orientaci\'on a Objetos  & 
+                \emph{20\%} Resuelve el problema utilizando el POO (herencia, abstacci\'on, interfaces, etc). & 
+                \emph{10\%} Utiliza parte del POO para resolver el problema. & 
+                \emph{0\%} No utiliza el POO para dar soluci\'on al problema.\\ \hline
+                Total m\'aximo puntaje pregunta 2 & 
+                \emph{100\%} de 60 pts.& 
+                \emph{50\%} de 60 pts. & 
+                \emph{0\%} de 60 pts. \\ \hline
+            \end{tabular}
+        \end{center}}
+     \end{table}
+\end{document} 

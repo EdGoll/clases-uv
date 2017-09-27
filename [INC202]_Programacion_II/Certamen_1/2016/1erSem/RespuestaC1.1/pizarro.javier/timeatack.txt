@@ -1,0 +1,31 @@
+nro NOMBRE               Auto           TIEMPO          CATEGORIA
+1   Marco Ambiado        Praga R1       01:03.923       Race Car
+2   Oscar Sepulveda      Praga R1       01:03.928       Race Car
+3   Felipe Gaete         Honda CRX      01:08.130       Libre
+4   Ricardo Sepulveda    Nissan GTR     01:09.492       Libre
+5   Demor Montecinos     Porsche 997    01:10.064       Libre
+6   Giovanni Callegari   Porsche 991    01:10.713       Pro
+7   Manuel Betanzo       Subaru STI98   01:11.085       AWD OPEN
+8   Felipe Viñuela       EVO IX         01:11.280       AWD OPEN
+9   Felipe Viñuela       EVO IV         01:12.110       AWD OPEN
+10  Ramon Ramirez        Mustang GT     01:12.282       Pro
+11  Christian Olate      EVO IX	        01:12.483       AWD OPEN
+12  Felipe Viñuela PAPA  Nissan GTR     01:12.693       Pro
+13  Pepe Zuñiga          EVO VII        01:12.984       Pro
+14  Matthew Thomson      Mustang Boss   01:13.533       AWD OPEN
+15  Juan P Bunzli        Toyota MR2     01:13.550       AWD OPEN
+16  Victor Uriarte       Sarlet Turbo   01:13.682       FWD OPEN
+17  Carlos Save          STI 2004       01:13.721       AWD Street
+18  Patricio Jara        Civic Turbo    01:14.091       FWD OPEN
+19  Jose M Lepe	         Nissan 350Z    01:14.309       AWD OPEN
+20  Joaquin Galdames     IBIZA TURBO    01:14.396       Pro
+21  Alvaro Santibañez    VW Jetta       01:14.993       AWD OPEN
+22  Andres Caceres       EVO IX         01:15.149       RWD OPEN
+23  Cristian Contreras   rx7            01:15.770       RWD OPEN
+24  Martin Galdames      Genesis Turbo  01:16.612       RWD Street
+25  Juan Jara            BMW M5         01:16.756       TWD OPEN
+26  Paolo Vasquez        Honda Civic    01:17.494       AWD Street	
+27  Cristian Plaza       AUDI s3        01:17.596       FWD Street	
+28  Isaaac Bugedo        Honda Integra  01:17.608       FWD Street
+29  Raul Labarca         Citroen DS3    01:17.874       FWD OPEN
+30  Carlos Godoy         Megane RS      01:18.376       FWD Street

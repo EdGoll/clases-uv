@@ -1,0 +1,203 @@
+
+%\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+%\def\abs{\operatorname{abs}}
+%\def\argmax{\operatornamewithlimits{arg\,max}}
+\def\argmin{\operatornamewithlimits{argmin}}
+
+%\def\diag{\operatorname{Diag}}
+%\newcommand{\eqRef}[1]{(\ref{#1})}
+\documentclass[11pt%,trans
+]{beamer}
+
+\usepackage{movie15}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+\include{formatAndDefspres}
+
+\hypersetup{pdfpagemode=FullScreen} % makes your presentation go automatically to full screen
+\usepackage{tikz}
+%\usepackage[french]{babel}
+\usepackage{animate}
+ \setbeamertemplate{note page}[plain]
+\usetheme{Frankfurt}
+%\usetheme{Warsaw}
+\usepackage{times}
+\usefonttheme{structurebold}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage{tabularx}
+%\usepackage[french]{babel}
+%\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps}
+%\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{listings}
+
+
+%\setbeamercolor{frametitle}{bg=macouleur}
+\newcommand{\Link}{\text{L}}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+ \setbeamertemplate{itemize item}[square]
+ \setbeamertemplate{itemize subitem}[circle]    
+\newcommand{\TB}[1]{\textcolor{blue}{#1}}
+\setbeamertemplate{navigation symbols}{}
+ \setbeamercolor{section in head/foot}{parent=palette primary}
+\definecolor{progressbar@bgblue}{rgb}{0.75,0.75,0.95} % use structure theme to change
+ \definecolor{progressbar@fgblue}{rgb}{0.1,0.1,0.1} % use structure theme to change 
+ \setbeamercolor*{palette primary}{fg=progressbar@fgblue,bg=progressbar@bgblue}
+ \setbeamercolor*{palette secundary}{fg=progressbar@fgblue,bg=progressbar@bgblue}
+ \setbeamercolor*{palette tertiary}{fg=progressbar@fgblue,bg=progressbar@bgblue}
+ \setbeamercolor{subsection in sidebar}{parent=palette primary}
+ \setbeamercolor{section in head/foot}{parent=palette primary!80!blue}
+\definecolor{fondtitre}{rgb}{0.90,0.43,0.09}  % vert fonce
+\definecolor{coultitre}{rgb}{0.21,0.55,0.05}  % marron
+%%%je règle ici l'ensemble de mes couleurs
+
+
+\definecolor{fondtitre}{rgb}{0.75,0.65,0.95} % use structure theme to change
+ \definecolor{coultitre}{rgb}{0.2,0.2,0.3} % use structure theme to change
+
+\setbeamercolor{structure}{fg=coultitre, bg=fondtitre!10}% box
+\setbeamercolor{frametitle}{fg=coultitre,bg=fondtitre!45}% titre slide
+ \setbeamercolor{section in head/foot}{fg=black,bg=fondtitre}%partie supérieure slide5
+\setbeamercovered{dynamic}
+\setbeamersize{text margin left=2em,text margin right=2em}
+
+\newcommand{\citex}[1]{{\scriptsize \em\cite{#1}}}
+\newcommand{\MISSING}[1]{{\bf [\TB{{\sc A venir: --} \footnotesize{#1}}]}}
+
+\newcommand{\LW}{\linewidth}
+\newcommand{\BC}{\begin{column}}
+\newcommand{\EC}{\end{column}}
+\newcommand{\BB}{\begin{block}}
+\newcommand{\EB}{\end{block}}
+\newcommand{\BK}[2]{\BB{#1}#2\EB}
+
+%PARA VER LOS COMENTARIOS TENGO QUE DESCOMENTAR ESTO
+%\newcommand{\FTR}[1]{\noindent{[{\scriptsize\em \TR{-}}]}}
+
+
+\newcommand{\COLS}[1]{\begin{columns}#1\end{columns}}
+\newcommand{\GFX}[2]{\begin{center}\includegraphics[width=#1\LW]{#2}\end{center}}
+\newcommand{\GFXT}[2]{\begin{figure}[!t]\begin{center}\includegraphics[width=#1\LW]{#2}\end{center}\end{figure}}
+
+\newcommand{\GFXw}[3]{\begin{center}\includegraphics[width=#1\LW,height=#2]{#3}\end{center}}
+\newcommand{\GFXW}[2]{\begin{center}\includegraphics[width=#1\LW]{#2}\end{center}}
+\newcommand{\GFXh}[3]{\begin{center}\includegraphics[height=#1, width = #2]{#3}\end{center}}
+\newcommand{\GFXhc}[4]{\begin{center}\includegraphics[height=#1, width = #2]{#3}\caption{#4}\end{center}}
+
+\newcommand{\GFXH}[2]{\begin{center}\includegraphics[height=#1]{#2}\end{center}}
+\newcommand{\GFXc}[3]{\begin{center}\includegraphics[ width = #1\LW]{#2}\caption{#3}\end{center}}
+\newcommand{\framex}[2]{\frame{\frametitle{#1}#2}}
+
+
+\newcommand{\NOTES}[1]{\note[itemize]{\vspace{0.5cm}{ \tiny{#1}}}}
+
+%crée une colonne de taille #1 et contenant #2
+%typiquement: \CK{.5\LW}{salut!}
+\newcommand{\CK}[2]{\BC{#1}#2\EC}
+
+%crée une colonne de taille #2\LW contenant #4, entourée à gauche d'une colonne #1\LW et à droite d'une colonne #3\LW
+%typiquement: \CX{.1}{.8}{.1}{colonne centrée}
+\newcommand{\CX}[4]{\begin{columns}\CK{#1\LW}{}\CK{#2\LW}{#4}\CK{#3\LW}{}\end{columns}}
+\newcommand{\centercolumn}[4]{\begin{columns}\CK{#1\LW}{}\CK{#2\LW}{#4}\CK{#3\LW}{}\end{columns}}
+
+%crée une paire de colonnes de taille #1\LW et #2\LW et contenant #3 et #4:
+%typiquement: \balancecolumns{.4}{.6}{gauche}{droite}
+\newcommand{\balancecolumns}[4]{\begin{columns}\CK{#1\LW}{#3}\CK{#2\LW}{#4}\end{columns}}
+\newcommand{\balancecolumnst}[4]{\begin{columns}[t]\CK{#1\LW}{#3}\CK{#2\LW}{#4}\end{columns}}
+
+\newcommand{\ITZ}[1]{#1}
+\newcommand{\IT}[2]{\uncover<#1->{\BK{}{#2}}}
+\newcommand{\ITT}[3]{\uncover<#1->{\BK{#2}{#3}}}
+
+\newcommand{\SM}[1]{\CX{.01}{.97}{.01}{\BK{}{\footnotesize \em #1}}}
+
+%\pgfdeclareimage[height=1.2cm]{logo}{image/banniere}
+%\logo{\pgfuseimage{logo}}
+
+\pgfdeclareimage[height=3cm]{agro}{image/agro}
+\pgfdeclareimage[height=3cm]{ifris}{image/logo_IFRIS}
+
+\setbeamertemplate{navigation symbols}{}
+
+\newcommand{\FTR}[1]{\noindent{[{\scriptsize\em \TR{#1}}]}}
+\newcommand{\Aset}{\mathcal{A}}
+\newcommand{\Cset}{\mathcal{C}}
+\newcommand{\hyperA}[1]{\mathfrak{A}_{#1}}
+\newcommand{\hyperC}[1]{\mathfrak{C}_{#1}}
+\newcommand{\hyperE}[1]{\mathfrak{E}_{#1}}
+\newcommand{\hypere}{\mathfrak{e}}
+\newcommand{\Aproj}[1]{{#1}^{\Aset{}}}
+\newcommand{\Cproj}[1]{{#1}^{\Cset{}}}
+\newcommand{\W}{\mathbf{W}}
+\newcommand{\w}{\mathbf{w}}
+\newcommand{\hw}{\mathbf{\hat{w}}}
+\newcommand{\s}{\mathbf{s}}
+\newcommand{\B}{\mathfrak{B}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\TT}[1]{\texttt{#1}}
+\newcommand{\VS}{\vspace{2.3cm}}
+\newcommand{\vs}{\vspace{.2cm}}
+\newcommand{\FNS}{\footnotesize}
+\newcommand{\ITX}[1]{\begin{itemize}#1\end{itemize}}
+\newcommand{\ENX}[1]{\begin{enumerate}#1\end{enumerate}}
+\newcommand{\RA}[1]{$\Rightarrow$ {#1}}
+\newcommand{\ra}[1]{$\rightarrow$ {#1}}
+\newcommand{\U}[1]{\underline{#1}}
+\newcommand{\QM}{{\Large\TT{[?]}}}
+\newcommand{\EX}[1]{\begin{quotation}{\em {ex:} \footnotesize\em #1}\end{quotation}}
+\newcommand{\TR}[1]{\textcolor{red}{#1}}
+\newcommand{\rationale}[1]{\ra{\TR{\em #1}}}
+ 
+
+\title
+{%\includegraphics[height=0.8cm]{image/Logo_AgroParisTech.png}\\
+%\vspace{1cm}
+{\vspace{0.1cm}
+\footnotesize{{%\hspace{-0.8cm}
+{\large Programación II}}}}
+%\vspace{0.2cm}\scriptsize{{Vers une interface d'observation des grands corpus textuels pour équiper les SHS
+%\\}}
+%\\
+%\vspace{0.2cm}
+{\scriptsize{ }}
+}
+%{Modéliser la dynamique des communautés épistémiques}
+
+
+\author{
+{\Large \TB{Carla {\sc Taramasco}}}\\
+%\phantom{sdq}
+{\tiny Profesora e Investigadora} \\
+{\tiny DECOM \& CNRS} \\
+{\footnotesize{mail : alumnos\_uv@yahoo.cl}} \\
+%\vspace{-0.2cm}\tiny{                        }\\
+}
+%{\scriptsize Co-dirige par : Dominique {\sc Bicout }}}
+{\em 
+%\vspace{0.5cm}
+%\pgfuseimage{ifris}
+}
+%\date{{\scriptsize 14 de agosto 2012}\\ \TB{}}
+
+%\pgfpagesuselayout{3 on 1 with notes}[a4paper,border shrink=5mm]
+\begin{document}
+\addtobeamertemplate{footline}{\hfill \insertframenumber/\inserttotalframenumber}
+
+\frame{\titlepage}
+%\input{Resumen}
+%\input{Introduction}
+%\input{Objetos}
+%\input{Arreglos}
+\input{ArrayList}
+%\input{Clases}
+%\input{Herencia}
+%\input{InterfazGrafica}
+
+\end{document}

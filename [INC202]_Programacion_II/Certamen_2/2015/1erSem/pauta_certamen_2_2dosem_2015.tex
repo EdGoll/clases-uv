@@ -1,0 +1,364 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,blue,draw,inner sep=1pt] (char) {#1};}}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in             
+\headheight = 0.0 in            
+\headsep = 0.0 in
+            
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+    \begin{center}
+		{\Large Certamen 2, Programaci\'on II} \\
+		\emph{\small Prof. Rodrigo Olivares} \\
+		\emph{\small Ayud. Juan Carlos Tapia} \\
+		\emph{\scriptsize Noviembre 3, 2015} 
+	\end{center}
+
+	\vspace*{-35pt}
+	\begin{center}
+		\rule{1\textwidth}{.3pt}
+	\end{center}
+	\vspace*{-42pt}
+	\begin{center}
+		\rule{1\textwidth}{2pt}
+	\end{center}
+
+	\vspace*{-15pt}
+
+	{\small \textbf{Instrucciones}:}
+
+	\vspace*{-15pt}
+
+	{\scriptsize
+	\begin{itemize}
+		\item[-] El puntaje m\'aximo del certamen es 100\%, siendo el 60\% el m\'inimo requerido para aprobar.
+		\item[-] Responda cada pregunta en la hoja indicada, agregando su nombre. Si no responde alguna pregunta, debe entregar la hoja con su nombre e indicar que \textbf{no responde}.
+		\item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado con nota \textbf{1,0}.
+	\end{itemize}
+	
+	\vspace*{-20pt}
+
+	\begin{enumerate}
+
+		\item \emph{30pts.} De las siguentes afirmaciones, encierre en un c\'irculo la o las alternativas correctas.
+		
+		\begin{multicols}{2}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[i.] Un constructor:
+				\item[\circled{(a)}] No necesariamente debe ir en una clase.
+				\item[\circled{(b)}] Al ser private s\'olo instancia objetos dentro de la clase.
+				\item[(c)] No puede ser sobrecargado.
+				\item[\circled{(d)}] Si no se declara, se crea uno en tiempo de compilaci\'on
+				\item[(e)] Si no se declara, se crea uno en tiempo de ejecuci\'on
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[ii.] La lectura de datos de la entrada est\'andar:
+				\item[(a)] Puede realizarse con la clase FileReader.
+				\item[\circled{(b)}] Puede realizarse con la clase Scanner.
+				\item[(c)] S\'olo puede ser de tipo String.
+				\item[\circled{(d)}] Permite leer los argumentos del m\'etodo \emph{main}.
+				\item[(e)] Ninguna de las anteriores
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[iii.] En relaci\'on a los arreglos:
+				\item[(a)] No almacenan los elementos de tipo char.
+				\item[\circled{(b)}] Pueden almacenar tipos de datos primitivos.
+				\item[\circled{(c)}] Pueden almacenar objetos.
+				\item[(d)] Se instancian s\'olo con el operador new.
+				\item[\circled{(e)}] Su dimensi\'on puede ser determinada en ejecuci\'on.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[iv.] Una clase abstracta:
+				\item[\circled{(a)}] Puede instanciar objetos.
+				\item[(b)] Pose\'e s\'olo m\'etodos abstractos.
+				\item[\circled{(c)}] Pose\'e al menos un m\'etodo abstracto.
+				\item[\circled{(d)}] No permite extender una interfaz.
+				\item[(e)] Ninguna de las anteriores.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[v.] La interfaz List.
+				\item[(a)]Puede ser implementada por la clase ArrayVector.
+				\item[(b)]Puede instanciar objetos.
+				\item[\circled{(c)}]Pose\'e s\'olo m\'etodos abstractos.
+				\item[(d)]Puede ser extendida en una clase hija.
+				\item[\circled{(e)}]No pose\'e atributos.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[vi.] Con respecto al paso de par\'ametros:
+				\item[\circled{(a)}]Puede ser por valor.
+				\item[(b)]Puede ser por omisi\'on.
+				\item[\circled{(c)}]Puede ser por referencia.
+				\item[(d)]Puede ser por convensi\'on.
+				\item[(e)]Puede ser por default.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[vii.] El relaci\'on a la auto-referencia:
+				\item[(a)]Cumple la misma funci\'on que el operador \emph{super}.
+				\item[(b)]Permite referenciar el construtor de la clase.
+				\item[\circled{(c)}]Permite referenciar los atributos de la clase.
+				\item[\circled{(d)}]Permite referenciar los m\'etodo de la clase.
+				\item[(e)]Ninguna de las anteriores.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[viii.] Sobre la herencia:
+				\item[\circled{(a)}]Se realiza con la palabra reservada extends.
+				\item[(b)]Se realiza con la palabra reservada include.
+				\item[\circled{(c)}]Todas las clases heredan de la clase Object.
+				\item[(d)]La clase padre hereda el comportamiento de la clase hija.
+				\item[\circled{(e)}]La clase hija hereda el comportamiento de la clase padre.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[xi.] Respecto a la herencia m\'ultiple:
+				\item[\circled{(a)}]No existe en Java.
+				\item[(b)]Existe en Java.
+				\item[(c)]Se puede emular con clases abstractas.
+				\item[\circled{(d)}]Se puede emular con interfaces.
+				\item[(e)]Se puede emular con clases est\'aticas.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[x.] En relaci\'on a la manipulaci\'on de archivos.
+				\item[(a)]Se lee un archivo con la instancia FileWriter.
+				\item[\circled{(b)}]Se lee un archivo con la instancia FileReader.
+				\item[(c)]No es factible agregar contenido a un archivo existente.
+				\item[\circled{(d)}]StringTokenizer se usa para archivos con delimitador.
+				\item[(e)]Ninguna de las anteriores.
+			\end{enumerate}
+		
+		\end{multicols}
+
+		\newpage
+
+		\item \emph{30pts.} Desarrolle un programa en Java que permita llenar un array con 10 nombres de personas, ingresados desde la entrada est\'andar. A partir de ese arreglo, construya un nuevo arreglo que almacene el largo de cada nombre. Por \'ultimo, muestre el nombre y su largo, desde los arreglos ya creados.
+		
+\begin{verbatim}
+import java.util.Scanner;
+
+public class EjercicioNombre {
+
+    private String[] nombres;
+    private int[] largoNombnres;
+
+    private static final int MAXIMO = 10;
+
+    public EjercicioNombre() {
+        nombres = new String[MAXIMO];
+        largoNombnres = new int[MAXIMO];
+    }
+
+    public void llenar() {
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 0; i < MAXIMO ;i++) {
+            System.out.print("Ingrese un nombre: ");
+            nombres[i] = sc.nextLine();
+        }
+        System.out.println();
+    }
+
+    public void largos() {
+        for (int i = 0; i < MAXIMO; i++) {
+            largoNombnres[i] = nombres[i].length();
+        }
+    }
+
+    public void mostrar() {
+        for (int i = 0; i < MAXIMO; i++) {
+            System.out.println("El nombre " + nombres[i] + " tiene un largo de " + largoNombnres[i] + " caracteres");
+        }
+    }
+
+    public static void main(String[] args) {
+        EjercicioNombre en = new EjercicioNombre();
+        en.llenar();
+        en.largos();
+        en.mostrar();
+    }
+}
+\end{verbatim}        
+        
+        \newpage
+
+        \item \emph{40pts.} El BancoPais le ha solicitado implementar un sistema de seguridad de transferencias bancar\'ias, utilizando un ``digipass''. Este dispositivo trabaja con una combinaci\'on aleatoria de 3 pares de n\'umeros (entre el 10 y el 99, inclusive) de un total de 50 posibles valores, no necesariamente distintos. Estos n\'umeros deben estar almacenados en una fuente de datos permanente, \'unico por cliente. Dise\~ne un programa en Java que gestione una transferencia bancaria, incluyendo el monto a transferir e ingresando un c\'odigo de ``digipass'' y lo compare con cualquier combinaci\'on de los valores almacenados. Debe informar al usuario (por la salida est\'andar) si la transferencia se realiz\'o correcta o incorrectamente, informando para este caso, los errores comentidos.
+
+\begin{verbatim}
+import java.io.File;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+import java.util.ArrayList;
+
+public class FuenteDatos {
+
+    public static List<String> leer(String nombreArchivo) {
+        File archivo;
+        FileReader fileReader = null;
+        List<String> lineas = null;
+        String linea;
+
+        try {
+            archivo = new File(nombreArchivo);
+            fileReader = new FileReader(archivo);
+            BufferedReader br = new BufferedReader(fileReader);
+            lineas = new ArrayList<String>();
+
+            while ((linea = br.readLine()) != null) {
+                lineas.add(linea);
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        } finally {
+            try {
+                if (fileReader != null) {
+                    fileReader.close();
+                }
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+        }
+        return lineas;
+    }
+
+    public static void escribir(String nombreArchivo, List<String> lineas) {
+        FileWriter archivo;
+        PrintWriter printWriter = null;
+        try {
+            if (!existe(nombreArchivo)) {
+                archivo = new FileWriter(nombreArchivo);
+                printWriter = new PrintWriter(archivo);
+                for (String linea : lineas) {
+                    printWriter.println(linea);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        } finally {
+            printWriter.close();
+        }
+    }
+
+    public static boolean existe(String nombreArchivo) {
+        return new File(nombreArchivo).exists();
+    }
+}
+
+*****************************************************************
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class Digipass {
+    public static final String NOMBRE_ARCHIVO = "C:\\digipass.txt";
+    private static final int MAX_NUMEROS = 50;
+
+    public void crear() {
+        if (!FuenteDatos.existe(NOMBRE_ARCHIVO)) {
+            Random rand = new Random();
+            List<String> aleatoriosDigipass = new ArrayList<String>();
+            for (int i = 0; i < MAX_NUMEROS; i++) {
+                aleatoriosDigipass.add(String.valueOf(rand.nextInt(90) + 10));
+            }
+            FuenteDatos.escribir(NOMBRE_ARCHIVO, aleatoriosDigipass);
+        }
+    }
+}
+
+*****************************************************************
+
+import java.util.List;
+import java.util.Scanner;
+
+public class Transferencia {
+    private final String[] digipass;
+    private final int num = 3;
+
+    public Transferencia() {
+        digipass = new String[num];
+    }
+
+    private void leerDigipass() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese los valores del digipass");
+        for (int i = 0; i < num; i++) {
+            digipass[i] = sc.nextLine();
+        }
+    }
+
+    private boolean validarDigipass() {
+        boolean status = true;
+        int i = 0;
+        if (digipass.length > 0) {
+            List<String> digipassStore = FuenteDatos.leer(Digipass.NOMBRE_ARCHIVO);
+
+            while (i < num && status) {
+                status = digipassStore.contains(digipass[i]);
+                i++;
+            }
+        }
+        return status;
+    }
+
+    private void transferir() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digipass correcto. Ingrese el valor a transferir");
+        String valor = sc.nextLine();
+        System.out.println("Se ha trasnferido $" + valor);
+    }
+
+    private void noTransferir() {
+        System.out.println("Digipass incorrecto. Imposible transferir");
+    }
+
+    public void realizarTransferencia() {
+        leerDigipass();
+        if (validarDigipass()) {
+            transferir();
+        } else {
+            noTransferir();
+        }
+    }
+}
+
+*****************************************************************
+
+public class BancoPais {
+    public static void main(String[] args) {
+        Digipass dp = new Digipass();
+        dp.crear();
+
+        Transferencia tans = new Transferencia();
+        tans.realizarTransferencia();
+    }
+}
+
+\end{verbatim}
+    \end{enumerate}}
+\end{document} 

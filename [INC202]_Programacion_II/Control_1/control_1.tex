@@ -1,0 +1,50 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in			 
+\headheight = 0.0 in			
+\headsep = 0.0 in
+			
+\parskip = 0.2in				% vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+
+\begin{center}
+	{\Large Control 1}\\
+	Programaci\'on 2 \\
+	\emph{\small Prof. Rodrigo Olivares} \\
+	\emph{\scriptsize \date{13 de abril de 2017}}
+\end{center}
+
+\begin{enumerate}
+    \item[ ] Utilizando los conceptos del Paradigma de Orientaci\'on a Objetos, construya una aplicaci\'on en Java que gestione las operaciones elementales de una calculadora: \emph{suma}, \emph{resta}, \emph{multiplicaci\'on}, \emph{divisi\'on} y \emph{m\'odulo}; las operaciones de trasnformaci\'on de sistema num\'erico: decimal, octal y binario; y al menos 3 funciones matem\'aticas (\emph{sin}, \emph{cos}, \emph{tag}, \emph{abs}, \emph{pow}, \emph{sqrt}, etc). La clase desarrollada, debe contener:
+    \begin{enumerate}
+	    \item Un atributo double para almacenar el valor resultante.
+	    \item Los m\'etodos para cada operaci\'on.
+	    \item El m\'etodo \emph{toString}() para retornar la operaci\'on realizada y el valor resultante. 
+	    \item El m\'etodo principal.
+	\end{enumerate} 
+	\item[] Utilice los m\'etodos miembros de la clase Integer.
+	\begin{itemize}
+	    \item toBinaryString(int i): retorna un String Binario.
+	    \item toOctalString(int i): retorna un String Octal.
+	    \item toHexString(int i): retorna un String Hexadecimal.
+	\end{itemize}
+	\item[] Utilice el m\'etodo miembro de la clase Double.
+	\begin{itemize}
+	    \item intValue(): retorna el valor entero de un double.
+	\end{itemize}
+\end{enumerate}
+
+\end{document} 

@@ -1,0 +1,162 @@
+\documentclass[10pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in             
+\headheight = 0.0 in            
+\headsep = 0.0 in
+            
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+    \begin{center}
+		{\Large Certamen 2, Programaci\'on II} \\
+		\emph{\small Prof. Rodrigo Olivares} \\
+		\emph{\small Ayud. Juan Carlos Tapia} \\
+		\emph{\scriptsize Noviembre 3, 2015} 
+	\end{center}
+
+	\vspace*{-35pt}
+	\begin{center}
+		\rule{1\textwidth}{.3pt}
+	\end{center}
+	\vspace*{-42pt}
+	\begin{center}
+		\rule{1\textwidth}{2pt}
+	\end{center}
+
+	\vspace*{-15pt}
+
+	{\small \textbf{Instrucciones}:}
+
+	\vspace*{-15pt}
+
+	{\scriptsize
+	\begin{itemize}
+		\item[-] El puntaje m\'aximo del certamen es 100\%, siendo el 60\% el m\'inimo requerido para aprobar.
+		\item[-] Responda cada pregunta en la hoja indicada, agregando su nombre. Si no responde alguna pregunta, debe entregar la hoja con su nombre e indicar que \textbf{no responde}.
+		\item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado con nota \textbf{1,0}.
+	\end{itemize}
+	
+	\vspace*{-20pt}
+
+	\begin{enumerate}
+
+		\item \emph{30pts.} De las siguentes afirmaciones, encierre en un c\'irculo la o las alternativas correctas.
+		
+		\begin{multicols}{2}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[i.] Un constructor:
+				\item No necesariamente debe ir en una clase.
+				\item Al ser private s\'olo instancia objetos dentro de la clase.
+				\item No puede ser sobrecargado.
+				\item Si no se declara, se crea uno en tiempo de compilaci\'on
+				\item Si no se declara, se crea uno en tiempo de ejecuci\'on
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[ii.] La lectura de datos de la entrada est\'andar:
+				\item Puede realizarse con la clase FileReader.
+				\item Puede realizarse con la clase Scanner.
+				\item S\'olo puede ser de tipo String.
+				\item Permite leer los argumentos del m\'etodo \emph{main}.
+				\item Ninguna de las anteriores
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[iii.] En relaci\'on a los arreglos:
+				\item No almacenan los elementos de tipo char.
+				\item Pueden almacenar tipos de datos primitivos.
+				\item Pueden almacenar objetos.
+				\item Se instancian s\'olo con el operador new.
+				\item Su dimensi\'on puede ser determinada en ejecuci\'on.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[iv.] Una clase abstracta:
+				\item Puede instanciar objetos.
+				\item Pose\'e s\'olo m\'etodos abstractos.
+				\item Pose\'e al menos un m\'etodo abstracto.
+				\item No permite extender una interfaz.
+				\item Ninguna de las anteriores.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[v.] La interfaz List.
+				\item Puede ser implementada por la clase ArrayVector.
+				\item Puede instanciar objetos.
+				\item Pose\'e s\'olo m\'etodos abstractos.
+				\item Puede ser extendida en una clase hija.
+				\item No pose\'e atributos.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[vi.] Con respecto al paso de par\'ametros:
+				\item Puede ser por valor.
+				\item Puede ser por omisi\'on.
+				\item Puede ser por referencia.
+				\item Puede ser por convensi\'on.
+				\item Puede ser por default.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[vii.] El relaci\'on a la auto-referencia:
+				\item Cumple la misma funci\'on que el operador \emph{super}.
+				\item Permite referenciar el construtor de la clase.
+				\item Permite referenciar los atributos de la clase.
+				\item Permite referenciar los m\'etodo de la clase.
+				\item Ninguna de las anteriores.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[viii.] Sobre la herencia:
+				\item Se realiza con la palabra reservada extends.
+				\item Se realiza con la palabra reservada include.
+				\item Todas las clases heredan de la clase Object.
+				\item La clase padre hereda el comportamiento de la clase hija.
+				\item La clase hija hereda el comportamiento de la clase padre.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[xi.] Respecto a la herencia m\'ultiple:
+				\item No existe en Java.
+				\item Existe en Java.
+				\item Se puede emular con clases abstractas.
+				\item Se puede emular con interfaces.
+				\item Se puede emular con clases est\'aticas.
+			\end{enumerate}
+
+			\begin{enumerate}[label=(\alph*)]
+				\item[x.] En relaci\'on a la manipulaci\'on de archivos.
+				\item Se lee un archivo con la instancia FileWriter.
+				\item Se lee un archivo con la instancia FileReader.
+				\item No es factible agregar contenido a un archivo existente.
+				\item StringTokenizer se usa para archivos con delimitador.
+				\item Ninguna de las anteriores.
+			\end{enumerate}
+		
+		\end{multicols}
+
+		\newpage
+
+		\item \emph{30pts.} Desarrolle un programa en Java que permita llenar un array con 10 nombres de personas, ingresados desde la entrada est\'andar. A partir de ese arreglo, construya un nuevo arreglo que almacene el largo de cada nombre. Por \'ultimo, muestre el nombre y su largo, desde los arreglos ya creados.
+		
+		\newpage
+
+		\item \emph{40pts.} El BancoPais le ha solicitado implementar un sistema de seguridad de transferencias bancar\'ias, utilizando un ``digipass''. Este dispositivo trabaja con una combinaci\'on aleatoria de 3 pares de n\'umeros (entre el 10 y el 99, inclusive) de un total de 50 posibles valores, no necesariamente distintos. Estos n\'umeros deben estar almacenados en una fuente de datos permanente, \'unico por cliente. Dise\~ne un programa en Java que gestione una transferencia bancaria, incluyendo el monto a transferir e ingresando un c\'odigo de ``digipass'' y lo compare con cualquier combinaci\'on de los valores almacenados. Debe informar al usuario (por la salida est\'andar) si la transferencia se realiz\'o correcta o incorrectamente, informando para este caso, los errores comentidos.
+
+	\end{enumerate}}
+\end{document} 

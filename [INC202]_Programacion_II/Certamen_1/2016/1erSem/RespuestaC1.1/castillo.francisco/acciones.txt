@@ -1,0 +1,50 @@
+IABNAMRO                17,10     +1,93   +12,72%  21.172.052     5  financial          26,65  7,9
+AEGON                  9,45      +0,48   +5,35%   43.734.484     5  financial          14,01  8,4
+AHOLD                  5,90      -0,04   -0,67%   51.627.804     5  retail             0,89   12,5
+AIR LIQUIDE            143,28    +11,16  +8,45%   474,74         2  chemical           15,02  16,8
+ALCATEL                11,68     +4,48   +62,22%  24.859.752     2  electronic         14,19  27,9
+ALLIANZ                83,15     +17,23  +26,14%  860.355.072    1  financial          31,51  10,2
+AVENTIS                64,03     +18,42  +40,39%  25.586.300     2  chemical           52,18  16,7
+AXA                    16,66     +3,66   +28,15%  14.589.377     2  financial          28,43  12,0
+BANCO BILBAO           10,65     +2,29   +27,39%  1.438.987      4  financial          33,91  12,3
+BASF                   41,45     +4,27   +11,48%  791.528.832    1  chemical           23,13  12,4
+BAYER                  22,45     +5,11   +29,47%  1.170.394.240  1  chemical           15,88  16,4
+BCO SANTANDER          8,56      +1,87   +27,95%  2.597.515      4  financial          40,34  11,6
+BNP PARIBAS            49,89     +7,06   +16,48%  4.567.069      2  financial          44,00  9,6
+CARREFOUR              38,01     -0,24   -0,63%   4.074.184      2  retail             26,81  13,5
+SAINT GOBAIN           39,80     +9,20   +30,07%  1.034.153      2  construction       13,62  10,8
+DAIMLER CHRYSLER       34,80     +7,28   +26,45%  1.520.752.960  1  car                36,08  10,1
+DEUTSCHE BANK          66,00     +18,59  +39,21%  1.168.878.320  1  financial          37,74  10,2
+DEUTSCHE TELECOM       13,48     +1,75   +14,92%  5.421.397.120  1  telecommunication  55,20  19,6
+EON                    54,40     +12,13  +28,70%  831.144.768    1  utility            38,04  10,8
+ENDESA                 14,60     +1,02   +7,51%   3.314.571      4  utility            15,52  10,0
+ENEL                   6,56      +1,06   +19,27%  4.077.893      3  mixed              40,44  18,5
+ENI                    16,48     +3,37   +25,71%  9.548.049      3  utility            66,70  12,6
+FORTIS                 17,67     +2,67   +17,80%  5.997.250      6  financial          22,40  8,5
+FRANCE TELCOM          18,70     -1,42   -7,06%   5.539.807      2  telecommunication  22,41  10,3
+GENERALI               21,09     +0,77   +3,79%   1.253.331      3  financial          26,39  18,5
+DANONE                 138,00    +19,46  +16,42%  559,262        2  food               19,38  17,5
+IBERDROLA              16,60     +2,07   +14,25%  473,749        4  utility            15,17  11,1
+ING                    17,96     +3,60   +25,07%  42.570.288     5  financial          34,91  8,0
+PHILIPS                21,87     +5,50   +33,60%  25.112.400     5  electronic         28,45  11,3
+ROYAL DUTCH            40,55     +1,67   +4,30%   42.968.836     5  chemical           85,88  13,6
+LAFARGE                68,80     +8,60   +14,29%  564,871        2  construction       11,17  12,7
+LVMH                   57,45     +17,39  +43,41%  1.221.949      2  food               27,60  22,5
+LOREAL                 64,00     +1,40   +2,24%   2.421.945      2  cosmetics          43,03  22,5
+MUENCH RE              83,30     -4,78   -5,43%   573.947.840    1  financial          19,26  8,6
+NOKIA                  11,17     -3,93   -26,03%  783.027.136    7  electronic         53,58  14,0
+REPSOL                 16,60     +3,30   +24,81%  1.503.452      4  construction       20,58  10,7
+RWE                    35,58     +12,67  +55,30%  657.687.104    1  utility            18,67  14,2
+SANOFI                 53,00     -0,54   -1,01%   1.295.841      2  chemical           14,5   11,9
+SAN PAULO              9,42      +2,10   +28,69%  1.474.505      3  financial          13,36  11,3
+SIEMENS                56,75     +14,96  +35,80%  1.447.671.040  1  electronic         49,92  13,7
+SOC GENERALE           68,38     +13,29  +24,12%  1.347.236      2  financial          29,61  10,0
+SUEZ                   15,79     +1,45   +10,11%  10.051.324     2  utility            16,50  14,1
+TELECOM ITALIA MOBILE  4,60      +0,55   +13,58%  6.264.554      3  telecommunication  38,97  15,9
+TELECOM ITALIA         2,57      +0,45   +21,19%  17.768.808     3  telecommunication  25,99  15,8
+TELEFONICA             11,69     +2,26   +23,97%  23.116.744     4  telecommunication  59,87  14,3
+TOTAL                  156,00    +31,15  +24,95%  2.912.868      2  chemical           78,89  14,1
+UNICREDITO ITALIA      3,92      -0,05   -1,26%   8.690.119      3  financial          24,20  10,2
+UNILEVER               52,90     +1,41   +2,74%   10.164.274     5  food               30,01  15,3
+VIVENDI                19,92     +6,24   +45,61%  9.964.122      2  utility            21,47  48,1
+VW                     34,85     +3,74   +12,02%  650.006.400    1  car                11,30  7,7

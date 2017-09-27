@@ -1,0 +1,1008 @@
+\graphicspath{{./pics/}}
+ 
+\section{Programación Gráfica}
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin{itemize}
+\uncover<1->
+\item {Ventana}
+\item {Clic en una ventana}
+\item {Primer componente : un botón}
+\item {Componentes}
+\item {Primer dibujo}
+\item {Manejo de dimensiones}
+\end{itemize}}}}
+\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+Para crear una ventana gráfica disponemos en el paquete llamado \emph{javax.swing}, de una clase clase \emph{JFrame} que posee un constructor sin argumentos.
+
+\emph {JFrame ven = new JFrame(); }\\
+
+Esto crea un objeto del tipo JFrame dejando su referencia en ven. 
+\begin{itemize}
+\item{Para hacer visible esta ventana : \emph {ven.setVisible(true); }}
+\item {Para darle el tamaño a la ventana :  \emph {ven.setSize(300,150); }, altura de 150 pixeles y largo de 300.}
+\item{Para mostrar un texto en la barra de titulo : \emph {ven.setTitle("Mi primera ventana"); }}
+\end{itemize}
+Cree un programa que cree una ventana, la visualice, le de un tamaño y le agregue un titulo.
+}}}}
+\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Grafica.java}}}
+}}}}
+\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ventana}{
+\uncover<1->{
+El usuario podrá  
+\begin{itemize} \item{cambiar el tamaño de la ventana} \item{desplazar la ventana} \item{reducirla} \item{maximizarla}\end{itemize}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Parar el programa}{
+\uncover<1->{
+Una vez que el método main a llegado a su final la ventana gráfica sigue abierta. Dado que un programa java puede contar con diversos procesos independientes llamados \emph{threads}. \\
+Aqui el \emph{threads} principal corresponde al metodo main y un \emph{threads} utilizador lanza la ventana grafica. Cuando ha terminado el metodo main solo el  \emph{threads} principal se interrumpe.\\
+Cerrar la ventana grafica no finalizara el \emph{threads}. Mas adelante veremos como finalizar este \emph{threads}.\\
+Use : \emph{ CTL C} para finalizar.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Creación de una ventana personalizada}{
+\uncover<1->{
+Anteriormente hemos creado un objeto JFrame y utilizado sus funcionalidades.\\
+Para  personalizar la ventana y asociarle campos o funcionalidades suplementarias. Para eso será necesario definir una clase derivada de JFrame y crear un objeto de este nuevo tipo. \\
+Transforme el programa desarrollado anteriormente (sin agregar aun nuevas funcionalidades) creando una clase derivada de JFrame.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{a la clase base}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Grafica1.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acciones sobre las características de una ventana}{
+\uncover<1->{
+Naturalmente será posible cambiar los atributos de la ventana por ejemplo : a partir de datos ingresados por el usuario.
+Otros métodos : 
+\begin {enumerate} \item{Posición de la ventana y sus dimensiones : \emph{setBounds(10,40,300,200);} con esta instrucción la esquina superior izquierda de la ventana esta en el pixel $10,40$ y sus dimensiones son $300*200$.}
+\item{Modificar el color de fondo \emph{setBackground (Color.red) (import java.awt.Color;)}}
+\item{Obtener el tamaño actual \emph{getsize()}}
+\end{enumerate}
+}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acciones sobre las características de una ventana}{
+\uncover<1->{
+Realice un programa que cree ventanas con dimensiones y color definido por el usuario.\\
+Cree una clase derivada de JFrame con un titulo y dimensiones iniciales y luego solicite al usuario que las redefina y que ingrese el color de fondo de la ventana.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acciones sobre las características de una ventana}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Grafica2.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acciones sobre las características de una ventana}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Grafica3.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acciones sobre las características de una ventana}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Grafica31.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Cerrar ventanas}{
+\uncover<1->{
+Si el usuario cierra la ventana gráfica simplemente la deja invisible, semejante a decir \emph{setVisible(false)}. Podríamos usar el método \emph{setDefaultCloseOperation} con alguno de los argumentos siguientes :
+\begin{itemize}
+\item{\emph{$DO\_NOTHING\_ON\_CLOSE$}: no hacer nada.}
+\item{\emph{$HIDE\_ON\_CLOSE$}: ocultar la ventana (por defecto).}
+\item{\emph{$DISPOSE\_ON\_CLOSE$}: destruir el objeto ventana.}
+\item{\emph{$EXIT\_ON\_CLOSE$} : sale de la aplicación usando el metodo system exit.}
+\end{itemize}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Clic en una ventana}{
+\uncover<1->{
+La programación gráfica se basa en eventos que son creados por componentes que se introducen en la ventana gráfica como por ejemplo : menú, botones, ....\\
+En java todos los eventos tienen una fuente, es decir, un objeto botón, menú, ventana, ...otro. Por ahora será la ventana principal.\\
+Para tratar un evento se le asocia a la fuente un objeto, la clase implementa una interfaz particular que corresponde a una categoría de eventos.  Decimos así que este objeto es un escuchador o \emph{listener} de esa categoría de eventos. Los escuchadores son interfaces de java. %Cada método propuesto por la interfaz corresponde a un evento de la categoría. \\
+}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Clic en una ventana}{
+\uncover<1->{
+Por ejemplo : Existe una categoría \emph{evento mouse} que se puede tratar con un objeto de esa clase implementando la interfaz \emph{MouseListener}. Esta tiene cinco métodos : 
+\begin{enumerate}
+\item{\emph{mousePressed}}
+\item{\emph{mouseReleased}}
+\item{\emph{mouseEntered}}
+\item{\emph{mouseExited}}
+\item{\emph{mouseClicked}}
+\end{enumerate}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Clic en una ventana}{
+\uncover<1->{
+Una clase susceptible de instanciar un objeto escuchador de los diferentes eventos deberá corresponder al esquema siguiente :
+{\tiny{\lstinputlisting{./codigosEx/Grafica4.java}}}
+Dado que a interfaz \emph{MouseListener} tiene 5 métodos será necesario redefinir todos los métodos aunque se dejen vacíos.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Click en una ventana}{
+\uncover<1->{
+Para tratar un click en la ventana, será necesario redefinir no vacío el metodo \emph{mouseCliked}. A cada método se le asociar un objeto del tipo \emph{MouseEvent} y a la clase se le asocia un objeto del tipo \emph{MouseListener} usando \emph{addMouseListener(objetListener)}, \emph{objetListener} es un objeto de una clase de tipo \emph{MouseListener}
+Podemos incluir este objeto en el constructor de la siguiente manera :
+{\tiny{\lstinputlisting{./codigosEx/Ventana0.java}}}
+%{\tiny{\lstinputlisting{./codigosEx/Grafica5.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Click en una ventana}{
+\uncover<1->{
+Haga un programa que escriba un mensaje en consola cada vez que el usuario haga click en la ventana. \\ Para esto debe importar el paquete \emph{java.awt.event} que gestionara los eventos. \\
+El método \emph{mouseClicked} debe ser publico dado que una clase no puede restringir el acceso de métodos ya implementados.
+}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Click en una ventana}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Ventana.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Usar la información asociada al evento}{
+\uncover<1->{
+El argumento del método \emph{mouseClicked} es un objeto de tipo : \emph{MouseEvent}. Esta clase corresponde a la categoria de eventos manejados por la interfaz \emph{MouseListener}. \\
+Java crea un objeto de esa clase automaticamente luego de un click y lo envia a escuchador deseado. Este contiene diversas informaciones, en particular las coordenadas del \emph{mouse} que son accesibles a traves de los metodos \emph{getX} y \emph{getY}.\\
+Adapte el programa precedente desplegando las coordenadas del \emph{mouse} al hacer click en la ventana.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Click en una ventana}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Ventana1.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Resumen gestión de eventos}{
+\uncover<1->{
+Un evento generado por una fuente es tratado por otro objeto llamado escuchador asociado previamente a la fuente. El objeto escuchador podrá ser cualquier objeto incluso un objeto fuente.\\
+En particular a una categoria dada $Xxx$ se le asocia siempre un objeto escuchador de eventos del tipo $XxxEvent$  usando el metodo \emph{addXxxListener}. Cada vez que una categoria dispone de varios metodos podemos :
+\begin{itemize} \item{redefinir todos los metodos de la interfaz correspondiente \emph{XxxListener} ($implements$ debe figurar en la cabeza de la clase del escuchador), ciertos metodos podrán ser definidos vacíos.}
+\item{ llamar a una clase derivada de una clase adaptador \emph{XxxAdapter} y definir solo los métodos que nos interesan}
+\end{itemize}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Primer componente  : un botón }{
+\uncover<1->{
+Para crear un botón usamos el constructor de la clase \emph{JButton} : \\
+\emph{JButton miBoton;}\\
+\emph {miBoton = new JButton("Mi Primer Boton");}\\
+Un objeto del tipo \emph{JFrame} esta formado de : \begin{itemize} \item{una raiz} \item{un contenido} \item{un vidrio} \end{itemize}
+En el contenido incluiremos los diferentes componentes. 
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Primer componente : un botón }{
+\uncover<1->{
+El metodo \emph{getContentPane} de la clase \emph{JFrame} referencia al contenido de tipo \emph{Container}.\\
+\emph{Container c = getContentPane();}\\
+El metodo $add$ de la clase Container permitira agregar un componente a un objeto de ese tipo. \\ Para agregar el botón al contenido del objeto de tipo Container debemos : \\\emph{c.add(miBoton);}\\
+Una manera condensada sería : \\ \emph {getContentPane().add(miBoton);}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Primer componente : un botón }{
+\uncover<1->{
+El constructor de la ventana con un botón sería : 
+{\tiny{\lstinputlisting{./codigosEx/Boton0.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Primer componente : un botón }{
+\uncover<1->{
+Un botón  es visible por defecto. Al mostrar la ventana vemos que el botón esta pero ocupa todo el espacio disponible. La disposición de componentes en una ventana la organiza un gestor de disposición (\emph {Layout Manager}). \\ Existen diversos gestores (en forma de clase). Por defecto Java usa \emph{BorderLayout} con el cual, si no hay otra información, un componente ocupa toda la ventana. \\
+Un gestor interesante es \emph{FlowLayout} que dispone de diversos componentes mostrandolos como texto, uno después de otro en una linea y luego en la siguiente. \\
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Primer componente : un botón }{
+\uncover<1->{
+Para elegir el gestor simplemente se aplica el metodo \emph{setLayout} al objeto contenido de la ventana (al igual que el componente botón). \\
+Para obtener el gestor : \\
+\emph{getContentPane().setLayout(new Layout());}\\
+Escriba un programa que cree un botón en la ventana gráfica.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Primer componente : un botón }{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainBoton.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acción sobre un botón : un evento}{
+\uncover<1->{
+De las misma manera que con la ventana debemos :
+\begin{itemize}
+\item {Crea un escuchador que será un objeto de una clase que implemente la interfaz \emph{ActionListener}. Esta interfaz tiene 1 método en la categoría \emph{Action} llamado \emph{actionPerformed}.}
+\item{Asociar el escuchador al botón por medio del metodo \emph{addActionListener}   }
+\end{itemize}
+Modifique el programa anterior para que muestre un mensaje cada vez que haga click sobre el botón.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acción sobre un botón : un evento}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainBotonClick.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Resumen : Acción en un botón }{
+\uncover<1->{
+\begin {itemize}
+\item{Para actuar sobre un componente a partir del teclado este debe estar seleccionado. Solo un componente puede estar seleccionado a la vez. Incluso una simple acción en la barra de espacio mostrara el mensaje.}
+\item{La categoria de eventos \emph{Action} tiene un solo metodo \emph{actionPerformed}.}
+\end{itemize}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Gestión de multiples componentes }{
+\uncover<1->{
+Si queremos agregar nuevos botones usando el gestor \emph{FlowLayout}, los botones se muestran secuencialmente en el orden que se agregan. \\
+En lo que respecta a la gestión de acciones sobre los botones cada acción sobre un componente puede disponer de su propio objeto escuchador.\\
+Para verificar la fuente de un evento puede usar los método \emph{getSource} o \emph{getActionCommand}\\
+Modifique el código anterior para que cree 2 botones que realicen la misma acción (mostrar un mensaje en pantalla)
+}}}}\end{frame}
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acciones sobre dos botones : un evento}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Main2BotonClick.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acciones sobre dos botones : dos eventos}{
+\uncover<1->{
+Obtenga la fuente del evento usando \emph{getSource}
+{\tiny{\lstinputlisting{./codigosEx/Main2Boton2Click.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acciones sobre dos botones : getSource}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Main2Boton2Click1.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acciones sobre dos botones : getSource}{
+\uncover<1->{
+El método \emph{getSource} nos permite identificar la fuente de un evento (para esto debemos aplicarlo a cada botón).\\
+El método \emph{getActionCommand} presente solamente en la clase \emph{ActionEvent} permite obtener la cadena de caracteres asociada a la fuente de un evento. \\ Aplique este método al programa anterior para capturar la cadena de caracteres asociada a los botones 1 y 2. Por defecto la cadena de comando asociada a un botón es su etiqueta.\\
+Para imponer una cadena de comando debemos usar el metodo \emph{setActionCommand} 
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Acciones sobre dos botones : getActionCommand y setActionCommand}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Main2Boton2Click2.java}}}
+}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Clase escuchador diferente de la ventana}{
+\uncover<1->{
+Escuchador diferente de la ventana : \begin{itemize} \item{una clase escuchador por botón} \item {una clase escuchador para todos los botones}
+\end{itemize}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Una clase escuchador por botón}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Main2Escuchador.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Una clase escuchador por botón}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Main2Escuchador1.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Una clase escuchador para los dos botones}{
+\uncover<1->{
+Podemos disponer un solo método \emph{actionPerformed} común a los dos botones. Para identificar el botón de la acción podemos usar \emph{getActionCommand}.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Una clase escuchador para los botones}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Main1Escuchador.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Dinámica de componentes}{
+\uncover<1->{
+En los ejemplos precedentes los botones fueron creados al mismo tiempo que la ventana y quedaban visibles y activos. \\
+Como : \begin{itemize} \item{ crear un nuevo componente} \item{suprimir un componente} \item{desactivar un componente}\item {reactivar un componente} \end{itemize}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Dinámica de componentes}{
+\uncover<1->{
+\begin {enumerate}
+\item {Para {\textbf{crear}} un nuevo componente sabemos que debemos usar el metodo \emph{add}, pero en el caso que la ventana ya este visible, será necesario decirle al gestor que recalcule la posición de los componentes en la ventana usando : \begin {itemize} \item{\emph{revalidate} para el componente } \item {\emph{validate} para su contenido} \end {itemize}}
+\item {Para {\textbf{suprimir}} un componente usamos el metodo \emph{remove} y volvemos a llamar a \emph{validate}.}
+\item {Para {\textbf{desactivar}} usaremos el metodo \emph{content.setEnabled (false)}, para {\textbf{reactivar}} usaremos  \emph{content.setEnabled (true)}, para saber si el componente  {\textbf{esta activo}} usaremos \emph{content.isEnabled ()}}
+\end{enumerate}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Dinámica de componentes : Crear botones}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainCrearBoton.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Dinámica de componentes}{
+\uncover<1->{
+Desarrolle un programa que muestre un numero dado por el usuario de botones.\\
+El usuario al hacer click sobre un botón lo desactiva.\\
+Imprima : \begin{itemize} \item {un mensaje en la consola para especificar cual botón desactivo} \item { 
+ un mensaje en la consola con el estado de los botones.} \end{itemize}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Dinámica de componentes : Activar-Desactivar botones}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainCrearBoton2.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Dinámica de componentes : Activar-Desactivar botones}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainCrearBoton21.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Mi primer dibujo}{
+\uncover<1->{
+%Para lograr visualizar los dibujos debe poner los dibujos en método particular del componente llamado \emph{paintComponent}, este método será llamado automáticamente por Java cada vez que el componente deba será dibujado o redibujado.\\
+%La ventana de clase JFrame (o derivada) posee un metodo de dibujo llamado \emph{paint} que no es llamado automaticamente como \emph{paintComponent}.\\
+Para realizar un dibujo en una ventana lo mas recomendable será evitar dibujar directamente en la ventana (JFrame) y usar un panel, es decir, un objeto de la clase \emph{JPanel}. \\Los paneles pueden estar en un contenedor y ser a la vez contenedor de otros componentes (no como los botones que no pueden contener otros componentes). \\ Un panel es como una \emph{subventana} sin titulo no bordes, es simplemente un rectángulo del color de la ventana. \\ Un panel no puede existir de manera autonoma (como una ventana) deberá ser asociado por el metodo \emph{add} a un contenedor.}
+}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Mi primer dibujo- Crear un panel}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainPanel.java}}}
+}}}}\end{frame}
+
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Mi primer dibujo- Crear un panel}{
+\uncover<1->{
+Con el código anterior si bien creamos un panel no lo vemos ya que por defecto es del mismo color y tamaño que la ventana. Usando \emph{setBackground() cambie el color del panel para que sea visible.}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Mi primer dibujo- Crear un panel}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainPanel0.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Mi primer dibujo - Dibujar en el panel}{
+\uncover<1->{
+Para obtener un dibujo permanente en un componente es necesario redefinir el metodo \emph{paintComponent} que será llamado automaticamente por Java cada vez que un componente deba ser redibujado.\\
+Como debemos redefinir un metodo de la clase \emph{JPanel} debemos crear el panel como un objeto de una clase derivada de \emph{JPanel}.\\
+La cabecera del metodo \emph{paintComponent} a redefinir es :\\
+\emph{void paintComponent (Graphics g) }\\
+La clase \emph{Graphics} encapsula todas las informaciones y métodos para dibujar sobre un componente (color de fondo, color de la linea, estilo, tipos de letra, tamaño, ...). 
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Mi primer dibujo- Dibujar una linea en el panel}{
+\uncover<1->{
+Si queremos dibujar una linea en el panel debemos solamente llamar a metodo \emph{drawLine} usando el objeto \emph{g}.\\
+\emph{g.drawLine(15,10,100,50)} \\
+Esta instrucción hace una linea de punto 15,10 al punto 15$+$100, 10$+$50. \\
+Las coordenadas se expresan en pixeles relativas a la esquina superior izquierda del componente.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Dibujar una linea en el panel}{
+\uncover<1->{
+Para trabajar con el metodo \emph{paintComponent} debemos llamarlos explicitamente de la clase ascendente \emph{JPanel}.\\
+\emph{super.paintComponent(g)} \\
+Desarrolle un programa que muestre una linea en un panel rojo que ocupa toda la ventana.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Mi primer dibujo - Crear un panel}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainPanel1.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Dibujar en el panel}{
+\uncover<1->{
+Si se quiere dibujar y redibujar directamente en un panel se debe usar el metodo \emph{repaint} que llama al método \emph{paintComponent} actualizando el contenido del panel.\\
+Dentro del gestor de contenido por defecto llamado \emph{BorderLayout} (que usa todo el espacio para insertar un componente) existe la posibilidad de dejar los componente no solo al centro sino que tambien sobre los 4 bordes de la ventana. \\Para eso solo será necesario en el metodo \emph{add} un argumento \emph {"North", "South","East" o "West" }.
+}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Dibujar en el panel}{
+\uncover<1->{
+Desarrolle un programa que tenga 2 botones (uno en la parte de arriba y otro en la parte de abajo del contenido de la ventana). \\El primer boton dibujará un circulo en un panel y el segundo dibujara en el mismo panel un rectángulo que remplazara eventualmente el circulo. \\Al inicio del programa no se muestra nada en el panel. \\El panel ocupara la parte libre del contenido (el centro). 
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Mi primer dibujo - Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainPanelDibujo0.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Mi primer dibujo - Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainPanelDibujo1.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Campos de texto}{
+\uncover<1->{
+Los campos de texto son una zona rectangular en la cual el usuario puede entrar o modificar texto (de una sola linea).\\
+Se obtienen instanciando un objeto \emph{JTextField}. \\Su constructor debe obligatoriamente indicar un tamaño (que indica el numero de caracteres, estos caracteres dependen del tipo de letra). \\
+La construcción de campos de texto en un objeto del tipo JFrame : \\
+\emph{JTextField entrada1,entrada2;}\\
+\emph{entrada1 = new JTextField(20);}\\
+\emph{entrada2 = new JTextField("texto inicial",15);}\\
+}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Campos de texto}{
+\uncover<1->{
+Para obtener la información que figura en un campo de texto usamos :\\ 
+\emph{String cadena = entrada1.getText();}\\
+Para definir si el campo de texto será editable usaremos : \\
+\emph{entrada1.setEditable(false);}\\
+\emph{entrada1.setEditable(true);}\\
+Para modificar durante la ejecución usarmos (como ya lo vimos anteriormente):\\
+\emph{entrada1.revalidate();}\\
+}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio - Campos de texto}{
+\uncover<1->{
+Desarrolle un programa que le proponga al usuario un campo de texto y un botón con la etiqueta "Copiar". \\Cada acción sobre el botón provoca la copia en un segundo campo de texto (no editable) del contenido del primer campo de texto.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio - Campos de texto}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainPanelTexto0.java}}}
+}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio - Campos de texto}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainPanelTexto1.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio - Campos de texto}{
+\uncover<1->{
+Desarrolle un programa que repita las acciones realizadas en un campo de texto en otro. De alguna manera un campo de texto espejo.\\
+Use un objeto del tipo \emph{Document} para conservar el contenido del componente. Las modificaciones al objeto \emph{Document} generan uno de los 3 eventos de la categoria \emph{Document}. El escuchador sera \emph{DocumentListener}\\
+Encabezados de metodos: \\
+\emph {public void insertUpdate(DocumentEvent ev)}\\
+\emph {public void removeUpdate(DocumentEvent ev)}\\
+\emph {public void changedUpdate(DocumentEvent ev)}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio - Campos de texto}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainPanel2Texto0.java}}}
+}}}}\end{frame}
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Mi primer dibujo - Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/MainPanel2Texto1.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Listas}{
+\uncover<1->{
+Las listas son componente que permiten elegir uno o varios valores en una lista predefinida.
+Para crear una lista se le entrega un arreglo de cadenas al constructor.\\
+\emph {String [] colores =\{"rojo","verde","azul","blanco", "gris"\}
+}.\\
+\emph {JList lista = new JList(colores)}\\
+Para seleccionar un elemento usaremos :\\ \emph{lista.setSelectedIndex(2);} \\
+Selecciona el indice en la posición 2.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Tipos de Listas}{
+\uncover<1->{
+\begin{itemize}
+%\item{Asociar el escuchador al botón por medio del metodo \emph{addActionListener}   }
+\item {SINGLE\_SELECTION : selecciona un solo valor.}
+\item {SINGLE\_INTERVAL\_SELECTION : selecciona un grupo de valores seguidos.}
+\item {MULTIPLE\_INTERVAL\_SELECTION : selecciona una cantidad de valores. (Valor por defecto)}
+\end{itemize}
+Para modificar la selección usaremos : \emph{lista.setSelectionMode(SINGLE\_SELECTION)}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Listas - Barra de desplazamiento}{
+\uncover<1->{
+Para incluir una barra o panel de desplazamiento debemos : \\
+\emph{JScrollPane barra = new JScrollPane(lista);}\\
+\emph{getContentPane().add(barra);}\\
+Por defecto mostrara ocho valores, si la lista tiene menos valores la barra no aparecera. Para hacerla visible sera necesario : \emph {lista.setVisibleRowCount(3);}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Listas - Acceder a la información seleccionada}{
+\uncover<1->{
+Para una lista con SINGLE\_SELECTION el método \emph{getSelectedValue} entrega el unico valor seleccionado (para los otros tipos de lista este método entrega solo el primer valor seleccionado). \\El resultado es del tipo \emph{Object} y no \emph{String} por lo que será necesario aplicar una conversion de tipo explicita :\\
+ \emph{String cadena= (String) lista.getSelectedValue();} 
+Para obtener todos los valores seleccionados usaremos :\\ \emph{getSelectedValues()}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Listas}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/select.java}}}
+Para conocer la posición del valor seleccionado \\: \emph{int $[]$ getSelectIndices()) }
+}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Listas - Eventos}{
+\uncover<1->{
+A diferencia de otros componente las listas no generan eventos \emph{Action}. El escuchador apropiado es : \emph{ListSelectionListener} que dispone de un solo metodo:\\ \emph{public void valueChanged(ListSelectionEvent ev)}.\\
+Para evitar la redundancia (que se produce en la fase de transición) en la selección usaremos : \emph{getValuesIsAdjusting}
+ {\tiny{\lstinputlisting{./codigosEx/select1.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Listas - Ejercicio}{
+\uncover<1->{
+Desarrolle un programa que cree una lista con el nombre de 5 colores. Al seleccionar uno y muchos colores debe imprimirlos en la consola. }}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Listas - Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Lista0.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Listas - Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Lista1.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Etiquetas }{
+\uncover<1->{
+Un componente del tipo \emph{JLabel} permite mostrar en un contenedor un texto no modificable por el usuario.
+\emph{JLabel texto = new JLabel("Texto Inicial ")} 
+Este componente no tiene borde ni color de fondo. Para modificar el texto de una etiqueta usuaremos : \emph{texto.setText("Nueva etiqueta");}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+Desarrolle un programa en el cual muestre en permanencia el numero de click realizados por un usuario sobre un botón.}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Listas - Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/BotonClick0.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Listas - Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/BotonClick1.java}}}
+}}}}\end{frame}
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+Desarrolle un programa con dos botones uno que incremente y el otro disminuya un contador. El contador debe estar en el contenido de la ventana use \emph{JLabel} para mostrar el contador.}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Exemple111.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Exemple112.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Combo-box}{
+\uncover<1->{
+Los ComboBox están asociados a un campo de texto no editable. Cuando el componente no esta seleccionado se muestra solo el campo de texto, al seleccionar el componente se despliega la lista.\\
+El usuario puede elegir un valor en la lista. Por defecto el texto asociado a un comboBox no es editable.\\
+Construcción de un comboBox : \\
+\emph {String [] colores =\{"rojo","verde","azul","blanco", "gris"\}
+}.\\
+\emph{JComboBox= combo = new JComboBox(colores);}\\
+\emph{combo.setEditable(true);}\\
+\emph{combo.setMaximumRowCount(4);}\\
+\emph{combo.selectionIndex(2);}\\
+}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Combo-box - acceso a los datos}{
+\uncover<1->{
+El  método \emph{getSelectedItem} entrega los valores seleccionados, este metodo es como el  método \emph{getSelectedValues} de las listas.\\
+\emph{Object valor = combo.getSelectedItem();}\\
+El método \emph{getSelectedItem();} entrega el rango de valores seleccionado.
+}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Combo-box - eventos}{
+\uncover<1->{
+Los comboBox generan evento \emph{Action} al seleccionar un elemento en la lista. Ademas un comboBox genera eventos \emph{Item} en cada modificación de selección lo que será tratado con el escuchador \emph{ItemListener} que tiene un solo método: \\
+\emph{public void itemStateChanged(ItemEvent e) }\\
+En un comboBox simple siempre tenemos dos eventos (suprimir la selección y nueva selección) ya sea en un campo de texto o en una lista.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Combo-box - eventos}{
+\uncover<1->{
+Desarrolle un programa que genere un comboBox con 5 colores que sea editable en el cual podamos incluir en curso de ejecución un nuevo color.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/EjemploCombo0.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/EjemploCombo1.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Combo-box - evolución dinamica de una lista de un combo}{
+\uncover<1->{
+Los bomboBox disponen de método que permiten agregar un nuevo valor al final de la lista : \emph{combo.addItem("naranja");}, agrega un elemento al final de la lista.\\
+El método \emph{addItemAt("naranja", 2);} agrega un elemento en la posición dos.\\
+El método \emph{removeItem("gris");}  suprime un valor existente.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+Modifique el programa anterior para que los valores ingresados por el usuario sean adjuntados a la lista de valores del comboBox.
+Para distinguir una selección de un ingreso de datos, usaremos el método \emph{getSelectedIndex}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/EjemploComboDin0.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/EjemploComboDin1.java}}}
+}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Eventos Focus}{
+\uncover<1->{
+Los eventos Focus son tratados por el escuchador :  \emph{FocusListener} que tiene dos métodos : \\
+\emph{public void focusGained(FocusEvent ev);}\\
+\emph{public void focusLost(FocusEvent ev);}\\
+En general, se tratara a la vez la validación, por ejemplo: en un campo de texto, y la perdida de foco.
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio: Una aplicación completa}{
+\uncover<1->{
+Desarrolle un programa que permita al usuario dibujar formas (rectángulo y/o ovalo) en una ventana, sus dimensiones y el color de fondo. Use combo, campo de texto y checkBox.
+\\ Las dimensiones, comunes a las diferentes formas, son ingresadas en campos de texto (los valores obtenidos de tipo String deben ser convertidos con \emph{Integer.parseInt} a enteros).\\
+El color de fondo sera elegido en un combo.\\
+Para seleccionar la figura puede usar una lista o un \emph{JCheckBox}: \emph{ovalo = new JCheckBox("Ovalo");}. 
+}}}}\end{frame}
+
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio: Una aplicación completa}{
+\uncover<1->{
+Se aconseja dibujar en un panel con el gestor \emph{FlowLayout} para que quede en el centro, para facilitar las cosas ponga los otros componentes en un segundo panel usando el gestor por defecto para poner los controles abajo (\emph{South}).\\
+ Debe considerar los eventos \emph{Focus} para validar el contenido de los campos de texto. \\
+Use los eventos acción para los campos de texto y los checkBox. Use los eventos Item para el combo.
+Para la comunicación entre el objeto ventana y el objeto panel del dibujo use, y por lo cual cree, los métodos de modificación : \emph{setLargo, setAncho, setOvalo, setRectangulo}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Final0.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Final1.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Final12.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Final2.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Final3.java}}}
+}}}}\end{frame}
+
+\subsection{Programación Gráfica}
+\begin{frame}{Programación Gráfica}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ejercicio}{
+\uncover<1->{
+{\tiny{\lstinputlisting{./codigosEx/Final4.java}}}
+}}}}\end{frame}
+
+%%%MEJORAR PARTE INTERFAZ, CLASES Abtractas, metodos abstractos, 
+%%%adaptadores
+%%%Preparar una nueva clase con :  clases anonimas.
+%FOCO pagina 360
+% eje final 378

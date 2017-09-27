@@ -1,0 +1,876 @@
+%
+%DEFINICIONES
+%API : application programming interface de java. un numero importante de clases que forman parte del propio lebguaje
+%Applets : es una aplicacion especial qe se ejecuta dentro de un navegador al cargar una pagina HTML desde un servidor Web.  Un applet se descarga desde el servidor y no requiere instalacion en el computador donde esta el navegador. 
+%Servlet es una aplicacion sin interface grafica que se ejecuta en un servidor internet. 
+%IDE : integrated development environment ambiente de desarrollo por ejemplo eclipse
+%Los threads (a veces llamados, procesos ligeros), son básicamente pequeños procesos o piezas independientes de un gran proceso. Al estar los threads contruidos en el lenguaje, son más fáciles de usar y más robustos que sus homólogos en C o C++.
+%Un thread es un flujo secuencial de control dentro de un programa.
+%appletviewer interprete de applets
+\graphicspath{{./pics/}}
+ 
+\section{Paradigmas}
+\subsection{Paradigmas}
+\begin{frame}{Plan de la sección Paradigmas de Programación}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin{itemize}
+\uncover<1->
+{\item Definición de paradigma} 
+{\item Principales Paradigmas}
+\begin {itemize}
+\item {Imperativo}
+\item {Declarativo}
+\item {Estructurado}
+\item{Orientado a Objetos}
+\item {Funcional}
+\item{Logico}
+\end {itemize}
+\end{itemize}}}}
+\end{frame}
+ 
+ \subsection{Introducción a la Programación en Java}
+\begin{frame}{Bibliografia}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\scriptsize{\begin{itemize}
+\uncover<1->
+\item {Aprendiendo Java en 21 dias. Laura Lemay and Charles Perkins. Edición : Prentice Hall Hispanoamericana SA, 1996}
+\item {Java como programar. P Deital and H Deitel. Edición : Pearson Prentice Hall, 2008}
+\item {Java como programar. P Deital and H Deitel. Edición : Pearson Prentice Hall, 2004}
+\item {Aprenda Java como si estuviera en primero. Javier Garcia et all. Universidad de Navarra, 2000}
+\item {Guia de iniciación al lenguaje Java, Universidad de Burgos, 1999}
+\item {Aprendiendo Java y programación a objetos. Gustavo Perez, 2008}
+\item {Apuntes de programación. Universidad de Cergy Pointoise, 2010}
+\item {Curso Java de Everis, 2006}
+\item {Programación con Java. Profesor : Carlos Alberto Román Zamitiz. Universidad Nacional Autonoma de Mexico : http://profesores.fi-b.unam.mx/carlos/java/indice.html}
+\item {Documentación JAVA : http://www.oracle.com/technetwork/java/javase/documentation/index.html}
+\end{itemize}
+}}}}
+\end{frame}
+
+\subsection{Paradigmas}
+\begin{frame}{Paradigmas de Programación}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1->
+{Un paradigma de programación es un modelo básico de diseño y desarrollo de programas, que permite producir programas con directrices específicas, tales como: estructura modular, fuerte cohesión, alta rentabilidad, etc.}}}}
+ \end{frame}
+
+\subsection{Paradigmas}
+\begin{frame}{Plan de la sección Paradigmas de Programación}
+\ITZ{	
+\uncover<1->{\ITT{1}{Paradigma Imperativo}{
+\uncover<1-> {
+Describe la programación como una secuencia instrucciones o comandos que cambian el estado de un programa. El código máquina en general está basado en el paradigma imperativo. Su contrario es el paradigma declarativo. Los programas imperativos son un conjunto de instrucciones que le indican al computador cómo realizar una tarea. 
+Los primeros lenguajes imperativos fueron los lenguajes de máquina. }}}}
+ \end{frame}
+  %perl , pascal, fortran
+  
+ \subsection{Paradigmas}
+\begin{frame}{Paradigmas de Programación}
+\ITZ{	
+\uncover<1->{\ITT{1}{Paradigma Declarativo}{
+\uncover<1-> {
+ No se basa en el cómo se hace algo (cómo se logra un objetivo paso a paso), sino que describe (declara) cómo es algo. \\
+Se enfoca en el desarrollo de programas especificando o "declarando" un conjunto de condiciones, proposiciones, afirmaciones, restricciones, ecuaciones o transformaciones que describen el problema y detallan su solución. La solución es obtenida mediante mecanismos internos de control, sin especificar exactamente cómo encontrarla (tan sólo se le indica a la computadora que es lo que se desea obtener o que es lo que se está buscando).
+ }}}}
+ \end{frame}
+ 
+%En la programación imperativa se describe paso a paso un conjunto de instrucciones que deben ejecutarse para variar el estado del programa y hallar la solución, es decir, un algoritmo en el que se describen los pasos necesarios para solucionar el problema.
+%En la programación declarativa las sentencias que se utilizan lo que hacen es describir el problema que se quiere solucionar, pero no las instrucciones necesarias para solucionarlo. Esto último se realizará mediante mecanismos internos de inferencia de información a partir de la descripción realizada.
+ %prolog
+ 
+ \subsection{Paradigmas}
+\begin{frame}{Paradigmas de Programación}
+\ITZ{	
+\uncover<1->{\ITT{1}{Paradigma Estructurado}{
+\uncover<1-> {
+ La programación se divide en bloques (procedimientos y funciones) que pueden o no comunicarse entre sí. Además la programación se controla con secuencia, selección e iteración.  Su principal ventaja es la estructura clara lo que entrega una mejor comprensión de la programación.}}}}
+ \end{frame}
+%c
+ %Permite reutilizar código programado y otorga una mejor compresión de la programación.
+ 
+  \subsection{Paradigmas}
+\begin{frame}{Paradigmas de Programación}
+\ITZ{	
+\uncover<1->{\ITT{1}{Paradigma Orientado a Objetos}{
+\uncover<1-> {
+Está basado en el uso de objetos: estructuras de datos que contienen atributos y métodos con sus interacciones. La idea es  encapsular estados o propiedades y operaciones o comportamientos en objetos que se comunican entre si. Su principal ventaja es la reutilización de códigos y su facilidad para pensar soluciones a determinados problemas.}}}}
+ \end{frame}
+ 
+%ta abstraction, encapsulation, messaging, modularity, polymorphism, and inheritance. 
+ 
+\subsection{Paradigmas}
+\begin{frame}{Paradigmas de Programación}
+\ITZ{	
+\uncover<1->{\ITT{1}{Paradigma Funcional}{
+\uncover<1-> {
+Este paradigma concibe a la computación como la evaluación de funciones y evita declarar y cambiar datos. En otras palabras, hace hincapié en la aplicación de las funciones y composición entre ellas, en contraste con el estilo de programación imperativa, más que en los cambios de estados y la ejecución secuencial de comandos.}}}}
+ \end{frame}
+ % ocamel
+\subsection{Paradigmas}
+\begin{frame}{Paradigmas de Programación}
+\ITZ{	
+\uncover<1->{\ITT{1}{Paradigma Lógico}{
+\uncover<1-> {
+Se basa en la definición de reglas lógicas para luego, a través de un motor de inferencias lógicas, responder preguntas planteadas al sistema y así resolver los problemas.}}}
+%prolog
+
+\uncover<2->{\ITT{1}{Otros Paradigmas y subparadigmas}{
+\uncover<2-> {
+Paradigma orientado al sujeto, paradigma reflectante, programación basada en reglas, paradigma basado en restricciones, programación basada en prototipos, etc. 
+}}}}
+ \end{frame}
+ 
+ 
+\section{POO y Java}
+\subsection{Introduction}
+\begin{frame}{Plan de la Introducción a la POO y a Java}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin{itemize}
+\uncover<1->
+{\item Introducción a la Programación Orientada a Objetos.} 
+{\footnotesize{\begin {itemize}
+\item {Objetos y clases}
+\item {Comportamiento y atributos}
+{\item Características asociadas a la POO.} 
+\begin{itemize}
+\item {Abstracción}
+\item {Encapsulamiento}
+\item {Ocultamiento}
+\item {Herencia}
+\item {Polimorfismo}
+\end {itemize}
+\end {itemize}}}
+{\item Introducción a la Programación en Java}
+{\footnotesize{\begin {itemize}
+\item {Inicios de Java}
+\item {Ventajas de Java}
+\item{Programar en Java}
+\end {itemize}}}
+{\item Ejercicios de Introducción a Java}
+\end{itemize}}}}
+\end{frame}
+
+\subsection{Introducción a la Programación Orientada a Objetos}
+\begin{frame}{Definiciones}
+\ITZ{	
+\uncover<1->{\ITT{1}{POO}{
+\uncover<1->
+La \textbf{POO} se basa en la dividir el programa en pequeñas unidades lógicas de código. A estas pequeñas unidades lógicas de código se les llama objetos. Los objetos son unidades independientes que se comunican entre ellos.\\
+La \textbf{POO}  es que proporciona conceptos y herramientas con las cuales se modela y representa el mundo real tan fielmente como sea posible.
+}}}
+\end{frame}
+
+\subsection{Introducción a la Programación Orientada a Objetos}
+\begin{frame}{Definiciones}
+\ITZ{	
+\uncover<1->{\ITT{1}{Que es un objeto?}{
+\uncover<1->{
+Cualquier cosa que vemos a nuestro alrededor.  Ej : auto.
+Componentes de los objetos :
+\begin{itemize}
+\item {características (marca, modelo, color, etc ) }
+\item {comportamiento (frenar, acelerar, retroceder, encender, etc).}
+\end{itemize}}}}}
+\end{frame}
+
+%Ejemplo: libros, computadora, teléfono celular, árbol o auto. \\
+%No necesitamos ser expertos en mecánica para saber que un auto está compuesto internamente por varios componentes: ruedas, motor, caja de cambio, etc, el conjunto de esos componentes hace funcionar el auto. Cada componente puede ser muy complicado y ser fabricado por distintas empresas. Si quisiéramos armar un auto no necesitamos saber el funcionamiento de cada objeto sino mas bien como interctua con los otros.\\
+
+
+\subsection{Introducción a la Programación Orientada a Objetos}
+\begin{frame}{Definiciones}
+\uncover<1->{\ITT{1}{Objetos y clases}{
+\uncover<1->{
+Los programas en POO están construidos a base de objetos con características (atributos o variables) y comportamiento (métodos) específicos y que pueden comunicarse entre si.}}}
+\balancecolumns{.45}{.55}
+{
+\uncover<1->{\begin{center}\emph{Clase} \end{center}}
+\uncover<1->{\GFXH{3cm}{ClaseAuto.pdf}}}{
+\uncover<1->{{\begin{center}\emph{Clase y Objeto} \end{center}}
+\uncover<1->{\GFXH{4.2cm}{ClaseObAuto.pdf}}}}
+\end{frame}
+
+
+\subsection{Introducción a la Programación Orientada a Objetos}
+\begin{frame}{Definiciones}
+\ITZ{	
+\uncover<1->{\ITT{1}{Objetos y clases}{\begin {itemize}
+\uncover<1->
+
+\item {\textbf{Clases:} Modelo para múltiples objetos con características similares. Las clases comprenden todas las características de una serie particular de objetos. En POO se definen clases como un modelo abstracto de un objeto. En programación estructurada seria un tipo de dato (en C seria struct o typedef).}
+\item {\textbf{Instancias:} representación concreta de un objeto. Al definir una clase se pueden crear muchas instancias de la misma y cada instancia puede tener diversas características mientras se comporte y reconozca como objeto de la clase. En programación estructurada seria una variable}
+
+%objetos : no necesitas saber como funciona cada componente sino mas bien como interactuan entre si para poder ensamblarlos.
+%arbol y los tipos de arbol
+{\footnotesize\item {\textit {Ejemplo}: Clase Button.}}
+\end {itemize}}}}
+\end{frame}
+
+% define las características de un botón (etiqueta, tamaño, apariencia, etc) y el comportamiento (necesita 1 clic o 2, cambia de color, etc). Los botones tendrán las mismas características generales definidas por la clase pero con apariencia y comportamiento diferente. }
+
+%\subsection{Introducción a la Programación Orientada a Objetos}
+%\begin{frame}{Definiciones}
+%\ITZ{	
+%\uncover<1->{\ITT{1}{Objetos y clases}{
+%\uncover<1->
+%
+%\textbf{Biblioteca de clases:} Java posee un conjunto de clases (biblioteca de clases) implementada tanto para las funciones básicas como también para gráficos, red, etc. En muchos casos solo necesitas crear una clase que utilice la biblioteca de clases estándar.\\
+%\textbf{Importante:} Crear el conjunto adecuado de clases para lograr lo que el programa necesita cumplir. %Los objetos se crean y descartan como sea necesario.\\
+%
+%}}}
+%\end{frame}
+
+
+\subsection{Introducción a la Programación Orientada a Objetos}
+\begin{frame}{Definiciones}
+\ITZ{	
+\uncover<1->{\ITT{1}{Atributos y Comportamiento}{
+\uncover<1->
+
+\textbf{Atributos:} Características que diferencian a un objeto de otro y determinan la apariencia, estado u otras cualidades de ese objeto. \\
+Los atributos se definen como variables de hecho podrían ser las variables globales del objeto completo. Cada instancia de una clase puede tener diferentes valores para sus variables, a cada variable se le llama una variable de instancia. La clase define el tipo de atributo y cada instancia guarda su propio valor para ese atributo.\\
+}}}
+%Las variables de instancia definen los atributos de un objeto, al cambiar el valor de una variable se cambia el atributo de ese objeto.
+%Se pueden definir variables de instancia cuyos valores se almacenan en la instancia y de clase (estas se aplican a la clase y a todas sus instancias) y sus valores se almacenan en la clase.}}}
+\end{frame}
+
+\subsection{Introducción a la Programación Orientada a Objetos}
+\begin{frame}{Definiciones}
+\ITZ{	
+\uncover<1->{\ITT{1}{Atributos y Comportamiento}{
+\uncover<1-> 
+{Los \textbf{métodos} son funciones definidas dentro de una clase que operan en las instancias de esas clases. Los objetos se comunican entre si mediante el uso de métodos, una clase puede llamar al método de otra clase.\\
+Se pueden definir métodos de instancia (que operan en una instancia de la clase) y los métodos de clase que operan sobre la clase.}
+%\textbf{Comportamiento:} determina qué instancias de esa clase requieren cambiar su estado interno o cuando esa instancia es llamada para realizar algo por otra clase u objeto. Para definir el comportamiento de un objeto se crean métodos (similar a las funciones) dentro de una clase. \\%Java no cuenta con métodos definidas fuera de la clase. 
+}}}
+\end{frame}
+
+
+\subsection{ Características asociadas a la POO}
+\begin{frame}{Características asociadas a la POO}
+\ITZ{	
+\uncover<1->{\ITT{1}{Abstracción}{
+\uncover<1->
+La abstracción consiste en captar las características esenciales y el comportamiento de un objeto. \\
+Ej: ¿Qué características podemos abstraer de los autos?¿Qué características semejantes tienen todos los autos?. Todos tendrán una marca, un modelo, puertas, ventanas, etc. Y en cuanto a su comportamiento todos los automóviles podrán acelerar, frenar, retroceder, etc.\\
+En POO el concepto de clase es la representación y el mecanismo por el cual se gestionan las abstracciones.\\
+En Java las clase se definen:
+\footnotesize{
+\lstinputlisting{./codigosEx/Auto.java}}
+}}}
+\end{frame}
+
+
+\subsection{ Características asociadas a la POO}
+\begin{frame}{Características asociadas a la POO}
+\ITZ{	
+\uncover<1->{\ITT{1}{Encapsulamiento}{
+\uncover<1->
+El encapsulamiento consiste en unir en la clase las características y comportamientos, esto es, las variables y métodos. Es tener todo esto es una sola entidad. En los lenguajes estructurados esto era imposible. \\
+La utilidad del encapsulamiento va por la facilidad para manejar la complejidad, ya que tendremos clases como cajas negras donde sólo se conoce el comportamiento pero no los detalles internos.%, y esto es conveniente porque lo que nos interesará será conocer qué hace la clase pero no será necesario saber cómo lo hace.
+}}}
+\end{frame}
+
+
+
+\subsection{ Características asociadas a la POO}
+\begin{frame}{Características asociadas a la POO}
+\ITZ{	
+\uncover<1->{\ITT{1}{Ocultamiento}{
+\uncover<1->{
+Es la capacidad de ocultar los detalles internos del comportamiento de una clase y exponer sólo los detalles que sean necesarios para el resto del sistema, cada tipo de objeto expone una interfaz a otros objetos que especifica cómo pueden interactuar con los objetos de la clase. \\
+ \begin{itemize}
+\item {Restringir el uso de la clase porque habrá cierto comportamiento privado de la clase que no podrá ser accedido por otras clases.} \item {Controlar el uso de la clase porque se darán ciertos mecanismos para modificar el estado de una clase}\\ % y es en estos mecanismos dónde se validarán que algunas condiciones se cumplan. 
+\end{itemize}
+En Java el ocultamiento se logra usando las palabras reservadas: {\textit {public, private}} y {\textit {protected}} delante de las variables y métodos.}
+}}}
+\end{frame}
+
+
+\subsection{ Características asociadas a la POO}
+\begin{frame}{Características asociadas a la POO}
+\ITZ{	
+\uncover<1->{\ITT{1}{Herencia}{
+\uncover<1->
+
+Organización jerárquica de las clases. \\
+Cada clase tiene una superclase y puede tener una o mas subclases. Las subclases heredan todos los métodos y variables de las superclases, esto significa que  las subclases, aparte de los atributos y métodos propios, tienen incorporados los atributos y métodos heredados de la superclases. De esta manera se crea una jerarquía de clases.\\ %La herencia es uno de los conceptos mas importante de la programación orientada a objetos. \\ % son una combinación de métodos y variables de las clases superiores.\\
+En Java la herencia se logra usando la palabra reservada: {\textit  {extends}}. En la parte superior de la jerarquía de clase Java esta la clase \textit{Object} todas las clases heredan de esta superclase, cada clase hacia abajo agrega mas información. %Cada clase puede tener solo una superclase.\\
+}}}
+\end{frame}
+
+\subsection{ Características asociadas a la POO}
+\begin{frame}{Características asociadas a la POO}
+\ITZ{	
+\uncover<1->{\ITT{1}{Crear una jerarquía entre clases}{
+\uncover<1->
+
+\textbf{Subclasificación:} Creación de una nueva clase que heredara de otra clase en la jerarquía. Al usar subclasificación, solo se necesita definir las diferencias entre la clase creada y las super clases de esta. Si se crea una clase sin indicar la super clase en la primera linea, java automáticamente supone que esta heredando de la clase \textit{Object}\\
+\textbf{Jerarquía de herencia:} se deben desarrollar las clases en una jerarquía en la cual se separe la información común para múltiples clases de la información particular.\\
+\textit{Ejemplo: } Crear una jerarquía para una clase Auto, una clase Moto y una clase Bicicleta.
+}}}
+\end{frame}
+
+
+\subsection{ Características asociadas a la POO}
+\begin{frame}{Jerarquia de herencia}
+\GFXH{5cm}{JerarquiaVehiculo.pdf}
+\end{frame}
+
+
+\subsection{ Características asociadas a la POO}
+\begin{frame}{Jerarquia}
+\GFXH{5cm}{JerarquiaVehiculoV2.pdf}
+\end{frame}
+
+
+\subsection{ Características asociadas a la POO}
+\begin{frame}{Características asociadas a la POO}
+\ITZ{	
+\uncover<1->{\ITT{1}{Polimorfismo}{
+\uncover<1->
+
+Literalmente significa "cualidad de tener mas de una forma". En POO es la propiedad que le permite a métodos con el mismo nombre implementar distintas funcionalidades según las clases donde se apliquen. Es decir, métodos diferentes, asociados a objetos distintos, pueden compartir el mismo nombre. Al llamarlos se utilizará el comportamiento correspondiente al objeto que se esté usando. }}}%O dicho de otro modo, las referencias y las colecciones de objetos pueden contener objetos de diferentes tipos, y la invocación de un comportamiento en una referencia producirá el comportamiento correcto para el tipo real del objeto referenciado.}}}
+\end{frame}
+%metodos con = nombre implementan distintas funcionalidades segun las clases donde se apliquen.
+\subsection{Características asociadas a la POO}
+\begin{frame}{Características asociadas a la POO}
+\ITZ{	
+\uncover<1->{\ITT{1}{Envio de mensajes}{
+\uncover<1->
+Un objeto es inútil si está aislado. Los objetos de un programa interactúan y se comunican entre ellos por medio de mensajes. Cuando un objeto A quiere que un objeto B ejecute una de sus funciones (métodos de B), el objeto A manda un mensaje al objeto B. Los mensajes son invocaciones a los métodos de los objetos.
+Por ejemplo, si objeto miAuto debe acelerar.  
+\begin{itemize} 
+\item {El objeto al cual se manda el mensaje (miAuto).}
+\item {El método que debe ejecutar (acelerar()).}
+\item {Los parámetros que necesita ese método (10).}
+\end{itemize}
+
+Estas tres partes del mensaje (objeto destinatario, método y parámetros) son suficiente información para que el objeto que recibe el mensaje ejecute el método.
+}}}
+\end{frame}
+
+\subsection{Introducción a la Programación en Java}
+\begin{frame}{Inicios de Java}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin {itemize}
+\uncover<1->
+\item {\textbf{Desarrollado por : } Sun Microsystems en 1991}
+\item {\textbf{Objetivo Inicial y actual:} }
+{\footnotesize{\begin {itemize}
+\item {Desarrollar un lenguaje para crear software pequeños, rápidos, eficientes y portátiles para diversos dispositivos de hardware (telefonos celulares, radiolocalizadores y asistentes digitales personales)}
+\item {Ser el nexo universal que conecte a los usuarios con la información que este situada en el computador local, en un servidor Web o en una base de datos. }%Así permite entre otras funcionalidades,  agregar contenido dinamico, interactividad y animaciones en paginas Web, mejorar funcionalidad de los servidores Web.}
+\end {itemize}}}
+\item {\textbf{Slogan:}  \textit{Write Once, Run Everywhere}}
+\end {itemize}}}}
+\end{frame}
+
+
+\subsection{Introducción a la Programación en Java}
+\begin{frame}{Ventajas de Java : independencia de plataformas}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin {itemize}
+\uncover<1->
+\item{\textbf{Independencia de plataforma}, tanto a nivel del código fuente como del binario} \\
+\textit {Diferencia entre código fuente y binario?}
+%Los fuentes pertenecen al código fuente del programa que te querés bajar, es decir, el código puro sin compilar, en el/los lenguaje/s en el/los cual/es fue desarrollado
+%Los binarios es el programa ya compilado para "X" arquitectura o sistema operativo. Entre los binarios por lo general vas a encontrar los archivos "ejecutables" del programa.
+%Un ejemplo rápido para que veas mejor la diferencia es el siguiente:
+%Vos tenés un programa hecho en lenguaje C que lo único que hace es sacar por pantalla un mensaje que dice "Hello World". (clásico)
+%Lo que vos tenés hasta ahí es el código fuente (source) del programa.
+%Luego si querés usar ese programa en windows lo vas a tener que compilar (con un compilador C para windows) y de este modo te genera un archivo binario el cual vas a poder ejecutar (en este caso)
+%Si vos querés usar el mismo programa en Linux, todo lo que tenés que hacer es agarrar el código fuente y compilarlo con un compilador de C en Linux, y vas a obtener exactamente lo mismo, un archivo binario que también lo vas a poder ejecutar.
+%El tema de los compiladores se extiende a todos los sistemas operativos como así también existen compiladores para las diferentes arquitecturas. Pero no tiene sentido que entre en esos temas.
+%En pocas palabras, si te bajas el código fuente lo vas a tener que compilar, la ventaja de esto es que podés modificar el código fuente del programa (y así modificar el programa en si mismo) como así también al compilarlo podes customizar parámetros para aprovechar al máximo la arquitectura de tu equipo.
+%Si te bajas el binario para el sistema operativo que tenés y la arquitectura que tenés la ventaja es que vas a poder ejecutar directamente el programa sin necesidad de compilar absolutamente nada. (viene precompilado). Lo bajás y lo ejecutas...
+{\footnotesize{\begin{itemize}
+\item{Independencia en Código Fuente :  los tipos primitivos de datos de Java tienen tamaño consistentes en todas las plataformas de desarrollo. Las bibliotecas de Java facilitan la escritura del código, que puede desplazar se plataforma a plataforma}
+\item{Independencia en Binario :  los archivos binarios (bytecodes) pueden ejecutarse en distintas plataformas sin necesidad de volver a compilar la fuente.}\\
+\textit {bytecodes : conjunto de instrucciones más abstracto que el código máquina (código intermedio), pero no son especificas a un procesador.}
+%El bytecode es un código intermedio más abstracto que el código máquina. Habitualmente es tratado como un fichero binario que contiene un programa ejecutable similar a un módulo objeto, que es un fichero binario producido por el compilador cuyo contenido es el código objeto o código máquina .
+\end{itemize}}}
+\end {itemize}}}}
+\end{frame}
+
+
+\subsection{Introducción a la Programación en Java}
+\begin{frame}{Ventajas de Java : Orientado a Objetos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin {itemize}
+\uncover<1->
+\item{Fomenta la reutilización y extensión del código.}
+\item {Permite crear sistemas más complejos.}
+\item {Relacionar el sistema al mundo real.}
+\item {Facilita la creación de programas visuales.}
+\item {Elimina redundancia a traves de la herencia y polimorfismo}
+%permite la modificacion de datos heredados
+%\item {Construcción de prototipos.}
+\item {Agiliza el desarrollo de software.}
+\item {Facilita el trabajo en equipo.}
+\item {Facilita el mantenimiento del software.}
+\item {Recolección de basura}
+%Recolección de basura: la recolección de basura o garbage collector es la técnica por la cual el entorno de objetos se encarga de destruir automáticamente, y por tanto desvincular la memoria asociada, los objetos que hayan quedado sin ninguna referencia a ellos. Esto significa que el programador no debe preocuparse por la asignación o liberación de memoria, ya que el entorno la asignará al crear un nuevo objeto y la liberará cuando nadie lo esté usando. En la mayoría de los lenguajes híbridos que se extendieron para soportar el Paradigma de Programación Orientada a Objetos como C++ u Object Pascal, esta característica no existe y la memoria debe desasignarse manualmente.
+%Programas flexibles y modulares , reutilización del código}}\\
+\end {itemize}}}}
+\end{frame}
+
+
+\subsection{Introducción a la Programación en Java}
+\begin{frame}{Ventajas de Java : Simplicidad}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin {itemize}
+\uncover<1->
+\item{En Java no hay punteros}
+\item {Las cadenas y los arreglos son objetos reales}
+\item {La administración de la memoria es automatica}
+%el programador no debe liberar memoria esto lo hace JVM mediante el recolector de basura lanzando un thread (hilos de codigo paralelos) de forma automatica
+\end {itemize}}}}
+\end{frame}
+
+
+\subsection{Introducción a la Programación en Java}
+\begin{frame}{Programar en Java}
+\ITZ{	
+\uncover<1->{ \ITT{1}{El ambiente de desarrollo Java}{\begin{itemize}
+\uncover<1->
+
+\item {Un compilador : genera los ficheros compilados en bytecode (en vez de generar código de maquina) (extensión \textbf{ *.class}) a partir del código fuente (extensión \textbf{ *.java}). El bytecode son instrucciones  independientes de la plataforma.} 
+\item  {Un interprete Java denominado \textit {Java Virtual Machine (JVM)}  : que interpreta el bytecode (código neutro) convirtiendo a código particular de la CPU utilizada, lo que permite ejecutar el programa. JVM es una aplicación que simula una computadora pero oculta el sistema operativo y el hardware subyacente. JVM es un programa nativo ejecutable en una plataforma especifica.}
+\item Java tiene la característica de ser al mismo tiempo compilado e interpretado.
+\end {itemize}}}}
+% se pueden obtener distintos compiladores o imterpretadores, recomendamos Kaffe como JVM para proyectos avanzados o de alto rendimiento, recomendamos Jikes como compilador de ByteCodes para Java, Jikes no es interpretado como el compilador proporcionado en el JDK de Sun Microsystems.
+\end{frame}
+
+\subsection{Introducción a la Programación Orientada a Objetos}
+\begin{frame}{Compilación y Ejecución}
+\GFXH{5cm}{compilacionEjecucion.pdf}
+{\textit {Figura extraída de : $http://profesores.fi\-b.unam.mx/carlos/java/java\_basico1\_1.html$}}
+\end{frame}
+
+\newcounter{saveenumi}
+
+\subsection{Introducción a la Programación en Java}
+\begin{frame}{Programar en Java}
+\ITZ{	
+\uncover<1-> { \ITT{1}{Kit de desarrollo Java (JDK) 1-2}{
+\uncover<1-> {\footnotesize{
+Contiene las herramientas y el conjunto programas y bibliotecas (Interfaces de programación de aplicaciones : APIs)  necesarias para desarrollar, compilar y ejecutar programas en Java. 
+\begin{enumerate}
+\item {\textbf{javac }: Es el compilador de Java. Se encarga de convertir el código fuente escrito en Java  a bytecode. Recibe como argumento todos los archivos de codigo fuente (con extension .java). Este comando no es parte de Java Runtine Environment (JRE) dado que JRE esta destinado unicamente a ejecutar código binario, no permite compilar. Ej: {\textit{javac Auto.java}}}
+\item {\textbf{java }: Es el intérprete de Java. Ejecuta el bytecode a partir de los archivos con extension .class. Recibe como argumento el nombre del binario ejecutable en formato bytecode sin la extension de archivo .class que identifica de manera visual un binario java. Este comando es parte de JRE y JDK. Ej: {\textit{java Auto}}}
+\end{enumerate}}
+% que ofrece: tipos de datos básicos, capacidades de entrada y salida y otras funciones de utilidad.
+ \setcounter{saveenumi}{\theenumi}
+%{Un gran numero de clases como por ejemplo para soporte de red, ejecución remota, seguridad, etc protocolos comunes de Internet y funciones para interfaz de usuario}
+}}}}
+\end{frame}
+
+
+\subsection{Introducción a la Programación en Java}
+\begin{frame}{Programar en Java}
+\ITZ{	
+\uncover<1-> { \ITT{1}{Kit de desarrollo Java (JDK) 2-2}{
+\uncover<1-> {\footnotesize{
+ \begin{enumerate}
+ \setcounter{enumi}{\thesaveenumi}
+% que ofrece: tipos de datos básicos, capacidades de entrada y salida y otras funciones de utilidad.
+\item {\textbf{jar }: Herramienta para trabajar con archivos JAR. Permite empaquetar las clases y archivos de Java para fabricar un único archivo contenedor de las aplicaciones, multimedia y
+gráficos. Es decir, comprimir el proyecto en un solo archivo de tipo JAR.  Este comando es parte solo de JDK.Ex: para crear un JAR  {\textit{jar cf Auto.jar Auto*}}, para extraer un JAR {\textit{jar xf jar-file}}}
+\item {\textbf{javadoc}: Crea documentación en formato HTML a partir de el código fuente y los comentarios.Ej: {\textit{javadoc Auto.java}}}
+\item {\textbf{jdb}: Debugger permite detener la ejecución del programa en un punto deseado, lo que ayuda la detección y corrección de errores. Ej: se debe compilar {\textit{javadoc Auto.java}} y luego {\textit{ jdb Auto}} } 
+% primero compilar con javac -g Autot.java 
+% jdb Autot
+%stop in Autot.main()
+%run
+%step para ejecutar linea a linea
+%stop in o stop at colocan breakpoint en una determinada linea
+%locals para ver las variables locales
+%list numero de linea para consultar comando
+%cont se ejecuta el programa y se sale de jdb
+% print y dump nos permiten acceder a campos de un objeto (print t1)
+\end {enumerate}
+%{Un gran numero de clases como por ejemplo para soporte de red, ejecución remota, seguridad, etc protocolos comunes de Internet y funciones para interfaz de usuario}
+}}}}}
+\end{frame}
+
+\subsection{Introducción a la Programación en Java}
+\begin{frame}{Programar en Java}
+\ITZ{	
+\uncover<1-> { \ITT{1}{Fases para el desarrollo de un programa}{\begin{enumerate}
+\uncover<1->
+ \footnotesize{
+\item {\textbf{Creación:} Usar un editor para escribir el código fuente. Guardarlo con extensión {\textbf {.java}}. Se pueden también usar entornos de desarrollo (IDEs)}
+\item {\textbf{Compilación:} se usa el comando {\textbf {javac}}. Ej compilación: {\textit {javac HelloWorld.java}}. El resultado de esta fase es un archivo {\textbf {.class}}
+}
+\item{\textbf{Cargar en memoria:} El cargador de memoria toma los archivos {\textbf {.class }}}
+\item{\textbf{Verificación del bytecode:} Verifica que los bytecode sean validos y no violen restricciones de seguridad.}
+\item{\textbf{Ejecución:} La JVM ejecuta los bytecode usando el comando {\textbf {java}}. Las JVM usan una combinación de interpretación y de {\textit compilación justo a tiempo (JIT).} La JVM analiza el código buscando las partes que se ejecutan con frecuencia, para traducirlas al lenguaje de maquina del computador, así cuando encuentra nuevamente el código lo ejecuta en lenguaje de maquina que es mas rápido. Así lo programas en java pasan por dos fases de compilación una para traducir el código fuente a bytecode y la otra para traducir el bytecode a lenguaje de maquina. Ej ejecución: {\textit {java HelloWorld}}}
+}
+%{Un gran numero de clases como por ejemplo para soporte de red, ejecución remota, seguridad, etc protocolos comunes de Internet y funciones para interfaz de usuario}
+\end{enumerate}}}}
+\end{frame}
+
+\section{Fundamentos}
+\subsection{Fundamentos}
+\begin{frame}{Plan de la sección Fundamentos de Java}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{ \footnotesize{\begin{itemize}
+\uncover<1->
+%{\item Enunciados y expresiones} 
+{\item Variables y tipos de datos} 
+{\item Definiciones basicas}
+{\item Comentarios} 
+{\item Literales} 
+{\item Expresiones y Operadores} 
+{\item Ejercicios Fundamentos}
+\end{itemize}}}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Mi primer programa}
+\lstinputlisting{./codigosEx/Hello.java}
+
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Variables y tipos de datos}
+\ITZ{	
+\uncover<1->{\ITT{1}{Identificadores}{
+\uncover<1-> {Los nombres de las clases, métodos y variables deben :
+\begin{itemize}
+\item {Empezar con una letra, subrayado (\_) o dólar (\$), no puede tener espacios ni comenzar por números. Ex : {\textit {\_var1}}, {\textit {varx}}, {\textit {MAX\_NUM}}, {\textit{\$var}}}
+\item {Después del primer carácter pueden usarse números.}
+\item {No puede coincidir con las palabras claves o reservadas.}
+\item {No hay un límite en el número de caracteres que pueden tener los identificadores. }
+\end{itemize}
+}}}}
+\end{frame}
+
+	
+\subsection{Fundamentos}
+\begin{frame}{Variables y tipos de datos}
+{\textbf {Palabras Claves de Java}}
+\GFXH{4.5cm}{palabrasClaves.pdf}
+\tiny{
+{\textbf{true, false, null} son palabras reservadas, por lo cual, tampoco pueden usarse como identificadores. }\\
+{\textit {Tabla de : $http://profesores.fi-b.unam.mx/carlos/java/java\_basico2\_3.html$}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Variables y tipos de datos}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{
+\uncover<1-> {Las variables deben tener :
+\begin{itemize}
+\item {Un tipo : que describa el tipo de dato que contiene}
+\item {Un identificador: para referir al dato que contiene}
+\item {Un valor}
+\end{itemize}
+}}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Variables y tipos de datos}
+\ITZ{	
+\uncover<1->{\ITT{1}{Tipos de Variables}{
+\uncover<1-> {Java tiene 3 tipos de variables: 
+\begin{itemize}
+\item {Variables de instancia: se usan para definir atributos o estados de un objeto en particular.}
+\item {Variables de clase: similares a las variables de instancia, la unica diferencia es que sus valores se aplican a todas las instancias de la clase.}
+\item {Variables locales: se utilizan y se declaran dentro de las definiciones de metodo o bloques, Ej:  contadores de indice de ciclos, temporales, etc. Al terminar la ejecución del bloque o metodo la variable deja de existir.}
+\end{itemize}
+{\textit{Java no tiene variables globales.}}
+}}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Clases de Variables}
+\ITZ{	
+\uncover<1->{\ITT{1}{Declaración de Variables}{
+\uncover<1-> {Para usar una variable primero hay que declararla con el tipo y el identificador (o nombre) de la variable.
+\lstinputlisting{./codigosEx/variables.java}
+\begin{itemize}
+\item {\textit{String:} es una clase que esta dentro de las bibliotecas de clases de Java.}
+\item {\textit{boolean:} es un tipo de dato real que puede ser true o false, los booleanos no son números en Java.}
+ \end{itemize}
+}}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Definiciones básicas Java}
+\textbf{Definir una clase}\\
+\lstinputlisting{./codigosEx/Auto.java}
+\tiny \textit{public}: la clase es accesible desde métodos de cualquier clase. Atributo que permite acceder a la clase desde clases e interfaces que estén en otros paquetes. 
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Definiciones básicas Java}
+\textbf{Definir variables}\\
+\lstinputlisting{./codigosEx/Autov.java}
+{\textit{Si bien, la declaración de variables puede ir en cualquier parte, habitualmente se declaran al inicio metodo o clase.}}
+% solo puede haber 1 clase publica por fichero fuente
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Definiciones básicas Java}
+\textbf{Definir variables}\\
+Es posible {\textbf{encadenar}} nombres de variables del mismo tipo
+\lstinputlisting{./codigosEx/Autoven.java}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Definiciones básicas Java}
+\textbf{Definir variables}\\
+También se le puede dar un {\textbf{valor inicial}} a las variables
+\lstinputlisting{./codigosEx/Autovenv.java}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Sintaxis básicas de Java}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin{itemize}
+\uncover<1->
+\item {\textbf{Comentario : }  Hay tres tipos de comentarios en Java
+\begin{itemize} 
+\item {// comentario de una linea}
+\item {/*comentario de mas de una linea */} 
+\item {/**comentarios para javadoc */ }
+\end{itemize}}
+\item {\textbf{Sentencia: } Es una linea de código terminada con punto y coma ";".}
+\item {\textbf{Bloque: } Es un conjunto de sentencias agrupadas entre llaves "\{\}". Los bloques pueden ser anidados}
+\end{itemize}
+}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Definiciones básicas Java}
+\textbf{Definir un método}: Arrancar el auto
+ \footnotesize{
+\lstinputlisting{./codigosEx/Autovm.java}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Rappels !}
+\begin{itemize}
+\item {Los archivos deben llamarse igual a la clase definida public con extensión .java}
+\item {La indentación no es importante para el compilador Java. Sin embargo la indentación facilita la lectura y comprensión.}
+\item {Java es sensible a las mayúsculas y minúsculas por lo cual, a1 es distinto de A1.}
+\end{itemize}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Rappels !}
+\ITZ{	
+\uncover<1->{\ITT{1}{Por Convención los nombre de : }{\begin{itemize}
+\uncover<1->
+\item {Las clases comienzan con una letra mayúscula : {\textit{ClasePrueba}}}
+\item {Los métodos comienzan con minúscula : {\textit{abrirPuerta}} }
+\item {Las variables empiezan por una letra minúscula : {\textit{nombreDato}} }
+\item {Si el nombres de la clase, metodo o varible esta compuesto por mas de una palabra, las palabras se ponen juntas y la inicial de la segunda, tercera....palabra se escribe con mayúsculas }
+\item {Las constantes se escriben en mayúsculas. Si tiene varias palabras se separan con $"_"$ : {\textit{MUN\_MAX}} }
+\end {itemize}}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Definiciones básicas Java}
+\textbf{Definir un nuevo método}: Mostrar atributos
+ \scriptsize{
+\lstinputlisting{./codigosEx/Autovm2.java}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Definiciones básicas Java}
+Para hacer algo con la clase \textit{Auto} se deberá crear una aplicación que la utilice o agregarle un método \textit{main}. Todas las aplicaciones deben tener el método main()
+\footnotesize{
+\lstinputlisting{./codigosEx/Automain.java}}
+\tiny  \textit{static}: atributo de la clase no del objeto. Almacena el mismo valor para todos los objetos de la clase. No es necesario crear un objeto para acceder al atributo. No se puede llamar a métodos no estáticos desde la misma clase (se necesita un objeto)
+
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Salida del programa}
+\GFXH{2cm}{./pics/salidaAuto.pdf}
+\end{frame}
+
+
+\subsection{Fundamentos}
+\begin{frame}{Explicación del código}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin{itemize}
+\uncover<1->
+\item {La linea : \textit{Auto a = new Auto();} crea una nueva instancia de la clase Auto y guarda una referencia de ella en a. Por lo general, no se opera directamente con las clases sino que se crean objetos y luego se llama a los metodos en esos objetos.}
+\item {Las lineas : \textit{a.marca = "Toyota Yaris";} y \textit{a.color="rojo";} son las variables de instancia para el objeto autot la crea una nueva instancia de la clase Autot y guarda una referencia de ella en a. }
+\item {Las lineas : \textit{a.showAtr();} y \textit{a.startMotor();} llama a los metodos \textit{showAtri}  y \textit{statrMotot} desde los objetos.
+}
+\end{itemize}
+}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Explicación del código}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin{itemize}
+\uncover<1->
+\item {La linea : \textit{Auto a = new Auto();} crea una nueva instancia de la clase Auto y guarda una referencia de ella en a. Por lo general, no se opera directamente con las clases sino que se crean objetos y luego se llama a los metodos en esos objetos.}
+\item {Las lineas : \textit{a.marca = "Toyota Yaris";} y \textit{a.color="rojo";} son las variables de instancia para el objeto autot la crea una nueva instancia de la clase Autot y guarda una referencia de ella en a. }
+\item {Las lineas : \textit{a.showAtr();} y \textit{a.startMotor();} llama a los metodos \textit{showAtri}  y \textit{statrMotot} desde los objetos.
+}
+\end{itemize}
+}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Tipos de variables}
+\ITZ{	
+\uncover<1->{\ITT{1}{Tipos enteros}{
+\uncover<1->{
+\begin{itemize}
+\item {byte : 8 bits $: -128 a 127$}
+\item {short : 8 bits  $: -32,768 a 32,767$}
+\item {int : 32 bits $: -2,147,483,648 a 2,147,483,647$ (en valores decimales : float)}
+\item {long : 64 bits $: -9223372036854775808 a 9223372036854775808$ (en valores decimales : double)}
+\end{itemize}
+Ademas de los tipo enteros y decimales, Java tiene {\textit{char}} para caracteres individuales (16 bits) y boolean para true y false.
+}}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Variables}
+\ITZ{	
+\uncover<1->{\ITT{1}{Asignación de variables}{
+\uncover<1->{
+\lstinputlisting{./codigosEx/variables.java}}}}
+\uncover<2->{\ITT{2}{Expresiones y operadores}{\begin{itemize}
+\uncover<2->{
+\item {Expresiones : enunciados que regresan un valor.}
+\item {Operadores : símbolos que se utilizan en expresiones.}
+\end{itemize}
+}}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Operadores}
+\ITZ{	
+\uncover<1->{\ITT{1}{Aritméticos}{\begin{itemize}
+\uncover<1->{
+\item {$+$ : Suma}
+\item {$ - $: Resta}
+\item {$*$ : Multiplicación}
+\item {$/$ : División}
+\item {$\%$ : Modulo}
+\end{itemize}
+}}}}
+\end{frame}
+
+
+\subsection{Fundamentos}
+\begin{frame}{Preguntas y ejercicios del curso}
+\ITZ{	
+\uncover<1->{\ITT{1}{}{\begin{itemize}
+\uncover<1->
+\item {Java es un lenguaje compilado o interpretado?}
+\item {Explique las etapas de producción de un programa, precisando los comandos necesarios}
+\item {Escriba un programa que utilice 3 variables x,y,z de tipo int y 3 variables a,b,c de tipo float. Efectue los siguientes cálculos : 
+\begin{enumerate}
+\item {$z=x+y$}
+\item {$z=x-y$}
+\item {$z=x*y$}
+\item {$z=x/y$}
+\item {$c=a-b$}
+\item {$c=a/b$}
+\end{enumerate}
+}
+\item Prueba el programa con diferentes valores de a,b,d,e.
+\item Prueba con valores $a<b$, que observa en la division?
+\end{itemize}
+}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Variables}
+\ITZ{	
+\uncover<1->{\ITT{1}{Asignación de variables}{
+\uncover<1->{
+\tiny {\lstinputlisting{./codigosEx/AritTest.java}}}
+{\textit{$+$ concatena la cadena de caracteres en el System.out.println}}}}}
+\end{frame}
+
+
+\subsection{Fundamentos}
+\begin{frame}{Operadores}
+\ITZ{	
+\uncover<1->{\ITT{1}{Asignación}{\begin{itemize}
+\uncover<1->{
+\item {$x+=y$ : $x=x+y$}
+\item {$x-=y $: $x=x-y$}
+\item {$x*=y$ : $x=x*y$}
+\item {$x/=y$ : $x=x/y$}
+\item {$x\%$ : $x=x\%y$}
+\end{itemize}
+}}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Incrementos y decrementos}
+\ITZ{	
+\uncover<1->{\ITT{1}{Asignación}{
+\uncover<1->{
+{ \footnotesize{\begin{itemize}
+\item {$y=x++$}
+\item {$y=++x$}
+\end{itemize}}
+Cual es la diferencia?}
+\tiny {\lstinputlisting{./codigosEx/IncreTest.java}
+}}}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Operadores}
+\ITZ{	
+\uncover<1->{\ITT{1}{Comparación}{
+\uncover<1->{
+\begin{itemize}
+\item {$==$ : igual}
+\item {$ != $: diferente}
+\item {$ < $: menor que }
+\item {$ <= $: menor o igual que}
+\item {$ > $: mayor que }
+\item {$ >= $: mayor o igual que}
+\end{itemize}
+}}}}
+\end{frame}
+
+\subsection{Fundamentos}
+\begin{frame}{Operadores}
+\ITZ{	
+\uncover<1->{\ITT{1}{Lógicos}{
+\uncover<1->{
+\begin{itemize}
+\item {$ |$ o $||$ : OR.  Usando solo un operador $|$ se evaluarán siempre ambas expresiones, en cambio, usando los dos $||$ si el lado izquierdo de la expresion es verdadero la expresion será verdadera, nunca evaluará el lado derecho.}
+\item {$ \&$ o $ \&\& $: AND. Usando solo un operador $ \& $ se evaluarán siempre ambas expresiones, en cambio,  usando los dos $\&\& $ si el lado izquierdo de la expresion es falso la expresion será falsa, nunca evaluará el lado derecho.}
+\item {$\wedge$: XOR }
+\item {$ ! $: NOT }
+\end{itemize}
+}}}}
+\end{frame}
+
+
+%\section{Objetos}
+%\subsection{Objetos}
+%\begin{frame}{Plan de la sección Objetos}
+%\ITZ{	
+%\uncover<1->{\ITT{1}{}{\begin{itemize}
+%\uncover<1->
+%\item {Objetos}
+%{\footnotesize{\begin {itemize}
+%\item {Crear nuevos Objetos}
+%\item {Llamar a Metodos}
+%\item {Biblioteca de clase Java}
+%\item {Ejercicio de Objetos}
+%\end {itemize}}}
+%\end{itemize}}}}
+%\end{frame}
+
+
+

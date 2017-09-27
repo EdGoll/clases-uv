@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=nombre
+comment0.target=Alumno(String)
+comment1.params=valor
+comment1.target=void\ setNota(double)
+comment2.target=double\ getNota()
+numComments=3

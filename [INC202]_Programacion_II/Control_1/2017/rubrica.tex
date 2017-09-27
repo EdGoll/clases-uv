@@ -1,0 +1,82 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,blue,draw,inner sep=.5pt] (char) {#1};}}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+\begin{center}
+    {\Large  Control 1 - Programaci\'on II} \\
+    \emph{\small Prof. Eduardo Godoy} \\
+%    \emph{\small Ayud. Juan Carlos Tapia} \\
+    \emph{\scriptsize 2do semestre, 2017}
+\end{center}
+\vspace*{-35pt}
+\begin{center}
+    \rule{1\textwidth}{.3pt}
+\end{center}
+\vspace*{-42pt}
+\begin{center}
+    \rule{1\textwidth}{2pt}
+\end{center}
+
+
+    \begin{table}[!ht]
+       {\scriptsize
+        \begin{center}
+             \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}\hline
+                \multicolumn{4}{|c|}{\textbf{\textquestiondown C\'omo ser\'e evaluado en el control 1?} } \\ \hline
+                \multicolumn{1}{|c|}{\textbf{T\'opico}} &
+                \multicolumn{1}{c|}{\textbf{Logrado}} &
+                \multicolumn{1}{c|}{\textbf{Medianamente logrado}} &
+                \multicolumn{1}{c|}{\textbf{No logrado}} \\ \hline
+                %
+                1. Creaci\'on de Clase Pelicula &
+                \emph{25pts} Crea la clase at\'omica Pelicula con sus atributos/m\'etodos. &
+                \emph{15pts} Crea la clase at\'omica Pelicula sin  atributos o sin todos los m\'etodos necesarios para el problema. &
+                \emph{0pts} No crea la clase at\'omica Alumno. \\
+                &  Atributo: nombre, duraci\'on y taquilla. & & \\
+                & M\'etodos: gets y sets.  & & \\ \hline
+                %
+                2. Construir clase ListaPelicula y sus m\'etodos &
+                \emph{40pts} Define e implementa correctamente la clase ListaPelicula, sus atributos y m\'etodos: &
+                \emph{20pts} Define algunos atributos o algunos m\'etodos, pero no todos los necesarios para el problema. &
+                \emph{ 0pts} No define ni los atributos ni m\'etodos. \\
+                & Atributos: listas, tama\~no, l\'imites, etc. & & \\
+                & M\'etodos: \emph{20pts} Agregar, \emph{10pts} mostrar, \emph{5pts} reporteGancia, \emph{5pts} buscarTiempoMayor.  & & \\ \hline
+                %
+                3. Construir clase MainPelicula y sus m\'etodos &
+                \emph{10pts} Define la clase con el m\'etodo principal. &
+                \emph{  5pts} Define el m\'etodo principal en la misma clase. &
+                \emph{  0pts} No define el m\'etodo principal. \\ \hline
+                %
+                4. Paradigma Orientaci\'on a Objetos  &
+                \emph{25pts} Resuelve el problema utilizando el POO. &
+                \emph{10pts} Utiliza parte del POO para resolver el problema. &
+                \emph{  0pts} No utiliza el POO para dar soluci\'on al problema.\\ \hline
+                %
+                Total m\'aximo puntaje pregunta 2 &
+                \emph{100pts} &
+                \emph{50pts} &
+                \emph{  0pts} \\ \hline
+            \end{tabular}
+        \end{center}}
+     \end{table}
+\end{document}

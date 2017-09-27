@@ -1,0 +1,195 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,blue,draw,inner sep=.5pt] (char) {#1};}}
+\usepackage{listings}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{gray},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=none,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Java,                 % the language of the code
+  otherkeywords={else},           % if you want to add more keywords to the set
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in             
+\headheight = 0.0 in            
+\headsep = 0.0 in
+            
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+\begin{center}
+    {\Large Pauta Certamen 1, Programaci\'on II} \\
+    \emph{\small Prof. Rodrigo Olivares} \\
+    \emph{\scriptsize Noviembre 8, 2016}
+\end{center}
+\vspace*{-35pt}
+\begin{center}
+    \rule{1\textwidth}{.3pt}
+\end{center}
+\vspace*{-42pt}
+\begin{center}
+    \rule{1\textwidth}{2pt}
+\end{center}
+
+{ \scriptsize
+
+\begin{enumerate}    
+    
+    \item \emph{30pts.} De las siguentes afirmaciones, encierre en un c\'irculo la o las alternativas correctas.
+
+    \begin{multicols}{2}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[i.] Algunos enfoques de la orientaci\'on a objeto son:
+        \item[\circled{(a)}] El enfoque reusable.
+        \item[\circled{(b)}] El enfoque abstracto.
+        \item[(c)] El enfoque imperativo.
+        \item[(d)] El enfoque procedural.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[ii.] En cuanto a la programaci\'on orientada a objeto (POO):
+        \item[(a)] Se apoya en el paradigma estructural.
+        \item[(b)] Se base en la interacci\'on de funciones.
+        \item[\circled{(c)}] Proporciona herramientas para modelar el mundo real.
+        \item[(d)] Es una propiedad de los lenguajes orientados a objetos.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[iii.] Una clase es: 
+        \item[(a)] Una colecci\'on de objetos.
+        \item[(b)] Una herencia del mundo real.
+        \item[\circled{(c)}] Una categorizaci\'on de objetos.
+        \item[(d)] Un puntero a memoria.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[iv.] Respecto a una clase:
+        \item[\circled{(a)}] Se declaran utilizando la palabra resevada class.
+        \item[\circled{(b)}] Debe tener el mismo nombre que el archivo.
+        \item[(c)] Se declaran static los atributos de miembros del objeto.
+        \item[(d)] Todas deben incluir el m\'etodo main.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[v.] Respecto a una clase:
+        \item[\circled{(a)}] Puede o no tener atributos.
+        \item[\circled{(b)}] Puede o no tener m\'etodos.
+        \item[\circled{(c)}] Puede o no tener constructor.
+        \item[(d)] Puede o no tener un nombre.
+        \item[(e)] Puede o no tener un tipo.
+    \end{enumerate}
+    
+    \begin{enumerate}[label=(\alph*)]
+        \item[vi.] Un objeto es: 
+        \item[(a)] Una categorizaci\'on de la clase.
+        \item[\circled{(b)}] La instancia de una clase.
+        \item[\circled{(c)}] Una abstracci\'on del mundo real.        
+        \item[(d)] Un m\'etodo de interaci\'on entre clases. 
+        \item[(e)] Siempre est\'atico.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[vii.] El principio de abstracci\'on: 
+        \item[(a)] Es una t\'ecnica que protege el estado de una entidad.
+        \item[\circled{(b)}] Es parte del paradigma de orientaci\'on a objeto.
+        \item[(c)] En Java, se logra utilizando los modificadores de acceso.
+        \item[(d)] Es absorber el conocimiento de una entidad.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[viii.] Respecto los constructores:
+        \item[(a)] Son declarados private
+        \item[(b)] Deben ser m\'etodos de tipo void.
+        \item[\circled{(c)}] Deben ser normbrados igual que las clases.
+        \item[(d)] El compilador siempre crea el constructor vac\'io.
+        \item[\circled{(e)}] Se utiliza para instanciar objetos.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[ix.] El polimorfismo: 
+        \item[(a)] Una funcionalidad implementada con distintos nombres.
+        \item[\circled{(b)}] El mismo nombre implementa distintas funcionalidades.
+        \item[(c)] Es una caracter\'istica de Java.
+        \item[\circled{(d)}] Es una caracter\'istica de POO.
+        \item[(e)] Un ejemplo es el s\'imbolo $\rightarrow$.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[x.] El met\'odo \emph{main}:
+        \item[\circled{(a)}] Debe ser void.
+        \item[\circled{(b)}] Debe ser static.
+        \item[\circled{(c)}] Debe incluir argumentos de entrada.
+        \item[(d)] Debe retornar un valor.
+        \item[\circled{(e)}] Debe incluirse en un programa.
+    \end{enumerate}
+
+\end{multicols}
+
+\newpage 
+
+/************************ \textbf{Jugador.java} ************************/
+
+\lstinputlisting[caption={}]{certamen/Jugador.java}
+
+/************************ \textbf{Equipo.java} ************************/
+
+\lstinputlisting[caption={}]{certamen/Equipo.java}
+
+/************************ \textbf{Liga.java} ************************/
+
+\lstinputlisting[caption={}]{certamen/Liga.java}
+
+/************************ \textbf{LigaImp.java} ************************/
+
+\lstinputlisting[caption={}]{certamen/LigaImp.java}
+
+\end{enumerate}
+
+}
+
+\end{document} 

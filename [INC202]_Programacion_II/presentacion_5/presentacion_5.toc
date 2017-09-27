@@ -1,0 +1,9 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Threads}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Introducci\'on}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Creaci\'on de threads}{13}{0}{1}
+\beamer@subsectionintoc {1}{3}{Ciclo de vida de un thread}{30}{0}{1}
+\beamer@subsectionintoc {1}{4}{Sincronizaci\'on}{37}{0}{1}
+\beamer@subsectionintoc {1}{5}{Prioridades}{47}{0}{1}
+\beamer@subsectionintoc {1}{6}{Grupos de threads}{52}{0}{1}
