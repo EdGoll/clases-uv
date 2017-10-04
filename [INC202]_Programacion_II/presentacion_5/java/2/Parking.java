@@ -1,6 +1,6 @@
 public class Parking {
 
-    protected int espacios;
+    protected int espaciosDisponibles;
     protected int capacidad;
 
     public Parking(int n) {
@@ -10,11 +10,11 @@ public class Parking {
     public synchronized void entra() {
         try {
             System.out.println("Entrando");
-            while (espacios == 0) {
+            while (espaciosDisponibles == 0) {
                 System.out.println("Esperando");
                 wait();
             }
-            espacios--;
+            espaciosDisponibles--;
             notifyAll();
             System.out.println("Entro");
         } catch (InterruptedException ex) {
@@ -25,11 +25,11 @@ public class Parking {
     public synchronized void sale() {
         try {
             System.out.println("Saliendo");
-            while (espacios == capacidad) {
+            while (espaciosDisponibles == capacidad) {
                 System.out.println("Esperando");
                 wait();
             }
-            espacios++;
+            espaciosDisponibles++;
             notifyAll();
             System.out.println("Salio");
         } catch (InterruptedException ex) {

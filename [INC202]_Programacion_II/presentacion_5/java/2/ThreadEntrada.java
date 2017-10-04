@@ -6,7 +6,7 @@ public class ThreadEntrada extends Thread {
         this.parking = parking;
     }
 
-    @Override
+
     public void run() {
         while (true) {
             parking.entra();
