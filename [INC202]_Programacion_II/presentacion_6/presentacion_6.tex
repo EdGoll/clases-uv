@@ -23,16 +23,16 @@
 
 \author[Rodrigo Olivares]
 {
-	Rodrigo Olivares \\
+	Profesor: Eduardo Godoy \\
 	\vspace{0.5mm}
-	Mg. en Ingenier\'ia Inform\'atica \\
+	Ingeniero en Inform\'atica \\
 	\vspace{0.5mm}
-	\texttt{\normalsize rodrigo.olivares@uv.cl}
+	\texttt{\normalsize eduardo.gl@gmail.com}
 }
 
 \institute[Universidad de Valpara\'iso]
 
-%\date{$1^{er}$ Semestre de 2016} 
+%\date{$1^{er}$ Semestre de 2016}
 
 \subject{Programaci\'on 2}
 
@@ -72,7 +72,7 @@
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Introducci\'on}
-		
+
 		\begin{block}{Introducci\'on}
             Hasta ahora hemos desarrollado programas que usan la consola para interactuar con el usuario. Esa forma de interfaz de usuario es muy simple y nos ha permitido centrarnos en todo aquello que tiene que ver tan s\'olo con la programaci\'on orientada a objetos con el lenguaje Java, sin tener que tratar al mismo tiempo el manejo de ventanas, botones y otros elementos similares.
         \end{block}
@@ -81,7 +81,7 @@
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Antes de comenzar}
-		
+
 		\begin{alertblock}{Definici\'on}
             La \textbf{interfaz gr\'afica de usuario} es un programa que act\'ua de intermediario entre el usuario y otro programa, utilizando un conjunto de componentes gr\'aficos para representar la informaci\'on y las acciones disponibles. Su principal uso, consiste en proporcionar un entorno visual sencillo para permitir la comunicaci\'on con el sistema operativo de una computador.
         \end{alertblock}
@@ -90,7 +90,7 @@
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Antes de comenzar}
-		
+
 		\begin{block}{Introducci\'on}
             Normalmente las acciones se realizan mediante manipulaci\'on directa, para facilitar la interacci\'on del usuario con la computadora. Surge como evoluci\'on de las interfaces de l\'inea de comandos que se usaban para operar los primeros sistemas operativos y es pieza fundamental en un entorno gr\'afico. Como ejemplos de interfaz gr\'afica de usuario, cabe citar los entornos de escritorio Windows, el X-Window de GNU/Linux o el de Mac OS X.
         \end{block}
@@ -99,7 +99,7 @@
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Antes de comenzar}
-		
+
 		\begin{block}{Introducci\'on}
             Las aplicaciones son conducidas por \textbf{eventos} y se desarrollan haciendo uso de las clases que para ello nos ofrece la API de Java. Esta API nos proporciona una biblioteca de clases para la manipulaci\'on de interfaces gr\'aficas de usuario (en realidad son dos; \textbf{AWT} y \textbf{Swing}).
         \end{block}
@@ -111,12 +111,12 @@
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Antes de comenzar}
-		
+
 		\begin{block}{Introducci\'on}
             La estructura b\'asica de la biblioteca gira en torno a \textbf{componentes} y \textbf{contenedores}. Los contenedores contienen componentes y son componentes a su vez, de forma que los eventos pueden gestionarse tanto en contenedores como en componentes.
         \end{block}
 	\end{frame}
-    
+
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Antes de comenzar}
@@ -134,26 +134,26 @@
 	\end{frame}
 
     \section{Caracter\'isticas}
-    
+
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas}
-		
-		Algunas caracter\'isticas de Swing. 
+
+		Algunas caracter\'isticas de Swing.
 		{\scriptsize
 		\begin{itemize}
-		    \item[$\rightarrow$] Paquete de Java para la generaci\'on del GUI en aplicaciones reales. 
+		    \item[$\rightarrow$] Paquete de Java para la generaci\'on del GUI en aplicaciones reales.
 		    \item[$\rightarrow$] Disponible como paquete externo en Java 1.1 e integrado desde Java 1.2.
 		    \item[$\rightarrow$] Es una de las API de JFC (Java Foundation Classes): AWT, Java 2D, Accessibility, Drag and Drop, Swing, etc.
-		    \item[$\rightarrow$] Escrito totalmente en Java. 
+		    \item[$\rightarrow$] Escrito totalmente en Java.
 		    \item[$\rightarrow$] No reemplaza a AWT. (Se apoya sobre AWT y a\~nade JComponents).
 		    \item[$\rightarrow$] Utiliza el modelo de eventos de Java 1.1.
 		    \item[$\rightarrow$] Elecci\'on entre diferentes aspectos (look \& feel).
 		    \item[$\rightarrow$] Arquitectura Model-View-Controller (MVC).
 		    \item[$\rightarrow$] Nuevos componentes (\'arboles, tablas, frames internos, \'iconos, bordes, tooltips, etc).
 		\end{itemize}}
-	\end{frame}    
-    
+	\end{frame}
+
     \begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Jerarqu\'ia de clases}
@@ -165,7 +165,7 @@
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Jerarqu\'ia de clases}
-		
+
 		{\scriptsize
 		\begin{itemize}
 		    \item[$\rightarrow$] \textbf{Component}: superclase de todas las clases de interfaz gr\'afica.
@@ -185,7 +185,7 @@
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Jerarqu\'ia de clases}
-		
+
 		Categor\'ias de clases
 		\begin{itemize}
 		    \item[\checkmark] Contenedores:
@@ -203,7 +203,7 @@
 		    \item[\checkmark] Clases de soporte:
 		    \begin{itemize}
         		    \item[$\rightarrow$] Graphics, Color, Font, etc.
-        		\end{itemize}        		
+        		\end{itemize}
 		\end{itemize}
 	\end{frame}
 
@@ -218,8 +218,8 @@
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Jerarqu\'ia de clases}
-		
-		Contenedores de alto nivel: 
+
+		Contenedores de alto nivel:
 		\begin{itemize}
 		    \item[\checkmark] \textbf{JFrame}
 		    \begin{itemize}
@@ -228,10 +228,10 @@
 		    \item[\checkmark] \textbf{JDialog}
 		    \begin{itemize}
         		    \item[$\rightarrow$] Ventanas de interacci\'on con el usuario.
-        		\end{itemize}        		
+        		\end{itemize}
 		\end{itemize}
-		
-		Contenedores intermedios: 
+
+		Contenedores intermedios:
 		\begin{itemize}
 		    \item[\checkmark] \textbf{JPanel}
 		    \begin{itemize}
@@ -240,7 +240,7 @@
 		    \item[\checkmark] \textbf{JScrollPanel}
 		    \begin{itemize}
         		    \item[$\rightarrow$] Incluye barras de desplazamiento.
-        		\end{itemize}        		
+        		\end{itemize}
 		\end{itemize}
 	\end{frame}
 
@@ -255,7 +255,7 @@
     \begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Esquema de aplicaci\'on en Swing}
-		
+
     		\begin{center}
             	\fbox{\fbox{\includegraphics[scale=.68]{images/Gui00.png}}}
 		\end{center}
@@ -264,8 +264,8 @@
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Esquema de aplicaci\'on en Swing}
-		
-		Modo 1: 
+
+		Modo 1:
 		\begin{itemize}
 		    \item[\checkmark] 1. Obtenemos el panel de contenido del frame:
 		    \begin{itemize}
@@ -274,9 +274,9 @@
 		    \item[\checkmark] 2. A\~nadimos componentes a dicho panel:
 		    \begin{itemize}
         		    \item[$\rightarrow$] panel.add(\emph{\textbf{unComponente}});
-        		\end{itemize}        		
+        		\end{itemize}
 		\end{itemize}
-		
+
 		Modo 2:
 		\begin{itemize}
 		    \item[\checkmark] A partir de 1.5 tambi\'en se puede hacer directamente sobre el Jframe:
@@ -289,12 +289,12 @@
     \begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Esquema de aplicaci\'on en Swing}
-		
+
     		\begin{center}
             	\fbox{\fbox{\includegraphics[scale=.68]{images/Gui01.png}}}
 		\end{center}
 	\end{frame}
-	
+
     \begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Esquema de aplicaci\'on en Swing}
@@ -306,8 +306,8 @@
 		    \item[?] 3. Sin herencia de JFrame con Container.
 		    \item[?] 4. Sin herencia de JFrame sin Container.
 		\end{itemize}
-	\end{frame}	
-	
+	\end{frame}
+
     \begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Administradores de disposici\'on}
@@ -318,19 +318,19 @@
 		    \item[] panel.add(unBoton);
             \item[$\rightarrow$] El efecto de \textbf{add}() depende del esquema de colocaci\'on o disposici\'on (layout) del contenedor que se use.
         \end{itemize}
-        
+
         \begin{itemize}
             \item[$\rightarrow$] Existen diversos esquemas de disposici\'on: \textbf{FlowLayout}, \textbf{BorderLayout}, \textbf{GridLayout}, etc.
             \item[$\rightarrow$] Los objetos contenedores se apoyan en objetos \textbf{LayoutManager} (administradores de disposici\'on).
-            \item[$\rightarrow$] Clases m\'as usadas que implementa la interfaz LayoutManager: 
+            \item[$\rightarrow$] Clases m\'as usadas que implementa la interfaz LayoutManager:
             \begin{itemize}
     		        \item[\checkmark] \textbf{FlowLayout}: un componente tras otro de izquierda a derecha.
                 \item[\checkmark] \textbf{BorderLayout}: 5 regiones en el contenedor (North, South, Center, West \& Est).
                 \item[\checkmark] \textbf{GridLayout}: contenedor en filas y columnas (grilla).
             \end{itemize}
 		\end{itemize}
-	\end{frame}		
-	
+	\end{frame}
+
     \begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Administradores de disposici\'on}
@@ -338,15 +338,15 @@
 		\begin{itemize}
 		    \item[$\rightarrow$] Para organizar el contenedor se utiliza el m\'etodo \textbf{setLayout}():
 		    \item[] \textbf{public} \textbf{void} \textbf{setLayout}(\textbf{LayoutManager} mgr)
-		    \item[] 
+		    \item[]
 		    \item[$\rightarrow$] \textbf{setLayout}(new \textbf{BorderLayout}());
 		    \item[$\rightarrow$] \textbf{setLayout}(new \textbf{FlowLayout}());
 		    \item[$\rightarrow$] \textbf{setLayout}(new \textbf{GridLayout}(3,4));
-		    \item[] 
+		    \item[]
 		    \item[\checkmark] El layout manager elige la mejor posici\'on y tama\~no de cada componente de acuerdo al espacio disponible.
         \end{itemize}
 	\end{frame}
-	
+
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Administradores de disposici\'on}
@@ -362,7 +362,7 @@
 		    \end{center}
 		\end{multicols}
 	\end{frame}
-	
+
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Administradores de disposici\'on - Flow}
@@ -370,8 +370,8 @@
 	    \begin{center}
 	        	\fbox{\fbox{\includegraphics[scale=.52]{images/flow-code.png}}}
 	    \end{center}
-	\end{frame}	
-	
+	\end{frame}
+
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Administradores de disposici\'on - Border}
@@ -379,14 +379,14 @@
 	    \begin{center}
 	        	\fbox{\fbox{\includegraphics[scale=.52]{images/border-code.png}}}
 	    \end{center}
-	\end{frame}		
-	
+	\end{frame}
+
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Administradores de disposici\'on - Grid}
 
 	    \begin{itemize}
-		    \item[$\rightarrow$] Crea una zona de \textbf{filas} $\times$ \textbf{columnas} componentes y \'estos se van acomodando de izquierda a derecha y de arriba a abajo. 
+		    \item[$\rightarrow$] Crea una zona de \textbf{filas} $\times$ \textbf{columnas} componentes y \'estos se van acomodando de izquierda a derecha y de arriba a abajo.
 		    \item[$\rightarrow$] \textbf{GridLayout} tiene otro constructor que permite establecer la separaci\'on (en pixels) ente los componentes, que es cero con el primer constructor.
 		    \item[] As\'i, por ejemplo:
             	    \begin{itemize}
@@ -394,8 +394,8 @@
 		    	    \end{itemize}
 		    \item[$\rightarrow$] crea una organizaci\'on de 3 filas y 4 columnas donde los componentes quedan a dos pixels de separaci\'on.
         \end{itemize}
-	\end{frame}		
-	
+	\end{frame}
+
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Administradores de disposici\'on - Grid}
@@ -403,9 +403,9 @@
 	    \begin{center}
 	        	\fbox{\fbox{\includegraphics[scale=.52]{images/grid-code.png}}}
 	    \end{center}
-	\end{frame}		
-	
-	
+	\end{frame}
+
+
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Paneles como contenedores}
@@ -415,8 +415,8 @@
 	    \begin{center}
 	        	\includegraphics[scale=.37]{images/panel-container.png}
 	    \end{center}
-	\end{frame}			
-	
+	\end{frame}
+
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Ejercicio}
@@ -426,8 +426,8 @@
 	    \begin{center}
 	        	\includegraphics[scale=.35]{images/calculadora.png}
 	    \end{center}
-	\end{frame}		
-	
+	\end{frame}
+
 { % all template changes are local to this group.
     \usebackgroundtemplate{\includegraphics[scale=.425]{images/Gui04.png}}
     \setbeamertemplate{navigation symbols}{}
@@ -443,15 +443,15 @@
 
 	    \begin{itemize}
 		    \item[$\rightarrow$] Acciona componentes (\textbf{ActionEvent}).
-		    \item[] El usuario pulsa un bot\'on. 
-		    \item[] El usuario termina de introducir un texto en un campo y presiona Enter. 
+		    \item[] El usuario pulsa un bot\'on.
+		    \item[] El usuario termina de introducir un texto en un campo y presiona Enter.
 		    \item[] El usuario selecciona un elemento de una lista pulsando el preferido (o de un men\'u).
 		    \item[] Pulsa o suelta botones del rat\'on (\textbf{MouseEvent}).
 		    \item[$\rightarrow$] Minimiza, cierra o manipula una ventana (\textbf{WindowEvent}).
 		    \item[$\rightarrow$] Escribe con el teclado (\textbf{KeyEvent}).
 		    \item[$\rightarrow$] Descubre porciones de ventanas (\textbf{PaintEvent}).
         \end{itemize}
-	\end{frame}	
+	\end{frame}
 
 	\begin{frame}
 		\frametitle{Swing}
@@ -469,13 +469,13 @@
         		    \item[\checkmark] Teclas adicionales pulsadas por el usuario, como la tecla \emph{Control}, la tecla de cambio a may\'usculas (\emph{shift}), etc.
 	    	    \end{itemize}
         \end{itemize}
-	\end{frame}	
+	\end{frame}
 
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Intereacci\'on con el usuario - Acciones}
         {\scriptsize
-        \begin{tabular}{p{6cm}p{2.5cm}p{2.5cm}} \hline 
+        \begin{tabular}{p{6cm}p{2.5cm}p{2.5cm}} \hline
             \textbf{Acci\'on} & \textbf{Objeto origen} & \textbf{Tipo de evento} \\ \hline
             \multirow{2}{*}{Pulsar un bot\'on} & \multirow{2}{*}{JButton} & \multirow{2}{*}{ActionEvent} \\ & & \\ \hline
             \multirow{2}{*}{Cambio del texto} & \multirow{2}{*}{JTextComponent} & \multirow{2}{*}{TextEvent} \\ & & \\ \hline
@@ -491,17 +491,17 @@
             \multirow{2}{*}{Mover la barra de desplazamiento} & \multirow{2}{*}{JScrollBar} & \multirow{2}{*}{AdjustmentEvent} \\ & & \\ \hline
             \multirow{2}{*}{Abrir, minimizar, maximizar o cerrar la ventana} & \multirow{2}{*}{JWindow} & \multirow{2}{*}{WindowEvent} \\ & &\\ \hline
         \end{tabular}}
-	\end{frame}	
+	\end{frame}
 
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Caracter\'isticas - Intereacci\'on con el usuario - Ejemplo}
-        
+
         Al pulsar el bot\'on Copiar, se debe copiar el valor del cuadro ''Valor'' en el cuadro ''Copia''.
         \begin{center}
 	        	\includegraphics[scale=.35]{images/copia.png}
 	    \end{center}
-	\end{frame}	
+	\end{frame}
 
 { % all template changes are local to this group.
     \usebackgroundtemplate{\includegraphics[scale=.4]{images/Gui05.png}}
@@ -518,7 +518,7 @@
         \begin{center}
 	        	\includegraphics[scale=.45]{images/colores.png}
 	    \end{center}
-	\end{frame}	
+	\end{frame}
 
 { % all template changes are local to this group.
     \usebackgroundtemplate{\includegraphics[scale=.35]{images/Gui06.png}}
@@ -540,7 +540,7 @@
 		    \item[\checkmark] \textbf{JCheckBox}: Especializaci\'on de \emph{JToggleButton} que implementa una casilla de verificaci\'on. Bot\'on con estado interno, que cambia de apariencia de forma adecuada seg\'un si est\'a o no est\'a seleccionado
 		    \item[\checkmark] \textbf{JRadioButton}: Especializaci\'on de \emph{JToggleButton} que tiene sentido dentro de un mismo grupo de botones (ButtonGroup) que controla que s\'olamente uno de ellos est\'a seleccionado.
 		\end{itemize}
-	\end{frame}	
+	\end{frame}
 
     \begin{frame}
 		\frametitle{Swing}
@@ -562,8 +562,8 @@
         		    \item[] Implementar el m\'etodo \textbf{actionPerformed}(\textbf{ActionEvent} e).
 	    	    \end{itemize}
 		\end{itemize}
-	\end{frame}	
-	
+	\end{frame}
+
 	\begin{frame}
 		\frametitle{Swing}
 		\framesubtitle{Componentes - JButton}
@@ -571,7 +571,7 @@
         \begin{center}
 	        	\includegraphics[scale=.45]{images/ejemplo-jbutton.png}
 	    \end{center}
-	\end{frame}		
+	\end{frame}
 
     \begin{frame}
 		\frametitle{Swing}
@@ -586,7 +586,7 @@
         		    \item[] \textbf{JLabel}(Icon icon, int horizontalAlignment)
 	    	    \end{itemize}
 		\end{itemize}
-	\end{frame}	
+	\end{frame}
 
     \begin{frame}
 		\frametitle{Swing}
@@ -595,7 +595,7 @@
         \begin{center}
 	        	\includegraphics[scale=.45]{images/ejemplo-jlabel.png}
 	    \end{center}
-	\end{frame}	
+	\end{frame}
 
     \begin{frame}
 		\frametitle{Swing}
@@ -613,7 +613,7 @@
 	    	    \item[$\rightarrow$] Obtener texto: String str = text1.getText();
 	    	    \item[$\rightarrow$] Agregar al Panel: p1.add(text1);
 		\end{itemize}
-	\end{frame}	
+	\end{frame}
 
     \begin{frame}
 		\frametitle{Swing}
@@ -631,12 +631,12 @@
 	    	    \item[$\rightarrow$] Implementar el m\'etodo \textbf{itemStateChanged}(ItemEvent e)
 	    	    \item[] \textbf{class OyenteItem implements} ItemListener \{
 	    	    \item[] \hspace{10pt} \textbf{public void} itemStateChanged(\textbf{ItemEvent} e) \{
-            \item[] \hspace{10pt} ...	    	    
+            \item[] \hspace{10pt} ...
             \item[] \hspace{10pt}\}
             \item[] \}
 		\end{itemize}
-        
-	\end{frame}	
+
+	\end{frame}
 
     \begin{frame}
 		\frametitle{Swing}
@@ -656,10 +656,10 @@
                 \item[] \hspace{30pt} ...
                 \item[] \hspace{20pt} \}
                 \item[] \hspace{10pt} \}
-                \item[] \}   
+                \item[] \}
             \end{itemize}
 		\end{itemize}
-	\end{frame}	
+	\end{frame}
 
     \begin{frame}
 		\frametitle{Swing}
@@ -668,7 +668,7 @@
         \begin{center}
 	        	\includegraphics[scale=.7]{images/dialog.png}
 	    \end{center}
-	\end{frame}	
+	\end{frame}
 
 { % all template changes are local to this group.
     \usebackgroundtemplate{\includegraphics[scale=.75]{images/Gui18.png}}
@@ -702,18 +702,18 @@
 		\frametitle{Preguntas}
 
 		\hspace{4cm}\huge{Preguntas ?}
-		
+
 	\end{frame}
-	
+
     \begin{frame}
 		\frametitle{Tarea}
         \framesubtitle{Transformaci\'on N\'umeros Romanos}
         {\scriptsize
-        El sistema de numeraci\'on romana se desarroll\'o en la antigua Roma y se utiliz\'o en todo su imperio. Es un sistema de numeraci\'on no posicional, en el que se usan algunas letras may\'usculas como s\'imbolos para representar los n\'umeros. 
+        El sistema de numeraci\'on romana se desarroll\'o en la antigua Roma y se utiliz\'o en todo su imperio. Es un sistema de numeraci\'on no posicional, en el que se usan algunas letras may\'usculas como s\'imbolos para representar los n\'umeros.
         \vspace{1pt}
         La siguiente tabla muestra los s\'imbolos v\'alidos en el sistema de numeraci\'on romano, y sus equivalencias en el sistema decimal:
 		\vspace{1pt}
-	    
+
 	    \begin{center}
 		\begin{tabular}{|c|c|c|} \hline
 			\multicolumn{1}{|>{\columncolor[rgb]{0.8, 0.8, 0.8}}c|}{\textbf{Romano}} &
@@ -729,23 +729,23 @@
 		\end{tabular}
 		\end{center}}
 	\end{frame}
-	
+
     \begin{frame}
 		\frametitle{Tarea}
         \framesubtitle{Transformaci\'on N\'umeros Romanos}
         {\scriptsize
         Desarrolle un programa con interfaz de usuario que convierta un entero positivo (ingresado en un campo de texto), en un n\'umero romano. Las reglas para construir un n\'umero romano son las siguentes:
-        
+
 		\begin{itemize}
 			\item[$\rightarrow$] Los s\'imbolos con un valor grande usualmente aparecen antes que los con menor valor.
-			\item[$\rightarrow$] El valor de un n\'umero romano es, en general, la suma de los valores de los s\'imbolos. Por ejemplo, II es 2, VIII es 8. 
+			\item[$\rightarrow$] El valor de un n\'umero romano es, en general, la suma de los valores de los s\'imbolos. Por ejemplo, II es 2, VIII es 8.
 			\item[$\rightarrow$] Si un s\'imbolo de menor valor aparece antes de uno de mayor valor, el valor de los dos s\'imbolos es la diferencia entre ambos. Por ejemplo, IV es 4, IX es 9, y LIX es 59.
 			\item[$\rightarrow$] Note que no hay cuatro s\'imbolos consecutivos iguales. Por ejemplo, IV, pero no IIII, es el n\'umero 4.
 			\item[$\rightarrow$] Los n\'umeros romanos construidos de esta forma pueden no ser \'unicos. Por ejemplo, MCMXC y MXM son v\'alidos para 1990. Aunque el n\'umero romano generado por su programa no debe necesariamente ser el m\'as corto, \textbf{nunca} use VV para 10, VVV para 15, LL para 100, DD para 1000, etc.
 		\end{itemize}}
-	\end{frame}	
-	
-	
+	\end{frame}
+
+
 \end{document}
 
 \usetheme{default}
