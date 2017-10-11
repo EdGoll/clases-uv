@@ -3,6 +3,7 @@ public class CuentaCorriente {
     private final int MAX_AHORRO = 100000;
     private int saldo = 0;
     private RWFile fileW = new RWFile();
+    
 
     public synchronized void depositar(int dinero) {
         try {
