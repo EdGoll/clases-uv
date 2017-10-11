@@ -10,10 +10,6 @@ public class Principal {
         tccd.start();
         tccg.start();
 
-        try {
-            tccd.join();
-            tccg.join();
-        } catch (InterruptedException ex) {
-        }
+  
     }
 }

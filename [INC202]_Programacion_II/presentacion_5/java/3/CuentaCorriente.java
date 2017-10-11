@@ -2,6 +2,7 @@ public class CuentaCorriente {
 
     private final int MAX_AHORRO = 100000;
     private int saldo = 0;
+    private RWFile fileW = new RWFile();
 
     public synchronized void depositar(int dinero) {
         try {
@@ -10,6 +11,7 @@ public class CuentaCorriente {
             }
             saldo += dinero;
             System.out.println("Deposito: " + dinero + " Saldo: " + getSaldo());
+            fileW.writefile("Deposito: " + dinero + " Saldo: " + getSaldo());
             notifyAll();
         } catch (InterruptedException ex) {
         }
@@ -22,6 +24,7 @@ public class CuentaCorriente {
             }
             saldo -= dinero;
             System.out.println("Giro: " + dinero + " Saldo: " + getSaldo());
+            fileW.writefile("Deposito: " + dinero + " Saldo: " + getSaldo());
             notifyAll();
         } catch (InterruptedException ex) {
         }
