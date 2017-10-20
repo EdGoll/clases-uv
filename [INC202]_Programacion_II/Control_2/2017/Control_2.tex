@@ -1,0 +1,96 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+\begin{document}
+\begin{center}
+	{\Large Control 2}\\
+	Programaci\'on 2 \\
+	\emph{\small Prof. Eduardo Godoy} \\
+	%\emph{\scriptsize \date{mayo de 2017}}
+\end{center}
+	\centerline{\sc \normalsize Escuela de Ingenier\'ia Civil Inform\'atica}
+	\centerline{\sc \normalsize  Universidad de Valpara\'iso}
+	%\centerline{\sc \small 26 de Octubre de 2015}
+
+	\vspace{1pc}
+
+	\begin{enumerate}
+	    \item[] Desarrolle una aplicaci\'on en Java que realice la lectura del archivo \emph{dataset-chilebank.csv} y permita responder la siguientes consultas:
+	    \begin{enumerate}
+	        \item \emph{(20pts)} \textquestiondown Cu\'antas personas poseen deudas? \emph{(crear el m\'etodo getDeudores())}
+					\item \emph{(20pts)} Crear un nuevo archivo llamado \emph{deudorers.csv} y agregue a todas las personas encontradas en \emph{a}, conservando el formato del archivo entregado.\emph{(crear el m\'etodo escribirDeudores())}
+          \item \emph{(30pts)} \textquestiondown Cu\'antas personas  sobre 30 a\~nos, dependientes y con t\'itulo universitario tienen deuda 0? \emph{(crear el m\'etodo getPersonasSinDeuda())}
+	        \item \emph{(20pts)} Crear un nuevo archivo llamado \emph{sindeuda.csv} y agregue a todas las personas encontradas en \emph{c}, conservando el formato del archivo entregado.\emph{(crear el m\'etodo escribirPersonasSinDeuda())}
+					\item \emph{( 5pts)} Crear clase \emph{Persona} con  sus atributos,  y m\'etodos gets y sets, \emph{GestionDeudores} con los m\'etodos requeridos en el problema \emph{getDeudores()},\emph{escribirDeudores()}, \emph{getPersonasSinDeuda()},
+					\emph{escribirPersonasSinDeuda()}. Adem\'as se debe crear la clase \emph{GestionDeudoresImpl} como clase ejecutora junto a su m\'etodo \emph{main()}.
+					\item \emph{( 5pts)} Implementa soluci\'on utilizando el paradigma de programaci\'on Orientada a Objetos.
+	    \end{enumerate}
+	\end{enumerate}
+
+	\begin{enumerate}
+	   \item[] Cosideraciones:
+	    \begin{enumerate}
+				\item Considere documentaci\'on vista en clases.
+				\item Utilice los c\'odigos generados en clases y ayudant\'ia en apoyo a la operaci\'on con archivos y arreglos.
+				\item Procure dejar el archivo \emph{csv} entregado y los generados en la misma ruta de ejecuci\'on del programa.
+			\end{enumerate}
+	\end{enumerate}
+
+	\begin{table}[!ht]
+		 {\scriptsize
+			\begin{center}
+					 \begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline
+							\multicolumn{4}{|c|}{\textbf{\textquestiondown C\'omo ser\'e evaluado este Control?} } \\ \hline
+							\multicolumn{1}{|c|}{\textbf{T\'opico}} &
+							\multicolumn{1}{c|}{\textbf{Logrado}} &
+							\multicolumn{1}{c|}{\textbf{Medianamente logrado}} &
+							\multicolumn{1}{c|}{\textbf{No logrado}} \\ \hline
+							Pregunta e &
+							\emph{5pts} Crea las clase Persona, GestionDeudores y  GestionDeudoresImpl con sus atributos/m\'etodos. &
+							\emph{2pts} Crea clases con algunos  atributo o m\'etodos	requeridos en el. Crea m\'etodos o Atributos en otras clases no indicadas en el problema. &
+							\emph{  0pts} No crea clases requeridas. \\ \hline
+
+							Pregunta a &
+							\emph{20pts} Define e implementa correctamente el m\'etodo \emph{getDeudores()}  dentro de la clase GestionDedores obteniendo la salida requerida  &
+							\emph{10pts} Define e implementa m\'etodo acercandose parcialmente a la salida esperada. &
+							\emph{ 0pts} No define m\'etodo.  M\'etodo definido pero no cumple con lo m\'inimo esperado.\\ \hline
+
+							Pregunta b &
+							\emph{20pts} Define e implementa correctamente el m\'etodo \emph{escribirDeudores()}  dentro de la clase GestionDedores obteniendo la salida requerida. &
+							\emph{10pts} Define e implementa m\'etodo acercandose parcialmente a la salida esperada. &
+							\emph{ 0pts} No define m\'etodo.  M\'etodo definido pero no cumple con lo m\'inimo esperado. \\ \hline
+
+							Pregunta c &
+							\emph{30pts} Define e implementa correctamente el m\'etodo \emph{getPersonasSinDeuda()}  dentro de la clase GestionDedores obteniendo la salida requerida.&
+							\emph{15pts} Define e implementa m\'etodo acercandose parcialmente a la salida esperada.  &
+							\emph{ 0pts} No define m\'etodo.  M\'etodo definido pero no cumple con lo m\'inimo esperado. \\ \hline
+
+							Pregunta d &
+							\emph{20pts} Define e implementa correctamente el m\'etodo \emph{escribirPersonasSinDeuda()}  dentro de la clase GestionDedores obteniendo la salida requerida.&
+							\emph{10pts} Define e implementa m\'etodo acercandose parcialmente a la salida esperada.  &
+							\emph{ 0pts} No define m\'etodo.  M\'etodo definido pero no cumple con lo m\'inimo esperado. \\ \hline
+
+							Paradigma Orientaci\'on a Objetos  &
+							\emph{5pts} Resuelve el problema utilizando el POO. &
+							\emph{3pts} Utiliza parte del POO para resolver el problema. &
+							\emph{0pts} No utiliza el POO para dar soluci\'on al problema.\\ \hline
+							Total m\'aximo puntaje pregunta 2 &
+							\emph{100pts} &
+							\emph{50pts} &
+							\emph{  0pts} \\ \hline
+					\end{tabular}
+			\end{center}}
+	 \end{table}
+
+\end{document}
