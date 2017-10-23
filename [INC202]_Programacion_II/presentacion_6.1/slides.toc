@@ -1,0 +1,3 @@
+\select@language {spanish}
+\beamer@sectionintoc {2}{Acceso a Datos}{3}{0}{1}
+\beamer@sectionintoc {3}{Java Swing: Data Table}{9}{0}{2}

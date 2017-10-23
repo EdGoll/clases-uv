@@ -8,11 +8,9 @@ import java.awt.event.ItemListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
@@ -33,6 +31,7 @@ public class TableExample extends JFrame{
 	JPanel formPanel;
 	PersonaForm perForm = new PersonaForm();
 	
+	
 	public TableExample() {
 		deudores = new GestionDeudores();
 		this.crearBarraMenu();
@@ -47,7 +46,10 @@ public class TableExample extends JFrame{
 		crearFormPersona();
 		inicializarTabla();
 		crearBotones() ;
-		agregarFila();
+		for (Persona p : deudores.getListaPersona()) {	
+			agregarFila(p);
+		}
+		
 		setLayout(new BorderLayout(5, 10));
 		add(this.add(new JScrollPane(table)), BorderLayout.CENTER);
 		add(formPanel, BorderLayout.NORTH);
@@ -56,14 +58,17 @@ public class TableExample extends JFrame{
 	}
 	
 	private void crearFormPersona() {
+		
 		formPanel = new JPanel();
 		formPanel.setLayout(new GridLayout(8, 2, 5, 5));
 		formPanel.add(new JLabel(" Edad: "));
 		formPanel.add(perForm.getEdadTf() );
 		formPanel.add(new JLabel(" Nivel Educacional: "));
-		formPanel.add(perForm.getNivelEducTf() );
+		//formPanel.add(perForm.getNivelEducTf() );comboBoxNivelEduc
+		formPanel.add(perForm.getComboBoxNivelEduc());
 		formPanel.add(new JLabel(" Actividad: "));
-		formPanel.add(perForm.getActividadTf() );
+		//formPanel.add(perForm.getActividadTf() );
+		formPanel.add(perForm.getComboBoxActividad());
 		formPanel.add(new JLabel(" Renta Fija: "));
 		formPanel.add(perForm.getRentaFijaTf() );
 		formPanel.add(new JLabel(" Lim Maximo de Credito "));
@@ -71,7 +76,8 @@ public class TableExample extends JFrame{
 		formPanel.add(new JLabel(" Deuda Actual: "));
 		formPanel.add(perForm.getDeudaActualTf() );
 		formPanel.add(new JLabel(" % de Uso de Credito: "));
-		formPanel.add(perForm.getPorcentUsoCreditoTf() );
+		//formPanel.add(perForm.getPorcentUsoCreditoTf() );
+		formPanel.add(perForm.getComboBoxPorcetUsoCred());
 		formPanel.add(new JLabel(" N° Compras Mes Actual: "));
 		formPanel.add(perForm.getNumCompraMesActualTf() );
 		formPanel.add(new JLabel(" N° Compras Mes -1 : "));
@@ -81,17 +87,19 @@ public class TableExample extends JFrame{
 		formPanel.add(new JLabel(" N° Compras Mes -3: "));
 		formPanel.add(perForm.getNumCompraMesActual_3Tf() );
 		formPanel.add(new JLabel(" Estado Actual: "));
-		formPanel.add(perForm.getEstadoActualTf() );
+		//formPanel.add(perForm.getEstadoActualTf() );
+		formPanel.add(perForm.getComboBoxEstActual());
 		formPanel.add(new JLabel(" Cant de Atrasos de Pago: "));
 		formPanel.add(perForm.getCantHistAtrasosPagoTf() );
 		formPanel.add(new JLabel(" Compra: "));
-		formPanel.add(perForm.getCompraTf() );
+		//formPanel.add(perForm.getCompraTf() );
+		formPanel.add(perForm.getComboBoxCompra());
 	}
 	
 	private void inicializarTabla() {
 		DefaultTableModel dtm = new DefaultTableModel(new Object[] { "id", "edad", "nivelEduc", "actividad", "rentaFija",
 				"limMaxCredito", "deudaActual", "porcentUsoCredito", "numCompraMesActual", "numCompraMesActual_1",
-				"numCompraMesActual_2", "numCompraMesActual_3", "estadoActual", "cantHistAtrasosPago", "compra", "" },
+				"numCompraMesActual_2", "numCompraMesActual_3", "estadoActual", "cantHistAtrasosPago", "compra" },
 				0);
 		table = new JTable(dtm) {
 		      public void tableChanged(TableModelEvent e) {
@@ -133,32 +141,14 @@ public class TableExample extends JFrame{
 		ayuda.add("Acerca de...");
 	}
 
-	public void agregarFila() {
-		JRadioButton radio;
-		int i=0;
-		for (Persona p : deudores.getListaPersona()) {
-			radio = new JRadioButton("");
-			
-			radio.addActionListener(new ActionListener() {
-		        @Override
-		        public void actionPerformed(ActionEvent e) {
-		            System.out.println("asd");
-		        }
-		    });
-			
+	public void agregarFila(Persona p) {			
 			DefaultTableModel model = (DefaultTableModel) table.getModel();
 			model.addRow(new Object[] { 
 					p.getId(), p.getEdad(), p.getNivelEduc(), p.getActividad(), p.getRentaFija(),
 					p.getLimMaxCredito(), p.getDeudaActual(), p.getPorcentUsoCredito(), p.getNumCompraMesActual(),
 					p.getNumCompraMesActual_1(), p.getNumCompraMesActual_2(), p.getNumCompraMesActual_3(),
-					p.getEstadoActual(), p.getCantHistAtrasosPago(), p.getCompra(),radio
+					p.getEstadoActual(), p.getCantHistAtrasosPago(), p.getCompra()
 			});
-			group.add((JRadioButton)model.getValueAt(i, 15) );
-		    table.getColumn("").setCellRenderer(new RadioButtonRenderer());
-		    table.getColumn("").setCellEditor(new RadioButtonEditor(new JCheckBox()));
-		    i++;
-		    
-		}
 		
 	}
 
@@ -166,7 +156,23 @@ public class TableExample extends JFrame{
 		@Override
 		public void actionPerformed(ActionEvent e){
 			System.out.println("Agregar");
-			
+			Persona per = new Persona();
+			per.setEdad(Integer.parseInt(perForm.getEdadTf().getText()));			
+			per.setNivelEduc(perForm.getComboBoxNivelEduc().getSelectedItem().toString());
+			per.setActividad(perForm.getComboBoxActividad().getSelectedItem().toString());
+			per.setRentaFija(Integer.parseInt(perForm.getRentaFijaTf().getText()));
+			per.setLimMaxCredito(Integer.parseInt(perForm.getLimMaxCreditoTf().getText()));
+			per.setDeudaActual(Integer.parseInt(perForm.getLimMaxCreditoTf().getText()));
+			per.setPorcentUsoCredito(Double.parseDouble(perForm.getComboBoxPorcetUsoCred().getSelectedItem().toString()));
+			per.setNumCompraMesActual(Integer.parseInt(perForm.getNumCompraMesActualTf().getText()));
+			per.setNumCompraMesActual_1(Integer.parseInt(perForm.getNumCompraMesActual_1Tf().getText()));
+			per.setNumCompraMesActual_2(Integer.parseInt(perForm.getNumCompraMesActual_2Tf().getText()));
+			per.setNumCompraMesActual_3(Integer.parseInt(perForm.getNumCompraMesActual_3Tf().getText()));			
+			per.setEstadoActual(perForm.getComboBoxEstActual().getSelectedItem().toString());
+			per.setCantHistAtrasosPago(Integer.parseInt(perForm.getCantHistAtrasosPagoTf().getText()));
+			per.setCompra(perForm.getComboBoxCompra().getSelectedItem().toString());			
+			deudores.crear(per);
+			agregarFila(per);
 		}
 	}
 	class EliminarBotonListener implements ActionListener{		

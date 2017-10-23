@@ -1,0 +1,67 @@
+\section{Acceso a Datos}
+
+\begin{frame}{Manejo de archivos - Archivo Secuencial}
+	\begin{block}{}
+	\begin{itemize}
+\item Forma básica de almacenar registros en un archivos.
+\item Sus registros son de similares en exstructura y tama\~no.
+\item Se ordenan de forma secuencial en base a un valor de campo o atributo, en nuestro caso un ID.
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Manejo de archivos}
+	\begin{itemize}
+	%	\item[] crear():
+\item Archivo Origen o Base: Encargado de almacenar los registros de forma persistente. Adem\'as gestiona y mantene su estado en el tiempo.
+\item Archivo Auxiliar:  Encargado de dar soporte a las operaciones b\'asicas sobre el archivo origen, permitiendo hacer cambios de estado. Debido a que se emplea como medida de respaldo.
+\item Las operaciones b\'asicas son los m\'etodos: crear, actualizar y eliminar.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Manejo de archivos - crear()}
+	\begin{itemize}
+	%	\item[] crear():
+\item Se recorre archivo de inicio a fin.
+\item Se procede a la copia de registros desde archivo origen a archivo auxiliar
+\item Por cada linea leida se guarda su id siendo este sobre escrito por el valor id de la siguiente linea procesada.
+\item Cada Registro Le\'ido se almacena en el archivo axiliar.
+\item Se continua con la inserci\'on del nuevo registro al final del archivo auxiliar con el ultimo id obtenido \item incrementado en 1, con esto se obtienen claves \'unicas para cada registro.
+\item Se finaliza con el cipiado del archivo auxiliar al orchivo base.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Manejo de archivos - actualizar()}
+\begin{itemize}
+%\item[] actualizar():
+\item Se recorre archivo de inicio a fin.
+\item Se procede a la copia de registros desde archivo origen a archivo auxiliar
+ \item Por cada linea leida se comparar su id  con el id pasado por par\'ametro.
+ \item De ser iguales se inserta en el archivo auxiliar el registro actualizado que viene como pa´r\'ametro, \item dejando el registro leido desde origen sin ser escrito en auxiliar.
+ \item De lo contrario se siguen escribiendo los registros en el archivo auxiliar sin ser afectados por cambios.
+\item Se finaliza con el cipiado del archivo auxiliar al orchivo base.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Manejo de archivos - eliminar()}
+\begin{itemize}
+%\item[] eliminar():
+\item Se recorre archivo de inicio a fin.
+\item Se procede a la copia de registros desde archivo origen a archivo auxiliar
+\item Por cada linea leida desde origen se compara su id  con el id pasado por par\'ametro.
+\item De ser iguales ese registros se marca como nulo.
+\item Cada registro Le\'ido se almacena en el archivo axiliar. excepto el que ha sido marcado como nulo.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Manejo de archivos - grabar()}
+\begin{itemize}
+%\item[] grabar():
+\item Genera una copia del archivo origen con un nombre de respaldo.
+\item Toma el archivo origen y borra su contenido.
+\item Escribe la cabecera del archivo en origen.
+\item Recorre el archivo auxiliar leyendo cada registro.
+\item Para cada registro leido desde auxiliar es escrito en origen.
+	\end{itemize}
+\end{frame}

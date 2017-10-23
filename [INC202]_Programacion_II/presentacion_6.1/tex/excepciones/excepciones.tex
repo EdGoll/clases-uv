@@ -1,0 +1,70 @@
+\section{Manejo de Excepciones}
+\begin{frame}{Manejo de Excepciones}
+\begin{itemize}
+	\item El termino Excepci\'on significa Condici\'on Excelcional dentro un programa.
+	\item En java muchos evento requieren de manejo de Excepciones, Ejemplo:
+	\begin{itemize}
+			\item Fallas en la comunicaci\'on con componentes de Hardware.
+			\item Operaciones con fuentes de almacenamiento persistente.
+			\item Operaciones aritm\'eticas no permitidas.
+			\item etc.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Manejo de Excepciones: ¿Como Opera?}
+\begin{itemize}
+	\item El manejo de Excepciones opera transfiriendo el control del programa a cierta regi\'on del programa, siempre
+	dentro del mismo m\'etodo.
+\end{itemize}
+\begin{block}{Ejemplo.}
+	Si en la ejecuci\'on de un programa se encuentra una operaci\'on de divisi\'on por 0, la ejecuci\'on del m\'etodo no continua. Luego
+	se pasa a ejecutar el c\'odigo que ha sido prpeparado para manejar dicha excepci\'on.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Manejo de Excepciones: try - catch}
+\begin{itemize}
+	\item Palabra reservada \textbf{Try} es usada para definir e identificar a un segmento de c\'odigo en el cual puede ocurrir la excepci\'on.
+	\item Este bloque de c\'odigo es llamado zona segura, debido a que ah\'i hay una o mas lineas riesgosas.
+	\item Dentro de \textbf{catch} se indica el bloque de c\'odigo que se encargara de controlar la excepci\'on, Ejemplo:
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Manejo de Excepciones - try, catch}
+	\begin{block}{Ejemplo.}
+\lstinputlisting[language=Java,caption={},numbers=none]{resources/excepciones/EjExcepcion.java}
+\end{block}
+\end{frame}
+
+\begin{frame}{Manejo de Excepciones: finally}
+\begin{itemize}
+	\item Palabra reservada \textbf{finally} es una secci\'on que se ejecuta siempre que independiente si la excepci\'on ocurra o no.
+	\item Debido a que al ocurrir una excepci\'on esta  interrumpe la ejecuci\'on natural del c\'odigo.  Su principal funci\'on es mantener la consistencia y ejecuci\'on limpia del programa.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Manejo de Excepciones - try, catch, finally}
+	\begin{block}{Ejemplo.}
+\lstinputlisting[language=Java,caption={},numbers=none]{resources/excepciones/Finally.java}
+\end{block}
+\end{frame}
+
+\begin{frame}{Manejo de Excepciones: Declaraci\'on en m\'etodos.}
+\begin{itemize}
+	\item Una excepci\'on puede ser declarada en el m\'etodo, con esto se deja la responsabilidad de
+	controlar la excepcion a la clase que contiene al m\'etodo que ha enviado el mensaje.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Manejo de Excepciones - Declaraci\'on en m\'etodos}
+	\begin{block}{Ejemplo.}
+\lstinputlisting[language=Java,caption={},numbers=none]{resources/excepciones/TryCatchDecl.java}
+\end{block}
+\end{frame}
+
+\begin{frame}{Manejo de Excepciones - Declaraci\'on en m\'etodos}
+	\begin{block}{Ejemplo.}
+\lstinputlisting[language=Java,caption={},numbers=none]{resources/excepciones/TryCatchDecl0.java}
+\end{block}
+\end{frame}

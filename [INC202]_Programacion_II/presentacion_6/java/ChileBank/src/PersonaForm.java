@@ -1,3 +1,5 @@
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 //id;EDAD;NIVEL EDUCACIONAL;ACTIVIDAD;RENTA FIJA;LIMITE MAXIMO CREDITO;DEUDA ACTUAL;PORCENTAJE DE USO DEL CREDITO;NUMERO DE COMPRAS EN MES ACTUAL (T);NUMERO DE COMPRAS EN MES T-1;NUMERO DE COMPRAS EN MES T-2;NUMERO DE COMPRAS EN MES T-3;ESTADO ACTUAL;CANTIDAD HISTORICA DE ATRASOS EN PAGO DE CUENTAS;COMPRA
@@ -19,6 +21,20 @@ public class PersonaForm {
 	private JTextField cantHistAtrasosPagoTf= new JTextField();
 	private JTextField compraTf= new JTextField();
 	
+	private JComboBox comboBoxNivelEduc = new JComboBox(new DefaultComboBoxModel(new String[] { "Seleccionar...","EDUC. TECNICA", "EDUC. UNIVERSITARIA", "ESTUDIANTE UNIVERSITARIO","EDUC. MEDIA" }));
+	private JComboBox comboBoxActividad = new JComboBox(new DefaultComboBoxModel(new String[] {  "Seleccionar...","DEPENDIENTE", "INDEPENDIENTE","UNIVERSITARIO" }));
+	private JComboBox comboBoxEstActual = new JComboBox(new DefaultComboBoxModel(new String[] {  "Seleccionar...","SIN DEUDA", "DEUDA DE 1 MES", "DEUDA DE 2 MESES" }));
+	private JComboBox comboBoxCompra = new JComboBox(new DefaultComboBoxModel(new String[] {  "Seleccionar...","SI", "NO"}));
+	private JComboBox comboBoxPorcetUsoCred = null;
+	
+	public PersonaForm(){
+		String[] porcent = new String[101];
+		for (int i = 0; i <= 100; i++) {
+			porcent[i]=String.valueOf(i);
+		}
+		comboBoxPorcetUsoCred= new JComboBox(new DefaultComboBoxModel(porcent));
+	}
+
 	public JTextField getIdTf() {
 		return idTf;
 	}
@@ -111,7 +127,36 @@ public class PersonaForm {
 	}
 	
 	
-	
+	public JComboBox getComboBoxNivelEduc() {
+		return comboBoxNivelEduc;
+	}
+	public void setComboBoxNivelEduc(JComboBox comboBoxNivelEduc) {
+		this.comboBoxNivelEduc = comboBoxNivelEduc;
+	}
+	public JComboBox getComboBoxActividad() {
+		return comboBoxActividad;
+	}
+	public void setComboBoxActividad(JComboBox comboBoxActividad) {
+		this.comboBoxActividad = comboBoxActividad;
+	}
+	public JComboBox getComboBoxEstActual() {
+		return comboBoxEstActual;
+	}
+	public void setComboBoxEstActual(JComboBox comboBoxEstActual) {
+		this.comboBoxEstActual = comboBoxEstActual;
+	}
+	public JComboBox getComboBoxCompra() {
+		return comboBoxCompra;
+	}
+	public void setComboBoxCompra(JComboBox comboBoxCompra) {
+		this.comboBoxCompra = comboBoxCompra;
+	}
+	public JComboBox getComboBoxPorcetUsoCred() {
+		return comboBoxPorcetUsoCred;
+	}
+	public void setComboBoxPorcetUsoCred(JComboBox comboBoxPorcetUsoCred) {
+		this.comboBoxPorcetUsoCred = comboBoxPorcetUsoCred;
+	}
 	
 	
 }

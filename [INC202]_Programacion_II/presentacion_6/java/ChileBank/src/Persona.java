@@ -17,7 +17,9 @@ public class Persona {
 	private int cantHistAtrasosPago;
 	private String compra;
 	
-	
+	public Persona(){
+		
+	}
 	
 	public Persona(int id, int edad, String nivelEduc, String actividad, int rentaFija, int limMaxCredito,
 			int deudaActual, double porcentUsoCredito, int numCompraMesActual, int numCompraMesActual_1,
@@ -136,13 +138,13 @@ public class Persona {
 		System.out.println(id + ";" + edad + ";" + nivelEduc + ";" + actividad
 				+ ";" + rentaFija + ";" + limMaxCredito + ";" + deudaActual
 				+ ";" + porcentUsoCredito + ";" + numCompraMesActual
-				+ ";" + numCompraMesActual_1 + ";=" + numCompraMesActual_2
+				+ ";" + numCompraMesActual_1 + ";" + numCompraMesActual_2
 				+ ";" + numCompraMesActual_3 + ";" + estadoActual
 				+ ";" + cantHistAtrasosPago + ";" + compra);
 		return  id + ";" + edad + ";" + nivelEduc + ";" + actividad
 				+ ";" + rentaFija + ";" + limMaxCredito + ";" + deudaActual
 				+ ";" + porcentUsoCredito + ";" + numCompraMesActual
-				+ ";" + numCompraMesActual_1 + ";=" + numCompraMesActual_2
+				+ ";" + numCompraMesActual_1 + ";" + numCompraMesActual_2
 				+ ";" + numCompraMesActual_3 + ";" + estadoActual
 				+ ";" + cantHistAtrasosPago + ";" + compra;
 	}

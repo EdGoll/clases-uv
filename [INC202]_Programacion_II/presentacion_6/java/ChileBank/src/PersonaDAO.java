@@ -61,14 +61,12 @@ public class PersonaDAO {
 			fichero = new FileWriter("ds-aux.csv",true);
 			pw = new PrintWriter(fichero);
 			br.readLine();// elimino cabecera
-			while ((linea = br.readLine()) != null) {
-				//if (linea != null && !linea.equalsIgnoreCase("")) {
+			while ((linea = br.readLine()) != null) {				
 					String[] registro = linea.split(";");
 					int id = Integer.valueOf(registro[0]);
 					if (id == p.getId()) {
 						linea = "null";
 					}
-				//}
 				if (!linea.equalsIgnoreCase("null")) {
 					pw.write(linea+'\n');
 				}
@@ -187,6 +185,7 @@ public class PersonaDAO {
 				listaPersona.add(p);
 			}
 		} catch (IOException ex) {
+			ex.printStackTrace();
 		} finally {
 			try {
 				br.close();
