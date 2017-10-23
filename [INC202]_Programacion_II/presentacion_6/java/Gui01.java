@@ -15,7 +15,7 @@ public class Gui01 extends JFrame{
 		panel = getContentPane();
 		panel.add(miboton);
 
-		this.setSize(800,600);
+		this.setSize(200,200);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

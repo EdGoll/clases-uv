@@ -28,7 +28,8 @@ public class Calc2 {
       }
 
       JPanel mainPanel = new JPanel(new BorderLayout());
-      mainPanel.add(field, BorderLayout.PAGE_START);
+    //  mainPanel.add(field, BorderLayout.PAGE_START);
+    mainPanel.add(field, BorderLayout.NORTH);
       mainPanel.add(btnPanel, BorderLayout.CENTER);
 
 

@@ -11,14 +11,11 @@ public class Gui02 extends JFrame{
 	private JButton miboton;
 	
 	public Gui02(){
-		super("Ejemplo Layout");
-		
-		
+		super("Ejemplo Layout");		
 		setLayout(new FlowLayout(FlowLayout.LEFT,10,20));
 		for(int i=0;i<10;i++){
 			add(new JButton("Componente "+i));
-		}
-		
+		}		
 		this.setSize(800,600);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
