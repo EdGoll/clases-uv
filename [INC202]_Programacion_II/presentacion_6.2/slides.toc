@@ -1,0 +1,4 @@
+\select@language {spanish}
+\beamer@sectionintoc {2}{Introduci\'on.}{3}{0}{1}
+\beamer@sectionintoc {3}{DAO - \emph {Data Acceso Object}}{7}{0}{2}
+\beamer@sectionintoc {4}{MVC - \emph {Model View Controller.}}{9}{0}{3}

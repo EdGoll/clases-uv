@@ -1,0 +1,108 @@
+%--------------------------------------------%
+% Template Beamer para Apresentações da UFRN %
+% by alcemygvseverino@gmail.com              %
+% Baseado em MIT Beamer Template			 %
+% versao 1.1								 %
+% Atualizado em 14/05/2016					 %
+%--------------------------------------------%
+\documentclass[]{beamer}
+
+\mode<presentation>
+{
+% Para definir o tema do slide
+\usetheme{Berlin}
+% Para difinir cores e background
+\usecolortheme{ufrn}
+% Para numerar as figuras
+\setbeamertemplate{caption}[numbered]
+	\setbeamercovered{transparent}
+}
+
+% Para alterar a linguagem do documento
+\usepackage[spanish]{babel}
+% Para aceitar caracteres especias deretamente do teclado
+\usepackage[utf8]{inputenc}
+% Para seguir as normas da ABNT de citacao e referencias
+\usepackage[alf]{abntex2cite}
+% Para incluir figuras
+\usepackage{graphicx}
+% Para melhor ajuste da posisao das figuras
+\usepackage{float}
+% Para ajustar as dimensoes do layout da pagina
+\usepackage{geometry}
+% Para formatar estrutura e informacoes de formulas matematicas
+\usepackage{amsmath}
+% Para incluir simbolos especiais em formulas matematicas
+\usepackage{amssymb}
+% Para incluir links nas referencias
+\usepackage{url}
+% Para incluir paginas de documentos .pdf externos
+\usepackage{pgfpages}
+% Para ajustar o estilo dos contadores
+\usepackage{enumerate}
+% Para modificar a cor do texto
+\usepackage{color}
+% Para incluir condicoes
+\usepackage{ifthen}
+% Para colocar legendas em algo que nao e float
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{algorithm,algorithmic}
+\usepackage{colortbl}
+
+%\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage{listings}
+
+\lstset{language=Java,
+basicstyle=\footnotesize\tt,        % the size of the fonts that are used for the code
+ breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+ breaklines=true,                 % sets automatic line breaking
+ captionpos=b,                    % sets the caption-position to bottom
+ extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+ frame=single,                    % adds a frame around the code
+ language=Java,                 % the language of the code
+ keywordstyle=\bf,
+ showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+ showstringspaces=false,          % underline spaces within strings only
+ showtabs=false,                  % show tabs within strings adding particular underscores
+ tabsize=2                       % sets default tabsize to 2 spaces
+}
+
+
+% Título
+
+\title[Programaci\'on 2]{Programaci\'on 2}
+\subtitle{Lenguaje Java - Patrones de Diseño  (\emph{3era parte})\\ T\'ipos de Clases}
+% Data
+\date{
+	\today}
+% Autores
+\author[Eduardo Godoy]{
+	Profesor: Eduardo Godoy. \\
+	\vspace{0.5mm}
+	\texttt{\small eduardo.gl@gmail.com}
+}
+}
+\institute[Universidad de Valara\'iso]{
+	\vspace{0.25cm}
+	\texttt Escuela de Ingenier\'ia Civil Inform\'atica.\\
+	\texttt Universidad de Valpara\'iso.
+}
+
+\begin{document}
+
+\frame{\titlepage}
+\section[]{}
+\begin{frame}{Contenido}
+	\tableofcontents
+\end{frame}
+\include{tex/patrones/intro}
+\include{tex/patrones/dao}
+\include{tex/patrones/mvc}
+\section{}
+%\begin{frame}{Agradecimentos}
+%	Agradeço a todos.
+%\end{frame}
+
+\end{document}
