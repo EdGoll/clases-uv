@@ -56,16 +56,16 @@
 
 \author[Rodrigo Olivares]
 {
-	Rodrigo Olivares \\
+	Eduardo Godoy \\
 	\vspace{0.5mm}
-	Mg. en Ingenier\'ia Inform\'atica \\
+	Ingeniero en Inform\'atica \\
 	\vspace{0.5mm}
-	\texttt{\normalsize rodrigo.olivares@uv.cl}
+	\texttt{\normalsize eduardo.gl@gmail.com}
 }
 
 \institute[Universidad de Valpara\'iso]
 
-\date{$1^{er}$ Semestre de 2016} 
+\date{$1^{er}$ Semestre de 2017}
 
 \subject{Programaci\'on 2}
 
@@ -115,9 +115,9 @@
 		    \end{itemize}
 		\end{block}
 	\end{frame}
-	
-    \subsection{Caracter\'isticas de JDBC}	
-	
+
+    \subsection{Caracter\'isticas de JDBC}
+
 	\begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Caracter\'isticas de JDBC}
@@ -178,7 +178,7 @@
 			\end{center}
 	\end{frame}
 
-    \subsection{Pasos para una conexi\'on JDBC}	
+    \subsection{Pasos para una conexi\'on JDBC}
 
 	\begin{frame}
 		\frametitle{JDBC}
@@ -201,7 +201,7 @@
 
         \begin{exampleblock}{Registrar un controlador}
 		    \begin{itemize}
-		        \item Determinados controladores requerir\'an la instalaci\'on y configuraci\'on de software espec\'ifico en el cliente. Ejemplo: el origen ODBC o la fuente de datos nativa.		        
+		        \item Determinados controladores requerir\'an la instalaci\'on y configuraci\'on de software espec\'ifico en el cliente. Ejemplo: el origen ODBC o la fuente de datos nativa.
 		        \item Otros controladores son simplemente una clase Java y bastar\'a que la \textbf{Java Virtual Machine} las pueda localizar mediante el \textbf{classpath}.
 		    \end{itemize}
 		    \end{exampleblock}
@@ -221,8 +221,8 @@
 		        \end{itemize}
 		    \end{itemize}
 		\end{exampleblock}
-	\end{frame}	
-	
+	\end{frame}
+
 	\begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Pasos para una conexi\'on JDBC - Primer paso}
@@ -238,15 +238,15 @@
 		        \end{itemize}
 		    \end{itemize}
 		\end{exampleblock}
-	\end{frame}	
-	
+	\end{frame}
+
 	\begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Pasos para una conexi\'on JDBC - Primer paso}
 
-        \lstinputlisting[language=Java,caption={},numbers=none]{resources/code1.java}       
-	\end{frame}		
-	
+        \lstinputlisting[language=Java,caption={},numbers=none]{resources/code1.java}
+	\end{frame}
+
 	\begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Pasos para una conexi\'on JDBC - Segundo paso}
@@ -262,7 +262,7 @@
 		    \end{itemize}
 		    \end{exampleblock}
 	\end{frame}
-	
+
 	\begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Pasos para una conexi\'on JDBC - Segundo paso}
@@ -278,8 +278,8 @@
 		        \item El \textbf{DriverManager} buscar\'a un driver, entre los registrados que pueda usar el protocolo especificado en la url.
 		    \end{itemize}
 		    \end{exampleblock}
-	\end{frame}	
-	
+	\end{frame}
+
 	\begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Pasos para una conexi\'on JDBC - Segundo paso}
@@ -293,7 +293,7 @@
 		    \end{itemize}
 		    \end{exampleblock}
 	\end{frame}
-  
+
 	\begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Pasos para una conexi\'on JDBC - Segundo paso}
@@ -306,13 +306,13 @@
 		        \item El objeto \textbf{Connection} nos permitir\'a acceder a la base de datos para realizar operaciones sobre ella y obtener resultados.
 		    \end{itemize}
 		    \end{exampleblock}
-	\end{frame}  
-  
+	\end{frame}
+
 	\begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Pasos para una conexi\'on JDBC - Segundo paso}
 
-        \lstinputlisting[language=Java,caption={},numbers=none]{resources/code2.java}       
+        \lstinputlisting[language=Java,caption={},numbers=none]{resources/code2.java}
 	\end{frame}
 
 	\begin{frame}
@@ -327,8 +327,8 @@
 		        \item Cuando pasamos la SQL a la conexi\'on este lo env\'ia al controlador que a su vez lo redirecciona a la BD, que nos devolver\'a los resultados.
 		    \end{itemize}
 		    \end{exampleblock}
-	\end{frame}    
- 
+	\end{frame}
+
 	\begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Pasos para una conexi\'on JDBC - Tercer paso}
@@ -341,15 +341,15 @@
 		        \item prepareCall, para funciones o procedimientos almancenados.
 		    \end{itemize}
 		    \end{exampleblock}
-	\end{frame}    	
-	
+	\end{frame}
+
     \begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Pasos para una conexi\'on JDBC - Tercer paso}
 
-        \lstinputlisting[language=Java,caption={},numbers=none]{resources/code3.java}       
-	\end{frame}		
-	
+        \lstinputlisting[language=Java,caption={},numbers=none]{resources/code3.java}
+	\end{frame}
+
 	\begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Pasos para una conexi\'on JDBC - Cuarto paso}
@@ -364,15 +364,15 @@
 		        \end{itemize}
 		    \end{itemize}
 		    \end{exampleblock}
-	\end{frame}    		
-	
+	\end{frame}
+
     \begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Pasos para una conexi\'on JDBC - Cuarto paso}
 
-        \lstinputlisting[language=Java,caption={},numbers=none]{resources/code4.java}       
-	\end{frame}			
-	
+        \lstinputlisting[language=Java,caption={},numbers=none]{resources/code4.java}
+	\end{frame}
+
 	\begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Pasos para una conexi\'on JDBC - Quinto paso}
@@ -388,22 +388,22 @@
 		        \end{itemize}
 		    \end{itemize}
 		    \end{exampleblock}
-	\end{frame}   	
-	
+	\end{frame}
+
     \begin{frame}
 		\frametitle{JDBC}
 		\framesubtitle{Pasos para una conexi\'on JDBC - Quinto paso}
 
-        \lstinputlisting[language=Java,caption={},numbers=none]{resources/code5.java}       
-	\end{frame}			
-	
+        \lstinputlisting[language=Java,caption={},numbers=none]{resources/code5.java}
+	\end{frame}
+
     \begin{frame}
 		\frametitle{Preguntas}
 
 		\hspace{4cm}\huge{Preguntas ?}
-		
+
 	\end{frame}
-	
+
 \end{document}
 
 \usetheme{default}
