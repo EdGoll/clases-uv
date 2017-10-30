@@ -4,18 +4,12 @@ public class EjemploThreadImpl{
 
       EjemploThread ej = new EjemploThread();
       ej.start();
-      System.out.println("Comenzando...");
-
+      System.out.println("Comenzando... ej");
 
       EjemploThreadClose ejClose = new EjemploThreadClose();
       ejClose.start();
       System.out.println("Comenzando EjemploThreadClose...");
-      try {
-        Thread.sleep(1000);
-      } catch (InterruptedException ex) {
-          Thread.currentThread().interrupt();
-      }
-      ejClose.terminar();
 
+      ejClose.terminar();
     }
 }

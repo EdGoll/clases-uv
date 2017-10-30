@@ -3,10 +3,10 @@
 \begin{frame}{Manejo de archivos - Archivo Secuencial}
 	\begin{block}{}
 	\begin{itemize}
-\item Forma básica de almacenar registros en un archivos.
-\item Sus registros son de similares en exstructura y tama\~no.
-\item Se ordenan de forma secuencial en base a un valor de campo o atributo, en nuestro caso un ID.
-\end{itemize}
+		\item Forma básica de almacenar registros en un archivos.
+		\item Sus registros son de similares en estructura y tama\~no.
+		\item Se ordenan de forma secuencial en base a un valor de campo o atributo, en nuestro caso un ID.
+	\end{itemize}
 \end{block}
 \end{frame}
 
@@ -25,10 +25,10 @@
 	%	\item[] crear():
 \item Se recorre archivo de inicio a fin.
 \item Se procede a la copia de registros desde archivo origen a archivo auxiliar
-\item Por cada linea leida se guarda su id siendo este sobre escrito por el valor id de la siguiente linea procesada.
+\item Por cada l\'inea leida se guarda su id siendo este sobre escrito por el valor id de la siguiente l\'inea procesada.
 \item Cada Registro Le\'ido se almacena en el archivo axiliar.
-\item Se continua con la inserci\'on del nuevo registro al final del archivo auxiliar con el ultimo id obtenido \item incrementado en 1, con esto se obtienen claves \'unicas para cada registro.
-\item Se finaliza con el cipiado del archivo auxiliar al orchivo base.
+\item Se continua con la inserci\'on del nuevo registro al final del archivo auxiliar con el ultimo id obtenido incrementado en 1, con esto se obtienen claves \'unicas para cada registro.
+\item Se finaliza con el copiado del archivo auxiliar al orchivo base.
 \end{itemize}
 \end{frame}
 
@@ -38,9 +38,9 @@
 \item Se recorre archivo de inicio a fin.
 \item Se procede a la copia de registros desde archivo origen a archivo auxiliar
  \item Por cada linea leida se comparar su id  con el id pasado por par\'ametro.
- \item De ser iguales se inserta en el archivo auxiliar el registro actualizado que viene como pa´r\'ametro, \item dejando el registro leido desde origen sin ser escrito en auxiliar.
+ \item De ser iguales se inserta en el archivo auxiliar el registro actualizado que viene como par\'ametro, dejando el registro leido desde origen sin ser escrito en auxiliar.
  \item De lo contrario se siguen escribiendo los registros en el archivo auxiliar sin ser afectados por cambios.
-\item Se finaliza con el cipiado del archivo auxiliar al orchivo base.
+\item Se finaliza con el copiado del archivo auxiliar al archivo base.
 \end{itemize}
 \end{frame}
 
@@ -51,7 +51,7 @@
 \item Se procede a la copia de registros desde archivo origen a archivo auxiliar
 \item Por cada linea leida desde origen se compara su id  con el id pasado por par\'ametro.
 \item De ser iguales ese registros se marca como nulo.
-\item Cada registro Le\'ido se almacena en el archivo axiliar. excepto el que ha sido marcado como nulo.
+\item Cada registro Le\'ido se almacena en el archivo auxiliar. excepto el que ha sido marcado como nulo.
 \end{itemize}
 \end{frame}
 
@@ -62,6 +62,6 @@
 \item Toma el archivo origen y borra su contenido.
 \item Escribe la cabecera del archivo en origen.
 \item Recorre el archivo auxiliar leyendo cada registro.
-\item Para cada registro leido desde auxiliar es escrito en origen.
+\item Para cada registro le\'ido desde auxiliar es escrito en origen.
 	\end{itemize}
 \end{frame}

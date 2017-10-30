@@ -9,22 +9,22 @@ import javax.swing.JTabbedPane;
 
 public class BarraMenu extends JFrame{
 
-	MenuBar barra = new MenuBar();	
+	MenuBar barra = new MenuBar();
 	Menu programa = new Menu("Programa");
 	Menu ayuda = new Menu("Ayuda");
 	Menu guardar = new Menu("Guardar");
 
-	
+
 	public BarraMenu(){
-	   super("Ventana en JAVA"); 
-	   this.setSize(500, 500); 
-	   
+	   super("Ventana en JAVA");
+	   this.setSize(500, 500);
+
 	   //barra
-	   this.crearBarraMenu();
-	   
+		   this.crearBarraMenu();
+
 	   //Tabs
 	   this.crearTabs();
-	   
+
 	   this.setVisible(true);
 	   this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -44,9 +44,9 @@ public class BarraMenu extends JFrame{
 		   programa.add("Salir");
 		   ayuda.add("Ayuda General");
 		   ayuda.addSeparator();
-		   ayuda.add("Acerca de...");		
+		   ayuda.add("Acerca de...");
 	}
-	
+
 	private void crearTabs(){
 	       JTabbedPane jtp = new JTabbedPane();
 	       getContentPane().add(jtp);
@@ -61,11 +61,10 @@ public class BarraMenu extends JFrame{
 	       jtp.addTab("Tab1", jp1);
 	       jtp.addTab("Tab2", jp2);
 	}
-	
+
 	public static void main(String args[]){
 		BarraMenu prog = new BarraMenu();
 	}
 
 }//FIN DE LA CLASE Ventana
 //FIN
-

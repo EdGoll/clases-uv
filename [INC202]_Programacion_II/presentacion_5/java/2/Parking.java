@@ -4,7 +4,7 @@ public class Parking {
     protected int capacidad;
 
     public Parking(int n) {
-        capacidad = espacios = n;
+        capacidad = espaciosDisponibles = n;
     }
 
     public synchronized void entra() {
