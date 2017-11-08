@@ -4,6 +4,7 @@ import java.sql.Connection;
 import javax.swing.JOptionPane;
 
 import modelo.dao.CargarDao;
+import modelo.dao.CargarDaoLog;
 
 public class ProbarConexion {
 	private Connection cn=null;
@@ -24,8 +25,10 @@ public class ProbarConexion {
 	
 	
 	public static void main(String[] args){
-		new ProbarConexion();
-		CargarDao cargar = new CargarDao();
+//		new ProbarConexion();
+//		CargarDao cargar = new CargarDao();
+//		cargar.cargarDatos();
+		CargarDaoLog cargar = new CargarDaoLog();
 		cargar.cargarDatos();
 	}
 

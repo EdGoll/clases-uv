@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-public class CargarDao {
+public class CargarDaoLog {
 
 	public void cargarDatos() {
 		File archivo = null;

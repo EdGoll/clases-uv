@@ -1,0 +1,101 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+\begin{document}
+\begin{center}
+	{\Large Control 3}\\
+	Programaci\'on 2 \\
+	\emph{\small Prof. Eduardo Godoy} \\
+	%\emph{\scriptsize \date{mayo de 2017}}
+\end{center}
+	\centerline{\sc \normalsize Escuela de Ingenier\'ia Civil Inform\'atica}
+	\centerline{\sc \normalsize  Universidad de Valpara\'iso}
+	%\centerline{\sc \small 26 de Octubre de 2015}
+
+	\vspace{1pc}
+
+\begin{itemize}
+  \item \emph{30pts.} Una empresa de autobuses le ha solicitado a Ud, como alumno de la Escuela de Ingenier\'ia Civil Inform\'atica que desarrolle una simulaci\'on del proceso de subida y bajada de pasajeros. Los requisitos que le impone la empresa son:
+
+  \begin{itemize}
+      \item La simulaci\'on se realiza s\'olo considerando un autob\'us
+      \item La capacidad m\'axima de un autob\'us es 45 pasajeros (s\'olo se consideran pasajeros sentados).
+      \item Si el autob\'us est\'a vac\'io, no puede detenerse para bajar pasajeros.
+      \item Si el auto est\'a lleno no puede detenerse para subir pasajeros.
+      \item La cantidad de pasajeros que suben y bajan es aleatoria entre 1 y 10.
+      \item La frecuencia de subida y bajada de pasajeros es aleatoria en 1 y 5 segundos.
+  \end{itemize}
+
+  \textbf{Condiciones de entrega:}
+  \begin{itemize}
+      \item[-] \textbf{Debe compilar}.
+      \item[-] Debe considerar la creaci\'on de al menos dos thread para los proceso y un recurso compartido (clase que contiene los metodos sincronizados)
+      \item[-] Enviar al correo eduardo.gl@gmail.com \textbf{S\'OLO} los archivos \textbf{*.java}, eliminado de ante mano la instrucci\'on \textbf{package}, en un comprimido ApellidoPaternoNombreC3.zip. El no cumplimiento del formato ser\'a penalizado con 10 punto de descuento.
+      \item[-] Entrega jueves 9 antes de llas 2:00 am. Subir a la hora que se les indica en el certamen. El no cumplimiento con la hora de entrega, ser\'a penalizado con 1 punto de descuento por cada minuto de retraso.
+  \end{itemize}
+\end{itemize}
+
+
+	\begin{table}[!ht]
+		 {\scriptsize
+			\begin{center}
+					 \begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline
+							\multicolumn{4}{|c|}{\textbf{\textquestiondown C\'omo ser\'e evaluado este Control?} } \\ \hline
+							\multicolumn{1}{|c|}{\textbf{T\'opico}} &
+							\multicolumn{1}{c|}{\textbf{Logrado}} &
+							\multicolumn{1}{c|}{\textbf{Medianamente logrado}} &
+							\multicolumn{1}{c|}{\textbf{No logrado}} \\ \hline
+							T\'opico 1 - Clase Autobus. &
+							\emph{5pts} Crea las clase MonitorAutobus con sus atributos y constructor requerido. &
+							\emph{2pts} Crea clase con algunos  atributo o m\'etodos	requeridos en el. Crea m\'etodos o Atributos en otras clases no indicadas en el problema. &
+							\emph{  0pts} No crea clases requeridas. \\ \hline
+
+							T\'opico 1-a - Clase Autobus - M\'etodo de ingreso de pasajeros. &
+							\emph{20pts} Define e implementa correctamente el m\'etodo relacionado \emph{ingreso de pasajero}  dentro de la clase MonitorAutobus obteniendo la salida requerida.  &
+							\emph{10pts} Define e implementa m\'etodo acercandose parcialmente a la salida esperada. &
+							\emph{ 0pts} No define m\'etodo.  M\'etodo definido pero no cumple con lo m\'inimo esperado.\\ \hline
+
+							T\'opico 1-b - Clase Autobus - M\'etodo de salida de pasajeros. &
+							\emph{20pts} Define e implementa correctamente el m\'etodo \emph{salida de pasajero}  dentro de la clase MonitorAutobus obteniendo la salida requerida. &
+							\emph{10pts} Define e implementa m\'etodo acercandose parcialmente a la salida esperada. &
+							\emph{ 0pts} No define m\'etodo.  M\'etodo definido pero no cumple con lo m\'inimo esperado. \\ \hline
+
+							T\'opico 2 - ThreadSalida&
+							\emph{20pts} Define e implementa la clase Thread para simular el ingreso de pasajeros con sus m\'etodos y  atributos requeridos.&
+							\emph{15pts} Define e implementa m\'etodo acercandose parcialmente a la salida esperada.  &
+							\emph{ 0pts} No define m\'etodo.  M\'etodo definido pero no cumple con lo m\'inimo esperado. \\ \hline
+
+              T\'opico 3 - ThreadIngreso&
+							\emph{20pts} Define e implementa la clase Thread para simular la salida de pasajeros con sus m\'etodos y  atributos requeridos.&
+							\emph{10pts} Define e implementa m\'etodo acercandose parcialmente a la salida esperada.  &
+							\emph{ 0pts} No define m\'etodo.  M\'etodo definido pero no cumple con lo m\'inimo esperado. \\ \hline
+
+              T\'opico 4 - Clase Inicializadora &
+							\emph{10pts} Define e implementa la clase de control que permite iniciar el proceso de simulaci\'on (clase impl) con su m\'etodo main incluido.&
+							\emph{5pts} Define e implementa clase y m\'etodo acercandose parcialmente a la salida esperada.  &
+							\emph{ 0pts} No define m\'etodo.  M\'etodo definido pero no cumple con lo m\'inimo esperado. \\ \hline
+
+							Paradigma Orientaci\'on a Objetos  &
+							\emph{5pts} Resuelve el problema utilizando el POO. &
+							\emph{3pts} Utiliza parte del POO para resolver el problema. &
+							\emph{0pts} No utiliza el POO para dar soluci\'on al problema.\\ \hline
+							Total m\'aximo puntaje pregunta 2 &
+							\emph{100pts} &
+							\emph{50pts} &
+							\emph{  0pts} \\ \hline
+					\end{tabular}
+			\end{center}}
+	 \end{table}
+
+\end{document}
