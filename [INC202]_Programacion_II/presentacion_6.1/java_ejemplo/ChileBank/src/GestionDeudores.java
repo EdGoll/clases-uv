@@ -11,6 +11,7 @@ public class GestionDeudores {
 
 	private List<Persona> listaPersona = new ArrayList<Persona>();
 	private PersonaDAO dao = new PersonaDAO();
+	private PersonaDAOJdbc daoJdbc = new PersonaDAOJdbc();
 	
 	public List<Persona> getListaPersona() {
 		return listaPersona;
@@ -25,7 +26,8 @@ public class GestionDeudores {
 	}
 	
 	private void llenarListaPersona() {
-		listaPersona= dao.personas();
+		//listaPersona= dao.personas();
+		listaPersona= daoJdbc.personas();
 	}
 	
 	public Persona crear(Persona p) {

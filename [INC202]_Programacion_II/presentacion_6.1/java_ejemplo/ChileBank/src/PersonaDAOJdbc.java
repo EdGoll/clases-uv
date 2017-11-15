@@ -1,76 +1,22 @@
-package modelo.dao;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
-import modelo.Persona;
-import modelo.dao.conexion.Conexion;
 
-public class CargarDao {
 
-	public void cargarDatos() {
-		File archivo = null;
-		FileReader fileReader = null;
-		BufferedReader br = null;
-		String linea=null;
-		Persona persona = null;
-		try {
-			archivo = new File("dataset-chilebank.csv");
-			fileReader = new FileReader(archivo);
-			br = new BufferedReader(fileReader);
-			br.readLine();// elimino cabecera
-			while ((linea = br.readLine()) != null) {
-				System.out.println(linea);
-				persona=this.getPersona(linea);
-				this.crearRegistro(persona);
-//		        while (st.hasMoreTokens()) {
-//		        	palabra = st.nextToken();
-//		            numTokens++;
-//		            System.out.println ("    Palabra " + numTokens + " es: " + palabra);
-//		        }
-		        
-			}
-		} catch (IOException ex) {
-			ex.printStackTrace();
-		} finally {
-			try {
-				br.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+public class PersonaDAOJdbc {
+	List<Persona> listaPersona = new ArrayList<Persona>();
 
-	}
-	
-	private Persona getPersona(String linea) {
-        StringTokenizer st = new StringTokenizer (linea,";");	 
-        Persona nuevaPersona =  new Persona(Integer.valueOf(st.nextToken()),
-        				   Integer.valueOf(st.nextToken()),
-        				   st.nextToken(),st.nextToken(),
-        				   Integer.valueOf(st.nextToken()),
-        				   Integer.valueOf(st.nextToken()),
-        				   Integer.valueOf(st.nextToken()),
-			        		Double.parseDouble(st.nextToken()),
-			        		Integer.valueOf(st.nextToken()),
-			        		Integer.valueOf(st.nextToken()),
-			        		Integer.valueOf(st.nextToken()),
-			        		Integer.valueOf(st.nextToken()),
-			        		st.nextToken(),
-			        		Integer.valueOf(st.nextToken()),
-			        		st.nextToken());
-        return nuevaPersona;
-	}
-	
-	private void crearRegistro(Persona nuevoRegistro) {
+	public void crearPersona(Persona nuevoRegistro) {
 		Conexion conexion = new Conexion();
 		Connection conn = conexion.conectar();
 		String sqlInsertar = "INSERT INTO public.\"Persona\"" + 
@@ -103,25 +49,32 @@ public class CargarDao {
 		}finally {
 			conexion.cerrarConexion();
 		}
-	   
+	  
 	}
 	
-	public List<Persona> getSinDeuda(){
-		 List<Persona> personasSinDeuda = new ArrayList<Persona>();
+	public void eliminarPersona(Persona p) {
+		
+	}
+	
+	public void actualizarPersona(Persona p) {
+		
+	}
+	
+	public Persona buscarPersona(int idPersona) {
+		Persona personas = null;
 		 Persona p=null;
 		Conexion conexion = new Conexion();
 		Connection conn = conexion.conectar();
-		String sql = "select * from public.\"Persona\" where estado_actual like ?";
+		String sql = "select * from public.\"Persona\" where id = ?";
 		PreparedStatement preparedStmt;
 		try {
 			preparedStmt = conn.prepareStatement(sql);
-			preparedStmt.setString(1, "%SIN DEUDA%");
+			preparedStmt.setInt(1, idPersona);
 			ResultSet rs = preparedStmt.executeQuery();
 			while (rs.next()) {
 				p = new Persona();
 				p.setId(rs.getInt("id"));
 				p.setNivelEduc(rs.getString("nivel_educacional"));
-				personasSinDeuda.add(p);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -129,7 +82,36 @@ public class CargarDao {
 		}finally {
 			conexion.cerrarConexion();
 		}
-		return personasSinDeuda;
+		return personas;
 	}
+	
 
+	public List<Persona> personas() {
+		//Persona personas = null;
+		 Persona p=null;
+		 List<Persona> personas = new ArrayList<Persona>();
+		Conexion conexion = new Conexion();
+		Connection conn = conexion.conectar();
+		String sql = "select * from public.\"Persona\"";
+		PreparedStatement preparedStmt;
+		try {
+			preparedStmt = conn.prepareStatement(sql);
+			ResultSet rs = preparedStmt.executeQuery();
+			while (rs.next()) {
+				p = new Persona();
+				p.setId(rs.getInt("id"));
+				p.setNivelEduc(rs.getString("nivel_educacional"));
+				personas.add(p);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			conexion.cerrarConexion();
+		}
+		return personas;
+	}
+	
+	
+	
 }
