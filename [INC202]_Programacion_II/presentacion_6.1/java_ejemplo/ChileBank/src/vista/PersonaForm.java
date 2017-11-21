@@ -1,6 +1,9 @@
+package vista;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
+
+import modelo.Persona;
 
 //id;EDAD;NIVEL EDUCACIONAL;ACTIVIDAD;RENTA FIJA;LIMITE MAXIMO CREDITO;DEUDA ACTUAL;PORCENTAJE DE USO DEL CREDITO;NUMERO DE COMPRAS EN MES ACTUAL (T);NUMERO DE COMPRAS EN MES T-1;NUMERO DE COMPRAS EN MES T-2;NUMERO DE COMPRAS EN MES T-3;ESTADO ACTUAL;CANTIDAD HISTORICA DE ATRASOS EN PAGO DE CUENTAS;COMPRA
 public class PersonaForm {
@@ -22,7 +25,7 @@ public class PersonaForm {
 	private JTextField compraTf= new JTextField();
 	
 	private JComboBox comboBoxNivelEduc = new JComboBox(new DefaultComboBoxModel(new String[] { "Seleccionar...","EDUC. TECNICA", "EDUC. UNIVERSITARIA", "ESTUDIANTE UNIVERSITARIO","EDUC. MEDIA" }));
-	private JComboBox comboBoxActividad = new JComboBox(new DefaultComboBoxModel(new String[] {  "Seleccionar...","DEPENDIENTE", "INDEPENDIENTE","UNIVERSITARIO" }));
+	private JComboBox comboBoxActividad = new JComboBox(new DefaultComboBoxModel(new String[] {  "Seleccionar...","DEPENDIENTE", "INDEPENDIENTE","UNIVERSITARIO","EMPRESARIO" }));
 	private JComboBox comboBoxEstActual = new JComboBox(new DefaultComboBoxModel(new String[] {  "Seleccionar...","SIN DEUDA", "DEUDA DE 1 MES", "DEUDA DE 2 MESES" }));
 	private JComboBox comboBoxCompra = new JComboBox(new DefaultComboBoxModel(new String[] {  "Seleccionar...","SI", "NO"}));
 	private JComboBox comboBoxPorcetUsoCred = null;
@@ -35,6 +38,59 @@ public class PersonaForm {
 		comboBoxPorcetUsoCred= new JComboBox(new DefaultComboBoxModel(porcent));
 	}
 
+	public void limpiarForm() {
+		this.getEdadTf().setText("");
+		this.getComboBoxNivelEduc().setSelectedItem("Seleccionar...");
+		this.getComboBoxActividad().setSelectedItem("Seleccionar...");
+		this.getComboBoxCompra().setSelectedItem("Seleccionar...");
+		this.getComboBoxEstActual().setSelectedItem("Seleccionar...");
+		this.getComboBoxPorcetUsoCred().setSelectedItem("0");
+		this.getRentaFijaTf().setText("");
+		this.getLimMaxCreditoTf().setText("");
+		this.getDeudaActualTf().setText("");
+		this.getNumCompraMesActualTf().setText("");
+		this.getNumCompraMesActual_1Tf().setText("");
+		this.getNumCompraMesActual_2Tf().setText("");
+		this.getNumCompraMesActual_3Tf().setText("");
+		this.getCantHistAtrasosPagoTf().setText("");
+	}
+	
+	public void setPersonaForm(Persona per) {
+		this.getEdadTf().setText(String.valueOf(per.getEdad()));
+		this.getComboBoxNivelEduc().setSelectedItem(per.getNivelEduc());
+		this.getComboBoxActividad().setSelectedItem(per.getActividad());
+		this.getComboBoxCompra().setSelectedItem(per.getCompra());
+		this.getComboBoxEstActual().setSelectedItem(per.getEstadoActual());
+		this.getComboBoxPorcetUsoCred().setSelectedItem(String.valueOf(Double.valueOf(per.getPorcentUsoCredito()).intValue()));
+		this.getRentaFijaTf().setText(String.valueOf(per.getRentaFija()));
+		this.getLimMaxCreditoTf().setText(String.valueOf(per.getLimMaxCredito()));
+		this.getDeudaActualTf().setText(String.valueOf(per.getDeudaActual()));
+		this.getNumCompraMesActualTf().setText(String.valueOf(per.getNumCompraMesActual()));
+		this.getNumCompraMesActual_1Tf().setText(String.valueOf(per.getNumCompraMesActual_1()));
+		this.getNumCompraMesActual_2Tf().setText(String.valueOf(per.getNumCompraMesActual_2()));
+		this.getNumCompraMesActual_3Tf().setText(String.valueOf(per.getNumCompraMesActual_3()));
+		this.getCantHistAtrasosPagoTf().setText(String.valueOf(per.getCantHistAtrasosPago()));
+	}
+	
+	public Persona getPersonaForm() {
+		Persona per = new Persona();
+		per.setEdad(Integer.parseInt(this.getEdadTf().getText()));			
+		per.setNivelEduc(this.getComboBoxNivelEduc().getSelectedItem().toString());
+		per.setActividad(this.getComboBoxActividad().getSelectedItem().toString());
+		per.setRentaFija(Integer.parseInt(this.getRentaFijaTf().getText()));
+		per.setLimMaxCredito(Integer.parseInt(this.getLimMaxCreditoTf().getText()));
+		per.setDeudaActual(Integer.parseInt(this.getLimMaxCreditoTf().getText()));
+		per.setPorcentUsoCredito(Double.parseDouble(this.getComboBoxPorcetUsoCred().getSelectedItem().toString()));
+		per.setNumCompraMesActual(Integer.parseInt(this.getNumCompraMesActualTf().getText()));
+		per.setNumCompraMesActual_1(Integer.parseInt(this.getNumCompraMesActual_1Tf().getText()));
+		per.setNumCompraMesActual_2(Integer.parseInt(this.getNumCompraMesActual_2Tf().getText()));
+		per.setNumCompraMesActual_3(Integer.parseInt(this.getNumCompraMesActual_3Tf().getText()));			
+		per.setEstadoActual(this.getComboBoxEstActual().getSelectedItem().toString());
+		per.setCantHistAtrasosPago(Integer.parseInt(this.getCantHistAtrasosPagoTf().getText()));
+		per.setCompra(this.getComboBoxCompra().getSelectedItem().toString());	
+		return per;
+	}
+	
 	public JTextField getIdTf() {
 		return idTf;
 	}

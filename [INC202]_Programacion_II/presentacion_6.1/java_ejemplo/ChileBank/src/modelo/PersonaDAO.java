@@ -1,3 +1,4 @@
+package modelo;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,7 +8,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonaDAO {
+public class PersonaDAO implements PersonaDAOInterface {
 	private static final String CABECERA_FILE = "id;EDAD;NIVEL EDUCACIONAL;ACTIVIDAD;RENTA FIJA;LIMITE MAXIMO CREDITO;DEUDA ACTUAL;PORCENTAJE DE USO DEL CREDITO;NUMERO DE COMPRAS EN MES ACTUAL (T);NUMERO DE COMPRAS EN MES T-1;NUMERO DE COMPRAS EN MES T-2;NUMERO DE COMPRAS EN MES T-3;ESTADO ACTUAL;CANTIDAD HISTORICA DE ATRASOS EN PAGO DE CUENTAS;COMPRA";
 	List<Persona> listaPersona = new ArrayList<Persona>();
 
@@ -44,6 +45,7 @@ public class PersonaDAO {
 				e2.printStackTrace();
 			}
 		}
+		this.grabar();
 		return p;
 	}
 	
@@ -83,6 +85,7 @@ public class PersonaDAO {
 				e2.printStackTrace();
 			}
 		}
+		this.grabar();
 	}
 	
 	public void actualizarPersona(Persona p) {
@@ -121,7 +124,8 @@ public class PersonaDAO {
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
-		}		
+		}	
+		this.grabar();
 	}
 	
 	public Persona buscarPersona(int idPersona) {

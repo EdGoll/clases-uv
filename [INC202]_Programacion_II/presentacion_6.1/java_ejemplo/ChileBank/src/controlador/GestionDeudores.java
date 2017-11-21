@@ -1,3 +1,4 @@
+package controlador;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,12 +8,20 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import modelo.Persona;
+import modelo.PersonaDAO;
+import modelo.PersonaDAOInterface;
+import modelo.PersonaDAOJdbc;
+
 public class GestionDeudores {
 
 	private List<Persona> listaPersona = new ArrayList<Persona>();
-	private PersonaDAO dao = new PersonaDAO();
-	private PersonaDAOJdbc daoJdbc = new PersonaDAOJdbc();
+//	private PersonaDAO dao = new PersonaDAO();
+//	private PersonaDAOJdbc daoJdbc = new PersonaDAOJdbc();
+
+	private PersonaDAOInterface dao = new PersonaDAOJdbc();
 	
+	//private PersonaDAOInterface dao = new PersonaDAO();
 	public List<Persona> getListaPersona() {
 		return listaPersona;
 	}
@@ -27,12 +36,12 @@ public class GestionDeudores {
 	
 	private void llenarListaPersona() {
 		//listaPersona= dao.personas();
-		listaPersona= daoJdbc.personas();
+		listaPersona= dao.personas();
 	}
 	
 	public Persona crear(Persona p) {
 		p = dao.crearPersona(p);
-		dao.grabar();
+		//dao.grabar();
 		return p;
 	}
 	
@@ -42,18 +51,18 @@ public class GestionDeudores {
 		boolean resp = false;
 		if(p!=null) {
 			dao.eliminarPersona(p);
-			resp = dao.grabar();
+			//resp = dao.grabar();
 		}
 		return resp;
 	}
 	
 	public Persona actualizar(Persona p) {
 		dao.actualizarPersona(p);
-		dao.grabar();
+		//dao.grabar();
 		return p;
 	}
 	
-	private Persona buscar(int idPersona) {
+	public Persona buscar(int idPersona) {
 		System.out.println("llego aqui");
 		Persona p = dao.buscarPersona(idPersona);
 		return p;
