@@ -147,7 +147,7 @@ public class PersonaDAOJdbc implements PersonaDAOInterface{
 		 List<Persona> personas = new ArrayList<Persona>();
 		Conexion conexion = new Conexion();
 		Connection conn = conexion.conectar();
-		String sql = "select * from public.\"Persona\" order by id asc";
+		String sql = "select * from public.\"Persona\" order by id desc";
 		PreparedStatement preparedStmt;
 		try {
 			preparedStmt = conn.prepareStatement(sql);

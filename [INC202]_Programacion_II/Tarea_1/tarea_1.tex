@@ -60,7 +60,7 @@
     \end{pgfonlayer}
 }
 
-\pgfdeclarelayer{shadow} 
+\pgfdeclarelayer{shadow}
 \pgfsetlayers{shadow,main}
 
 \newcommand\shadowimage[2][]{%
@@ -98,7 +98,7 @@
         {\huge \textsc{\@title}}
         \vspace{1ex} \\
         \linia \\
-        \hfill \@date  \\ 
+        \hfill \@date  \\
         \@author
         \vspace{4ex}
     \end{center}
@@ -153,34 +153,47 @@
 
 \date{7 de junio de 2017}
 
-\author{Profesor: \textbf{Rodrigo Olivares} (\href{mailto:rodrigo.olivares@uv.cl}{rodrigo.olivares@uv.cl}) \\ Escuela de Ingenier\'ia Civil  Inform\'atica \\ Universidad de Valpara\'iso \\}
+\author{Profesor: \textbf{Eduardo Godoy} (\href{mailto:eduardo.gl@gmail.com}{eduardo.gl@gmail.com}) \\ Escuela de Ingenier\'ia Civil  Inform\'atica \\ Universidad de Valpara\'iso \\}
 
 \maketitle
 
 \section{Descripci\'on de la tarea}
 
 \begin{itemize}
-    \item Individual \'o 2 personas (m\'aximo).
-    \item Formato de informe IEEE: Resumen, Introducci\'on, Problema, Desarrollo y Conclusiones.
+    \item Formato de informe:
+\begin{itemize}
+  \item Resumen.
+  \item Introducci\'on.
+  \item Definici\'on del Problema (De que trata el sistema).
+  \item Desarrollo.
+    \begin{itemize}
+      \item Diseño y Estructura del proyecto.
+      \item Librerias Utilizadas.
+      \item Descripción de principales clases con sus métodos implementados
+      \item Definición de Tablas de bases de datos utilizadas.
+    \end{itemize}
+  \item Interfaz implementada y sus funcionalidades identificadas.
+  \item Conclusiones.
+\end{itemize}
+
 \end{itemize}
 
 \subsection{Transformaci\'on de lenguajes}
 
-Se debe realizar una aplicaci\'on en Java que permita transformar una o varias palabras, a diferentes lenguajes: alfabeto latino, alfabeto ascii y alfabeto morse. Para ello se pide los siguiente:
-
+De forma general, se debe mejorar el proyecto implementado hasta ahora según los siguientes requerimientos:
 \begin{itemize}
-    \item El usuario pueda ingresar un texto en cualquiera de los tres lenguajes.
-    \item El usuario puede seleccionar un archivo de texto como dato de entrada.
-    \item El sistema debe proporcionar la alternativa para seleccionar el lenguaje al que se desea transformar. 
-    \item El sistema debe transformar la o las palabras y luego mostrarlas en alg\'un componente. De no ser posible realizar la transformaci\'on, el sistema debe informar al usuario que no se realiz\'o y porqu\'e.
-    \item Al momento de transformar, el sistema deber\'a registrar la acci\'on, almacenando el resultado en un archivo de texto.
+    \item Implementar una interfaz desarrollada en Java swing que posea  como mínimo las mima opciones que se presentaron en la tarea dos.
+    \item Implementar como fuente de almacenamiento de datos persistente una base de datos con PosgreSql como motor.
+    \item Se debe construir la aplicación aplicando el patron de diseño Modelo Vista Controlador.
+    \item para acceder a los datos se debe implementar el patron DAO en conjunto al uso de jdbc para conectarse a la base de datos.
+    
 \end{itemize}
 
 Una tentativa de interfaz gr\'afica de usuario puede ser vista en la Figura \ref{fig:v1}. El usuario puede ingresar un texto en el componente \texttt{JTextArea} o bien puede presionar el bot\'on \texttt{buscar} para abrir una ventana de di\'alogo, como se muestra en la Figura \ref{fig:v2}. Para desplegar este componente, se debe utilizar la clase \texttt{JFileChooser}\footnote{\url{http://docs.oracle.com/javase/7/docs/api/javax/swing/JFileChooser.html}}. Luego de ingresado el texto, el usuario debe seleccionar el lenguaje al cual se desea transformar, para finalmente, presionar el bot\'on \texttt{transformar}. Si el usuario presiona el bot\'on \texttt{transformar} sin seleccionar previamente el lenguaje, el sistema debe desplegar un mensaje de error, como se muestra en el Figura \ref{fig:v3}.
 
 Al momento de transformar la o las palabras ingresadas, el sistema desplegar\'a el resultado en un componente. Luego, revisar\'a el estado del componente \texttt{JCheckBox}. Si est\'a activo, se almacenar\'a el resultado en un archivo de texto, con extensi\'on\texttt{.latin}, \texttt{.morse} o \texttt{.ascii}, si se transform\'o al alfabeto lat\'in, al alfabeto morse o al alfabeto ascii, respectivamente. El nombre del archivo debe ser din\'amico. Re recomienda utilizar la clase \texttt{Date} del package \texttt{java.util}.
 
-Las Tablas \ref{tab:t1} y \ref{tab:t2}, muestran la equivalencia entre los lenguajes morse-lat\'in y ascii-lat\'in. Para ambos casos, la transformaci\'on s\'olo incluye los caracteres de la A a la Z, los d\'igitos del 0 al 9 y los s\'imboles punto, coma e interrogaci\'on (\texttt{.,?}). Para el caso de las letras, la transformaci\'on debe considerar s\'olo los elementos en may\'uscula, pues no existe equivalencia para m\'inuscula. %Se recomienda usar el m\'etodo \texttt{toUpperCase()} de la clase \texttt{String}, antes de realizar la transformaci\'on. 
+Las Tablas \ref{tab:t1} y \ref{tab:t2}, muestran la equivalencia entre los lenguajes morse-lat\'in y ascii-lat\'in. Para ambos casos, la transformaci\'on s\'olo incluye los caracteres de la A a la Z, los d\'igitos del 0 al 9 y los s\'imboles punto, coma e interrogaci\'on (\texttt{.,?}). Para el caso de las letras, la transformaci\'on debe considerar s\'olo los elementos en may\'uscula, pues no existe equivalencia para m\'inuscula. %Se recomienda usar el m\'etodo \texttt{toUpperCase()} de la clase \texttt{String}, antes de realizar la transformaci\'on.
 
 \begin{figure}[H]
     \begin{center}
@@ -249,12 +262,12 @@ Las Tablas \ref{tab:t1} y \ref{tab:t2}, muestran la equivalencia entre los lengu
 
 \subsection{Entrega}
 
-Deben entregar los archivos fuente \texttt{.java} y todo recurso utilizado por la aplicaci\'on, por ejemplo archivos, bibliotecas externas, etc. Se pondr\'a a disposici\'on un recurso \texttt{tarea} en el aula virtual, donde deber\'an subir un archivo \texttt{.zip} con el formato: 
+Deben entregar los archivos fuente \texttt{.java} y todo recurso utilizado por la aplicaci\'on, por ejemplo archivos, bibliotecas externas, etc. Se pondr\'a a disposici\'on un recurso \texttt{tarea} en el aula virtual, donde deber\'an subir un archivo \texttt{.zip} con el formato:
 
 \begin{center}
 \texttt{ApellidoPaternoAlumno1ApellidoPaternoAlumno2.zip}
 \end{center}
- 
+
 \noindent
 En dicho archivo comprimido, deber\'an adjuntar el informe en formato PDF. La evaluaci\'on ser\'a: 65\% la aplicaci\'on y 35\% el informe. Deben utilizar todo lo visto en clases.\\
 
