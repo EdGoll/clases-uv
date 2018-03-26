@@ -7,4 +7,9 @@
 *.out
 *.snm
 *.toc
-
+*.pygtex
+*.pygstyle
+*.vrb
+*.listing
+*/**/auto
+*/**/_minted-*
