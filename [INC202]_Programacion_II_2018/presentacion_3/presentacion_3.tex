@@ -1,0 +1,820 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{CambridgeUS}
+%  \setbeamercovered{transparent}
+}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{algorithm,algorithmic}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{multicol}
+
+\usepackage[skins,minted]{tcolorbox}
+
+\newcommand{\code}[1]{\mintinline{java}{#1}}
+\newcommand{\codet}[1]{\texttt{#1}}
+
+\setminted[java]{
+  linenos=true,
+  fontfamily=tt,
+  fontsize=\small,
+  frame=leftline}
+
+
+\newminted[jsmall]{java}{
+  fontsize=\footnotesize
+  , linenos = false
+  , frame=single
+  , autogobble=true
+}
+
+\newtcblisting{java}[2][]{
+  minted language=java,
+  enhanced, listing engine=minted,
+  listing only, #1, title=#2, left=2em
+}
+
+\setminted[bash]{
+  linenos=true,
+  fontfamily=tt,
+  fontsize=\small,
+  frame=leftline
+}
+
+\newtcblisting{bash}[2][]{minted language=bash,
+  enhanced, listing engine=minted,
+  listing only, #1, title=#2, left=2em
+}
+
+\usepackage{enumitem}
+\setitemize{itemsep=1.2em,%
+  label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}%
+  \usebeamertemplate{itemize item}
+}
+
+\title[\textbf{Programación 2}]{\textbf{Programación 2}}
+\subtitle{Introducción al Lenguaje Java\\Programación Estructurada}
+
+\author[IF-EG]
+{Profesores:\\
+  Ismael Figueroa -  \texttt{\small ifigueroap@gmail.com} \\
+  \vspace{0.5mm} \\
+  Eduardo Godoy - \texttt{\small eduardo.gl@gmail.com}
+}
+
+\institute[Universidad de Valparaíso]
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% \begin{frame}
+%   \frametitle{Contenido}
+%   \tableofcontents%[pausesections]
+% \end{frame} 
+
+\section{El Lenguaje de Programación Java}
+
+\subsection{Programación Estructurada}
+
+\begin{frame}
+  \frametitle{Programación Estructurada}
+
+  \begin{exampleblock}{}
+    La Programación Estructurada es un paradigma de programación que
+    busca mejorar la claridad, calidad, y mantenibilidad de los
+    programas, mediante el uso exclusivo de \emph{estructuras de
+      control}
+  \end{exampleblock}
+
+  \begin{exampleblock}{}
+    Las estructuras de control permiten manipular el \emph{flujo de
+      ejecución del programa}, fomentando la reutilización de código y
+    minimizando el código duplicado.
+  \end{exampleblock}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Estructuras de Control}
+
+  \begin{itemize}
+    
+  \item \textbf{Estructuras Secuenciales}: en Java por defecto los programas
+    son secuenciales
+    
+  \item \textbf{Estructuras de Selección}: permiten ejecutar segmentos de
+    código en base al cumplimiento (o no) de condiciones que dependen
+    del estado del programa
+    
+  \item \textbf{Estructuras de Iteración}: permiten ejecutar repetidamente un
+    segmento de código, en base a condiciones lógicas, o recorriendo
+    los elementos de una colección
+
+    
+  \item \textbf{Estructuras de Salto}: permiten romper de---forma
+    controlada---con el flujo dentro de otras estructuras, como las de
+    iteración
+    
+  \item \textbf{Excepciones}: permiten declarar un flujo alternativo
+    que se ejecuta solo cuando el programa encuentra un error
+    
+  \end{itemize} 
+
+\end{frame}
+
+\subsection{Estructuras de Selección}
+
+\begin{frame}
+  \frametitle{Estructura \code{if}}
+
+  \begin{itemize}
+  \item Permite ejecutar condicionalmente un bloque de código
+    
+  \item Un \code{if} sencillo solo tiene un bloque que se ejecuta si
+    la condición es \code{true}
+    
+  \item Un \code{if} compuesto tiene una cláusula \code{else} con un
+    bloque que se ejecuta solo si la condición es \code{false}
+    
+  \item Pueden anidarse arbitrariamente varios \code{if} en las
+    cláusulas \code{else}. Esto se conoce como \code{else-if}
+    
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Estructura \code{if}}
+  \begin{jsmall*}{fontsize=\scriptsize}
+    void compararN(int n) {
+      // if sencillo
+      if(n < 45) {
+        System.out.println("n: " + n + " es menor que 45");
+      }
+
+      // if con alternativa
+      if(n < 3) {
+        System.out.println("n: " + n + " es menor que 3");
+      } else {
+        System.out.println("n: " + n + " NO es menor que 3");
+      }
+
+      // if anidados
+      if(n < 3) {
+        System.out.println("n: " + n + " es menor que 3");
+      } else if (n < 5) {
+        System.out.println("n: " + n + " es menor que 5");
+      } else {
+        System.out.println("n: " + n + " es mayor que 3 y que 5");
+      }
+    }
+  \end{jsmall*}
+\end{frame}      
+
+ % \begin{columns}
+ %    \begin{column}{0.4\textwidth}
+ %      \begin{small}
+ %      \begin{itemize}
+ %      \item
+ %      \end{itemize}
+ %      \end{small}
+ %    \end{column}
+ %    %
+ %    \begin{column}{0.6\textwidth}
+ %      \begin{jsmall}
+ %      \end{jsmall}
+ %    \end{column}
+ % \end{columns}
+
+\begin{frame}
+  \frametitle{Otro Ejemplo de \code{if}}
+
+  Se desea escribir el método \code{clasificar} que retorna una
+  letra según el valor numérico del parámetro \code{valor}, con el
+  siguiente criterio:
+  
+  \begin{itemize}
+  \item \code{A}, para un valor entre 100 y 91 (inclusive).
+  \item \code{B}, para un valor entre 90 y 81 (inclusive).
+  \item \code{C}, para un valor entre 80 y 71 (inclusive).
+  \item \code{F}, si no es ninguno de los anteriores.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Método \code{clasificar}}
+  \begin{jsmall}
+    char clasificar(int valor) {
+      char clase;
+      
+      if(valor >= 91 && valor <= 100) {
+        clase = 'A';
+      } else if (valor >= 81 && valor <= 90) {
+        clase = 'B';
+      } else if (valor >= 71 && valor <= 80) {
+        clase = 'C';
+      } else {
+        clase = 'F';
+      }
+      
+      return clase;
+    }    
+  \end{jsmall}  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Estructura \code{switch}}
+
+  Cuando se tienen muchos casos distintos el uso de
+  \code{if-else-if} puede volverse difícil de leer. Java provee la
+  estructura \code{switch}, diseñada para manejar muchos casos
+  posibles:
+  
+  \begin{itemize}  
+  \item Permite seleccionar en base a distintos \emph{casos}, donde
+    cada caso es un valor constante
+    
+  \item Cada caso debe ser único, y el valor asociado debe ser del
+    mismo tipo que el valor analizado por \code{switch}
+
+  \item \code{switch} tiene un comportamiento en cascada, que debe
+    romperse usando la instrucción \code{break}
+    
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ejemplo de \code{switch}}
+
+  Ahora se desea escribir el método \code{desclasificar} que toma
+  como parámetro una calificación en forma de letra, y que retorna el
+  valor mínimo que generó esa clasificación. Si la letra es 'F', debe
+  retornar 0.
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Método \code{desclasificar}}
+  \begin{jsmall}
+    int desclasificar(char clase) {
+      int valor;
+      switch(valor) {
+        case 'A': valor = 91;
+        case 'B': valor = 81;
+        case 'C': valor = 71;
+        case 'F': valor = 0;
+      }
+
+      return valor;
+    }    
+  \end{jsmall}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Método \code{desclasificar}}
+
+  ¿Qué se imprime por pantalla en el siguiente programa?
+  
+  \begin{jsmall}
+    System.out.println(desclasificar('A'));
+  \end{jsmall}
+  \onslide<2->{Sorprendentemente imprime 0! Esto se debe al
+    comportamiento en cascada de \code{switch}}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Método \code{desclasificar} correcto}
+  \begin{jsmall}
+    int desclasificar(char clase) {
+      int valor;
+      switch(valor) {
+        case 'A': valor = 91; break;
+        case 'B': valor = 81; break;
+        case 'C': valor = 71; break;
+        case 'F': valor = 0;  break;
+      }
+
+      return valor;
+    }    
+  \end{jsmall}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Método \code{desclasificar}}
+
+  ¿Qué se imprime por pantalla en el siguiente programa?
+  
+  \begin{jsmall}
+    System.out.println(desclasificar('Z'));
+  \end{jsmall}
+  \onslide<2->{Esto es problemático pues se retorna una variable no
+    inicializada}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Método \code{desclasificar} más correcto}
+  La cláusula \code{default} permite manejar los valores que no caen
+  en ninguno de los casos del \code{switch}
+  
+  \begin{jsmall}
+    int desclasificar(char clase) {
+      int valor;
+      switch(valor) {
+        case 'A': valor = 91; break;
+        case 'B': valor = 81; break;
+        case 'C': valor = 71; break;
+        case 'F': valor = 0;  break;
+        default : valor = 0;
+      }
+
+      return valor;
+    }    
+  \end{jsmall}
+\end{frame}
+
+\subsection{Estructuras de Iteración}
+
+\begin{frame}
+  \frametitle{Estructuras de Iteración}
+
+  Java provee tres estructuras de iteración:
+  
+  \begin{itemize}
+  \item \code{while}
+  \item \code{do-while}
+  \item	\code{for}
+  \end{itemize}
+
+  Si bien las 3 son equivalentes, pueden hacer lo mismo, dependiendo
+  del problema algunas pueden ser más cómodas de usar que otras.
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ejemplo para iteración}
+
+  \begin{block}{}
+    Se desea escribir el método \code{sumaIntervalo}, que dados los
+    valores \code{n} y \code{m} de tipo \code{int}, y asumiendo que
+    siempre \code{n <= m}, se quiere calcular la suma de todos los
+    enteros comprendidos entre \code{n} y \code{m}, ambos inclusive.
+\end{block}
+
+\begin{exampleblock}{}
+  Por ejemplo, \code{sumaIntervalo(3,5)} debe retornar \code{12}  
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Estructura \texttt{while}}
+
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+          \begin{itemize}
+          \item Repite el bloque mientras la condición lógica, un
+            booleano, sea verdadera
+            
+          \item Si la condición es falsa la primera vez, nunca se
+            ejecuta el bloque
+            
+          \item Dentro del bloque, debemos eventualmente hacer cambios
+            para que la condición se vuelva falsa
+
+          \end{itemize}      
+    \end{column}
+    %
+    \begin{column}{0.6\textwidth}
+      \begin{jsmall}
+        int sumaIntervalo(int n, int m) {
+          int suma = 0;
+          int i = n;
+
+          while(i <= m) {
+            suma += i;
+            i = i + 1;            
+          }
+
+          return suma;
+        }
+      \end{jsmall}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Estructura \codet{do-while}}
+
+    \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \begin{itemize}
+        
+      \item Repite el bloque mientras la condición lógica, un
+        booleano, sea verdadera
+        
+      \item El bloque siempre se evalúa la menos una vez, porque se
+        revisa la condición luego de ejecutar el bloque
+        
+      \item También debemos preocuparnos de hacer falsa la condición
+        para salir de la iteración
+
+      \end{itemize}      
+    \end{column}
+    %
+    \begin{column}{0.6\textwidth}
+      \begin{jsmall}
+        int sumaIntervalo(int n, int m) {
+          int suma = 0;
+          int i = n;
+
+          do {
+            suma += i;
+            i = i + 1;
+          } while (i <= m);          
+
+          return suma;
+        }
+      \end{jsmall}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Estructura \codet{for}}
+
+      \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \begin{itemize}
+        
+      \item Combina los pasos de inicialización de variables de
+        iteración, condición lógica, y actualización de las variables
+        de iteración
+        
+      \item Es una forma muy compacta de escribir iteraciones, aunque
+        es equivalente en su poder a \codet{while} y \codet{do-while}
+
+      \end{itemize}      
+    \end{column}
+    %
+    \begin{column}{0.6\textwidth}
+      \begin{jsmall}
+        int sumaIntervalo(int n, int m) {
+          int suma = 0;
+
+          for(int i = n; i <= m; i = i + 1) {
+            suma += i;
+          }
+          
+          return suma;
+        }
+      \end{jsmall}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Comportamiento de \codet{for}}
+
+  \begin{itemize}
+  \item La \textbf{inicialización} es una sentencia que se ejecuta \emph{solo una vez}, justo antes de evaluar la condición de término
+
+  \item La \textbf{condición de término} es una expresión booleana,
+    que determina si se ejecuta el bloque o no. Se ejecuta justo antes
+    de ejecutar el bloque. El bloque del \codet{for} se ejecuta solo
+    cuando la condición de término es verdadera.    
+
+  \item La \textbf{actualización de variables de iteración} se ejecuta
+    justo después de la ejecución del bloque del \codet{for}, si es
+    que fue ejecutado. Se debe usar para, eventualmente, hacer falsa
+    la condición de término es una expresión invocada en cada iteración del bucle.
+
+  \item Algunas de estos elementos pueden ser expresiones vacías, pero
+    el \codet{for} debe tener como mínimo la forma \codet{for( ; ; ) { ... }}
+  \end{itemize}
+\end{frame}
+
+\subsection{Estructuras de Salto}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructuras de control - Sentencias de salto.}
+
+%   \begin{itemize}
+%   \item En Java se reconocen, básicamente, cuatro tipos de sentencias de salto:
+%     \begin{itemize}
+%     \item \textbf{break}.
+%     \item \textbf{continue}.
+%     \item	\textbf{return}.
+%     \item \textbf{goto} - A pesar de ser una palabra reservada, no es soportada por el lenguaje JAVA.
+%     \end{itemize}
+%   \end{itemize}
+% \end{frame}	
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructuras de control - Sentencias de salto \textbf{break}.}
+
+%   \begin{itemize}
+%   \item La sentencia \textbf{break} provoca que el flujo de control salte a la sentencia inmediatamente posterior al bloque en curso (ya visto dentro de la sentencia switch).
+%   \item El uso de la sentencia \textbf{break} con sentencias etiquetadas es una alternativa al uso de la sentencia \textbf{goto}.
+%   \item Se puede etiquetar una sentencia con una identificador JAVA válido, seguido por dos puntos (:) antes de la sentencia.
+%     \begin{itemize}
+%     \item nombreSentencia: sentenciaEtiquetada
+%     \end{itemize}
+%   \item La sentencia \textbf{break} se utiliza para salir de una sentencia etiquetada, llevando el flujo del programa al final de la sentencia de programa que indique:
+%     \begin{itemize}
+%     \item \textbf{break} nombreSentencia;
+%     \end{itemize}
+%   \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructuras de control - Sentencias de salto \textbf{continue}.}
+
+%   \begin{itemize}
+%   \item Del mismo modo que en un bucle se puede desear romper la iteración, también se puede desear continuar con él, pero dejando pasar una determinada iteración.
+%   \item Se puede usar la sentencia \textbf{continue} dentro de los bucles para saltar a otra sentencia, pero \textbf{no} puede ser llamada fuera de un bucle.
+%   \item Tras la invocación a una sentencia \textbf{continue} se transfiere el control a la condición de término del bucle que vuelve a ser evaluada en ese momento.
+%   \item El bucle continúa o no, dependiendo del resultado de la evaluación.
+%   \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructuras de control - Sentencias de salto \textbf{continue}.}
+
+%   \begin{itemize}
+%   \item En los bucles \textbf{for}, en ese momento, se ejecuta la cláusula de incremento (antes de la evaluación).
+%   \end{itemize}
+
+%   \begin{block}{Ejemplo de salto de instrucción \textbf{continue}}
+%     \begin{itemize}
+%     \item Imprimir en pantalla los 100 primeros números que no son divisibles por 3.
+%     \item Luego de implementar el ejemplo con el bucle \textbf{for} y la sentencia \textbf{continue}, impleméntelo utilizando la sentencia \textbf{while}.
+%     \end{itemize}
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructuras de control - Sentencias de salto \textbf{continue}.}
+
+%   \begin{block}{Ejemplo de salto de instrucción \textbf{continue} - Solución}
+%     {\scriptsize
+%       \textbf{for} ( \textbf{int} count $=$ 0 ; count $<$ 100 ; count++ ) \textbf{\{} \\
+%       \hspace{0.3cm} \textbf{if}  (count \% 3 $==$ 0) \textbf{\{} \\
+%       \hspace{0.6cm} \textbf{continue;} \\
+%       \hspace{0.3cm}\textbf{\}} \\
+%       \vspace{0.3cm}
+%       \hspace{0.3cm} System.out.println(''count = '' + count); \\
+%       \textbf{\}} 
+%     }
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructuras de control - Sentencias de salto \textbf{return}.}
+
+%   \begin{itemize}
+%   \item Es factible de utilizar para salir del método en curso y retornar (en general un valor), a la sentencia dentro de la cual se realizó la llamada.
+%   \item Para devolver un valor, simplemente se debe poner el valor (o una expresión que calcule el valor) a continuación de la palabra \textbf{return}.
+%   \item El valor devuelto por \textbf{return} debe coincidir con el tipo de dato declarado como valor de retorno del método.
+%   \item Cuando un método se declara como \textbf{void} se debe usar la forma de \textbf{return} (como buena práctica), sin indicarle ningún valor.
+%   \end{itemize}
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%
+
+% \section{Estructura de clases en JAVA}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructura de clases en JAVA}
+
+%   \begin{block}{}
+%     \textcolor{blue}{public class} \textbf{Auto} \{ \\
+%     \hspace{1cm} ... \\
+%     \hspace{1cm} \emph{variables} \\
+%     \hspace{1cm} ... \\
+%     \hspace{1cm} \emph{métodos} \\
+%     \hspace{1cm} ... \\
+%     \}
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructura de clases en JAVA - Primer programa}
+
+%   \begin{block}{}
+%     \textcolor{blue}{public class} \textbf{\emph{HelloWorld}} \{ \\
+%     \hspace{1cm} \\
+%     \hspace{1cm} \textcolor{blue}{public static void} \textbf{main}(String[ ] args) \{ \\
+%     \hspace{2cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{'' Hello, World! ''}); \\
+%     \hspace{1cm} \} \\
+%     \hspace{1cm} \\
+%     \}
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructura de clases en JAVA - Definición de variables}
+
+%   \begin{block}{}
+%     \textcolor{blue}{public class} \textbf{\emph{Auto}} \{ \\
+%     \hspace{1cm} \\
+%     \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{color}; \ \\
+%     \hspace{1cm} String \textcolor{green}{marca}; \ \\
+%     \hspace{1cm} \textcolor{blue}{boolean} \textcolor{green}{estado}; \ \\
+%     \hspace{1cm} ... \\
+%     \}
+%   \end{block}
+%   \begin{block}{}
+%     {\scriptsize
+%       \emph{Si bien, la declaración de variables puede ir en cualquier parte, habitualmente se declaran al inicio método o clase.}
+%     }
+%   \end{block}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructura de clases en JAVA - Definición de variables}
+
+%   \begin{block}{}
+%     {\scriptsize
+%       \emph{Es posible encadenar nombres de variables del mismo tipo}
+%     }
+%   \end{block}
+
+%   \begin{block}{}
+%     \textcolor{blue}{public class} \textbf{\emph{Auto}} \{ \\
+%     \hspace{1cm} \\
+%     \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{color}, \textcolor{green}{marca}; \ \\
+%     \hspace{1cm} \textcolor{blue}{boolean} \textcolor{green}{estado}; \ \\
+%     \hspace{1cm} \textcolor{blue}{int} \textcolor{green}{x}, \textcolor{green}{y}, \textcolor{green}{z}; \ \\
+%     \hspace{1cm} ... \\
+%     \}
+%   \end{block}
+  
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructura de clases en JAVA - Declaración de variables}
+
+%   \begin{block}{}
+%     \textcolor{blue}{public class} \textbf{\emph{Auto}} \{ \\
+%     \hspace{1cm} \\
+%     \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{color} = \textcolor{orange}{''rojo''}, \textcolor{green}{marca} = \textcolor{orange}{''chevrolet''}; \ \\
+%     \hspace{1cm} \textcolor{blue}{boolean} \textcolor{green}{estado} = \textcolor{blue}{false}; \ \\
+%     \hspace{1cm} \textcolor{blue}{int} \textcolor{green}{x} = 1, \textcolor{green}{y} = 0, \textcolor{green}{z} = -1; \ \\
+%     \hspace{1cm} ... \\
+%     \}
+%   \end{block}
+  
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructura de clases en JAVA - Comentarios}
+
+%   \begin{block}{}
+%     \textcolor{gray}{// Comentario en una línea} \\
+%     \textcolor{gray}{/* Comentario en más} \\
+%     \textcolor{gray}{ de una línea */} \\
+%     \textcolor{gray}{/** Comentario para} \\
+%     \textcolor{gray}{ javadoc */} \\
+%     \textcolor{blue}{public class} \textbf{\emph{Auto}} \{ \\
+%     \hspace{1cm} ... \\
+%     \}
+%   \end{block}
+  
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructura de clases en JAVA - Método}
+
+%   \begin{block}{Método: encenderMotor}
+%     {\scriptsize
+%       \textcolor{blue}{public class} \textbf{\emph{Auto}} \{ \\
+%       \hspace{1cm} \\
+%       \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{color}; \ \\
+%       \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{marca}; \ \\
+%       \hspace{1cm} \textcolor{blue}{private} \textcolor{blue}{boolean} \textcolor{green}{estado}; \ \\
+%       \hspace{1cm} \\
+%       \hspace{1cm} \textcolor{blue}{public void} \textbf{encenderMotor}() \{ \\
+%       \hspace{2cm} \textcolor{blue}{if} (\textcolor{green}{estado} == \textcolor{blue}{true}) \{ \\
+%       \hspace{3cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''Auto encendido''}); \\
+%       \hspace{2cm} \} \textcolor{blue}{else} \{ \\
+%       \hspace{3cm} \textcolor{green}{estado} = \textcolor{blue}{true}; \\
+%       \hspace{3cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''OK, se encendio ''}); \\
+%       \hspace{2cm} \} \\
+%       \hspace{1cm} \} \\
+%       \}}
+%   \end{block}
+  
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructura de clases en JAVA - Método}
+
+%   \begin{block}{Método: mostrarInfo}
+%     {\scriptsize
+%       \textcolor{blue}{public class} \textbf{\emph{Auto}} \{ \\
+%       \hspace{1cm} \\
+%       \hspace{1cm} \textcolor{blue}{public} String \textcolor{green}{color}; \ \\
+%       \hspace{1cm} \textcolor{blue}{public} String \textcolor{green}{marca}; \ \\
+%       \hspace{1cm} \textcolor{blue}{private} \textcolor{blue}{boolean} \textcolor{green}{estado}; \ \\
+%       \hspace{1cm} \\
+%       \hspace{1cm} \textcolor{blue}{public void} \textbf{encenderMotor}() \{ ... \} \\
+%       \hspace{1cm} \\
+%       \hspace{1cm} \textcolor{blue}{public void} \textbf{mostrarInfo}() \{ \\
+%       \hspace{2cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''Este auto es un ''} + \textcolor{green}{marca} + \textcolor{orange}{'' de color ''} + \textcolor{green}{color}); \\
+%       \hspace{1cm} \} \\
+%       \}}
+%   \end{block}
+  
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Estructura de clases en JAVA - Método}
+
+%   \begin{block}{Método: main}
+%     {\tiny
+%       \textcolor{blue}{public class} \textbf{\emph{Auto}} \{ \\
+%       \hspace{1cm} \\
+%       \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{color}; \ \\
+%       \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{marca}; \ \\
+%       \hspace{1cm} \textcolor{blue}{private} \textcolor{blue}{boolean} \textcolor{green}{estado}; \ \\
+%       \hspace{1cm} \\
+%       \hspace{1cm} \textcolor{blue}{public void} \textbf{encenderMotor}() \{ ... \} \\
+%       \hspace{1cm} \\
+%       \hspace{1cm} \textcolor{blue}{public void} \textbf{mostrarInfo}() \{ ... \} \\
+%       \hspace{1cm} \\
+%       \hspace{1cm} \textcolor{blue}{public static void} \textbf{main}(String[ ] args) \{ \\
+%       \hspace{2cm} Auto a = \textcolor{blue}{new} Auto ( ); \\
+%       \hspace{2cm} a.\textcolor{green}{marca} = \textcolor{orange}{''Chevrolet Sail''}; \\
+%       \hspace{2cm} a.\textcolor{green}{color} = \textcolor{orange}{''Gris''}; \\
+%       \hspace{2cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''Llamando a showAtr() ''}); \\
+%       \hspace{2cm} a.mostrarInfo(); \\
+%       \hspace{2cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''Llamando a encenderMotor() ''}); \\
+%       \hspace{2cm} a.encenderMotor(); \\
+%       \hspace{1cm} \} \\
+%       \hspace{1cm} \\
+%       \}}
+%   \end{block}
+  
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Lenguajes de programación}
+%   \framesubtitle{Ejercicios}
+
+%   \begin{block}{Método: Mostrar atributos}
+%     Desarrollo un programa en JAVA que permita saber los últimos 20
+%     a\~nos biciestos (iniciando desde el a\~no actual). Desarrollo el
+%     programa basado en el paradigma de la orientación a objeto.
+%   \end{block}
+  
+% \end{frame}
+
+% % \begin{frame}
+% %			\frametitle{Lenguajes de programación}
+% %			\framesubtitle{Estructuras de control - Excepciones.}
+
+% %			\begin{itemize}
+% %   \item Las excepciones son una forma avanzada de controlar el flujo de un programa.
+% %   \item Con ellas se podrán realizar acciones especiales si se dan determinadas condiciones, justo en el momento en que esas condiciones se den.
+% %			\end{itemize}
+% % \end{frame}
+
+\begin{frame}
+  \frametitle{Preguntas}
+
+  \hspace{4cm}\huge{Preguntas ?}
+  
+\end{frame}
+
+\end{document}
