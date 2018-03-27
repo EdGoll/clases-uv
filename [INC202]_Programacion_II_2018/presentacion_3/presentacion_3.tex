@@ -3,7 +3,7 @@
 \mode<presentation>
 {
   \usetheme{CambridgeUS}
-%  \setbeamercovered{transparent}
+  % \setbeamercovered{transparent}
 }
 
 \usepackage[T1]{fontenc}
@@ -111,6 +111,7 @@
 \begin{frame}
   \frametitle{Estructuras de Control}
 
+  \begin{small}
   \begin{itemize}
     
   \item \textbf{Estructuras Secuenciales}: en Java por defecto los programas
@@ -130,9 +131,10 @@
     iteración
     
   \item \textbf{Excepciones}: permiten declarar un flujo alternativo
-    que se ejecuta solo cuando el programa encuentra un error
+    que se ejecuta solo cuando el programa encuentra un problema
     
-  \end{itemize} 
+  \end{itemize}
+  \end{small}
 
 \end{frame}
 
@@ -158,7 +160,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Estructura \code{if}}
-  \begin{jsmall*}{fontsize=\scriptsize}
+\begin{jsmall*}{fontsize=\scriptsize}
     void compararN(int n) {
       // if sencillo
       if(n < 45) {
@@ -181,23 +183,23 @@
         System.out.println("n: " + n + " es mayor que 3 y que 5");
       }
     }
-  \end{jsmall*}
+\end{jsmall*}
 \end{frame}      
 
- % \begin{columns}
- %    \begin{column}{0.4\textwidth}
- %      \begin{small}
- %      \begin{itemize}
- %      \item
- %      \end{itemize}
- %      \end{small}
- %    \end{column}
- %    %
- %    \begin{column}{0.6\textwidth}
- %      \begin{jsmall}
- %      \end{jsmall}
- %    \end{column}
- % \end{columns}
+% \begin{columns}
+%   \begin{column}{0.4\textwidth}
+%     \begin{small}
+%       \begin{itemize}
+%       \item
+%       \end{itemize}
+%     \end{small}
+%   \end{column}
+%    %   
+%   \begin{column}{0.6\textwidth}
+% \begin{jsmall}
+% \end{jsmall}
+%   \end{column}
+% \end{columns}
 
 \begin{frame}
   \frametitle{Otro Ejemplo de \code{if}}
@@ -217,7 +219,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Método \code{clasificar}}
-  \begin{jsmall}
+\begin{jsmall}
     char clasificar(int valor) {
       char clase;
       
@@ -233,7 +235,7 @@
       
       return clase;
     }    
-  \end{jsmall}  
+\end{jsmall}  
 \end{frame}
 
 \begin{frame}
@@ -269,7 +271,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Método \code{desclasificar}}
-  \begin{jsmall}
+\begin{jsmall}
     int desclasificar(char clase) {
       int valor;
       switch(valor) {
@@ -281,7 +283,7 @@
 
       return valor;
     }    
-  \end{jsmall}
+\end{jsmall}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -289,16 +291,16 @@
 
   ¿Qué se imprime por pantalla en el siguiente programa?
   
-  \begin{jsmall}
+\begin{jsmall}
     System.out.println(desclasificar('A'));
-  \end{jsmall}
+\end{jsmall}
   \onslide<2->{Sorprendentemente imprime 0! Esto se debe al
     comportamiento en cascada de \code{switch}}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Método \code{desclasificar} correcto}
-  \begin{jsmall}
+\begin{jsmall}
     int desclasificar(char clase) {
       int valor;
       switch(valor) {
@@ -310,7 +312,7 @@
 
       return valor;
     }    
-  \end{jsmall}
+\end{jsmall}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -318,9 +320,9 @@
 
   ¿Qué se imprime por pantalla en el siguiente programa?
   
-  \begin{jsmall}
+\begin{jsmall}
     System.out.println(desclasificar('Z'));
-  \end{jsmall}
+\end{jsmall}
   \onslide<2->{Esto es problemático pues se retorna una variable no
     inicializada}
 \end{frame}
@@ -330,7 +332,7 @@
   La cláusula \code{default} permite manejar los valores que no caen
   en ninguno de los casos del \code{switch}
   
-  \begin{jsmall}
+\begin{jsmall}
     int desclasificar(char clase) {
       int valor;
       switch(valor) {
@@ -343,7 +345,7 @@
 
       return valor;
     }    
-  \end{jsmall}
+\end{jsmall}
 \end{frame}
 
 \subsection{Estructuras de Iteración}
@@ -354,9 +356,9 @@
   Java provee tres estructuras de iteración:
   
   \begin{itemize}
-  \item \code{while}
-  \item \code{do-while}
-  \item	\code{for}
+  \item \codet{while}
+  \item \codet{do-while}
+  \item \codet{for}
   \end{itemize}
 
   Si bien las 3 son equivalentes, pueden hacer lo mismo, dependiendo
@@ -372,11 +374,11 @@
     valores \code{n} y \code{m} de tipo \code{int}, y asumiendo que
     siempre \code{n <= m}, se quiere calcular la suma de todos los
     enteros comprendidos entre \code{n} y \code{m}, ambos inclusive.
-\end{block}
+  \end{block}
 
-\begin{exampleblock}{}
-  Por ejemplo, \code{sumaIntervalo(3,5)} debe retornar \code{12}  
-\end{exampleblock}
+  \begin{exampleblock}{}
+    Por ejemplo, \code{sumaIntervalo(3,5)} debe retornar \code{12}  
+  \end{exampleblock}
 
 \end{frame}
 
@@ -385,21 +387,21 @@
 
   \begin{columns}
     \begin{column}{0.4\textwidth}
-          \begin{itemize}
-          \item Repite el bloque mientras la condición lógica, un
-            booleano, sea verdadera
-            
-          \item Si la condición es falsa la primera vez, nunca se
-            ejecuta el bloque
-            
-          \item Dentro del bloque, debemos eventualmente hacer cambios
-            para que la condición se vuelva falsa
+      \begin{itemize}
+      \item Repite el bloque mientras la condición lógica, un
+        booleano, sea verdadera
+        
+      \item Si la condición es falsa la primera vez, nunca se
+        ejecuta el bloque
+        
+      \item Dentro del bloque, debemos eventualmente hacer cambios
+        para que la condición se vuelva falsa
 
-          \end{itemize}      
+      \end{itemize}      
     \end{column}
-    %
+    % 
     \begin{column}{0.6\textwidth}
-      \begin{jsmall}
+\begin{jsmall}
         int sumaIntervalo(int n, int m) {
           int suma = 0;
           int i = n;
@@ -411,7 +413,7 @@
 
           return suma;
         }
-      \end{jsmall}
+\end{jsmall}
     \end{column}
   \end{columns}
 
@@ -420,7 +422,7 @@
 \begin{frame}[fragile]
   \frametitle{Estructura \codet{do-while}}
 
-    \begin{columns}
+  \begin{columns}
     \begin{column}{0.4\textwidth}
       \begin{itemize}
         
@@ -435,9 +437,9 @@
 
       \end{itemize}      
     \end{column}
-    %
+    % 
     \begin{column}{0.6\textwidth}
-      \begin{jsmall}
+\begin{jsmall}
         int sumaIntervalo(int n, int m) {
           int suma = 0;
           int i = n;
@@ -449,7 +451,7 @@
 
           return suma;
         }
-      \end{jsmall}
+\end{jsmall}
     \end{column}
   \end{columns}
 \end{frame}
@@ -457,7 +459,7 @@
 \begin{frame}[fragile]
   \frametitle{Estructura \codet{for}}
 
-      \begin{columns}
+  \begin{columns}
     \begin{column}{0.4\textwidth}
       \begin{itemize}
         
@@ -470,9 +472,9 @@
 
       \end{itemize}      
     \end{column}
-    %
+    % 
     \begin{column}{0.6\textwidth}
-      \begin{jsmall}
+\begin{jsmall}
         int sumaIntervalo(int n, int m) {
           int suma = 0;
 
@@ -482,7 +484,7 @@
           
           return suma;
         }
-      \end{jsmall}
+\end{jsmall}
     \end{column}
   \end{columns}
 
@@ -511,97 +513,385 @@
 
 \subsection{Estructuras de Salto}
 
+\begin{frame}
+  \frametitle{Estructuras de Salto}
+  
+  Java provee cuatro estructuras de salto:
+  \begin{itemize}
+
+  \item\code{return}: retorna el control del flujo al método
+    invocador de otro método. Permite el uso de "subrutinas"
+    
+  \item \code{break}: en el contexto de \code{switch} impide el
+    efecto cascada. También se usa en iteraciones para
+    romper el ciclo
+    
+  \item \code{continue}: se usa en iteraciones para saltarse la
+    vuelta actual del loop, y continuar en la siguiente vuelta
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ejemplo \code{break} en iteración}
+
+  \begin{block}{}
+    Se busca implementar el método \code{esPrimo}, que dado un entero
+    positivo \code{n}, imprime por pantalla \code{"Es primo!"} o
+    \code{"No es primo!"} según corresponda
+  \end{block}
+  
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Ejemplo \codet{break} en iteración}
+\begin{jsmall}
+void esPrimo(int n) {
+  int i;
+  for(i = 2; i < n; i = i + 1) {
+    if(n % i == 0) {
+      System.out.println("No es primo!");
+    } else {
+      System.out.println("Es primo!");
+    }
+  }
+}
+\end{jsmall}
+
+  \only<2>{Esto no está bien porque imprimirá muchas veces ambos
+    mensajes!}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ejemplo \codet{break} en iteración}
+\begin{jsmall}
+void esPrimo(int n) {
+  int i;
+  for(i = 2; i < n; i = i + 1) {
+    if(n % i == 0) {
+      System.out.println("No es primo!");
+      break; // salimos del loop        
+    }
+  }
+
+  if(i == n) {
+    System.out.println("Es primo!");
+  }    
+}
+\end{jsmall}
+
+  Solo uno de los mensajes se imprimirá, y solo una vez!
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ejemplo \codet{continue}}
+
+  \begin{block}{}
+    Se busca implementar el método \code{sumaIntervaloPares} que,
+    similarmente a \code{sumaIntervalo}, suma los valores entre dos
+    enteros \code{n} y \code{m}, pero solo considerando los elementos
+    pares.
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Método \code{sumaIntervaloPares}}
+\begin{jsmall}
+int sumaIntervaloPares(int n, int m) {
+  int suma = 0;
+  for(int i = n; i <= m; i = i + 1) {
+      if(i % 2 != 0) {
+         /* i es impar, no hago nada */
+      } else {
+         suma += i;
+      }
+  }
+}
+\end{jsmall}
+
+  Este código si bien funciona, es un poco extraño porque tiene una
+  condición donde no se ejecuta nada. Más bien, la condición \emph{se
+    usa para saltarse completamente esta vuelta del loop}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Método \code{sumaIntervaloPares}}
+\begin{jsmall}
+int sumaIntervaloPares(int n, int m) {
+  int suma = 0;
+  for(int i = n; i <= m; i = i + 1) {
+    if(i % 2 != 0) {
+      continue; // i es impar, me salto esta vuelta
+    }
+    
+    // si se ejecuto el continue, esta linea no se alcanza a ejecutar
+    suma += i;
+    
+  }
+}
+\end{jsmall}
+
+  Usando \code{continue} saltamos a la siguiente vuelta de la
+  iteración. En el caso de \code{for}, igual se ejecuta la
+  actualización de variables de iteración!
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Otro ejemplo de \code{continue}}
+
+  Escriba el metodo \code{primeros100} que imprime por pantalla los 100 primeros números enteros que no son
+  divisibles por 3:
+
+  \begin{jsmall}
+ void primeros100() {
+   int cantidad = 0;
+   for(int i = 0; cantidad < 100; i = i + 1) {
+     if(i % 3 == 0) {
+       continue;
+     }
+
+     System.out.println(i);
+
+   }
+ }
+ \end{jsmall}
+\end{frame}
+
+\subsection{Excepciones}
+
+\begin{frame}
+  \frametitle{Excepciones}
+
+  \begin{block}{}
+    Una \textbf{excepción} es problema que aparece durante la
+    ejecución de un programa, y que impide que se pueda continuar con
+    la ejecución normal del mismo
+  \end{block}
+
+  \begin{block}{}
+    Ejemplos de problemas excepcionales son:
+
+    \begin{itemize}
+    \item Una división por 0      
+    \item Se está tratando de abrir un archivo pero este no existe     
+    \item Se trata de abrir una conexión de red, pero no hay
+      conectividad      
+    \item \textbf{Se invoca un método o atributo en un objeto que es nulo}
+    \end{itemize}
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Excepciones}
+
+  \begin{block}{}
+    Un programa \textbf{robusto} es aquel que logra sortear con éxito
+    los problemas excepcionales. El mecanismo de excepciones nos
+    permite manejar flujos de control alternativos en caso de
+    encontrar estos problemas
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ejemplo de Excepciones}
+
+\begin{jsmall}
+void imprimirLargo(String s) {
+    System.out.println(s.length());
+}
+\end{jsmall}
+
+  \only<2>{Este método va a fallar si \code{s == null}. Veremos la
+    famosa \codet{java.lang.NullPointerException}, conocida también
+    como \codet{NPE}}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Una versión más robusta}
+
+\begin{jsmall}
+void imprimirLargo(String s) {
+    try {
+      System.out.println(s.length());
+    } catch(NullPointerException npe) {
+      System.out.println(0);
+    }
+}
+\end{jsmall}
+
+  \only<2>{En esta versión se considera que el largo de un string nulo es 0}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Estructura \codet{try-catch}}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{footnotesize}
+      \begin{itemize}
+        
+      \item El código del bloque \code{try} es el flujo normal
+        de ejecución
+        
+      \item Si en la ejecución del \code{try} ocurre una excepción, se
+        aborta la ejecución y \emph{se lanza la excepción}
+        
+      \item El \code{catch} siempre acompaña a un \code{try}. Se dice
+        que un \code{catch} \emph{captura una excepción lanzada en el
+          \code{try} asociado}       
+      \end{itemize}
+      \end{footnotesize}
+    \end{column}
+    %
+    \begin{column}{0.5\textwidth}
+      \begin{footnotesize}
+      \begin{itemize}    
+      \item El \code{catch} solo captura excepciones de un tipo
+        específico
+        
+      \item Un \code{try} puede tener muchos \code{catch}
+        
+      \item El tipo \code{Exception} es el más general y subsume las
+        demás excepciones        
+      \end{itemize}
+      \end{footnotesize}     
+    \end{column}
+  \end{columns}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Múltiples \code{catch}}
+
+\begin{jsmall}
+void imprimirLargo(String s) {
+    try {      
+      System.out.println(s.length());
+    } catch(NullPointerException npe) {
+      System.out.println(0);
+    } catch(Exception ex) {
+      System.out.println("Error: " + ex.getMessage());
+    }
+}
+\end{jsmall}
+
+  \only<2>{En esta versión se considera que el largo de un string nulo es 0}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Excepciones Chequeadas y No-Chequeadas}
+  Java define dos tipos distintos de excepciones:
+
+  \begin{itemize}
+    
+  \item \textbf{Excepciones no chequeadas (Unchecked exceptions)}
+
+  \item \textbf{Excepciones chequeadas (Checked exceptions)}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Excepciones No-Chequeadas}
+    
+  \begin{block}{}
+    Son problemas que aparecen por errores en la programación, y en
+    general no pueden ser anticipadas. Por tanto se detectan solo
+    durante la ejecución. \emph{Pueden ocurrir en cualquier parte de
+      cualquier programa}
+  \end{block}
+
+  \begin{block}{}
+    Ejemplos:
+
+    \begin{itemize}
+    \item \codet{java.lang.NullPointerException}: se intenta acceder
+      un objeto nulo
+    \item \codet{java.lang.ArithmeticException}: por ejemplo división
+      por 0
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Excepciones Chequeadas}
+    
+  \begin{block}{}
+    Son problemas que se debe considerar obligatoriamente para una
+    programación robusta. Es decir, son problemas a los que es
+    obligatorio anticiparse, y el compilador detectará y nos obligará
+    a hacer algo al respecto.
+  \end{block}
+
+  \begin{block}{}
+    Ejemplos:
+
+    \begin{itemize}
+    \item \codet{java.io.FileNotFoundException}: si abrimos un
+      archivo, debemos considerar qué hacer si no se encuentra
+    \item \codet{java.io.IOException}: representa problemas de
+      entrada/salida que deben considerarse
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Propagación de Excepciones}
+
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+     \begin{small}
+       Para manejar las excepciones chequeadas, tenemos dos opciones:
+  \begin{itemize}
+
+  \item Introducir un bloque \codet{try-catch}, y manejar la excepción
+    localmente, o bien...
+    
+  \item \emph{Propagar} la excepción al código que nos está
+    invocando usando la cláusula \code{throws}
+  \end{itemize}
+      \end{small}      
+    \end{column}
+    %
+    \begin{column}{0.6\textwidth}
+\begin{jsmall}
+  void leerArchivos(String path)
+       throws FileNotFoundException {
+    /* ... codigo que abre archivos ... */
+  }
+\end{jsmall}
+      \begin{small}
+      \begin{itemize}
+
+      \item La excepción declarada pasa a ser parte de \emph{la firma
+          del método}, junto al tipo de retorno y parámetros de
+        entrada
+      
+      \item Cualquier método que invoque \code{leerArchivos} deberá
+        decidir nuevamente qué hacer con la posible excepción
+
+      \end{itemize}
+      \end{small}
+      
+    \end{column}
+  \end{columns}  
+\end{frame}
+
+
 % \begin{frame}
-%   \frametitle{Lenguajes de programación}
-%   \framesubtitle{Estructuras de control - Sentencias de salto.}
-
-%   \begin{itemize}
-%   \item En Java se reconocen, básicamente, cuatro tipos de sentencias de salto:
-%     \begin{itemize}
-%     \item \textbf{break}.
-%     \item \textbf{continue}.
-%     \item	\textbf{return}.
-%     \item \textbf{goto} - A pesar de ser una palabra reservada, no es soportada por el lenguaje JAVA.
-%     \end{itemize}
-%   \end{itemize}
-% \end{frame}	
-
-% \begin{frame}
-%   \frametitle{Lenguajes de programación}
-%   \framesubtitle{Estructuras de control - Sentencias de salto \textbf{break}.}
-
-%   \begin{itemize}
-%   \item La sentencia \textbf{break} provoca que el flujo de control salte a la sentencia inmediatamente posterior al bloque en curso (ya visto dentro de la sentencia switch).
-%   \item El uso de la sentencia \textbf{break} con sentencias etiquetadas es una alternativa al uso de la sentencia \textbf{goto}.
-%   \item Se puede etiquetar una sentencia con una identificador JAVA válido, seguido por dos puntos (:) antes de la sentencia.
-%     \begin{itemize}
-%     \item nombreSentencia: sentenciaEtiquetada
-%     \end{itemize}
-%   \item La sentencia \textbf{break} se utiliza para salir de una sentencia etiquetada, llevando el flujo del programa al final de la sentencia de programa que indique:
-%     \begin{itemize}
-%     \item \textbf{break} nombreSentencia;
-%     \end{itemize}
-%   \end{itemize}
+%   \frametitle{Ejercicios Propuestos}  
 % \end{frame}
 
-% \begin{frame}
-%   \frametitle{Lenguajes de programación}
-%   \framesubtitle{Estructuras de control - Sentencias de salto \textbf{continue}.}
-
-%   \begin{itemize}
-%   \item Del mismo modo que en un bucle se puede desear romper la iteración, también se puede desear continuar con él, pero dejando pasar una determinada iteración.
-%   \item Se puede usar la sentencia \textbf{continue} dentro de los bucles para saltar a otra sentencia, pero \textbf{no} puede ser llamada fuera de un bucle.
-%   \item Tras la invocación a una sentencia \textbf{continue} se transfiere el control a la condición de término del bucle que vuelve a ser evaluada en ese momento.
-%   \item El bucle continúa o no, dependiendo del resultado de la evaluación.
-%   \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-%   \frametitle{Lenguajes de programación}
-%   \framesubtitle{Estructuras de control - Sentencias de salto \textbf{continue}.}
-
-%   \begin{itemize}
-%   \item En los bucles \textbf{for}, en ese momento, se ejecuta la cláusula de incremento (antes de la evaluación).
-%   \end{itemize}
-
-%   \begin{block}{Ejemplo de salto de instrucción \textbf{continue}}
-%     \begin{itemize}
-%     \item Imprimir en pantalla los 100 primeros números que no son divisibles por 3.
-%     \item Luego de implementar el ejemplo con el bucle \textbf{for} y la sentencia \textbf{continue}, impleméntelo utilizando la sentencia \textbf{while}.
-%     \end{itemize}
-%   \end{block}
-% \end{frame}
-
-% \begin{frame}
-%   \frametitle{Lenguajes de programación}
-%   \framesubtitle{Estructuras de control - Sentencias de salto \textbf{continue}.}
-
-%   \begin{block}{Ejemplo de salto de instrucción \textbf{continue} - Solución}
-%     {\scriptsize
-%       \textbf{for} ( \textbf{int} count $=$ 0 ; count $<$ 100 ; count++ ) \textbf{\{} \\
-%       \hspace{0.3cm} \textbf{if}  (count \% 3 $==$ 0) \textbf{\{} \\
-%       \hspace{0.6cm} \textbf{continue;} \\
-%       \hspace{0.3cm}\textbf{\}} \\
-%       \vspace{0.3cm}
-%       \hspace{0.3cm} System.out.println(''count = '' + count); \\
-%       \textbf{\}} 
-%     }
-%   \end{block}
-% \end{frame}
-
-% \begin{frame}
-%   \frametitle{Lenguajes de programación}
-%   \framesubtitle{Estructuras de control - Sentencias de salto \textbf{return}.}
-
-%   \begin{itemize}
-%   \item Es factible de utilizar para salir del método en curso y retornar (en general un valor), a la sentencia dentro de la cual se realizó la llamada.
-%   \item Para devolver un valor, simplemente se debe poner el valor (o una expresión que calcule el valor) a continuación de la palabra \textbf{return}.
-%   \item El valor devuelto por \textbf{return} debe coincidir con el tipo de dato declarado como valor de retorno del método.
-%   \item Cuando un método se declara como \textbf{void} se debe usar la forma de \textbf{return} (como buena práctica), sin indicarle ningún valor.
-%   \end{itemize}
-% \end{frame}
-
-%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% 
 
 % \section{Estructura de clases en JAVA}
 
@@ -650,8 +940,8 @@
 %   \end{block}
 %   \begin{block}{}
 %     {\scriptsize
-%       \emph{Si bien, la declaración de variables puede ir en cualquier parte, habitualmente se declaran al inicio método o clase.}
-%     }
+%     \emph{Si bien, la declaración de variables puede ir en cualquier parte, habitualmente se declaran al inicio método o clase.}
+%   }
 %   \end{block}
 % \end{frame}
 
@@ -661,8 +951,8 @@
 
 %   \begin{block}{}
 %     {\scriptsize
-%       \emph{Es posible encadenar nombres de variables del mismo tipo}
-%     }
+%     \emph{Es posible encadenar nombres de variables del mismo tipo}
+%   }
 %   \end{block}
 
 %   \begin{block}{}
@@ -674,7 +964,7 @@
 %     \hspace{1cm} ... \\
 %     \}
 %   \end{block}
-  
+
 % \end{frame}
 
 % \begin{frame}
@@ -690,7 +980,7 @@
 %     \hspace{1cm} ... \\
 %     \}
 %   \end{block}
-  
+
 % \end{frame}
 
 % \begin{frame}
@@ -707,7 +997,7 @@
 %     \hspace{1cm} ... \\
 %     \}
 %   \end{block}
-  
+
 % \end{frame}
 
 % \begin{frame}
@@ -716,23 +1006,23 @@
 
 %   \begin{block}{Método: encenderMotor}
 %     {\scriptsize
-%       \textcolor{blue}{public class} \textbf{\emph{Auto}} \{ \\
-%       \hspace{1cm} \\
-%       \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{color}; \ \\
-%       \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{marca}; \ \\
-%       \hspace{1cm} \textcolor{blue}{private} \textcolor{blue}{boolean} \textcolor{green}{estado}; \ \\
-%       \hspace{1cm} \\
-%       \hspace{1cm} \textcolor{blue}{public void} \textbf{encenderMotor}() \{ \\
-%       \hspace{2cm} \textcolor{blue}{if} (\textcolor{green}{estado} == \textcolor{blue}{true}) \{ \\
-%       \hspace{3cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''Auto encendido''}); \\
-%       \hspace{2cm} \} \textcolor{blue}{else} \{ \\
-%       \hspace{3cm} \textcolor{green}{estado} = \textcolor{blue}{true}; \\
-%       \hspace{3cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''OK, se encendio ''}); \\
-%       \hspace{2cm} \} \\
-%       \hspace{1cm} \} \\
-%       \}}
+%     \textcolor{blue}{public class} \textbf{\emph{Auto}} \{ \\
+%     \hspace{1cm} \\
+%     \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{color}; \ \\
+%     \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{marca}; \ \\
+%     \hspace{1cm} \textcolor{blue}{private} \textcolor{blue}{boolean} \textcolor{green}{estado}; \ \\
+%     \hspace{1cm} \\
+%     \hspace{1cm} \textcolor{blue}{public void} \textbf{encenderMotor}() \{ \\
+%     \hspace{2cm} \textcolor{blue}{if} (\textcolor{green}{estado} == \textcolor{blue}{true}) \{ \\
+%     \hspace{3cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''Auto encendido''}); \\
+%     \hspace{2cm} \} \textcolor{blue}{else} \{ \\
+%     \hspace{3cm} \textcolor{green}{estado} = \textcolor{blue}{true}; \\
+%     \hspace{3cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''OK, se encendio ''}); \\
+%     \hspace{2cm} \} \\
+%     \hspace{1cm} \} \\
+%     \}}
 %   \end{block}
-  
+
 % \end{frame}
 
 % \begin{frame}
@@ -741,20 +1031,20 @@
 
 %   \begin{block}{Método: mostrarInfo}
 %     {\scriptsize
-%       \textcolor{blue}{public class} \textbf{\emph{Auto}} \{ \\
-%       \hspace{1cm} \\
-%       \hspace{1cm} \textcolor{blue}{public} String \textcolor{green}{color}; \ \\
-%       \hspace{1cm} \textcolor{blue}{public} String \textcolor{green}{marca}; \ \\
-%       \hspace{1cm} \textcolor{blue}{private} \textcolor{blue}{boolean} \textcolor{green}{estado}; \ \\
-%       \hspace{1cm} \\
-%       \hspace{1cm} \textcolor{blue}{public void} \textbf{encenderMotor}() \{ ... \} \\
-%       \hspace{1cm} \\
-%       \hspace{1cm} \textcolor{blue}{public void} \textbf{mostrarInfo}() \{ \\
-%       \hspace{2cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''Este auto es un ''} + \textcolor{green}{marca} + \textcolor{orange}{'' de color ''} + \textcolor{green}{color}); \\
-%       \hspace{1cm} \} \\
-%       \}}
+%     \textcolor{blue}{public class} \textbf{\emph{Auto}} \{ \\
+%     \hspace{1cm} \\
+%     \hspace{1cm} \textcolor{blue}{public} String \textcolor{green}{color}; \ \\
+%     \hspace{1cm} \textcolor{blue}{public} String \textcolor{green}{marca}; \ \\
+%     \hspace{1cm} \textcolor{blue}{private} \textcolor{blue}{boolean} \textcolor{green}{estado}; \ \\
+%     \hspace{1cm} \\
+%     \hspace{1cm} \textcolor{blue}{public void} \textbf{encenderMotor}() \{ ... \} \\
+%     \hspace{1cm} \\
+%     \hspace{1cm} \textcolor{blue}{public void} \textbf{mostrarInfo}() \{ \\
+%     \hspace{2cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''Este auto es un ''} + \textcolor{green}{marca} + \textcolor{orange}{'' de color ''} + \textcolor{green}{color}); \\
+%     \hspace{1cm} \} \\
+%     \}}
 %   \end{block}
-  
+
 % \end{frame}
 
 % \begin{frame}
@@ -763,29 +1053,29 @@
 
 %   \begin{block}{Método: main}
 %     {\tiny
-%       \textcolor{blue}{public class} \textbf{\emph{Auto}} \{ \\
-%       \hspace{1cm} \\
-%       \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{color}; \ \\
-%       \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{marca}; \ \\
-%       \hspace{1cm} \textcolor{blue}{private} \textcolor{blue}{boolean} \textcolor{green}{estado}; \ \\
-%       \hspace{1cm} \\
-%       \hspace{1cm} \textcolor{blue}{public void} \textbf{encenderMotor}() \{ ... \} \\
-%       \hspace{1cm} \\
-%       \hspace{1cm} \textcolor{blue}{public void} \textbf{mostrarInfo}() \{ ... \} \\
-%       \hspace{1cm} \\
-%       \hspace{1cm} \textcolor{blue}{public static void} \textbf{main}(String[ ] args) \{ \\
-%       \hspace{2cm} Auto a = \textcolor{blue}{new} Auto ( ); \\
-%       \hspace{2cm} a.\textcolor{green}{marca} = \textcolor{orange}{''Chevrolet Sail''}; \\
-%       \hspace{2cm} a.\textcolor{green}{color} = \textcolor{orange}{''Gris''}; \\
-%       \hspace{2cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''Llamando a showAtr() ''}); \\
-%       \hspace{2cm} a.mostrarInfo(); \\
-%       \hspace{2cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''Llamando a encenderMotor() ''}); \\
-%       \hspace{2cm} a.encenderMotor(); \\
-%       \hspace{1cm} \} \\
-%       \hspace{1cm} \\
-%       \}}
+%     \textcolor{blue}{public class} \textbf{\emph{Auto}} \{ \\
+%     \hspace{1cm} \\
+%     \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{color}; \ \\
+%     \hspace{1cm} \textcolor{blue}{private} String \textcolor{green}{marca}; \ \\
+%     \hspace{1cm} \textcolor{blue}{private} \textcolor{blue}{boolean} \textcolor{green}{estado}; \ \\
+%     \hspace{1cm} \\
+%     \hspace{1cm} \textcolor{blue}{public void} \textbf{encenderMotor}() \{ ... \} \\
+%     \hspace{1cm} \\
+%     \hspace{1cm} \textcolor{blue}{public void} \textbf{mostrarInfo}() \{ ... \} \\
+%     \hspace{1cm} \\
+%     \hspace{1cm} \textcolor{blue}{public static void} \textbf{main}(String[ ] args) \{ \\
+%     \hspace{2cm} Auto a = \textcolor{blue}{new} Auto ( ); \\
+%     \hspace{2cm} a.\textcolor{green}{marca} = \textcolor{orange}{''Chevrolet Sail''}; \\
+%     \hspace{2cm} a.\textcolor{green}{color} = \textcolor{orange}{''Gris''}; \\
+%     \hspace{2cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''Llamando a showAtr() ''}); \\
+%     \hspace{2cm} a.mostrarInfo(); \\
+%     \hspace{2cm} System.\emph{\textcolor{green}{out}}.println(\textcolor{orange}{''Llamando a encenderMotor() ''}); \\
+%     \hspace{2cm} a.encenderMotor(); \\
+%     \hspace{1cm} \} \\
+%     \hspace{1cm} \\
+%     \}}
 %   \end{block}
-  
+
 % \end{frame}
 
 % \begin{frame}
@@ -797,7 +1087,7 @@
 %     a\~nos biciestos (iniciando desde el a\~no actual). Desarrollo el
 %     programa basado en el paradigma de la orientación a objeto.
 %   \end{block}
-  
+
 % \end{frame}
 
 % % \begin{frame}
