@@ -1,0 +1,38 @@
+\usepackage{minted}
+\usepackage[skins,minted]{tcolorbox}
+
+\newcommand{\code}[1]{\mintinline{java}{#1}}
+\newcommand{\codet}[1]{\texttt{#1}}
+
+\setminted[java]{
+  linenos=true,
+  fontfamily=tt,
+  fontsize=\small,
+  frame=leftline,
+  autogobble=True,
+}
+
+\newminted[jsmall]{java}{
+  fontsize=\footnotesize
+  , linenos = false
+  , frame=single
+  , autogobble=true
+}
+
+\newtcblisting{java}[2][]{
+  minted language=java,
+  enhanced, listing engine=minted,
+  listing only, #1, title=#2, left=2em
+}
+
+\setminted[bash]{
+  linenos=true,
+  fontfamily=tt,
+  fontsize=\small,
+  frame=leftline
+}
+
+\newtcblisting{bash}[2][]{minted language=bash,
+  enhanced, listing engine=minted,
+  listing only, #1, title=#2, left=2em
+}

@@ -1,0 +1,504 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{CambridgeUS}
+  % \setbeamercovered{transparent}
+}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{algorithm,algorithmic}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{enumitem}
+\setitemize{itemsep=1.2em,%
+  label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}%
+  \usebeamertemplate{itemize item}
+}
+
+\input{../minted.tex}
+
+\title[\textbf{Programación 2}]{\textbf{Programación 2}}
+\subtitle{Introducción al Lenguaje Java\\Clases en Java}
+
+\author[IF-EG]
+{Profesores:\\
+  Ismael Figueroa -  \texttt{\small ifigueroap@gmail.com} \\
+  \vspace{0.5mm} \\
+  Eduardo Godoy - \texttt{\small eduardo.gl@gmail.com}
+}
+
+\institute[Universidad de Valparaíso]
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\section{El Lenguaje de Programación Java}
+
+\subsection{Recordatorio}
+
+\begin{frame}
+  \frametitle{¿Qué es un Objeto?}
+
+  \begin{exampleblock}{}
+    \begin{itemize}
+    \item[] Cualquier cosa que vemos a nuestro alrededor. Ej: auto.
+    \item[] Un objeto, en general, está compuesto por:
+      \begin{itemize}
+      \item \emph{Características} tales como: marca, modelo, color, etc.
+      \item \emph{Comportamiento}, por ejemplo: encender, acelerar, frenar, retroceder, etc.
+      \end{itemize}
+    \end{itemize}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{¿Cómo se caracterizan los objetos?}
+
+  \begin{block}{Características}
+    Los objetos tienen un \emph{estado interno} que se representa
+    mediante variables conocidas como \emph{atributos}.
+  \end{block}
+
+  \begin{block}{Comportamiento}
+    Además, el comportamiento de los objetos se programa mediante
+    \emph{métodos}, que son funciones o procedimientos que tienen acceso
+    directo al estado interno del objeto.
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Clases e Instancias}
+
+  \begin{itemize}
+  \item \textbf{Clases:}    
+    \begin{itemize}
+    \item[] Modelo para múltiples objetos con características y
+      comportamientos similares. Las clases comprenden todas las
+      características de una serie particular de objetos. En
+      \textbf{POO} se definen clases como un modelo abstracto de un
+      objeto. Lo más parecido en C es un struct.
+    \end{itemize}
+    
+  \item \textbf{Instancias de una clase:}
+    \begin{itemize}
+    \item[] Representación concreta de un objeto. Al definir una clase
+      se pueden crear muchas instancias de la misma y cada instancia
+      puede tener diferentes características mientras se comporte y
+      reconozca como objeto de la clase. En programación estructurada
+      sería una \emph{variable}.
+    \end{itemize}
+    
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Características de un Objeto} 
+
+  \begin{itemize}
+  \item \textbf{Atributos:}
+    \begin{itemize}
+    \item[] Características que diferencian a un objeto de otro y
+      determinan la ''\emph{forma}'' de ese objeto.
+      
+    \item[] Los atributos se definen como \textbf{variables}. De hecho
+      podrían, ser vistas como \textbf{variables globales del
+        objeto}. Cada instancia de una clase puede tener diferentes
+      valores para sus variables, por lo que a cada variable se le
+      denomina \textbf{variable de instancia}. La clase define el tipo
+      de atributo y cada instancia guarda su propio valor para ese
+      atributo.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Características de un Objeto}
+
+  \begin{itemize}
+  \item \textbf{Métodos:}
+    \begin{itemize}
+
+    \item[] Comúnmente denominadas \textbf{funciones} o
+      \textbf{procedimientos} definidas dentro de una clase, y que
+      operan en sus instancias. Los objetos se \textbf{comunican}
+      entre sí mediante el uso \textbf{llamadas a de métodos}. Se dice
+      que una clase puede \textbf{llamar} al método de otra clase.
+      
+    \item[] Se pueden definir métodos de instancia (que operan en una
+      instancia de la clase) y los métodos de clase que operan sobre
+      la clase.
+      
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\subsection{Programando Clases en Java}
+
+\begin{frame}[fragile]
+  \frametitle{Declarando una nueva clase}
+
+    \begin{java}[autogobble]{Cuenta.java}
+        public class Cuenta {
+          
+          private String nombre;
+
+          public void
+          establecerNombre(String nombre) {
+            this.nombre = nombre;
+          }
+
+          public String obtenerNombre() {
+            return nombre;
+            // se refiere a this.nombre
+          }
+        }
+      \end{java}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Declaración de clase}
+
+  La declaración de clase es:
+  
+  \begin{java}{Cuenta.java}
+    public class Cuenta
+  \end{java}
+
+  \begin{enumerate}
+  \item Por ahora usaremos siempre \code{public} como nivel de acceso    
+  \item El nombre de la clase siempre debe comenzar con mayúscula    
+  \item \textbf{El nombre define un nuevo tipo de dato}
+  \item El nombre de la clase debe coincidir con el nombre del
+    archivo, por lo tanto debemos trabajar en el archivo
+    \codet{Cuenta.java}    
+  \item El cuerpo de la clase es lo que está entre llaves, y sigue
+    inmediatamente al nombre
+  \end{enumerate}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Estilo \emph{CamelCase}}
+
+  Por convención, en Java todos los nombres de clases, variables,
+  métodos, etc., se escriben usando un esquema que se conoce como
+  \emph{CamelCase}:
+
+  \begin{enumerate}
+  \item Un nombre de clase parte con mayúscula, y se ocupa minúsculas
+    hasta el comienzo de la siguiente palabra. Por ejemplo
+    \code{CuentaAhorro}, \code{CuentaCorriente} son nombres de otras
+    clases
+    
+  \item Los nombres de variables y métodos parten con mínusculas, y al
+    cambiar palabras se usa una maýuscula en la nueva palabra. Por
+    ejemplo: \code{obtenerNombre}, \code{rutTitular}, son nombres de
+    método/variable que siguen la convención
+  \end{enumerate}  
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Declaración de variables de instancia}
+
+  La declaración de variable de instancia es:
+  
+  \begin{java}{Cuenta.java}
+    private String nombre;
+  \end{java}
+
+  Sobre estas variables podemos decir:
+
+  \begin{enumerate}
+  \item Existen antes, durante, y después de la ejecución de los
+    métodos
+    
+  \item Se definen en el cuerpo de la clase, pero fuera del cuerpo de
+    los métodos
+    
+  \item Los métodos pueden---y en general es la idea que lo
+    hagan---manipular los valores de las variables de instancia
+    
+  \item Cada \emph{instancia} tiene su propio juego de variables de
+    instancia. Los valores específicos se conocen como \emph{el estado
+      del objeto}
+    
+  \end{enumerate}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Acceso \code{private} y \code{public} para variables de
+    instancia}
+
+  Las variables de instancia también se pueden configurar con un
+  modificar de acceso:
+
+  \begin{itemize}
+  \item \code{private}: la variable solamente puede utilizarse en los
+    métodos de la clase que lo declara. En este caso objetos
+    \code{Cuenta}
+    
+  \item \code{public}: la variable puede usarse en los métodos de su
+    clase, pero también está disponible para otros objetos
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Declaración de métodos}
+
+  \begin{java}{Cuenta.java}
+    public void establecerNombre(String nombre) {
+      this.nombre = nombre;
+    }
+  \end{java}
+
+  \begin{enumerate}
+    
+  \item El \emph{encabezado o firma} del método consiste en su acceso,
+    tipo de retorno, parámetros, y excepciones lanzadas
+    
+  \item Los parámetros funcionan como variables locales dentro del
+    cuerpo del método
+    
+  \item El parámetro \code{nombre} esconde a la variable de instancia
+    que tiene el mismo nombre
+    
+  \item Por eso se usa el acceso \code{this.nombre} para referenciar
+    explícitamente al atributo    
+  \end{enumerate}  
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Usando nuestra clase en un programa}
+  \setminted[java]{ fontsize=\footnotesize }
+    \begin{java}{Main.java}
+      public class Main {
+        public static void main(String[] args) {
+          // El operador new crea instancias de una clase dada
+          Cuenta miCuenta = new Cuenta()
+          System.out.println("Nombre cuenta: " +
+                              miCuenta.obtenerNombre());
+
+          miCuenta.establecerNombre("Juanito");
+          System.out.println("Nombre cuenta: " +
+                              miCuenta.obtenerNombre());
+        }
+      }
+  \end{java}
+  \setminted[java]{ fontsize=\small }
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Creando una instancia de Cuenta}
+
+  \begin{java}{Main.java}
+    Cuenta miCuenta;
+  \end{java}
+
+  \begin{exampleblock}{}
+    Esta declaración define la variable \code{miCuenta} como una
+    variable de tipo \code{Cuenta}. Todas las clases definen un nuevo
+    tipo de dato, que es el tipo asociado a sus instancias.
+  \end{exampleblock}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Creando una instancia de Cuenta}
+
+  \begin{java}{Main.java}
+    Cuenta miCuenta = new Cuenta();
+  \end{java}
+
+  \begin{exampleblock}{}
+    La variable puede inicializarse inmediatamente.\\
+    El operador \code{new} \emph{se usa para construir una nueva
+      instancia}.
+  \end{exampleblock}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{El constructor por defecto}
+
+  \begin{java}{Main.java}
+    new Cuenta();
+  \end{java}
+
+  \begin{exampleblock}{}
+    Cuando hacemos \code{new Cuenta()} estamos invocando un método
+    especial que se llama \emph{constructor}, y que sirve para crear
+    instancias.
+  \end{exampleblock}
+
+  \begin{exampleblock}{}
+    Toda clase tiene un \emph{constructor por defecto}, que es el
+    nombre de la clase y sin parámetros. Por eso se invoca como
+    \code{new Cuenta ()}
+  \end{exampleblock}
+
+  \begin{exampleblock}{}
+    Los constructores solamente pueden ser invocados al usar
+    \code{new}
+  \end{exampleblock}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Constructores Explícitos}
+
+  Podemos construir tantos constructores como queramos:
+  \setminted[java]{ fontsize=\footnotesize }
+  \begin{java}{Cuenta.java}
+    public class Cuenta {
+      private String nombre;
+
+      public Cuenta(String nombre) {
+        this.nombre = nombre;
+      }
+
+      /* ... idem anterior ... */
+    }
+    
+  \end{java}
+  \setminted[java]{ fontsize=\small }
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Usando constructores}
+  \setminted[java]{ fontsize=\footnotesize }
+    \begin{java}{Main2.java}
+      public class Main2 {
+        public static void main(String[] args) {
+          // El operador new crea instancias de una clase dada
+          Cuenta miCuenta1 = new Cuenta()
+          System.out.println("Nombre cuenta 1: " +
+                              miCuenta1.obtenerNombre());
+
+          Cuenta miCuenta2 = new Cuenta("Juanito");
+          System.out.println("Nombre cuenta 2: " +
+                              miCuenta2.obtenerNombre());
+        }
+      }
+  \end{java}
+  \setminted[java]{ fontsize=\small }
+
+  \begin{alertblock}{Error de compilacion!}
+    Dado que definimos un constructor, Java ya no crea uno por defecto!
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Más Constructores Explícitos}
+
+  Podemos construir tantos constructores como queramos:
+  \setminted[java]{ fontsize=\footnotesize }
+  \begin{java}{Cuenta.java}
+    public class Cuenta {
+      private String nombre;
+
+      /* define explicitamente
+      el constructor por defecto */
+      public Cuenta() { /* nada */ } 
+      
+      public Cuenta(String nombre) {
+        this.nombre = nombre;
+      }
+
+      /* ... idem anterior ... */
+    }
+    
+  \end{java}
+  \setminted[java]{ fontsize=\small }
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Agregando saldo a las cuentas}
+  \begin{jsmall}
+    public class Cuenta {
+      private String nombre;
+      private double saldo;
+      public Cuenta(String nombre, double saldo) {
+        this.nombre = nombre;
+        if (saldo > 0.0) {
+          this.saldo = saldo;
+        }
+      }
+
+      public void depositar(double montoDeposito) {
+        if (montoDeposito > 0.0) { saldo += montoDeposito; }        
+      }
+
+      public double obtenerSaldo() {
+        return saldo;
+      }
+      /* ... idem anterior ... */
+    }    
+  \end{jsmall}  
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%
+
+\subsection{Java y Principios de Orientación a Objetos
+
+\begin{frame}
+  \frametitle{Encapsulamiento}
+
+    \begin{itemize}
+      
+    \item Técnica para asociar en un mismo lugar \emph{el estado
+        interno} y \emph{el comportamiento} de los objetos
+
+    \item En Java el encapsulamiento se realiza mediante la definición
+      de clases      
+
+    \end{itemize}
+  \end{frame}		
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ocultamiento de Información}
+
+    \begin{itemize}
+      
+    \item Es la capacidad de ocultar los detalles internos del
+      comportamiento de una clase y exponer sólo los detalles que sean
+      necesarios para el resto del sistema
+
+    \item En Java esto se hace a través de los atributos de control de
+      acceso: \code{private} y \code{public}
+
+    \end{itemize}
+  \end{frame}		
+  
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Preguntas}
+  \hspace{4cm}\huge{Preguntas?}  
+\end{frame}
+
+\end{document}
