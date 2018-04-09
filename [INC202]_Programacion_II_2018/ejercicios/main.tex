@@ -1,0 +1,194 @@
+\documentclass{exam}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[newcommands]{ragged2e}
+
+\usepackage{
+    amsmath,
+    amssymb,
+    eso-pic,
+    float,
+    graphicx,
+    lmodern,
+    wrapfig,
+    tabularx,
+    multicol,
+    multirow,
+    color,
+    colortbl,
+    lastpage,
+    titlesec,
+    sectsty
+}
+
+\definecolor{azul}{RGB}{33,127,190}
+\sectionfont{\color{azul}}
+\subsectionfont{\color{azul}}
+\renewcommand{\familydefault}{\sfdefault}
+
+\footer{}{\thepage}{}
+
+\makeatother
+
+\title{\LARGE\color{azul}\textbf{ICI YYY Programaci\'on 2 - Prueba Especial}}
+\author{\normalsize \color{gray}{Prof.} \color{black}{\textbf{Eduardo Godoy}}}
+\date{\normalsize \em \today}
+
+\begin{document}
+
+\AddToShipoutPictureBG*{%
+  \AtPageUpperLeft{\raisebox{-\height}{\includegraphics[scale=.95]{base/header.png}}}}
+
+\maketitle
+
+\begin{multicols}{2} \begin{flushleft} \textbf{Nombre:} \\ \vspace*{2mm} \textbf{Rut:} \end{flushleft} \begin{center} \begin{table}[H] \begin{tabular}{p{4cm}|p{3cm}|} \arrayrulecolor{gray!50}\cline{2-2} ~ & {\em {\scriptsize \color{gray!50}{Puntaje:}}} \\ & ~ \\ ~ & \textbf{Nota:} \\ & ~ \\ \arrayrulecolor{gray!50}\cline{2-2} \end{tabular} \end{table} \end{center} \end{multicols}
+
+\vspace*{-18mm}
+\noindent
+\textbf{Instrucciones:} 
+\begin{itemize}
+    \item[-] El puntaje m\'aximo del certamen es 100 puntos, siendo 60 puntos el m\'inimo requerido para aprobar.
+    \item[-] Tiempo m\'aximo: 90 minutos.
+    \item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado seg\'un dicta el reglamento de la carrera.
+\end{itemize}
+
+\noindent
+\textbf{Resultados de aprendizaje a evaluar:} $\langle\langle$ {\em Enumerar los resultados de aprendizaje que se eval{\'u}an en este instrumento (programa de la asignatura).}$\rangle\rangle$
+\vspace{2mm}
+
+\noindent
+\textbf{Contenido:} Este certamen eval\'ua los siguientes temas:
+
+\vspace{-2mm}
+\begin{table}[H]
+\begin{tabular}{
+    !{\color{gray!50}\vrule}l
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+    \multicolumn{1}{!{\color{gray!50}\vrule}c}{\multirow{2}{*}{\textbf{
+        Tema
+    }}} & 
+    \multicolumn{2}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        Puntajes
+    }} \\ \arrayrulecolor{gray!50}\cline{2-3} &
+    \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        Total
+    }} & 
+    \multicolumn{1}{c!{\color{gray!50}\vrule}}{\textbf{
+        Obtenido
+    }} \\ \arrayrulecolor{gray!50} \hline
+    Implementaci\'on de Componentes Java Swing.
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        40 pts.
+    }} & \\ \arrayrulecolor{gray!50} \hline
+    Implementaci\'on y operaciones b\'asicas con  arreglos.
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        20 pts.
+    }} & \\ \arrayrulecolor{gray!50} \hline
+    Conocimientos en Orientaci\'on a Objetos.
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        40 pts.
+    }} & \\ \arrayrulecolor{gray!50} \hline
+    Implementaci\'on de soluci\'on utilizando lenguaje de programaci\'on Java.
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        40 pts.
+    }} & \\ \arrayrulecolor{gray!50} \hline
+\end{tabular}
+\end{table}
+
+\vspace{-7mm}
+\section{\textbf{Programaci\'on en Java (100 pts)}}
+\noindent
+\textbf{Respuestas breves: } Descripci{\'o}n de las reglas (L: X pts. S: Y pts. NL: Z pts.).
+
+\begin{questions}
+    
+Desarrollar una herramienta, con interfaz de usuario en Java que permita transformar una palabra, frase u oraci\'on en c\'odigo morse y viceversa. Para ello, asuma que existe una clase llamada \textbf{TranslatorHelper} que pose\'e los m\'etodos est\'aticos \textbf{text2morse(String)} y \textbf{morse2text(String)} que transforma de texto a morse y de morse a texto, respectivamente. La interfaz de usuario debe contener al menos los componentes que se muestran en la Figura 
+
+\end{questions}
+
+\begin{table}[H]
+    {\small
+    \begin{tabular}{lll}
+        L  & : Logrado    & : Describir lo que se considera como logrado por el estudiante. \\
+        S  & : Suficiente & : Describir lo que se considera como suficiente. \\
+        NL & : No Logrado & : Describir lo que se considera como no logrado, por ejemplo ausencia de respuesta.
+    \end{tabular}}
+\end{table}
+
+\vspace{-7mm}
+\section{\textbf{\'Item o Secci\'on (Puntaje de la secci\'on)}}
+\noindent
+\textbf{Respuestas de selecci\'on m\'ultiple: } Seleccione la alternativa correcta (L: X pts. NL: Z pts.).
+
+\begin{questions}
+
+    \question Pregunta 1.
+    \begin{parts}
+        \part Opci\'on 1
+        \part Opci\'on 2
+        \part $\ldots$
+        \part $\ldots$
+    \end{parts}
+
+    \question Pregunta 2.
+    \begin{parts}
+        \part Opci\'on 1
+        \part Opci\'on 2
+        \part $\ldots$
+        \part $\ldots$
+    \end{parts}
+    
+\end{questions}
+
+\begin{table}[H]
+    {\small
+    \begin{tabular}{lll}
+        L  & : Logrado    & : Describir lo que se considera como logrado por el estudiante. \\
+        NL & : No Logrado & : Describir lo que se considera como no logrado, por ejemplo ausencia de respuesta.
+    \end{tabular}}
+\end{table}
+
+\vspace{-7mm}
+\section{\textbf{\'Item o Secci\'on (Puntaje de la secci\'on)}}
+\noindent
+\textbf{Respuestas con dibujos: } Descripci{\'o}n de las reglas (L: X pts. S: Y pts. NL: Z pts.).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{base/placeholder.png}
+    \label{fig:1}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}p{3.6cm}
+!{\color{gray!50}\vrule}p{3.6cm}
+!{\color{gray!50}\vrule}p{3.6cm}
+!{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+    \multicolumn{4}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{?`C\'omo ser{\'e} evaluado en la secci\'on X?}} \\ \arrayrulecolor{gray!50} \hline
+    \textbf{\'Item} & \textbf{Logrado} & \textbf{Suficiente} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} \hline
+    XX\newline Descripci\'on del \'item &
+    X\%\newline Aplica de forma correcta ... & 
+    Y\%\newline Aplica parcialmente con menos de x errores ... & 
+    Z\%\newline Aplica de forma incorrecta con x errores o m\'as\\ \arrayrulecolor{gray!50} \hline
+    YY\newline Descripci\'on del \'item & 
+    X\%\newline Aplica de forma correcta ... &
+    Y\%\newline Aplica parcialmente con menos de x errores ... &
+    Z\%\newline Aplica de forma incorrecta con x errores o m\'as\\ \arrayrulecolor{gray!50} \hline
+    ZZ\newline Descripci\'on del \'item & 
+    X\%\newline Aplica de forma correcta ... &
+    Y\%\newline Aplica parcialmente con menos de x errores ... &
+    Z\%\newline Aplica de forma incorrecta con x errores o m\'as\\ \arrayrulecolor{gray!50} \hline
+    Total de la secci\'on &  100\% & 60\% & ?\%\\ \arrayrulecolor{gray!50} \hline
+\end{tabular}
+\label{tbl:1}
+\end{table}
+\vspace{-5mm}
+\textbf{Nota:} En caso de que el {\'i}tem no est{\'e} presente, tiene ponderaci{\'o}n cero.
+
+\end{document}
