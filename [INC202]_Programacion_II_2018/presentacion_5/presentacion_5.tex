@@ -1,0 +1,517 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{CambridgeUS}
+  % \setbeamercovered{transparent}
+}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{algorithm,algorithmic}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{enumitem}
+\setitemize{itemsep=1.2em,%
+  label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}%
+  \usebeamertemplate{itemize item}
+}
+
+\input{../minted.tex}
+
+\title[\textbf{Programación 2}]{\textbf{Programación 2}}
+\subtitle{Elementos Adicionales de Programación Básica en Java}
+
+\author[IF-EG]
+{Profesores:\\
+  Ismael Figueroa -  \texttt{\small ifigueroap@gmail.com} \\
+  \vspace{0.5mm} \\
+  Eduardo Godoy - \texttt{\small eduardo.gl@gmail.com}
+}
+
+\institute[Universidad de Valparaíso]
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Métodos y Atributos \code{static}}
+
+\begin{frame}
+  \frametitle{¿Qué es un método estático?}
+
+  \begin{block}{}
+    En Java los atributos y los métodos están asociados por defecto
+    con \emph{instancias de una clase}. Esto significa que deben ser
+    invocados desde una instancia, por ejemplo
+    \codet{auto.acelerar(10)} ...
+  \end{block}
+
+  Pero a veces es deseable y/o necesario asociar métodos \emph{directamente a una clase}:
+
+  \begin{itemize}
+    
+  \item Métodos utilitarios: por ejemplo un método \codet{millasAKilometros}, no tiene por
+    qué estar asociado a una instancia, es algo general en el ámbito
+    de los autos.
+    
+  \item Si el método en realidad no ocupa ninguna variable de
+    instancia...
+    
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Métodos Estáticos vs No-Estáticos}
+
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{jsmall}
+        public class AutoEst {
+          String marca;
+          int agno;
+
+          public static double
+          millasAKm(double m) {
+            return m * 1.60934;
+          }          
+        }
+
+        public class Auto {
+          String marca;
+          int agno;
+
+          public double
+          millasAKm(double m) {
+            return m * 1.60934;
+          }          
+        }
+     \end{jsmall}
+    \end{column}
+    % 
+    \begin{column}{0.5\textwidth}
+      
+      \begin{jsmall}
+        public class Main {
+          public static void
+          main(String[] args) {
+
+            // Quiero calcular 102
+            // 102 millas a KM
+
+            // Con método no estático:
+            System.out.println(
+                new Auto().millasAKm(102));
+
+            // Con método estático:
+            System.out.println(
+                AutoEst.millasAKm(102));
+          }
+        }
+      \end{jsmall}
+      
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\section{Arreglos}
+
+\begin{frame}
+  \frametitle{¿Qué es un arreglo?}
+
+  \begin{block}{}
+    Un arreglo es una colección secuencial de elementos. En Java los
+    arreglos pueden ser estáticos o dinámicos, y todos los elementos
+    deben tener el mismo tipo de dato.
+  \end{block}
+
+  En general los pasos para trabajar con arreglos son:
+  \begin{itemize}
+  \item Declarar una variable para hacer referencia al arreglo
+  \item Crear o instanciar un nuevo arreglo y asignarlo a la variable
+    recién declarada
+  \item Almacenar, actualizar, manipular los valores en el arreglo
+  \end{itemize}
+
+\end{frame}
+
+
+\subsection{Arreglos Estáticos}
+
+\begin{frame}[fragile]
+  \frametitle{Arreglos Estáticos}
+
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \begin{small}
+        \begin{itemize}
+        \item Tienen un largo fijo determinado en su creación.
+          
+        \item Los arreglos están indexados por número, desde el número 0
+          en adelante.
+          
+        \item Un arreglo de elementos de tipo \code{T} se escribe
+          \code{T[]}, y se pueden inicializar directamente, o construir
+          usando \code{new}.
+          
+        \end{itemize}
+      \end{small}
+    \end{column}
+    % 
+    \begin{column}{0.6\textwidth}
+      
+      \begin{jsmall}
+        public class Main {
+          public static void main(String[] args) {
+
+            String[] nombres = { "P", "J", "D" };
+            double[] notas   = new double[3];
+
+            notas[0] = 4.2;
+            notas[1] = 7.0;
+            notas[2] = 6.6;
+
+            System.out.println(nombres.length);
+            System.out.println(nombres);
+            System.out.println(notas);
+          }
+        }
+      \end{jsmall}
+      
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Propiedades Clave}
+
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \begin{small}
+        \begin{itemize}
+
+        \item El acceso a la posición \code{i} del arreglo \code{a} se
+          escribe \code{a[i]}.
+          
+        \item Los arreglos son un objeto bastante simple, que tiene como
+          principal propiedad su largo.
+          
+        \item El largo está almacenado en la propiedad \code{length}, la
+          cual se define en la construcción del arreglo.
+          
+        \end{itemize}
+      \end{small}
+    \end{column}
+    % 
+    \begin{column}{0.6\textwidth}
+      \begin{jsmall}
+        public class Main {
+          public static void main(String[] args) {
+            
+            String[] nombres = { "P", "J", "D" };
+            double[] notas   = new double[3];
+            
+            notas[0] = 4.2;
+            notas[1] = 7.0;
+            notas[2] = 6.6;
+            
+            for(int i=0; i < notas.length; i++) {
+              System.out.println(
+              "N[" + i + "]: " + notas[i]);
+            }
+          }
+        }
+      \end{jsmall}      
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{La clase utilitaria \codet{java.util.Arrays}}
+
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \begin{small}
+        \begin{itemize}
+
+        \item La clase \code{java.util.Arrays} contiene muchos métodos
+          utilitarios para la manipulación de arreglos estáticos.
+          
+        \item La clase tiene solamente \emph{métodos estáticos} por lo
+          que no es necesario tener una instancia---sólo se llaman los métodos.
+          
+        \item Como ejemplo, veamos los métodos \code{fill},
+          \code{sort}, y \code{toString}.
+          
+        \end{itemize}
+      \end{small}
+    \end{column}
+    % 
+    \begin{column}{0.6\textwidth}
+      \begin{jsmall}
+        import java.util.Arrays;
+        
+        public class Main {
+          public static void main(String[] args) {            
+            double[] notas   = new double[10];
+            // Rellenamos con valor 3.3
+            Arrays.fill(notas, 3.3);
+            
+            // Imprimimos representacion en String
+            System.out.println(
+                Arrays.toString(notas));
+
+            // Modificamos un valor y ordenamos
+            notas[9] = 0; Arrays.sort(notas);
+
+            System.out.println(
+                Arrays.toString(notas));
+          }
+        }
+      \end{jsmall}      
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\subsection{Arreglos Dinámicos}
+
+\begin{frame}[fragile]
+  \frametitle{Arreglos Dinámicos}
+
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \begin{footnotesize}
+        \begin{itemize}
+        \item Tienen un largo variable, que se ajusta automáticamente
+          a medida que se agregan o eliminan elementos.
+          
+        \item Los elementos siguen estando indexados por posición
+          desde el número 0 en adelante.
+          
+        \item En Java corresponden a la implementación de la interface
+          \code{List}, que representa una colección ordenada de
+          elementos.
+          
+        \item La implementación más usada es la clase \code{ArrayList}
+          
+        \end{itemize}
+      \end{footnotesize}
+    \end{column}
+    % 
+    \begin{column}{0.6\textwidth}
+      
+      \begin{jsmall}
+        import java.util.List;
+        import java.util.ArrayList;
+        
+        public class Main {
+          public static void main(String[] args) {
+            List<String> nombres =
+                new ArrayList<String>();
+
+            nombres.add("P");
+            nombres.add("J");
+            nombres.add("D");
+
+            System.out.println(nombres);
+          }
+        }
+      \end{jsmall}
+      
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Métodos Clave para Listas\footnote{\url{https://docs.oracle.com/javase/8/docs/api/java/util/List.html}}}
+
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{footnotesize}
+        \begin{itemize}
+        \item \code{add}: agrega un elemento al final de la lista, o
+          en una posición específica dada
+          
+        \item \code{contains}: retorna un booleano indicando si un
+          elemento pertenece o no a la lista
+          
+        \item \code{get}: retorna el elemento que está en una posición
+          dada de la lista
+          
+        \item \code{isEmpty}: retorna verdadero si la lista no tiene
+          elementos
+          
+        \item \code{size}: retorna el tamaño de la lista
+          
+        \end{itemize}
+      \end{footnotesize}
+    \end{column}
+    % 
+    \begin{column}{0.5\textwidth}
+      \begin{footnotesize}
+      \begin{itemize}
+        \item \code{indexOf}: retorna el índice del primer elemento
+          que es igual al dado como parámetro, o retorna \code{-1} si
+          no hay
+          
+        \item \code{remove}: remueve el elemento en la posición dada
+          de la lista
+          
+        \item \code{subList}: retorna una nueva lista que corresponde
+          al segmento dado como parámetro
+          
+        \item \code{toArray}: retorna un arreglo estático con los
+          elementos de la lista
+          
+        \end{itemize}
+       \end{footnotesize}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Iteración sobre una Lista}
+
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+        \begin{itemize}
+        \item La interface \code{List} es una colección
+          \emph{iterable}...
+          
+        \item Por lo tanto se puede usar el constructo \code{for}
+          especial para recorrer los elementos de la lista, sin
+          preocuparnos por el largo
+          
+        \end{itemize}
+    \end{column}
+    % 
+    \begin{column}{0.6\textwidth}
+      
+      \begin{jsmall}
+        import java.util.List;
+        import java.util.ArrayList;
+        
+        public class Main {
+          public static void main(String[] args) {
+            List<String> nombres =
+                new ArrayList<String>();
+
+            nombres.add("P");
+            nombres.add("J");
+            nombres.add("D");
+
+            for(String n : nombres) {
+              System.out.println(n);
+            }
+          }
+        }
+      \end{jsmall}
+      
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\subsection{El Parámetro \code{args}}
+
+\begin{frame}[fragile]
+  \frametitle{Parámetros desde Línea de Comandos}
+  \begin{itemize}
+    
+  \item El método \code{main} toma obligatoriamente como argumento un
+    valor \code{String[] args}
+    
+  \item Ahora sabemos que eso es un arreglo estático. Haga un programa
+    que imprima sus valores...
+    
+  \item El arreglo toma sus valores de los parámetros usados en la
+    invocación del programa desde la línea de comandos. Por ejemplo:
+
+    \begin{jsmall}
+      > java Main hola 123
+    \end{jsmall}
+    
+  \end{itemize}
+
+\end{frame}
+
+\subsection{La Clase \codet{Object} y el método \codet{toString}}
+
+\begin{frame}
+  \frametitle{La Clase \codet{Object}\footnote{\url{https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html}}}
+
+  \begin{block}{}
+    La clase \codet{Object} está en la raíz de la jerarquía de
+    herencia de Java. Todas las clases heredan, directa o
+    indirectamente, desde \codet{Object}. Esta clase representa el
+    tipo de dato más general posible.
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{El método \codet{toString}}
+
+  \begin{columns}
+    \begin{column}{0.35\textwidth}
+      \begin{small}
+        \begin{itemize}
+        \item La clase \codet{Object} define el métod
+          \codet{toString}, el cual puede ser sobre-escrito por las
+          clases descendientes...
+          
+        \item Esto es útil para imprimir información relevante sobre
+          nuestras propias clases, ya que hay muchos lugares donde se
+          invoca implícitamente el método \codet{toString}
+          
+        \end{itemize}
+       \end{small}
+    \end{column}
+    % 
+    \begin{column}{0.65\textwidth}
+      
+      \begin{jsmall}        
+        public class Auto {
+          String marca;
+          int agno;
+
+          public Auto(String m, int a) {
+            marca = m;
+            agno = a,
+          }
+
+          public String toString() {
+            return "Auto m:" + marca + " a:" + agno;
+          }
+        }
+      \end{jsmall}
+      
+    \end{column}
+  \end{columns}  
+  
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Preguntas}
+  \hspace{4cm}\huge{Preguntas?}  
+\end{frame}
+
+\end{document}
