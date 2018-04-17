@@ -31,7 +31,7 @@
 
 \makeatother
 
-\title{\LARGE\color{azul}\textbf{ICI 202 Programaci\'on 2 - Ejercicio sumativo 02 }}
+\title{\LARGE\color{azul}\textbf{ICI 202 Programaci\'on 2 - Ejercicio sumativo 04 }}
 \author{\normalsize \color{gray}{Prof.} \color{black}{\textbf{Ismael Figueroa, Eduardo Godoy}}}
 \date{\normalsize \em \today}
 
@@ -51,7 +51,7 @@
     \item[-] El puntaje m\'aximo  es 100 puntos.
     \item[-] Tiempo m\'aximo: 90 minutos.
     \item[-] El trabajo es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado seg\'un dicta el reglamento de la carrera.
-    \item[-] Se debe subir al aula virtual un archivo comprimido con el siguiente formato  Ej02\_<NombreApellidoEstudiante\_rut\_paralelo>.zip, dentro de el deben estar los ocdigos fuentes requeridos.
+    \item[-] Se debe subir al aula virtual un archivo comprimido con el siguiente formato \\ Ej02\_<NombreApellidoEstudiante\_rut\_paralelo>.zip, dentro de el deben estar los ocdigos fuentes requeridos.
 \end{itemize}
 
 \noindent
@@ -59,6 +59,7 @@
 \begin{enumerate}
   \item Resoluci\'on de problemas utilizando Lenguaje Java.
   \item Uso de  sentencias básicas (control y selecci\'on).
+  \item uso de librerias (imports).
   \item Creación y manejo de instancias de objetos.
 \end{enumerate}
 \vspace{2mm}
@@ -113,40 +114,36 @@
 \begin{questions}
 
   \begin{enumerate}
-		\item Desarrolle una clase \textbf{MedicionPersona} que posea:
-		\begin{enumerate}
-			\item Caracter\'isticas: \emph{nombre(s)}, \emph{apellido}, \emph{edad}, \emph{peso} y \emph{altura}. Considerar el tipo de dato id\'oneo para cada uno de los atributos y definir el valor por omisi\'on acorde a cada tipo.
-			\item Comportamiento: \textbf{comprobarSexo()}, \textbf{esMayorDeEdad()}, \textbf{calcularIMC()}.
-			\begin{enumerate}
-				\item \emph{esMayorDeEdad}(): Determina si la persona es o no mayor de edad mostrando mensaje por pantalla .
-				\item \emph{calcularIMC}(): c\'alculo del \'indice de masa corporal ($\frac{peso}{altura^{2}}$). IMC ideal: $20 \leq IMC \leq 24,9$.
-			\end{enumerate}
-			\item Crear una clase externa que permita  instanciar 2 objetos con datos seg\'un la siguiente gu\'ia::
+    \item Crear una clase en java en la que se genera un n\'umero aleatorio de tipo natural y positivo y permita:
+\begin{itemize}
+    \item Para cada numero generado aleatoriamente calcular la suma de cada factorial  del  n\'umero generado desde n! a 1!. Ejemplo si n=5: 5! + 4! + 3! + 2! + 1! + 0!
+    \item Identificar si es Par o primo.
+    \item Luego de identificarlo contar su tipo.
+    \item Sumar su valor seg\'un su tipo.
+    \item mostrar los valores de cada operacion
+\end{itemize}
+\item Consideraciones:
+  \begin{itemize}
+    \item Analizar y utilizar la clase NumAleatorio.java para generar n\'umeros aleatorios.
+    \item Considere 100 como l\'imite superior del intervalo de n\'umeros aleatorios a generar.
+    \item Crear la clase Calculo e implementar los métodos :
+    \begin{itemize}
+      \item \textit{\textbf{private int calcularFactorial(Integer numero)}}:Para calcular el factorial.
+      \item \textit{\textbf{private void evaluarSiEsPar(Integer numero)}}: Para evaluar y operar si es un n\'umero par.
+      \item \textit{\textbf{private void evaluarSiEsPrimo(Integer numero)}}: Para evaluar y operar si es un n\'umero Primo.
+      \item \textit{\textbf{public void evaluarNumero(Integer numero)}}: encargada de invocar a los m\'etodos anteriores.
+      \item \textit{\textbf{public void mostrar()}}: m\'etodo encargado de entregar los valores de lasoperaciones ejecutadas dentro del programa.
+    \end{itemize}
+    \item Crear la clase Main() encargada de:
+      \begin{itemize}
+        \item Instanciar la clase NumAleatorio y generar un numero aleatorio para la clase Calculo.
+        \item Ejecutar e instanciar la clase Calculo.
+        \item Enviar los mensajes requeridos para que la Clase calculo cumpla con lo requerido en el problema.
+      \end{itemize}
 
-          \begin{enumerate}
-            \item Primer Objeto:
-            \begin{itemize}
-              \item nombre = Pedro
-              \item apellido=Figueroa
-              \item edad = 16;
-              \item peso=70
-              \item altura=1.85.
-            \end{itemize}
-            \item Segundo Objeto:
-            \begin{itemize}
-              \item nombre = Juan.
-              \item apellido=Godoy.
-              \item edad = 20;
-              \item peso=75.
-              \item altura=1.75.
-            \end{itemize}
-          \end{enumerate}
-				\item Para cada objeto, se debe comprobar si la persona est\'a en su peso ideal, tiene sobrepeso o est\'a por debajo de su peso ideal (con un mensaje en la salida est\'andar).
-				\item Indicar para cada objeto si la persona es mayor de edad.
-				\item Por \'ultimo, para cada objeto, se debe mostrar la informaci\'on de la medici\'on.
-			\end{enumerate}
-		\end{enumerate}
-    \end{enumerate}
+  \end{itemize}
+  \end{enumerate}
+
 \end{questions}
 
 \begin{table}[H]

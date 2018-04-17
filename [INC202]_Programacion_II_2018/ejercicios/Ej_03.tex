@@ -31,7 +31,7 @@
 
 \makeatother
 
-\title{\LARGE\color{azul}\textbf{ICI 202 Programaci\'on 2 - Ejercicio sumativo 02 }}
+\title{\LARGE\color{azul}\textbf{ICI 202 Programaci\'on 2 - Ejercicio sumativo 03 }}
 \author{\normalsize \color{gray}{Prof.} \color{black}{\textbf{Ismael Figueroa, Eduardo Godoy}}}
 \date{\normalsize \em \today}
 
@@ -59,6 +59,7 @@
 \begin{enumerate}
   \item Resoluci\'on de problemas utilizando Lenguaje Java.
   \item Uso de  sentencias básicas (control y selecci\'on).
+  \item uso de librerias (imports).
   \item Creación y manejo de instancias de objetos.
 \end{enumerate}
 \vspace{2mm}
@@ -112,41 +113,34 @@
 
 \begin{questions}
 
-  \begin{enumerate}
-		\item Desarrolle una clase \textbf{MedicionPersona} que posea:
-		\begin{enumerate}
-			\item Caracter\'isticas: \emph{nombre(s)}, \emph{apellido}, \emph{edad}, \emph{peso} y \emph{altura}. Considerar el tipo de dato id\'oneo para cada uno de los atributos y definir el valor por omisi\'on acorde a cada tipo.
-			\item Comportamiento: \textbf{comprobarSexo()}, \textbf{esMayorDeEdad()}, \textbf{calcularIMC()}.
-			\begin{enumerate}
-				\item \emph{esMayorDeEdad}(): Determina si la persona es o no mayor de edad mostrando mensaje por pantalla .
-				\item \emph{calcularIMC}(): c\'alculo del \'indice de masa corporal ($\frac{peso}{altura^{2}}$). IMC ideal: $20 \leq IMC \leq 24,9$.
-			\end{enumerate}
-			\item Crear una clase externa que permita  instanciar 2 objetos con datos seg\'un la siguiente gu\'ia::
 
-          \begin{enumerate}
-            \item Primer Objeto:
-            \begin{itemize}
-              \item nombre = Pedro
-              \item apellido=Figueroa
-              \item edad = 16;
-              \item peso=70
-              \item altura=1.85.
-            \end{itemize}
-            \item Segundo Objeto:
-            \begin{itemize}
-              \item nombre = Juan.
-              \item apellido=Godoy.
-              \item edad = 20;
-              \item peso=75.
-              \item altura=1.75.
-            \end{itemize}
-          \end{enumerate}
-				\item Para cada objeto, se debe comprobar si la persona est\'a en su peso ideal, tiene sobrepeso o est\'a por debajo de su peso ideal (con un mensaje en la salida est\'andar).
-				\item Indicar para cada objeto si la persona es mayor de edad.
-				\item Por \'ultimo, para cada objeto, se debe mostrar la informaci\'on de la medici\'on.
-			\end{enumerate}
-		\end{enumerate}
-    \end{enumerate}
+\begin{enumerate}
+    \item[ ] Utilizando los conceptos del Paradigma de Orientaci\'on a Objetos,
+     construya una aplicaci\'on en Java que gestione las operaciones elementales de una calculadora:
+     \emph{suma}, \emph{resta}, \emph{multiplicaci\'on}, \emph{divisi\'on} y \emph{m\'odulo};
+     las operaciones de trasnformaci\'on de sistema num\'erico: decimal, octal y binario;
+     y al menos 3 funciones matem\'aticas (\emph{sin}, \emph{cos}, \emph{tag}, \emph{abs}, \emph{pow} y \emph{sqrt}).
+     La clase desarrollada \textbf{\emph{Calculadora.java}}, debe contener:
+    \begin{enumerate}
+	    \item Un atributo double para almacenar el valor resultante.
+	    \item Los m\'etodos para cada operaci\'on.
+	    \item El m\'etodo \emph{mostrar}() para retornar la operaci\'on realizada y el valor resultante.
+	    \item El m\'etodo principal.
+	\end{enumerate}
+	\item[] Cuando se finalice la operación el valor obtenido se debe tranformar seg\'un corresponda a binaria, Octal y Hexadecimal.
+  Utilice los m\'etodos miembros de la clase \textbf{Integer} seg\'un se indica a continuaci\'on:
+	\begin{itemize}
+	    \item toBinaryString(int i): retorna un String Binario.
+	    \item toOctalString(int i): retorna un String Octal.
+	    \item toHexString(int i): retorna un String Hexadecimal.
+	\end{itemize}
+	\item[] Utilice el m\'etodo miembro de la clase Double.
+	\begin{itemize}
+	    \item intValue(): retorna el valor entero de un double.
+	\end{itemize}
+  \item Considerar como ejemplo de uso la clase \textbf{MathMethod.java} para utilizar la clase Math que provee java.
+  \item Considerar la Clase \textbf{Main.java} entregada como la clase instanciadora de la Calculadora.java.
+\end{enumerate}
 \end{questions}
 
 \begin{table}[H]
