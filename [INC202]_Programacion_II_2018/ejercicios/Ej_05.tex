@@ -31,7 +31,7 @@
 
 \makeatother
 
-\title{\LARGE\color{azul}\textbf{ICI 202 Programaci\'on 2 - Ejercicio sumativo 04 }}
+\title{\LARGE\color{azul}\textbf{ICI 202 Programaci\'on 2 - Ejercicio sumativo 05 }}
 \author{\normalsize \color{gray}{Prof.} \color{black}{\textbf{Ismael Figueroa, Eduardo Godoy}}}
 \date{\normalsize \em \today}
 
@@ -116,11 +116,13 @@
   \begin{enumerate}
     \item Crear una clase en java en la que se genera un n\'umero aleatorio de tipo natural y positivo y permita:
 \begin{itemize}
+  \item crear como atributo dos arreglos dina\'amicos  de tipo ArrayList<Integer> llamados primoList y parList.
     \item Para cada numero generado aleatoriamente calcular la suma de cada factorial  del  n\'umero generado desde n! a 1!. Ejemplo si n=5: 5! + 4! + 3! + 2! + 1! + 0!
+    \item En base al n\'umero aleatorio obtenido N, generar N nuevos n\'umeros aleatorios.
     \item Identificar si es Par o primo.
-    \item Luego de identificarlo contar su tipo.
-    \item Sumar su valor seg\'un su tipo.
-    \item mostrar los valores de cada operacion
+    \item Almacenarlos en cada arreglo din\'amico seg\'un su tipo. Si es par se agrega en parList, si es primo se agrega a primoList.
+    \item Recorre cada arreglo din\'amico mostrando y sumando su contenido.
+    \item Mostrar el total de numeros de tipo par y el total de tipo impar (analizar m\'etodo size()).
 \end{itemize}
 \item Consideraciones:
   \begin{itemize}
@@ -128,11 +130,12 @@
     \item Considere 100 como l\'imite superior del intervalo de n\'umeros aleatorios a generar.
     \item Crear la clase Calculo e implementar los métodos :
     \begin{itemize}
-      \item \textit{\textbf{private int calcularFactorial(Integer numero)}}:Para calcular el factorial.
-      \item \textit{\textbf{private void evaluarSiEsPar(Integer numero)}}: Para evaluar y operar si es un n\'umero par.
-      \item \textit{\textbf{private void evaluarSiEsPrimo(Integer numero)}}: Para evaluar y operar si es un n\'umero Primo.
-      \item \textit{\textbf{public void evaluarNumero(Integer numero)}}: encargada de invocar a los m\'etodos anteriores.
-      \item \textit{\textbf{public void mostrar()}}: m\'etodo encargado de entregar los valores de lasoperaciones ejecutadas dentro del programa.
+      \item Crear \textit{\textbf{private int calcularFactorial(Integer numero)}}:Para calcular el factorial.
+      \item Crear \textit{\textbf{private void evaluarSiEsPar(Integer numero)}}: Para evaluar y operar si es un n\'umero par.
+      \item Crear \textit{\textbf{private void evaluarSiEsPrimo(Integer numero)}}: Para evaluar y operar si es un n\'umero Primo.
+      \item Crear \textit{\textbf{public void evaluarNumero(Integer numero)}}: encargada de invocar a los m\'etodos anteriores.
+      \item Crear \textit{\textbf{public void recorrerLista()}}: Recorre ambos arreglos din\'amicos mostrando y sumando sus contenidos seg\'un su tipo.
+      \item Crear \textit{\textbf{public void mostrar()}}: m\'etodo encargado de entregar los valores de lasoperaciones ejecutadas dentro del programa.
     \end{itemize}
     \item Crear la clase Main() encargada de:
       \begin{itemize}
