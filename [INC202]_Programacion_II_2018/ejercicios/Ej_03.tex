@@ -1,0 +1,179 @@
+\documentclass{exam}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[newcommands]{ragged2e}
+
+\usepackage{
+    amsmath,
+    amssymb,
+    eso-pic,
+    float,
+    graphicx,
+    lmodern,
+    wrapfig,
+    tabularx,
+    multicol,
+    multirow,
+    color,
+    colortbl,
+    lastpage,
+    titlesec,
+    sectsty
+}
+
+\definecolor{azul}{RGB}{33,127,190}
+\sectionfont{\color{azul}}
+\subsectionfont{\color{azul}}
+\renewcommand{\familydefault}{\sfdefault}
+
+\footer{}{\thepage}{}
+
+\makeatother
+
+\title{\LARGE\color{azul}\textbf{ICI 202 Programaci\'on 2 - Ejercicio sumativo 03 }}
+\author{\normalsize \color{gray}{Prof.} \color{black}{\textbf{Ismael Figueroa, Eduardo Godoy}}}
+\date{\normalsize \em \today}
+
+\begin{document}
+
+\AddToShipoutPictureBG*{%
+  \AtPageUpperLeft{\raisebox{-\height}{\includegraphics[scale=.95]{base/header.png}}}}
+
+\maketitle
+
+\begin{multicols}{2} \begin{flushleft} \textbf{Nombre:} \\ \vspace*{2mm} \textbf{Rut:} \\ \vspace*{2mm} \textbf{Paralelo:} \end{flushleft} \begin{center} \begin{table}[H] \begin{tabular}{p{4cm}|p{3cm}|} \arrayrulecolor{gray!50}\cline{2-2} ~ & {\em {\scriptsize \color{gray!50}{Puntaje:}}} \\ & ~ \\ ~ & \textbf{Nota:} \\ & ~ \\ \arrayrulecolor{gray!50}\cline{2-2} \end{tabular} \end{table} \end{center} \end{multicols}
+
+\vspace*{-18mm}
+\noindent
+\textbf{\\Instrucciones:}
+\begin{itemize}
+    \item[-] El puntaje m\'aximo  es 100 puntos.
+    \item[-] Tiempo m\'aximo: 90 minutos.
+    \item[-] El trabajo es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado seg\'un dicta el reglamento de la carrera.
+    \item[-] Se debe subir al aula virtual un archivo comprimido con el siguiente formato  Ej02\_<NombreApellidoEstudiante\_rut\_paralelo>.zip, dentro de el deben estar los ocdigos fuentes requeridos.
+\end{itemize}
+
+\noindent
+\textbf{Resultados de aprendizaje a evaluar:}
+\begin{enumerate}
+  \item Resoluci\'on de problemas utilizando Lenguaje Java.
+  \item Uso de  sentencias básicas (control y selecci\'on).
+  \item uso de librerias (imports).
+  \item Creación y manejo de instancias de objetos.
+\end{enumerate}
+\vspace{2mm}
+
+\noindent
+\textbf{Contenido:} Este certamen eval\'ua los siguientes temas:
+
+\vspace{-2mm}
+\begin{table}[H]
+\begin{tabular}{
+    !{\color{gray!50}\vrule}l
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+    \multicolumn{1}{!{\color{gray!50}\vrule}c}{\multirow{2}{*}{\textbf{
+        Tema
+    }}} &
+    \multicolumn{2}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        Puntajes
+    }} \\ \arrayrulecolor{gray!50}\cline{2-3} &
+    \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        Total
+    }} &
+    \multicolumn{1}{c!{\color{gray!50}\vrule}}{\textbf{
+        Obtenido
+    }} \\ \arrayrulecolor{gray!50} \hline
+    Creaci\'on de Clase con atributos.
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        30 pts.
+    }} & \\ \arrayrulecolor{gray!50} \hline
+    Implementaci\'on de m\'etodos (comportamientos) asociados y correcto funcionamiento.
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        30 pts.
+    }} & \\ \arrayrulecolor{gray!50} \hline
+    Implementar clase instanciadora con m\'etodo main.
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        30 pts.
+    }} & \\ \arrayrulecolor{gray!50} \hline
+    Cumple con el formato y compilaci\'on correcta
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        10 pts.
+    }} & \\ \arrayrulecolor{gray!50} \hline
+
+\end{tabular}
+\end{table}
+
+\vspace{-7mm}
+\section{\textbf{Programaci\'on en Java (100 pts)}}
+\noindent
+\textbf{Plantamiento de problema: }
+
+\begin{questions}
+
+
+\begin{enumerate}
+    \item[ ] Utilizando los conceptos del Paradigma de Orientaci\'on a Objetos,
+     construya una aplicaci\'on en Java que gestione las operaciones elementales de una calculadora:
+     \emph{suma}, \emph{resta}, \emph{multiplicaci\'on}, \emph{divisi\'on} y \emph{m\'odulo};
+     las operaciones de trasnformaci\'on de sistema num\'erico: decimal, octal y binario;
+     y al menos 3 funciones matem\'aticas (\emph{sin}, \emph{cos}, \emph{tag}, \emph{abs}, \emph{pow} y \emph{sqrt}).
+     La clase desarrollada \textbf{\emph{Calculadora.java}}, debe contener:
+    \begin{enumerate}
+	    \item Un atributo double para almacenar el valor resultante.
+	    \item Los m\'etodos para cada operaci\'on.
+	    \item El m\'etodo \emph{mostrar}() para retornar la operaci\'on realizada y el valor resultante.
+	    \item El m\'etodo principal.
+	\end{enumerate}
+	\item[] Cuando se finalice la operación el valor obtenido se debe tranformar seg\'un corresponda a binaria, Octal y Hexadecimal.
+  Utilice los m\'etodos miembros de la clase \textbf{Integer} seg\'un se indica a continuaci\'on:
+	\begin{itemize}
+	    \item toBinaryString(int i): retorna un String Binario.
+	    \item toOctalString(int i): retorna un String Octal.
+	    \item toHexString(int i): retorna un String Hexadecimal.
+	\end{itemize}
+	\item[] Utilice el m\'etodo miembro de la clase Double.
+	\begin{itemize}
+	    \item intValue(): retorna el valor entero de un double.
+	\end{itemize}
+  \item Considerar como ejemplo de uso la clase \textbf{MathMethod.java} para utilizar la clase Math que provee java.
+  \item Considerar la Clase \textbf{Main.java} entregada como la clase instanciadora de la Calculadora.java.
+\end{enumerate}
+\end{questions}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}p{3.6cm}
+!{\color{gray!50}\vrule}p{3.6cm}
+!{\color{gray!50}\vrule}p{3.6cm}
+!{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+    \multicolumn{4}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{?`C\'omo ser{\'e} evaluado en este trabajo?}} \\ \arrayrulecolor{gray!50} \hline
+    \textbf{\'Item} & \textbf{Logrado} & \textbf{Suficiente} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} \hline
+  \newline Creaci\'on de Clase con atributos. &
+  \newline  Aplica de forma correcta 30\%  ... &
+  \newline Aplica parcialmente con menos de 2 errores 20\% ... &
+    \newline Aplica de forma incorrecta con 3 errores o m\'as 0-9\%\\ \arrayrulecolor{gray!50} \hline
+    \newline  Implementaci\'on de m\'etodos (comportamientos) asociados y correcto funcionamiento. &
+    \newline  Aplica de forma correcta 30\%  ... &
+    \newline Aplica parcialmente con menos de 2 errores 20\%... &
+    \newline Aplica de forma incorrecta con 3 errores o m\'as 0-8\%\\ \arrayrulecolor{gray!50} \hline
+  \newline  Implementar clase instanciadora con m\'etodo main y crea instancias de objetos. &
+  \newline  Aplica de forma correcta 30\%... &
+    \newline  Aplica parcialmente con menos de 2 errores 15\%... &
+    \newline Aplica de forma incorrecta con 3 errores o m\'as 0-9\%\\ \arrayrulecolor{gray!50} \hline
+    \newline  Cumple con el formato y compilaci\'on correcta &
+    \newline  Aplica de forma correcta 10\% ... &
+    \newline Aplica parcialmente con menos de x errores 5\%... &
+    \newline Aplica de forma incorrecta con x errores o m\'as 0-4\%\\ \arrayrulecolor{gray!50} \hline
+    Total de la secci\'on &  100\% & 60\% & 0-30\%\\ \arrayrulecolor{gray!50} \hline
+\end{tabular}
+\label{tbl:1}
+\end{table}
+\vspace{-5mm}
+\textbf{Nota:} En caso de que el {\'i}tem no est{\'e} presente, tiene ponderaci{\'o}n cero.
+
+\end{document}
