@@ -1,4 +1,4 @@
-\documentclass{exam}
+ \documentclass{exam}
 \usepackage[spanish,activeacute]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -31,7 +31,7 @@
 
 \makeatother
 
-\title{\LARGE\color{azul}\textbf{ICI 202 Programaci\'on 2 - Ejercicio sumativo 05 }}
+\title{\LARGE\color{azul}\textbf{ICI 202 Programaci\'on 2 - Ejercicio sumativo 01 }}
 \author{\normalsize \color{gray}{Prof.} \color{black}{\textbf{Ismael Figueroa, Eduardo Godoy}}}
 \date{\normalsize \em \today}
 
@@ -51,16 +51,14 @@
     \item[-] El puntaje m\'aximo  es 100 puntos.
     \item[-] Tiempo m\'aximo: 90 minutos.
     \item[-] El trabajo es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado seg\'un dicta el reglamento de la carrera.
-    \item[-] Se debe subir al aula virtual un archivo comprimido con el siguiente formato \\ Ej05\_<NombreApellidoEstudiante\_rut\_paralelo>.zip, dentro de el deben estar los ocdigos fuentes requeridos.
+    \item[-] Se debe subir al aula virtual un archivo comprimido con el siguiente formato \\ {Ej01\_<NombreApellidoEstudiante\_rut\_paralelo>.zip, dentro deben estar los c\'odigos fuentes requeridos.}
 \end{itemize}
 
 \noindent
 \textbf{Resultados de aprendizaje a evaluar:}
 \begin{enumerate}
-  \item Resoluci\'on de problemas utilizando Lenguaje Java.
-  \item Uso de  sentencias básicas (control y selecci\'on).
-  \item uso de librerias (imports).
-  \item Creación y manejo de instancias de objetos.
+  \item Caracter\'isticas de Orientaci\'on a objetos.
+  \item Modelamiento y su implementaci\'on.
 \end{enumerate}
 \vspace{2mm}
 
@@ -86,19 +84,19 @@
     \multicolumn{1}{c!{\color{gray!50}\vrule}}{\textbf{
         Obtenido
     }} \\ \arrayrulecolor{gray!50} \hline
-    Creaci\'on de Clase con atributos.
+    Modelamiento del problema y ejemplo de una instancia de clase.
     & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
-        30 pts.
+        40 pts.
     }} & \\ \arrayrulecolor{gray!50} \hline
-    Implementaci\'on de m\'etodos (comportamientos) asociados y correcto funcionamiento.
+    Ejemplo de una instancia de clase.
     & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
-        30 pts.
+        10 pts.
     }} & \\ \arrayrulecolor{gray!50} \hline
-    Implementar clase instanciadora con m\'etodo main.
+    Codificaci\'on de Clase con atributos y m\'etodos en leguaje java.
     & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
-        30 pts.
+        40 pts.
     }} & \\ \arrayrulecolor{gray!50} \hline
-    Cumple con el formato y compilaci\'on correcta
+    Cumple con el formato y compilaci\'on de cada clase de forma correcta
     & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
         10 pts.
     }} & \\ \arrayrulecolor{gray!50} \hline
@@ -107,46 +105,41 @@
 \end{table}
 
 \vspace{-7mm}
-\section{\textbf{Programaci\'on en Java (100 pts)}}
+\section{\textbf{Modelamiento en Orientaci\'on a Objetos (100 pts)}}
 \noindent
 \textbf{Plantamiento de problema: }
 
 \begin{questions}
 
   \begin{enumerate}
-    \item Crear una clase en java en la que se genera un n\'umero aleatorio de tipo natural y positivo y permita:
-\begin{itemize}
-  \item crear como atributo dos arreglos dina\'amicos  de tipo ArrayList<Integer> llamados primoList y parList.
-    \item Para cada numero generado aleatoriamente calcular la suma de cada factorial  del  n\'umero generado desde n! a 1!. Ejemplo si n=5: 5! + 4! + 3! + 2! + 1! + 0!
-    \item En base al n\'umero aleatorio obtenido N, generar N nuevos n\'umeros aleatorios.
-    \item Identificar si es Par o primo.
-    \item Almacenarlos en cada arreglo din\'amico seg\'un su tipo. Si es par se agrega en parList, si es primo se agrega a primoList.
-    \item Recorre cada arreglo din\'amico mostrando y sumando su contenido.
-    \item Mostrar el total de numeros de tipo par y el total de tipo impar (analizar m\'etodo size()).
-\end{itemize}
-\item Consideraciones:
-  \begin{itemize}
-    \item Analizar y utilizar la clase NumAleatorio.java para generar n\'umeros aleatorios.
-    \item Considere 100 como l\'imite superior del intervalo de n\'umeros aleatorios a generar.
-    \item Crear la clase Calculo e implementar los métodos :
+    \item \emph{70pts.} Cree un programa que permita realizar una correcta gestion de bodega de un antiguo almacen, para esto se requiere  implementar lo siguiente.
     \begin{itemize}
-      \item Crear \textit{\textbf{private int calcularFactorial(Integer numero)}}:Para calcular el factorial.
-      \item Crear \textit{\textbf{private void evaluarSiEsPar(Integer numero)}}: Para evaluar y operar si es un n\'umero par.
-      \item Crear \textit{\textbf{private void evaluarSiEsPrimo(Integer numero)}}: Para evaluar y operar si es un n\'umero Primo.
-      \item Crear \textit{\textbf{public void evaluarNumero(Integer numero)}}: encargada de invocar a los m\'etodos anteriores.
-      \item Crear \textit{\textbf{public void recorrerLista()}}: Recorre ambos arreglos din\'amicos mostrando y sumando sus contenidos seg\'un su tipo.
-      \item Crear \textit{\textbf{public void mostrar()}}: m\'etodo encargado de entregar los valores de lasoperaciones ejecutadas dentro del programa.
+
+    \item \emph{(10pts)} Crear La clase  \textbf{Producto} que tenga los siguientes atributos:
+      \begin{enumerate}
+        \item c\'odigo: de tipo entero, cuya responsabilidad es identificar al producto.
+    	  \item nombre: de tipo string, que contiene al nombre del producto.
+    	  \item stock: de tipo entero, dato encargado de manejar la cantidad de productos del mismo nombre que actualmente se tiene en el almacen.
+    	  \item precio: precio del producto con iva incluido.
+    \end{enumerate}
+    Adem\'as debe contener los m\'etodos get y set asociados a cada atributo.
+
+    \item \emph{(5pts)} Crear la Clase \textbf{GestionBodega} que posea como atributo:
+     un arreglo de tipo dinámico de tipo Producto y llamado \textbf{listaProductos} que permita almacenar los productos que crear\'a el usuario.
+
+    La clase GestionBodega debe poseer los siguientes m\'etodos
+    \begin{enumerate}
+
+      \item \emph{(15pts)} Codificar el m\'etodo \textbf{crearProducto} que permita crear un  producto específico y asignarle un stock inicial. Se debe considerar que al asignarle el precio al producto, el sistema debe agregarle  de forma automática el iva (19\%) sobre el precio ingresado. luego de esto se procederá a guardar el resultado en el atributo precio de la clase producto. Para finalizar agregandolo al arreglo listaProductos.
+      La acci\'on de crear productos debe repetirse mientras el usuario lo desee.
+
+      \item \emph{(10pts)} Codificar el m\'etodo \textbf{listarStock} que permita visualizar el c\'odigo, nombre y stock de cada producto.
+
+
+    \item \emph{(5pts)} Resuelve el problema utilizando el paradigma de Orientaci\'on a Objectos.
+
     \end{itemize}
-    \item Crear la clase Main() encargada de:
-      \begin{itemize}
-        \item Instanciar la clase NumAleatorio y generar un numero aleatorio para la clase Calculo.
-        \item Ejecutar e instanciar la clase Calculo.
-        \item Enviar los mensajes requeridos para que la Clase calculo cumpla con lo requerido en el problema.
-      \end{itemize}
-
-  \end{itemize}
-  \end{enumerate}
-
+    \end{enumerate}
 \end{questions}
 
 \begin{table}[H]
@@ -160,22 +153,22 @@
     \multicolumn{4}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{?`C\'omo ser{\'e} evaluado en este trabajo?}} \\ \arrayrulecolor{gray!50} \hline
     \textbf{\'Item} & \textbf{Logrado} & \textbf{Suficiente} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} \hline
   \newline Creaci\'on de Clase con atributos. &
-  \newline  Aplica de forma correcta 30\%  ... &
-  \newline Aplica parcialmente con menos de 2 errores 20\% ... &
+  \newline  Aplica de forma correcta 40\%  ... &
+  \newline Aplica parcialmente con menos de 2 errores 25\% ... &
     \newline Aplica de forma incorrecta con 3 errores o m\'as 0-9\%\\ \arrayrulecolor{gray!50} \hline
     \newline  Implementaci\'on de m\'etodos (comportamientos) asociados y correcto funcionamiento. &
-    \newline  Aplica de forma correcta 30\%  ... &
-    \newline Aplica parcialmente con menos de 2 errores 20\%... &
-    \newline Aplica de forma incorrecta con 3 errores o m\'as 0-8\%\\ \arrayrulecolor{gray!50} \hline
+    \newline  Aplica de forma correcta 10\%  ... &
+    \newline Aplica parcialmente con menos de 2 errores 5\%... &
+    \newline Aplica de forma incorrecta con 3 errores o m\'as 0\%\\ \arrayrulecolor{gray!50} \hline
   \newline  Implementar clase instanciadora con m\'etodo main y crea instancias de objetos. &
-  \newline  Aplica de forma correcta 30\%... &
-    \newline  Aplica parcialmente con menos de 2 errores 15\%... &
+  \newline  Aplica de forma correcta 40\%... &
+    \newline  Aplica parcialmente con menos de 2 errores 25\%... &
     \newline Aplica de forma incorrecta con 3 errores o m\'as 0-9\%\\ \arrayrulecolor{gray!50} \hline
     \newline  Cumple con el formato y compilaci\'on correcta &
     \newline  Aplica de forma correcta 10\% ... &
     \newline Aplica parcialmente con menos de x errores 5\%... &
     \newline Aplica de forma incorrecta con x errores o m\'as 0-4\%\\ \arrayrulecolor{gray!50} \hline
-    Total de la secci\'on &  100\% & 60\% & 0-30\%\\ \arrayrulecolor{gray!50} \hline
+    Total de la secci\'on &  100\% & 60\% & 0-22\%\\ \arrayrulecolor{gray!50} \hline
 \end{tabular}
 \label{tbl:1}
 \end{table}
