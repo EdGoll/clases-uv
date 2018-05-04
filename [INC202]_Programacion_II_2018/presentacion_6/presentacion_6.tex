@@ -1,0 +1,483 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{CambridgeUS}
+  % \setbeamercovered{transparent}
+}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{algorithm,algorithmic}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{enumitem}
+\setitemize{itemsep=1.2em,%
+  label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}%
+  \usebeamertemplate{itemize item}
+}
+
+\input{../minted.tex}
+
+\title[\textbf{Programación 2}]{\textbf{Programación 2}}
+\subtitle{Strings y Entrada/Salida Básica en Java}
+
+\author[IF-EG]
+{Profesores:\\
+  Ismael Figueroa -  \texttt{\small ifigueroap@gmail.com} \\
+  \vspace{0.5mm} \\
+  Eduardo Godoy - \texttt{\small eduardo.gl@gmail.com}
+}
+
+\institute[Universidad de Valparaíso]
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{La Clase \codet{String}}
+
+\begin{frame}
+  \frametitle{Strings en Java}
+
+  Los strings, o en español \emph{cadenas}, representan secuencias de
+  caracteres. En Java los strings siempre son objetos de clase
+  \codet{String}. Existen muchas maneras de crear un String en
+  Java\footnote{\url{https://docs.oracle.com/javase/8/docs/api/java/lang/String.html}}:
+
+  \begin{itemize}    
+  \item Asignar directamente un string literal
+  \item Usar alguno de los constructores en base a arreglos de bytes o
+    de caracteres.    
+  \item Usar alguno de los constructores en base a otros strings y
+    clases similares.
+  \end{itemize}
+
+  Las operaciones básicas son la concatenación, con el operador
+  \codet{+}, y también conocer el largo del string, con la propiedad
+  \codet{length}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Inmutabilidad de los Strings}
+
+  \begin{alertblock}{Inmutables}
+    Por eficiencia, en Java los objetos \codet{String} son
+    \textbf{inmutables}. Una vez creados, su valor no puede cambiar.
+  \end{alertblock}
+
+  \begin{jsmall}
+    public class Hola {
+      public static void main(String[] args) {
+        String s1 = "Hola!";
+        String s2 = s1;
+        System.out.println(s1 + " / " + s2);
+        
+        s1 = "Ayudaaa";
+        System.out.println(s1 + " / " + s2);
+      }
+    }    
+  \end{jsmall}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Igualdad de Strings}
+
+  ¿Qué imprime por pantalla este programa?
+
+  \begin{jsmall}
+    public class Hola {
+      public static void main(String[] args) {
+        String s1 = new String("Hola!");
+        String s2 = "Hola!";
+        String s3 = s2;
+
+        if(s1 == s2) {
+          System.out.println("JAVA");
+        }
+
+        if(s2 == s3) {
+          System.out.println("ES LO MEJOR");
+        }
+      }
+    }    
+  \end{jsmall}  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Igualdad de Strings}
+
+  \begin{block}{Igualdad por referencia o identidad}
+    En Java el operador \codet{==} compara la \textbf{\textit{igualdad
+        de referencias}}: ¿están las dos referencias apuntando a un
+    mismo objeto? En el fondo este concepto está demasiado ligado a la
+    \emph{identidad del objeto}.
+  \end{block}
+
+  \begin{block}{Igualdad por valor}
+    En general es más práctico programar con la
+    \textbf{\textit{igualdad por valor}}. Para esto se debe utilizar
+    el método \codet{equals} o bien \codet{equalsIgnoreCase}.
+  \end{block}
+
+  \begin{jsmall}
+    if(s1.equals(s2)) {
+      System.out.println("JAVA ES LO MEJOR");
+    }
+  \end{jsmall}  
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Comparación de Strings}
+
+  Además de querer ver la igualdad entre strings, muchas necesitamos:
+
+  \begin{itemize}
+  \item Ver si un string comienza o termina con determinado
+    prefijo/sufijo, con los métodos \codet{startsWith} y
+    \codet{endsWith}
+    
+  \item Comparar dos strings para ver cuál es "mayor" o "menor", según
+    orden lexicográfico, con los métodos \codet{compareTo} y
+    \codet{compareToIgnoreCase}
+    
+  \item Determinar si un string calza con una \emph{expresión
+      regular}, con el método \codet{matches}
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Strings de Formato}
+
+  Como alternativa a la concatenación, donde es algo engorroso abrir y
+  cerrar comillas para cada elemento, en Java se pueden crear
+  \emph{strings de formato}, que trabajan de forma similar a
+  \codet{printf}.
+
+  \begin{jsmall}
+    public class Hola {
+      public static void main(String[] args) {
+        String nombre = "Juanito";
+        int edad = 32;
+        // Concatenacion
+        String msg1 = "Hola soy " + nombre + " y tengo " + edad + " años";
+
+        // String de formato
+        String msg2 = String.format(
+            "Hola soy %s y tengo %d años", nombre, edad);
+
+        System.out.println(msg1);
+        System.out.println(msg2);        
+      }
+    }
+  \end{jsmall}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Conversión de String a número}
+
+  Java provee 5 clases numéricas, que representan como objetos los
+  tipos numéricos primitivos:
+
+  \begin{itemize}
+    \setlength\itemsep{0.2em}
+  \item La clase \codet{Byte}
+  \item La clase \codet{Integer}
+  \item La clase \codet{Double}
+  \item La clase \codet{Float}
+  \item La clase \codet{Long}
+  \item La clase \codet{Short}
+  \end{itemize}
+
+  Cada una de estas clases tiene el método \codet{valueOf} que
+  convierte un string, asumiendo que tiene un número válido, en un
+  objeto numérico.
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Manipulación de Caracteres}
+  A veces es necesario considerar los caracteres individuales de un
+  string. Para esto tenemos los siguientes métodos:
+
+  \begin{itemize}
+  \item \codet{charAt}: retorna el caracter en la posición dada
+  \item \codet{indexOf}/\codet{lastIndexOf}: retorna la primera/última
+    posición del caracter en el string, o -1 si es que no se encuentra
+  \item \codet{contains}: retorna verdader o falso según el caracter
+    dado está o no en el string
+  \item \codet{substring}: retorna el string entre las posiciones
+    indicadas
+  \end{itemize}
+  
+\end{frame}
+
+% \begin{frame}
+%   \frametitle{La clase \codet{StringBuilder}}
+  
+% \end{frame}
+
+\begin{frame}
+  \frametitle{Otros métodos de \codet{String}}
+
+  \url{docs.oracle.com/javase/8/docs/api/java/lang/String.html}
+  
+\end{frame}
+
+\section{Operaciones Básicas de Entrada y Salida}
+
+\begin{frame}
+  \frametitle{Flujos de Entrada/Salida}
+  \begin{block}{}
+    La programación de entrada/salida en Java se basa en la
+    manipulación de \emph{flujos de entrada/salida}
+  \end{block}
+
+  \begin{block}{}
+    Un flujo de entrada/salida representa una fuente de entrada o un
+    destino de salida. Este concepto general puede representar
+    diversos tipos de fuentes y destinos: archivos, dispositivos,
+    otros programas, arreglos, etc.    
+  \end{block}
+
+  \begin{block}{}
+    Los flujos soportan distintos tipos de datos: bytes, tipos de
+    datos primitivos, u objetos. No obstante, \emph{todos los flujos
+      tienen el mismo modelo de programación}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Modelo de Flujos Entrada/Salida}
+
+  Para el programador todos los flujos de entrada/salida funcionan de
+  manera similar: los flujos son construcciones secuenciales de datos.
+
+  \begin{itemize}
+  \item Un \emph{flujo de entrada} se usa en un programa para
+    \emph{leer datos desde la fuente}, de a un elemento cada vez.
+    
+  \item Un \emph{flujo de salida} se usa para \emph{escribir datos en
+      un destino}, también de un elemento a la vez.
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Tipos Básicos de Flujos}
+
+  \begin{itemize}
+  \item \textbf{Bytes Streams}: se usan para trabajar directamente
+    con bytes, o sea items de 8 bits. Se usan en general para trabajar
+    con datos/archivos binarios.
+    
+  \item \textbf{Character Streams}: se usan para trabajar con
+    caracteres de texto, con soporte Unicode directamente
+    implementado. Es lo más conveniente para trabajar con
+    datos/archivos de texto.
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Buffered Streams}
+
+  El uso directo de los flujos de entrada o salida es poco eficiente
+  porque cada invocación se delega directamente al sistema operativo,
+  elemento por elemento. Java implementa un mechanismo de
+  \emph{buffered streams} que acumula datos de entrada/salida en un
+  área de memoria denominada \emph{buffer}. Entonces se invoca al
+  sistema operativo cuando ya se tiene bastante información en el
+  buffer, mejorando así la eficiencia.
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Flujos Estándar del Sistema}
+
+  Los flujos estándar son una característica de muchos sistemas
+  operativos. Por defecto se usan para leer entrada desde el teclado y
+  imprimir texto en la consola. Por defecto existen 3 streams
+  disponibles automáticamente en Java:
+
+  \begin{itemize}
+  \item \codet{System.in}: entrada estándar, para lectura de datos
+    desde el teclado.
+    
+  \item \codet{System.out}: salida estándar, imprime en la consola.
+
+  \item \codet{System.err}: error estándar, también imprime en la
+    consola, pero el sistema operativo puede diferenciar entre salida
+    y error estándar.
+  \end{itemize}
+  
+\end{frame}
+
+\subsection{Escribir por Pantalla}
+
+\begin{frame}
+  \frametitle{\codet{System.out}}
+
+  Hasta ahora hemos usado bastante el objeto
+  \codet{System.out}. Algunos métodos clave son:
+
+  \begin{itemize}
+  \item \codet{print}: imprime un valor dado, que puede ser primitivo,
+    o un objeto. En caso que sea un objeto se usa el método
+    \codet{toString} implícitamente para la conversión
+    
+  \item \codet{println}: igual que \codet{print} pero agrega un salto
+    de línea al final
+    
+  \item \codet{printf}: similar a la función de C, usa un string de
+    formato y luego los argumentos respectivos
+  
+  \item \codet{format}: básicamente lo mismo que \codet{printf}
+    
+  \end{itemize}  
+\end{frame}
+
+\subsection{Leer desde el Teclado}
+
+\begin{frame}
+  \frametitle{¿Cúal clase usar para leer?}
+
+  En Java existen al menos 3 formas distintas para leer desde el
+  teclado:
+
+  \begin{itemize}
+  \item \codet{new BufferedReader(new InputStreamReader(System.in))}    
+  \item Usando la clase \codet{Console}, disponible desde Java 6    
+  \item Usando la clase \codet{Scanner}, disponible desde Java 5
+  \end{itemize}
+
+  Lo recomendado es usar siempre \codet{Scanner}, excepto dos casos
+  donde es mejor usar \codet{Console}: lectura de passwords, y lectura
+  caracter por caracter.
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Hola Mundo leyendo datos!}
+
+   \begin{columns}
+     \begin{column}{0.4\textwidth}
+       \begin{small}
+         \begin{itemize}
+         \item Se debe importar \codet{java.util.Scanner}         
+         \item En su constructor recibe \codet{System.in} para leer
+           desde teclado.
+         \item \codet{nextLine()} lee una línea como String           
+         \item \codet{nextInt()} lee el siguiente entero
+         \end{itemize}
+       \end{small}
+     \end{column}
+    % 
+    \begin{column}{0.6\textwidth}
+      
+      \begin{jsmall}
+        import java.util.Scanner;
+        
+        public class Main {
+          public static void main(String[] args) {
+            Scanner s = new Scanner(System.in);
+            String nombre;
+            int edad;
+
+            nombre = s.nextLine();           
+            System.out.println(nombre);
+
+            edad = s.nextInt();
+            System.out.println(edad);
+          }
+        }
+      \end{jsmall}
+      
+    \end{column}
+  \end{columns}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Cómo funciona \codet{Scanner}}
+
+  \begin{itemize}
+  \item La clase \codet{Scanner} toma la entrada desde teclado    
+  \item Considera como \emph{delimitador} el espacio en blanco    
+  \item La entrada se separa según el delimitador, en una secuencia de
+    \emph{tokens}    
+  \item Se intenta interpretar los tokens según el tipo de dato
+    pedido: \codet{nextInt}, \codet{nextDouble}, etc. Funciona con
+    tipos primitivos y Strings.   
+  \item Si no se puede, ocurre una excepción!    
+  \item Por lo tanto se debe conocer (o determinar) de antemano la
+    estructura de los datos que se van a leer desde teclado, para que
+    la operación siempre sea correcta
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Métodos de Lectura de \codet{Scanner}}
+
+  \begin{block}{Lectura de Strings}
+    Para leer Strings desde \codet{Scanner}, basta usar el método
+    \codet{next}. También, el método \codet{nextLine} toma la entrada
+    hasta el siguiente salto de línea.
+  \end{block}
+
+  \begin{block}{Lectura de Tipos Primitivos}
+    Para cada tipo primitivo, como \codet{int} o \codet{double},
+    existe un método \codet{nextInt}, \codet{nextDouble}, etc.
+  \end{block}
+
+  \begin{block}{Finalizar la lectura}
+    El método \codet{hasNext()} retorna falso si ya no hay más
+    elementos por leer.
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ejemplo a desarrollar: Lectura datos de alumnos}
+
+  \begin{block}{Problema}
+    Un usuario ingresará por teclado un listado con los siguientes
+    datos: nombre, apellido, nombre de asignatura, nota 1, nota 2 y
+    nota 3. Primeramente el usuario ingresará la cantidad de alumnos,
+    y luego esa cantidad de filas con la información mencionada.
+
+    \begin{itemize}
+    \item \textbf{Escriba un programa en Java para imprimir los
+        promedios de nota de cada alumno, indicando a qué asignatura
+        corresponden.}
+     
+    \item \textbf{Escriba un programa en Java que además de lo
+        anterior, imprime un ranking de alumnos, de mejor a peor
+        nota.}      
+    \end{itemize}
+
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Preguntas}
+  \hspace{4cm}\huge{Preguntas?}  
+\end{frame}
+
+\end{document}
