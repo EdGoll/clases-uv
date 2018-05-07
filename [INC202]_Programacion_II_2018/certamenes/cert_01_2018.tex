@@ -1,6 +1,6 @@
- \documentclass{exam}
- \usepackage[spanish]{babel}
-\usepackage[spanish,activeacute]{babel}
+\documentclass{exam}
+
+\usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[newcommands]{ragged2e}
@@ -11,22 +11,23 @@
 \usepackage{multicol}
 \usepackage{enumitem}
 \usepackage{
-    amsmath,
-    amssymb,
-    eso-pic,
-    float,
-    graphicx,
-    lmodern,
-    wrapfig,
-    tabularx,
-    multicol,
-    multirow,
-    color,
-    colortbl,
-    lastpage,
-    titlesec,
-    sectsty
+  amsmath,
+  amssymb,
+  eso-pic,
+  float,
+  graphicx,
+  lmodern,
+  wrapfig,
+  tabularx,
+  multicol,
+  multirow,
+  color,
+  colortbl,
+  lastpage,
+  titlesec,
+  sectsty
 }
+
 
 \definecolor{azul}{RGB}{33,127,190}
 \sectionfont{\color{azul}}
@@ -37,9 +38,9 @@
 
 \makeatother
 
-\title{\LARGE\color{azul}\textbf{ICI 202 Programaci\'on 2 - Certamen 01 }}
-\author{\normalsize \color{gray}{Prof.} \color{black}{\textbf{Ismael Figueroa, Eduardo Godoy}}}
-\date{\normalsize \em \today}
+\title{\LARGE\color{azul}\textbf{INC 214 Programación 2 - Certamen 1 }}
+\author{\smallsize \color{gray}{Profesores: } \color{black}{\textbf{Ismael Figueroa, Eduardo Godoy}}}
+\date{\normalsize \em \today} 
 
 \begin{document}
 
@@ -48,58 +49,80 @@
 
 \maketitle
 
-\begin{multicols}{2} \begin{flushleft} \textbf{Nombre:} \\ \vspace*{2mm} \textbf{Rut:} \\ \vspace*{2mm} \textbf{Paralelo:} \end{flushleft} \begin{center} \begin{table}[H] \begin{tabular}{p{4cm}|p{3cm}|} \arrayrulecolor{gray!50}\cline{2-2} ~ & {\em {\scriptsize \color{gray!50}{Puntaje:}}} \\ & ~ \\ ~ & \textbf{Nota:} \\ & ~ \\ \arrayrulecolor{gray!50}\cline{2-2} \end{tabular} \end{table} \end{center} \end{multicols}
+\begin{multicols}{2}
+  \begin{flushleft}
+    \textbf{Nombre:} \\
+    \vspace*{2mm}
+    \textbf{Rut:} \\
+    \vspace*{2mm}
+    \textbf{Paralelo:}
+  \end{flushleft}
+  \begin{center}
+    \begin{table}[H]
+      \begin{tabular}{p{4cm}|p{3cm}|}
+        \arrayrulecolor{gray!50}\cline{2-2} ~ & {\em {\scriptsize \color{gray!50}{Puntaje:}}}\\
+         & ~ \\
+         ~ & \textbf{Nota:}
+        \\ & ~ \\
+        \arrayrulecolor{gray!50}\cline{2-2}
+      \end{tabular}
+    \end{table}
+  \end{center}
+\end{multicols}
 
-\vspace*{-18mm}
+%\vspace*{-18mm}
 \noindent
 \textbf{\\Instrucciones:}
 \begin{itemize}
-    \item[-] El puntaje m\'aximo  es 100 puntos.
-    \item[-] Tiempo m\'aximo: 120 minutos.
-    \item[-] El trabajo es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado seg\'un dicta el reglamento de la carrera.
-    \item[-] Se debe subir al aula virtual un archivo comprimido con el siguiente formato \\ {Certamen_01\_<NombreApellidoEstudiante\_rut\_paralelo>.zip, dentro deben estar los c\'odigos fuentes requeridos.}
+\item[-] El puntaje máximo  es 100 puntos.
+\item[-] Tiempo máximo: 120 minutos.
+\item[-] El trabajo es \underline{\textbf{individual}}. Cualquier intento de copia, será sancionado según dicta el reglamento de la carrera.
+\item[-] Se debe subir al aula virtual un archivo comprimido con
+  el siguiente formato: \\
+  \textt{Certamen\_01\_<NombreApellidoEstudiante\_rut\_paralelo>.zip}. Dentro
+  deben estar todos los archivos de código fuente requeridos.}
 \end{itemize}
 
 \noindent
 \textbf{Resultados de aprendizaje a evaluar:}
 \begin{enumerate}
-  \item Caracter\'isticas de Orientaci\'on a objetos.
-  \item Modelamiento y su implementaci\'on.
+\item Desarrollar algoritmos simples usando programación orientada a
+  objetos y estructurada, en el lenguaje Java
 \end{enumerate}
 \vspace{2mm}
 
 \noindent
-\textbf{Contenido:} Este certamen eval\'ua los siguientes temas:
+\textbf{Contenido:} Este certamen evalúa los siguientes temas:
 
 \vspace{-2mm}
 \begin{table}[H]
-\begin{tabular}{
+  \begin{tabular}{
     !{\color{gray!50}\vrule}l
     !{\color{gray!50}\vrule}c
     !{\color{gray!50}\vrule}c
     !{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
     \multicolumn{1}{!{\color{gray!50}\vrule}c}{\multirow{2}{*}{\textbf{
-        Tema
+    Tema
     }}} &
-    \multicolumn{2}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
-        Puntajes
-    }} \\ \arrayrulecolor{gray!50}\cline{2-3} &
-    \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
-        Total
-    }} &
-    \multicolumn{1}{c!{\color{gray!50}\vrule}}{\textbf{
-        Obtenido
-    }} \\ \arrayrulecolor{gray!50} \hline
-    Problema 2: Progrmaci\'on en lenguaje java, sintaxis b\'asicas e instancias.
-    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
-        40 pts.
-    }} & \\ \arrayrulecolor{gray!50} \hline
-    Problema 3: Sentencias de control, arreglos di\'amicos y paradigma OO.
-    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
-        60 pts.
-    }} & \\ \arrayrulecolor{gray!50} \hline
+          \multicolumn{2}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+          Puntajes
+          }} \\ \arrayrulecolor{gray!50}\cline{2-3} &
+                                                      \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+                                                      Total
+                                                      }} &
+                                                           \multicolumn{1}{c!{\color{gray!50}\vrule}}{\textbf{
+                                                           Obtenido
+                                                           }} \\ \arrayrulecolor{gray!50} \hline
+    Problema 1: Programación en lenguaje Java, sintaxis básicas e instancias.
+        & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+          40 pts.
+          }} & \\ \arrayrulecolor{gray!50} \hline
+    Problema 2: Sentencias de control, arreglos dinámicos y paradigma OO.
+        & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+          60 pts.
+          }} & \\ \arrayrulecolor{gray!50} \hline
 
-\end{tabular}
+  \end{tabular}
 \end{table}
 
 \newpage
@@ -107,70 +130,90 @@
 \vspace{-7mm}
 \section{\textbf{Problema 1}}
 \noindent
-%\textbf{Plantamiento de problema: }
+% \textbf{Plantamiento de problema: }
 \begin{questions}
-  \item \textbf{\emph{40pts.}}Implemente un programa en lenguaje java que permita instanciar objeto del tipo persona e
-  identificar si cumple o no con la mayoria de edad, para este objetivo se debe implementar lo siguiente:
+\item \textbf{\emph{40pts.}} Implemente un programa en lenguaje Java
+  que permita instanciar objetos del tipo \texttt{\textbf{Persona}} e
+  identificar si cumple o no con la mayoria de edad, para este
+  objetivo se debe implementar lo siguiente:
+  
   \begin{enumerate}
-  		\item Una clase \textbf{Persona} que posea:
-  		\begin{enumerate}
-  			\item \emph{(10pts)} Caracter\'isticas: \emph{nombre(s)}, \emph{apellido}, \emph{edad}. Considerar el tipo de dato id\'oneo para cada uno de los atributos y definir el valor por omisi\'on acorde a cada tipo.
-  			\item \emph{(15pts)} Definir su comportamiento asociado:  \textbf{esMayorDeEdad()} para determinar lo requerido. Determinando si la persona es o no mayor de edad mostrando mensaje por pantalla mediante un mensaje en pantalla.
-  			\item \emph{(15pts)} Crear Clase Main.java que posea el m\'etodo main(String [] args) encargada de:
-                    \begin{enumerate}
-        \item \emph{(5pts)} Inicializar el programa creando la instancia de la
-        clase MedicionPersona. Adema\'as se deben generar la instancia de los siguientes objetos.
+    
+  \item Una clase \textbf{Persona} que posea:
+    
+    \begin{enumerate}
+      
+    \item \emph{(5pts)} Características o atributos: \emph{primer
+        nombre}, \emph{segundo nombre}, \emph{apellido paterno},
+      \emph{apellido materno}, \emph{edad}. Debe utilizar el tipo de
+      dato idóneo para cada atributo.
+      
+    \item \emph{(10pts)} Un constructor explícito, que reciba e
+      inicialice todos los atributos de la clase.
+      
+    \item \emph{(10pts)} Definir su comportamiento asociado:
+      \textbf{esMayorDeEdad()} para determinar lo
+      requerido. Determinando si la persona es o no mayor de edad
+      mostrando mensaje por pantalla mediante un mensaje en pantalla.
+    \end{enumerate}
+      
+    \item Una clase \texttt{\textbf{Main.java}} con método
+      principal \texttt{main} encargada de:
+      \begin{enumerate}
+        
+      \item \emph{(10pts)} Instanciar dos objetos \texttt{Persona}
+        para los siguientes individuos:
 
-              \item \emph{(5pts)} Primer Objeto:
-              \begin{itemize}
-                \item nombre = Pedro
-                \item apellido=Figueroa
-                \item edad = 16;
-              \end{itemize}
-              \item \emph{(5pts)} Segundo Objeto:
-              \begin{itemize}
-                \item nombre = Juan.
-                \item apellido=Godoy.
-                \item edad = 20;
-              \end{itemize}
-            \end{enumerate}
-
-  			\end{enumerate}
-  		\end{enumerate}
+        \begin{itemize}
+        \item Pedro José Figueroa Fernandez, de 16 años          
+        \item Juan Antonio Godoy Guerra, de 20 años
+        \end{itemize}
+        
+      \item \emph{(5pts)} Mostrar por pantalla el nombre completo de
+        cada \texttt{Persona} y un mensaje que diga si es o no es
+        mayor de edad.
+        
       \end{enumerate}
+
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
 \end{questions}
+
 \begin{table}[H]
-\centering
-\begin{tabular}{
-!{\color{gray!50}\vrule}p{3.9cm}
-!{\color{gray!50}\vrule}p{3.6cm}
-!{\color{gray!50}\vrule}p{3.6cm}
-!{\color{gray!50}\vrule}p{3.6cm}
-!{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
-    \multicolumn{4}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{?`C\'omo ser{\'e} evaluado en este trabajo?}} \\ \arrayrulecolor{gray!50} \hline
-    \textbf{\'Item} & \textbf{Logrado} & \textbf{Suficiente} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} \hline
-  \newline Creaci\'on de Clase Persona.java con atributos. &
-  \newline  Aplica de forma correcta 10pts   &
-  \newline Aplica parcialmente con menos de 2 errores 5pts  &
-    \newline Aplica de forma incorrecta con 3 errores o m\'as 0pts\\ \arrayrulecolor{gray!50} \hline
+  \centering
+  \begin{tabular}{
+    !{\color{gray!50}\vrule}p{3.9cm}
+    !{\color{gray!50}\vrule}p{3.6cm}
+    !{\color{gray!50}\vrule}p{3.6cm}
+    !{\color{gray!50}\vrule}p{3.6cm}
+    !{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+    \multicolumn{4}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{¿Cómo  seré evaluado en este trabajo?}} \\ \arrayrulecolor{gray!50}
+    \hline
+    %
+    \textbf{Ítem} & \textbf{Logrado} & \textbf{Suficiente} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} \hline\newline
+    Creación de Clase Persona.java con atributos. &
+    Aplica de forma correcta: 15pts   &
+    Aplica parcialmente con menos de 2 errores: 8pts  &
+    Aplica de forma incorrecta con 3 errores o más: 0pts \\ \arrayrulecolor{gray!50} \hline
 
-    \newline  Implementaci\'on de m\'etodo (comportamientos) \textbf{esMayorDeEdad} asociados y correcto funcionamiento. &
-    \newline  Aplica de forma correcta 15pts   &
-    \newline Aplica parcialmente  2 errores o menos 8pts &
-    \newline Aplica de forma incorrecta con 3 errores o m\'as 0pts\\ \arrayrulecolor{gray!50} \hline
+    Implementación de método \textbf{esMayorDeEdad} asociados y correcto funcionamiento. &
+    Aplica de forma correcta 10pts   &
+    Aplica parcialmente  2 errores o menos 5pts &
+    Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
 
+    Implementar clase instanciadora \textbf{Main} con m\'etodo main y crea instancias de objetos y llamadas a \textbf{m\'etodos requeridos}. &
+    Aplica de forma correcta 15pts &
+    Aplica parcialmente con menos de 2 errores 8pts &
+    Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
 
-  \newline  Implementar clase instanciadora \textbf{Main} con m\'etodo main y crea instancias de objetos y llamadas a \textbf{m\'etodos requeridos}. &
-  \newline  Aplica de forma correcta 15pts &
-    \newline  Aplica parcialmente con menos de 2 errores 8pts &
-    \newline Aplica de forma incorrecta con 3 errores o m\'as 0pts\\ \arrayrulecolor{gray!50} \hline
-
-Total de la secci\'on &  40pts & 21pts & 0pts\\ \arrayrulecolor{gray!50} \hline
-\end{tabular}
-\label{tbl:1}
+    Total de la sección &  40pts & 21pts & 0pts\\ \arrayrulecolor{gray!50} \hline
+  \end{tabular}
+  \label{tbl:1}
 \end{table}
-\vspace{-5mm}
-\textbf{Nota:} En caso de que el {\'i}tem no est{\'e} presente, tiene ponderaci{\'o}n cero.
+
+\vspace{-5mm} \textbf{Nota:} En caso de que el ítem no esté presente,
+tiene ponderación cero.
 
 
 
@@ -178,95 +221,131 @@ Total de la secci\'on &  40pts & 21pts & 0pts\\ \arrayrulecolor{gray!50} \hline
 \vspace{-7mm}
 \section{\textbf{Problema 2}}
 \noindent
-%\textbf{Plantamiento de problema: }
+% \textbf{Plantamiento de problema: }
 
 \begin{questions}
 
   \begin{enumerate}
-    \item \textbf{\emph{60pts.}} Cree un programa que permita realizar una correcta gestion de bodega de un antiguo almacen, para esto se requiere  lo siguiente:
+  \item \textbf{\emph{60pts.}} Cree un programa que permita realizar una correcta gestion de bodega de un antiguo almacen, para esto se requiere  lo siguiente:
     \begin{itemize}
 
-    \item \emph{(10pts)} Crear La clase  \textbf{Producto} que tenga los siguientes atributos:
+    \item \emph{(10pts)} Crear la clase \textbf{Producto} que tenga
+      los siguientes atributos:
+      
       \begin{enumerate}
-        \item c\'odigo: de tipo entero, cuya responsabilidad es identificar al producto.
-    	  \item nombre: de tipo string, que contiene al nombre del producto.
-    	  \item stock: de tipo entero, dato encargado de manejar la cantidad de productos del mismo nombre que actualmente se tiene en el almacen.
-    	  \item precio: precio del producto con iva incluido.
-    \end{enumerate}
-    Adem\'as debe contener los m\'etodos get y set asociados a cada atributo.
-
-    \item \emph{(10pts)} Crear la Clase \textbf{GestionBodega} que posea como atributo:
-     un arreglo de tipo dinámico de tipo Producto y llamado \textbf{listaProductos} que permita almacenar los productos que crear\'a el usuario.
-
-    \item \emph{(20pts)} La clase GestionBodega debe poseer los siguientes m\'etodos:
-    \begin{enumerate}
-
-      \item \emph{(10pts)} Codificar el m\'etodo \textbf{crearProducto} que permita crear un  producto específico y asignarle un stock inicial.
-      Se debe considerar que al asignarle el precio al producto, el sistema debe agregarle  de forma automática el iva (19\%) sobre el precio ingresado.
-      Luego de esto se procederá a guardar el resultado en el atributo precio de la clase producto. Para finalizar agregandolo al arreglo listaProductos.
-      La acci\'on de crear productos debe repetirse mientras el usuario lo desee.
-
-      \item \emph{(10pts)} Codificar el m\'etodo \textbf{listarStock} que permita visualizar el c\'odigo, nombre y stock de cada producto.
-
-
-    \end{itemize}
-    \item \emph{(10pts)} Crear Clase Main.java que posea el m\'etodo main(String [] args) encargada de inicializar el programa creando la instancia de la
-    clase GestionBodega y utilizar sus m\'etodos asociados de la siguiente forma:
-      \begin{enumerate}
-        \item crearProducto() -> se crea primer producto.
-        \item crearProducto() -> se crea segundo producto.
-        \item listarStock() -> se listan ambos productos.
+      \item \emph{código}: identificar de manera única al producto.
+      \item \emph{nombre}: el nombre del producto.
+      \item \emph{stock}: maneja la cantidad de productos del mismo
+        código que actualmente se tiene en el almacen.
+      \item \emph{precio}: precio del producto con iva incluido.
       \end{enumerate}
-    \item \emph{(10pts)} Resuelve el problema utilizando el paradigma de Orientaci\'on a Objectos.
+
+      Debe crear un constructor explícito que reciba todos los
+      atributos y los inicialice correctamente.
+      
+      Todos los atributos deben ser privados. Para manipular estos
+      valores debe implementar los metodos \texttt{setX} y
+      \texttt{getX}, donde \texttt{X} es el nombre de cada atributo.
+
+    \item \emph{(5pts)} Crear la clase \textbf{GestionBodega} que
+      posea el atributo \texttt{listadoProductos}, un arreglo dinámico
+      que almacena objetos de tipo \texttt{Producto} y llamado
+      \textbf{listaProductos}.
+
+    \item La clase \texttt{GestionBodega} debe poseer los siguientes métodos:
+      \begin{enumerate}
+
+      \item \emph{(10pts)} \texttt{crearProducto} que permita crear un
+        producto específico y asignarle un stock inicial. Este método
+        recibe como parámetro el precio sin IVA (19\%), por lo que
+        debe calcularse el precio actualizado a ingresar en el
+        producto que se está creando. Además, este método debe agregar
+        el producto creado al listado de productos de
+        \texttt{GestionBodega}
+
+      \item \emph{(15 pts)} \texttt{ingresarProductosConsola} que lee
+        desde el teclado la información para la creación de productos,
+        con datos ingresados por el usuario. La acción de crear
+        productos debe repetirse mientras el usuario lo desee. Puede
+        usar alguna convención de su elección para terminar la
+        lectura. PISTA: en la implementación debe invocar a
+        \texttt{crearProducto}.
+
+      \item \emph{(10pts)} \texttt{listarStock} que permita visualizar
+        el código, nombre y stock de cada producto.
+
+        
+      \item \emph{(10pts)} \texttt{valorInventario} que calcula el
+        valor del inventario actual, mostrando la suma de precio por
+        stock, y muestra el total con y sin IVA.
+        
+      \end{itemize}
+      
+    \item \emph{(10pts)} Crear la clase \texttt{Main.java} con un
+      método \texttt{main} que se encargue de inicializar el programa creando la instancia de la
+      clase \texttt{GestionBodega} para utilizar sus métodos asociados de la siguiente forma:
+      \begin{enumerate}
+      \item \texttt{ingresarProductosConsola()}, para crear 1 o más
+        productos por parte del usuario
+      \item \texttt{listarStock()}, para mostrar los productos creados        
+      \item \texttt{valorInventario()}, para mostrar los precios de
+        los productos listados        
+      \end{enumerate}
 
     \end{enumerate}
-\end{questions}
+  \end{questions}
 
 
-\begin{table}[H]
-\centering
-\begin{tabular}{
-!{\color{gray!50}\vrule}p{3.9cm}
-!{\color{gray!50}\vrule}p{3.6cm}
-!{\color{gray!50}\vrule}p{3.6cm}
-!{\color{gray!50}\vrule}p{3.6cm}
-!{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
-    \multicolumn{4}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{?`C\'omo ser{\'e} evaluado en este trabajo?}} \\ \arrayrulecolor{gray!50} \hline
-    \textbf{\'Item} & \textbf{Logrado} & \textbf{Suficiente} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} \hline
-  \newline Creaci\'on de Clase Producto.java con atributos. &
-  \newline  Aplica de forma correcta 10pts   &
-  \newline Aplica parcialmente con menos de 2 errores 5pts  &
-    \newline Aplica de forma incorrecta con 3 errores o m\'as 0pts\\ \arrayrulecolor{gray!50} \hline
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{
+      !{\color{gray!50}\vrule}p{3.9cm}
+      !{\color{gray!50}\vrule}p{3.6cm}
+      !{\color{gray!50}\vrule}p{3.6cm}
+      !{\color{gray!50}\vrule}p{3.6cm}
+      !{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+      \multicolumn{4}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{¿Cómo seré evaluado en este trabajo?}} \\ \arrayrulecolor{gray!50} \hline
+      \textbf{Ítem} & \textbf{Logrado} & \textbf{Suficiente} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} \hline
+      Creación de Clase Producto.java con atributos. &
+      Aplica de forma correcta 10pts   &
+      Aplica parcialmente con menos de 2 errores 5pts  &
+      Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
 
-    \newline Creaci\'on de Clase GestionBodega.java con arreglo din\'amico implementado. &
-    \newline  Aplica de forma correcta 10pts   &
-    \newline Aplica parcialmente con menos de 2 errores 5pts  &
-      \newline Aplica de forma incorrecta con 3 errores o m\'as 0pts\\ \arrayrulecolor{gray!50} \hline
+      Creación de clase \texttt{GestionBodega.java} con arreglo dinámico implementado. &
+      Aplica de forma correcta 5pts   &
+      Aplica parcialmente con menos de 2 errores 3pts  &
+      Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
 
-    \newline  Implementaci\'on de m\'etodo (comportamientos) \textbf{crearProducto} asociados y correcto funcionamiento. &
-    \newline  Aplica de forma correcta 10pts   &
-    \newline Aplica parcialmente  2 errores o menos 5pts &
-    \newline Aplica de forma incorrecta con 3 errores o m\'as 0pts\\ \arrayrulecolor{gray!50} \hline
+     Implementación de método \textbf{crearProducto} y correcto funcionamiento. &
+     Aplica de forma correcta 10pts   &
+     Aplica parcialmente  2 errores o menos 5pts &
+     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
 
-    \newline Implementaci\'on de m\'etodo (comportamientos) \textbf{listarStock} asociados y correcto funcionamiento. &
-    \newline Aplica de forma correcta 10pts   &
-    \newline Aplica parcialmente  2 errores o menos 5pts &
-    \newline Aplica de forma incorrecta con 3 errores o m\'as 0pts\\ \arrayrulecolor{gray!50} \hline
+     Implementación de método \textbf{ingresarProductosConsola} y correcto funcionamiento. &
+     Aplica de forma correcta 15pts   &
+     Aplica parcialmente  2 errores o menos 8pts &
+     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
+      
+     Implementación de método \textbf{listarStock} y correcto funcionamiento. &
+     Aplica de forma correcta 10pts   &
+     Aplica parcialmente  2 errores o menos 5pts &
+     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
 
-  \newline  Implementar clase instanciadora \textbf{Main} con m\'etodo main y crea instancias de objetos y llamadas a \textbf{m\'etodos requeridos}. &
-  \newline  Aplica de forma correcta 10pts &
-    \newline  Aplica parcialmente con menos de 2 errores 5pts &
-    \newline Aplica de forma incorrecta con 3 errores o m\'as 0pts\\ \arrayrulecolor{gray!50} \hline
+     Implementación de método \textbf{valorInventario} y correcto funcionamiento. &
+     Aplica de forma correcta 10pts   &
+     Aplica parcialmente  2 errores o menos 5pts &
+     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
 
-    \newline  Cumple con el \textbf{paradigma orientación a objetos y compilaci\'on correcta} &
-    \newline  Aplica de forma correcta 10pts &
-    \newline Aplica parcialmente con con deficiencias en el paradigma 5 pto &
-    \newline Aplica de forma incorrecta con x errores o m\'as 0pts\\ \arrayrulecolor{gray!50} \hline
-    Total de la secci\'on &  60pts & 30pts & 0pts\\ \arrayrulecolor{gray!50} \hline
-\end{tabular}
-\label{tbl:1}
-\end{table}
-\vspace{-5mm}
-\textbf{Nota:} En caso de que el {\'i}tem no est{\'e} presente, tiene ponderaci{\'o}n cero.
+     Implementar clase instanciadora \textbf{Main} con método \texttt{main} y crea instancias de objetos y llamadas a \textbf{métodos requeridos}. &
+     Aplica de forma correcta 10pts &
+     Aplica parcialmente con menos de 2 errores 5pts &
+     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
+     
+      Total de la sección &  60pts & 30pts & 0pts\\ \arrayrulecolor{gray!50} \hline
+    \end{tabular}
+    \label{tbl:1}
+  \end{table}
+  \vspace{-5mm}
+  \textbf{Nota:} En caso de que el {í}tem no est{é} presente, tiene ponderaci{ó}n cero.
 
 \end{document}
