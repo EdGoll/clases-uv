@@ -511,49 +511,85 @@ actual de un objeto es o no es igual a alguno que nosotros especifiquemos
   \end{jsmall}  
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Usando polimorfismo con interfaces}
 
   Podemos crear código general para objetos que sean
   \codet{Archivable}s:
 
   \begin{jsmall}
-
-    
-    
-    
+    void archivarTodo(List<Archivable> objs) {
+      int index = 0;
+      for(Archivable o : objs) {
+        o.archivar("archivo_'' + index + ".txt");
+      }      
+    }    
   \end{jsmall}
+\end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Usando polimorfismo con interfaces}
   También podemos usar \codet{instanceof} para saber si un objeto
   implementa o no implementa una determinada interfaz:
 
   \begin{jsmall}
-    
+    {
+      Cuadrado c = new Cuadrado(40);
+      Rectangulo r = new Rectangulo(20, 30);
+
+      if(c instanceof Archivable) {
+        System.out.println("El objeto " + c + " es archivable'');
+      }
+
+      if(r instanceof Archivable) {
+        System.out.println("El objeto " + r + " es archivable'');
+      }
+
+      // instanceof puede ser verdadero en distintos casos
+      System.out.println(r instanceof Archivable);
+      System.out.println(r instanceof Rectangulo);
+      System.out.println(r instanceof Figura);      
+    }    
   \end{jsmall}
   
 \end{frame}
 
-
-
-
-
 \begin{frame}
   \frametitle{Especificación vs Implementación}
+
+  \begin{block}{Especificación}
+    Es una descripción formal sobre el comportamiento esperado por
+    parte de una clase. Indica los métodos que se deben implementar,
+    el tipo de retorno, el tipo de los parámetros
+  \end{block}
+
+  \begin{block}{Herramientas para Especificación}
+    Las \textbf{clases abstractas} y las \textbf{interfaces} son
+    mecanismos para especificar los métodos que una clase o sub-clase
+    \textit{\textbf{deben implementar}}. En caso que falte alguna
+    implementación, el código no va a compilar
+  \end{block}
+
+  \begin{block}{Implementación}
+    Una clase \textit{\textbf{concreta}} que desea satisfacer una
+    especificación debe implementar todos los métodos indicados por la
+    especificación
+  \end{block}
   
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Clases Abstractas con Interfaces}
+  \frametitle{Especificación Clases Abstractas con Interfaces}
 
   \begin{jsmall}
     public abstract class
-    Figura2DArchivable extends Figura2D implements Archivable {
-      /* las subclases deben implementar Figura2D y ademas Archivable */
+    Figura2DArchivable extends Figura implements Archivable {
+      /* las subclases deben implementar Figura y ademas Archivable */
     }
 
-    class RectanguloArchivable extends Figura2DArchivable {
-      
-
+    public class RectanguloArchivable extends Figura2DArchivable {
+      /* debe implementar los métodos de Figura: area, perimetro */
+      /* debe implementar los métodos de Archivable: archivar, restaurar */
     }
   \end{jsmall}
   
