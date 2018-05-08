@@ -1,0 +1,579 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{CambridgeUS}
+  % \setbeamercovered{transparent}
+}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{algorithm,algorithmic}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{enumitem}
+\setitemize{itemsep=1.2em,%
+  label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}%
+  \usebeamertemplate{itemize item}
+}
+
+\input{../minted.tex}
+
+\title[\textbf{Programación 2}]{\textbf{Programación 2}}
+\subtitle{Polimorfismo e Interfaces}
+
+\author[IF-EG]
+{Profesores:\\
+  Ismael Figueroa -  \texttt{\small ifigueroap@gmail.com} \\
+  \vspace{0.5mm}
+  Eduardo Godoy - \texttt{\small eduardo.gl@gmail.com}
+}
+
+\institute[Universidad de Valparaíso]
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Polimorfismo}
+
+\begin{frame}
+  \frametitle{¿Qué es el polimorfismo?}
+
+  \begin{block}{Definición}
+    La palabra \emph{polimorfismo} significa literalmente \emph{muchas
+      formas}. En programación, es una técnica para \emph{programar de
+      manera general}, procesando de manera uniforme objetos que
+    comparten una misma superclase.
+  \end{block}
+
+  \begin{block}{Ejemplo}
+    Por ejemplo, un editor de dibujos trabaja con figuras en 2D:
+    círculos y cuadrados. Estas figuras se pueden mover,
+    mediante el método \codet{mover}. ¿Cómo podemos implementar un
+    método general para desplazar todas las figuras 100 pixeles hacia
+    la derecha?
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Código tentativo}
+
+  \begin{jsmall}
+    public class Editor2D {
+
+      List<Cuadrado> cuadrados;
+      List<Circulo> circulos;
+      
+      public void desplazar(int dx, int dy) {
+
+        for(Cuadrado c : cuadrados) {
+          c.mover(dx, dy);
+        }
+
+        for(Circulo c: circulos) {
+          c.mover(dx, dy);
+        }
+      }      
+    }    
+  \end{jsmall}
+
+  ¿Qué pasaría ahora si agregamos nuevas figuras 2D: rectangulo,
+  elipse, triangulo, trapezoide?
+  
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Código tentativo extendido}
+
+  \begin{columns}
+    \begin{column}{0.45\textwidth}
+      \begin{jsmall}
+    public class Editor2D {
+
+      List<Cuadrado> cuadrados;
+      List<Circulo> circulos;
+      List<Elipse> elipses;
+      List<Triangulo> triangulos;
+      List<Trapezoide> trapezoides;
+      
+      public void
+      desplazar(int dx, int dy) {
+
+        for(Cuadrado c : cuadrados)
+        {
+          c.mover(dx, dy);
+        }
+
+        for(Circulo c: circulos) {
+          c.mover(dx, dy);
+        }
+      \end{jsmall}
+    \end{column}
+    %
+    \begin{column}{0.55\textwidth}
+      \begin{jsmall}       
+
+        for(Elipse e: elipses) {
+          e.mover(dx, dy);
+        }
+
+        for(Triangulo t: triangulos) {
+          t.mover(dx, dy);
+        }
+
+        for(Trapezoide t: trapezoide) {
+          t.mover(dx, dy);
+        }
+        
+      }      
+    }    
+  \end{jsmall}
+\end{column}
+\end{columns}  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Extensibilidad}
+
+  \begin{alertblock}{El código no es extensible}
+    Cada vez que agregamos una subclase en la jerarquía, tenemos que
+    modificar el código que utiliza figuras 2D. No estamos ganando
+    ningún beneficio por usar jerarquía de clases
+  \end{alertblock}
+
+  \begin{block}{Definición}
+    Un software se considera extensible si para agregarle nueva
+    funcionalidad se debe modificar una cantidad acotada de elementos,
+    archivos, o clases. Es decir, se minimiza la cantidad de código a
+    modificar ante la incorporación de nuevas clases o métodos.
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Polimorfismo basado en Herencia}
+
+  \begin{itemize}
+
+  \item En la programación orientada a objetos, y en Java en
+    particular, el polimorfismo funciona explotando los elementos
+    comunes de una jerarquía de herencia.   
+    
+  \item La idea es aprovechar la relación \emph{es un}. Entonces, el
+    código se implementa de manera general haciendo referencia
+    solamente al tipo de una superclase en específico.
+    
+  \item La gracia es que \emph{las instancias de las subclases \textbf{también
+        son instancias de la super clase}}, y que se invoca el método
+    ``correcto''...
+    
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Tipo Aparente y Tipo Actual}
+
+  \begin{alertblock}{Tipo Aparente}
+    El \emph{tipo aparente} de una variable es aquel que se puede
+    determinar estáticamente, es decir, en tiempo de compilación.
+  \end{alertblock}
+
+  \begin{alertblock}{Tipo Actual}
+    El \emph{tipo actual} de una variable es aquel que realmente toma
+    cuando se construye la instancia, y que siempre se puede conocer
+    durante la ejecución del programa.
+  \end{alertblock}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Tipo Aparente y Tipo Actual}
+  \begin{jsmall}
+    public class Main {
+      public static void main(String[] args) {
+        // tipo aparente: Base / tipo actual: A
+        Base b1 = new A();
+
+        // tipo aparente: Base / tipo actual: B
+        Base b2 = new B();
+
+        // tipo aparente: A / tipo actual: B
+        A a1 = ((A) b2); 
+      }
+    }
+  \end{jsmall}  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Dispatch dinámico de mensajes en Java}
+  \begin{alertblock}{Definición}
+    Java posee \emph{dispatch dinámico de mensajes}. Esto significa
+    que cuando se invoca un método, el código que se ejecuta
+    corresponde \textit{\textbf{al método del TIPO ACTUAL al que
+        pertenece la instancia que ejecutará el método.}}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Dispatch dinámico de mensajes en Java}
+
+  \begin{jsmall}
+    abstract class Base {
+      abstract void saludar();
+    }
+    
+    class A extends Base {
+      void saludar() { System.out.println("Hola A"); }
+    }
+
+    class B extends A {
+      void saludar() { System.out.println("Hola B"); }
+    }
+
+    public class Main {
+      public static void main(String[] args) {
+        Base b1 = new A(); Base b2 = new B();
+        b1.saludar(); b2.saludar();
+        ((A) b2).saludar();        
+      }
+    }   
+  \end{jsmall}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Polimorfismo = herencia + dispatch dinámico}
+  \begin{alertblock}{}
+    La combinación de herencia y dispatch dinámico es la que permite
+    el polimorfismo en Java.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ejemplo Revisado}
+
+  \begin{jsmall}
+    public class Editor2D {
+      List<Cuadrado> cuadrados;
+      List<Circulo> circulos;
+      List<Elipse> elipses;
+      List<Triangulo> triangulos;
+      List<Trapezoide> trapezoides;
+      /* .... */
+      public void desplazar(int dx, int dy) {
+        List<Figura2D> figuras = new ArrayList<Figura2D>();
+        figuras.addAll(cuadrados);
+        figuras.addAll(circulos);
+        figuras.addAll(elipses);
+        figuras.addAll(triangulos);
+        figuras.addAll(trapezoides);
+
+        for(Figura f : figuras) {
+          f.mover(dx, dy);
+        }
+      }      
+    }    
+  \end{jsmall}  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ejemplo Re-Revisado}
+
+  \begin{jsmall}
+    public class Editor2D {
+      List<Figura2D> figuras;
+
+      /* .... */
+      
+      public void desplazar(int dx, int dy) {      
+        for(Figura f : figuras) {
+          f.mover(dx, dy);
+        }
+      }      
+    }    
+  \end{jsmall}  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Determinando el tipo actual de un objeto}
+
+  \begin{block}{Problema}
+  ¿Cómo podríamos hacer para definir un método
+  \codet{contarCuadrados()}, que dada la lista de figuras podamos
+  contar cuántas de éstas son cuadrados?
+\end{block}
+
+\pause
+
+  \begin{block}{Solución}
+Java provee el operador \codet{instanceof} para determinar si el tipo
+actual de un objeto es o no es igual a alguno que nosotros especifiquemos
+\end{block}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Contando cuadrados}
+
+  \begin{jsmall}
+    public class Editor2D {
+      List<Figura2D> figuras;
+      
+      public int contarCuadrados() {
+        int total = 0;
+        
+        for(Figura f : figuras) {
+          if(f instanceof Cuadrado) {
+            total = total + 1;
+          }
+        }
+
+        return total;
+      }      
+    }    
+  \end{jsmall}  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Métodos y clases finales}
+
+  Mediante la declaración \codet{final} el programador puede indicar
+  que:
+
+  \begin{itemize}
+
+  \item Un método no puede ser sobreescrito
+
+  \item Una clase no puede ser extendida por una
+    superclase. Implícitamente todos sus métodos son considerados \codet{final}
+    
+  \end{itemize}
+
+  Esto es fundamental para garantizar ciertos comportamientos, por
+  ejemplo en seguridad. \emph{¿Qué pasaría si puedo sobreescribir el
+    método que verifica los passwords?}
+
+  \begin{block}{Dispatch de métodos \codet{final}}
+    Los métodos \codet{final} no utilizan dispatch dinámico: se invoca
+    el método de acuerdo a la implementación final, que no puede
+    sobreescribirse. Lo mismo pasa con los métodos privados que,
+    implicitamente, también son finales.
+  \end{block}  
+  
+\end{frame}
+
+\section{Interfaces}
+
+\begin{frame}
+  \frametitle{¿Qué son las Interfaces?}
+
+  En Java una interfaz es:
+
+  \begin{itemize}
+
+  \item Una especificación formal y verificada en compilación sobre un
+    conjunto de valores constantes y métodos. Es similar a una clase
+    abstracta, pero \emph{no necesita que exista una jerarquía de
+      clases}.
+    
+  \item Un \emph{tipo de dato} que puede ser usado para programar con
+    polimorfismo, en base a la especificación dada por la interfaz.
+    
+  \item Un mecanismo para implementar \emph{ocultamiento de la
+      información}. Esto porque solo se conoce la interfaz pública,
+    pero no la implementación interna, la cual puede ser cambiada de
+    manera transparente.
+    
+  \item Un mecanismo para simular \emph{herencia múltiple}
+    
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Cómo se declara una interfaz}
+
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{small}
+        Consideremos la funcionalidad de que un objeto puede ser
+        \emph{archivable}, es decir, podemos guardarlo en un archivo
+        de texto, y luego recuperar su valor.
+       \end{small}
+
+        \begin{jsmall}        
+        public interface Archivable {
+          void archivar(String filePath);
+          void restaurar(String filePath);
+        }        
+      \end{jsmall}      
+    \end{column}
+    %
+    \begin{column}{0.5\textwidth}
+        \begin{itemize}
+        \item El código define la interfaz \codet{Archivable}
+          
+        \item La interfaz tiene el método \codet{archivar} para
+          guardar el estado del objeto en un archivo dado
+          
+        \item La interfaz tiene el método \codet{restaurar} para
+          recuperar su estado interno desde un archivo dado
+          
+        \end{itemize}
+
+    \end{column}
+  \end{columns}  
+\end{frame}
+
+\begin{frame}
+  \frametitle{¿Cuáles clases pueden ser \codet{Archivable}s?}
+
+  \begin{block}{¿Quién puede implementar esta interfaz?}
+    Cualquier clase puede, eventualmente, implementar la interfaz
+    \codet{Archivable} o cualquier otra.
+  \end{block}
+
+  \begin{block}{Ejemplo}
+    Por ejemplo, la clase \codet{Persona} y la clase \codet{Rectangulo}
+    pueden ser archivables! Esto sin importar que no estén
+    relacionados por herencia
+  \end{block}
+
+  \begin{block}{}
+    Una clase declara que va a implementar una interface usando la
+    palabra clave \codet{implements}
+  \end{block}
+  
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Implementando Persona Archivable}
+  \begin{jsmall}
+    public class Persona implements Archivable {
+      String nombre;
+      String apellido;
+      Integer edad;
+
+      public Persona(String nombre, String apellido, Integer edad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+      }
+
+      public void archivar(String filePath) { // desde Archivable
+        /* abrir archivo y escribir datos de nombre, apellido y edad */
+      }
+
+      public void restaurar(String filePath) { // desde Archivable
+        /* abrir archivo y leer datos para nombre, apellido y edad */
+      }
+    }    
+  \end{jsmall}  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Implementando Rectángulo Archivable}
+  \begin{jsmall}
+    public class Rectangulo extends Figura implements Archivable {
+      Integer largo, ancho;
+      
+      public Rectangulo(Punto2D centro, Integer largo, Integer ancho) {
+        /*constructor */
+      }
+
+      public Double area() { /* impl. area, desde Figura */ }
+      
+      public Double perimetro() { /* impl. perimetro, desde Figura */ }
+
+      public void archivar(String filePath) { // desde Archivable
+        /* abrir archivo y escribir datos de nombre, apellido y edad */
+      }
+
+      public void restaurar(String filePath) { // desde Archivable
+        /* abrir archivo y leer datos para nombre, apellido y edad */
+      }       
+    }
+  \end{jsmall}  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Usando polimorfismo con interfaces}
+
+  Podemos crear código general para objetos que sean
+  \codet{Archivable}s:
+
+  \begin{jsmall}
+
+    
+    
+    
+  \end{jsmall}
+
+  También podemos usar \codet{instanceof} para saber si un objeto
+  implementa o no implementa una determinada interfaz:
+
+  \begin{jsmall}
+    
+  \end{jsmall}
+  
+\end{frame}
+
+
+
+
+
+\begin{frame}
+  \frametitle{Especificación vs Implementación}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Clases Abstractas con Interfaces}
+
+  \begin{jsmall}
+    public abstract class
+    Figura2DArchivable extends Figura2D implements Archivable {
+      /* las subclases deben implementar Figura2D y ademas Archivable */
+    }
+
+    class RectanguloArchivable extends Figura2DArchivable {
+      
+
+    }
+  \end{jsmall}
+  
+\end{frame}
+
+% Declarando una interfaz
+%% Metodos son public abstract final
+%% Cuerpo de una interfaz
+%% Interfaces como APIs
+% Implementando una interfaz en una clase
+% Interfaces como tipos de dato
+
+% Interfaces en Java 8
+%% Métodos por defecto (Java 8) 
+%%% Métodos estáticos
+%
+
+\begin{frame}
+  \frametitle{Preguntas}
+  \hspace{4cm}\huge{Preguntas?}  
+\end{frame}
+
+\end{document}
