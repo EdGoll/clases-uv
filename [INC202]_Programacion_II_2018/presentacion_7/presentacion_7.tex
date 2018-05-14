@@ -57,17 +57,17 @@
     considera como ``deprecated'', pero es relativamente sencilla de
     usar. Funciona de manera secuencial y bloqueante, en base a
     flujos, similar al uso de \codet{Scanner} o \codet{System.out}
-    
+
   \item \codet{java.nio}: librería moderna de Entrada/Salida, muy
     flexible y configurable, pero en general más complicada de
     usar. Está orientada además al procesamiento concurrente de E/S.
-    
+
   \end{itemize}
 
   \begin{alertblock}{Importante!}
       En el curso trabajaremos solamente con \codet{java.io}
   \end{alertblock}
-  
+
 \end{frame}
 
 \begin{frame}
@@ -77,7 +77,7 @@
     Un flujo de entrada/salida representa una fuente de entrada o un
     destino de salida. Este concepto general puede representar
     diversos tipos de fuentes y destinos: archivos, dispositivos,
-    otros programas, arreglos, etc.    
+    otros programas, arreglos, etc.
   \end{block}
 
   \begin{block}{}
@@ -96,11 +96,11 @@
   \begin{itemize}
   \item Un \emph{flujo de entrada} se usa en un programa para
     \emph{leer datos desde la fuente}, de a un elemento cada vez.
-    
+
   \item Un \emph{flujo de salida} se usa para \emph{escribir datos en
       un destino}, también de un elemento a la vez.
   \end{itemize}
-  
+
 \end{frame}
 
 \section{Byte Streams}
@@ -120,12 +120,12 @@
 
   \item \codet{java.io.FileInputStream}: para leer archivos byte por
     byte. Es subclase de \codet{java.io.InputStream}.
-    
+
   \item \codet{java.io.FileOutputStream}: para escribir archivos byte
     por byte. Es subclase de \codet{java.io.OutputStream}.
-    
+
   \end{itemize}
-    
+
 \end{frame}
 
 \begin{frame}[fragile]
@@ -140,7 +140,7 @@
       public static void main(String[] args) throws IOException {
         FileInputStream  fin  = null;
         FileOutputStream fout = null;
-        int c;        
+        int c;
         try {
           fin  = new FileInputStream("hola.txt");
           fout = new FileOutputStream("salida.txt");
@@ -151,8 +151,8 @@
           if (fin != null)  { fin.close(); }
           if (fout != null) { fout.close(); }
         }
-      }}    
-  \end{jsmall}  
+      }}
+  \end{jsmall}
 \end{frame}
 
 \section{Character Streams}
@@ -170,15 +170,15 @@
   Clases para uso de Character Streams:
 
   \begin{itemize}
-    
+
   \item \codet{java.io.FileReader}: para leer archivos de texto,
     caracter por caracter.
-    
+
   \item \codet{java.io.FileWriter}: para escribir archivos de texto,
     caracter por caracter.
-    
+
   \end{itemize}
-    
+
 \end{frame}
 
  \frametitle{Ejemplo Character Stream: Copiar archivo caracter por caracter}
@@ -192,7 +192,7 @@
       public static void main(String[] args) throws IOException {
         FileReader  fin  = null;
         FileWriter fout = null;
-        int c;        
+        int c;
         try {
           fin  = new FileReader("hola.txt");
           fout = new FileWriter("salida.txt");
@@ -203,8 +203,8 @@
           if (fin != null)  { fin.close(); }
           if (fout != null) { fout.close(); }
         }
-      }}    
-  \end{jsmall}  
+      }}
+  \end{jsmall}
 \end{frame}
 
 \section{Buffered Streams}
@@ -219,7 +219,7 @@
   área de memoria denominada \emph{buffer}. Entonces se invoca al
   sistema operativo cuando ya se tiene bastante información en el
   buffer, mejorando así la eficiencia.
-  
+
 \end{frame}
 
 \begin{frame}
@@ -229,10 +229,10 @@
   siguientes clases:
 
   \begin{itemize}
-  \item \codet{java.io.BufferedReader} para trabajar con entrada de datos de caracteres    
-  \item \codet{java.io.BufferedWriter} para trabajar con salida de datos de caracteres    
+  \item \codet{java.io.BufferedReader} para trabajar con entrada de datos de caracteres
+  \item \codet{java.io.BufferedWriter} para trabajar con salida de datos de caracteres
   \end{itemize}
-  
+
 \end{frame}
 
  \frametitle{Ejemplo Character Stream: Copiar archivo caracter por caracter}
@@ -246,7 +246,7 @@
       public static void main(String[] args) throws IOException {
         BufferedReader  fin  = null;
         BufferedWriter fout = null;
-        int c;        
+        int c;
         try {
           fin  = new BufferedReader(new FileReader("hola.txt"));
           fout = new BufferedWriter(new FileWriter("salida.txt"));
@@ -257,8 +257,8 @@
           if (fin != null)  { fin.close(); }
           if (fout != null) { fout.close(); }
         }
-      }}    
-  \end{jsmall}  
+      }}
+  \end{jsmall}
 \end{frame}
 
 \section{Entrada y Salida Uniforme}
@@ -273,16 +273,16 @@
     \begin{itemize}
     \item Leer desde el teclado o desde un archivo usando la clase
       \codet{Scanner}
-      
+
     \item Escribir en la pantalla o en un archivo, usando métodos como
       \codet{println} u otros similares
-      
+
     \item Además nos gustaría que esto fuera eficiente, utilizando
       Buffered Streams!
-    \end{itemize}    
-    
+    \end{itemize}
+
   \end{block}
-    
+
 \end{frame}
 
 \section{Lectura de Archivos con \codet{Scanner}}
@@ -292,22 +292,20 @@
 
   Por suerte para nosotros, la clase \codet{Scanner} ya está preparada
   para lo que queremos hacer...
-  
+
   \begin{itemize}
   \item En vez de ejecutar \codet{new Scanner(System.in)} para leer
     desde el teclado
-    
+
   \item Ejecutamos:
 
     \begin{jsmall}
-      Scanner s = new Scanner(
-                      new BufferedReader(
-                          new FileReader("archivo.txt")));
+    asd
 
       \end{jsmall}
-    
+
   \end{itemize}
-  
+
 \end{frame}
 
 \section{Escritura de archivos con \codet{PrintWriter}}
@@ -320,9 +318,8 @@
   \codet{java.io.PrintWriter}:
 
   \begin{jsmall}
-    PrintWriter writer = new PrintWriter(
-                             new BufferedWriter(
-                                 new FileWriter("archivo_salida.txt")));
+    PrintWriter writer = new PrintWriter(new FileOutputStream(
+				                    new File(nombreArchivo), true /* modo append = true */));
 
    writer.println("Hola archivo!");
  \end{jsmall}
@@ -332,13 +329,13 @@
  \item En la documentación de \codet{PrintWriter} están todos sus
    métodos, pero se destacan: \codet{print}, \codet{println},
    \codet{format}.
-   
+
  \item Una desventaja es que los métodos nunca arrojan excepciones. Se
    debe usar el método \codet{checkError} para ver si hubo problemas
    en la escritura...
-   
+
  \end{itemize}
-   
+
 \end{frame}
 
 \section{Problema de Ejemplo}
@@ -364,7 +361,7 @@
 
 \begin{frame}
   \frametitle{Preguntas}
-  \hspace{4cm}\huge{Preguntas?}  
+  \hspace{4cm}\huge{Preguntas?}
 \end{frame}
 
 \end{document}
