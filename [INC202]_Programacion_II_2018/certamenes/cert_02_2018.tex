@@ -79,15 +79,14 @@
 \item[-] El trabajo es \underline{\textbf{individual}}. Cualquier intento de copia, será sancionado según dicta el reglamento de la carrera.
 \item[-] Se debe subir al aula virtual un archivo comprimido con
   el siguiente formato: \\
-  \textt{Certamen\_01\_<NombreApellidoEstudiante\_rut\_paralelo>.zip}. Dentro
+  \textt{Certamen\_02\_<NombreApellidoEstudiante\_rut\_paralelo>.zip}. Dentro
   deben estar todos los archivos de código fuente requeridos.}
 \end{itemize}
 
 \noindent
 \textbf{Resultados de aprendizaje a evaluar:}
 \begin{enumerate}
-\item Desarrollar algoritmos simples usando programación orientada a
-  objetos y estructurada, en el lenguaje Java
+\item Adquirir el conocimiento de OO para implementar esquemas b\'asicos \\ de herencia y registros persistentes en archivos.
 \end{enumerate}
 \vspace{2mm}
 
@@ -113,13 +112,9 @@
                                                            \multicolumn{1}{c!{\color{gray!50}\vrule}}{\textbf{
                                                            Obtenido
                                                            }} \\ \arrayrulecolor{gray!50} \hline
-    Problema 1: Programación en lenguaje Java, sintaxis básicas e instancias.
+    Problema 1: Programación en lenguaje Java, Herencia , polimorfismo y \\ Lectura/Escritura persistente. 
         & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
-          40 pts.
-          }} & \\ \arrayrulecolor{gray!50} \hline
-    Problema 2: Sentencias de control, arreglos dinámicos y paradigma OO.
-        & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
-          60 pts.
+          100 pts.
           }} & \\ \arrayrulecolor{gray!50} \hline
 
   \end{tabular}
@@ -142,32 +137,42 @@
     \begin{enumerate}
         \item \emph{35pts.} Implementar las clases requeridas utilizando el concepto de Herencia bajo el siguiente esquema.
         \begin{enumerate}
-            \item Los datos personales (DNI, Nombre, Apellidos, Edad, Direcci\'on, etc.)
-            \item Tipo de persona (Acad\'emico, Alumno, Funcionario).
-            \begin{itemize}
+          \item \emph{25pts.} Consideraciones:
+            \begin{enumerate}
+                \item[-] Tipo de persona (Acad\'emico, Alumno, Funcionario).
+                \item[-] Los datos personales (DNI, Nombre, Apellidos, Edad, Direcci\'on.)
                 \item[-] Si es Acad\'emico, se debe registrar su grado academico (licenciado, magister o Dr.).
                 \item[-] Si es Alumno, se debe registrar las asignaturas que se encuentra cursando en el semestre (pueden ser m\'as de una).
                 \item[-] Si es Funcionario, se debe registrar su oficio o profesión.
                 \item[-] La informaci\'on solicitada, debe ser registrada en un archivo de texto plano, que deber\'a crearse, si no existe y agregar informaci\'on al final si ya fue creado.
-            \end{itemize}
+            \end{enumerate}
+          \item \emph{10pts.}  En un archivo llamado \textbf{justificacion\_modelo.txt} comenta y justifica si al problema planteado se le debe aplicar un esquema basado en herencia o implementación de interfaces.
+
 
         \end{enumerate}
-        \item \emph{35pts.} Implementar una clase GestionPersona que provea los siguiente:
+        \item \emph{40pts.} Implementar una clase GestionPersona que provea lo siguiente:
         \begin{itemize}
-          \item \emph{5pts.} Un Arreglo Din\'amico de tipo ArrayList como atributo.
-          \item \emph{10pts.} Implementar el m\'etodo crear que permita ingresar los datos requeridos para cada persona cumpliendo con el esquema de herencia agregando cada persona al arreglo.
-          \item \emph{10pts.} Implementar el m\'etodo guardar que recorra el Arreglo Din\'amico y  que tenga la responsabilidad de guardar el registro dentro del archivo identificadose claramente el tipo de persona guardada.
-          \item \emph{10pts.} Implementar el m\'etodo listar que lea el archivo y liste todos sus registros.
+          \item \emph{2pts.} Un Arreglo din\'amico de tipo ArrayList como atributo.
+          \item \emph{16pts.} Implementar el m\'etodo crear que permita ingresar los datos requeridos para cada persona cumpliendo con el esquema de herencia, agregando cada persona al arreglo.
+          \item \emph{12pts.} Implementar el m\'etodo guardar que recorra el el ArrayList y  que tenga la responsabilidad de guardar el registro dentro del archivo identificadose claramente el tipo de persona guardada.
+                              El formaro del registro guardad debe ser el siguiente:
+                              \begin{itemize}
+                                \item TipoPersona;DNI;Nombre;Apellidos;Edad;Direcci\'on
+                                \item[$\rightarrow$] Alumno;11111111-1;Juan;Gonzales Figueroa;Errazuriz 355 Valpara\'iso
+                              \end{itemize}
+          \item \emph{10pts.} Implementar el m\'etodo listar que lea el archivo y liste todos sus registros. El formato de salida debe ser el siguiente:
+                            \begin{itemize}
+                              \item[$\rightarrow$] Tipo: Alumno
+                              \item[$\rightarrow$] DNI: 11111111-1
+                              \item[$\rightarrow$] nombre: Juan
+                              \item[$\rightarrow$] Apellidos: Gonzales Figueroa
+                              \item[$\rightarrow$] Direcci\'on: Errazuriz 355 Valpara\'iso
+                            \end{itemize}
         \end{itemize}
-        \item \emph{30pts.} Implementar la clase PersonaMain que permita ejecutar el programa y los m\'etodos asociados. El n\'umero de personas a crear depende del usuario..
-
+          \item \emph{25pts.} Implementar la clase PersonaMain que permita ejecutar el programa y los m\'etodos asociados. El n\'umero de personas a crear depende del usuario..
     \end{enumerate}
     \begin{itemize}
-        \item[$\rightarrow$] \textbf{Recomendaci\'on}: Utilice el nombre FuenteDatos para el archivo generado.
-        \item[$\rightarrow$] \textbf{Formato de entrega}: Debe subir los archivos fuente \textbf{*.java} en un comprimido \textbf{.zip} al aula virtual, con el siguiente formato:
-        \begin{itemize}
-            \item[-] \emph{ApellidoPaternoNombreC2.zip}
-        \end{itemize}
+        \item[$\rightarrow$] \textbf{Recomendaci\'on}: Utilice el nombre FuenteDatos.txt para el archivo generado.
     \end{itemize}
 \end{enumerate}
   \end{enumerate}
@@ -185,165 +190,32 @@
     \hline
     %
     \textbf{Ítem} & \textbf{Logrado} & \textbf{Suficiente} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} \hline\newline
-    Creación de Clase Persona.java con atributos. &
-    Aplica de forma correcta: 5pts   &
-    Aplica parcialmente con menos de 2 errores: 3pts  &
-    Aplica de forma incorrecta con 3 errores o más: 0pts \\ \arrayrulecolor{gray!50} \hline
+    Seccion a: Creación de Esquema de herencia de clases con atributos y m\'etodos respectivos. &
+    Aplica de forma correcta: 25pts   &
+    Aplica parcialmente con menos de 2 errores: 15pts  &
+    Aplica de forma incorrecta con 3 errores o más: 10 - 0 pts \\ \arrayrulecolor{gray!50} \hline
 
-    Creación de Constructor con atributos. &
+    Seccion a: Justificación del modelo. &
     Aplica de forma correcta: 10pts   &
-    Aplica parcialmente con menos de  errores: 5pts  &
-    Aplica de forma incorrecta con 3 errores o más: 0pts \\ \arrayrulecolor{gray!50} \hline
+    Responde  parcialmente: 5pts  &
+    Responde de forma incorrecta o no responde:  0 pts \\ \arrayrulecolor{gray!50} \hline
 
-    Implementación de método \textbf{esMayorDeEdad} asociados y correcto funcionamiento. &
-    Aplica de forma correcta 10pts   &
-    Aplica parcialmente  2 errores o menos 5pts &
-    Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
+    seccion b: Implementación  m\'etodos de \textbf{GestionPersona}: \textbf{crear, guardar, listar}. &
+    Aplica de forma correcta 100\%  del puntaje asociado &
+    Aplica parcialmente  2 errores o menos 65\% - 50\%  del puntaje asociado en cada m\'etodo &
+    Aplica de forma incorrecta con 3 errores o más 20\% - 0\% del puntaje asociado\\ \arrayrulecolor{gray!50} \hline
 
-    Implementar clase instanciadora \textbf{Main} con m\'etodo main y crea instancias de objetos y llamadas a \textbf{m\'etodos requeridos}. &
-    Aplica de forma correcta 15pts &
-    Aplica parcialmente con menos de 2 errores 8pts &
-    Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
+    Implementar clase instanciadora \textbf{PersonaMain} con m\'etodo main y crea instancias de objetos y llamadas a \textbf{m\'etodos requeridos}. &
+    Aplica de forma correcta 25pts &
+    Aplica parcialmente con menos de 2 errores 15 - 8 pts &
+    Aplica de forma incorrecta con 3 errores o más 7 - 0pts\\ \arrayrulecolor{gray!50} \hline
 
-    Total de la sección &  40pts & 21pts & 0pts\\ \arrayrulecolor{gray!50} \hline
+    Total de la sección &  100pts &  61 - 20 pts & 18-0 pts\\ \arrayrulecolor{gray!50} \hline
   \end{tabular}
   \label{tbl:1}
 \end{table}
 
 \vspace{-5mm} \textbf{Nota:} En caso de que el ítem no esté presente,
 tiene ponderación cero.
-
-
-
-\newpage
-\vspace{-7mm}
-\section{\textbf{Problema 2}}
-\noindent
-% \textbf{Plantamiento de problema: }
-
-\begin{questions}
-
-  \begin{enumerate}
-  \item \textbf{\emph{60pts.}} Cree un programa que permita realizar una correcta gestion de bodega de un antiguo almacen, para esto se requiere  lo siguiente:
-    \begin{itemize}
-
-    \item \emph{(10pts)} Crear la clase \textbf{Producto} que tenga
-      los siguientes atributos:
-
-      \begin{enumerate}
-      \item \emph{código}: identificar de manera única al producto.
-      \item \emph{nombre}: el nombre del producto.
-      \item \emph{stock}: maneja la cantidad de productos del mismo
-        código que actualmente se tiene en el almacen.
-      \item \emph{precio}: precio del producto con iva incluido.
-      \end{enumerate}
-
-      Debe crear un constructor explícito que reciba todos los
-      atributos y los inicialice correctamente.
-
-      Todos los atributos deben ser privados. Para manipular estos
-      valores debe implementar los metodos \texttt{setX} y
-      \texttt{getX}, donde \texttt{X} es el nombre de cada atributo.
-
-    \item \emph{(5pts)} Crear la clase \textbf{GestionBodega} que
-      posea el atributo \texttt{listadoProductos}, un arreglo dinámico
-      que almacena objetos de tipo \texttt{Producto} y llamado
-      \textbf{listaProductos}.
-
-    \item La clase \texttt{GestionBodega} debe poseer los siguientes métodos:
-      \begin{enumerate}
-
-      \item \emph{(10pts)} \texttt{crearProducto} que permita crear un
-        producto específico y asignarle un stock inicial. Este método
-        recibe como parámetro el precio sin IVA (19\%), por lo que
-        debe calcularse el precio actualizado a ingresar en el
-        producto que se está creando. Además, este método debe agregar
-        el producto creado al listado de productos de
-        \texttt{GestionBodega}
-
-      \item \emph{(15 pts)} \texttt{ingresarProductosConsola} que lee
-        desde el teclado la información para la creación de productos,
-        con datos ingresados por el usuario. La acción de crear
-        productos debe repetirse mientras el usuario lo desee. Puede
-        usar alguna convención de su elección para terminar la
-        lectura. PISTA: en la implementación debe invocar a
-        \texttt{crearProducto}.
-
-      \item \emph{(10pts)} \texttt{listarStock} que permita visualizar
-        el código, nombre y stock de cada producto.
-
-
-      \item \emph{(10pts)} \texttt{valorInventario} que calcula el
-        valor del inventario actual, mostrando la suma de precio por
-        stock, y muestra el total con y sin IVA.
-
-      \end{itemize}
-
-    \item \emph{(10pts)} Crear la clase \texttt{Main.java} con un
-      método \texttt{main} que se encargue de inicializar el programa creando la instancia de la
-      clase \texttt{GestionBodega} para utilizar sus métodos asociados de la siguiente forma:
-      \begin{enumerate}
-      \item \texttt{ingresarProductosConsola()}, para crear 1 o más
-        productos por parte del usuario
-      \item \texttt{listarStock()}, para mostrar los productos creados
-      \item \texttt{valorInventario()}, para mostrar los precios de
-        los productos listados
-      \end{enumerate}
-
-    \end{enumerate}
-  \end{questions}
-
-
-  \begin{table}[H]
-    \centering
-    \begin{tabular}{
-      !{\color{gray!50}\vrule}p{3.9cm}
-      !{\color{gray!50}\vrule}p{3.6cm}
-      !{\color{gray!50}\vrule}p{3.6cm}
-      !{\color{gray!50}\vrule}p{3.6cm}
-      !{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
-      \multicolumn{4}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{¿Cómo seré evaluado en este trabajo?}} \\ \arrayrulecolor{gray!50} \hline
-      \textbf{Ítem} & \textbf{Logrado} & \textbf{Suficiente} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} \hline
-      Creación de Clase Producto.java con atributos. &
-      Aplica de forma correcta 10pts   &
-      Aplica parcialmente con menos de 2 errores 5pts  &
-      Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
-
-      Creación de clase \texttt{GestionBodega.java} con arreglo dinámico implementado. &
-      Aplica de forma correcta 5pts   &
-      Aplica parcialmente con menos de 2 errores 3pts  &
-      Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
-
-     Implementación de método \textbf{crearProducto} y correcto funcionamiento. &
-     Aplica de forma correcta 10pts   &
-     Aplica parcialmente  2 errores o menos 5pts &
-     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
-
-     Implementación de método \textbf{ingresarProductosConsola} y correcto funcionamiento. &
-     Aplica de forma correcta 10pts   &
-     Aplica parcialmente  2 errores o menos 8pts &
-     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
-
-     Implementación de método \textbf{listarStock} y correcto funcionamiento. &
-     Aplica de forma correcta 5pts   &
-     Aplica parcialmente  2 errores o menos 2pts &
-     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
-
-     Implementación de método \textbf{valorInventario} y correcto funcionamiento. &
-     Aplica de forma correcta 10pts   &
-     Aplica parcialmente  2 errores o menos 5pts &
-     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
-
-     Implementar clase instanciadora \textbf{Main} con método \texttt{main} y crea instancias de objetos y llamadas a \textbf{métodos requeridos}. &
-     Aplica de forma correcta 10pts &
-     Aplica parcialmente con menos de 2 errores 5pts &
-     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
-
-      Total de la sección &  60pts & 30pts & 0pts\\ \arrayrulecolor{gray!50} \hline
-    \end{tabular}
-    \label{tbl:1}
-  \end{table}
-  \vspace{-5mm}
-  \textbf{Nota:} En caso de que el {í}tem no est{é} presente, tiene ponderaci{ó}n cero.
 
 \end{document}
