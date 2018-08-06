@@ -1,0 +1,284 @@
+  \documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{multicol,multirow}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,blue,draw,inner sep=.5pt] (char) {#1};}}
+
+% For a visual definition of these parameters, see
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+
+\parskip = 0.2in                % vertical space between paragraphs
+% Delete the % in the following line if you don't want to have the first line of every paragraph indented
+%\parindent = 0.0in
+
+\begin{document}
+\begin{center}
+    {\Large  Certamen 1, Programaci\'on II} \\
+    \emph{\small Escuela de Ingenier\'ia Civil Inform\'atica - Universidad de Valpara\'iso. } \\
+    \emph{\small Prof. Eduardo Godoy} \\
+%    \emph{\small Ayud. Juan Carlos Tapia} \\
+    \emph{\scriptsize Octubre 2, 2017}
+\end{center}
+
+\vspace*{-35pt}
+\begin{center}
+    \rule{1\textwidth}{.3pt}
+\end{center}
+\vspace*{-42pt}
+\begin{center}
+    \rule{1\textwidth}{2pt}
+\end{center}
+\begin{multicols}{2}
+  \begin{itemize}
+    \item[] Nombre:
+  \end{itemize}
+  \begin{itemize}
+    \item[] Rut:
+  \end{itemize}
+
+\end{multicols}
+\vspace*{-15pt}
+{\small \textbf{Instrucciones}:}
+\vspace*{-15pt}
+
+{\scriptsize
+\begin{itemize}
+    \item[-] El puntaje m\'aximo del certamen es 100\%, siendo el 60\% el m\'inimo requerido para aprobar.
+    %\item[-] Responda cada pregunta en la hoja indicada, agregando su nombre. Si no responde alguna pregunta, debe entregar la hoja con su nombre e indicar que \textbf{no responde}.
+    \item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado con nota \textbf{1,0}.
+\end{itemize}
+}
+\vspace*{-20pt}
+
+\begin{enumerate}
+   {\scriptsize
+    \item \emph{30pts.} De las siguentes afirmaciones, encierre en un c\'irculo la o las alternativas correctas. Tiempo estimado para esta pregunta  es 1:30 hora. Cada respuesta correcta vale \emph{1pto}.
+    \begin{multicols}{2}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[i.\emph{4pts}] El paradigma de la orientaci\'on a objeto se basa en:
+        \item[(a)] El uso de objetos y su intercacci\'on.
+        \item[(b)] El uso de clases como categorizaci\'on de instancias.
+        \item[(c)] El uso de un enfoque imperativo.
+        \item[(d)] El uso de un enfoque reusable.
+        \item[(e)] Principios como herencia y abstracci\'on.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[ii.\emph{3pts}] En cuanto a la programaci\'on orientada a objeto:
+        \item[(a)] Se apoya en el paradigma estructural.
+        \item[(b)] Se apoya en el paradigma orientaci\'on a objetos.
+        \item[(c)] Divide el programa en peque\~nas unidades de c\'odigo.
+        \item[(d)] Proporciona herramientas para modelar el mundo real.
+        \item[(e)] Es una herramienta del lenguaje JAVA.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[iii.\emph{1pts.}] Una clase es:
+        \item[(a)] Un arreglo de objetos.
+        \item[(b)] Una absorci\'on del mundo real.
+        \item[(c)] Una herramienta de programaci\'on.
+        \item[(d)] Un puntero a memoria.
+        \item[(e)] La instancia de un objeto.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[iv.\emph{2pts.}] Una clase es:
+        \item[(a)] Un arreglo de objetos.
+        \item[(b)] Una abstracci\'on del mundo real.
+        \item[(c)] Un  Compilador.
+        \item[(d)] Un punto a memoria.
+        \item[(e)] La instancia de un objeto.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[v.\emph{3pts.}] Respecto a una clase:
+        \item[(a)] Puede o no tener atributos.
+        \item[(b)] Puede o no tener m\'etodos.
+        \item[(c)] Puede o no tener constructor.
+        \item[(d)] Puede o no tener un nombre.
+        \item[(e)] Puede o no tener un tipo.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[vi.\emph{2pts.}] Un objeto es:
+        \item[(a)] Un tipo de dato de la clase.
+        \item[(b)] La instancia de una clase.
+        \item[(c)] Una abstracci\'on del mundo real.
+        \item[(d)] Un sub-conjunto de atributos y m\'etodos de la clase.
+        \item[(e)] Siempre est\'atico.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[vii.\emph{1pts.}] Los objetos se comunican a trav\'es de:
+        \item[(a)] Mensajes.
+        \item[(b)] La instancia de una clase.
+        \item[(c)] Datos.
+        \item[(d)] Atributos.
+        \item[(e)] Un tipo de dato de la clase.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[viii.\emph{3pts.}] El principio de ocultamiento de informaci\'on:
+        \item[(a)] Es una t\'ecnica que protege el estado de una entidad.
+        \item[(b)] Es indispensable en el paradigma de orientaci\'on a objeto.
+        \item[(c)] En Java, se logra utilizando los modificadores de acceso.
+        \item[(d)] Es encapsular el conocmineto de una entidad.
+        \item[(e)] Ninguna de las anteriores.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[ix.\emph{2pts.}] Un ejemplo de ocultamiento de informaci\'on es:
+        \item[(a)] Un java Bean.
+        \item[(b)] La palabra reservada final.
+        \item[(c)] Una clase que posee sus atributos privados e implementa m\'etodos p\'ublicos para acceder a ellos.
+        \item[(d)] un m\'etodo privado.
+        \item[(e)] Una clase com\'un.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[x.\emph{2pts.}] Respecto a la herencia, las clases:
+        \item[(a)] Heredan s\'olo los m\'etodos privados.
+        \item[(b)] Heredan el compotamiento completo de la clase padre.
+        \item[(c)] Heredan s\'olo el comportamiento que se desea utilizar.
+        \item[(d)] En Java, se implementan con la palabra implements.
+        \item[(e)] En Java, se implementan con la palabra extends.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[xi.\emph{3pts.}] El polimorfismo:
+        \item[(a)] El mismo nombre implementa distintas funcionalidades.
+        \item[(b)] Una funcionalidad implementada con distintos nombres.
+        \item[(c)] Es una caracter\'istica de JAVA.
+        \item[(d)] Es una caracter\'istica de POO.
+        \item[(e)] Un ejemplo es el s\'imbolo \%.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[xii.\emph{2pts.}] El met\'odo \emph{main}:
+        \item[(a)] Puede no ser void.
+        \item[(b)] Debe ser static.
+        \item[(c)] Puede no llevar argumentos de entrada.
+        \item[(d)] Debe retornar un valor.
+        \item[(e)] Debe incluirse en un programa.
+    \end{enumerate}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item[xiii.\emph{2pts.}] Respecto al manejo de excepciones:
+        \item[(a)] finally nunca se ejecuta.
+        \item[(b)] Debe ser static.
+        \item[(c)] Se compone de las palabras reservadas try, catch y finally.
+        \item[(d)] La zone del c\'odigo encerrada dentro de una try/catch se llama zona segura.
+        \item[(e)] catch nunca se ejecuta.
+    \end{enumerate}
+\end{multicols}
+}
+\newpage
+
+
+\item \emph{70pts.} Cree un programa que permita realizar una correcta gestion de bodega de un antiguo almacen, para esto se requiere  implementar lo siguiente.
+\begin{itemize}
+
+\item \emph{(10pts)} Crear La clase  \textbf{Producto} que tenga los siguientes atributos:
+  \begin{enumerate}
+    \item c\'odigo: de tipo entero, cuya responsabilidad es identificar al producto.
+	  \item nombre: de tipo string, que contiene al nombre del producto.
+	  \item stock: de tipo entero, dato encargado de manejar la cantidad de productos del mismo nombre que actualmente se tiene en el almacen.
+	  \item precio: precio del producto con iva incluido.
+\end{enumerate}
+Adem\'as debe contener los m\'etodos get y set asociados a cada atributo.
+
+\item \emph{(5pts)} Crear la Clase \textbf{GestionBodega} que posea como atributo:
+ un arreglo de tipo dinámico de tipo Producto y llamado \textbf{listaProductos} que permita almacenar los productos que crear\'a el usuario.
+
+La clase GestionBodega debe poseer los siguientes m\'etodos
+\begin{enumerate}
+
+  \item \emph{(15pts)} Codificar el m\'etodo \textbf{crearProducto} que permita crear un  producto específico y asignarle un stock inicial. Se debe considerar que al asignarle el precio al producto, el sistema debe agregarle  de forma automática el iva (19\%) sobre el precio ingresado. luego de esto se procederá a guardar el resultado en el atributo precio de la clase producto. Para finalizar agregandolo al arreglo listaProductos.
+  La acci\'on de crear productos debe repetirse mientras el usuario lo desee.
+
+  \item \emph{(10pts)} Codificar el m\'etodo \textbf{listarStock} que permita visualizar el c\'odigo, nombre y stock de cada producto.
+
+  \item \emph{(20pts)} Generar el m\'etodo \textbf{venderProductos}. La responsabilidad de este método es mostrar un lista de productos con su c\'odigo, nombre y precio cuyo stock asociado sea mayor a 0.  Luego el usuario ir\'a seleccionando en base a al c\'odigo cada producto que le vende a un cliente, el sistema debe ser capaz de ir descontando 1 al inventario de cada producto  y a la vez debe ir sumando los precios de cada producto seleccionado acumulandolo en una variable llamada precioVenta). La venta del productos se repetir\'a hasta que el usuario lo desee. Una vez finalizada la venta de productos, el sistema debe desplegar el precio total de la venta realizada (precioVenta).
+
+\end{enumerate}
+\item \emph{(5pts)} Implementar la clase \textbf{GestionBodegaImpl} que posea el m\'etodo \textbf{main} encargada de inicializar el sistema  creando una instancia de la clase GestionBodega y utilizar sus métodos asociados.
+
+\item \emph{(5pts)} Resuelve el problema utilizando el paradigma de Orientaci\'on a Objectos.
+
+\end{itemize}
+
+\end{enumerate}
+\begin{itemize}
+  \item [-] Enviar respuesta a eduardo.gl@gmail.com con asunto: Certame 1 - Lenguajes de Programaci\'on desde correp institucional UV.
+  \item [-] Las clases deben estar comprimidas en zip y el nombre del archivo resultante debe ser bajo el siguiente formato: nombre\_apellido\_rut.zip
+  \item [-] Tiempo estimado de resoluci\'on  de pregunta dos es 24 horas.
+  \item [-] El proyecto desbe estar entregado al d\'ia siguiente, martes 3 de Octubre antes de las 21:01 hrs, si el tiempo de entrega es excedido la entrega quedar\'a inv\'alida, obteniedo 0 pto en ese item.
+\end{itemize}
+
+
+\newpage
+    \begin{table}[!ht]
+       {\scriptsize
+        \begin{center}
+             \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}\hline
+                \multicolumn{4}{|c|}{\textbf{\textquestiondown C\'omo ser\'e evaluado en la pregunta 2?} } \\ \hline
+                \multicolumn{1}{|c|}{\textbf{T\'opico}} &
+                \multicolumn{1}{c|}{\textbf{Logrado}} &
+                \multicolumn{1}{c|}{\textbf{Medianamente logrado}} &
+                \multicolumn{1}{c|}{\textbf{No logrado}} \\ \hline
+                Construir Clase Producto &
+                \emph{10pts} Crea la clase at\'omica Producto con sus atributos/m\'etodos. &
+                \emph{  5pts} Crea la clase at\'omica Producto con algunos  atributo o algunos m\'etodos get y set
+                              requeridos en el {problema}. &
+                \emph{  0pts} No crea la clase at\'omica Producto. \\ \hline
+
+                Crea clase GestionBodega y su atributo &
+                \emph{5pts} Define e implementa correctamente la clase GestionBodega con su atributos  &
+                \emph{2pts} Define clase pero no atributo  requerido para el problema. &
+                \emph{  0pts} No define ni los atributos ni m\'etodos. \\
+                & Atributo: listaProducto. & & \\ \hline
+
+                En GestionBodega contruir m\'etodo {crearProducto}  &
+                \emph{15pts} Crea de {crearProducto} de forma correcta. &
+                \emph{  7pts} Define el m\'etodo {crearProducto} en otra clase o no cumple con la totalidad de lo requerido. &
+                \emph{  0pts} No define el m\'etodo {crearProducto} o no cumple con lo requerido. \\ \hline
+
+                En GestionBodega contruir m\'etodo {listarStock}  &
+                \emph{10pts} Crea de {listarStock} de forma correcta. &
+                \emph{  5pts} Define el m\'etodo {listarStock} en otra clase o no cumple con la totalidad de lo requerido. &
+                \emph{  0pts} No define el m\'etodo {listarStock} o no cumple con lo requerido. \\ \hline
+
+                En GestionBodega contruir m\'etodo {venderProductos}  &
+                \emph{20pts} Crea de {venderProductos} de forma correcta. &
+                \emph{  10pts} Define el m\'etodo {venderProductos} en otra clase o no cumple con la totalidad de lo requerido. &
+                \emph{  0pts} No define el m\'etodo {venderProductos} o no cumple con lo requerido. \\ \hline
+
+                Construir clase GestionBodegaImpl y su m\'etodo asociado &
+                \emph{5pts} Define e implementa correctamente la clase GestionBodega con su atributos  &
+                \emph{2pts} Define clase pero su m\'etodo no cumple con lo requerido en el problema. &
+                \emph{  0pts} No define ni los atributos ni m\'etodos. \\
+                & Atributo: listaProducto. & & \\ \hline
+
+                Paradigma Orientaci\'on a Objetos  &
+                \emph{5pts} Resuelve el problema utilizando el POO. &
+                \emph{2pts} Utiliza parte del POO para resolver el problema. &
+                \emph{0pts} No utiliza el POO para dar soluci\'on al problema.\\ \hline
+                Total m\'aximo puntaje pregunta 2 &
+                \emph{70pts} &
+                \emph{31pts} &
+                \emph{  0pts} \\ \hline
+            \end{tabular}
+        \end{center}}
+     \end{table}
+\end{document}
