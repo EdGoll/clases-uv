@@ -1,0 +1,349 @@
+\documentclass{exam}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[newcommands]{ragged2e}
+\usepackage{hyperref}
+\usepackage{algorithm,algorithmic}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{
+  amsmath,
+  amssymb,
+  eso-pic,
+  float,
+  graphicx,
+  lmodern,
+  wrapfig,
+  tabularx,
+  multicol,
+  multirow,
+  color,
+  colortbl,
+  lastpage,
+  titlesec,
+  sectsty
+}
+
+
+\definecolor{azul}{RGB}{33,127,190}
+\sectionfont{\color{azul}}
+\subsectionfont{\color{azul}}
+\renewcommand{\familydefault}{\sfdefault}
+
+\footer{}{\thepage}{}
+
+\makeatother
+
+\title{\LARGE\color{azul}\textbf{INC 214 Programación 2 - Certamen 2 }}
+\author{\smallsize \color{gray}{Profesores: } \color{black}{\textbf{Ismael Figueroa, Eduardo Godoy}}}
+\date{\normalsize \em \today}
+
+\begin{document}
+
+\AddToShipoutPictureBG*{%
+  \AtPageUpperLeft{\raisebox{-\height}{\includegraphics[scale=.95]{base/header.png}}}}
+
+\maketitle
+
+\begin{multicols}{2}
+  \begin{flushleft}
+    \textbf{Nombre:} \\
+    \vspace*{2mm}
+    \textbf{Rut:} \\
+    \vspace*{2mm}
+    \textbf{Paralelo:}
+  \end{flushleft}
+  \begin{center}
+    \begin{table}[H]
+      \begin{tabular}{p{4cm}|p{3cm}|}
+        \arrayrulecolor{gray!50}\cline{2-2} ~ & {\em {\scriptsize \color{gray!50}{Puntaje:}}}\\
+         & ~ \\
+         ~ & \textbf{Nota:}
+        \\ & ~ \\
+        \arrayrulecolor{gray!50}\cline{2-2}
+      \end{tabular}
+    \end{table}
+  \end{center}
+\end{multicols}
+
+%\vspace*{-18mm}
+\noindent
+\textbf{\\Instrucciones:}
+\begin{itemize}
+\item[-] El puntaje máximo  es 100 puntos.
+\item[-] Tiempo máximo: 120 minutos.
+\item[-] El trabajo es \underline{\textbf{individual}}. Cualquier intento de copia, será sancionado según dicta el reglamento de la carrera.
+\item[-] Se debe subir al aula virtual un archivo comprimido con
+  el siguiente formato: \\
+  \textt{Certamen\_01\_<NombreApellidoEstudiante\_rut\_paralelo>.zip}. Dentro
+  deben estar todos los archivos de código fuente requeridos.}
+\end{itemize}
+
+\noindent
+\textbf{Resultados de aprendizaje a evaluar:}
+\begin{enumerate}
+\item Desarrollar algoritmos simples usando programación orientada a
+  objetos y estructurada, en el lenguaje Java
+\end{enumerate}
+\vspace{2mm}
+
+\noindent
+\textbf{Contenido:} Este certamen evalúa los siguientes temas:
+
+\vspace{-2mm}
+\begin{table}[H]
+  \begin{tabular}{
+    !{\color{gray!50}\vrule}l
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+    \multicolumn{1}{!{\color{gray!50}\vrule}c}{\multirow{2}{*}{\textbf{
+    Tema
+    }}} &
+          \multicolumn{2}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+          Puntajes
+          }} \\ \arrayrulecolor{gray!50}\cline{2-3} &
+                                                      \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+                                                      Total
+                                                      }} &
+                                                           \multicolumn{1}{c!{\color{gray!50}\vrule}}{\textbf{
+                                                           Obtenido
+                                                           }} \\ \arrayrulecolor{gray!50} \hline
+    Problema 1: Programación en lenguaje Java, sintaxis básicas e instancias.
+        & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+          40 pts.
+          }} & \\ \arrayrulecolor{gray!50} \hline
+    Problema 2: Sentencias de control, arreglos dinámicos y paradigma OO.
+        & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+          60 pts.
+          }} & \\ \arrayrulecolor{gray!50} \hline
+
+  \end{tabular}
+\end{table}
+
+\newpage
+
+\vspace{-7mm}
+\section{\textbf{Problema 1}}
+\noindent
+% \textbf{Plantamiento de problema: }
+\begin{questions}
+\item \textbf{\emph{40pts.}} Implemente un programa en lenguaje Java
+  que permita instanciar objetos y almacenar del tipo \texttt{\textbf{Persona}} e
+  identificar si cumple o no con la mayoria de edad, para este
+  objetivo se debe implementar lo siguiente:
+
+  \begin{enumerate}
+    \item \emph{100pts.} Como Ingeniero Civil en Inform\'atica, se le ha solicitado desarrollar un sistema de registro de personas pertenecientes a la Escuela. Para eso, usted debe:
+    \begin{enumerate}
+        \item \emph{35pts.} Implementar las clases requeridas utilizando el concepto de Herencia bajo el siguiente esquema.
+        \begin{enumerate}
+            \item Los datos personales (DNI, Nombre, Apellidos, Edad, Direcci\'on, etc.)
+            \item Tipo de persona (Acad\'emico, Alumno, Funcionario).
+            \begin{itemize}
+                \item[-] Si es Acad\'emico, se debe registrar su grado academico (licenciado, magister o Dr.).
+                \item[-] Si es Alumno, se debe registrar las asignaturas que se encuentra cursando en el semestre (pueden ser m\'as de una).
+                \item[-] Si es Funcionario, se debe registrar su oficio o profesión.
+                \item[-] La informaci\'on solicitada, debe ser registrada en un archivo de texto plano, que deber\'a crearse, si no existe y agregar informaci\'on al final si ya fue creado.
+            \end{itemize}
+
+        \end{enumerate}
+        \item \emph{35pts.} Implementar una clase GestionPersona que provea los siguiente:
+        \begin{itemize}
+          \item \emph{5pts.} Un Arreglo Din\'amico de tipo ArrayList como atributo.
+          \item \emph{10pts.} Implementar el m\'etodo crear que permita ingresar los datos requeridos para cada persona cumpliendo con el esquema de herencia agregando cada persona al arreglo.
+          \item \emph{10pts.} Implementar el m\'etodo guardar que recorra el Arreglo Din\'amico y  que tenga la responsabilidad de guardar el registro dentro del archivo identificadose claramente el tipo de persona guardada.
+          \item \emph{10pts.} Implementar el m\'etodo listar que lea el archivo y liste todos sus registros.
+        \end{itemize}
+        \item \emph{30pts.} Implementar la clase PersonaMain que permita ejecutar el programa y los m\'etodos asociados. El n\'umero de personas a crear depende del usuario..
+
+    \end{enumerate}
+    \begin{itemize}
+        \item[$\rightarrow$] \textbf{Recomendaci\'on}: Utilice el nombre FuenteDatos para el archivo generado.
+        \item[$\rightarrow$] \textbf{Formato de entrega}: Debe subir los archivos fuente \textbf{*.java} en un comprimido \textbf{.zip} al aula virtual, con el siguiente formato:
+        \begin{itemize}
+            \item[-] \emph{ApellidoPaternoNombreC2.zip}
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
+  \end{enumerate}
+\end{questions}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{
+    !{\color{gray!50}\vrule}p{3.9cm}
+    !{\color{gray!50}\vrule}p{3.6cm}
+    !{\color{gray!50}\vrule}p{3.6cm}
+    !{\color{gray!50}\vrule}p{3.6cm}
+    !{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+    \multicolumn{4}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{¿Cómo  seré evaluado en este trabajo?}} \\ \arrayrulecolor{gray!50}
+    \hline
+    %
+    \textbf{Ítem} & \textbf{Logrado} & \textbf{Suficiente} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} \hline\newline
+    Creación de Clase Persona.java con atributos. &
+    Aplica de forma correcta: 5pts   &
+    Aplica parcialmente con menos de 2 errores: 3pts  &
+    Aplica de forma incorrecta con 3 errores o más: 0pts \\ \arrayrulecolor{gray!50} \hline
+
+    Creación de Constructor con atributos. &
+    Aplica de forma correcta: 10pts   &
+    Aplica parcialmente con menos de  errores: 5pts  &
+    Aplica de forma incorrecta con 3 errores o más: 0pts \\ \arrayrulecolor{gray!50} \hline
+
+    Implementación de método \textbf{esMayorDeEdad} asociados y correcto funcionamiento. &
+    Aplica de forma correcta 10pts   &
+    Aplica parcialmente  2 errores o menos 5pts &
+    Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
+
+    Implementar clase instanciadora \textbf{Main} con m\'etodo main y crea instancias de objetos y llamadas a \textbf{m\'etodos requeridos}. &
+    Aplica de forma correcta 15pts &
+    Aplica parcialmente con menos de 2 errores 8pts &
+    Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
+
+    Total de la sección &  40pts & 21pts & 0pts\\ \arrayrulecolor{gray!50} \hline
+  \end{tabular}
+  \label{tbl:1}
+\end{table}
+
+\vspace{-5mm} \textbf{Nota:} En caso de que el ítem no esté presente,
+tiene ponderación cero.
+
+
+
+\newpage
+\vspace{-7mm}
+\section{\textbf{Problema 2}}
+\noindent
+% \textbf{Plantamiento de problema: }
+
+\begin{questions}
+
+  \begin{enumerate}
+  \item \textbf{\emph{60pts.}} Cree un programa que permita realizar una correcta gestion de bodega de un antiguo almacen, para esto se requiere  lo siguiente:
+    \begin{itemize}
+
+    \item \emph{(10pts)} Crear la clase \textbf{Producto} que tenga
+      los siguientes atributos:
+
+      \begin{enumerate}
+      \item \emph{código}: identificar de manera única al producto.
+      \item \emph{nombre}: el nombre del producto.
+      \item \emph{stock}: maneja la cantidad de productos del mismo
+        código que actualmente se tiene en el almacen.
+      \item \emph{precio}: precio del producto con iva incluido.
+      \end{enumerate}
+
+      Debe crear un constructor explícito que reciba todos los
+      atributos y los inicialice correctamente.
+
+      Todos los atributos deben ser privados. Para manipular estos
+      valores debe implementar los metodos \texttt{setX} y
+      \texttt{getX}, donde \texttt{X} es el nombre de cada atributo.
+
+    \item \emph{(5pts)} Crear la clase \textbf{GestionBodega} que
+      posea el atributo \texttt{listadoProductos}, un arreglo dinámico
+      que almacena objetos de tipo \texttt{Producto} y llamado
+      \textbf{listaProductos}.
+
+    \item La clase \texttt{GestionBodega} debe poseer los siguientes métodos:
+      \begin{enumerate}
+
+      \item \emph{(10pts)} \texttt{crearProducto} que permita crear un
+        producto específico y asignarle un stock inicial. Este método
+        recibe como parámetro el precio sin IVA (19\%), por lo que
+        debe calcularse el precio actualizado a ingresar en el
+        producto que se está creando. Además, este método debe agregar
+        el producto creado al listado de productos de
+        \texttt{GestionBodega}
+
+      \item \emph{(15 pts)} \texttt{ingresarProductosConsola} que lee
+        desde el teclado la información para la creación de productos,
+        con datos ingresados por el usuario. La acción de crear
+        productos debe repetirse mientras el usuario lo desee. Puede
+        usar alguna convención de su elección para terminar la
+        lectura. PISTA: en la implementación debe invocar a
+        \texttt{crearProducto}.
+
+      \item \emph{(10pts)} \texttt{listarStock} que permita visualizar
+        el código, nombre y stock de cada producto.
+
+
+      \item \emph{(10pts)} \texttt{valorInventario} que calcula el
+        valor del inventario actual, mostrando la suma de precio por
+        stock, y muestra el total con y sin IVA.
+
+      \end{itemize}
+
+    \item \emph{(10pts)} Crear la clase \texttt{Main.java} con un
+      método \texttt{main} que se encargue de inicializar el programa creando la instancia de la
+      clase \texttt{GestionBodega} para utilizar sus métodos asociados de la siguiente forma:
+      \begin{enumerate}
+      \item \texttt{ingresarProductosConsola()}, para crear 1 o más
+        productos por parte del usuario
+      \item \texttt{listarStock()}, para mostrar los productos creados
+      \item \texttt{valorInventario()}, para mostrar los precios de
+        los productos listados
+      \end{enumerate}
+
+    \end{enumerate}
+  \end{questions}
+
+
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{
+      !{\color{gray!50}\vrule}p{3.9cm}
+      !{\color{gray!50}\vrule}p{3.6cm}
+      !{\color{gray!50}\vrule}p{3.6cm}
+      !{\color{gray!50}\vrule}p{3.6cm}
+      !{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+      \multicolumn{4}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{¿Cómo seré evaluado en este trabajo?}} \\ \arrayrulecolor{gray!50} \hline
+      \textbf{Ítem} & \textbf{Logrado} & \textbf{Suficiente} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} \hline
+      Creación de Clase Producto.java con atributos. &
+      Aplica de forma correcta 10pts   &
+      Aplica parcialmente con menos de 2 errores 5pts  &
+      Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
+
+      Creación de clase \texttt{GestionBodega.java} con arreglo dinámico implementado. &
+      Aplica de forma correcta 5pts   &
+      Aplica parcialmente con menos de 2 errores 3pts  &
+      Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
+
+     Implementación de método \textbf{crearProducto} y correcto funcionamiento. &
+     Aplica de forma correcta 10pts   &
+     Aplica parcialmente  2 errores o menos 5pts &
+     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
+
+     Implementación de método \textbf{ingresarProductosConsola} y correcto funcionamiento. &
+     Aplica de forma correcta 10pts   &
+     Aplica parcialmente  2 errores o menos 8pts &
+     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
+
+     Implementación de método \textbf{listarStock} y correcto funcionamiento. &
+     Aplica de forma correcta 5pts   &
+     Aplica parcialmente  2 errores o menos 2pts &
+     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
+
+     Implementación de método \textbf{valorInventario} y correcto funcionamiento. &
+     Aplica de forma correcta 10pts   &
+     Aplica parcialmente  2 errores o menos 5pts &
+     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
+
+     Implementar clase instanciadora \textbf{Main} con método \texttt{main} y crea instancias de objetos y llamadas a \textbf{métodos requeridos}. &
+     Aplica de forma correcta 10pts &
+     Aplica parcialmente con menos de 2 errores 5pts &
+     Aplica de forma incorrecta con 3 errores o más 0pts\\ \arrayrulecolor{gray!50} \hline
+
+      Total de la sección &  60pts & 30pts & 0pts\\ \arrayrulecolor{gray!50} \hline
+    \end{tabular}
+    \label{tbl:1}
+  \end{table}
+  \vspace{-5mm}
+  \textbf{Nota:} En caso de que el {í}tem no est{é} presente, tiene ponderaci{ó}n cero.
+
+\end{document}
