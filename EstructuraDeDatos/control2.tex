@@ -1,0 +1,122 @@
+%\documentclass{article}
+\documentclass[letter,12pt,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[LGR,T1]{fontenc}
+\usepackage{amssymb}                % símbolos especiales
+\usepackage{amsmath, amsthm}        % ambiente \newtheorem
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tabto}                  % \tabto
+\setlength{\textheight}{22cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+
+% \newtheorem{nombre}{caption}[within]
+\theoremstyle{definition}
+\newtheorem{corolary}{Corolario}[]
+\newtheorem{lemma}{Lema}[]
+\newtheorem{theorem}{Teorema}[]
+\newtheorem{example}{Ejemplo}[section]
+
+% \newenvironment{nombre}[argumentos]{begindef}{enddef}
+\newenvironment{lista}{\begin{list}{\textbullet}{\itemindent -1ex \itemsep -1ex}}{\end{list}}
+
+\rhead{\begin{picture}(0,0) \put(-120,0){\includegraphics[width=40mm]{./image/logo-UV}} \end{picture}}
+\lhead{\vspace{-0.3cm}Universidad de Valparaíso\\Facultad de Ingeniería\\Escuela de Ingeniería Civil Informática\vspace{0.3cm}}
+
+\pagestyle{fancy}
+
+\begin{document}
+%\maketitle
+
+\begin{center}
+$~$
+\end{center}
+
+\noindent
+Nombre: \rule{.6\textwidth}{.5pt} Rut: \rule{.24\textwidth}{.5pt}
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 2}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Además de las FIFO (first-in, first-out) y las LIFO (last-in, first-out) existen las FINO (first-in, never-out). Para definir el correspondiente TDA, determine:
+    \begin{enumerate}
+        \item Cuatro operaciones para trabajar sobre él. \tabto{76ex} [12 pts]
+        \item Cuatro axiomas que regulen el funcionamiento de dichas operaciones. \tabto{76ex} [12 pts]
+    \end{enumerate}
+    
+    \item ¿En qué casos es mejor una estructura de datos Vector que una Lista? \tabto{81ex} [12 pts]
+    
+    \item Considere el siguiente pseudocódigo, que define una lista doblemente enlazada de nodos:
+
+    \texttt{struct Node \{}\\
+    $~~~~$\texttt{data;} \tabto{23ex}// Dato almacenado en el nodo\\
+    $~~~~$\texttt{next;} \tabto{23ex}// Puntero al nodo siguiente (NULL para el último nodo)\\
+    \texttt{\}}\\
+    \texttt{struct List \{}\\
+    $~~~~$\texttt{Node FirstNode;} \tabto{23ex}// La lista apunta al primer nodo; NULL si está vacía\\
+    $~~~~$\texttt{Node LastNode;} \tabto{23ex}// La lista apunta al último nodo; NULL si está vacía\\
+    \texttt{\}}
+    
+    Para insertar un nodo \texttt{newNode} después de un nodo \texttt{node}, se define la función \texttt{insertAfter}:
+    
+    \texttt{function insertAfter(Node node, Node newNode) \{}\\
+    $~~~~$\texttt{newNode.next := node.next;}\\
+    $~~~~$\texttt{node.next := newNode;}\\
+    \texttt{\}}
+    
+    Para insertar un nodo \texttt{newNode} al inicio de la lista \texttt{list}, se define la función \texttt{insertBeginning}:
+    
+    \texttt{function insertBeginning(List list, Node newNode) \{}\\
+    $~~~~$\texttt{newNode.next   := list.firstNode;}\\
+    $~~~~$\texttt{list.firstNode := newNode;}\\
+    \texttt{\}}
+
+    A partir de lo anterior, defina:
+    \begin{enumerate}
+        \item Una función \texttt{insertEnd}, que inserta un nodo \texttt{newNode} al final de \texttt{list}. \tabto{76ex} [12 pts]
+        \item Una función \texttt{removeAfter}, que elimina un nodo \texttt{Node}. \tabto{76ex} [12 pts]
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 2 - Pauta}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item[1. $a)$] Son respuestas válidas size(), isEmpty(), push(element), top() o create().\\
+    Las operaciones tipo pop() o de acceso directo a cualquier índice no deberían estar permitidas. \tabto{81ex} [12 pts]
+    \item[1. $b)$] Cualquiera análoga a las vistas en clases para Pilas o Colas son válidas, salvo aquellas que consideren las operaciones pop().\tabto{81ex} [12 pts]
+    \item[2.] Cuando no se requieren tantas operaciones de inserción, extracción o desplazamiento de datos durante la ejecución.\\
+    Cuando se requiere acceder frecuentemente a los datos. \tabto{81ex} [12 pts]
+    \item[3. $a)$] La función queda definida por:\\[1.2ex]
+    \texttt{function insertEnd(List list, Node newNode) \{}\\
+    $~~~~$\texttt{(list.LastNode).next := newNode;}\\
+    \texttt{\}} \tabto{81ex} [12 pts]
+    \item[3. $b)$] La función queda definida por:\\[1.2ex]
+    \texttt{function removeAfter(Node node) \{}\\
+    $~~~~$\texttt{aux := node.next;}\\
+    $~~~~$\texttt{node.next := node.next.next;}\\
+    $~~~~$\texttt{destroy aux;}\\
+    \texttt{\}} \tabto{81ex} [12 pts]
+\end{enumerate}
+
+\end{document}

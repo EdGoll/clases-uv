@@ -1,0 +1,226 @@
+%\documentclass{article}
+\documentclass[letter,12pt,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[LGR,T1]{fontenc}
+\usepackage{amssymb}                % símbolos especiales
+\usepackage{amsmath, amsthm}        % ambiente \newtheorem
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tabto}                  % \tabto
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning, calc}
+\tikzstyle{vertex}=[draw,fill=black!15,circle,minimum size=20pt,inner sep=0pt]
+\setlength{\textheight}{22cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+
+% \newtheorem{nombre}{caption}[within]
+\theoremstyle{definition}
+\newtheorem{corolary}{Corolario}[]
+\newtheorem{lemma}{Lema}[]
+\newtheorem{theorem}{Teorema}[]
+\newtheorem{example}{Ejemplo}[section]
+
+% \newenvironment{nombre}[argumentos]{begindef}{enddef}
+\newenvironment{lista}{\begin{list}{\textbullet}{\itemindent -1ex \itemsep -1ex}}{\end{list}}
+
+\rhead{\begin{picture}(0,0) \put(-120,0){\includegraphics[width=40mm]{./image/logo-UV}} \end{picture}}
+\lhead{\vspace{-0.3cm}Universidad de Valparaíso\\Facultad de Ingeniería\\Escuela de Ingeniería Civil Informática\vspace{0.3cm}}
+
+\pagestyle{fancy}
+
+\begin{document}
+%\maketitle
+
+\begin{center}
+$~$
+\end{center}
+
+\noindent
+Nombre: \rule{.6\textwidth}{.5pt} Rut: \rule{.24\textwidth}{.5pt}
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 4 (Fila A)}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Sea $h$ una función hash que transforma nombres de carreras en enteros, de modo que $h(\mbox{ingeniería})=3$, $h(\mbox{medicina})=5$, $h(\mbox{psicología})=2$, $h(\mbox{electrónica})=3$,\\ $h(\mbox{informática})=3$, $h(\mbox{sociología})=2$.
+    \begin{enumerate}
+        \item Insertar estas claves en una tabla hash con linear probing en el siguiente orden: psicología, electrónica, sociología, informática, ingeniería, medicina. \tabto{76ex} [10 pts]
+        \item ¿En qué posición quedó almacenada la carrera de informática? \tabto{76ex} [10 pts]
+        \item Repita el primer ejercicio, esta vez utilizando listas enlazadas. \tabto{76ex} [10 pts]
+    \end{enumerate}
+    \item Defina brevemente alguno de estos tres conceptos dentro del contexto del hashing:\\ {\em rehashing}, {\em load factor} o {\em double hashing}. \tabto{81ex} [10 pts]
+    \item Escriba un pseudocódigo de un algoritmo para insertar un par (key,value) en una tabla hash. El algoritmo debe soportar manejo de colisiones. Comente aquellas líneas de código más importantes para su comprensión. \tabto{81ex} [20 pts]
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 4 (Fila B)}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Sea $h$ una función hash que transforma nombres de carreras en enteros, de modo que $h(\mbox{ingeniería})=3$, $h(\mbox{medicina})=5$, $h(\mbox{psicología})=3$, $h(\mbox{electrónica})=2$,\\ $h(\mbox{informática})=2$, $h(\mbox{sociología})=3$.
+    \begin{enumerate}
+        \item Insertar estas claves en una tabla hash con linear probing en el siguiente orden: psicología, electrónica, sociología, informática, ingeniería, medicina. \tabto{76ex} [10 pts]
+        \item ¿En qué posición quedó almacenada la carrera de ingeniería? \tabto{76ex} [10 pts]
+        \item Repita el primer ejercicio, esta vez utilizando listas enlazadas. \tabto{76ex} [10 pts]
+    \end{enumerate}
+    \item Defina brevemente alguno de estos tres conceptos dentro del contexto del hashing:\\ {\em rehashing}, {\em load factor} o {\em double hashing}. \tabto{81ex} [10 pts]
+    \item Escriba un pseudocódigo de un algoritmo para insertar un par (key,value) en una tabla hash. El algoritmo debe soportar manejo de colisiones. Comente aquellas líneas de código más importantes para su comprensión. \tabto{81ex} [20 pts]
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 4 - Pauta}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item[1a)] La tabla hash puede quedar así, dependiendo si se usa memoria dinámica o modularidad:
+    
+    \begin{tabular}{|c|l|}
+    \multicolumn{2}{c}{Fila A}\\
+    \multicolumn{2}{c}{(mem. dinámica)}\\\hline
+        0 &  \\\hline
+        1 &  \\\hline
+        2 & psicología \\\hline
+        3 & electrónica\\\hline
+        4 & sociología \\\hline
+        5 & informática\\\hline
+        6 & ingeniería \\\hline
+        7 & medicina   \\\hline
+    \end{tabular}
+    \hspace{2ex}
+    \begin{tabular}{|c|l|}
+    \multicolumn{2}{c}{Fila B}\\
+    \multicolumn{2}{c}{(mem. dinámica)}\\\hline
+        0 &  \\\hline
+        1 &  \\\hline
+        2 & electrónica\\\hline
+        3 & psicología \\\hline
+        4 & sociología \\\hline
+        5 & informática\\\hline
+        6 & ingeniería \\\hline
+        7 & medicina   \\\hline
+    \end{tabular}
+    \hspace{2ex}
+    \begin{tabular}{|c|l|}
+    \multicolumn{2}{c}{Fila A}\\
+    \multicolumn{2}{c}{(modularidad)}\\\hline
+        0 & ingeniería \\\hline
+        1 & medicina   \\\hline
+        2 & psicología \\\hline
+        3 & electrónica\\\hline
+        4 & sociología \\\hline
+        5 & informática\\\hline
+    \multicolumn{2}{c}{}\\
+    \multicolumn{2}{c}{}\\
+    \end{tabular}
+    \hspace{2ex}
+    \begin{tabular}{|c|l|}
+    \multicolumn{2}{c}{Fila B}\\
+    \multicolumn{2}{c}{(modularidad)}\\\hline
+        0 & ingeniería \\\hline
+        1 & medicina   \\\hline
+        2 & electrónica\\\hline
+        3 & psicología \\\hline
+        4 & sociología \\\hline
+        5 & informática\\\hline
+    \multicolumn{2}{c}{}\\
+    \multicolumn{2}{c}{}\\
+    \end{tabular}
+
+    \begin{itemize}
+        \item -1 pto por no usar índice 0 en caso de escoger modularidad.
+        \item -1 pto por mezclar mem. dinámica con modularidad (tabla hash hasta posición 6).
+        \item -2 ptos por cada error de ubicación en el bucket.
+    \end{itemize}
+    \item[1b)] Para Fila A, informática quedó en posición 5.\\
+    Para Fila B, ingeniería quedó en posición 6 (mem. dinámica) o 0 (modularidad).\\
+    2 ptos por comprender que la respuesta es retornar el número del índice, pero no más ptos si no se especifica de dónde se obtuvo el resultado (en caso que en el ejercicio anterior se haya colocado un índice diferente).
+    \item[1c)] $~$
+    
+    \begin{tabular}{|c|l}
+    \multicolumn{2}{l}{Fila A}\\\cline{1-1}
+        0 & \\\cline{1-1}
+        1 & \\\cline{1-1}
+        2 & psicología $\to$ sociología\\\cline{1-1}
+        3 & electrónica $\to$ informática $\to$ ingeniería \\\cline{1-1}
+        4 & \\\cline{1-1}
+        5 & medicina\\\cline{1-1}
+    \end{tabular}
+    \hspace{1ex}
+    \begin{tabular}{|c|l}
+    \multicolumn{2}{l}{Fila B}\\\cline{1-1}
+        0 & \\\cline{1-1}
+        1 & \\\cline{1-1}
+        2 & electrónica $\to$ informática\\\cline{1-1}
+        3 & psicología $\to$ sociología $\to$ ingeniería \\\cline{1-1}
+        4 & \\\cline{1-1}
+        5 & medicina\\\cline{1-1}
+    \end{tabular}
+    \begin{itemize}
+        \item -1 pto por no explicitar medicina como elemento de la lista enlazada.
+        \item -1 pto por no especificar mediante punteros que se trata de lista enlazada.
+        \item -2 ptos por cada error de ubicación en el bucket.
+    \end{itemize}
+    \item[2)] Los conceptos se definen a continuación:
+    \begin{itemize}
+        \item {\em Rehashing}: se refiere a la acción de aumentar el tamaño de la tabla hash y recalcular la ubicación de sus elementos, de modo de disminuir la probabilidad de nuevas colisiones.
+        \item {\em Load factor}: medida de qué tan llena está la tabla hash (número de keys / número de buckets). Si el valor es muy alto, aumentan probabilidades de tener una colisión y la velocidad de operaciones es menor. Si el valor es muy bajo, se produce un alto desperdicio de memoria.
+        \item {\em Double hashing}: es una manera de resolver problemas de colisiones. Funciona como linear probing, pero el salto hasta el siguiente bucket está definido por una nueva función de hash independiente de la original.
+    \end{itemize}
+    Basta una definición correcta para tener todo el puntaje. Si se define más de un concepto, todos ellos deben estar correctos para tener todo el puntaje.\\
+    -2 pts por cada nuevo concepto introducido sin definir, que no haya sido definido en clases.
+    \item[3)] Un pseudocódigo posible que utiliza linear probing:\\
+    
+    \texttt{Hash\_table H;}
+    \tabto{42ex}// defino una tabla hash H\\
+    \texttt{insertar(key, value) \{} 
+    \tabto{42ex}// insertar un par (key,value)\\
+    $~~~~~$\texttt{index=hash(key);} 
+    \tabto{42ex}// se determina el bucket con la función hash\\
+    $~~~~~$\texttt{if H[index]$\neq\emptyset$ \{} 
+    \tabto{42ex}// si el bucket ya está ocupado...\\
+    $~~~~~~~~~~$\texttt{index2=index;} 
+    \tabto{42ex}\\
+    $~~~~~~~~~~$\texttt{do index2=index2+1;} 
+    \tabto{42ex}// busco el siguiente bucket...\\
+    $~~~~~~~~~~$\texttt{until H[index2]=$\emptyset$;} 
+    \tabto{42ex}// ...desocupado...\\
+    $~~~~~~~~~~$\texttt{H[index2].insert(key,value);}
+    \tabto{42ex}// ...para insertar allí el elemento\\
+    $~~~~~$\texttt{\}}\\
+    $~~~~~$\texttt{else}\\
+    $~~~~~~~~~~$\texttt{H[index].insert(key,value);} 
+    \tabto{42ex}// si no hay colisión, ingreso sin problemas\\
+    \begin{itemize}
+        \item 10 pts por soportar correctamente el manejo de colisiones.
+        \item -2 pts si no se definen bien los parámetros de entrada.
+        \item -2 pts por cada línea importante no documentada.
+        \item -5 pts si no se llama a la función hash.
+    \end{itemize}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,195 @@
+%\documentclass{article}
+\documentclass[letter,12pt,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[LGR,T1]{fontenc}
+\usepackage{amssymb}                % símbolos especiales
+\usepackage{amsmath, amsthm}        % ambiente \newtheorem
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tabto}                  % \tabto
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning, calc}
+\tikzstyle{vertex}=[draw,fill=black!15,circle,minimum size=20pt,inner sep=0pt]
+\setlength{\textheight}{22cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+
+% \newtheorem{nombre}{caption}[within]
+\theoremstyle{definition}
+\newtheorem{corolary}{Corolario}[]
+\newtheorem{lemma}{Lema}[]
+\newtheorem{theorem}{Teorema}[]
+\newtheorem{example}{Ejemplo}[section]
+
+% \newenvironment{nombre}[argumentos]{begindef}{enddef}
+\newenvironment{lista}{\begin{list}{\textbullet}{\itemindent -1ex \itemsep -1ex}}{\end{list}}
+
+%-------------------- codigo en Python
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}}
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+%---------------------------- hasta aqui
+
+\rhead{\begin{picture}(0,0) \put(-120,0){\includegraphics[width=40mm]{./image/logo-UV}} \end{picture}}
+\lhead{\vspace{-0.3cm}Universidad de Valparaíso\\Facultad de Ingeniería\\Escuela de Ingeniería Civil Informática\vspace{0.3cm}}
+
+\pagestyle{fancy}
+
+\begin{document}
+%\maketitle
+
+\begin{center}
+$~$
+\end{center}
+
+\noindent
+Nombre: \rule{.6\textwidth}{.5pt} Rut: \rule{.24\textwidth}{.5pt}
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 5 (Fila A)}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Considere el siguiente código escrito en Python:
+    
+    \begin{python}
+def OrderAlgorithm(lista):
+    for i in range(1,len(lista)):
+        temp = lista[i]
+        j = i
+        while j>0 and lista[j-1]>temp:
+            lista[j]=lista[j-1]
+            j = j-1
+        lista[j]=temp
+#Input
+lista = [107,17,4,1,16,68,44,31,10,31]
+#Ordenamiento
+OrderAlgorithm(lista)
+#Output
+print(lista)
+    \end{python}
+    
+    \begin{enumerate}
+        \item ¿A cuál de estos algoritmos de ordenamiento se ajusta mejor: inserción, selección, burbuja, merge sort o quicksort? Fundamente su respuesta. \tabto{76ex} [15 pts]
+        \item Reescriba el código modificando lo menos posible de modo que ordene el vector en sentido contrario (de mayor a menor). \tabto{76ex} [15 pts]
+    \end{enumerate}
+    \item Sabemos que para un arreglo de $n$ elementos, el Quicksort se ejecuta en tiempo $O(n\log n)$ en el mejor caso y en el caso promedio. ¿Bajo qué condiciones se obtiene el peor caso para este algoritmo, es decir, en qué casos se ejecuta en tiempo $O(n^2)$?\\Tip: tiene que ver con la selección del pivote. \tabto{81ex} [15 pts]
+    \item Los algoritmos sencillos como selección, inserción y burbuja no necesitan espacio de memoria adicional, pues no modifican en ningún momento el tamaño del vector (lista o arreglo) de entrada. ¿Por qué algoritmos más sofisticados como quicksort o merge sort necesitan más espacio de memoria? \tabto{81ex} [15 pts]
+\end{enumerate}
+
+\newpage
+\noindent
+Nombre: \rule{.6\textwidth}{.5pt} Rut: \rule{.24\textwidth}{.5pt}
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 5 (Fila B)}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Considere el siguiente código escrito en Python:
+    
+    \begin{python}
+def OrderAlgorithm(lista):
+    for i in range(len(lista)-1,0,-1):
+        m=0
+        for j in range(1,i+1):
+            if lista[j]>lista[m]:
+                m = j
+        temp = lista[i]
+        lista[i] = lista[m]
+        lista[m] = temp
+#Input
+lista = [107,17,4,1,16,68,44,31,10,31]
+#Ordenamiento
+OrderAlgorithm(lista)
+#Output
+print(lista)
+    \end{python}
+    
+    \begin{enumerate}
+        \item ¿A cuál de estos algoritmos de ordenamiento se ajusta mejor: inserción, selección, burbuja, merge sort o quicksort? Fundamente su respuesta. \tabto{76ex} [15 pts]
+        \item Reescriba el código modificando lo menos posible de modo que ordene el vector en sentido contrario (de mayor a menor). \tabto{76ex} [15 pts]
+    \end{enumerate}
+    \item Sabemos que para un arreglo de $n$ elementos, el Quicksort se ejecuta en tiempo $O(n^2)$ en el peor caso. ¿Bajo qué condiciones se obtiene el mejor caso o bien el caso promedio, es decir, en qué casos se ejecuta en tiempo $O(n\log n)$?\\Tip: tiene que ver con la selección del pivote. \tabto{81ex} [15 pts]
+    \item Los algoritmos sencillos como selección, inserción y burbuja no necesitan espacio de memoria adicional, pues no modifican en ningún momento el tamaño del vector (lista o arreglo) de entrada. ¿Por qué algoritmos más sofisticados como quicksort o merge sort necesitan más espacio de memoria? \tabto{81ex} [15 pts]
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 5 - Pauta}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item[1.a)] Forma A: El código corresponde al Insertion Sort, \tabto{81ex} [5 pts]\\
+    pues lo que hace es mantener una sublista ordenada a la izquierda de la lista total, y cada elemento aún no ordenado lo va ubicando en su lugar correspondiente dentro de la lista ya ordenada. \tabto{80ex} [10 pts]
+    
+    Forma B: El código corresponde al Selection Sort,\tabto{81ex} [5 pts]\\
+    pues lo que hace en cada iteración es tomar el mayor valor aún no ordenado e irlo ubicando al inicio de la sublista que se va guardando ya ordenada hacia el lado derecho.\tabto{80ex} [10 pts]
+    
+    \item[1.b)] Forma A: Cambiar la quinta línea por:\\
+    \begin{python}
+        while j>0 and lista[j-1]<temp:
+    \end{python}
+    
+    Forma B: Cambiar la quinta línea por:\\
+    \begin{python}
+        if lista[j]<lista[m]:
+    \end{python}
+    
+    \item[2.] Forma A: Cuando el pivote se escoge siempre en los extremos del arreglo.
+    
+    Forma B: Cuando el pivote se escoge siempre en el medio del arreglo.
+    
+    \item[3.] Porque a diferencia de los algoritmos sencillos, requieren ir dividiendo el vector en subvectores, lo que va generando una estructura de árbol que ocupa espacio de memoria adicional.
+\end{enumerate}
+
+\end{document}

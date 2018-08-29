@@ -1,0 +1,287 @@
+%\documentclass{article}
+\documentclass[letter,12pt,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[LGR,T1]{fontenc}
+\usepackage{amssymb}                % símbolos especiales
+\usepackage{amsmath, amsthm}        % ambiente \newtheorem
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tabto}                  % \tabto
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning, calc}
+\tikzstyle{vertex}=[draw,fill=black!15,circle,minimum size=20pt,inner sep=0pt]
+\setlength{\textheight}{22cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+
+% \newtheorem{nombre}{caption}[within]
+\theoremstyle{definition}
+\newtheorem{corolary}{Corolario}[]
+\newtheorem{lemma}{Lema}[]
+\newtheorem{theorem}{Teorema}[]
+\newtheorem{example}{Ejemplo}[section]
+
+% \newenvironment{nombre}[argumentos]{begindef}{enddef}
+\newenvironment{lista}{\begin{list}{\textbullet}{\itemindent -1ex \itemsep -1ex}}{\end{list}}
+
+\rhead{\begin{picture}(0,0) \put(-120,0){\includegraphics[width=40mm]{./image/logo-UV}} \end{picture}}
+\lhead{\vspace{-0.3cm}Universidad de Valparaíso\\Facultad de Ingeniería\\Escuela de Ingeniería Civil Informática\vspace{0.3cm}}
+
+\pagestyle{fancy}
+
+\begin{document}
+%\maketitle
+
+\begin{center}
+$~$
+\end{center}
+
+\noindent
+Nombre: \rule{.6\textwidth}{.5pt} Rut: \rule{.24\textwidth}{.5pt}
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 3 (Fila A)}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Considere el siguiente árbol:
+    \begin{center}
+    \begin{tikzpicture}[level distance=32pt, level/.style={sibling distance=120mm/#1},
+  every node/.style = {shape=circle, draw, align=center}]]
+  \node {A}
+    child{ node{B} 
+      child { node{D}
+        child[missing]
+        child { node{G} 
+          child { node{J} }
+          child { node{K} } } }
+      child { node{E} } }
+    child{ node{C} 
+      child { node{F}
+        child { node{H}
+          child[missing]
+          child { node{L} } }
+        child { node{I}
+          child { node{M} }
+          child[missing] } }
+      child[missing] };
+\end{tikzpicture}
+\end{center}
+
+    \begin{enumerate}
+        \item Indique la secuencia de nodos obtenida al recorrer el árbol en postorden. \tabto{76ex} [10 pts]
+        \item Ponga valores a los nodos de modo que el árbol se convierta en un BST. \tabto{76ex} [10 pts]
+        \item Describa los pasos requeridos para eliminar el nodo C del BST,\\ y dibuje el nuevo árbol obtenido. \tabto{76ex} [15 pts]
+    \end{enumerate}
+    
+    \item Considere el siguiente vector, que representa un montículo o heap ordenado de mayor a menor:
+    $V=[10,8,9,6,7,5,4,1,2,3]$
+    \begin{enumerate}
+        \item Dibuje el árbol representado por dicho vector. \tabto{76ex} [10 pts]
+        \item Describa los pasos requeridos para eliminar la raíz del montículo,\\ y dibuje el nuevo árbol obtenido. \tabto{76ex} [15 pts]
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+$~$
+\end{center}
+
+\noindent
+Nombre: \rule{.6\textwidth}{.5pt} Rut: \rule{.24\textwidth}{.5pt}
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 3 (Fila B)}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Considere el siguiente árbol:
+    \begin{center}
+    \begin{tikzpicture}[level distance=32pt, level/.style={sibling distance=120mm/#1},
+  every node/.style = {shape=circle, draw, align=center}]]
+  \node {A}
+    child{ node{B} 
+      child { node{D}
+        child[missing]
+        child { node{G} 
+          child { node{J} }
+          child { node{K} } } }
+      child { node{E} } }
+    child{ node{C} 
+      child { node{F}
+        child { node{H}
+          child[missing]
+          child { node{L} } }
+        child { node{I}
+          child { node{M} }
+          child[missing] } }
+      child[missing] };
+\end{tikzpicture}
+\end{center}
+
+    \begin{enumerate}
+        \item Indique la secuencia de nodos obtenida al recorrer el árbol en inorden. \tabto{76ex} [10 pts]
+        \item Ponga valores a los nodos de modo que el árbol se convierta en un BST. \tabto{76ex} [10 pts]
+        \item Describa los pasos requeridos para eliminar el nodo C del BST,\\ y dibuje el nuevo árbol obtenido. \tabto{76ex} [15 pts]
+    \end{enumerate}
+    
+    \item Considere el siguiente vector, que representa un montículo o heap ordenado de menor a mayor:
+    $V=[1,2,3,6,7,5,4,10,8,9]$
+    \begin{enumerate}
+        \item Dibuje el árbol representado por dicho vector. \tabto{76ex} [10 pts]
+        \item Describa los pasos requeridos para eliminar la raíz del montículo,\\ y dibuje el nuevo árbol obtenido. \tabto{76ex} [15 pts]
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 3 - Pauta}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item[1a)] Las secuencias obtenidas son:\\
+    Postorden: \tabto{12ex} J-K-G-D-E-B-L-H-M-I-F-C-A \tabto{81ex} [10 pts]\\
+    Inorden: \tabto{12ex} D-J-G-K-B-E-A-H-L-F-M-I-C \tabto{81ex} [10 pts]\\
+    Se descuentan 3 pts por error de comprensión, y 2 pts por error de tipeo o transcripción.
+    \item[1b)] Para convertir el árbol en un árbol binario de búsqueda (BST), es válida cualquier asignación de valores tal que el valor de cada nodo sea $\geq$ que el de su subárbol izquierdo y $\leq$ que el de su subárbol derecho.\tabto{81ex} [4 pts]
+    
+    Una solución posible: \tabto{81ex} [6 pts]
+    \begin{center}
+    \begin{tikzpicture}[level distance=32pt, level/.style={sibling distance=120mm/#1}, every node/.style = {shape=circle, draw, align=center}]]
+    \node {7}
+    child{ node{5} 
+      child { node{1}
+        child[missing]
+        child { node{3} 
+          child { node{2} }
+          child { node{4} } } }
+      child { node{6} } }
+    child{ node{13} 
+      child { node{11}
+        child { node{8}
+          child[missing]
+          child { node{9} } }
+        child { node{12}
+          child { node{10} }
+          child[missing] } }
+      child[missing] };
+    \end{tikzpicture}
+    \end{center}
+    Se descuentan 2 pts por cada valor errado.
+    \item[1c)] Se verifica que el nodo C tiene 1 hijo.\tabto{81ex} [2 pts]\\ Se elimina de manera natural: se quita y su padre apuntará al que era su hijo.\tabto{81ex} [8 pts]\\
+    El árbol queda así:\tabto{81ex} [5 pts]
+    \begin{center}
+    \begin{tikzpicture}[level distance=32pt, level/.style={sibling distance=80mm/#1}, every node/.style = {shape=circle, draw, align=center}]]
+    \node {7}
+    child{ node{5} 
+      child { node{1}
+        child[missing]
+        child { node{3} 
+          child { node{2} }
+          child { node{4} } } }
+      child { node{6} } }
+    child{ node{11} 
+      child { node{8}
+         child[missing]
+         child { node{9} } }
+      child { node{12}
+         child { node{10} }
+         child[missing] } };
+    \end{tikzpicture}
+    \end{center}
+    
+    \item[2a)] El árbol para el vector $[10,8,9,6,7,5,4,1,2,3]$ es el siguiente:\tabto{81ex} [10 pts]
+    \begin{center}
+    \begin{tikzpicture}[level distance=32pt, level/.style={sibling distance=50mm/#1}, every node/.style = {shape=circle, draw, align=center}]]
+    \node {10}
+    child{ node{8} 
+      child { node{6}
+        child { node{1} }
+        child { node{2} } }
+      child { node{7}
+        child { node{3} }
+        child[missing] } }
+    child{ node{9} 
+      child { node{5} }
+      child { node{4} } };
+    \end{tikzpicture}
+    \end{center}
+    
+    El árbol para el vector $[1,2,3,6,7,5,4,10,8,9]$ es el siguiente:\tabto{81ex} [10 pts]
+    \begin{center}
+    \begin{tikzpicture}[level distance=32pt, level/.style={sibling distance=50mm/#1}, every node/.style = {shape=circle, draw, align=center}]]
+    \node {1}
+    child{ node{2} 
+      child { node{6}
+        child { node{10} }
+        child { node{8} } }
+      child { node{7}
+        child { node{9} }
+        child[missing] } }
+    child{ node{3} 
+      child { node{5} }
+      child { node{4} } };
+    \end{tikzpicture}
+    \end{center}
+    Se descuentan 2 pts por cada nodo errado, y 2 pts por dejarlo desbalanceado.
+    \item[2b)] Para eliminar la raíz del montículo, primero se intercambia su valor por el de la última hoja (nodo con el valor 3 o el 9, dependiendo del caso).\tabto{81ex} [4 pts]
+    
+    Luego se elimina dicha hoja, y se desciende la nueva raíz hasta que quede bien ubicada de acuerdo con su valor\tabto{81ex} [4 pts]\\
+    (la corrección del heap se debe ir haciendo durante el descenso, no después).\tabto{81ex} [2 pts]
+
+    
+    El árbol montículo resultante quedaría así para el primer caso:\tabto{81ex} [5 pts]
+
+    \begin{center}
+    \begin{tikzpicture}[level distance=32pt, level/.style={sibling distance=50mm/#1}, every node/.style = {shape=circle, draw, align=center}]]
+    \node {9}
+    child{ node{8} 
+      child { node{6}
+        child { node{1} }
+        child { node{2} } }
+      child { node{7} } }
+    child{ node{5} 
+      child { node{3} }
+      child { node{4} } };
+    \end{tikzpicture}
+    \end{center}
+    \newpage 
+    o así, para el segundo caso:\tabto{81ex}
+
+    \begin{center}
+    \begin{tikzpicture}[level distance=32pt, level/.style={sibling distance=50mm/#1}, every node/.style = {shape=circle, draw, align=center}]]
+    \node {2}
+    child{ node{6} 
+      child { node{8}
+        child { node{10} }
+        child { node{9} } }
+      child { node{7} } }
+    child{ node{3} 
+      child { node{5} }
+      child { node{4} } };
+    \end{tikzpicture}
+    \end{center}
+\end{enumerate}
+
+\end{document}

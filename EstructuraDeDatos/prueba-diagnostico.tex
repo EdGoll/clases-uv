@@ -1,0 +1,92 @@
+%\documentclass{article}
+\documentclass[letter,12pt,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[LGR,T1]{fontenc}
+\usepackage{amssymb}                % símbolos especiales
+\usepackage{amsmath, amsthm}        % ambiente \newtheorem
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tabto}                  % \tabto
+\setlength{\textheight}{21cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{0cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+
+% \newtheorem{nombre}{caption}[within]
+\theoremstyle{definition}
+\newtheorem{corolary}{Corolario}[]
+\newtheorem{lemma}{Lema}[]
+\newtheorem{theorem}{Teorema}[]
+\newtheorem{example}{Ejemplo}[section]
+
+% \newenvironment{nombre}[argumentos]{begindef}{enddef}
+\newenvironment{lista}{\begin{list}{\textbullet}{\itemindent -1ex \itemsep -1ex}}{\end{list}}
+
+\rhead{\begin{picture}(0,0) \put(-120,0){\includegraphics[width=40mm]{./image/logo-UV.png}} \end{picture}}
+\lhead{\vspace{-0.3cm}Universidad de Valparaíso\\Facultad de Ingeniería\\Escuela de Ingeniería Civil Informática\vspace{0.3cm}}
+
+\pagestyle{fancy}
+
+\begin{document}
+%\maketitle
+
+\begin{center}
+$~$
+\end{center}
+
+\noindent
+Nombre: \rule{.6\textwidth}{.5pt} Rut: \rule{.24\textwidth}{.5pt}
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control de diagnóstico}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Considere estos dos códigos:
+    
+    \begin{tabular}{p{40ex}p{40ex}}
+        \texttt{for(i=0; i<2n; i++)\{}  
+                    & \texttt{for(i=0; i<n; i++)} \\
+        $~~~~$ \texttt{printf("hola mundo$\backslash$n");} 
+                    & $~~~~$ \texttt{for(i=0; i<n; i++)\{} \\
+        $~~~~$ \texttt{return 0;} 
+                    & $~~~~~~~~$ \texttt{printf("hola mundo$\backslash$n");} \\
+        \texttt{\}} & $~~~~~~~~$ \texttt{return 0;} \\
+                    & $~~~~$ \texttt{\}}\\
+    \end{tabular}
+    
+    Suponiendo que ambos códigos se ejecutan en una misma máquina, ¿cuál debería acabar antes y por qué? \tabto{80ex}[30 pts]
+    \vspace{3cm}
+    
+    \item Describa tres maneras distintas de definir una matriz de $m\times n$ elementos en un lenguaje de programación de su elección. \tabto{80ex}[30 pts]
+    \vspace{4cm}
+    
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\[5ex]
+  Estructuras de datos\\[1ex]
+  Control de diagnóstico -- Pauta}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item El printf del primer algoritmo se ejecuta $2n$ veces.\\
+    El segundo algoritmo se puede interpretar de dos maneras. Primero, como que las variables $i$ de los dos for son independientes, en cuyo caso el printf se ejecuta $n^2$ veces. Segundo, como que la $i$ del segundo for es dependiente del primer for, en cuyo caso el printf se ejecuta $n$ veces.\\
+    De acuerdo con esto, para un $n$ suficientemente grande, bajo la primera interpretación, el primer algoritmo termina antes, y bajo la segunda interpretación, el segundo algoritmo termina antes.
+    \item Mediante arreglos de arreglos, reemplazando los arreglos por listas o vectores, como una lista de pares ordenados, etc.
+    \end{enumerate}
+
+\end{document}

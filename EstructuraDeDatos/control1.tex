@@ -1,0 +1,123 @@
+%\documentclass{article}
+\documentclass[letter,12pt,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[LGR,T1]{fontenc}
+\usepackage{amssymb}                % símbolos especiales
+\usepackage{amsmath, amsthm}        % ambiente \newtheorem
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tabto}                  % \tabto
+\setlength{\textheight}{21cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{0cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+
+% \newtheorem{nombre}{caption}[within]
+\theoremstyle{definition}
+\newtheorem{corolary}{Corolario}[]
+\newtheorem{lemma}{Lema}[]
+\newtheorem{theorem}{Teorema}[]
+\newtheorem{example}{Ejemplo}[section]
+
+% \newenvironment{nombre}[argumentos]{begindef}{enddef}
+\newenvironment{lista}{\begin{list}{\textbullet}{\itemindent -1ex \itemsep -1ex}}{\end{list}}
+
+\rhead{\begin{picture}(0,0) \put(-120,0){\includegraphics[width=40mm]{./image/logo-UV}} \end{picture}}
+\lhead{\vspace{-0.3cm}Universidad de Valparaíso\\Facultad de Ingeniería\\Escuela de Ingeniería Civil Informática\vspace{0.3cm}}
+
+\pagestyle{fancy}
+
+\begin{document}
+%\maketitle
+
+\begin{center}
+$~$
+\end{center}
+
+\noindent
+Nombre: \rule{.6\textwidth}{.5pt} Rut: \rule{.24\textwidth}{.5pt}
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 1}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Considere tres algoritmos $A_1$, $A_2$ y $A_3$ que se ejecutan en tiempo $T_1=2n^3$, $T_2=O(\frac{1}{2}n^2)$ y $T_3=O(2^n)$, respectivamente. Fundamente:
+    \begin{enumerate}
+        \item Si $A_1$ y $A_2$ se ejecutan secuencialmente en una misma máquina, ¿cuál es el tiempo de ejecución total, en notación big O? \tabto{76ex} [10 pts]
+        \item Si $A_1$, $A_2$ y $A_3$ se ejecutan en paralelo en tres máquinas de iguales características, ¿cuál es el tiempo de ejecución total, en notación big O? \tabto{76ex} [10 pts]
+        \item En el caso $b)$, ¿es posible que la cantidad de memoria total que se ocupe entre las tres máquinas sea lineal, es decir, $S(n)$? \tabto{76ex} [10 pts]
+    \end{enumerate}
+    
+    \item[2.] Reproduzca los dos siguientes algoritmos escritos en lenguaje C en su computadora\\
+    (para compilar: \texttt{gcc -o archivo\_destino archivo\_fuente.c}).
+    
+    
+    \begin{tabular}{|p{40ex}|p{40ex}|}\hline
+        $A_1:$ & $A_2:$ \\
+        \texttt{\#include <stdio.h>}  
+                    & \texttt{\#include <stdio.h>} \\
+        \texttt{int main()\{} 
+                    & \texttt{int main()\{} \\
+        $~~$ \texttt{int n=100000; //$10^5$} 
+                    & $~~$ \texttt{int n=1000000; //$10^6$} \\
+        $~~$ \texttt{int a[n];} 
+                    & $~~$ \texttt{int a[2*n];} \\
+        $~~$ \texttt{for(int i=0; i<n; i++)\{}
+                    & $~~$ \texttt{for(int i=0; i<2*n; i++)\{}\\
+        $~~~~$ \texttt{a[i]=2*i;} 
+                    & $~~~~$ \texttt{a[i]=2*i;}\\
+        $~~$ \texttt{\}} & $~~$ \texttt{\}}\\
+        $~~$ \texttt{for(int i=0; i<n; i++)\{} 
+                    & $~~$ \texttt{return(0);}\\
+        $~~~~$ \texttt{printf(``\%d tiene \%d$\backslash$n'',i,a[i]);} & \texttt{\}}\\
+        $~~$ \texttt{\}} & \\
+        $~~$ \texttt{return(0);} & \\
+        \texttt{\}} & \\\hline
+    \end{tabular}
+    
+    \begin{enumerate}
+        \item ¿Cuántas veces itera cada uno de los tres ``\texttt{for}''? \tabto{77ex} [5 pts]
+        \item ¿Cómo calcula el tiempo de CPU de ejecución de cada algoritmo? Calcule. \tabto{76ex} [10 pts]
+        \item ¿Cuál es el tiempo de ejecución en notación big O de cada algoritmo? \tabto{76ex} [10 pts]
+        \item ¿Qué algoritmo es más eficiente en términos de complejidad temporal? \tabto{77ex} [5 pts]
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 1 - Pauta}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item[1. $a)$] Los tiempos se deben sumar en notación big O.\tabto{82ex} [3 pts]\\
+    El tiempo total será $2n^3+O(\frac{1}{2}n^2)=O(2n^3+\frac{1}{2}n^2)$,\tabto{82ex} [2 pts]\\
+    es decir, $O(n^3)$.\tabto{82ex} [5 pts]
+    \item[1. $b)$] Los tiempos se deben sumar en notación big O (o bien quedarme con el máximo).\tabto{82ex} [2 pts]\\
+    El tiempo total será $2n^3+O(\frac{1}{2}n^2)+O(2^n)=O(2n^3+\frac{1}{2}n^2+2^n)$,\tabto{82ex} [2 pts]\\
+    es decir, $O(2^n)$.\tabto{82ex} [6 pts]
+    \item[1. $c)$] Sí, podría darse el caso que los algoritmos tengan muchas instrucciones que solo utilizan un espacio muy reducido de memoria. Como vimos en clases, si el tiempo de ejecución de un algoritmo es polinomial o incluso exponencial, entonces el espacio de memoria puede ser polinomial (y un espacio lineal es un espacio polinomial de grado 1). \tabto{81ex} [10 pts]
+    \item[2. $a)$] Cada \texttt{for} de $A_1$ itera $n=10^5$ veces. \tabto{82ex} [2 pts]\\
+    El \texttt{for} de $A_2$ itera $2n=2\times10^6$ veces. \tabto{82ex} [3 pts]
+    \item[2. $b)$] Puede variar entre cada máquina, pero debe ser el resultado \texttt{user} que retorna la ejecución con el comando \texttt{time}. \tabto{82ex} [5 pts]\\
+    Escribir el resultado obtenido para $A_1$ y para $A_2$. \tabto{82ex} [5 pts]
+    \item[2. $c)$] Para $A_1$ es $O(n+n)=O(2n)=O(n)$.\tabto{82ex} [5 pts]\\
+    Para $A_2$ es $O(2n)=O(n)$.\tabto{82ex} [5 pts]
+    \item[2. $d)$] De lo anterior se concluye que $A_1$ y $A_2$ tienen la misma complejidad temporal.\tabto{82ex} [5 pts]\\
+\end{enumerate}
+
+\end{document}

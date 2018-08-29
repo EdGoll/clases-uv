@@ -1,0 +1,128 @@
+%\documentclass{article}
+\documentclass[letter,12pt,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[LGR,T1]{fontenc}
+\usepackage{amssymb}                % símbolos especiales
+\usepackage{amsmath, amsthm}        % ambiente \newtheorem
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tabto}                  % \tabto
+\usepackage{url}
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning, calc}
+\tikzstyle{vertex}=[draw,fill=black!15,circle,minimum size=20pt,inner sep=0pt]
+\setlength{\textheight}{23cm}
+\setlength{\textwidth}{18cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\oddsidemargin}{-1cm}
+\setlength{\evensidemargin}{0cm}
+
+% \newtheorem{nombre}{caption}[within]
+\theoremstyle{definition}
+\newtheorem{corolary}{Corolario}[]
+\newtheorem{lemma}{Lema}[]
+\newtheorem{theorem}{Teorema}[]
+\newtheorem{example}{Ejemplo}[section]
+
+% \newenvironment{nombre}[argumentos]{begindef}{enddef}
+\newenvironment{lista}{\begin{list}{\textbullet}{\itemindent -1ex \itemsep -1ex}}{\end{list}}
+
+%-------------------- codigo en Python
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+\pagenumbering{gobble}
+
+%---------------------------- hasta aqui
+
+\rhead{\begin{picture}(0,0) \put(-120,0){\includegraphics[width=40mm]{./image/logo-UV}} \end{picture}}
+\lhead{\vspace{-0.3cm}Universidad de Valparaíso\\Facultad de Ingeniería\\Escuela de Ingeniería Civil Informática\vspace{0.1cm}}
+
+\pagestyle{fancy}
+
+\begin{document}
+%\maketitle
+
+\begin{center}
+$~$
+\end{center}
+
+\noindent
+Nombre: \rule{.6\textwidth}{.5pt} Rut: \rule{.24\textwidth}{.5pt}
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 7}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+  Un {\em índice invertido} ({\em inverted index}, en inglés) es una estructura de datos avanzada que permite guardar, de manera comprimida e indexada, grandes volúmenes de texto provenientes de distintas fuentes (por ejemplo, distintos sitios web). Los datos quedan almacenados de manera ``inteligente'', de modo que luego puedo realizar consultas de ciertos términos (como en un buscador web) y obtener muy eficientemente una lista con las fuentes que contienen dichos términos.
+
+  Este Control 7 requiere que Ud. investigue acerca de los índices invertidos y construya uno manualmente para un caso particular. El Control es individual.
+  
+  Como ayuda, puede comenzar leyendo estos documentos:
+  \begin{itemize}
+      \item {\scriptsize \url{https://en.wikipedia.org/w/index.php?title=Inverted_index&oldid=646021903}}\\[-5ex]
+      \item {\scriptsize \url{https://nlp.stanford.edu/IR-book/html/htmledition/a-first-take-at-building-an-inverted-index-1.html}}
+  \end{itemize}
+
+    A partir de lo anterior, se pide elaborar un documento digitalizado de solo 3 páginas tamaño carta, que contenga lo siguiente:
+
+  \begin{itemize}
+    \item \textbf{Página 1.} Una explicación lo más clara posible de lo que es un índice invertido y de cuáles son sus principales usos. \tabto{86ex}{[25 pts]}
+    \item \textbf{Página 2.} Una lista de referencias utilizadas para la confección de la Página 1. Las referencias deben estar en formato Harvard (\url{http://www.citethisforme.com/harvard-referencing}). Puede usar publicaciones científicas, libros, sitios web, repositorios, etc. \tabto{87ex}{[5 pts]}
+    \item \textbf{Página 3.} Un esquema que explique la creación de un índice invertido para un ejemplo particular conformado por 5 oraciones en castellano, cada una de ellas de un máximo de 20 palabras cada una. Estas oraciones deben ser personales de cada alumno (no se admitirán ejemplos copiados) y deberán escogerse de modo que el ejemplo tenga sentido (para ello debe haber términos repetidos entre oraciones). \tabto{86ex}{[30 pts]}
+  \end{itemize}
+  
+  El documento debe incluir su nombre completo y titularse ``Control 7 de Estructuras de Datos''. Debe entregarse vía correo electrónico a \texttt{fabian.riquelme@uv.cl} como un único archivo llamado \texttt{EstDatos-C7-apellidos.pdf}, donde \texttt{apellidos} son los apellidos del autor. La fecha de entrega es a más tardar el \textbf{29 de noviembre de 2017} a las \textbf{16:00 hrs} (al término de la hora de clases).
+  
+  \textbf{Los trabajos retrasados no serán considerados}, y el alumno será evaluado con la nota mínima.
+  
+\newpage
+\noindent
+Nombre: \rule{.6\textwidth}{.5pt} Rut: \rule{.24\textwidth}{.5pt}
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\
+  Estructuras de datos\\[1ex]
+  Control 7 (Pauta)}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+  \item Una respuesta completa debe contener a lo menos lo siguiente:\\
+  ¿Qué es un índice invertido? Un índice invertido es una estructura de datos avanzada que permite guardar, de manera comprimida e indexada, grandes volúmenes de texto proveniente de distintas fuentes (buscadores web, diccionarios, bases de datos, entre otros). \tabto{87ex} [5 pts]\\
+  ¿Cuál es su principal ventaja? Los índices invertidos permiten almacenar grandes volúmenes de datos de manera compacta, y realizar un eficiente procesamiento de datos (consultas de coincidencias de datos en las distintas fuentes).\tabto{87ex} [5 pts]\\
+  ¿Cómo funcionan? Mediante listas enlazadas, en cuyos cabezales están los distintos términos a consultar y en cuyos nodos enlazados a cada término se indica la fuente que contiene cada dato, así como alternativamente la posición en la cual se encuentra el término dentro de dicha fuente.\tabto{86ex} [10 pts]\\
+  ¿Cuáles son sus principales aplicaciones? buscadores web, recuperación de información, minería de datos, bioinformática, análisis de redes sociales, etc. \tabto{87ex} [5 pts]
+  \item Se incluyen al menos dos referencias.\tabto{87ex} [2 pts]\\
+  Las referencias están en formato Harvard.\tabto{87ex} [1 pts]\\
+  Cada referencia está completa (si existe, se indica el autor, editorial, año, etc.)\tabto{87ex} [2 pts]
+  \item El caso de estudio es correcto: 5 oraciones en castellano con máximo 20 palabras cada una y repeticiones de palabras.\tabto{87ex} [5 pts]\\
+  No solo se incluyen las oraciones y el índice invertido, sino que se explica el ejemplo, de acuerdo con lo solicitado.\tabto{87ex} [5 pts]\\
+  El ejemplo introducido es correcto (incluye tokenización, se visualiza una estructura de lista o al menos de ítemes ordenados, no solo conjuntos).\tabto{86ex} [15 pts]\\
+  El ejemplo se ajusta a 1 página de acuerdo a las instrucciones.\tabto{87ex} [5 pts]
+  \item[*] Otros:\\
+  Formato: -2 pts por no entregar en pdf y -2 por no respetar formato de páginas solicitado.\\
+  Ortografía: -1 pt por faltas menores (tildes, typos) y -2 por faltas mayores o recurrentes.\\
+  Redacción: -1 pt por problemas menores y -2 por problemas mayores que impiden comprender una frase o idea.
+\end{enumerate}
+  
+\end{document}
