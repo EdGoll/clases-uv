@@ -1,0 +1,154 @@
+\documentclass{beamer} % [handout] para imprimir eliminando transiciones
+
+%\usefonttheme[onlymath]{serif}
+%\usepackage{fontspec}
+%\defaultfontfeatures{Mapping=tex-text}
+%\setsansfont[Ligatures={Common}]{Futura}
+%\setmonofont[Scale=0.8]{Monaco}
+
+\usepackage{beamerthemesplit}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\mode<presentation>
+\usetheme{default}
+\usecolortheme{dolphin}
+\usepackage{alltt}    % \begin{alltt}
+\usepackage{amssymb}  % mathematical symbols
+\usepackage{comment}
+\usepackage{multicol} % \multicols
+\usepackage{tabto}    % \tabto
+\usepackage{verbatim} % comentarios
+
+\title{Estructuras de datos}   %[titulo corto]
+\author{Eduardo Godoy Llanca} %[nombre corto]
+\date{2018}                    %[fecha corta]
+\institute{Universidad de Valparaíso}                 %[instituto corto]
+
+\newcommand{\HRule}{\rule{\linewidth}{0.2mm}\\[1ex]}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\redb}[1]{{\color{red!70!black}{#1}}}
+\newcommand{\green}[1]{{\color{green!70!black}{#1}}}
+\newcommand{\gray}[1]{{\color{gray!50!white}{#1}}}
+\newcommand{\textgreek}[1]{\begingroup\fontencoding{LGR}\selectfont#1\endgroup}
+% \alert{texto destacado en rojo}
+% \color{green} Color en verde
+% \structure{texto en lila}
+
+\begin{document}
+
+
+%\begin{frame}%[plain]
+%  \titlepage
+%\end{frame}
+%
+% [opciones]:
+% plain: oculta barra de navegacion, deja + espacio para contenido
+% fragile: usar comandos como verbatim
+% b,c,t: alineacion vertical
+% label=nombre_etiqueta
+% allowframebreaks: divide contenido en varios frames si es demasiado largo
+% shrink: para escribir mucho texto en una transparencia, reduciendo tamano de fuente
+
+%%%%%%%%%% PORTADA %%%%%%%%%%
+\begin{frame}[plain]
+  \begin{figure}[h]
+    \begin{minipage}{0.3\textwidth}
+    \includegraphics[width=.9\textwidth]{./image/logo-UV.png}
+    \end{minipage}
+    \begin{minipage}{0.65\textwidth}
+     $~$\\[3.6ex]
+     \footnotesize{Escuela de Ingeniería Civil Informática}\\
+     \footnotesize{Facultad de Ingeniería}
+    \end{minipage}
+  \end{figure}
+  \begin{center}
+    \vspace{1ex}
+    \HRule
+    \Large{Estructuras de datos}\\{\small Introducción}\\[-1ex]
+    \HRule\vspace{1ex}
+    \large{Eduardo Godoy Llanca}\\[.5ex]\footnotesize{eduardo.gl@gmail.com}\\[6ex] {\tiny 2017-II}\\[6ex]
+  \end{center}
+\end{frame}
+
+%%%%%%%%%% INDEX %%%%%%%%%%
+\begin{frame}
+ \frametitle{Index}
+ \scriptsize 			% reducir tamano de letra
+ \tableofcontents		%[pausesections]
+\end{frame}
+
+%%%%%%%%%%% ACTUAL INDEX %%%%%%%%%%
+%\AtBeginSection[] %generar indice automaticamente
+%{
+%\begin{frame}<beamer>%[plain]
+% \frametitle{Index}
+% \framesubtitle{subtitulo}
+% \scriptsize
+% \tableofcontents[currentsection, currentsubsection]
+%\end{frame}
+%}
+
+%==============================
+\section{Contenido}
+
+%------------------------------
+\subsection{Introducción: Análisis de Algoritmos.}
+\subsection{Unidad I: Tipos de Datos Abstractos.}
+\subsection{Unidad II: Algoritmos de ordenamiento.}
+\subsection{Unidad III: Árboles.}
+\subsection{Unidad IV: Estructuras Aleatorias.}
+
+%==============================
+\section{Evaluaciones}
+
+%------------------------------
+\subsection{Certamenes}
+\begin{frame}
+  \begin{block}{Certamenes}
+  \begin{enumerate}
+    \item Introducción + Unidad I + Unidad II: 22 de Ocubre.
+    \item Unidad III: 26 de Noviembre.
+    \item Unidad IV: 7 de Enero.
+  \end{enumerate}
+  \begin{itemize}
+    \item Ponderación: 80\%
+  \end{itemize}
+
+\end{block}
+\end{frame}
+
+\subsection{Tareas}
+\begin{frame}
+  \begin{block}{Tareas}
+  \begin{itemize}
+    \item Tarea 1, TDA: 1 de Ocubre.
+    \item Tarea 2, Algoritmos de Ordenamiento: 15 de Ocubre.
+    \item Tarea 3, Arboles: 19 de Noviembre.
+    \item Tarea 4, Estructuras Aleatorias: 29 de Diciembre.
+  \end{itemize}
+  \begin{itemize}
+    \item Ponderación: 20\%
+  \end{itemize}
+\end{block}
+\end{frame}
+
+%------------------------------
+
+%------------------------------
+
+\begin{frame}
+ \begin{block}{Bibliografía}
+  \begin{itemize}
+    \item Weiss, M., Estructura de datos y algoritmos,\\ Addison-Wesley, 1995.
+    \item Aho, Hopcroft y Ullman, Estructuras de datos y algoritmos, Addison-Wesley, 1988.
+  \end{itemize}
+ \end{block}
+ \begin{block}{Recursos}
+  \begin{itemize}
+    \item Wikipedia y Wikimedia Commons.
+  \end{itemize}
+ \end{block}
+\end{frame}
+
+\end{document}

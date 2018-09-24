@@ -4,7 +4,7 @@
 %\usepackage{fontspec}
 %\defaultfontfeatures{Mapping=tex-text}
 %\setsansfont[Ligatures={Common}]{Futura}
-%\setmonofont[Scale=0.8]{Monaco} 
+%\setmonofont[Scale=0.8]{Monaco}
 
 \usepackage{beamerthemesplit}
 \usepackage[utf8]{inputenc}
@@ -97,11 +97,11 @@
 
 \begin{frame}{Tipos de datos}
     Un \blue{tipo de datos} es una propiedad o atributo de un conjunto de datos, que determina su dominio de aplicación, qué valores pueden tomar, qué operaciones se les pueden aplicar y cómo son representados internamente por el computador.
-    \medskip\pause 
+    \medskip\pause
 
     Un \blue{tipos de datos primitivo o elemental} es un tipo de datos proveído por un lenguaje de programación. Ejemplos:
     \pause
-    
+
       \begin{multicols}{2}
       \begin{itemize}
         \item<3-> \texttt{char}
@@ -136,7 +136,7 @@
         \item<5-> Legibilidad
         \item<5-> ...
       \end{itemize}
-      \end{multicols}  
+      \end{multicols}
     \end{block}
     }
 \end{frame}
@@ -204,9 +204,9 @@
       \item<1-> Todo polinomio está \blue{superiormente acotado} por otro polinomio.
       \item<2-> La tasa de crecimiento de cualquier polinomio puede representarse simplemente por su \blue{grado}.
       \item<3-> Ej: Si el \blue{tiempo de complejidad} de un algoritmo es $T(n)=3n^2+6n$, decimos que \blue{es del orden $n^2$}, y usamos la notación \blue{$O(n^2)$}, tal que \blue{$T(n)=O(n^2)$}.
-      \item<4-> Formalmente, 
-      \redb{$$f(x)=O(g(x))$$} 
-      si existen $k,x_0$ reales positivos tal que 
+      \item<4-> Formalmente,
+      \redb{$$f(x)=O(g(x))$$}
+      si existen $k,x_0$ reales positivos tal que
       $$|f(x)|\leq k\, |g(x)|\mbox{ , para todo } x\geq x_0$$
   \end{itemize}
 \end{frame}
@@ -221,7 +221,7 @@
   \uncover<3->{
   \begin{block}{Multiplicación}
     \begin{itemize}
-      \item<3-> Si $f_1=O(g_1)$ y $f_2=O(g_2)$, entonces $f_1f_2=O(g_1g_2)$ 
+      \item<3-> Si $f_1=O(g_1)$ y $f_2=O(g_2)$, entonces $f_1f_2=O(g_1g_2)$
       \item<4-> $f\cdot O(g)=O(fg)$
       \item<5-> $O(kg)=O(g)$, para toda constante $k>0$.
     \end{itemize}
@@ -247,36 +247,25 @@
   \end{figure}
 \end{frame}
 
-%------------------------------
-\subsection{Complejidad temporal y espacial}
-
-\begin{frame}{Complejidad temporal vs. complejidad espacial}
+\begin{frame}{Valorizando de forma General.}
   \begin{itemize}
-    \item<1-> Dada una entrada \blue{$w$} para un algoritmo, definimos una función $S:\mathbb{N}\to\mathbb{N}$ tal que \blue{$S(|w|)$} es la cantidad de memoria que usa dicho algoritmo, en función de su tamaño \blue{$|w|$}.
-    \item<2-> Dado un algoritmo $A$ que resuelve un problema en tiempo $T$ ocupando un espacio de memoria $S$.
-      \begin{itemize}
-        \item<3-> Si $T$ es polinomial, entonces $S$... \uncover<4->{es polinomial.}
-        \item<5-> Si $T$ es exponencial, entonces $S$... \uncover<6->{puede ser exponencial o polinomial.}
-        \item<7-> Si $S$ es exponencial, ¿entonces $T$...?
-      \end{itemize}
+    \item El análisis de programas sencillos se puede hacer contando los bucles anidados que contiene el programa. Un sólo bucle sobre n ítems genera f(n)=n. Un bucle dentro de otro bucle f( n ) = n2. Un bucle dentro de un bucle que está dentro de otro bucle genera f( n ) = n3.
+    \item Dado un conjunto de bucles que son secuenciales, el más lento de ellos determina el comportamiento asintótico del programa. Dos bucles anidados, seguidos por un solo bucle, asintóticamente es lo mismo que los bucles anidados por sí solos, ya que los bucles anidados dominan el bucle individual.
     \end{itemize}
 \end{frame}
 
-%------------------------------
-\subsection{Análisis y comparación de algoritmos}
-
-\begin{frame}{Actividad}
-  Comparar tiempo de ejecución de algoritmos de ordenamiento \blue{Bubble sort} y \blue{Quicksort}.\\
-  \redb{\scriptsize\url{https://github.com/vbohush/SortingAlgorithmAnimations/tree/master/src/net/bohush/sorting}}
-  \begin{enumerate}
-      \item Buscar complejidad temporal teórica en notación Big O.
-      \item Ejecutar y comparar para listas ordenadas, desordenadas y ordenadas inversas.
-      \item Modificar algoritmos para contar número de pasos para cada ejecución.
-  \end{enumerate}
+\begin{frame}{Valorizando de forma General.}
+  \begin{itemize}
+    \item Regla General: Dado un conjunto de bucles que son secuenciales, el más lento de ellos determina el comportamiento asintótico del programa. Dos bucles anidados, seguidos por un solo bucle, asintóticamente es lo mismo que los bucles anidados por sí solos, ya que los bucles anidados dominan el bucle individual.
+    \item Regla general: Programas con un Θ mayor corren más lentamente que programas con un Θ menor.
+  \end{itemize}
 \end{frame}
 
-
-%------------------------------
+\begin{frame}{Valorizando de forma General.}
+  \begin{itemize}
+    \item Este filtro de eliminar todos los factores y de mantener el término de mayor crecimiento, como describimos anteriormente, es lo que denominamos asymptotic behavior. Entonces el comportamiento asintótico de f( n ) = 2n + 8 es descrito por la función f( n ) = n.
+  \end{itemize}
+\end{frame}
 
 \begin{frame}
  \begin{block}{Bibliografía}
