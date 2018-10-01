@@ -18,7 +18,7 @@
 \usepackage{multicol} % \multicols
 \usepackage{tabto}    % \tabto
 \usepackage{verbatim} % comentarios
-
+\usepackage{listings}
 \title{Estructuras de datos}   %[titulo corto]
 \author{Fabián Riquelme Csori} %[nombre corto]
 \date{2017}                    %[fecha corta]
@@ -266,6 +266,92 @@
     \item Este filtro de eliminar todos los factores y de mantener el término de mayor crecimiento, como describimos anteriormente, es lo que denominamos asymptotic behavior. Entonces el comportamiento asintótico de f( n ) = 2n + 8 es descrito por la función f( n ) = n.
   \end{itemize}
 \end{frame}
+
+\begin{frame}{Ejemplo.}
+
+\lstinputlisting[language=Java]{src/for1.py}
+
+\end{frame}
+
+\begin{frame}
+ \begin{block}{Solución}
+  \begin{enumerate}
+    \item Contar cuantas instrucciones fundamentales ejecuta este trozo de código
+    \item En [1], requiere 2 instrucciones: una para buscar A[ 0 ]y otra para asignar el valor a M (bajo supuesto que n siempre es al menos 1).
+    \item En [2], el código de iniciación de bucle o for loop también tiene que correr siempre. Esto nos da dos instrucciones más:  asignación i=0 y una comparación i$<$n:
+    \item En [2], Después de cada iteración for loop, se ejecutan dos instrucciones más: un incremento de i y una comparación para chequear si nos mantenemos en el bucle: ++i;
+i$<$n;
+    \item Entonces hasta el momento sin incluir el interior del for se tiene: \textbf{f( n ) = 4 + 2n}
+    \item Ahora en [3], tenemos una operación de búsqueda en array y una comparación que ocurre siempre A[ i ] $>=$ M
+    \item Luego en [4]  dentro del if se tiene una busqueda en array mas una asignación  M = A[ i ].
+    \item Debido a que esto se encuentra dentro de un loop, ocurrirá n veces centrando siempre el análisis en el peor caso 4n.
+    \item Entonces: \textbf{f( n ) = 4 + 2n + 4n = 6n + 4}
+  \end{enumerate}
+ \end{block}
+ \end{frame}
+
+ \begin{frame}
+  \begin{block}{Solución}
+   \begin{enumerate}
+
+     \item [7] Debido a que esto se encuentra dentro de un loop, ocurrirá n veces centrando siempre el análisis en el peor caso 4n.
+     \item [8] Entonces: \textbf{f( n ) = 4 + 2n + 4n = 6n + 4}
+     \item [9] Finalmente por Comportamiento Asintótico se tiene: \textbf{f( n ) = n }
+   \end{enumerate}
+  \end{block}
+  \end{frame}
+
+  \begin{frame}{Ejemplo 2.}
+
+  \lstinputlisting[language=Java]{src/for2.py}
+
+  \end{frame}
+
+  \begin{frame}
+   \begin{block}{Solución}
+    \begin{enumerate}
+
+      \item Como aquí se tienen dos bucles anidados entre sí, se tiene un comportamiento asintótico descrito por f( n ) = n^{2}
+    \end{enumerate}
+   \end{block}
+   \end{frame}
+
+   \begin{frame}{Ejemplo 3.}
+
+   \lstinputlisting[language=Java]{src/for3.py}
+
+   \end{frame}
+
+   \begin{frame}
+    \begin{block}{Solución}
+     \begin{enumerate}
+
+       \item  Asumamos que el array tiene un tamaño que es una potencia exacta de 2.
+       \item El peor escenario para este problema podría ocurrir cuando el valor que buscamos no existe en nuestro array.
+       \item En general, el array se divide por la mitad en cada llamado, hasta que llegamos a 1, entonces:
+       \begin{itemize}
+          \item [0th] iteration: n
+          \item [1^{st}] iteration: {n $/$ 2}
+          \item [2^{nd}] iteration: {n $/$ 4}
+          \item [last] iteration: 1
+       \end{itemize}
+
+     \end{enumerate}
+    \end{block}
+    \end{frame}
+
+
+     \begin{frame}
+      \begin{block}{Solución}
+       \begin{itemize}
+         \item  Ahora se aplica función log. Resolviendo para i, se obtiene: i=  log(n) de la siguiente forma:
+          \begin{itemize}
+         \item 2i = n
+         \item i = log( n )
+         \end{itemize}
+       \end{itemize}
+      \end{block}
+     \end{frame}
 
 \begin{frame}
  \begin{block}{Bibliografía}

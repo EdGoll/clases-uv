@@ -4,7 +4,7 @@
 %\usepackage{fontspec}
 %\defaultfontfeatures{Mapping=tex-text}
 %\setsansfont[Ligatures={Common}]{Futura}
-%\setmonofont[Scale=0.8]{Monaco} 
+%\setmonofont[Scale=0.8]{Monaco}
 
 \usepackage{beamerthemesplit}
 \usepackage[utf8]{inputenc}
@@ -96,19 +96,7 @@
 %-----------------------
 \subsection{Fundamentos}
 
-\begin{frame}{Problema de ordenamiento}
-    \begin{itemize}
-        \item<1-> Sea un subconjunto de $n$ elementos $X=\{e_1,\ldots,e_n\}$\\
-        de un conjunto referencial $Y$, $X\subseteq Y$.
-        \item<1-> Para $Y$ se define una relación de \blue{orden total} $\leq$
-        \begin{itemize}
-            \item<2-> \blue{reflexiva}: \tabto{15ex} \uncover<3->{$\forall e_i\in Y$, $e_i\leq e_i$}
-            \item<2-> \blue{anti-simétrica}: \tabto{15ex} \uncover<4->{$\forall e_i,e_j\in Y$, $e_i\leq e_j\wedge e_j\leq e_i\Rightarrow e_i=e_j$}
-            \item<2-> \blue{transitiva}:\tabto{15ex} \uncover<5->{$\forall e_i,e_j,e_k\in Y$, $e_i\leq e_j\wedge e_j\leq e_k\Rightarrow e_i\leq e_k$}
-        \end{itemize}
-        \item<6-> Problema: dado $(X,\leq)$, mediante una serie de permutaciones $\sigma$ encontrar una secuencia $X <e_{\sigma(1)},\ldots,e_{\sigma(n)}>$ que verifique $e_{\sigma(1)}\leq\ldots\leq e_{\sigma(n)}$.
-    \end{itemize}
-\end{frame}
+
 
 \begin{frame}{Aplicaciones}
     \begin{itemize}
@@ -170,8 +158,8 @@
 \begin{frame}{Ejercicios}
     \begin{itemize}
         \item Ordenar ``en papel'' el siguiente vector utilizando los tres métodos anteriores: \blue{[8, 5, 2, 6, 9, 3, 1, 4, 0, 7]}.
-        \item Implementar los pseudocódigos anteriores y comprobar sus resultados del ejercicio anterior.
-        \item Incluir un contador de iteraciones en sus algoritmos y comprobar cuál requiere menos iteraciones de los tres.
+      %  \item Implementar los pseudocódigos anteriores y comprobar sus resultados del ejercicio anterior.
+    %    \item Incluir un contador de iteraciones en sus algoritmos y comprobar cuál requiere menos iteraciones de los tres.
     \end{itemize}
 \end{frame}
 
@@ -200,7 +188,7 @@
     \begin{itemize}
         \item Se toma un elemento arbitrario del vector (\blue{pivote} $p$). El vector se \blue{particiona} tal que a izquierda queda todo $\leq p$ y a derecha $\geq p$. Se ordena por separado cada zona delimitada por pivote.
         \vspace{2ex}
-        
+
         \begin{center}
             \includegraphics[width=.85\textwidth]{./image/cap5/quicksort1.png}
         \end{center}
@@ -266,8 +254,8 @@
         \begin{itemize}
             \item Para Quicksort, probar con el pivote en v[0] y v[5].
         \end{itemize}
-        \item Implementar los pseudocódigos anteriores y comprobar sus resultados del ejercicio anterior.
-        \item Incluir un contador de iteraciones en sus algoritmos y comprobar cuál requiere menos iteraciones de los tres.
+      %  \item Implementar los pseudocódigos anteriores y comprobar sus resultados del ejercicio anterior.
+      %  \item Incluir un contador de iteraciones en sus algoritmos y comprobar cuál requiere menos iteraciones de los tres.
     \end{itemize}
 \end{frame}
 
