@@ -4,7 +4,7 @@
 %\usepackage{fontspec}
 %\defaultfontfeatures{Mapping=tex-text}
 %\setsansfont[Ligatures={Common}]{Futura}
-%\setmonofont[Scale=0.8]{Monaco} 
+%\setmonofont[Scale=0.8]{Monaco}
 
 \usepackage{beamerthemesplit}
 \usepackage[utf8]{inputenc}
@@ -334,29 +334,59 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Ejercicios}
+\begin{frame}{Arboles AVL}
+  \begin{itemize}
+\item Tipo de árbo inentado por Adelson-Valeskii-Landis (AVL).
+\item Son arboles binarios donde todos sus elementos estan ordenados.
+\end{itemize}
+Sus principales características son:
+\begin{itemize}
+  \item Son equilibrados respecto a su altura, debido que las alturas de los sub árboles difieren a lo mas en 1.
+  \item Factor de equilibrio: Sean AI y AD alturas de sub árbol izquierdo y derecho respectivamente se tiene que es equilibrado si {\mid AI-AD \mid \leq 1}.
+\end{itemize}
+\end{frame}
 
-Utilizando el lenguaje de programación que más le acomode:
-    \begin{itemize}
-        \item \blue{Montículos} (\blue{Heaps})
-        \begin{enumerate}
-            \item Implemente un montículo utilizando un vector.
-            \item Implemente las funciones de inserción y eliminación.
-            \item Tip: puede inspirarse en la biblioteca estándar de C++\\
-            \blue{\scriptsize\url{http://www.cplusplus.com/reference/algorithm/sort_heap/}}\\
-            pero la idea es que lo implemente Ud.
-        \end{enumerate}
-        \item \blue{Árboles binarios de búsqueda} (\blue{BST})
-        \begin{enumerate}
-            \item Implemente un BST utilizando un vector.
-            \item Implemente las funciones de búsqueda, inserción y eliminación en los tres casos.
-        \end{enumerate}
-        \item \blue{Árboles AVL}
-        \begin{enumerate}
-            \item Investigue sobre las diferencias en las operaciones de inserción y borrado de nodos entre estos árboles y los BST.
-            \item ¿Cuáles son las ventajas algorítmicas de un AVL en comparación a un BST general?
-        \end{enumerate}
-    \end{itemize}
+\begin{frame}{Estructura de nodo de arbol AVL. }
+  NodoArbol\{ \\
+    \quad \quad Objeto: dato;\\
+    \quad \quad Hijo: izquierdo, derechos\\
+    \quad \quad Integer: Factor de equilibrio;\\
+  \}\\
+  \begin{itemize}
+    \item ¿Qué pasa si el FA no cumple la condicion 	\leq 1 ?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Rotación. }
+\begin{itemize}
+  \item II, ID, DD, DI
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Rotación Izquierda-Izquierda}
+    \begin{center}
+        \includegraphics[width=\textwidth]{./image/cap3/II.PNG}
+    \end{center}
+\end{frame}
+\begin{frame}{Rotación Derecha-Derecha}
+    \begin{center}
+        \includegraphics[width=\textwidth]{./image/cap3/DD.PNG}
+    \end{center}
+\end{frame}
+\begin{frame}{Rotación Izquierda-Derecha}
+    \begin{center}
+        \includegraphics[width=\textwidth]{./image/cap3/ID.PNG}
+    \end{center}
+\end{frame}
+\begin{frame}{Rotación Derecha-Izquierda}
+    \begin{center}
+        \includegraphics[width=\textwidth]{./image/cap3/DI.PNG}
+    \end{center}
+\end{frame}
+\begin{frame}{Ejemplo:}
+    \begin{center}
+        \includegraphics[width=\textwidth]{./image/cap3/avl_ej1.PNG}
+    \end{center}
 \end{frame}
 
 %==============================
@@ -375,7 +405,7 @@ Utilizando el lenguaje de programación que más le acomode:
             Inserción & $O(n)$ & $O(\log n)$ & $O(\log n)$\\
             Borrado   & $O(n)$ & $O(\log n)$ & $O(\log n)$\\
         \end{tabular}\\[1.2ex]
-        
+
         En el ``caso promedio'', todos son $O(\log n)$.
         \item<4-> A pesar de esto, el árbol B es una estructura de datos más eficiente para \redb{gandes volúmen de datos}, donde se requiere \redb{disminuir el número de accesos}: bases de datos, discos duros, memorias externas, sistemas de archivos.
     \end{itemize}
@@ -485,7 +515,7 @@ Utilizando el lenguaje de programación que más le acomode:
         \item El elemento en posición media (10), junto con el enlace al nuevo nodo, se envía al padre para su inserción.
     \end{itemize}
     \vspace{-.2ex}
-    
+
     \begin{center}
         \includegraphics[width=\textwidth]{./image/cap3/b-tree-insert7}
     \end{center}
@@ -601,14 +631,14 @@ Utilizando el lenguaje de programación que más le acomode:
 
 \begin{frame}{Borrado - Fusión}
     \vspace{-2ex}
-    
+
     {\small
     \begin{itemize}
         \item Hermanos se fusionan con clave del padre.\\[-1ex]
         \item Padre queda con 1 clave y su hermano no puede transferir.
     \end{itemize}}
     \vspace{-3ex}
-    
+
     \begin{center}
         \includegraphics[width=\textwidth]{./image/cap3/b-tree-delete10}
     \end{center}
