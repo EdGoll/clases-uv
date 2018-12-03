@@ -151,6 +151,33 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Tablas Hash: Estructura}
+    \begin{itemize}
+        \item Se representa mediante un array con B posiciones (0,...,B-1).
+         \begin{itemize}
+           \item h(x)= posición dentro de  (0,...,B-1).
+         \end{itemize}
+        \item El elemento (x,v) se inserta en esta posición
+    \end{itemize}
+
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{./image/cap4/hassh_array.png}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}{Tablas Hash: Estructura}
+    \begin{itemize}
+        \item Para buscar el elemento con clave x, aplicar la funcon h(x) y buscar la posición correspondiente. Ejemplo
+         \begin{itemize}
+           \item Si x es de tipo entero \Rightarrow h(x) = x Módulo B \\
+           \item Si x es de dipo cadena (string) \Rightarrow  h(x) =  (\displaystyle\sum_{i=1}^{n} ascii (x_i)) Módulo B
+         \end{itemize}
+        \item El elemento (x,v) se inserta en esta posición
+    \end{itemize}
+
+
+\end{frame}
 %-----------------------
 \subsection{Colisiones}
 
@@ -228,6 +255,23 @@
     Buenas alternativas son las llamadas \blue{funciones hash criptográficas}.
 \end{frame}
 
+\subsection{Analisis} {Ventajas/Desventajas}
+\begin{frame}{Ventajas}
+\begin{itemize}
+  \item No necesita almacenamiento adicional (índice).
+  \item Facilita la inserción y eliminación rápida de registros.
+  \item Encuentra  registros con muy pocos accesos en promedio al disco.
+  \item La idea general de hashing es colocar, en la forma menos relacionada porsible la información facilitando la eficiencia en el acceso.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Desventajas}
+\begin{itemize}
+  \item No se pueden usar registros de longitud variable.
+  \item No se pueden aplicar oordenamientos a la información contenida dentro de la tabla.
+  \item No permite llaves duplicadas.
+\end{itemize}
+\end{frame}
 
 \subsection{Ejemplos} {Ejercicios (1)}
 \begin{frame}{Ejercicios 1 - Lineal}
