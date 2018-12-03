@@ -77,7 +77,7 @@
 \begin{itemize}
 \item[-] El puntaje máximo  es 100 puntos.
 \item[-] Tiempo máximo: 120 minutos.
-\item[-] El trabajo es \underline{\textbf{individual}}. Cualquier intento de copia, será sancionado según dicta el reglamento de la carrera.
+\item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, será sancionado según dicta el reglamento de la carrera.
 \end{itemize}
 
 \noindent
@@ -162,10 +162,10 @@
     \end{tabular}
 
     \begin{enumerate}
-        \item ¿Cuántas veces itera cada uno de los tres ``\texttt{for}''? \tabto{77ex} [5 pts]
-        \item ¿Cómo calcula el tiempo de CPU de ejecución de cada algoritmo? Calcule. \tabto{76ex} [10 pts]
-        \item ¿Cuál es el tiempo de ejecución en notación big O de cada algoritmo? \tabto{76ex} [10 pts]
-        \item ¿Qué algoritmo es más eficiente en términos de complejidad temporal? \tabto{77ex} [5 pts]
+        \item ¿Cuántas veces itera cada uno de los tres ``\texttt{for}''? [5 pts]
+        \item ¿Cómo calcula el tiempo de CPU de ejecución de cada algoritmo? Calcule. [10 pts]
+        \item ¿Cuál es el tiempo de ejecución en notación big O de cada algoritmo? [10 pts]
+        \item ¿Qué algoritmo es más eficiente en términos de complejidad temporal? [5 pts]
     \end{enumerate}
 \end{itemize}
 
@@ -270,17 +270,16 @@ tiene ponderación cero.
   \begin{questions}
 
     \begin{enumerate}
-    \item \textbf{\emph{30pts.}}
 
-    \item Considere el siguiente pseudocódigo, que define una lista doblemente enlazada de nodos:
+    \item \textbf{\emph{30pts.}} Considere el siguiente pseudocódigo, que define una lista  enlazada de nodos:
 
     \texttt{struct Node \{}\\
-    $~~~~$\texttt{data;} \tabto{23ex}// Dato almacenado en el nodo\\
-    $~~~~$\texttt{next;} \tabto{23ex}// Puntero al nodo siguiente (NULL para el último nodo)\\
+    $~~~~$\texttt{data;} // Dato almacenado en el nodo\\
+    $~~~~$\texttt{next;} // Puntero al nodo siguiente (NULL para el último nodo)\\
     \texttt{\}}\\
-    \texttt{struct List \{}\\
-    $~~~~$\texttt{Node FirstNode;} \tabto{23ex}// La lista apunta al primer nodo; NULL si está vacía\\
-    $~~~~$\texttt{Node LastNode;} \tabto{23ex}// La lista apunta al último nodo; NULL si está vacía\\
+    \texttt{Punteros de la lista \{}\\
+    $~~~~$\texttt{Node FirstNode;} // La lista apunta al primer nodo; NULL si está vacía\\
+    $~~~~$\texttt{Node LastNode;} // La lista apunta al último nodo; NULL si está vacía\\
     \texttt{\}}
 
     Para insertar un nodo \texttt{newNode} después de un nodo \texttt{node}, se define la función \texttt{insertAfter}:
@@ -299,8 +298,8 @@ tiene ponderación cero.
 
     A partir de lo anterior, defina:
     \begin{enumerate}
-        \item Una función \texttt{insertEnd}, que inserta un nodo \texttt{newNode} al final de \texttt{list}. \tabto{76ex} [15 pts]
-        \item Una función \texttt{removeAfter}, que elimina un nodo \texttt{Node}. \tabto{76ex} [15 pts]
+        \item Una función \texttt{insertEnd}, que inserta un nodo \texttt{newNode} al final de \texttt{list}.  [15 pts]
+        \item Una función \texttt{removeAfter}, que elimina un nodo \texttt{Node}. [15 pts]
     \end{enumerate}
 \end{enumerate}
 
