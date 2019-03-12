@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Test matrices</title>
+<script>
+
+function main(){
+
+	var fig1 = new Array(4,4);
+	fig1 =[
+	       [0,1,1,0],
+	       [0,1,1,0],
+	       [0,1,1,0],
+	       [1,0,0,1]
+	      ];
+	var fig2 = new Array(4,4);
+	fig2 =[
+	       [0,1,1,1],
+	       [0,1,1,0],
+	       [0,1,1,0],
+	       [1,1,0,0]
+	      ];
+
+	var figuras = new Array();
+
+	figuras = [fig1, fig2];
+
+	var totalFiguras = figuras.length;
+
+	document.getElementById("temp1").innerHTML = fig1;
+
+	document.getElementById("temp2").innerHTML = fig2dec(fig1);
+
+	var fig1_rot = new Array();
+	fig1_rot = fig1.rotar90();
+
+	document.getElementById("temp3").innerHTML = fig1_rot;
+	document.getElementById("temp4").innerHTML = fig2dec(fig1_rot);
+}
+
+
+
+
+function fig2dec (fig){
+    var totalFilas = fig.length;
+    var totalCols  = fig[0].length;
+
+    //Se parte por el bit más significativo
+    var pesoBit = totalFilas * totalCols - 1;
+    var valorDecimal = 0;
+
+	for (var i = 0; i < totalFilas; i++) {
+		for (var j = 0; j < totalCols; j++) {
+			var bit = fig[i][j];
+			//alert("Peso="+pesoBit);
+			//alert("i="+i+" j="+j);
+			valorDecimal += bit * Math.pow(2, pesoBit);
+			pesoBit--;
+		};
+	};
+
+	return(valorDecimal);
+}
+
+
+Array.prototype.rotar90 = function() {
+  var newMatrix = [];
+  var filas = this.length;
+
+  var i, j;
+
+  for (i = 0; i < filas; i++) {
+  	var temp = [];
+    for (j = filas - 1; j !== -1; j--) {
+      temp.push(this[j][i]);
+    }
+    newMatrix.push(temp);
+  }
+  return newMatrix;
+};
+
+
+</script>
+</head>
+
+<!-- NO MODIFIQUE EL FORMULARIO !!!!! -->
+
+<body onLoad="main();">
+
+
+<h1>TEST.</h1>
+
+<p id="temp1"></p>
+<p id="temp2"></p>
+<p id="temp3"></p>
+<p id="temp4"></p>
+ 
+</body>
+</html>
