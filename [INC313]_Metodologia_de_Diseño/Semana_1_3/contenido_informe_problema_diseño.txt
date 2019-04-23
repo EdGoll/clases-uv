@@ -1,0 +1,10 @@
+Indice
+introducción
+Definición del problema -> Describir principal impacto del problema de diseño a corto y/o Largo plazoi
+						-> Evidenciar con código fuente y diagrama de clases actual.
+
+Solución propuesta -> Justificar solución mediante la aplicación de los principios estudiados.
+Diseño -> Presentar nuevo Diseño
+	   -> Evidenciar aplicación de Principio y mejora 
+Presentar nuevo Diseño. 
+Conclusión
