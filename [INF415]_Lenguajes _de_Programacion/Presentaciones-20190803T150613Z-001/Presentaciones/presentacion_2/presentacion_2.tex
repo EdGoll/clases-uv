@@ -1,0 +1,399 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+	\usetheme{CambridgeUS}
+	\setbeamercovered{transparent}
+}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{algorithm,algorithmic}
+
+\title[\textbf{ICI 4242 - Aut\'omatas y compiladores}]{\textbf{ICI 4242 - Aut\'omatas y compiladores}}
+
+\subtitle{Expresiones regulares}
+
+\author[Rodrigo Olivares]
+{
+	Rodrigo Olivares \\
+	\vspace{0.5mm}
+	Mg. en Ingenier\'ia Inform\'atica \\
+	\vspace{0.5mm}
+	\texttt{\normalsize rodrigo.olivares@uv.cl}
+}
+
+\institute[PUCV]
+
+\date{1er Semestre} 
+
+\subject{Expresiones regulares}
+
+%\AtBeginSection
+%{
+%	\begin{frame}<beamer>
+%	\frametitle{Contenido}
+%	\tableofcontents[currentsection,currentsubsection]
+%	\end{frame}
+%}
+%
+%\AtBeginSubsection
+%{
+%	\begin{frame}<beamer>
+%	\frametitle{Contenido}
+%	\tableofcontents[currentsection,currentsubsection]
+%	\end{frame}
+%}
+%
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+%	\begin{frame}
+%		\frametitle{Contenido}
+%		\tableofcontents%[pausesections]
+%	\end{frame}
+
+	\section{Concepto}
+
+		\subsection{Definici\'on}
+
+		\begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Definici\'on}
+
+			\begin{block}{Objetivo}
+			    El objetivo de las expresiones regulares es representar todos los posibles lenguajes definidos sobre un alfabeto $\Sigma$, en base a una serie de lenguajes primitivos, y operadores de composici\'on.
+			\end{block}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Definici\'on}
+
+			\begin{block}{Lenguajes primitivos}
+			    \begin{itemize}
+			        \item[-] El lenguaje vac\'io.
+			        \item[-] El lenguaje formado por la palabra vac\'ia.
+			        \item[-] Los lenguajes correspondientes a los distintos s\'imbolos del alfabeto.
+			    \end{itemize}
+			\end{block}
+			\begin{block}{Operadores de composici\'on}
+			    \begin{itemize}
+			        \item[-] La uni\'on 
+			        \item[-] La concatenaci\'on.
+			        \item[-] La clausura o cierre.
+			    \end{itemize}
+			\end{block}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Definici\'on}
+
+			\begin{exampleblock}{Ejemplo}
+			    \begin{itemize}
+			        \item[1.-] Lenguaje formado por las cadenas que terminan en 01:
+			        \begin{table}[H]
+			            \begin{center}
+			                \begin{tabular}{ccl}
+			                    $\{0,1\}^{*}.\{01\}$ & $=$ & \\
+			                    & $=$ & $(\{0\} \cup \{1\})^{*}.\{01\}$  \\
+			                    & $=$ & $(0+1)^{*}01$ \emph{Expresi\'on regular}
+			                \end{tabular}
+			            \end{center}
+			        \end{table}
+			        \item[2.-] Lenguaje formado por palabras de longitud par sobre a's y b's:
+			        \begin{table}[H]
+			            \begin{center}
+			                \begin{tabular}{ccl}
+			                    $\{aa,ab,ba,bb\}^{*}$ & $=$ & \\
+			                    & $=$ & $(\{aa\} \cup \{ab\} \cup \{ba\} \cup \{bb\})^{*}$  \\
+			                    & $=$ & $(aa+ab+ba+bb)^{*}$ \emph{Expresi\'on regular}
+			                \end{tabular}
+			            \end{center}
+			        \end{table}
+			    \end{itemize}
+			\end{exampleblock}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Definici\'on}
+
+			\begin{block}{Definici\'on}
+			   \begin{itemize}
+			       \item[] Dado un alfabeto $\Sigma$, las expresiones regulares sobre $\Sigma$ se definen de forma recursiva por las siguientes reglas:
+			       \begin{itemize}
+			           \item[1.-] Las siguientes expresiones son expresiones primitivas:
+			           \begin{itemize}
+			               \item[-] $\O$
+			               \item[-] $\lambda$
+			               \item[-] $\sigma$, siendo $\sigma \in \Sigma$
+			           \end{itemize}
+			           \item[2.-] Sean $\alpha$ y $\beta$ expresiones regulares, entonces son expresiones regulares derivadas:
+			           \begin{itemize}
+			               \item[-] $\alpha + \beta$ (uni\'on)
+			               \item[-] $\alpha.\beta$ (o simplemente $\alpha\beta$) (concatenaci\'on)
+			               \item[-] $\alpha^{*}$ (cierre)
+			               \item[-] ($\alpha$)
+			           \end{itemize}
+			           \item[] No hay m\'as expresiones regulares sobre $\Sigma$ que las construidas mediante estas reglas.
+			       \end{itemize}
+			   \end{itemize}
+			\end{block}
+		\end{frame}
+
+        \begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Definici\'on}
+
+			\begin{block}{Precedencia de operadores}
+			    \begin{itemize}
+			        \item[1.-] ()
+			        \item[2.-] $^{*}$ (cierre)
+			        \item[3.-] . (concatenaci\'on)
+			        \item[4.-] $+$ (uni\'on)
+			    \end{itemize}
+			\end{block}
+
+			\begin{exampleblock}{Algunos ejemplos de expresiones regulares}
+			   \begin{itemize}
+			       \item[-] $(0+1)^{*}01$
+			       \item[-] $(aa+ab+ba+bb)^{*}$
+			       \item[-] $a^{*}(a+b)$
+			       \item[-] $(aa)^{*}(bb)^{*}b$
+			   \end{itemize}
+			\end{exampleblock}
+		\end{frame}
+
+        \subsection{Lenguaje descrito}
+
+        \begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Lenguaje descrito}
+
+			\begin{block}{Lenguaje descrito - Definici\'on}
+			    Sea \textbf{r} una expresi\'on regular sobre $\sigma$. El \textbf{lenguaje descrito por r}, $L(r)$, se define recursivamente de la siguiente forma:
+			    \begin{table}[H]
+			            \begin{center}
+			                \begin{tabular}{rlllll}
+			                    1.- & Si \textbf{r} = $\O$                         & $\Rightarrow$ & $L(\O)$                     & = & $\O$\\
+			                    2.- & Si \textbf{r} = $\lambda$                 & $\Rightarrow$ & $L(\lambda)$             & = & $\{\lambda\}$\\
+			                    3.- & Si \textbf{r} = $a$, $a \in \Sigma$   & $\Rightarrow$ & $L(a)$                        & = & $\{a\}$ \\
+			                    4.- & Si \textbf{r} = $\alpha + \beta$        & $\Rightarrow$ & $L(\alpha + \beta)$    & = & $L(\alpha) \cup L(\beta)$ \\
+			                    5.- & Si \textbf{r} = $\alpha.\beta$           & $\Rightarrow$ & $L(\alpha.\beta)$       & = & $L(\alpha).L(\beta)$ \\
+			                    6.- & Si \textbf{r} = $\alpha^{*}$              & $\Rightarrow$ & $L(\alpha^{*})$          & = & $L(\alpha)^{*}$\\
+			                    7.- & Si \textbf{r} = $(\alpha)$                 & $\Rightarrow$ & $L((\alpha))$              & = & $L(\alpha)$ \\
+			                \end{tabular}
+			            \end{center}
+			        \end{table}
+			        donde $\alpha$ y $\beta$ son expresiones regulares.
+			\end{block}
+		\end{frame}
+
+        \begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Lenguaje descrito}
+
+			\begin{exampleblock}{Ejemplo}
+			    Mostrar el lenguaje descrito por una ER mediante notaci\'on por comprensi\'on (conjuntista):
+			    \begin{table}[H]
+			            \begin{center}
+			                \begin{tabular}{rcl}
+			                    $L(a^{*}(a+b))$ 
+			                    & = & $L(a^{*})L((a+b))$ \\
+			                    & = & $L(a)^{*}L(a+b)$ \\
+			                    & = & $L(a)^{*}(L(a) \cup L(b))$ \\
+			                    & = & $\{a\}^{*}(\{a\} \cup \{b\})$ \\
+			                    & = & $\{\lambda,a,aa,aaa,\ldots\}\{a,b\}$ \\
+			                    & = & $\{a,aa,aaa,\ldots,b,ab,aab,aaab,\ldots\}$ \\
+			                    & = & $\{a^{n}~|~n \geq 1\} \cup \{a^{n}b~|~n \geq 0\}$ \\
+			                \end{tabular}
+			            \end{center}
+			        \end{table}
+			\end{exampleblock}
+		\end{frame}
+
+        \begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Lenguaje descrito}
+
+			\begin{exampleblock}{Ejercicios}
+			    Mostrar el lenguaje descrito por una ER mediante notaci\'on por comprensi\'on (conjuntista):
+			    \begin{itemize}
+			        \item[1.-] $L((aa)^{*}(bb)^{*}b)$ \textquestiondown~= ? $\{a^{2n}b^{2m+1}~|~n,m \geq 0\}$.
+			        \item[2.-] Si $\Sigma = \{a,b,c\} \Rightarrow L((a+b+c)^{*})$ \textquestiondown~= ? $\Sigma^{*}$.
+			        \item[3.-] $L(a^{*}.(b+c))$.
+			        \item[4.-] $L(0^{*}.1.0^{*})$.
+			        \item[5.-] $L((a+b+c+\cdots+z)^{*}.(a+b)^{*})$.
+			    \end{itemize}
+			\end{exampleblock}
+		\end{frame}
+
+        \subsection{Propiedades}
+
+        \begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Propiedades}
+
+			\begin{exampleblock}{Definici\'on - Equivalencia}
+			    Dos expresiones regulares $r_{1}$ y $r_{2}$ se dicen equivalentes, $r_{1} = r_{2}$, si describen el mismo lenguaje, esto es, si $L(r_{1})=L(r_{2})$. En base a esta definici\'on se pueden establecer las siguientes equivalencias y propiedades:
+			\end{exampleblock}
+		\end{frame}
+
+        \begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Propiedades}
+
+			\begin{block}{Definici\'on - Equivalencia}
+			    \begin{itemize}
+			        \item[] Respecto a las operaciones + (uni\'on) y . (concatenaci\'on):
+			        \begin{itemize}
+			            \item[1.-] Son asociativas: 
+			            \begin{itemize}
+			                \item[$\rightarrow$] $\alpha + (\beta + \gamma) = (\alpha + \beta) + \gamma = \alpha + \beta + \gamma$
+			                \item[$\rightarrow$] $\alpha.(\beta.\gamma) = (\alpha.\beta).\gamma = \alpha.\beta.\gamma$
+			            \end{itemize}
+			            \item[2.-] $+$ es conmutativa e idempotente: 
+			            \begin{itemize}
+			                \item[$\rightarrow$] $\alpha + \beta = \beta + \alpha$
+			                \item[$\rightarrow$] $\alpha + \alpha = \alpha$
+			            \end{itemize}
+			            \item[3.-] Distributividad:
+			            \begin{itemize}
+			                \item[$\rightarrow$] $\alpha.(\beta + \gamma)=\alpha.\beta+\alpha.\gamma$
+			                \item[$\rightarrow$] $(\alpha + \beta).\gamma = \alpha.\gamma + \beta.\gamma$
+			            \end{itemize}
+			        \end{itemize}
+			    \end{itemize}
+			\end{block}
+		\end{frame}
+
+        \begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Propiedades}
+
+			\begin{block}{Definici\'on - Equivalencia}
+			    \begin{itemize}
+			        \item[] Respecto a las operaciones + (uni\'on) y . (concatenaci\'on):
+			        \begin{itemize}
+			            \item[4.-] Elemento neutro:
+			            \begin{itemize}
+			                \item[$\rightarrow$] $\alpha.\lambda = \lambda.\alpha = \alpha$
+			                \item[$\rightarrow$] $\alpha + \O = \O + \alpha = \alpha$
+			            \end{itemize}
+			            \item[5.-] Lenguaje Vac\'io:
+			            \begin{itemize}
+			                \item[$\rightarrow$] $\O.\alpha = \alpha.\O = \O$
+			            \end{itemize}
+			            \item[6.-] Uni\'on vac\'ia:
+			            \begin{itemize}
+			                \item[$\rightarrow$] Si $\lambda \in L(\alpha)$, entonces $\alpha + \lambda = \alpha $
+			            \end{itemize}
+			        \end{itemize}
+			    \end{itemize}
+			\end{block}
+		\end{frame}
+
+        \begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Propiedades}
+
+			\begin{block}{Definici\'on - Equivalencia}
+			    \begin{itemize}
+			        \item[] Respecto a la operaci\'on * (cierre o clausura):
+			        \begin{itemize}
+			            \item[7.-] $\alpha^{*} = \lambda + \alpha.\alpha^{*}$
+			            \item[8.-] $\lambda^{*} = \lambda$
+			            \item[9.-] $\O^{*} = \lambda$
+			            \item[10.-] $\alpha^{*}.\alpha^{*} = \alpha^{*}$
+			            \item[11.-] $\alpha.\alpha^{*} = \alpha^{*}.\alpha$
+			            \item[12.-] $(\alpha^{*})^{*} = \alpha^{*}$
+			            \item[13.-] $(\alpha^{*}+\beta^{*})^{*} = (\alpha^{*}.\beta^{*})^{*} = (\alpha + \beta)^{*} = (\alpha^{*}.\beta)^{*}.\alpha^{*}$
+			            \item[14.-] $(\alpha.\beta)^{*}.\alpha = \alpha.(\beta.\alpha)^{*}$
+			        \end{itemize}
+			    \end{itemize}
+			\end{block}
+		\end{frame}
+
+        \begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Propiedades}
+
+			\begin{exampleblock}{Ejemplos}
+			    Para comprobar si dos expresiones son equivalentes se puede intentar transformarlos mediante estas reglas en una misma expresi\'on. $\Sigma=\{a,b,c\}$ 
+			    \begin{table}[H]
+			                \begin{tabular}{rcll}
+			                   \multicolumn{4}{l}{$c^{*}.c+c^{*}$ \textquestiondown~= ? $c^{*}$} \\ 
+			                   & & & \\
+			                    $c^{*}.c + c^{*}$
+			                    & = & $c^{*}.c + c^{*} + \lambda$ & (por 6) \\
+			                    & = & $c.c^{*} + c^{*} + \lambda$ & (por 11) \\
+                               & = & $\lambda + c.c^{*} + c^{*}$ & (por 2) \\
+                               & = & $c^{*} + c^{*}$ & (por 7) \\
+                               & = & $c^{*}$ & (por 2) \\
+			                \end{tabular}
+			        \end{table}
+			\end{exampleblock}
+		\end{frame}
+
+        \begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Propiedades}
+
+			\begin{exampleblock}{Ejemplos}
+			    Para comprobar si dos expresiones son equivalentes se puede intentar transformarlos mediante estas reglas en una misma expresi\'on. $\Sigma=\{a,b,c\}$ 
+			    \begin{table}[H]
+			                \begin{tabular}{rcll}
+			                   \multicolumn{4}{l}{$c+c^{*}$ \textquestiondown~= ? $c^{*}$} \\ 
+			                   & & & \\
+			                    $c + c^{*}$
+			                    & = & $c + \lambda + c.c^{*}$ & (por 7) \\
+			                    & = & $\lambda + c + c.c^{*}$ & (por 2) \\
+                               & = & $\lambda + c.\lambda + c.c^{*}$ & (por 4) \\
+                               & = & $\lambda + c.(\lambda + c^{*})$ & (por 3) \\
+                               & = & $\lambda + c.c^{*}$ & (por 6) \\
+                               & = & $c^{*}$ & (por 7) \\
+			                \end{tabular}
+			        \end{table}
+			\end{exampleblock}
+		\end{frame}
+
+        \begin{frame}
+			\frametitle{Concepto}
+			\framesubtitle{Propiedades}
+
+			\begin{exampleblock}{Ejercicios}
+			    \begin{itemize}
+			        \item[1.-] $((c + b.a)^{*}.a^{*})^{*}$ \textquestiondown~= ? $((c + b.a) + a)^{*}$
+			        \item[2.-] Dado dos expresiones regulares $r = b.c+a.c^{*}.a.c+a.c^{*}.c+a$ y $s=(b + a.c^{*}a).c+a.c^{*}$. \textquestiondown Representan \emph{r} y \emph{s} el mismo lenguaje?
+			        \item[3.-] Sea $r = (a^{*}.(b + c)^{*}+b^{*})^{*}$ y $s = (a + b + c)^{*}$,, demuestre $r$ \textquestiondown~= ? $s$.
+			    \end{itemize}
+			\end{exampleblock}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Preguntas}
+
+			\hspace{4cm}\huge{Preguntas ?}
+		
+		\end{frame}
+	\end{document}
+
+\usetheme{default}
+\usetheme{JuanLesPins}
+\usetheme{Goettingen}
+\usetheme{Szeged}
+\usetheme{Warsaw}
+
+\usecolortheme{crane}
+
+\usefonttheme{serif}
+\usefonttheme{structuresmallcapsserif}

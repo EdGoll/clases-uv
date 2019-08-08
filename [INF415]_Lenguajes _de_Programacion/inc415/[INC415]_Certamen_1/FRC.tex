@@ -1,0 +1,274 @@
+%\documentclass{article}
+\documentclass[letter,12pt,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[LGR,T1]{fontenc}
+\usepackage{amssymb}                % símbolos especiales
+\usepackage{amsmath, amsthm}        % ambiente \newtheorem
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tabto}                  % \tabto
+\setlength{\textheight}{21cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{0cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+
+%---- C language ----
+\usepackage{xcolor}
+\usepackage{listings}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+%---- FIN ----
+
+
+% \newtheorem{nombre}{caption}[within]
+\theoremstyle{definition}
+\newtheorem{corolary}{Corolario}[]
+\newtheorem{lemma}{Lema}[]
+\newtheorem{theorem}{Teorema}[]
+\newtheorem{example}{Ejemplo}[section]
+
+% \newenvironment{nombre}[argumentos]{begindef}{enddef}
+\newenvironment{lista}{\begin{list}{\textbullet}{\itemindent -1ex \itemsep -1ex}}{\end{list}}
+
+\rhead{\begin{picture}(0,0) \put(-120,0){\includegraphics[width=40mm]{./image/logo-UV}} \end{picture}}
+\lhead{\vspace{-0.3cm}Universidad de Valparaíso\\Facultad de Ingeniería\\Escuela de Ingeniería Civil Informática\vspace{0.3cm}}
+
+\pagestyle{fancy}
+
+\begin{document}
+%\maketitle
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\[5ex]
+  Lenguajes de Programación\\[1ex]
+  Certamen 1 (Forma A)}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Considere el siguiente código escrito en lenguaje de programación C:
+    
+    \begin{lstlisting}[style=CStyle]
+#include <stdio.h>
+
+int main() {
+  int a = 5;
+  int b = 10;
+  
+  if (2*a >= b)
+    printf("% d\n", a);
+  else printf("% d\n", b);
+  
+  return 0;
+}
+\end{lstlisting}
+Describa detalladamente cada una de las fases de compilación vistas en clases (análisis léxico, sintáctico y semántico), indicando claramente cuál sería la entrada y la salida de cada una de las fases para este código. \tabto{80ex}[20 pts]
+    
+\item ¿Por qué se clasifica a los lenguajes funcionales como parte del paradigma de programación declarativa? Justifique. \tabto{80ex}[20 pts]
+
+\item Copie o implemente algún código pequeño, en un lenguaje de programación de su gusto. Dentro de dicho código deben estar presentes las siguientes componentes. Identifique y explique la presencia de:
+    \begin{enumerate}
+    \item Una función o expresión con efectos colaterales.\tabto{75ex}[10 pts]
+    \item Una función pura.\tabto{75ex}[10 pts]
+    \end{enumerate}
+\end{enumerate}
+
+%-------------------------------------
+\newpage
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\[5ex]
+  Lenguajes de Programación\\[1ex]
+  Certamen 1 (Forma B)}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Considere el siguiente código escrito en lenguaje de programación C:
+    
+    \begin{lstlisting}[style=CStyle]
+#include <stdio.h>
+
+int main() {
+  int a = 10;
+  int b = 5;
+  
+  if (2*a <= b)
+    printf("% d\n", a);
+  else printf("% d\n", b);
+  
+  return 0;
+}
+\end{lstlisting}
+Describa detalladamente cada una de las fases de compilación vistas en clases (análisis léxico, sintáctico y semántico), indicando claramente cuál sería la entrada y la salida de cada una de las fases para este código. \tabto{80ex}[20 pts]
+    
+\item ¿Por qué no se clasifica a los lenguajes funcionales como parte del paradigma de programación imperativa? Justifique. \tabto{80ex}[20 pts]
+
+\item Copie o implemente algún código pequeño, en un lenguaje de programación de su gusto. Dentro de dicho código deben estar presentes las siguientes componentes. Identifique y explique la presencia de:
+    \begin{enumerate}
+    \item Una función de orden superior.\tabto{75ex}[10 pts]
+    \item Una función o expresión con efectos colaterales.\tabto{75ex}[10 pts]
+    \end{enumerate}
+\end{enumerate}
+
+%-------------------------------------
+\newpage
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\[5ex]
+  Lenguajes de Programación\\[1ex]
+  Certamen 1 (Forma C)}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Considere el siguiente código escrito en lenguaje de programación C:
+    
+    \begin{lstlisting}[style=CStyle]
+#include <stdio.h>
+
+int main() {
+  int a = 10;
+  int b = 5;
+  
+  if (2*a >= b)
+    printf("% d\n", b);
+  else printf("% d\n", a);
+  
+  return 0;
+}
+\end{lstlisting}
+Describa detalladamente cada una de las fases de compilación vistas en clases (análisis léxico, sintáctico y semántico), indicando claramente cuál sería la entrada y la salida de cada una de las fases para este código. \tabto{80ex}[20 pts]
+    
+\item ¿Por qué se clasifica a los lenguajes funcionales como parte del paradigma de programación declarativa? Justifique. \tabto{80ex}[20 pts]
+
+\item Copie o implemente algún código pequeño, en un lenguaje de programación de su gusto. Dentro de dicho código deben estar presentes las siguientes componentes. Identifique y explique la presencia de:
+    \begin{enumerate}
+    \item Una función recursiva.\tabto{75ex}[10 pts]
+    \item Una función de orden superior.\tabto{75ex}[10 pts]
+    \end{enumerate}
+\end{enumerate}
+
+%-------------------------------------
+\newpage
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\[5ex]
+  Lenguajes de Programación\\[1ex]
+  Certamen 1 (Forma D)}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Considere el siguiente código escrito en lenguaje de programación C:
+    
+    \begin{lstlisting}[style=CStyle]
+#include <stdio.h>
+
+int main() {
+  int a = 10;
+  int b = 5;
+  
+  if (2*a <= b)
+    printf("% d\n", a);
+  else printf("% d\n", b);
+  
+  return 0;
+}
+\end{lstlisting}
+Describa detalladamente cada una de las fases de compilación vistas en clases (análisis léxico, sintáctico y semántico), indicando claramente cuál sería la entrada y la salida de cada una de las fases para este código. \tabto{80ex}[20 pts]
+    
+\item ¿Los lenguajes funcionales se clasifican como parte del paradigma de programación declarativa o imperativa? Justifique. \tabto{80ex}[20 pts]
+
+\item Copie o implemente algún código pequeño, en un lenguaje de programación de su gusto. Dentro de dicho código deben estar presentes las siguientes componentes. Identifique y explique la presencia de:
+    \begin{enumerate}
+    \item Una función pura.\tabto{75ex}[10 pts]
+    \item Una función recursiva.\tabto{75ex}[10 pts]
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\[5ex]
+  Lenguajes de Programación\\[1ex]
+  Certamen 1 -- Pauta}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Las fases de compilación vistas en clases son:
+    \begin{itemize}
+        \item Análisis léxico, a cargo del Scanner, que recibe un stream de caracteres, dada por una línea de texto conformada por el código fuente, y genera un stream de tokens, como el siguiente:\tabto{77ex}[3 pts]\\
+        Palabras-reservadas: include, int, if, else, return.\\
+        Identificadores: main, a, b, print.\\
+        Operadores: =, *, <, >=.\\
+        Constantes: $``\% d\backslash n''$\\
+        Símbolos: $<$, $>$, (, ), ;.\tabto{77ex}[3 pts]
+        \item Análisis sintáctico, a cargo del Parser, que recibe el stream de tokens anterior y con él genera un árbol de derivación o de parseo\tabto{77ex}[4 pts]\\(con mostrar un ejemplo basado en el código está bien).\tabto{77ex}[3 pts]
+        \item Análisis semántico, que recibe el árbol de parseo y genera un Abstract Syntaxt Tree (AST), que es una versión más compacta del árbol de parseo, donde los nodos son operaciones\tabto{77ex}[4 pts]\\(con mostrar un ejemplo está bien).\tabto{77ex}[3 pts]\\
+        Finalmente, de este AST se derivará la generación del código objetivo.
+    \end{itemize}
+    \item Si bien la respuesta es casi la misma para cada Forma, cambia levemente dependiendo de la formulación de cada pregunta:
+    
+    Formas A y C: 
+    Porque se basan en combinaciones de funciones que solo dependen de un conjunto de parámetros de entrada, de modo que describen una lógica centrándose en el ``qué resolver'',\tabto{81ex}[10 pts]\\
+    en lugar de en el ``cómo resolverlo'', como es el caso de los lenguajes imperativos, para los cuales se describe el flujo de control que lleva a la solución planteada.\tabto{81ex}[10 pts]
+    
+    Forma B:
+    Porque los lenguajes imperativos se centran en ``cómo resolver'' un problema, especificando el flujo de control que lleva a la solución propuesta,\tabto{81ex}[10 pts]\\
+    mientras que los lenguajes funcionales se basan en combinaciones de funciones que solo dependen de un conjunto de parámetros de entrada, de modo que describen una lógica centrándose simplemente en el ``qué'' deben resolver.\tabto{81ex}[10 pts]
+    
+    Forma D:
+    Como parte del paradigma de programación declarativa.\tabto{82ex}[2 pts]\\
+    Esto porque se basan en combinaciones de funciones que solo dependen de un conjunto de parámetros de entrada, de modo que describen una lógica centrándose en el\tabto{81ex}[10 pts]\\
+    ``qué resolver'', en lugar de en el ``cómo resolverlo'', como es el caso de los lenguajes imperativos, para los cuales se describe el flujo de control que lleva a la solución planteada.\tabto{82ex}[8 pts]
+    
+    \item El código debe explicar la presencia de cada tipo de función, dependiendo de la Forma del certamen:
+    \begin{itemize}
+        \item Función o expresión con efectos colaterales (A,B): función o expresión que además de retornar un valor, modifica algún estado fuera de su alcance.
+        \item Función pura (A,D): función que no genera efectos colaterales.
+        \item Función de orden superior (B,C): función capaz de recibir funciones como argumentos, o bien retornar una función como resultado.
+        \item Función recursiva (C,D): función que se llama a sí misma.
+    \end{itemize}
+    Cada definición vale 10 pts. Se da 5 pts por identificar correctamente la función en el código, y 5 pts por explicar correctamente el concepto.
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,536 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+	\usetheme{CambridgeUS}
+	\setbeamercovered{transparent}
+}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{algorithm,algorithmic}
+
+\usepackage{listings}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{gray},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=none,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Java,                 % the language of the code
+  otherkeywords={else},           % if you want to add more keywords to the set
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+
+\title[\textbf{ICI 4242 - Aut\'omatas y compiladores}]{\textbf{ICI 4242 - Aut\'omatas y compiladores}}
+
+\subtitle{Lenguajes y gram\'aticas formales}
+
+\author[Rodrigo Olivares]
+{
+	Rodrigo Olivares \\
+	\vspace{0.5mm}
+	Msc. en Ingenier\'ia Inform\'atica \\
+	\vspace{0.5mm}
+	\texttt{\normalsize rodrigo.olivares@uv.cl}
+}
+
+\institute[PUCV]
+
+\date{1er Semestre} 
+
+\subject{Lenguajes y gram\'aticas formales}
+
+%\AtBeginSection
+%{
+%	\begin{frame}<beamer>
+%	\frametitle{Contenido}
+%	\tableofcontents[currentsection,currentsubsection]
+%	\end{frame}
+%}
+
+%\AtBeginSubsection
+%{
+%	\begin{frame}<beamer>
+%	\frametitle{Contenido}
+%	\tableofcontents[currentsection,currentsubsection]
+%	\end{frame}
+%}
+
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Contenido}
+		\tableofcontents[pausesections]
+	\end{frame}
+
+	\section{Introducci\'on}
+
+		\subsection{Origen}
+
+		\begin{frame}
+			\frametitle{Introducci\'on}
+			\framesubtitle{Origen}
+
+			\begin{block}{Origen}
+			    La teor\'ia de los lenguajes formales tienen su origen en el campo de la \emph{ling\"u\'istica}. En la d\'ecada de los 50, los ling\"uistas elaboraron ideas informales acerca de la \textbf{gram\'atica universal}. 
+			\end{block}
+			\begin{alertblock}{Gram\'atica Universal}
+			    La gram\'atica universal caracteriza las propiedades generales del lenguaje humano (por ejemplo: oraciones y frases).
+			\end{alertblock}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Origen}
+
+            \begin{alertblock}{Origen en la Inform\'atica}
+                En el campo de la Inform\'atica, el concepto de \emph{Gram\'atica Formal} adquiri\'o gran importancia para la \textbf{especificaci\'on de lenguajes de programaci\'on}; concretamente, se defini\'o con sus teor\'ias la sintaxis del lenguaje \textbf{ALGOL 60}, us\'andose una gram\'atica libre de contexto. Ello condujo r\'apidamente al dise\~no riguroso de algoritmos de traducci\'on y compilaci\'on.
+			\end{alertblock}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Origen}
+
+            \begin{alertblock}{Origen en la Inform\'atica}
+                Finalmente, y enlazando con el campo de la ling\"uistica, la \textbf{Teor\'ia de Lenguajes Formales} es de gran utilidad para el trabajo en otros campos de la Inform\'atica, por ejemplo:
+                \begin{itemize}
+                    \item[$\rightarrow$] \emph{Inteligencia Artificial}
+                    \item[$\rightarrow$] \emph{Procesamiento de Lenguajes Naturales} (comprensi\'on, generaci\'on, y traducci\'on)
+                    \item[$\rightarrow$] \emph{Reconocimiento del Habla}
+                    \item[$\rightarrow$] Entre otros.
+                \end{itemize}
+			\end{alertblock}
+		\end{frame}
+		
+		\subsection{Definiciones}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definiciones}
+
+            \begin{block}{S\'imbolo}
+                \begin{itemize}
+                    \item[\checkmark] Es una entidad \textbf{abstracta} (no se define, \emph{axioma}).
+                    \item[\checkmark] Normalmente los s\'imbolos son: \emph{letras}, \emph{d\'igitos} y otros caracteres.
+                    \item[\checkmark] Los s\'imbolos tambi\'en pueden estar formados por varias letras o caracteres, as\'i por ejemplo las \textbf{palabras reservadas de un lenguaje de programaci\'on} son s\'imbolos de dicho lenguaje.
+                \end{itemize}
+			\end{block}
+			\begin{exampleblock}{Ejemplo}
+                \begin{itemize}
+                    \item[\checkmark] a, b, c, d, $\ldots$
+                    \item[\checkmark] 1, 2, 3, 4, $\ldots$
+                    \item[\checkmark] $+$, $*$, \#, ?, $\ldots$
+                    \item[\checkmark] \textbf{if}, \textbf{else}, \textbf{switch}, \textbf{while}, $\ldots$
+                \end{itemize}
+			\end{exampleblock}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definiciones}
+
+            \begin{block}{Vocabulario o Alfabeto}
+                \begin{itemize}
+                    \item[\checkmark] Es un conjunto finito de s\'imbolos, \textbf{no vac\'io}.
+                    \item[\checkmark] Para definir que un s\'imbolo \emph{a} pertenece a un alfabeto $\Sigma$ se utiliza la notaci\'on $a \in \Sigma$.
+                    \item[\checkmark] Los alfabetos se definen por \textbf{enumeraci\'on de los s\'imbolos que contienen}.
+                \end{itemize}
+            \end{block}
+            \begin{exampleblock}{Ejemplo}
+                \begin{itemize}
+                    \item[\checkmark] $\Sigma_{1} = \{A , B , C , D , E, V, W , X , Y , Z\}$
+                    \item[\checkmark] $\Sigma_{2} = \{a , b , c , 0 , 1 , 2 , 3 , 4 , * , \# , + \}$
+                    \item[\checkmark] $\Sigma_{3} = \{0 , 1\}$
+                    \item[\checkmark] $\Sigma_{4} = \{if, else, switch, while, do, a, b, ;, (, ), =, >\}$
+                \end{itemize}
+			\end{exampleblock}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definiciones}
+
+            \begin{block}{Cadena o Palabra}
+                \begin{itemize}
+                    \item[\checkmark] Secuencia \textbf{finita} de s\'imbolos de un determinado alfabeto.
+                \end{itemize}
+            \end{block}
+            \begin{exampleblock}{Ejemplo: Se utilizan los alfabetos del ejemplo anterior}
+                \begin{itemize}
+                    \item[\checkmark] $ABCD$ es una cadena del alfabeto $\Sigma_{1}$.
+                    \item[\checkmark] $a+2*b$ es una cadena del alfabeto $\Sigma_{2}$.
+                    \item[\checkmark] $000111$ es una cadena del alfabeto $\Sigma_{3}$.
+                    \item[\checkmark] \emph{if(a}$>$\emph{b)b}$=$\emph{a;} es una cadena del alfabeto $\Sigma_{4}$.
+                \end{itemize}
+			\end{exampleblock}
+		\end{frame}        
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definiciones}
+
+            \begin{block}{Longitud de cadena}
+                \begin{itemize}
+                    \item[\checkmark] La longitud de una cadena es el n\'umero de s\'imbolos que contiene.
+                \end{itemize}
+            \end{block}
+            \begin{exampleblock}{Ejemplo: Se utilizan las cadenas del ejemplo anterior}
+                \begin{itemize}
+                    \item[\checkmark] $|ABCD| = 4$ 
+                    \item[\checkmark] $|$a+2*b$| = 5$ 
+                    \item[\checkmark] $|000111| = 6$ 
+                    \item[\checkmark] $|$\emph{if(a}$>$\emph{b)b}$=$\emph{a;}$| = 10$
+                \end{itemize}
+			\end{exampleblock}
+		\end{frame}        
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definiciones}
+
+            \begin{block}{Cadena vac\'ia}
+                \begin{itemize}
+                    \item[\checkmark] Existe una cadena denominada \textbf{cadena vac\'ia}, que no tiene s\'imbolos y se denota con $\lambda$, entonces su longitud es :
+                    $$|\lambda| \rightarrow 0$$
+                \end{itemize}
+			\end{block}
+		\end{frame}     
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definiciones}
+
+            \begin{block}{Concatenaci\'on de cadenas}
+                \begin{itemize}
+                    \item[\checkmark] Sean $\alpha$ y $\beta$ dos cadenas cualesquiera, se denomina concatenaci\'on de $\alpha$ y $\beta$ a una nueva cadena $\alpha\beta$ constituida por los s\'imbolos de la cadena $\alpha$ \textbf{seguidos} por los de la cadena $\beta$.
+                \end{itemize}
+			\end{block}
+			\begin{block}{Elemento neutro}
+                \begin{itemize}
+                    \item[\checkmark] El elemento neutro de la concatenaci\'on es $\lambda$ :
+                    $$\alpha\lambda = \lambda\alpha = \alpha$$
+                \end{itemize}
+			\end{block}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definiciones}
+
+            \begin{block}{Universo del discurso o Clausura}
+                \begin{itemize}
+                    \item[\checkmark] El conjunto de \textbf{todas las cadenas} que se pueden formar con los s\'imbolos de un alfabeto $\Sigma$ se denomina universo del discurso (o clausura) de $\Sigma$  y se representa por $W(\Sigma)$ \'o $\Sigma^{*}$. 
+                    \item[\checkmark] Evidentemente $\Sigma^{*}$ es un \textbf{conjunto infinito}. 
+                    \item[\checkmark] La cadena vac\'ia \textbf{pertenece} a $\Sigma^{*}$.
+                \end{itemize}
+			\end{block}
+			\begin{exampleblock}{Ejemplo}
+                \begin{itemize}
+                    \item[\checkmark] Sea un alfabeto con un \'unico s\'imbolo, $\Sigma = \{a\}$, entonces el universo del discurso $\Sigma^{*}$ es:
+                    $$
+                        \begin{array}{c}
+                            \Sigma^{*} = \{\lambda, a, aa, aaa, aaaa,\ldots\} \\
+                            \{a^{n}~|~n \geq 0 \}
+                        \end{array}
+                    $$
+                \end{itemize}
+            \end{exampleblock}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definiciones}
+
+            \begin{block}{Lenguaje}
+                \begin{itemize}
+                    \item[\checkmark] Se denomina lenguaje sobre un alfabeto $\Sigma$ a un \textbf{subconjunto del universo del discurso}. Tambi\'en se puede definir como un conjunto de palabras de un determinado alfabeto.
+                    \item[\checkmark] Habitualmente un lenguaje tiene infinitas cadenas, por lo que definirlo por enumeraci\'on es \textbf{ineficiente} y a veces \textbf{imposible}.
+                    \item[\checkmark] As\'i los lenguajes se defienen por las \textbf{propiedades que cumplen} las cadenas del lenguaje.
+                \end{itemize}
+			\end{block}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definiciones}
+
+			\begin{exampleblock}{Ejemplo}
+                \begin{itemize}
+                    \item[\checkmark] El conjunto de pal\'indromos (cadenas que se leen igual hacia adelante, que hacia atr\'as) sobre el alfabeto $\Sigma_{3}$. Evidentemente este lenguaje tiene infinitas cadenas.
+                    \begin{center}
+                        \begin{tabular}{c}
+                            $\lambda$ \\
+                            $0$ \\
+                            $11$ \\
+                            $010$ \\
+                            $10101$ \\
+                            $00000$ \\
+                            $1111111$ \\
+                        \end{tabular}
+                    \end{center}
+                \end{itemize}
+            \end{exampleblock}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definiciones}
+
+            \begin{block}{Lenguaje vac\'io}
+                \begin{itemize}
+                    \item[\checkmark] Conjunto vac\'io y que se denota por $\O$. 
+                    \item[\checkmark] El lenguaje vac\'io no debe confundirse con un lenguaje que contenga una sola cadena, y que \'esta sea la cadena vac\'ia, es decir $\{\lambda\}$, ya que el n\'umero de elementos (cardinalidad) de estos dos \textbf{conjuntos es diferente}.
+                    $$Cardinal (\O) = 0$$
+                    $$Cardinal (\{\lambda\}) = 1$$
+                \end{itemize}
+			\end{block}
+		\end{frame}
+
+        \subsection{Definici\'on formal de gram\'atica}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definici\'on formal de gram\'atica}
+
+            \begin{block}{Gram\'atica}
+                \begin{itemize}
+                    \item[\checkmark] $N$-tupla que permite especificar, de una manera finita, el conjunto de cadenas de s\'imbolos que constituyen un lenguaje.
+                \end{itemize}
+			\end{block}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definici\'on formal de gram\'atica}
+
+            \begin{alertblock}{Cu\'adrupla}
+                $$G = (\Sigma, N, S , P)$$
+                \begin{itemize}
+                    \item[] donde:
+                    \begin{itemize}
+                        \item[\checkmark] $\Sigma$ = $\{$conjunto finito de s\'imbolos terminales$\}$.
+                        \item[\checkmark] \emph{N} = $\{$conjunto finito de s\'imbolos no terminales$\}$.
+                        \item[\checkmark] \emph{S} es el s\'imbolo inicial y pertenece a \emph{N}.
+                        \item[\checkmark] \emph{P} = $\{$conjunto de producciones o de reglas de derivaci\'on$\}$.
+                    \end{itemize}
+                \end{itemize}
+			\end{alertblock}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definici\'on formal de gram\'atica}
+
+            \begin{block}{Definici\'on $\Sigma$}
+                Todas las cadenas del lenguaje definido por la gram\'atica est\'an formados con s\'imbolos del \textbf{alfabeto terminal} $\Sigma$. El alfabeto terminal se define por enumeraci\'on de los s\'imbolos terminales.
+			\end{block}
+			\begin{block}{Cadena vac\'ia}
+                \begin{itemize}
+                    \item[\checkmark] En ocasiones es importante distinguir si un determinado alfabeto incluye o no la cadena vac\'ia, indic\'andose respectivamente con super\'indice $^{+}$, o super\'indice $^{*}$, tal como se muestra a continuaci\'on :
+                    $$
+                        \begin{array}{ll}
+                            \Sigma^{+} = \Sigma - \{\lambda\} & \\
+                            \Sigma^{*} = \Sigma + \{\lambda\} & \leftarrow \textit{universo del discurso} \\
+                        \end{array}
+                    $$
+                \end{itemize}
+			\end{block}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definici\'on formal de gram\'atica}
+
+            \begin{block}{Generalizaci\'on}
+                $$\Sigma^{*} = \Sigma^{0} \cup \Sigma^{1} \cup \Sigma^{2} \cup \cdots$$
+                donde $\Sigma^{1} = \Sigma $ y $\Sigma^{k} = \Sigma \times \Sigma^{k-1}$ denota, el conjunto de todas las secuencias finitas de s\'imbolos de $\Sigma$. El conjunto $\Sigma^{0}$ es especial, tiene un s\'olo elemento llamado $\lambda$, que corresponde a la cadena vac\'ia.
+			 \end{block}
+			 \begin{block}{}
+                Si una cadena $x \in \Sigma^{k}$, entonces decimos que su largo es $|~x~| = k$ (por ello $|~\lambda~| = 0$). 
+			 \end{block}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definici\'on formal de gram\'atica}
+
+			\begin{block}{Definici\'on N}
+                El \textbf{alfabeto no terminal} \emph{N} es el conjunto de s\'imbolos introducidos como elementos auxiliares para la definici\'on de la gram\'atica, y que \textbf{no figuran en las sentencias del lenguaje}. El alfabeto no terminal se define por enumeraci\'on de los s\'imbolos no terminales.
+			\end{block}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definici\'on formal de gram\'atica}
+
+            \begin{block}{S\'imbolo inicial S}
+                \begin{itemize}
+                    \item[\checkmark] El s\'imbolo inicial \emph{S} es un s\'imbolo \textbf{no terminal} a partir del cual se aplican las reglas de la gram\'atica para obtener las distintas cadenas del lenguaje.
+                \end{itemize}
+			\end{block}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definici\'on formal de gram\'atica}
+
+            \begin{block}{Las producciones P}
+                \begin{itemize}
+                    \item[\checkmark] Son las reglas que se aplican desde el s\'imbolo inicial para obtener las cadenas del lenguaje. 
+                    \item[\checkmark] El conjunto de producciones P se define por medio de la enumeraci\'on de las distintas producciones, en forma de reglas o por medio de un \emph{metalenguaje} por ejemplo \emph{BNF} (Backus Naur Form) o \emph{EBNF} (Extended Backus Naur Form).
+                \end{itemize}
+			\end{block}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definici\'on formal de gram\'atica}
+
+            \begin{exampleblock}{Ejemplo}
+                \begin{itemize}
+                    \item[\checkmark] Sea la gram\'atica : $G = (\Sigma, N, S , P)$ donde $\Sigma = \{a,b\}$, $N = \{S\},$ y el conjunto de producciones es : \\
+                    \begin{flushleft}
+                        \begin{tabular}{ll}
+                            1. & $S \rightarrow ab$ \\
+                            2. & $S \rightarrow aSb$
+                        \end{tabular}
+                    \end{flushleft}
+                \end{itemize}
+			\end{exampleblock}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definici\'on formal de gram\'atica}
+
+            \begin{exampleblock}{Dada la gram\'atica anterior, determinar si las cadenas \emph{ab}, \emph{aaabbb} y \emph{aabbb} son reconocidas (\textbf{estructura formal de derivaci\'on}).}
+                \begin{itemize}
+                    \item[] $S \Rightarrow ab$ \checkmark
+                \end{itemize}
+                \begin{itemize}
+                    \item[] $S \Rightarrow aSb \Rightarrow aaSbb \Rightarrow aaabbb$ \checkmark
+                \end{itemize}
+                \begin{itemize}
+                    \item[] La cadena \emph{aabbb} no es reconocida por la gram\'atica.
+                \end{itemize}
+                \begin{itemize}
+                    \item[*] La gram\'atica reconoce las cadenas (son s\'imbolos terminales) de longitud par y con la misma cantidad de s\'imbolos \emph{a} y \textbf{b} concatenados.
+                \end{itemize}
+			\end{exampleblock}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definici\'on formal de gram\'atica}
+
+            \begin{exampleblock}{Ejemplo}
+                \begin{itemize}
+                    \item[\checkmark] Seg\'un el siguiente conjunto de producciones : \\
+                    \begin{flushleft}
+                        \begin{tabular}{llcll}
+                            1. & $S \rightarrow aA$ &&& \\
+                            2. & $S \rightarrow bA$ &&& \\
+                            3. & $A \rightarrow aB$ && 1. & $S \rightarrow aA~|~bA$ \\
+                            4. & $A \rightarrow bB$ &$\Leftrightarrow$ & 2. & $A \rightarrow aB~|~bB~|~a$ \\
+                            5. & $A \rightarrow a$  && 3. & $B \rightarrow aA~|~bA$ \\
+                            6. & $B \rightarrow aA$ &&& \\
+                            7. & $B \rightarrow bA$ &&& \\
+                        \end{tabular}
+                    \end{flushleft}
+                \end{itemize}
+			\end{exampleblock}
+		\end{frame}
+
+        \begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definici\'on formal de gram\'atica}
+
+            \begin{exampleblock}{Determinar la \textbf{estructura formal de derivaci\'on} para las siguientes cadenas y la \textbf{gram\'atica} asociada}
+                \begin{itemize}
+                    \item[1.] \emph{a}
+                    \item[2.] \emph{b}
+                    \item[3.] \emph{aaaaaa}
+                    \item[4.] \emph{bbbbba}
+                    \item[5.] \emph{abbaaabbbba}
+                \end{itemize}
+			\end{exampleblock}
+		\end{frame}
+		
+		\begin{frame}
+            \frametitle{Introducci\'on}
+            \framesubtitle{Definici\'on formal de gram\'atica}
+
+            \begin{exampleblock}{Soluci\'on}
+                \begin{itemize}
+                    \item[\color{red}{$\times$}] \emph{a}  (Repeticiones \'unicas  de \emph{a} con cardinal par)
+                    \item[\color{red}{$\times$}] \emph{b} (Por reglas de la gram\'atica, las cadenas terminan con \emph{a})
+                    \item[\checkmark] \emph{aaaaaa} (Repeticiones \'unicas de \emph{a} con cardinal par)
+                    \begin{itemize}
+                        \item[] $S \Rightarrow aA \Rightarrow aaB \Rightarrow aaaA \Rightarrow aaaaB \Rightarrow aaaaaA \Rightarrow aaaaaa$
+                    \end{itemize}
+                    \item[\checkmark] \emph{bbbbba}
+                    \begin{itemize}
+                        \item[] $S \Rightarrow bA \Rightarrow bbB \Rightarrow bbbA \Rightarrow bbbbB \Rightarrow bbbbbA \Rightarrow bbbbba$
+                    \end{itemize}
+                    \item[\checkmark] \emph{abbaaabbbba}
+                    \begin{itemize}
+                        \item[] $S \Rightarrow aA \Rightarrow abB \Rightarrow abbA \Rightarrow abbaB \Rightarrow abbaaB \Rightarrow abbaaaA \Rightarrow abbaaabB \Rightarrow abbaaabbA \Rightarrow abbaaabbbB \Rightarrow abbaaabbbbA \Rightarrow abbaaabbbba$
+                    \end{itemize}
+                \end{itemize}
+                \begin{itemize}
+                    \item[] Gram\'atica: $G = (\Sigma, N, S, P)$ donde $\Sigma = \{a,b\}$, $N = \{S, A, B\}$, $S$ es el s\'imbolo inicial y $P$ el conjunto de producciones.
+                \end{itemize}
+			\end{exampleblock}
+		\end{frame}
+
+		\begin{frame}
+			\frametitle{Preguntas}
+
+			\hspace{4cm}\huge{Preguntas ?}
+		
+		\end{frame}
+	\end{document}
+
+\usetheme{default}
+\usetheme{JuanLesPins}
+\usetheme{Goettingen}
+\usetheme{Szeged}
+\usetheme{Warsaw}
+
+\usecolortheme{crane}
+
+\usefonttheme{serif}
+\usefonttheme{structuresmallcapsserif}

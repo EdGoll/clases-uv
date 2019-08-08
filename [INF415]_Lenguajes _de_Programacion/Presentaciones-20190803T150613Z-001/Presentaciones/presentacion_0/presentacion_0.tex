@@ -1,0 +1,272 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+    \usetheme{CambridgeUS}
+    \setbeamercovered{transparent}
+}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{algorithm,algorithmic}
+
+\usepackage{listings}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{gray},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=none,                       % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Java,                 % the language of the code
+  otherkeywords={else},           % if you want to add more keywords to the set
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+
+\title[\textbf{ICI 4242 - Aut\'omatas y compiladores}]{\textbf{ICI 4242 - Aut\'omatas y compiladores}}
+
+\subtitle{Descripci\'on de la asignatura}
+
+\author[Rodrigo Olivares]
+{
+    Rodrigo Olivares \\
+    \vspace{0.5mm}
+    Msc. en Ingenier\'ia Inform\'atica \\
+    \vspace{0.5mm}
+    \texttt{\normalsize rodrigo.olivares@uv.cl}
+}
+
+\institute[PUCV]
+
+\date{1er Semestre} 
+
+\subject{Descripci\'on de la asignatura}
+
+%\AtBeginSection
+%{
+%    \begin{frame}<beamer>
+%    \frametitle{Contenido}
+%    \tableofcontents[currentsection,currentsubsection]
+%    \end{frame}
+%}
+
+%\AtBeginSubsection
+%{
+%    \begin{frame}<beamer>
+%    \frametitle{Contenido}
+%    \tableofcontents[currentsection,currentsubsection]
+%    \end{frame}
+%}
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+    \begin{frame}
+        \titlepage
+    \end{frame}
+
+%    \begin{frame}
+%        \frametitle{Contenido}
+%        \tableofcontents[pausesections]
+%    \end{frame}
+
+    \section{Antecedentes de la asignatura}
+
+        \subsection{Descripci\'on}
+
+        \begin{frame}
+            \frametitle{Antecedentes de la asignatura}
+            \framesubtitle{Descripci\'on}
+
+            \begin{itemize}
+                \item Nombre: \textbf{ICI 4242 - Aut\'omatas y compiladores}
+                \item Horario: 
+                \begin{itemize}
+                    \item \textbf{Lunes: 11:40 - 13:10 hrs.}
+                    \item \textbf{Viernes: 11:40 - 13:10 hrs.}
+                \end{itemize}
+                \item Clases expositivas y laboratorio.
+                \item Ayudant\'ia: \emph{por definir}
+            \end{itemize}
+        \end{frame}
+
+        \subsection{Unidades tem\'aticas}
+
+        \begin{frame}
+            \frametitle{Antecedentes de la asignatura}
+            \framesubtitle{Unidades tem\'aticas}
+
+            \begin{itemize}
+                \item Unidad I: \textbf{Lenguajes y gram\'aticas formales}
+                \begin{itemize}
+                    \item Alfabetos y cadenas.
+                    \item Lenguajes formales.
+                    \item Gram\'aticas formales.
+                \end{itemize}
+                \item Unidad II: \textbf{Aut\'omatas finitos}
+                \begin{itemize}
+                    \item Aut\'omatas finitos deterministas.
+                    \item Aut\'omatas finitos no deterministas.
+                    \item Aut\'omatas finitos no deterministas con $\lambda$-transiciones.
+                    \item Aut\'omatas de Pila.
+                    \item M\'aquinas de Turing
+                \end{itemize}
+                \item Unidad III: \textbf{An\'alisis l\'exico}
+                \begin{itemize}
+                    \item Funciones del analizador l\'exico.
+                    \item Tokens.
+                    \item Herramientas para implementar analizadores l\'xicos
+                    \item Implementaci\'on de analizador l\'exico.
+                \end{itemize}
+            \end{itemize}
+        \end{frame}
+
+        \begin{frame}
+            \frametitle{Antecedentes de la asignatura}
+            \framesubtitle{Unidades tem\'aticas}
+
+            \begin{itemize}
+                \item Unidad IV: \textbf{An\'alisis sint\'actico}
+                \begin{itemize}
+                    \item Funciones del analizador sint\'actico.
+                    \item \'Arboles de sintaxis abstracta.
+                    \item Herramientas para implementar analizadores sint\'acticos.
+                    \item Implementaci\'on de analizador sint\'actico.
+                \end{itemize}
+                \item Unidad V: \textbf{An\'alisis sem\'antico}
+                \begin{itemize}
+                    \item Funciones del analizador sem\'antico.
+                    \item Tablas de s\'imbolos.
+                    \item Implementaci\'on de analizador sem\'antico.
+                \end{itemize}
+                \item Unidad VI: \textbf{Generaci\'on de c\'odigo}
+                \begin{itemize}
+                    \item Funciones del generador de c\'odigo.
+                    \item Representaciones intermedias.
+                    \item Implementaci\'on de generador de c\'odigo.
+                \end{itemize}
+            \end{itemize}
+        \end{frame}
+
+    \section{Calificaciones}
+
+        \subsection{Cronograma}
+
+        \begin{frame}
+            \frametitle{Calificaciones}
+            \framesubtitle{Cronograma}
+
+            \textbf{Cronograma de las calificaciones}
+
+            \begin{itemize}
+                \item C\'atedra 1: \textbf{Viernes 4 de Mayo}
+                \item C\'atedra 2: \textbf{Lunes 18 de Junio}
+                \item Control: \textbf{Lunes 23 de Abril}
+                \item Tarea 1: \textbf{Viernes 04 de Mayo}
+                \item Tarea 2: \textbf{Viernes 22 de Junio}
+                \item Examen: \textbf{Viernes 29 de Junio}
+            \end{itemize}
+        \end{frame}
+
+        \subsection{Ponderaci\'on}
+
+        \begin{frame}
+            \frametitle{Calificaciones}
+            \framesubtitle{Ponderaci\'on}
+
+            \begin{center}
+                \lstinputlisting[caption={}]{pond.java}
+            \end{center}    
+        \end{frame}
+
+    \section{Consideraciones}
+
+        \subsection{Software y documentaci\'on}
+
+        \begin{frame}
+            \frametitle{Consideraciones}
+            \framesubtitle{Software}
+
+            \begin{itemize}
+                    \item[-] \textbf{JFLAP} disponible en:
+                \begin{itemize}
+                    \item[] \url{http://www.jflap.org}
+                \end{itemize} 
+                \item[-] \textbf{ANTLR} disponible en:
+                \begin{itemize}
+                    \item[] \url{http://www.antlr.org}
+                    \item[] \textbf{Documentaci\'on} disponible en: \url{https://github.com/antlr/antlr4/blob/master/doc/index.md} 
+                \end{itemize} 
+                \item[-] Entorno de desarrollo \textbf{Eclipse}, disponible en:
+                \begin{itemize}
+                    \item[] \url{https://www.eclipse.org}
+                \end{itemize} 
+            \end{itemize}
+
+        \end{frame}
+
+    \section{Bibliograf\'ia}
+    
+        \begin{frame}
+            \frametitle{Bibliograf\'ia}
+
+            \textbf{Obligatoria}
+ 
+            \begin{thebibliography}{10} 
+                \beamertemplatebookbibitems
+                \bibitem{1} [Compilers, Principles, Techniques and Tools] Aho, A. et al. \newblock \emph{Addison-Wesley}, 1988.
+                \bibitem{2} [Principles of Compiler Design] Aho, A. et al. \newblock \emph{Addison-Wesley}, 1988.
+            \end{thebibliography} 
+
+            \vspace{10pt}
+
+            \textbf{Complementaria}
+
+            \begin{thebibliography}{10} 
+                \beamertemplatebookbibitems
+                \bibitem{1}[Introduction to Automata Theory, Languages, and Computation] John E. Hopcroft, Rajeev Motwani, Jeffrey D. Ullman \newblock \emph{Editorial Alfaomega}, 2011.
+             \end{thebibliography} 
+        \end{frame}
+
+        \begin{frame}
+            \frametitle{Preguntas}
+
+            \hspace{4cm}\huge{Preguntas ?}
+        
+        \end{frame}
+    \end{document}
+
+\usetheme{default}
+\usetheme{JuanLesPins}
+\usetheme{Goettingen}
+\usetheme{Szeged}
+\usetheme{Warsaw}
+
+\usecolortheme{crane}
+
+\usefonttheme{serif}
+\usefonttheme{structuresmallcapsserif}

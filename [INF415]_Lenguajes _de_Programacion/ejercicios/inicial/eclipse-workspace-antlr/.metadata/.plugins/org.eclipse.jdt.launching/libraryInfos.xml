@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="D:\aduana-desa\jdks\java-1.8.0-openjdk-1.8.0.141-2" version="1.8.0_141-2-redhat">
+<bootpath>
+<entry path="D:\aduana-desa\jdks\java-1.8.0-openjdk-1.8.0.141-2\jre\lib\resources.jar"/>
+<entry path="D:\aduana-desa\jdks\java-1.8.0-openjdk-1.8.0.141-2\jre\lib\rt.jar"/>
+<entry path="D:\aduana-desa\jdks\java-1.8.0-openjdk-1.8.0.141-2\jre\lib\sunrsasign.jar"/>
+<entry path="D:\aduana-desa\jdks\java-1.8.0-openjdk-1.8.0.141-2\jre\lib\jsse.jar"/>
+<entry path="D:\aduana-desa\jdks\java-1.8.0-openjdk-1.8.0.141-2\jre\lib\jce.jar"/>
+<entry path="D:\aduana-desa\jdks\java-1.8.0-openjdk-1.8.0.141-2\jre\lib\charsets.jar"/>
+<entry path="D:\aduana-desa\jdks\java-1.8.0-openjdk-1.8.0.141-2\jre\lib\jfr.jar"/>
+<entry path="D:\aduana-desa\jdks\java-1.8.0-openjdk-1.8.0.141-2\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="D:\aduana-desa\jdks\java-1.8.0-openjdk-1.8.0.141-2\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="D:\aduana-desa\jdks\java-1.8.0-openjdk-1.8.0.141-2\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

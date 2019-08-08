@@ -1,0 +1,327 @@
+\documentclass{exam}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[newcommands]{ragged2e}
+
+\usepackage{
+    amsmath,
+    amssymb,
+    eso-pic,
+    float,
+    graphicx,
+    lmodern,
+    wrapfig,
+    listings,
+    tabularx,
+    multicol,
+    multirow,
+    color,
+    colortbl,
+    lastpage,
+    titlesec,
+    sectsty, 
+    verbatim,
+    listings,
+    xcolor
+}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.96,0.96,0.96}
+\definecolor{mygrayline}{rgb}{0.66,0.66,0.66}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  %frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  %frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+\lstset{escapechar=@,style=customc}
+
+\definecolor{azul}{RGB}{33,127,190}
+\sectionfont{\color{azul}}
+\subsectionfont{\color{azul}}
+\renewcommand{\familydefault}{\sfdefault}
+
+\footer{}{\thepage}{}
+
+\makeatother
+
+\title{\LARGE\color{azul}\textbf{INC415 Lenguajers de Programaci\'on - Certamen 1 (25\%)}}
+\author{\normalsize \color{gray}{Prof.} \color{black}{\textbf{Rodrigo Olivares}}}
+\date{\normalsize \em 26 de noviembre}
+
+\begin{document}
+
+\AddToShipoutPictureBG*{%
+  \AtPageUpperLeft{\raisebox{-\height}{\includegraphics[scale=.95]{base/header.png}}}}
+
+\maketitle
+
+\vspace*{-7mm}
+\noindent
+\textbf{Instrucciones:} 
+\begin{itemize}
+    \item[-] El puntaje m\'aximo del certamen es 100 puntos, siendo 60\% el m\'inimo requerido para aprobar.
+    \item[-] Tiempo m\'aximo: 90 minutos.
+    \item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado seg\'un dicta el reglamento de la carrera.
+\end{itemize}
+
+%\noindent
+%\textbf{Resultados de aprendizaje a evaluar:} 
+%\vspace{2mm}
+%\begin{itemize}
+%	\item CE1.N1.RA1. Identifica estructuras abstractas de programación, con el fin de ser utilizadas en la solución de problemas y desarrollo de sistema.
+%	\item CE1.N1.RA4. Usa lenguajes de programación para resolver problemas algorítmicos de forma eficiente.
+%	\item CE1.N1.RA5. Identifica, analiza e implementa posibles soluciones con el objetivo de resolver problemas algorítmicos básicos.
+%\end{itemize}
+
+\noindent
+\textbf{Contenido:} Este certamen eval\'ua los siguientes temas:
+
+\vspace{-2mm}
+\begin{table}[H]
+\begin{tabular}{
+    !{\color{gray!50}\vrule}l
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+    \multicolumn{1}{!{\color{gray!50}\vrule}c}{\textbf{
+        Tema
+    }} & 
+    \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        ~Puntaje~
+    }} \\ \arrayrulecolor{gray!50}
+    \hline
+    Conocimiento espec\'ifico - Desarrollo.
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        15 pts.
+    }} \\ \arrayrulecolor{gray!50}
+    \hline
+    Soluci\'on de problema - Evaluaci\'on de c\'odigo.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        25 pts.
+    }} \\ \arrayrulecolor{gray!50} 
+    \hline
+    Soluci\'on de problema - L\'exico - Sint\'actico.
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        60 pts.
+    }} \\ \arrayrulecolor{gray!50} 
+    \hline
+\end{tabular}
+\end{table}
+
+\section{\textbf{Conocimiento espec\'ifico - Desarrollo(15 pts.)}}
+\noindent
+\textbf{Respuesta con desarrollo:}  (L: 15 pts. ML: 8 pts. NL: 3 pts.).
+
+\begin{table}[H]
+\begin{tabular}{
+    !{\color{gray!50}\vrule}l
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}} 
+    \arrayrulecolor{gray!50} \hline
+    \textbf{\textquestiondown Los lenguajes funcionales se clasifican como parte del paradigma de programaci\'on declarativa o im-} \\
+    \textbf{perativa? Justifique:}  \\
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    \\ \\ \\ \\ \\ \\ \\ \arrayrulecolor{gray!50} \hline
+    	\multicolumn{1}{l}{La ausencia de la dimensi\'on es calificada con 0 pts.}
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+    {\small
+    \begin{tabular}{lll}
+        L  & : Logrado    & : Describe correctamente la respuesta. \\
+        PL  & : Parcialmente Logrado & : Describe parcialmente la respuesta. Define el concepto de manera correcta, pero comete al menos 1 error (lenguaje, paradigma u otro).  \\
+        NL & : No Logrado & : Describe incorrectanente la respuesta. Comete más de 3 errores de lenguaje, paradigma u otro. \\
+    \end{tabular}}
+\end{table}
+
+\clearpage
+
+\vspace{-7mm}
+\section{\textbf{Soluci\'on de problema - Evaluaci\'on de c\'odigo (25 pts.)}}
+
+\noindent
+\textbf{Respuesta con desarrollo:} Considere el siguiente c\'odigo escrito en lenguaje de programaci\'n \textbf{C}:
+    
+\begin{lstlisting}[style=CStyle]
+#include <stdio.h>
+
+int main() {
+  int a = 5;
+  int b = 10;
+  
+  if (2*a >= b)
+    printf("% d\n", a);
+  else 
+    printf("% d\n", b);
+
+  return 0;
+}
+\end{lstlisting}
+
+\noindent
+Describa detalladamente las fases de compilaci\'on vistas en clases (an\'alisis l\'exico, sint\'actico y sem\'antico), indicando claramente cu\'al ser\'a la entrada y la salida de cada una de las fases para este c\'odigo. 
+
+\begin{table}[H]
+\centering
+\scriptsize
+\begin{tabular}{
+!{\color{gray!50}\vrule}p{3.0cm}
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+    \multicolumn{4}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{?`C\'omo ser{\'e} evaluado en la Secci\'on 2?}} \\ \arrayrulecolor{gray!50} \hline
+    \textbf{Dimensi\'on} & \textbf{Logrado} & \textbf{Parcialmente logrado} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} 
+\hline
+    An\'alisis l\'exico &
+    10 pts.\newline Define correctamente el an\'alisis l\'exico, indicando las todos los token. & 
+    5 pts.\newline Define parcialmente el an\'alisis l\'exico, indicando los todos s\'olo 2 token. & 
+    1pt. \newline Define incorrectamente el an\'alisis l\'exico o no indican los tokens.\newline 
+    \\ \arrayrulecolor{gray!50} 
+\hline
+    An\'alisis sint\'actico &
+    7 pts.\newline Define correctamente el an\'alisis sint\'actico, indicando la funci\'on del parser. & 
+    3 pts.\newline Define parcialmente el an\'alisis sint\'actico, indicando de manera incompleta el uso del parser. & 
+    1pt. \newline Define incorrectamente el an\'alisis sint\'actico.\newline 
+    \\ \arrayrulecolor{gray!50} 
+\hline
+    An\'alisis sem\'antico &
+    8 pts.\newline Define correctamente el an\'alisis sem\'antico, indicando la funci\'on del AST. & 
+    4 pts.\newline Define parcialmente el an\'alisis sem\'antico, indicando de manera incompleta el AST. & 
+    1pt. \newline Define incorrectamente el an\'alisis sem\'antico.\newline 
+    \\ \arrayrulecolor{gray!50} 
+\hline 
+  \textbf{Total} & \textbf{25 pts.} & \textbf{12 pts.} & \textbf{3 pts.} \\ \arrayrulecolor{gray!50} 
+\hline
+	\multicolumn{4}{l}{La ausencia de la dimensi\'on es calificada con 0 pts.}
+\end{tabular}
+\label{tbl:1}
+\end{table}
+
+\begin{table}[H]
+\begin{tabular}{
+    !{\color{gray!50}\vrule}l
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}} 
+    \arrayrulecolor{gray!50} \hline
+     \\
+     \\ \\ \\ \\ \\ \\
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \arrayrulecolor{gray!50} \hline
+\end{tabular}
+\end{table}
+
+\clearpage
+
+\section{\textbf{Soluci\'on de problema - Soluci\'on de problema - L\'exico - Sint\'atico. (60 pts.)}}
+
+\noindent
+Suponga que un cliente le solicita crear un compilador para un lenguaje nuevo llamado \textbf{X+}. Para ello, el cliente le entrega un peque\~no programa indicando, por ejemplo, que las palabras reservadas se escriben en may\'uscula.
+
+\begin{verbatim}
+VARIABLE NUMERICO a = 0;
+VARIABLE NUMERICO n;
+
+INICIO
+    LEER(n);
+    SI (n > 0) ENTONCES
+        PARA i <- 1 HASTA n DE 1
+            a <- a + i;
+        FIN_PARA
+        MOSTRAR("Resultado", n, a);
+    SINO_SI (n = 0) ENTONCES
+        MOSTRAR(ALEATORIO(1,100));
+    SINO
+        MOSTRAR("Error");
+    FIN_SI
+FIN
+\end{verbatim}
+
+En base a este programa, implemente en ANTLR (s\'olo para las instrucciones del ejemplo):
+
+\begin{enumerate}
+    \item[a)] Lexer.
+    \item[b)] Parser.
+\end{enumerate}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\begin{tabular}{
+!{\color{gray!50}\vrule}p{3.0cm}
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+    \multicolumn{4}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{?`C\'omo ser{\'e} evaluado en la Secci\'on 3?}} \\ \arrayrulecolor{gray!50} \hline
+    \textbf{Dimensi\'on} & \textbf{Logrado} & \textbf{Parcialmente logrado} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} 
+\hline
+    An\'alisis l\'exico &
+    20 pts.\newline Define correctamente el an\'alisis l\'exico, indicando las todos los token. & 
+    10 pts.\newline Define parcialmente el an\'alisis l\'exico, indicando la mitad token. & 
+    1pt. \newline Define incorrectamente el an\'alisis l\'exico o no indican los tokens.\newline 
+    \\ \arrayrulecolor{gray!50} 
+\hline
+    An\'alisis sint\'actico &
+    40 pts.\newline Define correctamente el an\'alisis sint\'actico, indicando todas las reglas sint\'acticas. & 
+    20 pts.\newline Define parcialmente el an\'alisis sint\'actico, indicando de manera incompleta las reglas sint\'acticas (la mitad o menos). & 
+    1pt. \newline Define incorrectamente el an\'alisis sint\'actico.\newline 
+    \\ \arrayrulecolor{gray!50} 
+\hline 
+  \textbf{Total} & \textbf{60 pts.} & \textbf{30 pts.} & \textbf{2 pts.} \\ \arrayrulecolor{gray!50} 
+\hline
+	\multicolumn{4}{l}{La ausencia de la dimensi\'on es calificada con 0 pts.}
+\end{tabular}
+\label{tbl:2}
+\end{table}
+
+\end{document}

@@ -1,0 +1,345 @@
+\documentclass{exam}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[newcommands]{ragged2e}
+
+\usepackage{
+    amsmath,
+    amssymb,
+    eso-pic,
+    float,
+    graphicx,
+    lmodern,
+    wrapfig,
+    listings,
+    tabularx,
+    multicol,
+    multirow,
+    color,
+    colortbl,
+    lastpage,
+    titlesec,
+    sectsty, 
+    verbatim,
+    listings,
+    xcolor
+}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.96,0.96,0.96}
+\definecolor{mygrayline}{rgb}{0.66,0.66,0.66}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  %frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  %frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+\lstset{escapechar=@,style=customc}
+
+\definecolor{azul}{RGB}{33,127,190}
+\sectionfont{\color{azul}}
+\subsectionfont{\color{azul}}
+\renewcommand{\familydefault}{\sfdefault}
+
+\footer{}{\thepage}{}
+
+\makeatother
+
+\title{\LARGE\color{azul}\textbf{INC415 Lenguajers de Programaci\'on - Certamen 2 (25\%)}}
+\author{\normalsize \color{gray}{Prof.} \color{black}{\textbf{Rodrigo Olivares}}}
+\date{\normalsize \em 7 de enero}
+
+\begin{document}
+
+\AddToShipoutPictureBG*{%
+  \AtPageUpperLeft{\raisebox{-\height}{\includegraphics[scale=.95]{base/header.png}}}}
+
+\maketitle
+
+\vspace*{-7mm}
+\noindent
+\textbf{Instrucciones:} 
+\begin{itemize}
+    \item[-] El puntaje m\'aximo del certamen es 100 puntos, siendo 60\% el m\'inimo requerido para aprobar.
+    \item[-] Tiempo m\'aximo: 90 minutos.
+    \item[-] El certamen es \underline{\textbf{individual}}. Cualquier intento de copia, ser\'a sancionado seg\'un dicta el reglamento de la carrera.
+\end{itemize}
+
+%\noindent
+%\textbf{Resultados de aprendizaje a evaluar:} 
+%\vspace{2mm}
+%\begin{itemize}
+%	\item CE1.N1.RA1. Identifica estructuras abstractas de programación, con el fin de ser utilizadas en la solución de problemas y desarrollo de sistema.
+%	\item CE1.N1.RA4. Usa lenguajes de programación para resolver problemas algorítmicos de forma eficiente.
+%	\item CE1.N1.RA5. Identifica, analiza e implementa posibles soluciones con el objetivo de resolver problemas algorítmicos básicos.
+%\end{itemize}
+
+\noindent
+\textbf{Contenido:} Este certamen eval\'ua los siguientes temas:
+
+\vspace{-2mm}
+\begin{table}[H]
+\begin{tabular}{
+    !{\color{gray!50}\vrule}l
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+    \multicolumn{1}{!{\color{gray!50}\vrule}c}{\textbf{
+        Tema
+    }} & 
+    \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        ~Puntaje~
+    }} \\ \arrayrulecolor{gray!50}
+    \hline
+    Conocimiento espec\'ifico - Desarrollo.
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        20 pts.
+    }} \\ \arrayrulecolor{gray!50}
+    \hline
+    Soluci\'on de problema - Desarrollo de c\'odigo.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        35 pts.
+    }} \\ \arrayrulecolor{gray!50} 
+    \hline
+    Soluci\'on de problema - Scope \& Binding.
+    & \multicolumn{1}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{
+        45 pts.
+    }} \\ \arrayrulecolor{gray!50} 
+    \hline
+\end{tabular}
+\end{table}
+
+\section{\textbf{Conocimiento espec\'ifico - Desarrollo (20 pts.)}}
+\noindent
+\textbf{Respuesta con desarrollo:}  (L: 10 pts. ML: 6 pts. NL: 3 pts.).
+
+\begin{table}[H]
+\begin{tabular}{
+    !{\color{gray!50}\vrule}l
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}} 
+    \arrayrulecolor{gray!50} \hline
+    \textbf{\textquestiondown El classloader de JVM est\'a asociado al binding time? Justifique:}  \\ \\
+    En tiempo de carga (load time): momento en que una apliaci\'on (OS o en este caso el classloader) carga las \\ clases en la memoria de JVM (normalmente las clases s\'olo son cargadas bajo demanda). \\ \\ \arrayrulecolor{gray!50} \hline
+    	\multicolumn{1}{l}{La ausencia de la dimensi\'on es calificada con 0 pts.}
+\end{tabular}
+\end{table}
+
+\textbf{Provea un ejemplo de scope en un m\'etodo JAVA.}  
+    
+\begin{lstlisting}[style=CStyle]
+public class ScopeTest {
+   public static void main(String args[]) {
+      string str = "1337 5p34k";
+   }
+   public void demo() {
+      System.out.println(str);
+   }
+}
+/* Salida */
+/* Error de scope */
+\end{lstlisting}
+    
+
+
+\begin{table}[H]
+    {\small
+    \begin{tabular}{lll}
+        L  & : Logrado    & : Describe correctamente la respuesta. \\
+        PL  & : Parcialmente Logrado & : Describe parcialmente la respuesta. Comete entre 1 a 3 errores.  \\
+        NL & : No Logrado & : Describe incorrectanente la respuesta. Comete m\'as de 3 errores. \\
+    \end{tabular}}
+\end{table}
+
+\clearpage
+
+\vspace{-7mm}
+\section{\textbf{Soluci\'on de problema - Desarrollo de c\'odigo (35 pts.)}}
+
+\noindent
+\textbf{Respuesta con desarrollo:} La siguiente tabla contiene datos demogr\'aficos de la Regi\'on de Valpara\'iso. 
+
+\begin{table}[H]  
+\scriptsize
+\centering
+\begin{tabular}{|c|c|c|c|c|}\hline
+    A\~no	& Nacimientos & Defunciones & Tasa bruta natalidad & Tasa bruta mortalidad\\\hline
+    1997 & 25.314 & 9.349  & 16.9 & 6.2\\
+    1998 & 25.097 & 9.367  & 16.5 & 6.1\\
+    1999 & 24.546 & 9.748  & 16.4 & 6.3\\
+    2000 & 24.325 & 9.220  & 15.9 & 5.9\\
+    2001 & 23.870 & 9.458  & 15.0 & 6.0\\
+    2002 & 23.172 & 9.376  & 14.4 & 5.8\\
+    2003 & 22.481 & 9.851  & 13.8 & 6.0\\
+    2004 & 21.961 & 10.047 & 13.3 & 6.1\\
+    2005 & 22.236 & 9.900  & 13.3 & 5.9\\
+    2006 & 21.672 & 10.148 & 12.8 & 6.0\\
+    2007 & 22.659 & 10.913 & 13.3 & 6.4\\
+    2008 & 23.116 & 10.601 & 13.4 & 6.1\\\hline
+\end{tabular}
+\end{table}
+
+\noindent
+    Almacene esta tabla en un archivo CSV para trabajar con \textbf{dataframes} mediante el paquete Pandas de Python. Luego, obtenga la caracter\'isticas de los datos y transf\'ormelos usando hot-encoding. Pruebe el hot-econding desde la columna ``Nacimientos'', considerando s\'olo los primeros 7 registros. Utilice el o los paquetes vistos en clases. 
+
+\begin{table}[H]
+\centering
+\scriptsize
+\begin{tabular}{
+!{\color{gray!50}\vrule}p{3.0cm}
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} \hline
+    \multicolumn{4}{!{\color{gray!50}\vrule}c!{\color{gray!50}\vrule}}{\textbf{?`C\'omo ser{\'e} evaluado en la Secci\'on 2?}} \\ \arrayrulecolor{gray!50} \hline
+    \textbf{Dimensi\'on} & \textbf{Logrado} & \textbf{Parcialmente logrado} & \textbf{No Logrado}\\ \arrayrulecolor{gray!50} 
+\hline
+    Lectura CSV e import &
+    7 pts. \newline Utiliza los paquetes vistos (u otros) en clases y la lectura es correcta. & 
+    3 pts. \newline Lee parcialmente correcto el CSV. No usa las bibliotecas adecuadas.& 
+    1 pt. \newline Lee incorrectamente la lectura del CSV.  
+    \\ \arrayrulecolor{gray!50} 
+\hline
+    Caracter\'isticas de los datos &
+    8 pts. \newline Obtiene las caracter\'isticas de los datos utilizando dataframe. & 
+    4 pts. \newline Obtiene las caracter\'isticas de los datos, sin utilizar dataframe. & 
+    1 pt. \newline  No obtiene las caracter\'isticas de los datos.  
+    \\ \arrayrulecolor{gray!50} 
+\hline
+    Hot-encoding &
+    15 pts. \newline Define correctamente el hot-encoding y lo prueba con los registros indicados. & 
+    7 pts. \newline Define correctamente el hot-encoding, pero lo prueba de manera incorrecta o no lo prueba. & 
+    1 pt. \newline Define de manera incorrecta el hot-encoding.  
+    \\ \arrayrulecolor{gray!50} 
+\hline
+    Orden y compilaci\'on &
+    5 pts. \newline Su implementaci\'on es legible y comprensible. COMPILA. & 
+    2 pts. \newline Su impelemntaci\'on es dificil de comprender, pero compila. & 
+    1 pt. \newline Su implementaci\'on no cimpila.  
+    \\ \arrayrulecolor{gray!50} 
+\hline 
+  \textbf{Total} & \textbf{35 pts.} & \textbf{16 pts.} & \textbf{4 pts.} \\ \arrayrulecolor{gray!50} 
+\hline
+	\multicolumn{4}{l}{La ausencia de la dimensi\'on es calificada con 0 pts.}
+\end{tabular}
+\label{tbl:1}
+\end{table}
+
+\textbf{Respuesta:}
+
+\begin{table}[H]
+\begin{tabular}{
+    !{\color{gray!50}\vrule}l
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}c
+    !{\color{gray!50}\vrule}} 
+    \arrayrulecolor{gray!50} \hline \\ 
+    \textbf{import} pandas \textbf{as} pd \\
+    features = pd.read\_csv('datos.csv') \\
+    \\ 
+    \textbf{print}(features.shape) \\
+    \textbf{print}(features.describe()) \\
+    \\
+    features = pd.get\_dummies(features) \\
+    \textbf{print}(features.iloc[:,2:].head(7)) \\
+    \\
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     \\  \arrayrulecolor{gray!50} \hline
+\end{tabular}
+\end{table}
+
+\clearpage
+
+\section{\textbf{Soluci\'on de problema - Scope \& Binding. (45 pts.)}}
+
+\noindent
+Dado el ejemplo visto en clases (Scope \& Binding), implemente una funcionalidad de alcance aplicaci\'on para le muestra de un elemento de tipo lista deplegable (select de html). Luego, defina un bindig para un campo de texto que se complete y bloque con el valor seleccionado de la lista.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\begin{tabular}{
+!{\color{gray!50}\vrule}p{3.0cm}
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}p{3.9cm}
+!{\color{gray!50}\vrule}} \arrayrulecolor{gray!50} 
+\hline
+    Scope &
+    7 pts. \newline Desarrolla correctamente el alcance de apliaci\'on. & 
+    3 pts. \newline Desarrolla parcialmente el alcance de apliaci\'on.. Comete entre 1 y 3 errores. & 
+    1 pt. \newline  Desarrolla incorrectamente el alcance de apliaci\'on.. Comete m\'as 3 errores. 
+    \\ \arrayrulecolor{gray!50} 
+\hline
+    Binding &
+    8 pts. \newline Desarrolla correctamente la asociaci\'on binding. & 
+    4 pts. \newline Desarrolla parcialmente la asociaci\'on binding. Comete entre 1 y 3 errores. & 
+    1 pt. \newline  Desarrolla incorrectamente la asociaci\'on binding. Comete m\'as 3 errores. 
+    \\ \arrayrulecolor{gray!50} 
+\hline
+    Resultados esperados &
+    25 pts. \newline Los resultados son los esperados. & 
+    12 pts. \newline Los resulados no son los esperados. Sin embargo, entrega similares. & 
+    4 pt. \newline Los resultados no son los esperados o no entrega resultados.  
+    \\ \arrayrulecolor{gray!50} 
+\hline
+    Orden y compilaci\'on &
+    5 pts. \newline Su implementaci\'on es legible y comprensible. COMPILA. & 
+    2 pts. \newline Su impelemntaci\'on es dificil de comprender, pero compila. & 
+    1 pt. \newline Su implementaci\'on no cimpila.  
+    \\ \arrayrulecolor{gray!50} 
+\hline 
+  \textbf{Total} & \textbf{45 pts.} & \textbf{21 pts.} & \textbf{7 pts.} \\ \arrayrulecolor{gray!50} 
+\hline
+	\multicolumn{4}{l}{La ausencia de la dimensi\'on es calificada con 0 pts.}
+\end{tabular}
+\label{tbl:2}
+\end{table}
+
+\end{document}

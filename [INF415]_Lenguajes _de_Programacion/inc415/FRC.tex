@@ -1,0 +1,199 @@
+%\documentclass{article}
+\documentclass[letter,12pt,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[LGR,T1]{fontenc}
+\usepackage{amssymb}                % símbolos especiales
+\usepackage{amsmath, amsthm}        % ambiente \newtheorem
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{pifont}                 % \ding
+\usepackage{tabto}                  % \tabto
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\setlength{\textheight}{21cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{0cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+
+\newcommand{\si}{\ding{51}}%
+\newcommand{\no}{\ding{55}}%
+
+% \newtheorem{nombre}{caption}[within]
+\theoremstyle{definition}
+\newtheorem{corolary}{Corolario}[]
+\newtheorem{lemma}{Lema}[]
+\newtheorem{theorem}{Teorema}[]
+\newtheorem{example}{Ejemplo}[section]
+
+% \newenvironment{nombre}[argumentos]{begindef}{enddef}
+\newenvironment{lista}{\begin{list}{\textbullet}{\itemindent -1ex \itemsep -1ex}}{\end{list}}
+
+\rhead{\begin{picture}(0,0) \put(-120,0){\includegraphics[width=40mm]{./image/logo-UV}} \end{picture}}
+\lhead{\vspace{-0.3cm}Universidad de Valparaíso\\Facultad de Ingeniería\\Escuela de Ingeniería Civil Informática\vspace{0.3cm}}
+
+\pagestyle{fancy}
+
+\begin{document}
+%\maketitle
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\[5ex]
+  Lenguajes de Programación\\[1ex]
+  Certamen 2}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item Considere los siguientes procesos:\\
+    $~~$ P1: $A = B*C$\\
+    $~~$ P2: $M = G+A$\\
+    $~~$ P3: $D = E+A$\\
+    $~~$ P4: $A = L+M$\\
+    $~~$ P5: $F = G/C$
+    \begin{enumerate}
+        \item[a)] Identifique las variables de entrada y de salida para cada proceso. \tabto{75ex}[10 pts]
+        \item[b)] Mediante las condiciones de Bernstein, determine qué procesos pueden ejecutarse concurrentemente. \tabto{75ex}[10 pts]
+    \end{enumerate}
+    
+\item Considere la siguiente base de conocimiento de Prolog:\\
+    $~~$ padre(severino,pascual).\\
+    $~~$ padre(severino,eduvigis).\\
+    $~~$ padre(severino,estanislao).\\
+    $~~$ padre(estanislao,remigio).\\
+    $~~$ padre(remigio,porfirio).\\
+    $~~$ padre(porfirio,narciso).\\
+    $~~$ madre(lucerina,pascual).\\
+    $~~$ madre(lucerina,eduvigis).\\
+    $~~$ madre(lucerina,estanislao).\\
+    $~~$ madre(eduvigis,eulogia).\\
+    $~~$ madre(eduvigis,celedonio).
+    \begin{enumerate}
+        \item[a)] Dibuje el árbol genealógico que representa esta base de conocimiento. \tabto{76ex}[5 pts]
+        \item[b)] Extienda la base de conocimiento para definir la relación \texttt{abuelo/2}. \tabto{75ex}[15 pts]
+    \end{enumerate}
+
+\item La siguiente tabla contiene datos demográficos de la Región de Valparaíso (Fuente: INE-Chile). Almacene esta tabla en un archivo .csv para trabajar con dataframes mediante el paquete Pandas de Python.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}\hline
+    Año	& Nacimientos & Defunciones & Tasa bruta natalidad & Tasa bruta mortalidad\\\hline
+    1997 & 25.314 & 9.349  & 16.9 & 6.2\\
+    1998 & 25.097 & 9.367  & 16.5 & 6.1\\
+    1999 & 24.546 & 9.748  & 16.4 & 6.3\\
+    2000 & 24.325 & 9.220  & 15.9 & 5.9\\
+    2001 & 23.870 & 9.458  & 15.0 & 6.0\\
+    2002 & 23.172 & 9.376  & 14.4 & 5.8\\
+    2003 & 22.481 & 9.851  & 13.8 & 6.0\\
+    2004 & 21.961 & 10.047 & 13.3 & 6.1\\
+    2005 & 22.236 & 9.900  & 13.3 & 5.9\\
+    2006 & 21.672 & 10.148 & 12.8 & 6.0\\
+    2007 & 22.659 & 10.913 & 13.3 & 6.4\\
+    2008 & 23.116 & 10.601 & 13.4 & 6.1\\\hline
+\end{tabular}
+\end{center}
+
+    \begin{enumerate}
+    \item Transcriba el código mínimo necesario para poder ordenar el dataframe de acuerdo al campo \texttt{Nacimientos} (de menor a mayor).\tabto{75ex}[10 pts]
+    \item Transcriba el código mínimo necesario para mostrar solo las primeras tres columnas del dataframe.\tabto{75ex}[10 pts]
+    \end{enumerate}
+\end{enumerate}
+
+
+\newpage
+
+\begin{center}
+ {\Large
+  {\color{white}.}\\[5ex]
+  Lenguajes de Programación\\[1ex]
+  Certamen 2 -- Pauta}\\[1.2ex]
+  Prof: Fabián Riquelme Csori\\
+  2017-II
+\end{center}
+
+\begin{enumerate}
+    \item[1.a)] 
+    P1: $I_1=\{B,C\}$, \tabto{18ex} $O_1=\{A\}$\\
+    P2: $I_2=\{G,A\}$, \tabto{18ex} $O_2=\{M\}$\\
+    P3: $I_3=\{E,A\}$, \tabto{18ex} $O_3=\{D\}$\\
+    P4: $I_4=\{L,M\}$, \tabto{18ex} $O_4=\{A\}$\\
+    P5: $I_5=\{G,C\}$, \tabto{18ex} $O_5=\{F\}$
+    
+    $+1$ pto cada entrada o salida correcta.
+    \item[1.b)] Dos procesos $P_i$ y $P_j$ pueden ejecutarse concurrentemente si:
+    \begin{enumerate}
+        \item[i.] $I_i\cap O_j=\emptyset$,
+        \item[ii.] $I_j\cap O_i=\emptyset$, y
+        \item[iii.] $O_i\cap O_j=\emptyset$.
+    \end{enumerate}
+    La siguiente tabla indica si los procesos pueden o no ejecutarse concurrentemente. En caso de que no lo sean, se indica la primera de las tres condiciones de Bernstein que incumple.
+    
+    \begin{tabular}{c|c|c|c|c|c}
+           &P1       & P2     & P3     & P4       & P5 \\\hline
+        P1 & -       &\no (ii)&\no (ii)&\no (iii) &\si\\
+        P2 &\no (ii) & -      &\si     &\no (i)   &\si\\
+        P3 &\no (ii) &\si     & -      &\no (i)   &\si\\
+        P4 &\no (iii)&\no (i) &\no (i) & -        &\si\\
+        P5 &\si      &\si     &\si     &\si       & -
+    \end{tabular} 
+    
+    $+1$ pto por cada combinación correcta de las 10 necesarias para verificar todo.
+    
+    $-5$ pts si no se incluyen cálculos que fundamenten las respuestas.
+
+    \newpage
+    
+    \item[2.a)] $~$\\
+    \begin{tikzpicture}[sibling distance=10em,
+  every node/.style = {shape=rectangle, align=center}]]
+  \node {Lucerina$-$Severino}
+    child { node {Pascual} }
+    child { node {Eduvigis}[sibling distance=5em]
+      child { node {Eulogia} }
+      child { node {Celedonio} } }
+    child { node {Estanislao}
+      child { node {Remigio}
+        child { node {Porfirio} 
+        child { node {Narciso} } } } };
+\end{tikzpicture}
+
+    -1 pto por cada nombre mal ubicado\\
+    -1 pto si no se visualiza relación implícita entre Lucerina y Severino, pero ejercicio siguiente está correcto; -2 pts si por esta falta el ejercicio siguiente está incorrecto.
+
+    \item[2.b)]
+    \texttt{abuelo(X,Y):-padre(X,Z),padre(Z,Y).}\\
+    \texttt{abuelo(X,Y):-padre(X,Z),madre(Z,Y).}
+    
+    Otra alternativa:\\
+    \texttt{abuelo(X,Y):-padre(X,Z),(padre(Z,Y);madre(Z,Y)).}
+    
+    Y otra alternativa:\\
+    \texttt{progenitor(X,Y):-padre(X,Y).}\\
+    \texttt{progenitor(X,Y):-madre(X,Y).}\\
+    \texttt{abuelo(X,Y):-padre(X,Z),progenitor(Z,Y).}
+    
+    -7 pts si para la solución se definen relaciones adicionales innecesarias.\\
+    -7 pts si solo se considera abuelo paterno.\\
+    -2 pts por cada error sintáctico.
+    
+    \item[3.a)] Asumamos que el archivo .csv creado utiliza como separador ``punto y comas'' (;)
+    
+    \texttt{df = pd.read\_csv('nombre\_archivo.csv', sep=';')}\\
+    \texttt{df.sort\_values('Nacimientos')}
+    
+    \item[3.b)] Asumiendo que ya se realizó lo anterior, no hace falta volver a cargar el archivo:
+    
+    \texttt{print(df.iloc[:, 0:3])}\tabto{30ex} o bien:
+    
+    \texttt{print(df[['Año','Nacimientos','Defunciones']])}
+    
+    -3 pts por cada función clave no utilizada (\texttt{read\_csv}, \texttt{sort\_values}).\\
+    -1 pt por cada error sintáctico.
+
+\end{enumerate}
+
+\end{document}
